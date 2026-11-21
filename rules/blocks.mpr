@@ -2,7 +2,8 @@
 ;;; A point x splits by a node subset T (containing node 0) into A = x|T, B = x|T̄ and the middle M = x[T, T̄].
 ;;; The middle is decomposed recursively by the same rule in rectangular form (bi-split R ⊆ rows, C ⊆ cols):
 ;;; diagonal blocks M[R,C], M[R̄,C̄] recurse, off-diagonal blocks M[R,C̄], M[R̄,C] are the middle's middle.
-;;; Every middle node carries a coarse class level: 0 constant-up-to-flips, 1 twin, 2 two-valued, 3 any.
+;;; Every middle node carries a coarse class level: 0 constant-up-to-flips, 1 twin, 2 two-valued up to complement, 3 any.
+;;; All four classes are invariant under switching (so decomposability is an orbit property).
 ;;; X = maximal allowed level; bv = #t requires blocks to be vertices of their own metric polytope.
 
 (define (const-mid? M) (<= (card (distinct (mvalues M))) 1))
@@ -11,7 +12,8 @@
 (define (mid-twin? M A)
   (forall ((j (range 0 (cols M))))
     (exists ((i (range 0 (rows M)))) (or (= (mcol M j) (col A i)) (= (mcol M j) (affine -1 1 (col A i)))))))
-(define (mid-two-valued? M) (<= (card (distinct (mvalues M))) 2))
+;; "two-valued up to complement": switching-invariant version (v and 1-v identified)
+(define (mid-two-valued? M) (<= (card (distinct (for ((v (mvalues M))) (min v (- 1 v))))) 2))
 (define (mid-level M A) (if (mid-const? M) 0 (if (mid-twin? M A) 1 (if (mid-two-valued? M) 2 3))))
 (define (rect-level M) (if (mid-const? M) 0 (if (mid-two-valued? M) 2 3)))
 
