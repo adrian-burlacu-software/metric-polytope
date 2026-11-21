@@ -118,7 +118,7 @@
          (implies (fully-fractional? x) (<= (incidence x) (binom n 3)))
          (implies (and (fully-fractional? x) (= (incidence x) (binom n 3))) (in-orbits? x (list (anticut n {})))))))
 
-(structural dominating-set (n) :domain (3) :source "S8 (Laurent–Poljak 1992)"
+(structural dominating-set (n) :domain (3) :partial-data #t :source "S8 (Laurent–Poljak 1992); n = 9 data: Deza–Indik 1,221 orbits"
   :doc "Every vertex is adjacent to a cut (fails at n = 9 per Deza–Indik)."
   (forall ((x (vertices n))) (where (not (integral? x))) (exists ((c (cuts n))) (adjacent? x c))))
 

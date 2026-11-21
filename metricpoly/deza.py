@@ -86,3 +86,21 @@ def load_up_lattice(n: int, k: int, root: Path = RAW) -> List[List[Clause]]:
         if len(f) != k:
             raise ValueError(f"face with {len(f)} rows in d{k}_m{n}")
     return faces
+
+
+def load_counterexamples(root: Path = RAW):
+    """1221_counterexamples.txt: rows 'Inc Adj  c_1 .. c_36 | denominator' (m_9, lex coordinate order).
+    Returns [(Point, incidence, adjacency)]."""
+    out = []
+    for line in (root / "1221_counterexamples.txt").read_text(encoding="ascii").splitlines():
+        if "|" not in line:
+            continue
+        left, den = line.split("|")
+        t = left.split()
+        if not t or not t[0].isdigit():
+            continue
+        inc, adj, nums = int(t[0]), int(t[1]), [int(v) for v in t[2:]]
+        if len(nums) != 36:
+            raise ValueError(f"counterexample row with {len(nums)} coordinates")
+        out.append((Point.make(9, int(den), nums), inc, adj))
+    return out

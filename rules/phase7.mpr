@@ -1,0 +1,39 @@
+;;; phase7.mpr — rules added in Phase 7: the denominator lemma, the finite-middle-vocabulary rule, and the
+;;; reachability results of Phase 4c as executable rules.
+
+;; ---------------------------------------------------------------- denominator lemma (this work)
+(structural denominator-lemma-lift (n) :domain (4) :partial-data #t
+  :source "this work; generalizes LP92 Prop 2.12 (proof sketch in the Phase 4c notes)"
+  :doc "Deleting any node of a vertex x leaves a point whose denominator d' satisfies den(x) | 2 d'."
+  (forall ((x (vertices n)) (i (range 0 n)))
+    (= (mod (* 2 (denominator (restrict (all-but n i) x))) (denominator x)) 0)))
+
+(define (complement-in n S) (nodes (for ((v (range 0 n))) (where (not (in v S))) v)))
+(define (union-nodes S U) (nodes (concat (elems S) (elems U))))
+
+(structural denominator-lemma-glue (n) :domain (4 8)
+  :source "this work (proof sketch in the Phase 4c notes)"
+  :doc "For every cover T = A ∪ B of the nodes with A ∩ B = K ≠ ∅, A, B proper: den(x) | 2 lcm(den x|A, den x|B)."
+  (forall ((x (vertices n)) (A (subsets n)))
+    (where (and (>= (card A) 3) (< (card A) n)))
+    (forall ((K (subsets-of A)))
+      (where (and (> (card K) 0) (< (card K) (card A)) (>= (+ (card K) (- n (card A))) 3)))
+      (let ((B (union-nodes (complement-in n A) K))
+            (dA (denominator (restrict A x))) (dB (denominator (restrict B x))))
+        (= (mod (* 2 (lcm dA dB)) (denominator x)) 0)))))
+
+;; ---------------------------------------------------------------- finite middle vocabulary (Phase 6)
+(structural finite-middle-vocabulary (n) :domain (4 8) :source "Phase 6 (this work)"
+  :doc "Every middle-region type of m_n is constant up to flips, one block-rule step from smaller types, or already occurs in some m_k, k < n."
+  (let ((old (type-set (concat-all (for ((m (range 3 n))) (vertices m))))))
+    (forall ((x (vertices n)) (k (middle-types x)))
+      (or (type-constant? k) (type-one-step? k) (in k old)))))
+
+;; ---------------------------------------------------------------- reachability (Phase 4c, DP with all moves)
+(structural all-moves-cover-vertex-only (n) :domain (3 8) :source "Phase 4c (this work)"
+  :doc "Every orbit is derivable from the uniform base pieces by lift, radial 1–3 and uncapped gluing, all intermediate points vertices."
+  (forall ((x (vertices n))) (derivable? x #f)))
+
+(structural all-moves-cover (n) :domain (3 8) :source "Phase 4c (this work)"
+  :doc "As above, with non-vertex intermediate points (detours) allowed."
+  (forall ((x (vertices n))) (derivable? x #t)))

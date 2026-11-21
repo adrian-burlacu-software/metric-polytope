@@ -25,7 +25,7 @@ from metricpoly.jobs import Job, add_job_args, atomic_write_json, atomic_write_t
 
 OUT = ROOT / "results" / "ledger"
 CEX = OUT / "counterexamples"
-FILES = ["stdlib.mpr", "literature.mpr", "mutations.mpr", "fractal.mpr"]
+FILES = ["stdlib.mpr", "literature.mpr", "mutations.mpr", "fractal.mpr", "phase7.mpr"]
 
 # Model mutation from the literature (Phase 7 will verify it on data/deza/raw/1221_counterexamples.txt).
 LITERATURE_MUTATIONS = [{
@@ -79,6 +79,8 @@ def main():
         for n in range(3, args.max_n + 1):
             if not in_domain(rule, n) or (rule.kind == "generative" and n > 8):
                 continue
+            if n == 9 and not rule.meta.get("partial-data"):
+                continue                     # m_9 data is partial: only rules whose failure is meaningful there
             task = f"{name}@{n}"
             if job.is_done(task):
                 continue
@@ -89,7 +91,7 @@ def main():
             except Exception as ex:          # recorded, not hidden
                 val, err = None, f"{type(ex).__name__}: {ex}"
             dt = round(time.time() - t, 2)
-            rec = {"rule": name, "kind": rule.kind, "n": n, "seconds": dt, "error": err}
+            rec = {"rule": name, "kind": rule.kind, "n": n, "seconds": dt, "error": err, "partial_data": n == 9}
             if err is None and rule.kind == "structural":
                 rec["holds"] = bool(val)
                 if not val and isinstance(val, Verdict) and val.witness:
@@ -131,10 +133,11 @@ def write_ledger(I, job, args):
             md += [f"### `{name}`", "", f"- English: {rule.meta.get('doc', '')}",
                    f"- Source: {rule.meta.get('source', '')}", f"- Formula: `{rule_formula(rule)}`"]
             if kind == "structural":
-                ok = [r["n"] for r in recs if r.get("holds") is True]
+                ok = [r["n"] for r in recs if r.get("holds") is True and not r.get("partial_data")]
+                okp = [r["n"] for r in recs if r.get("holds") is True and r.get("partial_data")]
                 bad = [r for r in recs if r.get("holds") is False]
                 errs = [r for r in recs if r.get("error")]
-                md.append(f"- Holds for n = {ok or '—'}")
+                md.append(f"- Holds for n = {ok or '—'}" + (f"; also no counterexample in the PARTIAL n = {okp} data (not a proof)" if okp else ""))
                 if bad:
                     b = bad[0]
                     md.append(f"- **BREAKS at n = {b['n']}**; counterexample `{b.get('counterexample')}`: "
@@ -151,7 +154,8 @@ def write_ledger(I, job, args):
             md += ["", "```lisp", rule.source, "```", ""]
     # ---------------------------------------------------------------- mutation log
     fixes = {r.meta["fixes"]: r for r in I.rules.values() if "fixes" in r.meta}
-    log = list(LITERATURE_MUTATIONS)
+    verified_breaks = {(v["rule"], v["n"]) for v in R.values() if v.get("holds") is False}
+    log = [m for m in LITERATURE_MUTATIONS if (m["rule"], m["breaks_at"]) not in verified_breaks]
     k = 1
     for name, rule in I.rules.items():
         if rule.kind != "structural":
@@ -159,10 +163,12 @@ def write_ledger(I, job, args):
         bad = sorted((v for v in R.values() if v.get("rule") == name and v.get("holds") is False), key=lambda r: r["n"])
         if not bad:
             continue
-        ok = sorted(v["n"] for v in R.values() if v.get("rule") == name and v.get("holds") is True)
+        ok = sorted(v["n"] for v in R.values() if v.get("rule") == name and v.get("holds") is True
+                    and not v.get("partial_data"))
         entry = {"id": f"M{k}", "rule": name, "statement": rule.meta.get("doc", ""), "source": rule.meta.get("source"),
                  "holds": ok, "breaks_at": bad[0]["n"], "counterexample": bad[0].get("counterexample"),
-                 "witness": bad[0].get("witness"), "status": "VERIFIED in code"}
+                 "witness": bad[0].get("witness"),
+                 "status": "VERIFIED in code" + (" (on the partial m_9 data: Deza–Indik 1,221 orbits)" if bad[0].get("partial_data") else "")}
         if name in fixes:
             fx = fixes[name]
             entry["extension"] = {"rule": fx.name, "level": fx.meta.get("level"), "source": fx.source}

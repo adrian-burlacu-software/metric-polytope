@@ -27,6 +27,7 @@ class DomainList(list):
     """A list that remembers whether it holds all vertices ('all') or orbit representatives ('reps')."""
     kind = "all"
     n = None
+    complete = True          # False: a partial list (a failing forall is a valid counterexample; a pass proves nothing)
 
 
 def _pt_from_matrix(n: int, get) -> Point:
@@ -693,8 +694,13 @@ def _vertices(n: int):
     elif n in (7, 8):
         lst = DomainList(deza.load_ext(n))
         lst.kind = "reps"
+    elif n == 9:
+        # PARTIAL: Deza–Indik's 1,221 orbit representatives of m_9 vertices not adjacent to any cut
+        lst = DomainList(p for p, _inc, _adj in deza.load_counterexamples())
+        lst.kind = "reps"
+        lst.complete = False
     else:
-        raise ValueError(f"vertices: no verified data for n={n} (n <= 6 enumerated, 7-8 Deza reps)")
+        raise ValueError(f"vertices: no data for n={n} (n <= 6 enumerated, 7-8 Deza reps, 9 partial)")
     lst.n = n
     return lst
 
