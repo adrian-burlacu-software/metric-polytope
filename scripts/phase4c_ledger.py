@@ -25,7 +25,7 @@ from metricpoly.jobs import Job, add_job_args, atomic_write_json, atomic_write_t
 
 OUT = ROOT / "results" / "ledger"
 CEX = OUT / "counterexamples"
-FILES = ["stdlib.mpr", "literature.mpr", "mutations.mpr"]
+FILES = ["stdlib.mpr", "literature.mpr", "mutations.mpr", "fractal.mpr"]
 
 # Model mutation from the literature (Phase 7 will verify it on data/deza/raw/1221_counterexamples.txt).
 LITERATURE_MUTATIONS = [{
