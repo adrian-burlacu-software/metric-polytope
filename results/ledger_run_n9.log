@@ -187,3 +187,17 @@
 [finite-middle-vocabulary@6] 0.02s holds=False
 [finite-middle-vocabulary@7] 4.86s holds=False
 [finite-middle-vocabulary@8] 5.97s holds=False
+[all-moves-cover-vertex-only@3] 299.68s holds=True
+[all-moves-cover-vertex-only@4] 0.0s holds=True
+[all-moves-cover-vertex-only@5] 0.03s holds=True
+[all-moves-cover-vertex-only@6] 1.51s holds=True
+[all-moves-cover-vertex-only@7] 0.56s holds=False
+[all-moves-cover-vertex-only@8] 2.8s holds=False
+[all-moves-cover@3] 0.0s holds=True
+[all-moves-cover@4] 0.0s holds=True
+[all-moves-cover@5] 0.04s holds=True
+[all-moves-cover@6] 1.56s holds=True
+[all-moves-cover@7] 0.58s holds=True
+[all-moves-cover@8] 4.35s holds=False
+wrote rules.md (197 task records)
+exit 0

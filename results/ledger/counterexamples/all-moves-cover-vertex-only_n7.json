@@ -1,0 +1,37 @@
+{
+  "binding": {
+    "x": "<7|6|1,2,4,2,2,2,1,3,3,3,3,2,2,2,4,2,2,2,4,4,4>"
+  },
+  "n": 7,
+  "rule": "all-moves-cover-vertex-only",
+  "rule_source": "(structural all-moves-cover-vertex-only (n) :domain (3 8) :source \"Phase 4c (this work)\" :doc \"Every orbit is derivable from the uniform base pieces by lift, radial 1\u20133 and uncapped gluing, all intermediate points vertices.\" (forall ((x (vertices n))) (derivable? x #f)))",
+  "witness": {
+    "x": {
+      "coords": [
+        "1/6",
+        "1/3",
+        "2/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/6",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/3",
+        "1/3",
+        "1/3",
+        "2/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "2/3",
+        "2/3",
+        "2/3"
+      ],
+      "deza_orbit": 12,
+      "n": 7
+    }
+  }
+}

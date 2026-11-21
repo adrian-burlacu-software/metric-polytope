@@ -1,0 +1,44 @@
+{
+  "binding": {
+    "x": "<8|8|1,2,2,4,4,4,5,3,3,3,5,5,6,4,2,2,2,3,2,2,2,3,2,4,3,4,5,1>"
+  },
+  "n": 8,
+  "rule": "all-moves-cover",
+  "rule_source": "(structural all-moves-cover (n) :domain (3 8) :source \"Phase 4c (this work)\" :doc \"As above, with non-vertex intermediate points (detours) allowed.\" (forall ((x (vertices n))) (derivable? x #t)))",
+  "witness": {
+    "x": {
+      "coords": [
+        "1/8",
+        "1/4",
+        "1/4",
+        "1/2",
+        "1/2",
+        "1/2",
+        "5/8",
+        "3/8",
+        "3/8",
+        "3/8",
+        "5/8",
+        "5/8",
+        "3/4",
+        "1/2",
+        "1/4",
+        "1/4",
+        "1/4",
+        "3/8",
+        "1/4",
+        "1/4",
+        "1/4",
+        "3/8",
+        "1/4",
+        "1/2",
+        "3/8",
+        "1/2",
+        "5/8",
+        "1/8"
+      ],
+      "deza_orbit": 52,
+      "n": 8
+    }
+  }
+}

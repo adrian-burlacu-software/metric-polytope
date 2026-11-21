@@ -1,9 +1,222 @@
 {
+  "all-moves-cover-vertex-only@3": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 3,
+    "partial_data": false,
+    "rule": "all-moves-cover-vertex-only",
+    "seconds": 299.68
+  },
+  "all-moves-cover-vertex-only@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "partial_data": false,
+    "rule": "all-moves-cover-vertex-only",
+    "seconds": 0.0
+  },
+  "all-moves-cover-vertex-only@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "partial_data": false,
+    "rule": "all-moves-cover-vertex-only",
+    "seconds": 0.03
+  },
+  "all-moves-cover-vertex-only@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "partial_data": false,
+    "rule": "all-moves-cover-vertex-only",
+    "seconds": 1.51
+  },
+  "all-moves-cover-vertex-only@7": {
+    "counterexample": "results/ledger/counterexamples/all-moves-cover-vertex-only_n7.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 7,
+    "partial_data": false,
+    "rule": "all-moves-cover-vertex-only",
+    "seconds": 0.56,
+    "witness": {
+      "x": {
+        "coords": [
+          "1/6",
+          "1/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/6",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "2/3"
+        ],
+        "deza_orbit": 12,
+        "n": 7
+      }
+    }
+  },
+  "all-moves-cover-vertex-only@8": {
+    "counterexample": "results/ledger/counterexamples/all-moves-cover-vertex-only_n8.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 8,
+    "partial_data": false,
+    "rule": "all-moves-cover-vertex-only",
+    "seconds": 2.8,
+    "witness": {
+      "x": {
+        "coords": [
+          "0",
+          "1/6",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/6",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/6",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "1/3"
+        ],
+        "deza_orbit": 21,
+        "n": 8
+      }
+    }
+  },
+  "all-moves-cover@3": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 3,
+    "partial_data": false,
+    "rule": "all-moves-cover",
+    "seconds": 0.0
+  },
+  "all-moves-cover@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "partial_data": false,
+    "rule": "all-moves-cover",
+    "seconds": 0.0
+  },
+  "all-moves-cover@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "partial_data": false,
+    "rule": "all-moves-cover",
+    "seconds": 0.04
+  },
+  "all-moves-cover@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "partial_data": false,
+    "rule": "all-moves-cover",
+    "seconds": 1.56
+  },
+  "all-moves-cover@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "partial_data": false,
+    "rule": "all-moves-cover",
+    "seconds": 0.58
+  },
+  "all-moves-cover@8": {
+    "counterexample": "results/ledger/counterexamples/all-moves-cover_n8.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 8,
+    "partial_data": false,
+    "rule": "all-moves-cover",
+    "seconds": 4.35,
+    "witness": {
+      "x": {
+        "coords": [
+          "1/8",
+          "1/4",
+          "1/4",
+          "1/2",
+          "1/2",
+          "1/2",
+          "5/8",
+          "3/8",
+          "3/8",
+          "3/8",
+          "5/8",
+          "5/8",
+          "3/4",
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/4",
+          "3/8",
+          "1/4",
+          "1/4",
+          "1/4",
+          "3/8",
+          "1/4",
+          "1/2",
+          "3/8",
+          "1/2",
+          "5/8",
+          "1/8"
+        ],
+        "deza_orbit": 52,
+        "n": 8
+      }
+    }
+  },
   "at-least-two-cuts@5": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "at-least-two-cuts",
     "seconds": 0.03
   },
@@ -12,30 +225,34 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "at-least-two-cuts",
-    "seconds": 6.79
+    "seconds": 6.91
   },
   "at-least-two-cuts@7": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "at-least-two-cuts",
-    "seconds": 2.4
+    "seconds": 2.41
   },
   "at-least-two-cuts@8": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "at-least-two-cuts",
-    "seconds": 47.69
+    "seconds": 47.8
   },
   "cuts-are-the-integral-vertices@3": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 3,
+    "partial_data": false,
     "rule": "cuts-are-the-integral-vertices",
     "seconds": 0.0
   },
@@ -44,6 +261,7 @@
     "holds": true,
     "kind": "structural",
     "n": 4,
+    "partial_data": false,
     "rule": "cuts-are-the-integral-vertices",
     "seconds": 0.0
   },
@@ -52,6 +270,7 @@
     "holds": true,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "cuts-are-the-integral-vertices",
     "seconds": 0.0
   },
@@ -60,6 +279,7 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "cuts-are-the-integral-vertices",
     "seconds": 0.02
   },
@@ -68,22 +288,124 @@
     "holds": true,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "cuts-are-the-integral-vertices",
-    "seconds": 0.25
+    "seconds": 0.26
   },
   "cuts-are-the-integral-vertices@8": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "cuts-are-the-integral-vertices",
-    "seconds": 6.09
+    "seconds": 6.12
+  },
+  "denominator-lemma-glue@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "partial_data": false,
+    "rule": "denominator-lemma-glue",
+    "seconds": 0.02
+  },
+  "denominator-lemma-glue@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "partial_data": false,
+    "rule": "denominator-lemma-glue",
+    "seconds": 0.32
+  },
+  "denominator-lemma-glue@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "partial_data": false,
+    "rule": "denominator-lemma-glue",
+    "seconds": 25.43
+  },
+  "denominator-lemma-glue@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "partial_data": false,
+    "rule": "denominator-lemma-glue",
+    "seconds": 10.89
+  },
+  "denominator-lemma-glue@8": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 8,
+    "partial_data": false,
+    "rule": "denominator-lemma-glue",
+    "seconds": 400.55
+  },
+  "denominator-lemma-lift@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "partial_data": false,
+    "rule": "denominator-lemma-lift",
+    "seconds": 0.0
+  },
+  "denominator-lemma-lift@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "partial_data": false,
+    "rule": "denominator-lemma-lift",
+    "seconds": 0.01
+  },
+  "denominator-lemma-lift@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "partial_data": false,
+    "rule": "denominator-lemma-lift",
+    "seconds": 0.19
+  },
+  "denominator-lemma-lift@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "partial_data": false,
+    "rule": "denominator-lemma-lift",
+    "seconds": 0.03
+  },
+  "denominator-lemma-lift@8": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 8,
+    "partial_data": false,
+    "rule": "denominator-lemma-lift",
+    "seconds": 0.4
+  },
+  "denominator-lemma-lift@9": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 9,
+    "partial_data": true,
+    "rule": "denominator-lemma-lift",
+    "seconds": 1.17
   },
   "dominating-set@3": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 3,
+    "partial_data": false,
     "rule": "dominating-set",
     "seconds": 0.0
   },
@@ -92,6 +414,7 @@
     "holds": true,
     "kind": "structural",
     "n": 4,
+    "partial_data": false,
     "rule": "dominating-set",
     "seconds": 0.0
   },
@@ -100,6 +423,7 @@
     "holds": true,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "dominating-set",
     "seconds": 0.01
   },
@@ -108,30 +432,88 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "dominating-set",
-    "seconds": 0.41
+    "seconds": 0.42
   },
   "dominating-set@7": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "dominating-set",
-    "seconds": 0.15
+    "seconds": 0.16
   },
   "dominating-set@8": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "dominating-set",
-    "seconds": 0.92
+    "seconds": 0.9
+  },
+  "dominating-set@9": {
+    "counterexample": "results/ledger/counterexamples/dominating-set_n9.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 9,
+    "partial_data": true,
+    "rule": "dominating-set",
+    "seconds": 3.68,
+    "witness": {
+      "x": {
+        "coords": [
+          "1/5",
+          "4/15",
+          "1/3",
+          "1/3",
+          "1/3",
+          "2/5",
+          "7/15",
+          "2/3",
+          "7/15",
+          "8/15",
+          "8/15",
+          "8/15",
+          "1/3",
+          "4/15",
+          "3/5",
+          "1/3",
+          "1/3",
+          "7/15",
+          "2/3",
+          "11/15",
+          "2/5",
+          "2/3",
+          "2/3",
+          "3/5",
+          "2/5",
+          "1/3",
+          "2/3",
+          "3/5",
+          "2/5",
+          "1/3",
+          "3/5",
+          "4/15",
+          "1/3",
+          "3/5",
+          "4/15",
+          "1/3"
+        ],
+        "deza_orbit": null,
+        "n": 9
+      }
+    }
   },
   "extension-denominator@4": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 4,
+    "partial_data": false,
     "rule": "extension-denominator",
     "seconds": 0.0
   },
@@ -140,6 +522,7 @@
     "holds": true,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "extension-denominator",
     "seconds": 0.01
   },
@@ -148,6 +531,7 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "extension-denominator",
     "seconds": 0.31
   },
@@ -156,6 +540,7 @@
     "holds": true,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "extension-denominator",
     "seconds": 0.09
   },
@@ -164,14 +549,155 @@
     "holds": true,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "extension-denominator",
-    "seconds": 1.8
+    "seconds": 1.85
+  },
+  "finite-middle-vocabulary@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "partial_data": false,
+    "rule": "finite-middle-vocabulary",
+    "seconds": 0.0
+  },
+  "finite-middle-vocabulary@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "partial_data": false,
+    "rule": "finite-middle-vocabulary",
+    "seconds": 0.06
+  },
+  "finite-middle-vocabulary@6": {
+    "counterexample": "results/ledger/counterexamples/finite-middle-vocabulary_n6.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 6,
+    "partial_data": false,
+    "rule": "finite-middle-vocabulary",
+    "seconds": 0.02,
+    "witness": {
+      "k": "2x1|3|0,1",
+      "x": {
+        "coords": [
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1",
+          "2/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "2/3"
+        ],
+        "deza_orbit": 3,
+        "n": 6
+      }
+    }
+  },
+  "finite-middle-vocabulary@7": {
+    "counterexample": "results/ledger/counterexamples/finite-middle-vocabulary_n7.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 7,
+    "partial_data": false,
+    "rule": "finite-middle-vocabulary",
+    "seconds": 4.86,
+    "witness": {
+      "k": "3x1|3|0,0,1",
+      "x": {
+        "coords": [
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "0",
+          "0",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "0"
+        ],
+        "deza_orbit": 2,
+        "n": 7
+      }
+    }
+  },
+  "finite-middle-vocabulary@8": {
+    "counterexample": "results/ledger/counterexamples/finite-middle-vocabulary_n8.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 8,
+    "partial_data": false,
+    "rule": "finite-middle-vocabulary",
+    "seconds": 5.97,
+    "witness": {
+      "k": "4x1|3|0,0,0,1",
+      "x": {
+        "coords": [
+          "0",
+          "0",
+          "0",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "0",
+          "0",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "0",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3"
+        ],
+        "deza_orbit": 2,
+        "n": 8
+      }
+    }
   },
   "fractal-const@3": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 3,
+    "partial_data": false,
     "rule": "fractal-const",
     "seconds": 0.0
   },
@@ -180,6 +706,7 @@
     "holds": true,
     "kind": "structural",
     "n": 4,
+    "partial_data": false,
     "rule": "fractal-const",
     "seconds": 0.0
   },
@@ -188,6 +715,7 @@
     "holds": true,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "fractal-const",
     "seconds": 0.0
   },
@@ -196,6 +724,7 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "fractal-const",
     "seconds": 0.09
   },
@@ -205,6 +734,7 @@
     "holds": false,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "fractal-const",
     "seconds": 0.09,
     "witness": {
@@ -243,8 +773,9 @@
     "holds": false,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "fractal-const",
-    "seconds": 0.75,
+    "seconds": 0.74,
     "witness": {
       "x": {
         "coords": [
@@ -287,6 +818,7 @@
     "holds": true,
     "kind": "structural",
     "n": 3,
+    "partial_data": false,
     "rule": "fractal-structured",
     "seconds": 0.0
   },
@@ -295,6 +827,7 @@
     "holds": true,
     "kind": "structural",
     "n": 4,
+    "partial_data": false,
     "rule": "fractal-structured",
     "seconds": 0.0
   },
@@ -303,6 +836,7 @@
     "holds": true,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "fractal-structured",
     "seconds": 0.0
   },
@@ -311,14 +845,16 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "fractal-structured",
-    "seconds": 0.09
+    "seconds": 0.08
   },
   "fractal-structured@7": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "fractal-structured",
     "seconds": 0.1
   },
@@ -328,8 +864,9 @@
     "holds": false,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "fractal-structured",
-    "seconds": 1.44,
+    "seconds": 1.43,
     "witness": {
       "x": {
         "coords": [
@@ -372,6 +909,7 @@
     "holds": true,
     "kind": "structural",
     "n": 3,
+    "partial_data": false,
     "rule": "fractal-vertex-blocks",
     "seconds": 0.0
   },
@@ -380,6 +918,7 @@
     "holds": true,
     "kind": "structural",
     "n": 4,
+    "partial_data": false,
     "rule": "fractal-vertex-blocks",
     "seconds": 0.0
   },
@@ -389,6 +928,7 @@
     "holds": false,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "fractal-vertex-blocks",
     "seconds": 0.0,
     "witness": {
@@ -416,6 +956,7 @@
     "holds": false,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "fractal-vertex-blocks",
     "seconds": 0.0,
     "witness": {
@@ -448,6 +989,7 @@
     "holds": false,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "fractal-vertex-blocks",
     "seconds": 0.1,
     "witness": {
@@ -486,8 +1028,9 @@
     "holds": false,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "fractal-vertex-blocks",
-    "seconds": 0.71,
+    "seconds": 0.72,
     "witness": {
       "x": {
         "coords": [
@@ -534,6 +1077,7 @@
     "orbits": [
       2
     ],
+    "partial_data": false,
     "rule": "gen-anticuts",
     "seconds": 0.0,
     "vertices": 32
@@ -547,6 +1091,7 @@
     "orbits": [
       2
     ],
+    "partial_data": false,
     "rule": "gen-anticuts",
     "seconds": 0.0,
     "vertices": 64
@@ -560,6 +1105,7 @@
     "orbits": [
       5
     ],
+    "partial_data": false,
     "rule": "gen-anticuts",
     "seconds": 0.01,
     "vertices": 128
@@ -573,8 +1119,9 @@
     "orbits": [
       8
     ],
+    "partial_data": false,
     "rule": "gen-anticuts",
-    "seconds": 0.03,
+    "seconds": 0.02,
     "vertices": 256
   },
   "gen-avis-paths@5": {
@@ -586,6 +1133,7 @@
     "orbits": [
       2
     ],
+    "partial_data": false,
     "rule": "gen-avis-paths",
     "seconds": 0.0,
     "vertices": 1
@@ -597,6 +1145,7 @@
     "n": 6,
     "non_vertex_candidates": 0,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-avis-paths",
     "seconds": 0.0,
     "vertices": 0
@@ -608,6 +1157,7 @@
     "n": 7,
     "non_vertex_candidates": 0,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-avis-paths",
     "seconds": 0.0,
     "vertices": 0
@@ -621,6 +1171,7 @@
     "orbits": [
       16
     ],
+    "partial_data": false,
     "rule": "gen-avis-paths",
     "seconds": 0.0,
     "vertices": 1
@@ -634,6 +1185,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-cuts",
     "seconds": 0.0,
     "vertices": 8
@@ -647,6 +1199,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-cuts",
     "seconds": 0.0,
     "vertices": 16
@@ -660,6 +1213,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-cuts",
     "seconds": 0.0,
     "vertices": 32
@@ -673,6 +1227,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-cuts",
     "seconds": 0.0,
     "vertices": 64
@@ -686,6 +1241,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-cuts",
     "seconds": 0.0,
     "vertices": 128
@@ -699,6 +1255,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-cuts",
     "seconds": 0.0,
     "vertices": 256
@@ -710,6 +1267,7 @@
     "n": 4,
     "non_vertex_candidates": 0,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-dup",
     "seconds": 0.0,
     "vertices": 0
@@ -721,6 +1279,7 @@
     "n": 5,
     "non_vertex_candidates": 0,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-dup",
     "seconds": 0.0,
     "vertices": 0
@@ -734,6 +1293,7 @@
     "orbits": [
       2
     ],
+    "partial_data": false,
     "rule": "gen-dup",
     "seconds": 0.01,
     "vertices": 80
@@ -749,8 +1309,9 @@
       4,
       5
     ],
+    "partial_data": false,
     "rule": "gen-dup",
-    "seconds": 0.47,
+    "seconds": 0.46,
     "vertices": 3072
   },
   "gen-dup@8": {
@@ -787,6 +1348,7 @@
       176,
       196
     ],
+    "partial_data": false,
     "rule": "gen-dup",
     "seconds": 0.06,
     "vertices": 84
@@ -798,6 +1360,7 @@
     "n": 3,
     "non_vertex_candidates": 2,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-graphic",
     "seconds": 0.03,
     "vertices": 0
@@ -809,6 +1372,7 @@
     "n": 4,
     "non_vertex_candidates": 6,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-graphic",
     "seconds": 0.0,
     "vertices": 0
@@ -822,6 +1386,7 @@
     "orbits": [
       2
     ],
+    "partial_data": false,
     "rule": "gen-graphic",
     "seconds": 0.0,
     "vertices": 3
@@ -836,6 +1401,7 @@
       2,
       3
     ],
+    "partial_data": false,
     "rule": "gen-graphic",
     "seconds": 0.01,
     "vertices": 6
@@ -858,8 +1424,9 @@
       11,
       13
     ],
+    "partial_data": false,
     "rule": "gen-graphic",
-    "seconds": 0.16,
+    "seconds": 0.15,
     "vertices": 41
   },
   "gen-graphic@8": {
@@ -977,8 +1544,9 @@
       532,
       533
     ],
+    "partial_data": false,
     "rule": "gen-graphic",
-    "seconds": 2.83,
+    "seconds": 2.79,
     "vertices": 1224
   },
   "gen-lift-fiber@4": {
@@ -990,6 +1558,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-lift-fiber",
     "seconds": 0.0,
     "vertices": 8
@@ -1003,6 +1572,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-lift-fiber",
     "seconds": 0.01,
     "vertices": 16
@@ -1018,6 +1588,7 @@
       2,
       3
     ],
+    "partial_data": false,
     "rule": "gen-lift-fiber",
     "seconds": 0.06,
     "vertices": 224
@@ -1036,8 +1607,9 @@
       5,
       8
     ],
+    "partial_data": false,
     "rule": "gen-lift-fiber",
-    "seconds": 2.49,
+    "seconds": 2.45,
     "vertices": 6912
   },
   "gen-lift-fiber@8": {
@@ -1215,8 +1787,9 @@
       435,
       444
     ],
+    "partial_data": false,
     "rule": "gen-lift-fiber",
-    "seconds": 1.19,
+    "seconds": 1.14,
     "vertices": 1330
   },
   "gen-lift-multipartite@4": {
@@ -1226,6 +1799,7 @@
     "n": 4,
     "non_vertex_candidates": 22,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-lift-multipartite",
     "seconds": 0.0,
     "vertices": 0
@@ -1239,6 +1813,7 @@
     "orbits": [
       2
     ],
+    "partial_data": false,
     "rule": "gen-lift-multipartite",
     "seconds": 0.01,
     "vertices": 4
@@ -1253,6 +1828,7 @@
       2,
       3
     ],
+    "partial_data": false,
     "rule": "gen-lift-multipartite",
     "seconds": 0.02,
     "vertices": 24
@@ -1271,6 +1847,7 @@
       12,
       13
     ],
+    "partial_data": false,
     "rule": "gen-lift-multipartite",
     "seconds": 0.1,
     "vertices": 146
@@ -1304,6 +1881,7 @@
       196,
       234
     ],
+    "partial_data": false,
     "rule": "gen-lift-multipartite",
     "seconds": 0.46,
     "vertices": 626
@@ -1315,6 +1893,7 @@
     "n": 3,
     "non_vertex_candidates": 5,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-multipartite",
     "seconds": 0.0,
     "vertices": 0
@@ -1326,6 +1905,7 @@
     "n": 4,
     "non_vertex_candidates": 19,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-multipartite",
     "seconds": 0.01,
     "vertices": 0
@@ -1339,6 +1919,7 @@
     "orbits": [
       2
     ],
+    "partial_data": false,
     "rule": "gen-multipartite",
     "seconds": 0.02,
     "vertices": 3
@@ -1353,6 +1934,7 @@
       2,
       3
     ],
+    "partial_data": false,
     "rule": "gen-multipartite",
     "seconds": 0.07,
     "vertices": 21
@@ -1370,6 +1952,7 @@
       11,
       13
     ],
+    "partial_data": false,
     "rule": "gen-multipartite",
     "seconds": 0.17,
     "vertices": 52
@@ -1389,8 +1972,9 @@
       64,
       95
     ],
+    "partial_data": false,
     "rule": "gen-multipartite",
-    "seconds": 0.44,
+    "seconds": 0.43,
     "vertices": 109
   },
   "gen-radial-1@4": {
@@ -1402,6 +1986,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-radial-1",
     "seconds": 0.0,
     "vertices": 1
@@ -1415,6 +2000,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-radial-1",
     "seconds": 0.0,
     "vertices": 1
@@ -1429,6 +2015,7 @@
       1,
       2
     ],
+    "partial_data": false,
     "rule": "gen-radial-1",
     "seconds": 0.0,
     "vertices": 2
@@ -1445,6 +2032,7 @@
       5,
       8
     ],
+    "partial_data": false,
     "rule": "gen-radial-1",
     "seconds": 0.01,
     "vertices": 27
@@ -1494,8 +2082,9 @@
       379,
       391
     ],
+    "partial_data": false,
     "rule": "gen-radial-1",
-    "seconds": 1.0,
+    "seconds": 0.96,
     "vertices": 212
   },
   "gen-radial-2@5": {
@@ -1507,6 +2096,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-radial-2",
     "seconds": 0.0,
     "vertices": 1
@@ -1520,6 +2110,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-radial-2",
     "seconds": 0.0,
     "vertices": 1
@@ -1534,6 +2125,7 @@
       1,
       5
     ],
+    "partial_data": false,
     "rule": "gen-radial-2",
     "seconds": 0.0,
     "vertices": 2
@@ -1550,6 +2142,7 @@
       8,
       63
     ],
+    "partial_data": false,
     "rule": "gen-radial-2",
     "seconds": 0.01,
     "vertices": 27
@@ -1563,6 +2156,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-radial-3",
     "seconds": 0.0,
     "vertices": 1
@@ -1576,6 +2170,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-radial-3",
     "seconds": 0.0,
     "vertices": 1
@@ -1590,6 +2185,7 @@
       1,
       8
     ],
+    "partial_data": false,
     "rule": "gen-radial-3",
     "seconds": 0.0,
     "vertices": 2
@@ -1601,6 +2197,7 @@
     "n": 6,
     "non_vertex_candidates": 0,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-radial-tree-complement",
     "seconds": 0.0,
     "vertices": 0
@@ -1612,8 +2209,9 @@
     "n": 7,
     "non_vertex_candidates": 0,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-radial-tree-complement",
-    "seconds": 0.03,
+    "seconds": 0.02,
     "vertices": 0
   },
   "gen-radial-tree-complement@8": {
@@ -1623,6 +2221,7 @@
     "n": 8,
     "non_vertex_candidates": 0,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-radial-tree-complement",
     "seconds": 0.0,
     "vertices": 0
@@ -1636,6 +2235,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-rays",
     "seconds": 0.0,
     "vertices": 3
@@ -1649,6 +2249,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-rays",
     "seconds": 0.0,
     "vertices": 7
@@ -1663,6 +2264,7 @@
       1,
       2
     ],
+    "partial_data": false,
     "rule": "gen-rays",
     "seconds": 0.01,
     "vertices": 25
@@ -1678,8 +2280,9 @@
       2,
       3
     ],
+    "partial_data": false,
     "rule": "gen-rays",
-    "seconds": 0.11,
+    "seconds": 0.1,
     "vertices": 296
   },
   "gen-sporadic@3": {
@@ -1689,6 +2292,7 @@
     "n": 3,
     "non_vertex_candidates": 0,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-sporadic",
     "seconds": 0.0,
     "vertices": 0
@@ -1700,6 +2304,7 @@
     "n": 4,
     "non_vertex_candidates": 0,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-sporadic",
     "seconds": 0.0,
     "vertices": 0
@@ -1711,6 +2316,7 @@
     "n": 5,
     "non_vertex_candidates": 0,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-sporadic",
     "seconds": 0.0,
     "vertices": 0
@@ -1722,6 +2328,7 @@
     "n": 6,
     "non_vertex_candidates": 0,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-sporadic",
     "seconds": 0.0,
     "vertices": 0
@@ -1738,6 +2345,7 @@
       11,
       13
     ],
+    "partial_data": false,
     "rule": "gen-sporadic",
     "seconds": 0.0,
     "vertices": 5
@@ -1753,6 +2361,7 @@
       451,
       531
     ],
+    "partial_data": false,
     "rule": "gen-sporadic",
     "seconds": 0.0,
     "vertices": 3
@@ -1764,8 +2373,9 @@
     "n": 6,
     "non_vertex_candidates": 3,
     "orbits": [],
+    "partial_data": false,
     "rule": "gen-tree-suspension",
-    "seconds": 0.24,
+    "seconds": 0.41,
     "vertices": 0
   },
   "gen-tree-suspension@7": {
@@ -1777,6 +2387,7 @@
     "orbits": [
       13
     ],
+    "partial_data": false,
     "rule": "gen-tree-suspension",
     "seconds": 0.0,
     "vertices": 1
@@ -1796,6 +2407,7 @@
       248,
       251
     ],
+    "partial_data": false,
     "rule": "gen-tree-suspension",
     "seconds": 0.0,
     "vertices": 7
@@ -1809,6 +2421,7 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-trivial-ext",
     "seconds": 0.0,
     "vertices": 24
@@ -1822,8 +2435,9 @@
     "orbits": [
       1
     ],
+    "partial_data": false,
     "rule": "gen-trivial-ext",
-    "seconds": 0.0,
+    "seconds": 0.01,
     "vertices": 64
   },
   "gen-trivial-ext@6": {
@@ -1836,6 +2450,7 @@
       1,
       3
     ],
+    "partial_data": false,
     "rule": "gen-trivial-ext",
     "seconds": 0.03,
     "vertices": 320
@@ -1852,6 +2467,7 @@
       3,
       4
     ],
+    "partial_data": false,
     "rule": "gen-trivial-ext",
     "seconds": 0.9,
     "vertices": 6528
@@ -1893,8 +2509,9 @@
       42,
       43
     ],
+    "partial_data": false,
     "rule": "gen-trivial-ext",
-    "seconds": 5.52,
+    "seconds": 5.36,
     "vertices": 182
   },
   "incidence-bounds@3": {
@@ -1902,6 +2519,7 @@
     "holds": true,
     "kind": "structural",
     "n": 3,
+    "partial_data": false,
     "rule": "incidence-bounds",
     "seconds": 0.0
   },
@@ -1910,6 +2528,7 @@
     "holds": true,
     "kind": "structural",
     "n": 4,
+    "partial_data": false,
     "rule": "incidence-bounds",
     "seconds": 0.0
   },
@@ -1918,6 +2537,7 @@
     "holds": true,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "incidence-bounds",
     "seconds": 0.01
   },
@@ -1926,6 +2546,7 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "incidence-bounds",
     "seconds": 0.05
   },
@@ -1934,14 +2555,16 @@
     "holds": true,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "incidence-bounds",
-    "seconds": 0.07
+    "seconds": 0.08
   },
   "incidence-bounds@8": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "incidence-bounds",
     "seconds": 0.12
   },
@@ -1950,6 +2573,7 @@
     "holds": true,
     "kind": "structural",
     "n": 4,
+    "partial_data": false,
     "rule": "lift-fiber-complete",
     "seconds": 0.0
   },
@@ -1959,6 +2583,7 @@
     "holds": false,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "lift-fiber-complete",
     "seconds": 0.0,
     "witness": {
@@ -1985,8 +2610,9 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "lift-fiber-complete",
-    "seconds": 0.12
+    "seconds": 0.14
   },
   "lift-fiber-complete@7": {
     "counterexample": "results/ledger/counterexamples/lift-fiber-complete_n7.json",
@@ -1994,8 +2620,9 @@
     "holds": false,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "lift-fiber-complete",
-    "seconds": 5.54,
+    "seconds": 5.61,
     "witness": {
       "x": {
         "coords": [
@@ -2032,8 +2659,9 @@
     "holds": false,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "lift-fiber-complete",
-    "seconds": 21.97,
+    "seconds": 21.57,
     "witness": {
       "x": {
         "coords": [
@@ -2076,14 +2704,16 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "no-cut-set",
-    "seconds": 5.89
+    "seconds": 5.78
   },
   "no-half-integral@3": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 3,
+    "partial_data": false,
     "rule": "no-half-integral",
     "seconds": 0.0
   },
@@ -2092,6 +2722,7 @@
     "holds": true,
     "kind": "structural",
     "n": 4,
+    "partial_data": false,
     "rule": "no-half-integral",
     "seconds": 0.0
   },
@@ -2100,6 +2731,7 @@
     "holds": true,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "no-half-integral",
     "seconds": 0.0
   },
@@ -2108,6 +2740,7 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "no-half-integral",
     "seconds": 0.0
   },
@@ -2116,6 +2749,7 @@
     "holds": true,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "no-half-integral",
     "seconds": 0.0
   },
@@ -2124,6 +2758,7 @@
     "holds": true,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "no-half-integral",
     "seconds": 0.0
   },
@@ -2132,6 +2767,7 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "no-simple-vertex",
     "seconds": 0.01
   },
@@ -2140,6 +2776,7 @@
     "holds": true,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "no-simple-vertex",
     "seconds": 0.0
   },
@@ -2149,6 +2786,7 @@
     "holds": false,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "no-simple-vertex",
     "seconds": 0.01,
     "witness": {
@@ -2193,6 +2831,7 @@
     "holds": true,
     "kind": "structural",
     "n": 4,
+    "partial_data": false,
     "rule": "non-fully-fractional-is-trivial-ext",
     "seconds": 0.0
   },
@@ -2201,6 +2840,7 @@
     "holds": true,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "non-fully-fractional-is-trivial-ext",
     "seconds": 0.0
   },
@@ -2209,6 +2849,7 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "non-fully-fractional-is-trivial-ext",
     "seconds": 0.13
   },
@@ -2217,22 +2858,25 @@
     "holds": true,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "non-fully-fractional-is-trivial-ext",
-    "seconds": 4.41
+    "seconds": 4.46
   },
   "non-fully-fractional-is-trivial-ext@8": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "non-fully-fractional-is-trivial-ext",
-    "seconds": 1.95
+    "seconds": 1.99
   },
   "projects-to-smaller-vertex@4": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 4,
+    "partial_data": false,
     "rule": "projects-to-smaller-vertex",
     "seconds": 0.0
   },
@@ -2242,6 +2886,7 @@
     "holds": false,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "projects-to-smaller-vertex",
     "seconds": 0.0,
     "witness": {
@@ -2268,6 +2913,7 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "projects-to-smaller-vertex",
     "seconds": 0.07
   },
@@ -2277,6 +2923,7 @@
     "holds": false,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "projects-to-smaller-vertex",
     "seconds": 0.01,
     "witness": {
@@ -2315,6 +2962,7 @@
     "holds": false,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "projects-to-smaller-vertex",
     "seconds": 0.02,
     "witness": {
@@ -2359,6 +3007,7 @@
     "holds": true,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "sporadic-are-vertices",
     "seconds": 0.0
   },
@@ -2367,6 +3016,7 @@
     "holds": true,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "sporadic-are-vertices",
     "seconds": 0.0
   },
@@ -2375,6 +3025,7 @@
     "holds": true,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "switch-class-nonadjacent",
     "seconds": 0.02
   },
@@ -2383,30 +3034,34 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "switch-class-nonadjacent",
-    "seconds": 2.31
+    "seconds": 2.29
   },
   "switch-class-nonadjacent@7": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "switch-class-nonadjacent",
-    "seconds": 0.86
+    "seconds": 0.84
   },
   "switch-class-nonadjacent@8": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "switch-class-nonadjacent",
-    "seconds": 15.09
+    "seconds": 14.91
   },
   "third-valued-is-graphic@5": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "third-valued-is-graphic",
     "seconds": 0.0
   },
@@ -2415,6 +3070,7 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "third-valued-is-graphic",
     "seconds": 0.01
   },
@@ -2423,14 +3079,16 @@
     "holds": true,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "third-valued-is-graphic",
-    "seconds": 0.01
+    "seconds": 0.0
   },
   "third-valued-is-graphic@8": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 8,
+    "partial_data": false,
     "rule": "third-valued-is-graphic",
     "seconds": 0.02
   },
@@ -2439,6 +3097,7 @@
     "holds": true,
     "kind": "structural",
     "n": 4,
+    "partial_data": false,
     "rule": "three-projections-imply-vertex",
     "seconds": 0.0
   },
@@ -2447,6 +3106,7 @@
     "holds": true,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "three-projections-imply-vertex",
     "seconds": 0.0
   },
@@ -2455,6 +3115,7 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "three-projections-imply-vertex",
     "seconds": 0.08
   },
@@ -2463,22 +3124,25 @@
     "holds": true,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "three-projections-imply-vertex",
-    "seconds": 4.57
+    "seconds": 4.62
   },
   "vertex-moves-cover-M1@3": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 3,
+    "partial_data": false,
     "rule": "vertex-moves-cover-M1",
-    "seconds": 1.76
+    "seconds": 1.94
   },
   "vertex-moves-cover-M1@4": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 4,
+    "partial_data": false,
     "rule": "vertex-moves-cover-M1",
     "seconds": 0.0
   },
@@ -2487,6 +3151,7 @@
     "holds": true,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "vertex-moves-cover-M1",
     "seconds": 0.01
   },
@@ -2495,30 +3160,34 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "vertex-moves-cover-M1",
-    "seconds": 0.48
+    "seconds": 0.47
   },
   "vertex-moves-cover-M1@7": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "vertex-moves-cover-M1",
-    "seconds": 1.2
+    "seconds": 1.27
   },
   "vertex-moves-cover@3": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 3,
+    "partial_data": false,
     "rule": "vertex-moves-cover",
-    "seconds": 2.47
+    "seconds": 2.61
   },
   "vertex-moves-cover@4": {
     "error": null,
     "holds": true,
     "kind": "structural",
     "n": 4,
+    "partial_data": false,
     "rule": "vertex-moves-cover",
     "seconds": 0.0
   },
@@ -2527,6 +3196,7 @@
     "holds": true,
     "kind": "structural",
     "n": 5,
+    "partial_data": false,
     "rule": "vertex-moves-cover",
     "seconds": 0.01
   },
@@ -2535,8 +3205,9 @@
     "holds": true,
     "kind": "structural",
     "n": 6,
+    "partial_data": false,
     "rule": "vertex-moves-cover",
-    "seconds": 0.48
+    "seconds": 0.47
   },
   "vertex-moves-cover@7": {
     "counterexample": "results/ledger/counterexamples/vertex-moves-cover_n7.json",
@@ -2544,8 +3215,9 @@
     "holds": false,
     "kind": "structural",
     "n": 7,
+    "partial_data": false,
     "rule": "vertex-moves-cover",
-    "seconds": 1.15,
+    "seconds": 1.23,
     "witness": {
       "x": {
         "coords": [
