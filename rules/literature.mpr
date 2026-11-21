@@ -38,8 +38,8 @@
   (for ((v (vertices (- n 1)))) (where (non-star-tree? (complement (level-graph v (maxc v)))))
     (radial-ext 1 v)))
 
-(generative gen-graphic (n) :domain (3 7) :source "C7"
-  :doc "x_G = (2/τ(G)) d_G for every connected graph G on n nodes (networkx atlas, n ≤ 7)."
+(generative gen-graphic (n) :domain (3 8) :source "C7"
+  :doc "x_G = (2/τ(G)) d_G for every connected graph G on n nodes (networkx atlas n ≤ 7, generated n = 8)."
   (for ((G (graphs n :connected))) (graphic G)))
 
 (generative gen-multipartite (n) :domain (3) :source "C8"

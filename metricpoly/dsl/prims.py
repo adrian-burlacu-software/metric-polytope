@@ -11,6 +11,7 @@ from __future__ import annotations
 import itertools
 import math
 from fractions import Fraction
+from pathlib import Path
 from functools import lru_cache
 from typing import List, Sequence
 
@@ -623,11 +624,49 @@ def _atlas():
     return nx.graph_atlas_g()
 
 
+GRAPHS8 = Path(__file__).resolve().parent.parent.parent / "data" / "generated" / "graphs8.json"
+N_GRAPHS = {8: (12346, 11117)}          # OEIS A000088 / A001349: all / connected graphs on 8 nodes
+
+
+def _graphs8():
+    """All non-isomorphic graphs on 8 nodes: extend every 7-node atlas graph by a node with every neighbour set,
+    deduplicate exactly (WL hash buckets + nx.is_isomorphic). Cached in data/generated/graphs8.json."""
+    import json
+    import networkx as nx
+    if GRAPHS8.exists():
+        return [Graph.make(8, e) for e in json.loads(GRAPHS8.read_text())]
+    buckets = {}
+    reps = []
+    for g in _atlas():
+        if g.number_of_nodes() != 7:
+            continue
+        for mask in range(1 << 7):
+            h = nx.Graph(g)
+            h.add_node(7)
+            h.add_edges_from((7, j) for j in range(7) if (mask >> j) & 1)
+            key = (tuple(sorted(d for _, d in h.degree())), nx.weisfeiler_lehman_graph_hash(h, iterations=3))
+            lst = buckets.setdefault(key, [])
+            if not any(nx.is_isomorphic(h, o) for o in lst):
+                lst.append(h)
+                reps.append(h)
+    conn = sum(1 for h in reps if nx.is_connected(h))
+    if (len(reps), conn) != N_GRAPHS[8]:
+        raise RuntimeError(f"graph generation mismatch: {len(reps)} graphs, {conn} connected; expected {N_GRAPHS[8]}")
+    from ..jobs import atomic_write_text
+    atomic_write_text(GRAPHS8, json.dumps([sorted(h.edges()) for h in reps]))
+    return [Graph.make(8, h.edges()) for h in reps]
+
+
 @primitive("graphs", (1, 2), "Nat [:connected] -> List<Graph>", "𝒢_{0}", r"\mathcal{{G}}_{{{0}}}")
 def p_graphs(n, flag=None):
     import networkx as nx
-    if n > 7:
-        raise ValueError("graphs: networkx atlas covers n <= 7 only")
+    if n > 8:
+        raise ValueError("graphs: available for n <= 8 (atlas n <= 7, generated n = 8)")
+    if n == 8:
+        gs = _graphs8()
+        if flag is not None and str(flag) == ":connected":
+            gs = [G for G in gs if p_connected(G)]
+        return gs
     out = []
     for g in _atlas():
         if g.number_of_nodes() != n:
