@@ -1,7 +1,7 @@
 {
   "job_state": {
-    "code_version": "f6f3f63143e0c00a",
-    "git_head": "a5895e3b5e6c0c59a4ea5eaf0f8f9b2685fb5005",
+    "code_version": "fe77b4f569df1d93",
+    "git_head": "864c398664307e46a9d9ddba0905742e39d3aad4",
     "params": {
       "n": [
         3,
@@ -32,7 +32,7 @@
         "canonicalisations_run": 1,
         "completions_run": 1,
         "orbits": 1,
-        "seconds": 0.00022029998945072293,
+        "seconds": 0.00021749999723397195,
         "stage_seconds": {
           "complete": 0.0,
           "positional_dedupe": 0.0001,
@@ -44,7 +44,7 @@
         "canonicalisations_run": 1,
         "completions_run": 1,
         "orbits": 1,
-        "seconds": 0.0002680000034160912,
+        "seconds": 0.0002896000078180805,
         "stage_seconds": {
           "complete": 0.0001,
           "positional_dedupe": 0.0001,
@@ -56,7 +56,7 @@
         "canonicalisations_run": 4,
         "completions_run": 4,
         "orbits": 1,
-        "seconds": 0.0006568999961018562,
+        "seconds": 0.0006722999969497323,
         "stage_seconds": {
           "canonicalise": 0.0004,
           "complete": 0.0003
@@ -67,7 +67,7 @@
         "canonicalisations_run": 4,
         "completions_run": 4,
         "orbits": 1,
-        "seconds": 0.0002986999897984788,
+        "seconds": 0.00028080001357011497,
         "stage_seconds": {
           "canonicalise": 0.0002,
           "complete": 0.0001
@@ -78,12 +78,12 @@
       "vertices": 4,
       "vset_exact": {
         "lps": 0,
-        "seconds": 1.6400008462369442e-05,
+        "seconds": 1.7499987734481692e-05,
         "valid": 4
       },
       "vset_legacy": {
         "lps": 4,
-        "seconds": 0.00016700000560376793,
+        "seconds": 0.0001689000055193901,
         "valid": 4
       }
     },
@@ -105,7 +105,7 @@
         "canonicalisations_run": 1,
         "completions_run": 1,
         "orbits": 1,
-        "seconds": 0.00040839999564923346,
+        "seconds": 0.00035430000571068376,
         "stage_seconds": {
           "complete": 0.0001,
           "positional_dedupe": 0.0001,
@@ -117,7 +117,7 @@
         "canonicalisations_run": 1,
         "completions_run": 1,
         "orbits": 1,
-        "seconds": 0.0004978999932063743,
+        "seconds": 0.0005247999943094328,
         "stage_seconds": {
           "complete": 0.0002,
           "positional_dedupe": 0.0001,
@@ -129,9 +129,9 @@
         "canonicalisations_run": 8,
         "completions_run": 8,
         "orbits": 1,
-        "seconds": 0.004741400000057183,
+        "seconds": 0.0048805000114953145,
         "stage_seconds": {
-          "canonicalise": 0.0033,
+          "canonicalise": 0.0034,
           "complete": 0.0015
         },
         "switch_classes": 0
@@ -140,10 +140,10 @@
         "canonicalisations_run": 8,
         "completions_run": 8,
         "orbits": 1,
-        "seconds": 0.0011514000070746988,
+        "seconds": 0.0009590999979991466,
         "stage_seconds": {
-          "canonicalise": 0.0006,
-          "complete": 0.0011
+          "canonicalise": 0.0005,
+          "complete": 0.0005
         },
         "switch_classes": 0
       },
@@ -151,12 +151,12 @@
       "vertices": 8,
       "vset_exact": {
         "lps": 0,
-        "seconds": 6.280001252889633e-05,
+        "seconds": 6.78999931551516e-05,
         "valid": 16
       },
       "vset_legacy": {
         "lps": 16,
-        "seconds": 0.00044550000166054815,
+        "seconds": 0.000443600001744926,
         "valid": 16
       }
     },
@@ -171,7 +171,7 @@
           16
         ],
         "orbits_identical_all_variants": true,
-        "transported_completion_eq_direct_every_vertex": false,
+        "transported_completion_eq_direct_every_vertex": true,
         "vset_valid_sets_equal": true
       },
       "n": 5,
@@ -179,9 +179,9 @@
         "canonicalisations_run": 2,
         "completions_run": 2,
         "orbits": 2,
-        "seconds": 0.001464699991629459,
+        "seconds": 0.0013610999885713682,
         "stage_seconds": {
-          "complete": 0.0004,
+          "complete": 0.0003,
           "positional_dedupe": 0.0002,
           "switch_classes": 0.0009
         },
@@ -191,9 +191,9 @@
         "canonicalisations_run": 2,
         "completions_run": 2,
         "orbits": 2,
-        "seconds": 0.0018875000096159056,
+        "seconds": 0.0019520000059856102,
         "stage_seconds": {
-          "complete": 0.0008,
+          "complete": 0.0009,
           "positional_dedupe": 0.0002,
           "switch_classes": 0.0009
         },
@@ -203,10 +203,10 @@
         "canonicalisations_run": 32,
         "completions_run": 32,
         "orbits": 2,
-        "seconds": 0.0896470000006957,
+        "seconds": 0.09081929999229033,
         "stage_seconds": {
-          "canonicalise": 0.0766,
-          "complete": 0.013
+          "canonicalise": 0.077,
+          "complete": 0.0138
         },
         "switch_classes": 0
       },
@@ -214,10 +214,10 @@
         "canonicalisations_run": 32,
         "completions_run": 32,
         "orbits": 2,
-        "seconds": 0.009190299999318086,
+        "seconds": 0.008147000000462867,
         "stage_seconds": {
           "canonicalise": 0.003,
-          "complete": 0.0062
+          "complete": 0.0051
         },
         "switch_classes": 0
       },
@@ -225,12 +225,12 @@
       "vertices": 32,
       "vset_exact": {
         "lps": 0,
-        "seconds": 0.0003328000020701438,
+        "seconds": 0.0003409999917494133,
         "valid": 40
       },
       "vset_legacy": {
         "lps": 40,
-        "seconds": 0.0070242999936454,
+        "seconds": 0.007117300003301352,
         "valid": 40
       }
     },
@@ -246,7 +246,7 @@
           480
         ],
         "orbits_identical_all_variants": true,
-        "transported_completion_eq_direct_every_vertex": false,
+        "transported_completion_eq_direct_every_vertex": true,
         "vset_valid_sets_equal": true
       },
       "n": 6,
@@ -254,11 +254,11 @@
         "canonicalisations_run": 17,
         "completions_run": 3,
         "orbits": 3,
-        "seconds": 0.018645899996045046,
+        "seconds": 0.018159500003093854,
         "stage_seconds": {
-          "complete": 0.0014,
+          "complete": 0.0011,
           "positional_dedupe": 0.0026,
-          "switch_classes": 0.0146
+          "switch_classes": 0.0144
         },
         "switch_classes": 17
       },
@@ -266,11 +266,11 @@
         "canonicalisations_run": 17,
         "completions_run": 3,
         "orbits": 3,
-        "seconds": 0.020177999991574325,
+        "seconds": 0.020312500011641532,
         "stage_seconds": {
-          "complete": 0.0026,
-          "positional_dedupe": 0.0028,
-          "switch_classes": 0.0147
+          "complete": 0.0029,
+          "positional_dedupe": 0.0025,
+          "switch_classes": 0.015
         },
         "switch_classes": 17
       },
@@ -278,10 +278,10 @@
         "canonicalisations_run": 544,
         "completions_run": 544,
         "orbits": 3,
-        "seconds": 9.960480500012636,
+        "seconds": 9.7996523000038,
         "stage_seconds": {
-          "canonicalise": 9.4682,
-          "complete": 0.4922
+          "canonicalise": 9.3075,
+          "complete": 0.4921
         },
         "switch_classes": 0
       },
@@ -289,10 +289,10 @@
         "canonicalisations_run": 544,
         "completions_run": 544,
         "orbits": 3,
-        "seconds": 0.291332799999509,
+        "seconds": 0.2587595000077272,
         "stage_seconds": {
-          "canonicalise": 0.0779,
-          "complete": 0.2127
+          "canonicalise": 0.0786,
+          "complete": 0.1794
         },
         "switch_classes": 0
       },
@@ -300,12 +300,12 @@
       "vertices": 544,
       "vset_exact": {
         "lps": 0,
-        "seconds": 0.009588700006133877,
+        "seconds": 0.00949199999740813,
         "valid": 80
       },
       "vset_legacy": {
         "lps": 80,
-        "seconds": 50.96291950000159,
+        "seconds": 50.639853000000585,
         "valid": 80
       }
     }
