@@ -15,3 +15,5 @@ checkpoints/
 # copyrighted papers: keep local only (URLs + sha256 in data/literature/SOURCES.md)
 data/literature/raw/
 data/literature/img/
+data/deza/orbits9/Orbits.zip
+data/deza/orbits9/orbits9.npz

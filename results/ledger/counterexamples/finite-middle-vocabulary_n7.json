@@ -1,0 +1,39 @@
+{
+  "binding": {
+    "k": "3x1|3|0,0,1",
+    "x": "<7|3|2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0>"
+  },
+  "n": 7,
+  "rule": "finite-middle-vocabulary",
+  "rule_source": "(structural finite-middle-vocabulary (n) :domain (4 8) :source \"Phase 6 (this work)\" :doc \"Every middle-region type of m_n is constant up to flips, one block-rule step from smaller types, or already occurs in some m_k, k < n.\" (let ((old (type-set (concat-all (for ((m (range 3 n))) (vertices m)))))) (forall ((x (vertices n)) (k (middle-types x))) (or (type-constant? k) (type-one-step? k) (in k old)))))",
+  "witness": {
+    "k": "3x1|3|0,0,1",
+    "x": {
+      "coords": [
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "0",
+        "0",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "0"
+      ],
+      "deza_orbit": 2,
+      "n": 7
+    }
+  }
+}
