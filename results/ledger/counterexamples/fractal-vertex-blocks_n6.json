@@ -1,0 +1,31 @@
+{
+  "binding": {
+    "x": "<6|3|1,1,2,1,1,2,1,2,2,3,2,2,1,1,2>"
+  },
+  "n": 6,
+  "rule": "fractal-vertex-blocks",
+  "rule_source": "(structural fractal-vertex-blocks (n) :domain (3) :source \"Phase 5 (this work)\" :doc \"Strong form: a recursive decomposition exists in which every block is itself a vertex of its own metric polytope (any middle allowed).\" (forall ((x (vertices n))) (decomposes-fast x 3 #t)))",
+  "witness": {
+    "x": {
+      "coords": [
+        "1/3",
+        "1/3",
+        "2/3",
+        "1/3",
+        "1/3",
+        "2/3",
+        "1/3",
+        "2/3",
+        "2/3",
+        "1",
+        "2/3",
+        "2/3",
+        "1/3",
+        "1/3",
+        "2/3"
+      ],
+      "deza_orbit": 3,
+      "n": 6
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "binding": {
+    "x": "<8|4|0,1,1,1,1,2,2,1,1,1,1,2,2,2,2,2,1,1,2,2,1,1,2,1,3,1,3,2>"
+  },
+  "n": 8,
+  "rule": "fractal-const",
+  "rule_source": "(structural fractal-const (n) :domain (3) :source \"Phase 5 (this work)\" :doc \"Every vertex splits into top-left / bottom-right blocks and a middle, recursively all the way down, with every middle (and every middle's middle) constant up to sign flips.\" (forall ((x (vertices n))) (decomposes-fast x 0 #f)))",
+  "witness": {
+    "x": {
+      "coords": [
+        "0",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/2",
+        "1/2",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/4",
+        "1/4",
+        "1/2",
+        "1/2",
+        "1/4",
+        "1/4",
+        "1/2",
+        "1/4",
+        "3/4",
+        "1/4",
+        "3/4",
+        "1/2"
+      ],
+      "deza_orbit": 9,
+      "n": 8
+    }
+  }
+}

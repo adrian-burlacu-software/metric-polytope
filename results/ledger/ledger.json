@@ -13,7 +13,7 @@
     "kind": "structural",
     "n": 6,
     "rule": "at-least-two-cuts",
-    "seconds": 6.76
+    "seconds": 6.79
   },
   "at-least-two-cuts@7": {
     "error": null,
@@ -21,7 +21,7 @@
     "kind": "structural",
     "n": 7,
     "rule": "at-least-two-cuts",
-    "seconds": 2.37
+    "seconds": 2.4
   },
   "at-least-two-cuts@8": {
     "error": null,
@@ -29,7 +29,7 @@
     "kind": "structural",
     "n": 8,
     "rule": "at-least-two-cuts",
-    "seconds": 47.98
+    "seconds": 47.69
   },
   "cuts-are-the-integral-vertices@3": {
     "error": null,
@@ -69,7 +69,7 @@
     "kind": "structural",
     "n": 7,
     "rule": "cuts-are-the-integral-vertices",
-    "seconds": 0.26
+    "seconds": 0.25
   },
   "cuts-are-the-integral-vertices@8": {
     "error": null,
@@ -77,7 +77,7 @@
     "kind": "structural",
     "n": 8,
     "rule": "cuts-are-the-integral-vertices",
-    "seconds": 6.12
+    "seconds": 6.09
   },
   "dominating-set@3": {
     "error": null,
@@ -149,7 +149,7 @@
     "kind": "structural",
     "n": 6,
     "rule": "extension-denominator",
-    "seconds": 0.3
+    "seconds": 0.31
   },
   "extension-denominator@7": {
     "error": null,
@@ -165,7 +165,365 @@
     "kind": "structural",
     "n": 8,
     "rule": "extension-denominator",
-    "seconds": 1.77
+    "seconds": 1.8
+  },
+  "fractal-const@3": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 3,
+    "rule": "fractal-const",
+    "seconds": 0.0
+  },
+  "fractal-const@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "fractal-const",
+    "seconds": 0.0
+  },
+  "fractal-const@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "rule": "fractal-const",
+    "seconds": 0.0
+  },
+  "fractal-const@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "fractal-const",
+    "seconds": 0.09
+  },
+  "fractal-const@7": {
+    "counterexample": "results/ledger/counterexamples/fractal-const_n7.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 7,
+    "rule": "fractal-const",
+    "seconds": 0.09,
+    "witness": {
+      "x": {
+        "coords": [
+          "1/4",
+          "1/2",
+          "3/4",
+          "1/4",
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/2",
+          "1/2",
+          "1/4",
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/2",
+          "3/4",
+          "1/2",
+          "3/4",
+          "1/2",
+          "1/4",
+          "1/2",
+          "1/4"
+        ],
+        "deza_orbit": 6,
+        "n": 7
+      }
+    }
+  },
+  "fractal-const@8": {
+    "counterexample": "results/ledger/counterexamples/fractal-const_n8.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 8,
+    "rule": "fractal-const",
+    "seconds": 0.75,
+    "witness": {
+      "x": {
+        "coords": [
+          "0",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/2",
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/2",
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/2",
+          "1/4",
+          "3/4",
+          "1/4",
+          "3/4",
+          "1/2"
+        ],
+        "deza_orbit": 9,
+        "n": 8
+      }
+    }
+  },
+  "fractal-structured@3": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 3,
+    "rule": "fractal-structured",
+    "seconds": 0.0
+  },
+  "fractal-structured@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "fractal-structured",
+    "seconds": 0.0
+  },
+  "fractal-structured@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "rule": "fractal-structured",
+    "seconds": 0.0
+  },
+  "fractal-structured@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "fractal-structured",
+    "seconds": 0.09
+  },
+  "fractal-structured@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "rule": "fractal-structured",
+    "seconds": 0.1
+  },
+  "fractal-structured@8": {
+    "counterexample": "results/ledger/counterexamples/fractal-structured_n8.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 8,
+    "rule": "fractal-structured",
+    "seconds": 1.44,
+    "witness": {
+      "x": {
+        "coords": [
+          "1/11",
+          "2/11",
+          "4/11",
+          "4/11",
+          "6/11",
+          "7/11",
+          "7/11",
+          "3/11",
+          "5/11",
+          "5/11",
+          "5/11",
+          "8/11",
+          "8/11",
+          "2/11",
+          "6/11",
+          "4/11",
+          "5/11",
+          "5/11",
+          "4/11",
+          "6/11",
+          "3/11",
+          "3/11",
+          "2/11",
+          "3/11",
+          "3/11",
+          "3/11",
+          "3/11",
+          "6/11"
+        ],
+        "deza_orbit": 93,
+        "n": 8
+      }
+    }
+  },
+  "fractal-vertex-blocks@3": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 3,
+    "rule": "fractal-vertex-blocks",
+    "seconds": 0.0
+  },
+  "fractal-vertex-blocks@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "fractal-vertex-blocks",
+    "seconds": 0.0
+  },
+  "fractal-vertex-blocks@5": {
+    "counterexample": "results/ledger/counterexamples/fractal-vertex-blocks_n5.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 5,
+    "rule": "fractal-vertex-blocks",
+    "seconds": 0.0,
+    "witness": {
+      "x": {
+        "coords": [
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "2/3"
+        ],
+        "deza_orbit": 2,
+        "n": 5
+      }
+    }
+  },
+  "fractal-vertex-blocks@6": {
+    "counterexample": "results/ledger/counterexamples/fractal-vertex-blocks_n6.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 6,
+    "rule": "fractal-vertex-blocks",
+    "seconds": 0.0,
+    "witness": {
+      "x": {
+        "coords": [
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1",
+          "2/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "2/3"
+        ],
+        "deza_orbit": 3,
+        "n": 6
+      }
+    }
+  },
+  "fractal-vertex-blocks@7": {
+    "counterexample": "results/ledger/counterexamples/fractal-vertex-blocks_n7.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 7,
+    "rule": "fractal-vertex-blocks",
+    "seconds": 0.1,
+    "witness": {
+      "x": {
+        "coords": [
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "0",
+          "0",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "0"
+        ],
+        "deza_orbit": 2,
+        "n": 7
+      }
+    }
+  },
+  "fractal-vertex-blocks@8": {
+    "counterexample": "results/ledger/counterexamples/fractal-vertex-blocks_n8.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 8,
+    "rule": "fractal-vertex-blocks",
+    "seconds": 0.71,
+    "witness": {
+      "x": {
+        "coords": [
+          "0",
+          "0",
+          "0",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "0",
+          "0",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "0",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "2/3"
+        ],
+        "deza_orbit": 2,
+        "n": 8
+      }
+    }
   },
   "gen-anticuts@5": {
     "candidates": 32,
@@ -377,7 +735,7 @@
       2
     ],
     "rule": "gen-dup",
-    "seconds": 0.02,
+    "seconds": 0.01,
     "vertices": 80
   },
   "gen-dup@7": {
@@ -392,7 +750,7 @@
       5
     ],
     "rule": "gen-dup",
-    "seconds": 0.48,
+    "seconds": 0.47,
     "vertices": 3072
   },
   "gen-dup@8": {
@@ -620,7 +978,7 @@
       533
     ],
     "rule": "gen-graphic",
-    "seconds": 2.93,
+    "seconds": 2.83,
     "vertices": 1224
   },
   "gen-lift-fiber@4": {
@@ -679,7 +1037,7 @@
       8
     ],
     "rule": "gen-lift-fiber",
-    "seconds": 2.5,
+    "seconds": 2.49,
     "vertices": 6912
   },
   "gen-lift-fiber@8": {
@@ -858,7 +1216,7 @@
       444
     ],
     "rule": "gen-lift-fiber",
-    "seconds": 1.17,
+    "seconds": 1.19,
     "vertices": 1330
   },
   "gen-lift-multipartite@4": {
@@ -1013,7 +1371,7 @@
       13
     ],
     "rule": "gen-multipartite",
-    "seconds": 0.18,
+    "seconds": 0.17,
     "vertices": 52
   },
   "gen-multipartite@8": {
@@ -1137,7 +1495,7 @@
       391
     ],
     "rule": "gen-radial-1",
-    "seconds": 1.08,
+    "seconds": 1.0,
     "vertices": 212
   },
   "gen-radial-2@5": {
@@ -1255,7 +1613,7 @@
     "non_vertex_candidates": 0,
     "orbits": [],
     "rule": "gen-radial-tree-complement",
-    "seconds": 0.02,
+    "seconds": 0.03,
     "vertices": 0
   },
   "gen-radial-tree-complement@8": {
@@ -1407,7 +1765,7 @@
     "non_vertex_candidates": 3,
     "orbits": [],
     "rule": "gen-tree-suspension",
-    "seconds": 0.27,
+    "seconds": 0.24,
     "vertices": 0
   },
   "gen-tree-suspension@7": {
@@ -1495,7 +1853,7 @@
       4
     ],
     "rule": "gen-trivial-ext",
-    "seconds": 1.01,
+    "seconds": 0.9,
     "vertices": 6528
   },
   "gen-trivial-ext@8": {
@@ -1536,7 +1894,7 @@
       43
     ],
     "rule": "gen-trivial-ext",
-    "seconds": 6.09,
+    "seconds": 5.52,
     "vertices": 182
   },
   "incidence-bounds@3": {
@@ -1561,7 +1919,7 @@
     "kind": "structural",
     "n": 5,
     "rule": "incidence-bounds",
-    "seconds": 0.0
+    "seconds": 0.01
   },
   "incidence-bounds@6": {
     "error": null,
@@ -1637,7 +1995,7 @@
     "kind": "structural",
     "n": 7,
     "rule": "lift-fiber-complete",
-    "seconds": 5.85,
+    "seconds": 5.54,
     "witness": {
       "x": {
         "coords": [
@@ -1675,7 +2033,7 @@
     "kind": "structural",
     "n": 8,
     "rule": "lift-fiber-complete",
-    "seconds": 22.14,
+    "seconds": 21.97,
     "witness": {
       "x": {
         "coords": [
@@ -1719,7 +2077,7 @@
     "kind": "structural",
     "n": 6,
     "rule": "no-cut-set",
-    "seconds": 5.92
+    "seconds": 5.89
   },
   "no-half-integral@3": {
     "error": null,
@@ -1852,7 +2210,7 @@
     "kind": "structural",
     "n": 6,
     "rule": "non-fully-fractional-is-trivial-ext",
-    "seconds": 0.14
+    "seconds": 0.13
   },
   "non-fully-fractional-is-trivial-ext@7": {
     "error": null,
@@ -1860,7 +2218,7 @@
     "kind": "structural",
     "n": 7,
     "rule": "non-fully-fractional-is-trivial-ext",
-    "seconds": 4.48
+    "seconds": 4.41
   },
   "non-fully-fractional-is-trivial-ext@8": {
     "error": null,
@@ -1868,7 +2226,7 @@
     "kind": "structural",
     "n": 8,
     "rule": "non-fully-fractional-is-trivial-ext",
-    "seconds": 1.97
+    "seconds": 1.95
   },
   "projects-to-smaller-vertex@4": {
     "error": null,
@@ -2026,7 +2384,7 @@
     "kind": "structural",
     "n": 6,
     "rule": "switch-class-nonadjacent",
-    "seconds": 2.28
+    "seconds": 2.31
   },
   "switch-class-nonadjacent@7": {
     "error": null,
@@ -2042,7 +2400,7 @@
     "kind": "structural",
     "n": 8,
     "rule": "switch-class-nonadjacent",
-    "seconds": 15.29
+    "seconds": 15.09
   },
   "third-valued-is-graphic@5": {
     "error": null,
@@ -2106,7 +2464,7 @@
     "kind": "structural",
     "n": 7,
     "rule": "three-projections-imply-vertex",
-    "seconds": 4.53
+    "seconds": 4.57
   },
   "vertex-moves-cover-M1@3": {
     "error": null,
@@ -2114,7 +2472,7 @@
     "kind": "structural",
     "n": 3,
     "rule": "vertex-moves-cover-M1",
-    "seconds": 0.04
+    "seconds": 1.76
   },
   "vertex-moves-cover-M1@4": {
     "error": null,
@@ -2130,7 +2488,7 @@
     "kind": "structural",
     "n": 5,
     "rule": "vertex-moves-cover-M1",
-    "seconds": 0.02
+    "seconds": 0.01
   },
   "vertex-moves-cover-M1@6": {
     "error": null,
@@ -2138,7 +2496,7 @@
     "kind": "structural",
     "n": 6,
     "rule": "vertex-moves-cover-M1",
-    "seconds": 1.11
+    "seconds": 0.48
   },
   "vertex-moves-cover-M1@7": {
     "error": null,
@@ -2146,7 +2504,7 @@
     "kind": "structural",
     "n": 7,
     "rule": "vertex-moves-cover-M1",
-    "seconds": 2.18
+    "seconds": 1.2
   },
   "vertex-moves-cover@3": {
     "error": null,
@@ -2154,7 +2512,7 @@
     "kind": "structural",
     "n": 3,
     "rule": "vertex-moves-cover",
-    "seconds": 2.56
+    "seconds": 2.47
   },
   "vertex-moves-cover@4": {
     "error": null,
@@ -2187,7 +2545,7 @@
     "kind": "structural",
     "n": 7,
     "rule": "vertex-moves-cover",
-    "seconds": 1.19,
+    "seconds": 1.15,
     "witness": {
       "x": {
         "coords": [

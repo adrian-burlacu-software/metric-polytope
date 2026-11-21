@@ -1,0 +1,44 @@
+{
+  "binding": {
+    "x": "<8|11|1,2,4,4,6,7,7,3,5,5,5,8,8,2,6,4,5,5,4,6,3,3,2,3,3,3,3,6>"
+  },
+  "n": 8,
+  "rule": "fractal-structured",
+  "rule_source": "(structural fractal-structured (n) :domain (3) :source \"Phase 5 (this work)\" :doc \"As fractal-const, but every middle may be constant, twin-like, or two-valued up to complement.\" (forall ((x (vertices n))) (decomposes-fast x 2 #f)))",
+  "witness": {
+    "x": {
+      "coords": [
+        "1/11",
+        "2/11",
+        "4/11",
+        "4/11",
+        "6/11",
+        "7/11",
+        "7/11",
+        "3/11",
+        "5/11",
+        "5/11",
+        "5/11",
+        "8/11",
+        "8/11",
+        "2/11",
+        "6/11",
+        "4/11",
+        "5/11",
+        "5/11",
+        "4/11",
+        "6/11",
+        "3/11",
+        "3/11",
+        "2/11",
+        "3/11",
+        "3/11",
+        "3/11",
+        "3/11",
+        "6/11"
+      ],
+      "deza_orbit": 93,
+      "n": 8
+    }
+  }
+}
