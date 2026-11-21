@@ -4,7 +4,7 @@
   },
   "n": 8,
   "rule": "no-simple-vertex",
-  "rule_source": "(structural no-simple-vertex (n) :domain (3) :source \"S12\" :doc \"No vertex is simple (incidence = C(n,2)); literature: true for n \u2264 7, false at n = 8.\" (forall ((x (vertices n))) (> (incidence x) (binom n 2))))",
+  "rule_source": "(structural no-simple-vertex (n) :domain (6) :source \"S12 (DFMV03 Remark 3: stated for n = 6, 7; m_3 and the m_5 anticut are simple)\" :doc \"No vertex is simple (incidence = C(n,2)); literature: true for n = 6, 7, false at n = 8 (orbits 532, 533).\" (forall ((x (vertices n))) (> (incidence x) (binom n 2))))",
   "witness": {
     "x": {
       "coords": [
