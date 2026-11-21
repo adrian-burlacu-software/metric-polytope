@@ -1,0 +1,38 @@
+{
+  "adjacent_to_no_cut": true,
+  "all_vertices": true,
+  "arxiv_2005_example_included": true,
+  "arxiv_2005_example_is_vertex_not_adjacent_to_cut": true,
+  "denominators": {
+    "6": 3,
+    "9": 23,
+    "11": 10,
+    "12": 179,
+    "14": 6,
+    "15": 342,
+    "16": 9,
+    "17": 2,
+    "18": 369,
+    "19": 18,
+    "21": 154,
+    "22": 35,
+    "24": 25,
+    "25": 4,
+    "27": 33,
+    "30": 5,
+    "33": 4
+  },
+  "distinct_orbits": 1221,
+  "incidence_histogram": {
+    "37": 483,
+    "38": 393,
+    "39": 237,
+    "40": 73,
+    "41": 26,
+    "42": 3,
+    "43": 5,
+    "44": 1
+  },
+  "incidence_matches_file": true,
+  "points": 1221
+}
