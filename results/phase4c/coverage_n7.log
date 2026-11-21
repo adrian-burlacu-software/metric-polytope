@@ -1,0 +1,59 @@
+[base] gen-cuts@3: 1 orbits ['m3#1']
+[base] gen-cuts@4: 1 orbits ['m4#1']
+[base] gen-cuts@5: 1 orbits ['m5#1']
+[base] gen-cuts@6: 1 orbits ['m6#1']
+[base] gen-cuts@7: 1 orbits ['m7#1']
+[base] gen-anticuts@5: 1 orbits ['m5#2']
+[base] gen-anticuts@6: 1 orbits ['m6#2']
+[base] gen-anticuts@7: 1 orbits ['m7#5']
+[base] gen-graphic@3: 0 orbits []
+[base] gen-graphic@4: 0 orbits []
+[base] gen-graphic@5: 1 orbits ['m5#2']
+[base] gen-graphic@6: 2 orbits ['m6#3', 'm6#2']
+[base] gen-graphic@7: 10 orbits ['m7#3', 'm7#4', 'm7#11', 'm7#8', 'm7#13', 'm7#5', 'm7#6', 'm7#7', 'm7#10', 'm7#9']
+[base] gen-multipartite@3: 0 orbits []
+[base] gen-multipartite@4: 0 orbits []
+[base] gen-multipartite@5: 1 orbits ['m5#2']
+[base] gen-multipartite@6: 2 orbits ['m6#3', 'm6#2']
+[base] gen-multipartite@7: 5 orbits ['m7#4', 'm7#11', 'm7#8', 'm7#13', 'm7#5']
+[base] gen-avis-paths@5: 1 orbits ['m5#2']
+[base] gen-avis-paths@6: 0 orbits []
+[base] gen-avis-paths@7: 0 orbits []
+[base] gen-rays@3: 1 orbits ['m3#1']
+[base] gen-rays@4: 1 orbits ['m4#1']
+[base] gen-rays@5: 2 orbits ['m5#1', 'm5#2']
+[base] gen-rays@6: 3 orbits ['m6#1', 'm6#3', 'm6#2']
+[base] gen-tree-suspension@6: 0 orbits []
+[base] gen-tree-suspension@7: 1 orbits ['m7#13']
+[base] gen-sporadic@3: 0 orbits []
+[base] gen-sporadic@4: 0 orbits []
+[base] gen-sporadic@5: 0 orbits []
+[base] gen-sporadic@6: 0 orbits []
+[base] gen-sporadic@7: 4 orbits ['m7#11', 'm7#8', 'm7#13', 'm7#7']
+[closure cov-abs-n7-cap99] round 1: +1 orbits (642.9s)  per n: {3: 1, 4: 1, 5: 2, 6: 3, 7: 12}
+[closure cov-abs-n7-cap99] round 2: +0 orbits (0.0s)  per n: {3: 1, 4: 1, 5: 2, 6: 3, 7: 12}
+[closure cov-tower-n4-cap99] round 1: +0 orbits (0.0s)  per n: {3: 1, 4: 1}
+[closure cov-tower-n5-cap99] round 1: +0 orbits (0.1s)  per n: {3: 1, 4: 1, 5: 2}
+[closure cov-tower-n6-cap99] round 1: +0 orbits (5.5s)  per n: {3: 1, 4: 1, 5: 2, 6: 3}
+[closure cov-tower-n7-cap99] round 1: +1 orbits (424.9s)  per n: {3: 1, 4: 1, 5: 2, 6: 3, 7: 12}
+[closure cov-tower-n7-cap99] round 2: +0 orbits (0.0s)  per n: {3: 1, 4: 1, 5: 2, 6: 3, 7: 12}
+# Phase 4c coverage report
+
+code_version `8ee9d6a13e3cb3f5`, git `97712db8c215c8cdce00a29ffb74844f34681f36+dirty`, seed 20261121
+
+Base pieces: data-free generative rules gen-cuts, gen-anticuts, gen-graphic, gen-multipartite, gen-avis-paths, gen-rays, gen-tree-suspension, gen-sporadic.
+Moves: twin, dup, radial, radial2, radial3, lift-fiber, glue-all. Gluing overlap cap: none (uncapped).
+Absolute closure: saturated = True after 2 rounds (643.0 s).
+
+| n | Deza orbits | reached (absolute: base pieces + moves) | reached (tower: all smaller orbits + moves) | not reached (absolute) | not reached (tower) |
+|---|---|---|---|---|---|
+| 3 | 1 | 1 | 1 | — | — |
+| 4 | 1 | 1 | 1 | — | — |
+| 5 | 2 | 2 | 2 | — | — |
+| 6 | 3 | 3 | 3 | — | — |
+| 7 | 13 | 12 | 12 | #12 | #12 |
+
+Orbit numbers #i are Deza's (data/deza/raw/metric_n.ext order).
+Gluing cap: not applied — gluing ran uncapped for every pair, so every unreached orbit is a confirmed non-reach for this move set.
+
+## n = 3

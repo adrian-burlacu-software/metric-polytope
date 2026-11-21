@@ -1,0 +1,81 @@
+;;; stdlib.mpr — helpers and moves (docs/dsl_grammar.md §6–7). Node labels are 0-based.
+
+;; ---------------------------------------------------------------- helpers
+(define (all-but n i) (nodes (for ((j (range 0 n))) (where (not (= i j))) j)))
+(define (new-node x) (nodes (list (size x))))
+(define (anticut n S) (switch S (const n 2/3)))
+(define (third-metric G) (scale 1/3 (gmetric G)))
+(define (graphic G) (scale (/ 2 (triameter G)) (gmetric G)))
+(define (K n) (complement (graph n (list))))
+(define (C-on n s) (graph n (for ((k (range 0 (len s)))) (tuple (nth s k) (nth s (mod (+ k 1) (len s)))))))
+(define (P-on n s) (graph n (for ((k (range 0 (- (len s) 1)))) (tuple (nth s k) (nth s (+ k 1))))))
+(define (path-graph d) (P-on d (range 0 d)))
+(define (labels p) (for ((t (range 0 (len p))) (r (range 0 (nth p t)))) t))
+(define (kparts p)
+  (let ((lab (labels p)) (n (sum p)))
+    (graph n (for ((i (range 0 n)) (j (range 0 n)))
+               (where (and (< i j) (not (= (nth lab i) (nth lab j))))) (tuple i j)))))
+(define (avis-double G)
+  (let ((n (order G)) (E (edges G)) (m (len (edges G))))
+    (graph (+ (* 2 n) m)
+      (concat E
+              (for ((e E)) (tuple (+ n (fst e)) (+ n (snd e))))
+              (for ((i (range 0 n))) (tuple i (+ n i)))
+              (for ((k (range 0 m))) (tuple (fst (nth E k)) (+ (* 2 n) k)))
+              (for ((k (range 0 m))) (tuple (+ n (snd (nth E k))) (+ (* 2 n) k)))))))
+(define (suspend G)                               ; ∇G: add node |G| adjacent to every node
+  (graph (+ (order G) 1) (concat (edges G) (for ((i (range 0 (order G)))) (tuple i (order G))))))
+(define (tree? H) (and (connected? H) (= (len (edges H)) (- (order H) 1))))
+(define (non-star-tree? H)
+  (and (tree? H) (not (exists ((i (range 0 (order H)))) (= (len (neighbors H i)) (- (order H) 1))))))
+(define (ray-to-vertex r) (scale (/ 2 (max-over ((T (subsets (size r) 3))) (perimeter r T))) r))
+(define (graphic-point? y)                       ; y = x_G for the graph of its smallest value (1/3,2/3 case)
+  (let ((G (level-graph y 1/3))) (and (connected? G) (= y (graphic G)))))
+(define (agree? x1 x2 k)
+  (= (restrict (nodes (range (- (size x1) k) (size x1))) x1) (restrict (nodes (range 0 k)) x2)))
+
+;; ---------------------------------------------------------------- C3 trivial extension
+(define (twin-of i b x)
+  (let ((y (block x (col x i) (const 1 0))))
+    (if (= b 0) y (switch (new-node x) y))))
+(move twin (x) :grow 1 :source "C3"
+  (for ((i (range 0 (size x))) (b (range 0 2))) (twin-of i b x)))
+
+;; ---------------------------------------------------------------- C4 duplication
+(define (dup-at i x)
+  (let ((a (min-over ((j (range 0 (size x)))) (where (not (= j i)))
+             (min (* 2 (entry x i j)) (- 2 (* 2 (entry x i j)))))))
+    (block x (mset (col x i) i 0 a) (const 1 0))))
+(move dup (x) :grow 1 :source "C4" (for ((i (range 0 (size x)))) (dup-at i x)))
+
+;; ---------------------------------------------------------------- C5 radial extension
+(define (radial-m m alpha v) (block v (mconst (size v) m alpha) (const m (* 2 alpha))))
+(define (radial-ext m v) (radial-m m (/ (maxc v) 2) v))
+(move radial  (x) :grow 1 :source "C5 Thm 3.1" (list (radial-ext 1 x)))
+(move radial2 (x) :grow 2 :source "C5 Thm 3.2" (list (radial-ext 2 x)))
+(move radial3 (x) :grow 3 :source "C5 Thm 3.2" (if (<= (maxc x) 2/3) (list (radial-ext 3 x)) (list)))
+
+;; ---------------------------------------------------------------- C11 gluing, lifting through the fiber
+(move lift-fiber (x) :grow 1 :source "LP92 Lemma 2.2" (fiber-vertices (lift-partial x)))
+
+;; ---- gluing: DSL specifications (reference semantics, slow) -------------------------------------------
+(move glue-spec (x1 x2) :grow computed :source "C11 (spec: lexmin extension, k <= glue-cap)"
+  (let ((maxn (param "closure-max-n" 99)) (cap (param "glue-cap" 99)))
+    (for ((k (range (max 1 (- (+ (size x1) (size x2)) maxn)) (+ 1 (min cap (- (min (size x1) (size x2)) 1)))))
+          (t1 (arrangements (size x1) k)) (t2 (arrangements (size x2) k)) (S2 (switchings (size x2))))
+      (where (agree? (move-last t1 x1) (move-first t2 (switch S2 x2)) k))
+      (extend (glue-partial (move-last t1 x1) (move-first t2 (switch S2 x2)) k) :lexmin))))
+
+(move glue-all-spec (x1 x2) :grow computed :source "C11 (spec: all extensions, k <= glue-cap)"
+  (let ((maxn (param "closure-max-n" 99)) (cap (param "glue-cap" 99)))
+    (concat-all
+      (for ((k (range (max 1 (- (+ (size x1) (size x2)) maxn)) (+ 1 (min cap (- (min (size x1) (size x2)) 1)))))
+            (t1 (arrangements (size x1) k)) (t2 (arrangements (size x2) k)) (S2 (switchings (size x2))))
+        (where (agree? (move-last t1 x1) (move-first t2 (switch S2 x2)) k))
+        (fiber-vertices (glue-partial (move-last t1 x1) (move-first t2 (switch S2 x2)) k))))))
+
+;; ---- gluing: fast implementations (level-2 primitive glue-extensions; equal to the specs, tested) ----------
+(move glue (x1 x2) :grow computed :source "C11"
+  (glue-extensions x1 x2 "lexmin" (param "closure-max-n" 99) (param "glue-cap" 99)))
+(move glue-all (x1 x2) :grow computed :source "C11 (all extensions)"
+  (glue-extensions x1 x2 "all" (param "closure-max-n" 99) (param "glue-cap" 99)))

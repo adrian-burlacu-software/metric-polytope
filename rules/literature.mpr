@@ -1,0 +1,159 @@
+;;; literature.mpr — generative and structural rules from docs/literature.md (Phase 4c).
+;;; :source keys refer to docs/literature.md sections (C1..C12, S1..S18).
+
+;; ======================================================================= GENERATIVE
+
+(generative gen-cuts (n) :domain (3) :source "C1" :doc "All cuts δ(S)."
+  (for ((S (subsets n))) (cut n S)))
+
+(generative gen-anticuts (n) :domain (5) :source "C2" :doc "All anticuts (2/3)1 − (1/3)δ(S)."
+  (for ((S (subsets n))) (anticut n S)))
+
+(generative gen-trivial-ext (n) :domain (4) :source "C3"
+  :doc "Twin / antitwin of a node of a vertex of m_{n-1} (0-/1-extension)."
+  (apply-move twin (vertices (- n 1))))
+
+(generative gen-dup (n) :domain (4) :source "C4"
+  :doc "LP92 node duplication with the same denominator, from vertices of m_{n-1}."
+  (apply-move dup (for ((v (vertices (- n 1)))) (where (not (integral? v))) v)))
+
+(generative gen-radial-1 (n) :domain (4) :source "C5 Thm 3.1"
+  :doc "Radial extension Λ¹(v) of vertices v of m_{n-1} whose diameter graph Γ(v) is good."
+  (for ((v (vertices (- n 1)))) (where (good? (level-graph v (maxc v)))) (radial-ext 1 v)))
+
+(generative gen-radial-2 (n) :domain (5) :source "C5 Thm 3.2"
+  :doc "Radial 2-extension Λ²(v), v vertex of m_{n-2}, Γ(v) good."
+  (for ((v (vertices (- n 2)))) (where (good? (level-graph v (maxc v)))) (radial-ext 2 v)))
+
+(generative gen-radial-3 (n) :domain (6) :source "C5 Thm 3.2"
+  :doc "Radial 3-extension Λ³(v), v vertex of m_{n-3}, Γ(v) good and δ(v) ≤ 2/3."
+  (for ((v (vertices (- n 3)))) (where (and (good? (level-graph v (maxc v))) (<= (maxc v) 2/3))) (radial-ext 3 v)))
+
+(generative gen-tree-suspension (n) :domain (6) :source "C6 (SECONDARY, L96 unread)"
+  :doc "(1/3) d(∇T): graph metric of the suspension of a tree T on n−1 nodes (∇T has diameter ≤ 2)."
+  (for ((T (trees (- n 1)))) (third-metric (suspend T))))
+
+(generative gen-radial-tree-complement (n) :domain (6) :source "C6 (DDF96 Remark 3.3(4), citing L96)"
+  :doc "Λ¹(v) for vertices v of m_{n-1} whose diameter graph Γ(v) is the complement of a non-star tree."
+  (for ((v (vertices (- n 1)))) (where (non-star-tree? (complement (level-graph v (maxc v)))))
+    (radial-ext 1 v)))
+
+(generative gen-graphic (n) :domain (3 7) :source "C7"
+  :doc "x_G = (2/τ(G)) d_G for every connected graph G on n nodes (networkx atlas, n ≤ 7)."
+  (for ((G (graphs n :connected))) (graphic G)))
+
+(generative gen-multipartite (n) :domain (3) :source "C8"
+  :doc "(1/3) d(G) for complete multipartite G (≥ 2 parts), and with one edge removed."
+  (concat
+    (for ((p (partitions n))) (where (> (len p) 1)) (third-metric (kparts p)))
+    (for ((p (partitions n)) (e (edges (kparts p))))
+      (where (and (> (len p) 1) (connected? (gminus (kparts p) (graph n (list e))))))
+      (third-metric (gminus (kparts p) (graph n (list e)))))))
+
+(generative gen-avis-paths (n) :domain (5) :source "C9 (SECONDARY, Avis 1980)"
+  :doc "x_{G*} for G a path on d nodes with 3d − 1 = n (denominator d)."
+  (for ((d (range 2 (+ n 1)))) (where (= (- (* 3 d) 1) n)) (graphic (avis-double (path-graph d)))))
+
+(generative gen-rays (n) :domain (3 6) :source "C10"
+  :doc "Extreme rays of the metric cone M_n scaled to the perimeter facet."
+  (for ((r (cone-rays n))) (ray-to-vertex r)))
+
+(generative gen-lift-fiber (n) :domain (4) :source "LP92 Lemma 2.2"
+  :doc "All vertices of the fiber {x ∈ m_n : x|_{n−1} = v} over vertices v of m_{n−1}."
+  (apply-move lift-fiber (vertices (- n 1))))
+
+(define lp-ex-2-14 (pairs 7 1/3 ((1 2) 2/3) ((1 3) 2/3) ((2 3) 2/3) ((2 5) 2/3) ((4 5) 2/3) ((4 6) 2/3) ((5 6) 2/3)))
+(define lp-ex-2-13 (pairs 8 2/3 ((0 1) 1/3) ((0 3) 1/3) ((0 5) 1/3) ((1 2) 1/3) ((3 4) 1/3) ((5 6) 1/3)
+                               ((0 7) 1/3) ((1 7) 1/3) ((2 7) 1/3) ((3 7) 1/3) ((4 7) 1/3) ((5 7) 1/3) ((6 7) 1/3)))
+(define lp-ex-2-13-ext (block lp-ex-2-13 (mvcat-list (list 3/6 1/6 1/6 3/6 3/6 5/6 5/6 3/6)) (const 1 0)))
+(define ddf-v7  (third-metric (gminus (K 7) (gunion (C-on 7 (list 1 2 3)) (C-on 7 (list 4 5 6))))))
+(define ddf-v8  (scale 2/5 (gmetric (gminus (K 7) (C-on 7 (list 0 1 2 3 4 5 6))))))
+(define ddf-v9  (third-metric (gminus (K 7) (gunion (C-on 7 (list 0 1 2 3 4 5 6)) (P-on 7 (list 0 2))))))
+(define ddf-v10 (third-metric (gminus (K 7) (gunion (gunion (C-on 7 (list 1 2 3)) (C-on 7 (list 4 5 6)))
+                                                     (P-on 7 (list 3 4))))))
+(define dfmv-451 (lit 8 15 (2 4 4 5 5 7 8 6 6 5 5 5 10 8 5 5 5 4 9 9 3 4 10 10 5 10 5 5)))
+(define dfmv-531 (lit 8 9  (2 2 3 3 4 4 5 4 3 3 6 6 3 5 5 2 6 3 6 3 3 6 3 3 6 4 5 3)))
+(define di-2005  (lit 9 9  (2 2 3 3 4 4 5 5 4 3 5 6 6 3 3 5 5 2 4 3 5 6 3 3 6 6 5 3 2 6 6 3 3 5 3 4)))
+
+(generative gen-sporadic (n) :source "C12"
+  :doc "Explicit vertices from the literature, as base cases."
+  (case n (7 (list lp-ex-2-14 ddf-v7 ddf-v8 ddf-v9 ddf-v10))
+          (8 (list lp-ex-2-13 dfmv-451 dfmv-531))
+          (9 (list lp-ex-2-13-ext di-2005))
+          (else (list))))
+
+;; ======================================================================= STRUCTURAL
+
+(structural cuts-are-the-integral-vertices (n) :domain (3) :source "S1"
+  :doc "Every cut is a vertex, and every integral vertex is a cut."
+  (and (forall ((c (cuts n))) (vertex? c))
+       (forall ((x (vertices n))) (implies (integral? x) (in-orbits? x (cuts n))))))
+
+(structural no-half-integral (n) :domain (3) :source "S2"
+  :doc "No vertex has denominator 2."
+  (forall ((x (vertices n))) (not (= (denominator x) 2))))
+
+(structural non-fully-fractional-is-trivial-ext (n) :domain (4) :source "S3"
+  :doc "A non-cut vertex with a 0/1 coordinate is a trivial extension of a vertex of m_{n-1}."
+  (forall ((x (vertices n))) (where (and (not (integral? x)) (not (fully-fractional? x))))
+    (produced-by? x gen-trivial-ext)))
+
+(structural extension-denominator (n) :domain (4) :source "S4"
+  :doc "If deleting a node of a vertex leaves a vertex with denominator d, the vertex has denominator d or 2d."
+  (forall ((x (vertices n)) (i (range 0 n))) (where (vertex? (restrict (all-but n i) x)))
+    (let ((d (denominator (restrict (all-but n i) x))))
+      (or (= (denominator x) d) (= (denominator x) (* 2 d)) (integral? (restrict (all-but n i) x))))))
+
+(structural three-projections-imply-vertex (n) :domain (4 7) :source "S6"
+  :doc "A point of m_n (tested on all fiber vertices over vertices of m_{n-1}) whose deletions of 3 distinct nodes are all vertices is a vertex."
+  (forall ((v (vertices (- n 1))) (x (fiber-vertices (lift-partial v))))
+    (implies (>= (count ((i (range 0 n))) (vertex? (restrict (all-but n i) x))) 3) (vertex? x))))
+
+(structural incidence-bounds (n) :domain (3) :source "S7"
+  :doc "Icd ≤ 3C(n,3) (= iff cut); trivial extensions ≤ 2C(n,3); fully fractional ≤ C(n,3) (= iff anticut)."
+  (forall ((x (vertices n)))
+    (and (<= (incidence x) (* 3 (binom n 3)))
+         (implies (= (incidence x) (* 3 (binom n 3))) (integral? x))
+         (implies (and (not (integral? x)) (not (fully-fractional? x))) (<= (incidence x) (* 2 (binom n 3))))
+         (implies (fully-fractional? x) (<= (incidence x) (binom n 3)))
+         (implies (and (fully-fractional? x) (= (incidence x) (binom n 3))) (in-orbits? x (list (anticut n {})))))))
+
+(structural dominating-set (n) :domain (3) :source "S8 (Laurent–Poljak 1992)"
+  :doc "Every vertex is adjacent to a cut (fails at n = 9 per Deza–Indik)."
+  (forall ((x (vertices n))) (where (not (integral? x))) (exists ((c (cuts n))) (adjacent? x c))))
+
+(structural at-least-two-cuts (n) :domain (5) :source "S16 (stated for n = 8)"
+  :doc "Every non-cut vertex is adjacent to at least 2 cuts."
+  (forall ((x (vertices n))) (where (not (integral? x))) (>= (count ((c (cuts n))) (adjacent? x c)) 2)))
+
+(structural no-cut-set (n) :domain (6 6) :source "S9 (only n <= 6 checkable from our data)"
+  :doc "The non-cut vertices induce a connected subgraph of the skeleton."
+  (let ((L (for ((x (vertices n))) (where (not (integral? x))) x)))
+    (connected? (graph (len L) (for ((i (range 0 (len L))) (j (range 0 (len L))))
+                                 (where (and (< i j) (adjacent? (nth L i) (nth L j)))) (tuple i j))))))
+
+(structural third-valued-is-graphic (n) :domain (5) :source "S10 (SECONDARY)"
+  :doc "Every (1/3,2/3)-valued vertex is graphic up to switching."
+  (forall ((x (vertices n))) (where (and (= (denominator x) 3) (fully-fractional? x)))
+    (exists ((S (switchings n))) (graphic-point? (switch S x)))))
+
+(structural no-simple-vertex (n) :domain (3) :source "S12"
+  :doc "No vertex is simple (incidence = C(n,2)); literature: true for n ≤ 7, false at n = 8."
+  (forall ((x (vertices n))) (> (incidence x) (binom n 2))))
+
+(structural switch-class-nonadjacent (n) :domain (5) :source "S18 (UNREAD, attributed to L96)"
+  :doc "Apart from cuts, no two distinct vertices in the same switching class are adjacent."
+  (forall ((x (vertices n))) (where (not (integral? x)))
+    (forall ((S (switchings n))) (where (not (= (switch S x) x))) (not (adjacent? x (switch S x))))))
+
+(structural projects-to-smaller-vertex (n) :domain (4) :source "user rule; LP92 Ex. 2.14 predicts failure at n = 7"
+  :doc "Every vertex has a node whose deletion leaves a vertex of m_{n-1}."
+  (forall ((x (vertices n))) (exists ((i (range 0 n))) (vertex? (restrict (all-but n i) x)))))
+
+(structural lift-fiber-complete (n) :domain (4) :source "user rule (generative version)"
+  :doc "Every orbit of m_n contains a vertex of the fiber over some vertex of m_{n-1}."
+  (forall ((x (vertices n))) (produced-by? x gen-lift-fiber)))
+
+(structural sporadic-are-vertices (n) :domain (7 9) :source "C12"
+  :doc "Every literature base case is a vertex."
+  (forall ((x (gen-sporadic n))) (vertex? x)))

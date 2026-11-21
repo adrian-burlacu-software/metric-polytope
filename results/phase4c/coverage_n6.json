@@ -1,0 +1,85 @@
+{
+  "closure_abs": {
+    "rounds": 1,
+    "saturated": true,
+    "seconds": 9.5
+  },
+  "code_version": "8ee9d6a13e3cb3f5",
+  "git": "97712db8c215c8cdce00a29ffb74844f34681f36+dirty",
+  "params": {
+    "base_rules": [
+      "gen-cuts",
+      "gen-anticuts",
+      "gen-graphic",
+      "gen-multipartite",
+      "gen-avis-paths",
+      "gen-rays",
+      "gen-tree-suspension",
+      "gen-sporadic"
+    ],
+    "glue_cap": 99,
+    "max_n": 6,
+    "moves": [
+      "twin",
+      "dup",
+      "radial",
+      "radial2",
+      "radial3",
+      "lift-fiber",
+      "glue-all"
+    ]
+  },
+  "per_n": {
+    "3": {
+      "derivations": {
+        "#1": "gen-cuts@3"
+      },
+      "deza_orbits": 1,
+      "extra_keys_not_in_deza": [],
+      "not_reached_abs": [],
+      "not_reached_tower": [],
+      "reached_abs": 1,
+      "reached_tower": 1,
+      "tower_saturated": true
+    },
+    "4": {
+      "derivations": {
+        "#1": "gen-cuts@4"
+      },
+      "deza_orbits": 1,
+      "extra_keys_not_in_deza": [],
+      "not_reached_abs": [],
+      "not_reached_tower": [],
+      "reached_abs": 1,
+      "reached_tower": 1,
+      "tower_saturated": true
+    },
+    "5": {
+      "derivations": {
+        "#1": "gen-cuts@5",
+        "#2": "gen-anticuts@5"
+      },
+      "deza_orbits": 2,
+      "extra_keys_not_in_deza": [],
+      "not_reached_abs": [],
+      "not_reached_tower": [],
+      "reached_abs": 2,
+      "reached_tower": 2,
+      "tower_saturated": true
+    },
+    "6": {
+      "derivations": {
+        "#1": "gen-cuts@6",
+        "#2": "gen-anticuts@6",
+        "#3": "gen-graphic@6"
+      },
+      "deza_orbits": 3,
+      "extra_keys_not_in_deza": [],
+      "not_reached_abs": [],
+      "not_reached_tower": [],
+      "reached_abs": 3,
+      "reached_tower": 3,
+      "tower_saturated": true
+    }
+  }
+}

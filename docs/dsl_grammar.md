@@ -45,6 +45,7 @@ expr      := atom
            | '(' 'case' expr clause+ ('(' 'else' expr ')')? ')'     ; base cases on n
            | '(' 'for' '(' gen+ ')' where? expr ')'                 ; -> List
            | '(' ('forall' | 'exists') '(' gen+ ')' where? expr ')' ; -> Bool (+ witness)
+           | '(' 'first' '(' gen+ ')' where? expr ')'              ; first non-#f value in domain order, else #f
            | '(' ('min-over' | 'max-over' | 'count') '(' gen+ ')' where? expr ')'
            | '(' 'closure' expr expr copt* ')'                      ; (closure SEEDS MOVES ...) -> Closure
            | '(' OP expr* ')'                                       ; every primitive / define / rule / move call
@@ -91,7 +92,7 @@ Verification: `(feasible? x)` · `(vertex? x)` · `(incidence x)` · `(denominat
 `(fully-fractional? x)` · `(adjacent? x y)` (rank of common tight set = C(n,2) − 1) · `(in-orbits? x L)` ·
 `(produced-by? x R)`.
 
-Partial points: `(glue x1 x2 k)` (last k nodes of x1 ≡ first k of x2; missing pairs are holes) ·
+Partial points: `(glue-partial x1 x2 k)` (last k nodes of x1 ≡ first k of x2; missing pairs are holes) ·
 `(lift-partial v)` (new last node, all its pairs are holes) · `(fiber-vertices P)` (all vertices of
 {x ∈ m_n : x agrees with P}, exact cdd) · `(extend P :lexmin)`.
 
@@ -226,7 +227,7 @@ The coverage experiment is then two lines:
   (for ((k (range 1 (min (size x1) (size x2))))
         (t1 (arrangements (size x1) k)) (t2 (arrangements (size x2) k)))   ; ordered choice of overlap nodes
     (where (agree? (move-last t1 x1) (move-first t2 x2) k))               ; (equivariance: all choices tried)
-    (extend (glue (move-last t1 x1) (move-first t2 x2) k) :lexmin)))
+    (extend (glue-partial (move-last t1 x1) (move-first t2 x2) k) :lexmin)))
 (move lift-fiber (x) :grow 1 :source "LP92 Lemma 2.2" (fiber-vertices (lift-partial x)))
 
 ;; ---------- C12 sporadic vertices as explicit base cases -----------------------------
@@ -291,6 +292,23 @@ Structural facts S1–S18 are all `forall` / `exists` over `(vertices n)` with t
 (structural block-fractal-2val  (n) (forall ((x (vertices n))) (decomposes? x mid-two-valued?)))
 ```
 The first failing n per class is a measurable mutation point.
+
+### Decisions recorded after review (2026-11-21)
+
+- Syntax: S-expressions as data, plus a thin Python builder (`metricpoly/dsl/builder.py`) for hand-writing.
+- Splits by node subset.
+- **Blocks-as-vertices flag**: `decompose` runs twice, with `:blocks-vertices #f` and `#t` (the stronger fractal
+  claim: A and B must themselves be vertices of m_|T| and m_|T̄|). Failures of the strong form are logged as mutations.
+- **Middles are fractal too (Q3)**: each middle M (rows T, cols T̄) is decomposed recursively by the *same* block
+  rule in rectangular form — a bi-split (R ⊆ rows, C ⊆ cols) into M[R,C], M[R,C̄], M[R̄,C], M[R̄,C̄]; the "diagonal"
+  pair M[R,C], M[R̄,C̄] recurses, the off-diagonal pair is the middle's middle. Base case: a 1×l or k×1 middle. This is
+  the structure induced when A splits by R and B by C, so nesting is consistent across levels.
+  The full decomposition tree is recorded (point splits and middle bi-splits), the four classes (const / twin /
+  two-valued / any) are kept as a **coarse label on every middle node**, and the **raw middle is stored for every
+  point**, so classes can be refined later without recomputation. New kernel primitives: `(msplit R C M)` →
+  (M_RC, M_RC̄, M_R̄C, M_R̄C̄), `(mrestrict R C M)`; tree values via `(tree label child ...)`.
+- **Gluing cap**: `glue` runs with overlap k ≤ k_cap (default 2). An orbit not reached under the cap is only a
+  *candidate* mutation; the uncapped glue is then rerun on just those orbits before anything is called confirmed.
 
 ## 9. Extensibility without touching the grammar or core (R3)
 

@@ -1,0 +1,51 @@
+;;; blocks.mpr — block / fractal hypothesis (Phase 4 test rules; full runs in Phase 5).
+;;; A point x splits by a node subset T (containing node 0) into A = x|T, B = x|T̄ and the middle M = x[T, T̄].
+;;; The middle is decomposed recursively by the same rule in rectangular form (bi-split R ⊆ rows, C ⊆ cols):
+;;; diagonal blocks M[R,C], M[R̄,C̄] recurse, off-diagonal blocks M[R,C̄], M[R̄,C] are the middle's middle.
+;;; Every middle node carries a coarse class level: 0 constant-up-to-flips, 1 twin, 2 two-valued, 3 any.
+;;; X = maximal allowed level; bv = #t requires blocks to be vertices of their own metric polytope.
+
+(define (const-mid? M) (<= (card (distinct (mvalues M))) 1))
+(define (mid-const? M)
+  (exists ((S1 (subsets (rows M))) (S2 (subsets (cols M)))) (const-mid? (mflip S1 S2 M))))
+(define (mid-twin? M A)
+  (forall ((j (range 0 (cols M))))
+    (exists ((i (range 0 (rows M)))) (or (= (mcol M j) (col A i)) (= (mcol M j) (affine -1 1 (col A i)))))))
+(define (mid-two-valued? M) (<= (card (distinct (mvalues M))) 2))
+(define (mid-level M A) (if (mid-const? M) 0 (if (mid-twin? M A) 1 (if (mid-two-valued? M) 2 3))))
+(define (rect-level M) (if (mid-const? M) 0 (if (mid-two-valued? M) 2 3)))
+
+(define (block-vertex? A)
+  (if (<= (size A) 1) #t (if (= (size A) 2) (integral? A) (vertex? A))))
+
+(define (mdecompose M X)
+  (if (or (<= (rows M) 1) (<= (cols M) 1))
+      (tree "mleaf" M (rect-level M))
+      (first ((R (subsets (rows M))) (C (subsets (cols M))))
+        (where (and (in 0 R) (< (card R) (rows M)) (< 0 (card C)) (< (card C) (cols M))))
+        (let (((M11 M12 M21 M22) (msplit R C M)))
+          (and (<= (rect-level M12) X) (<= (rect-level M21) X)
+               (let ((t1 (mdecompose M11 X)) (t2 (mdecompose M22 X)))
+                 (and t1 t2 (tree "msplit" R C (rect-level M12) (rect-level M21) M12 M21 t1 t2))))))))
+
+(define (decompose x X bv)
+  (if (<= (size x) 2)
+      (tree "leaf" x)
+      (first ((T (subsets (size x))))
+        (where (and (in 0 T) (< (card T) (size x))))
+        (let (((A M B) (split T x)))
+          (and (<= (mid-level M A) X)
+               (or (not bv) (and (block-vertex? A) (block-vertex? B)))
+               (let ((ta (decompose A X bv)) (tb (decompose B X bv)) (tm (mdecompose M X)))
+                 (and ta tb tm (tree "split" T (mid-level M A) M ta tm tb))))))))
+
+(define (block-fractal n X bv) (forall ((x (vertices n))) (decompose x X bv)))
+
+(structural block-fractal-const        (n) :domain (3) :doc "Every vertex decomposes with all middles constant up to flips." (block-fractal n 0 #f))
+(structural block-fractal-twin         (n) :domain (3) :doc "... with middles at most twin-like."                          (block-fractal n 1 #f))
+(structural block-fractal-2val         (n) :domain (3) :doc "... with middles at most two-valued."                        (block-fractal n 2 #f))
+(structural block-fractal-any          (n) :domain (3) :doc "Sanity: always decomposes."                                  (block-fractal n 3 #f))
+(structural block-fractal-const-vblocks (n) :domain (3) :doc "Strong form: blocks are vertices, middles constant up to flips." (block-fractal n 0 #t))
+(structural block-fractal-twin-vblocks  (n) :domain (3) :doc "Strong form, middles at most twin."                         (block-fractal n 1 #t))
+(structural block-fractal-2val-vblocks  (n) :domain (3) :doc "Strong form, middles at most two-valued."                  (block-fractal n 2 #t))
+(structural block-fractal-any-vblocks   (n) :domain (3) :doc "Strong form with any middle (only the vertex condition)."   (block-fractal n 3 #t))
