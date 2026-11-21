@@ -1,0 +1,265 @@
+<HTML><HEAD><TITLE>Metric Polytope and Metric Cones Page</TITLE></HEAD>
+
+
+
+	
+<h2>Metric Polytopes and Metric Cones</h2>
+The  <i>metric cone</i> M_n is defined by the following
+3{n\choose 3} <i>triangle inequalities</i>:
+<ul>
+<li> x_{ij}-x_{ik}-x_{jk} \leq 0<br><br>
+for all triples {i,j,k} subset of {1,...,n}<br>
+</ul>
+Then, bounding the latter by the following {n\choose 3} 
+<i>perimeter inequalities</i>,<br> 
+<ul>
+<li> x_{ij}+x_{ik}+x_{jk} \leq 2
+</ul>
+we obtain the 
+<i>metric polytope</i> m_n.  Both polyhedra are {n\choose 2}-dimensional<br>
+and closely related to the cut polytope and cut cone and to finite metric spaces.<br> 
+See <A href="lncs2001.pdf"> [Deza-Fukuda-Pasechnik-Sato 2001] </A> for more details.<HR>
+
+<h3>
+<A href="http://www.cas.mcmaster.ca/~deza/ol2007.pdf"><i>
+<font color = red>
+A counterexample to the dominating set conjecture for the metric polytope on 9 nodes
+</font></i></A>(2007)
+</h3>
+<hr>
+
+<H2> Two conjectures <H3>  (both hold for n<9, the 
+<font color = red> 1st fails for n=9</font></i>)</H3> </H2> 
+<ul>
+<li> <i>Dominating set conjecture</i> [Laurent-Poljak 1992]<BR>
+The 0-1 valued vertices form a dominating set 
+	(clique) in the skeleton of the metric polytope.<br>
+<br>
+<font color = blue>
+<A HREF=./1221_counterexamples.txt><b>1221</b> known orbits </A></font> under permutations and switchings
+of vertices made of counterexamples<br>
+to the dominating set conjecture for the metric polytope on 9 nodes,
+see
+<A href="http://www.cas.mcmaster.ca/~deza/ol2007.pdf"> 
+[Deza-Indik 2007] </A> for more details.<br>
+<br>
+
+<li> <i>No cut-set conjecture</i> [Deza-Fukuda-Pasechnik-Sato 2001]<BR>
+  For n>5, the 0-1 valued vertices do not form a cut-set 
+     in the skeleton of the metric polytope.
+</ul>
+<HR>
+
+
+<h3> <ul> <li> <i> <font color = red> <b>
+Complete description of the metric polytope and cone on 8 nodes
+</b> 
+</font>
+</i> (2003)
+</h3> <h3>
+ <ul> <li> <i> <font color = blue> <b>
+Probably complete description of the metric polytope on 9 nodes 
+</b>
+</font>
+</i> (2007) </br>
+(<font color = red>1 056 368
+</font>
+<i> 
+ orbits 
+using  <A HREF=./mpiowe.html> MPI-OWE </A>, a parallelized orbitwise enumeration algorithm </i>)
+</h3>
+<i>
+ (the adjacency of all the 1 056 368 orbits -- except <b><font color = blue>20</font></b> of them -- has been computed)
+</i>
+</ul>
+<HR>
+
+
+
+<H2> Facets and Vertices of Metric Polytopes for n<10 </H2>
+<!--
+<H3> (computation performed using an <A href="jcdcg13.ps"><i>orbitwise vertex-enumeration algorithm</i></A>)</H3>
+<HR>
+-->
+
+<H3>metric polytope 3 (dimension 3)</H3>
+<DL>
+<font color = blue><b>4</b> facets</font> 
+(<A HREF=./ine/metric_3.ine><b>1</b> orbit </A> under permutations and switchings)<BR>
+<font color = blue> <b>4</b> vertices </font> 
+(<A HREF=./ext/metric_3.ext><b>1</b> orbit </A> under permutations and switchings)<BR>
+orbitwise invariants (<A HREF=./invariant/metric_3.inv>incidence, adjacency...</A>)<BR>
+skeleton (<A HREF=./table/metric_3.table>orbitwise adjacency table</A>)<BR>
+</DL>
+<DL><font color = blue> <b>3</b> extreme rays </font> for the associated <b>metric cone 3</b> </DL>
+
+<H3>metric polytope 4 (dimension 6)</H3>
+<DL>
+<font color = blue><b>16</b> facets</font> 
+(<A HREF=./ine/metric_4.ine><b>1</b> orbit </A> under permutations and switchings)<BR>
+<font color = blue> <b>8</b> vertices </font> 
+(<A HREF=./ext/metric_4.ext><b>1</b> orbit </A> under permutations and switchings)<BR>
+orbitwise invariants (<A HREF=./invariant/metric_4.inv>incidence, adjacency...</A>)<BR>
+skeleton (<A HREF=./table/metric_4.table>orbitwise adjacency table</A>)<BR>
+</DL>
+<DL><font color = blue> <b>7</b> extreme rays </font> for the associated <b>metric cone 4</b> </DL>
+
+<H3>metric polytope 5 (dimension 10)</H3>
+<DL>
+<font color = blue><b>40</b> facets</font> 
+(<A HREF=./ine/metric_5.ine><b>1</b> orbit </A> under permutations and switchings)<BR>
+<font color = blue> <b>32</b> vertices </font> 
+(<A HREF=./ext/metric_5.ext><b>2</b> orbits </A> under permutations and switchings)<BR>
+orbitwise invariants (<A HREF=./invariant/metric_5.inv>incidence, adjacency...</A>)<BR>
+skeleton (<A HREF=./table/metric_5.table>orbitwise adjacency table</A>)<BR>
+</DL>
+<DL><font color = blue> <b>25</b> extreme rays </font> for the associated <b>metric cone 5</b> </DL>
+
+<H3>metric polytope 6 (dimension 15)</H3>
+<DL>
+<font color = blue><b>80</b> facets</font> 
+(<A HREF=./ine/metric_6.ine><b>1</b> orbit </A> under permutations and switchings)<BR>
+<font color = blue> <b>554</b> vertices </font> 
+(<A HREF=./ext/metric_6.ext><b>3</b> orbits </A> under permutations and switchings)<BR>
+orbitwise invariants (<A HREF=./invariant/metric_6.inv>incidence, adjacency...</A>)<BR>
+skeleton (<A HREF=./table/metric_6.table>orbitwise adjacency table</A>)<BR>
+</DL>
+<DL><font color = blue> <b>296</b> extreme rays </font> for the associated <b>metric cone 6</b> </DL>
+
+<H3>metric polytope 7 (dimension 21)</H3>
+<DL>
+<font color = blue><b>140</b> facets</font> 
+(<A HREF=./ine/metric_7.ine><b>1</b> orbit </A> under permutations and switchings)<BR>
+<font color = blue> <b>275 840</b> vertices </font> 
+(<A HREF=./ext/metric_7.ext><b>13</b> orbits </A> under permutations and switchings)<BR>
+orbitwise invariants (<A HREF=./invariant/metric_7.inv>incidence, adjacency...</A>)<BR>
+skeleton (<A HREF=./table/metric_7.table>orbitwise adjacency table</A>)<BR>
+</DL>
+<DL><font color = blue> <b>55 226</b> extreme rays </font> for the associated <b>metric cone 7</b> </DL>
+
+<H3>metric polytope 8 (dimension 28)</H3>
+<!--
+<H4>(description completed in 2003 [Deza-Fukuda-Mizutani-Vo 2003]) </H4>
+-->
+<DL>
+<font color = blue><b>224</b> facets</font> 
+(<A HREF=./ine/metric_8.ine>
+<b>1</b> orbit </A> under permutations and switchings)<BR>
+<font color = blue> <b> 1 550 825 600</b> vertices </font> 
+(<A HREF=./ext/metric_8.ext>
+<b>533</b> orbits </A> under permutations and switchings)<BR>
+orbitwise invariants (<A HREF=./invariant/metric_8.inv>incidence, adjacency...</A>)<BR>
+skeleton (<A HREF=./table/metric_8.table>orbitwise adjacency table</A>)<BR>
+</DL>
+<DL><font color = blue> <b>119 269 588</b> extreme rays </font> for the associated <b>metric cone 8</b> </DL>
+
+<H3>metric polytope 9 (dimension 36) <br>
+<font color = red>
+<i>description conjectured to be complete</i> (2007) 
+</font>
+</H3>
+<DL>
+<font color = blue> <b>
+336</b>
+ facets
+</font>
+(1 orbit under permutations and switchings)<BR>
+about
+<font color = blue> <b>
+100 000 000 000 000 
+</b> vertices
+</font>
+(<A HREF=./Orbits.zip>
+1 056 368
+orbits
+</A> [<B>zip file</B>] under permutations and switchings)
+<BR>
+</DL>
+<HR>
+
+<H2> Upper Face Lattice of Metric Polytopes for n<10 </H2>
+<!--
+<H3> (computation performed using an <A href="jcdcg24.ps"><i>orbitwise face-enumeration algorithm</i></A>)</H3>
+<HR>
+-->
+
+<H3>metric polytope 4 (dimension 6)</H3>
+<DL>
+faces of dimension 5 (facets)
+(<A HREF=./up_lattice/d1_m4>1 orbit </A> under permutations and switchings)<BR>
+faces of dimension 4 
+(<A HREF=./up_lattice/d2_m4>1 orbit </A> under permutations and switchings)<BR>
+faces of dimension 3 
+(<A HREF=./up_lattice/d3_m4>3 orbits </A> under permutations and switchings)<BR>
+</DL>
+
+<H3>metric polytope 5 (dimension 10)</H3>
+<DL>
+faces of dimension 9 (facets)
+(<A HREF=./up_lattice/d1_m5>1 orbit </A> under permutations and switchings)<BR>
+faces of dimension 8 
+(<A HREF=./up_lattice/d2_m5>2 orbits </A> under permutations and switchings)<BR>
+faces of dimension 7
+(<A HREF=./up_lattice/d3_m5>6 orbits </A> under permutations and switchings)<BR>
+</DL>
+
+<H3>metric polytope 6 (dimension 15)</H3>
+<DL>
+faces of dimension 14 (facets)
+(<A HREF=./up_lattice/d1_m6>1 orbit </A> under permutations and switchings)<BR>
+faces of dimension 13 
+(<A HREF=./up_lattice/d2_m6>3 orbits </A> under permutations and switchings)<BR>
+faces of dimension 12
+(<A HREF=./up_lattice/d3_m6>10 orbits </A> under permutations and switchings)<BR>
+faces of dimension 11
+(<A HREF=./up_lattice/d4_m6>34 orbits </A> under permutations and switchings)<BR>
+</DL>
+
+<H3>metric polytope 7 (dimension 21)</H3>
+<DL>
+faces of dimension 20 (facets)
+(<A HREF=./up_lattice/d1_m7>1 orbit </A> under permutations and switchings)<BR>
+faces of dimension 19 
+(<A HREF=./up_lattice/d2_m7>3 orbits </A> under permutations and switchings)<BR>
+faces of dimension 18
+(<A HREF=./up_lattice/d3_m7>13 orbits </A> under permutations and switchings)<BR>
+faces of dimension 17
+(<A HREF=./up_lattice/d4_m7>61 orbits </A> under permutations and switchings)<BR>
+</DL>
+
+<H3>metric polytope 8 (dimension 28)</H3>
+<DL>
+faces of dimension 27 (facets)
+(<A HREF=./up_lattice/d1_m8>1 orbit </A> under permutations and switchings)<BR>
+faces of dimension 26 
+(<A HREF=./up_lattice/d2_m8>3 orbits </A> under permutations and switchings)<BR>
+faces of dimension 25 
+(<A HREF=./up_lattice/d3_m8>14 orbits </A> under permutations and switchings)<BR>
+faces of dimension 24 
+(<A HREF=./up_lattice/d4_m8>79 orbits </A> under permutations and switchings)<BR>
+faces of dimension 23 
+(<A HREF=./up_lattice/d5_m8>558 orbits </A> under permutations and switchings)<BR>
+faces of dimension 22 
+(<A HREF=./up_lattice/d6_m8>4 898 orbits </A> under permutations and switchings)<BR>
+faces of dimension 21 
+(<A HREF=./up_lattice/d7_m8>43 372 orbits </A> under permutations and switchings)<BR>
+</DL>
+
+<H3>metric polytope 9 (dimension 36)</H3>
+<DL>
+faces of dimension 35 (facets)
+(<A HREF=./up_lattice/d1_m9>1 orbit </A> under permutations and switchings)<BR>
+faces of dimension 34 
+(<A HREF=./up_lattice/d2_m9>3 orbits </A> under permutations and switchings)<BR>
+faces of dimension 33
+(<A HREF=./up_lattice/d3_m9>15 orbits </A> under permutations and switchings)<BR>
+</DL>
+
+<HR>
+
+<ADDRESS> last change: May 15, 2007 by
+ <A HREF="index.html"> Antoine Deza </A> </ADDRESS>
+
+
+
+

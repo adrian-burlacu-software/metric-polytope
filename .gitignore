@@ -1,0 +1,13 @@
+# build / environment outputs
+.venv/
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+
+# local job state (reproducible from code + data)
+cache/
+checkpoints/

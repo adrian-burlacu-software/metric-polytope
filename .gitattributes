@@ -1,0 +1,5 @@
+# keep downloaded reference data byte-exact (SHA256SUMS.txt)
+data/deza/raw/** -text
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf

@@ -1,0 +1,55 @@
+{
+  "families": [
+    "triangle",
+    "perimeter"
+  ],
+  "generators": [
+    {
+      "coords": [
+        "0",
+        "0",
+        "0"
+      ],
+      "type": "vertex"
+    },
+    {
+      "coords": [
+        "0",
+        "1",
+        "1"
+      ],
+      "type": "vertex"
+    },
+    {
+      "coords": [
+        "1",
+        "1",
+        "0"
+      ],
+      "type": "vertex"
+    },
+    {
+      "coords": [
+        "1",
+        "0",
+        "1"
+      ],
+      "type": "vertex"
+    }
+  ],
+  "n": 3,
+  "variables": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      3
+    ]
+  ]
+}

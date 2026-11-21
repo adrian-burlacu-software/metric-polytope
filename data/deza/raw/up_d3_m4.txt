@@ -1,0 +1,32 @@
+For each orbit of faces of codimension k we give a canonical representative face f_i.
+The face fk_i is defined by a set of k inequalities of rank k satisfied with equality.
+
+A triangular inequality Tr of met_n is represented by a {-1,0,1}-valued vector V of
+length n with 3 nonzero entries with: Tr_ij = V_i x V_j. The left hand side of Tr 
+is 2 if V is a {0,1}-valued vector and 0 otherwise.
+
++++++ remark ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+the set of all inequalities satisfied with equality by f_i might be larger than k
+but we show only k facets. This way the codimension is directly readable and the
+presentation is homogeneous)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-------------- canonical representatives --------------------------
+f3_1
+
+  1  1  1  0
+  1  1  0  1
+  1  0  1  1
+
+f3_2
+ 
+  1  1  1  0
+  1  1  0  1
+  1  0 -1  1
+ 
+f3_3
+
+  1  1  1  0
+ -1  1  1  0
+  0  1  1  1

@@ -1,0 +1,23 @@
+For each orbit O_i we give the following orbitwise invariants:
+
+with v any vertex belonging to O_i,
+
+the incidence Icd_i : the number of facets containing v
+the adjacency Adj_i : the number of vertices forming an edge with v
+Adj_{i,delta}       : the number of cuts forming an edge with v 
+|O_i|               : the size of the orbit O_i
+
+-------------------- orbitwise invariants -------------------------
+
+i          Icd_i         Adj_i         |O_i|          Adj_{i,delta}
+
+1          60            296           32             31
+2          20            70            32             25
+3          24            35            480            16
+-------------------------------------------------------------------
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The orbits are ordered first by decreasing incidence Icd_i, then by 
+decreasing adjacency Adj_i and then by increasing orbitsize |O_i|
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -1,0 +1,14 @@
+For each orbit O_i we give a canonical representative vertex v_i : (denominator | coordinates)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The orbits are ordered first by decreasing incidence Icd_i, then by 
+decreasing adjacency Adj_i and then by increasing orbitsize |O_i|
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-------------- canonical representatives --------------------------
+
+i  denominator | coordinates
+
+1            1 | 0 0 0
+
+-------------------------------------------------------------------
