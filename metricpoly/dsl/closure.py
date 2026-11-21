@@ -94,6 +94,8 @@ def run_closure(interp, seeds, moves, max_n=8, max_rounds=50, only_vertices=True
             return None
         if only_vertices and not prims.p_vertex(p):
             return None
+        if not only_vertices and not prims.p_feasible(p):      # non-vertex mode: any point of m_n
+            return None
         k = group.canonical(p).key()
         d = C.orbits.setdefault(p.n, {})
         if k in d:
