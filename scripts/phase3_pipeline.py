@@ -21,6 +21,7 @@ import json
 import sys
 import time
 import types
+from fractions import Fraction
 from pathlib import Path
 
 import numpy as np
@@ -96,9 +97,9 @@ def task_n(n: int, repeat: int):
     for i, p in enumerate(V):
         k = group.canonical(p).key()
         rep = reps[k]
-        # comp[k] is D_rep * slack(rep); compare D-scaled exact ints via Fractions
-        tr = pipeline.transported_slacks(p, rep, np.array([v / rep.D for v in comp[k]], dtype=object))
-        direct = np.array([v / p.D for v in pipeline.exact_slacks(p)], dtype=object)
+        # comp[k] is D_rep * slack(rep); compare exact Fractions (never numpy '/', which gives floats)
+        tr = pipeline.transported_slacks(p, rep, np.array([Fraction(v) / rep.D for v in comp[k]], dtype=object))
+        direct = np.array([Fraction(int(v), p.D) for v in pipeline.exact_slacks(p)], dtype=object)
         ok &= bool((tr == direct).all())
     checks["transported_completion_eq_direct_every_vertex"] = ok
     rec["checks"] = checks

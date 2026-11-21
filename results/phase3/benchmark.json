@@ -1,0 +1,313 @@
+{
+  "job_state": {
+    "code_version": "f6f3f63143e0c00a",
+    "git_head": "a5895e3b5e6c0c59a4ea5eaf0f8f9b2685fb5005",
+    "params": {
+      "n": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "repeat": 3
+    },
+    "seed": 20261121
+  },
+  "results": {
+    "n3": {
+      "checks": {
+        "box_lp_path_runs": true,
+        "box_never_less_valid_than_nobox": true,
+        "legacy_eq_exact_every_vertex": true,
+        "orbit_count": 1,
+        "orbit_sizes": [
+          4
+        ],
+        "orbits_identical_all_variants": true,
+        "transported_completion_eq_direct_every_vertex": true,
+        "vset_valid_sets_equal": true
+      },
+      "n": 3,
+      "new": {
+        "canonicalisations_run": 1,
+        "completions_run": 1,
+        "orbits": 1,
+        "seconds": 0.00022029998945072293,
+        "stage_seconds": {
+          "complete": 0.0,
+          "positional_dedupe": 0.0001,
+          "switch_classes": 0.0001
+        },
+        "switch_classes": 1
+      },
+      "new_order_legacy": {
+        "canonicalisations_run": 1,
+        "completions_run": 1,
+        "orbits": 1,
+        "seconds": 0.0002680000034160912,
+        "stage_seconds": {
+          "complete": 0.0001,
+          "positional_dedupe": 0.0001,
+          "switch_classes": 0.0001
+        },
+        "switch_classes": 1
+      },
+      "old": {
+        "canonicalisations_run": 4,
+        "completions_run": 4,
+        "orbits": 1,
+        "seconds": 0.0006568999961018562,
+        "stage_seconds": {
+          "canonicalise": 0.0004,
+          "complete": 0.0003
+        },
+        "switch_classes": 0
+      },
+      "old_order_exact": {
+        "canonicalisations_run": 4,
+        "completions_run": 4,
+        "orbits": 1,
+        "seconds": 0.0002986999897984788,
+        "stage_seconds": {
+          "canonicalise": 0.0002,
+          "complete": 0.0001
+        },
+        "switch_classes": 0
+      },
+      "repeat": 3,
+      "vertices": 4,
+      "vset_exact": {
+        "lps": 0,
+        "seconds": 1.6400008462369442e-05,
+        "valid": 4
+      },
+      "vset_legacy": {
+        "lps": 4,
+        "seconds": 0.00016700000560376793,
+        "valid": 4
+      }
+    },
+    "n4": {
+      "checks": {
+        "box_lp_path_runs": true,
+        "box_never_less_valid_than_nobox": true,
+        "legacy_eq_exact_every_vertex": true,
+        "orbit_count": 1,
+        "orbit_sizes": [
+          8
+        ],
+        "orbits_identical_all_variants": true,
+        "transported_completion_eq_direct_every_vertex": true,
+        "vset_valid_sets_equal": true
+      },
+      "n": 4,
+      "new": {
+        "canonicalisations_run": 1,
+        "completions_run": 1,
+        "orbits": 1,
+        "seconds": 0.00040839999564923346,
+        "stage_seconds": {
+          "complete": 0.0001,
+          "positional_dedupe": 0.0001,
+          "switch_classes": 0.0002
+        },
+        "switch_classes": 1
+      },
+      "new_order_legacy": {
+        "canonicalisations_run": 1,
+        "completions_run": 1,
+        "orbits": 1,
+        "seconds": 0.0004978999932063743,
+        "stage_seconds": {
+          "complete": 0.0002,
+          "positional_dedupe": 0.0001,
+          "switch_classes": 0.0002
+        },
+        "switch_classes": 1
+      },
+      "old": {
+        "canonicalisations_run": 8,
+        "completions_run": 8,
+        "orbits": 1,
+        "seconds": 0.004741400000057183,
+        "stage_seconds": {
+          "canonicalise": 0.0033,
+          "complete": 0.0015
+        },
+        "switch_classes": 0
+      },
+      "old_order_exact": {
+        "canonicalisations_run": 8,
+        "completions_run": 8,
+        "orbits": 1,
+        "seconds": 0.0011514000070746988,
+        "stage_seconds": {
+          "canonicalise": 0.0006,
+          "complete": 0.0011
+        },
+        "switch_classes": 0
+      },
+      "repeat": 3,
+      "vertices": 8,
+      "vset_exact": {
+        "lps": 0,
+        "seconds": 6.280001252889633e-05,
+        "valid": 16
+      },
+      "vset_legacy": {
+        "lps": 16,
+        "seconds": 0.00044550000166054815,
+        "valid": 16
+      }
+    },
+    "n5": {
+      "checks": {
+        "box_lp_path_runs": true,
+        "box_never_less_valid_than_nobox": true,
+        "legacy_eq_exact_every_vertex": true,
+        "orbit_count": 2,
+        "orbit_sizes": [
+          16,
+          16
+        ],
+        "orbits_identical_all_variants": true,
+        "transported_completion_eq_direct_every_vertex": false,
+        "vset_valid_sets_equal": true
+      },
+      "n": 5,
+      "new": {
+        "canonicalisations_run": 2,
+        "completions_run": 2,
+        "orbits": 2,
+        "seconds": 0.001464699991629459,
+        "stage_seconds": {
+          "complete": 0.0004,
+          "positional_dedupe": 0.0002,
+          "switch_classes": 0.0009
+        },
+        "switch_classes": 2
+      },
+      "new_order_legacy": {
+        "canonicalisations_run": 2,
+        "completions_run": 2,
+        "orbits": 2,
+        "seconds": 0.0018875000096159056,
+        "stage_seconds": {
+          "complete": 0.0008,
+          "positional_dedupe": 0.0002,
+          "switch_classes": 0.0009
+        },
+        "switch_classes": 2
+      },
+      "old": {
+        "canonicalisations_run": 32,
+        "completions_run": 32,
+        "orbits": 2,
+        "seconds": 0.0896470000006957,
+        "stage_seconds": {
+          "canonicalise": 0.0766,
+          "complete": 0.013
+        },
+        "switch_classes": 0
+      },
+      "old_order_exact": {
+        "canonicalisations_run": 32,
+        "completions_run": 32,
+        "orbits": 2,
+        "seconds": 0.009190299999318086,
+        "stage_seconds": {
+          "canonicalise": 0.003,
+          "complete": 0.0062
+        },
+        "switch_classes": 0
+      },
+      "repeat": 3,
+      "vertices": 32,
+      "vset_exact": {
+        "lps": 0,
+        "seconds": 0.0003328000020701438,
+        "valid": 40
+      },
+      "vset_legacy": {
+        "lps": 40,
+        "seconds": 0.0070242999936454,
+        "valid": 40
+      }
+    },
+    "n6": {
+      "checks": {
+        "box_lp_path_runs": true,
+        "box_never_less_valid_than_nobox": true,
+        "legacy_eq_exact_every_vertex": true,
+        "orbit_count": 3,
+        "orbit_sizes": [
+          32,
+          32,
+          480
+        ],
+        "orbits_identical_all_variants": true,
+        "transported_completion_eq_direct_every_vertex": false,
+        "vset_valid_sets_equal": true
+      },
+      "n": 6,
+      "new": {
+        "canonicalisations_run": 17,
+        "completions_run": 3,
+        "orbits": 3,
+        "seconds": 0.018645899996045046,
+        "stage_seconds": {
+          "complete": 0.0014,
+          "positional_dedupe": 0.0026,
+          "switch_classes": 0.0146
+        },
+        "switch_classes": 17
+      },
+      "new_order_legacy": {
+        "canonicalisations_run": 17,
+        "completions_run": 3,
+        "orbits": 3,
+        "seconds": 0.020177999991574325,
+        "stage_seconds": {
+          "complete": 0.0026,
+          "positional_dedupe": 0.0028,
+          "switch_classes": 0.0147
+        },
+        "switch_classes": 17
+      },
+      "old": {
+        "canonicalisations_run": 544,
+        "completions_run": 544,
+        "orbits": 3,
+        "seconds": 9.960480500012636,
+        "stage_seconds": {
+          "canonicalise": 9.4682,
+          "complete": 0.4922
+        },
+        "switch_classes": 0
+      },
+      "old_order_exact": {
+        "canonicalisations_run": 544,
+        "completions_run": 544,
+        "orbits": 3,
+        "seconds": 0.291332799999509,
+        "stage_seconds": {
+          "canonicalise": 0.0779,
+          "complete": 0.2127
+        },
+        "switch_classes": 0
+      },
+      "repeat": 1,
+      "vertices": 544,
+      "vset_exact": {
+        "lps": 0,
+        "seconds": 0.009588700006133877,
+        "valid": 80
+      },
+      "vset_legacy": {
+        "lps": 80,
+        "seconds": 50.96291950000159,
+        "valid": 80
+      }
+    }
+  }
+}

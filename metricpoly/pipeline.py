@@ -10,6 +10,7 @@ slacks are preserved), so completing one representative per orbit determines eve
 from __future__ import annotations
 
 import time
+from fractions import Fraction
 from dataclasses import dataclass, field
 from typing import Callable, Dict, List, Sequence
 
@@ -95,4 +96,4 @@ def exact_engine(p: Point):
     from .completion import complete
     c = complete(p.n, [p])
     b = ineq_matrix(p.n)[1]
-    return np.array([(b[r.index] - r.max_value) * p.D for r in c.results], dtype=object)
+    return np.array([(Fraction(int(b[r.index])) - r.max_value) * p.D for r in c.results], dtype=object)
