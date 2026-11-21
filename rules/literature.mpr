@@ -137,8 +137,8 @@
   (forall ((x (vertices n))) (where (and (= (denominator x) 3) (fully-fractional? x)))
     (exists ((S (switchings n))) (graphic-point? (switch S x)))))
 
-(structural no-simple-vertex (n) :domain (3) :source "S12"
-  :doc "No vertex is simple (incidence = C(n,2)); literature: true for n ≤ 7, false at n = 8."
+(structural no-simple-vertex (n) :domain (6) :source "S12 (DFMV03 Remark 3: stated for n = 6, 7; m_3 and the m_5 anticut are simple)"
+  :doc "No vertex is simple (incidence = C(n,2)); literature: true for n = 6, 7, false at n = 8 (orbits 532, 533)."
   (forall ((x (vertices n))) (> (incidence x) (binom n 2))))
 
 (structural switch-class-nonadjacent (n) :domain (5) :source "S18 (UNREAD, attributed to L96)"

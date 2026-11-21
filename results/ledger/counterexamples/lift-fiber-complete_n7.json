@@ -1,0 +1,37 @@
+{
+  "binding": {
+    "x": "<7|4|1,2,3,1,2,1,1,2,2,1,2,1,1,2,3,2,3,2,1,2,1>"
+  },
+  "n": 7,
+  "rule": "lift-fiber-complete",
+  "rule_source": "(structural lift-fiber-complete (n) :domain (4) :source \"user rule (generative version)\" :doc \"Every orbit of m_n contains a vertex of the fiber over some vertex of m_{n-1}.\" (forall ((x (vertices n))) (produced-by? x gen-lift-fiber)))",
+  "witness": {
+    "x": {
+      "coords": [
+        "1/4",
+        "1/2",
+        "3/4",
+        "1/4",
+        "1/2",
+        "1/4",
+        "1/4",
+        "1/2",
+        "1/2",
+        "1/4",
+        "1/2",
+        "1/4",
+        "1/4",
+        "1/2",
+        "3/4",
+        "1/2",
+        "3/4",
+        "1/2",
+        "1/4",
+        "1/2",
+        "1/4"
+      ],
+      "deza_orbit": 6,
+      "n": 7
+    }
+  }
+}

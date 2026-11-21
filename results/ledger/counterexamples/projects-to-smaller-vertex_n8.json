@@ -1,0 +1,44 @@
+{
+  "binding": {
+    "x": "<8|4|1,1,1,1,2,2,2,2,2,2,1,1,1,2,2,1,1,3,2,1,3,1,3,1,3,2,2,2>"
+  },
+  "n": 8,
+  "rule": "projects-to-smaller-vertex",
+  "rule_source": "(structural projects-to-smaller-vertex (n) :domain (4) :source \"user rule; LP92 Ex. 2.14 predicts failure at n = 7\" :doc \"Every vertex has a node whose deletion leaves a vertex of m_{n-1}.\" (forall ((x (vertices n))) (exists ((i (range 0 n))) (vertex? (restrict (all-but n i) x)))))",
+  "witness": {
+    "x": {
+      "coords": [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/2",
+        "1/2",
+        "1/4",
+        "1/4",
+        "3/4",
+        "1/2",
+        "1/4",
+        "3/4",
+        "1/4",
+        "3/4",
+        "1/4",
+        "3/4",
+        "1/2",
+        "1/2",
+        "1/2"
+      ],
+      "deza_orbit": 17,
+      "n": 8
+    }
+  }
+}

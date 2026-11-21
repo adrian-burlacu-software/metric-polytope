@@ -1,0 +1,2157 @@
+{
+  "at-least-two-cuts@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "rule": "at-least-two-cuts",
+    "seconds": 0.03
+  },
+  "at-least-two-cuts@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "at-least-two-cuts",
+    "seconds": 6.98
+  },
+  "at-least-two-cuts@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "rule": "at-least-two-cuts",
+    "seconds": 2.67
+  },
+  "at-least-two-cuts@8": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 8,
+    "rule": "at-least-two-cuts",
+    "seconds": 48.38
+  },
+  "cuts-are-the-integral-vertices@3": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 3,
+    "rule": "cuts-are-the-integral-vertices",
+    "seconds": 0.0
+  },
+  "cuts-are-the-integral-vertices@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "cuts-are-the-integral-vertices",
+    "seconds": 0.0
+  },
+  "cuts-are-the-integral-vertices@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "rule": "cuts-are-the-integral-vertices",
+    "seconds": 0.0
+  },
+  "cuts-are-the-integral-vertices@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "cuts-are-the-integral-vertices",
+    "seconds": 0.02
+  },
+  "cuts-are-the-integral-vertices@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "rule": "cuts-are-the-integral-vertices",
+    "seconds": 0.25
+  },
+  "cuts-are-the-integral-vertices@8": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 8,
+    "rule": "cuts-are-the-integral-vertices",
+    "seconds": 5.98
+  },
+  "dominating-set@3": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 3,
+    "rule": "dominating-set",
+    "seconds": 0.0
+  },
+  "dominating-set@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "dominating-set",
+    "seconds": 0.0
+  },
+  "dominating-set@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "rule": "dominating-set",
+    "seconds": 0.01
+  },
+  "dominating-set@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "dominating-set",
+    "seconds": 0.46
+  },
+  "dominating-set@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "rule": "dominating-set",
+    "seconds": 0.16
+  },
+  "dominating-set@8": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 8,
+    "rule": "dominating-set",
+    "seconds": 1.1
+  },
+  "extension-denominator@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "extension-denominator",
+    "seconds": 0.0
+  },
+  "extension-denominator@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "rule": "extension-denominator",
+    "seconds": 0.01
+  },
+  "extension-denominator@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "extension-denominator",
+    "seconds": 0.32
+  },
+  "extension-denominator@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "rule": "extension-denominator",
+    "seconds": 0.09
+  },
+  "extension-denominator@8": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 8,
+    "rule": "extension-denominator",
+    "seconds": 1.78
+  },
+  "gen-anticuts@5": {
+    "candidates": 32,
+    "error": null,
+    "kind": "generative",
+    "n": 5,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      2
+    ],
+    "rule": "gen-anticuts",
+    "seconds": 0.0,
+    "vertices": 32
+  },
+  "gen-anticuts@6": {
+    "candidates": 64,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      2
+    ],
+    "rule": "gen-anticuts",
+    "seconds": 0.0,
+    "vertices": 64
+  },
+  "gen-anticuts@7": {
+    "candidates": 128,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      5
+    ],
+    "rule": "gen-anticuts",
+    "seconds": 0.01,
+    "vertices": 128
+  },
+  "gen-anticuts@8": {
+    "candidates": 256,
+    "error": null,
+    "kind": "generative",
+    "n": 8,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      8
+    ],
+    "rule": "gen-anticuts",
+    "seconds": 0.02,
+    "vertices": 256
+  },
+  "gen-avis-paths@5": {
+    "candidates": 1,
+    "error": null,
+    "kind": "generative",
+    "n": 5,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      2
+    ],
+    "rule": "gen-avis-paths",
+    "seconds": 0.0,
+    "vertices": 1
+  },
+  "gen-avis-paths@6": {
+    "candidates": 0,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 0,
+    "orbits": [],
+    "rule": "gen-avis-paths",
+    "seconds": 0.0,
+    "vertices": 0
+  },
+  "gen-avis-paths@7": {
+    "candidates": 0,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 0,
+    "orbits": [],
+    "rule": "gen-avis-paths",
+    "seconds": 0.0,
+    "vertices": 0
+  },
+  "gen-avis-paths@8": {
+    "candidates": 1,
+    "error": null,
+    "kind": "generative",
+    "n": 8,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      16
+    ],
+    "rule": "gen-avis-paths",
+    "seconds": 0.0,
+    "vertices": 1
+  },
+  "gen-cuts@3": {
+    "candidates": 8,
+    "error": null,
+    "kind": "generative",
+    "n": 3,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-cuts",
+    "seconds": 0.0,
+    "vertices": 8
+  },
+  "gen-cuts@4": {
+    "candidates": 16,
+    "error": null,
+    "kind": "generative",
+    "n": 4,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-cuts",
+    "seconds": 0.0,
+    "vertices": 16
+  },
+  "gen-cuts@5": {
+    "candidates": 32,
+    "error": null,
+    "kind": "generative",
+    "n": 5,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-cuts",
+    "seconds": 0.0,
+    "vertices": 32
+  },
+  "gen-cuts@6": {
+    "candidates": 64,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-cuts",
+    "seconds": 0.0,
+    "vertices": 64
+  },
+  "gen-cuts@7": {
+    "candidates": 128,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-cuts",
+    "seconds": 0.0,
+    "vertices": 128
+  },
+  "gen-cuts@8": {
+    "candidates": 256,
+    "error": null,
+    "kind": "generative",
+    "n": 8,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-cuts",
+    "seconds": 0.0,
+    "vertices": 256
+  },
+  "gen-dup@4": {
+    "candidates": 0,
+    "error": null,
+    "kind": "generative",
+    "n": 4,
+    "non_vertex_candidates": 0,
+    "orbits": [],
+    "rule": "gen-dup",
+    "seconds": 0.0,
+    "vertices": 0
+  },
+  "gen-dup@5": {
+    "candidates": 0,
+    "error": null,
+    "kind": "generative",
+    "n": 5,
+    "non_vertex_candidates": 0,
+    "orbits": [],
+    "rule": "gen-dup",
+    "seconds": 0.0,
+    "vertices": 0
+  },
+  "gen-dup@6": {
+    "candidates": 80,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      2
+    ],
+    "rule": "gen-dup",
+    "seconds": 0.01,
+    "vertices": 80
+  },
+  "gen-dup@7": {
+    "candidates": 3072,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      2,
+      4,
+      5
+    ],
+    "rule": "gen-dup",
+    "seconds": 0.48,
+    "vertices": 3072
+  },
+  "gen-dup@8": {
+    "candidates": 84,
+    "error": null,
+    "kind": "generative",
+    "n": 8,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      15,
+      18,
+      26,
+      28,
+      40,
+      49,
+      50,
+      63,
+      64,
+      65,
+      67,
+      72,
+      78,
+      81,
+      87,
+      95,
+      97,
+      111,
+      176,
+      196
+    ],
+    "rule": "gen-dup",
+    "seconds": 0.06,
+    "vertices": 84
+  },
+  "gen-graphic@3": {
+    "candidates": 2,
+    "error": null,
+    "kind": "generative",
+    "n": 3,
+    "non_vertex_candidates": 2,
+    "orbits": [],
+    "rule": "gen-graphic",
+    "seconds": 0.03,
+    "vertices": 0
+  },
+  "gen-graphic@4": {
+    "candidates": 6,
+    "error": null,
+    "kind": "generative",
+    "n": 4,
+    "non_vertex_candidates": 6,
+    "orbits": [],
+    "rule": "gen-graphic",
+    "seconds": 0.0,
+    "vertices": 0
+  },
+  "gen-graphic@5": {
+    "candidates": 21,
+    "error": null,
+    "kind": "generative",
+    "n": 5,
+    "non_vertex_candidates": 18,
+    "orbits": [
+      2
+    ],
+    "rule": "gen-graphic",
+    "seconds": 0.0,
+    "vertices": 3
+  },
+  "gen-graphic@6": {
+    "candidates": 112,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 106,
+    "orbits": [
+      2,
+      3
+    ],
+    "rule": "gen-graphic",
+    "seconds": 0.01,
+    "vertices": 6
+  },
+  "gen-graphic@7": {
+    "candidates": 853,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 812,
+    "orbits": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13
+    ],
+    "rule": "gen-graphic",
+    "seconds": 0.16,
+    "vertices": 41
+  },
+  "gen-lift-fiber@4": {
+    "candidates": 8,
+    "error": null,
+    "kind": "generative",
+    "n": 4,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-lift-fiber",
+    "seconds": 0.0,
+    "vertices": 8
+  },
+  "gen-lift-fiber@5": {
+    "candidates": 16,
+    "error": null,
+    "kind": "generative",
+    "n": 5,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-lift-fiber",
+    "seconds": 0.01,
+    "vertices": 16
+  },
+  "gen-lift-fiber@6": {
+    "candidates": 224,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1,
+      2,
+      3
+    ],
+    "rule": "gen-lift-fiber",
+    "seconds": 0.06,
+    "vertices": 224
+  },
+  "gen-lift-fiber@7": {
+    "candidates": 6912,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      8
+    ],
+    "rule": "gen-lift-fiber",
+    "seconds": 2.5,
+    "vertices": 6912
+  },
+  "gen-lift-fiber@8": {
+    "candidates": 1330,
+    "error": null,
+    "kind": "generative",
+    "n": 8,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      40,
+      41,
+      42,
+      43,
+      44,
+      47,
+      48,
+      49,
+      50,
+      54,
+      55,
+      56,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      67,
+      68,
+      69,
+      71,
+      72,
+      73,
+      75,
+      77,
+      78,
+      79,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      89,
+      92,
+      95,
+      96,
+      97,
+      98,
+      99,
+      101,
+      102,
+      103,
+      104,
+      107,
+      108,
+      111,
+      112,
+      115,
+      116,
+      117,
+      121,
+      122,
+      124,
+      126,
+      127,
+      128,
+      133,
+      135,
+      139,
+      142,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      153,
+      154,
+      156,
+      157,
+      160,
+      163,
+      165,
+      166,
+      171,
+      173,
+      174,
+      176,
+      181,
+      188,
+      189,
+      190,
+      191,
+      195,
+      196,
+      197,
+      200,
+      207,
+      212,
+      213,
+      224,
+      226,
+      228,
+      232,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      247,
+      248,
+      262,
+      264,
+      266,
+      284,
+      285,
+      289,
+      313,
+      331,
+      336,
+      341,
+      345,
+      356,
+      359,
+      363,
+      368,
+      373,
+      374,
+      379,
+      391,
+      413,
+      432,
+      435,
+      444
+    ],
+    "rule": "gen-lift-fiber",
+    "seconds": 1.15,
+    "vertices": 1330
+  },
+  "gen-lift-multipartite@4": {
+    "candidates": 22,
+    "error": null,
+    "kind": "generative",
+    "n": 4,
+    "non_vertex_candidates": 22,
+    "orbits": [],
+    "rule": "gen-lift-multipartite",
+    "seconds": 0.0,
+    "vertices": 0
+  },
+  "gen-lift-multipartite@5": {
+    "candidates": 78,
+    "error": null,
+    "kind": "generative",
+    "n": 5,
+    "non_vertex_candidates": 74,
+    "orbits": [
+      2
+    ],
+    "rule": "gen-lift-multipartite",
+    "seconds": 0.01,
+    "vertices": 4
+  },
+  "gen-lift-multipartite@6": {
+    "candidates": 242,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 218,
+    "orbits": [
+      2,
+      3
+    ],
+    "rule": "gen-lift-multipartite",
+    "seconds": 0.02,
+    "vertices": 24
+  },
+  "gen-lift-multipartite@7": {
+    "candidates": 846,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 700,
+    "orbits": [
+      4,
+      5,
+      8,
+      11,
+      12,
+      13
+    ],
+    "rule": "gen-lift-multipartite",
+    "seconds": 0.11,
+    "vertices": 146
+  },
+  "gen-lift-multipartite@8": {
+    "candidates": 2570,
+    "error": null,
+    "kind": "generative",
+    "n": 8,
+    "non_vertex_candidates": 1944,
+    "orbits": [
+      7,
+      8,
+      13,
+      28,
+      36,
+      44,
+      49,
+      63,
+      64,
+      65,
+      67,
+      81,
+      82,
+      95,
+      98,
+      102,
+      148,
+      151,
+      153,
+      196,
+      234
+    ],
+    "rule": "gen-lift-multipartite",
+    "seconds": 0.48,
+    "vertices": 626
+  },
+  "gen-multipartite@3": {
+    "candidates": 5,
+    "error": null,
+    "kind": "generative",
+    "n": 3,
+    "non_vertex_candidates": 5,
+    "orbits": [],
+    "rule": "gen-multipartite",
+    "seconds": 0.0,
+    "vertices": 0
+  },
+  "gen-multipartite@4": {
+    "candidates": 19,
+    "error": null,
+    "kind": "generative",
+    "n": 4,
+    "non_vertex_candidates": 19,
+    "orbits": [],
+    "rule": "gen-multipartite",
+    "seconds": 0.01,
+    "vertices": 0
+  },
+  "gen-multipartite@5": {
+    "candidates": 46,
+    "error": null,
+    "kind": "generative",
+    "n": 5,
+    "non_vertex_candidates": 43,
+    "orbits": [
+      2
+    ],
+    "rule": "gen-multipartite",
+    "seconds": 0.02,
+    "vertices": 3
+  },
+  "gen-multipartite@6": {
+    "candidates": 113,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 92,
+    "orbits": [
+      2,
+      3
+    ],
+    "rule": "gen-multipartite",
+    "seconds": 0.07,
+    "vertices": 21
+  },
+  "gen-multipartite@7": {
+    "candidates": 220,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 168,
+    "orbits": [
+      4,
+      5,
+      8,
+      11,
+      13
+    ],
+    "rule": "gen-multipartite",
+    "seconds": 0.17,
+    "vertices": 52
+  },
+  "gen-multipartite@8": {
+    "candidates": 439,
+    "error": null,
+    "kind": "generative",
+    "n": 8,
+    "non_vertex_candidates": 330,
+    "orbits": [
+      7,
+      8,
+      28,
+      49,
+      63,
+      64,
+      95
+    ],
+    "rule": "gen-multipartite",
+    "seconds": 0.44,
+    "vertices": 109
+  },
+  "gen-radial-1@4": {
+    "candidates": 1,
+    "error": null,
+    "kind": "generative",
+    "n": 4,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-radial-1",
+    "seconds": 0.0,
+    "vertices": 1
+  },
+  "gen-radial-1@5": {
+    "candidates": 1,
+    "error": null,
+    "kind": "generative",
+    "n": 5,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-radial-1",
+    "seconds": 0.0,
+    "vertices": 1
+  },
+  "gen-radial-1@6": {
+    "candidates": 2,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1,
+      2
+    ],
+    "rule": "gen-radial-1",
+    "seconds": 0.0,
+    "vertices": 2
+  },
+  "gen-radial-1@7": {
+    "candidates": 27,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1,
+      4,
+      5,
+      8
+    ],
+    "rule": "gen-radial-1",
+    "seconds": 0.01,
+    "vertices": 27
+  },
+  "gen-radial-1@8": {
+    "candidates": 212,
+    "error": null,
+    "kind": "generative",
+    "n": 8,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1,
+      5,
+      6,
+      7,
+      8,
+      13,
+      28,
+      49,
+      63,
+      64,
+      65,
+      95,
+      96,
+      98,
+      99,
+      102,
+      139,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      232,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      247,
+      248,
+      373,
+      374,
+      379,
+      391
+    ],
+    "rule": "gen-radial-1",
+    "seconds": 1.0,
+    "vertices": 212
+  },
+  "gen-radial-2@5": {
+    "candidates": 1,
+    "error": null,
+    "kind": "generative",
+    "n": 5,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-radial-2",
+    "seconds": 0.0,
+    "vertices": 1
+  },
+  "gen-radial-2@6": {
+    "candidates": 1,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-radial-2",
+    "seconds": 0.0,
+    "vertices": 1
+  },
+  "gen-radial-2@7": {
+    "candidates": 2,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1,
+      5
+    ],
+    "rule": "gen-radial-2",
+    "seconds": 0.0,
+    "vertices": 2
+  },
+  "gen-radial-2@8": {
+    "candidates": 27,
+    "error": null,
+    "kind": "generative",
+    "n": 8,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1,
+      7,
+      8,
+      63
+    ],
+    "rule": "gen-radial-2",
+    "seconds": 0.01,
+    "vertices": 27
+  },
+  "gen-radial-3@6": {
+    "candidates": 1,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-radial-3",
+    "seconds": 0.0,
+    "vertices": 1
+  },
+  "gen-radial-3@7": {
+    "candidates": 1,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-radial-3",
+    "seconds": 0.0,
+    "vertices": 1
+  },
+  "gen-radial-3@8": {
+    "candidates": 2,
+    "error": null,
+    "kind": "generative",
+    "n": 8,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1,
+      8
+    ],
+    "rule": "gen-radial-3",
+    "seconds": 0.0,
+    "vertices": 2
+  },
+  "gen-radial-tree-complement@6": {
+    "candidates": 0,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 0,
+    "orbits": [],
+    "rule": "gen-radial-tree-complement",
+    "seconds": 0.0,
+    "vertices": 0
+  },
+  "gen-radial-tree-complement@7": {
+    "candidates": 0,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 0,
+    "orbits": [],
+    "rule": "gen-radial-tree-complement",
+    "seconds": 0.02,
+    "vertices": 0
+  },
+  "gen-radial-tree-complement@8": {
+    "candidates": 0,
+    "error": null,
+    "kind": "generative",
+    "n": 8,
+    "non_vertex_candidates": 0,
+    "orbits": [],
+    "rule": "gen-radial-tree-complement",
+    "seconds": 0.0,
+    "vertices": 0
+  },
+  "gen-rays@3": {
+    "candidates": 3,
+    "error": null,
+    "kind": "generative",
+    "n": 3,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-rays",
+    "seconds": 0.0,
+    "vertices": 3
+  },
+  "gen-rays@4": {
+    "candidates": 7,
+    "error": null,
+    "kind": "generative",
+    "n": 4,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-rays",
+    "seconds": 0.0,
+    "vertices": 7
+  },
+  "gen-rays@5": {
+    "candidates": 25,
+    "error": null,
+    "kind": "generative",
+    "n": 5,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1,
+      2
+    ],
+    "rule": "gen-rays",
+    "seconds": 0.01,
+    "vertices": 25
+  },
+  "gen-rays@6": {
+    "candidates": 296,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1,
+      2,
+      3
+    ],
+    "rule": "gen-rays",
+    "seconds": 0.1,
+    "vertices": 296
+  },
+  "gen-sporadic@3": {
+    "candidates": 0,
+    "error": null,
+    "kind": "generative",
+    "n": 3,
+    "non_vertex_candidates": 0,
+    "orbits": [],
+    "rule": "gen-sporadic",
+    "seconds": 0.0,
+    "vertices": 0
+  },
+  "gen-sporadic@4": {
+    "candidates": 0,
+    "error": null,
+    "kind": "generative",
+    "n": 4,
+    "non_vertex_candidates": 0,
+    "orbits": [],
+    "rule": "gen-sporadic",
+    "seconds": 0.0,
+    "vertices": 0
+  },
+  "gen-sporadic@5": {
+    "candidates": 0,
+    "error": null,
+    "kind": "generative",
+    "n": 5,
+    "non_vertex_candidates": 0,
+    "orbits": [],
+    "rule": "gen-sporadic",
+    "seconds": 0.0,
+    "vertices": 0
+  },
+  "gen-sporadic@6": {
+    "candidates": 0,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 0,
+    "orbits": [],
+    "rule": "gen-sporadic",
+    "seconds": 0.0,
+    "vertices": 0
+  },
+  "gen-sporadic@7": {
+    "candidates": 5,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      7,
+      8,
+      11,
+      13
+    ],
+    "rule": "gen-sporadic",
+    "seconds": 0.0,
+    "vertices": 5
+  },
+  "gen-sporadic@8": {
+    "candidates": 3,
+    "error": null,
+    "kind": "generative",
+    "n": 8,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      251,
+      451,
+      531
+    ],
+    "rule": "gen-sporadic",
+    "seconds": 0.0,
+    "vertices": 3
+  },
+  "gen-tree-suspension@6": {
+    "candidates": 3,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 3,
+    "orbits": [],
+    "rule": "gen-tree-suspension",
+    "seconds": 0.24,
+    "vertices": 0
+  },
+  "gen-tree-suspension@7": {
+    "candidates": 6,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 5,
+    "orbits": [
+      13
+    ],
+    "rule": "gen-tree-suspension",
+    "seconds": 0.0,
+    "vertices": 1
+  },
+  "gen-tree-suspension@8": {
+    "candidates": 11,
+    "error": null,
+    "kind": "generative",
+    "n": 8,
+    "non_vertex_candidates": 4,
+    "orbits": [
+      64,
+      99,
+      149,
+      151,
+      247,
+      248,
+      251
+    ],
+    "rule": "gen-tree-suspension",
+    "seconds": 0.0,
+    "vertices": 7
+  },
+  "gen-trivial-ext@4": {
+    "candidates": 24,
+    "error": null,
+    "kind": "generative",
+    "n": 4,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-trivial-ext",
+    "seconds": 0.0,
+    "vertices": 24
+  },
+  "gen-trivial-ext@5": {
+    "candidates": 64,
+    "error": null,
+    "kind": "generative",
+    "n": 5,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1
+    ],
+    "rule": "gen-trivial-ext",
+    "seconds": 0.0,
+    "vertices": 64
+  },
+  "gen-trivial-ext@6": {
+    "candidates": 320,
+    "error": null,
+    "kind": "generative",
+    "n": 6,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1,
+      3
+    ],
+    "rule": "gen-trivial-ext",
+    "seconds": 0.03,
+    "vertices": 320
+  },
+  "gen-trivial-ext@7": {
+    "candidates": 6528,
+    "error": null,
+    "kind": "generative",
+    "n": 7,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "rule": "gen-trivial-ext",
+    "seconds": 0.91,
+    "vertices": 6528
+  },
+  "gen-trivial-ext@8": {
+    "candidates": 182,
+    "error": null,
+    "kind": "generative",
+    "n": 8,
+    "non_vertex_candidates": 0,
+    "orbits": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      21,
+      22,
+      23,
+      24,
+      27,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      42,
+      43
+    ],
+    "rule": "gen-trivial-ext",
+    "seconds": 5.96,
+    "vertices": 182
+  },
+  "incidence-bounds@3": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 3,
+    "rule": "incidence-bounds",
+    "seconds": 0.0
+  },
+  "incidence-bounds@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "incidence-bounds",
+    "seconds": 0.0
+  },
+  "incidence-bounds@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "rule": "incidence-bounds",
+    "seconds": 0.01
+  },
+  "incidence-bounds@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "incidence-bounds",
+    "seconds": 0.05
+  },
+  "incidence-bounds@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "rule": "incidence-bounds",
+    "seconds": 0.08
+  },
+  "incidence-bounds@8": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 8,
+    "rule": "incidence-bounds",
+    "seconds": 0.13
+  },
+  "lift-fiber-complete@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "lift-fiber-complete",
+    "seconds": 0.0
+  },
+  "lift-fiber-complete@5": {
+    "counterexample": "results/ledger/counterexamples/lift-fiber-complete_n5.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 5,
+    "rule": "lift-fiber-complete",
+    "seconds": 0.0,
+    "witness": {
+      "x": {
+        "coords": [
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "2/3"
+        ],
+        "deza_orbit": 2,
+        "n": 5
+      }
+    }
+  },
+  "lift-fiber-complete@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "lift-fiber-complete",
+    "seconds": 0.13
+  },
+  "lift-fiber-complete@7": {
+    "counterexample": "results/ledger/counterexamples/lift-fiber-complete_n7.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 7,
+    "rule": "lift-fiber-complete",
+    "seconds": 5.91,
+    "witness": {
+      "x": {
+        "coords": [
+          "1/4",
+          "1/2",
+          "3/4",
+          "1/4",
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/2",
+          "1/2",
+          "1/4",
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/2",
+          "3/4",
+          "1/2",
+          "3/4",
+          "1/2",
+          "1/4",
+          "1/2",
+          "1/4"
+        ],
+        "deza_orbit": 6,
+        "n": 7
+      }
+    }
+  },
+  "lift-fiber-complete@8": {
+    "counterexample": "results/ledger/counterexamples/lift-fiber-complete_n8.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 8,
+    "rule": "lift-fiber-complete",
+    "seconds": 23.8,
+    "witness": {
+      "x": {
+        "coords": [
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/2",
+          "1/2",
+          "1/4",
+          "1/4",
+          "3/4",
+          "1/2",
+          "1/4",
+          "3/4",
+          "1/4",
+          "3/4",
+          "1/4",
+          "3/4",
+          "1/2",
+          "1/2",
+          "1/2"
+        ],
+        "deza_orbit": 17,
+        "n": 8
+      }
+    }
+  },
+  "no-cut-set@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "no-cut-set",
+    "seconds": 6.08
+  },
+  "no-half-integral@3": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 3,
+    "rule": "no-half-integral",
+    "seconds": 0.0
+  },
+  "no-half-integral@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "no-half-integral",
+    "seconds": 0.0
+  },
+  "no-half-integral@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "rule": "no-half-integral",
+    "seconds": 0.0
+  },
+  "no-half-integral@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "no-half-integral",
+    "seconds": 0.0
+  },
+  "no-half-integral@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "rule": "no-half-integral",
+    "seconds": 0.0
+  },
+  "no-half-integral@8": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 8,
+    "rule": "no-half-integral",
+    "seconds": 0.0
+  },
+  "no-simple-vertex@3": {
+    "counterexample": "results/ledger/counterexamples/no-simple-vertex_n3.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 3,
+    "rule": "no-simple-vertex",
+    "seconds": 0.0,
+    "witness": {
+      "x": {
+        "coords": [
+          "0",
+          "0",
+          "0"
+        ],
+        "deza_orbit": 1,
+        "n": 3
+      }
+    }
+  },
+  "no-simple-vertex@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "no-simple-vertex",
+    "seconds": 0.0
+  },
+  "no-simple-vertex@5": {
+    "counterexample": "results/ledger/counterexamples/no-simple-vertex_n5.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 5,
+    "rule": "no-simple-vertex",
+    "seconds": 0.0,
+    "witness": {
+      "x": {
+        "coords": [
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "2/3"
+        ],
+        "deza_orbit": 2,
+        "n": 5
+      }
+    }
+  },
+  "no-simple-vertex@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "no-simple-vertex",
+    "seconds": 0.01
+  },
+  "no-simple-vertex@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "rule": "no-simple-vertex",
+    "seconds": 0.0
+  },
+  "no-simple-vertex@8": {
+    "counterexample": "results/ledger/counterexamples/no-simple-vertex_n8.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 8,
+    "rule": "no-simple-vertex",
+    "seconds": 0.01,
+    "witness": {
+      "x": {
+        "coords": [
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "1/3"
+        ],
+        "deza_orbit": 532,
+        "n": 8
+      }
+    }
+  },
+  "non-fully-fractional-is-trivial-ext@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "non-fully-fractional-is-trivial-ext",
+    "seconds": 0.0
+  },
+  "non-fully-fractional-is-trivial-ext@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "rule": "non-fully-fractional-is-trivial-ext",
+    "seconds": 0.0
+  },
+  "non-fully-fractional-is-trivial-ext@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "non-fully-fractional-is-trivial-ext",
+    "seconds": 0.13
+  },
+  "non-fully-fractional-is-trivial-ext@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "rule": "non-fully-fractional-is-trivial-ext",
+    "seconds": 4.48
+  },
+  "non-fully-fractional-is-trivial-ext@8": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 8,
+    "rule": "non-fully-fractional-is-trivial-ext",
+    "seconds": 1.92
+  },
+  "projects-to-smaller-vertex@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "projects-to-smaller-vertex",
+    "seconds": 0.0
+  },
+  "projects-to-smaller-vertex@5": {
+    "counterexample": "results/ledger/counterexamples/projects-to-smaller-vertex_n5.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 5,
+    "rule": "projects-to-smaller-vertex",
+    "seconds": 0.0,
+    "witness": {
+      "x": {
+        "coords": [
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "2/3"
+        ],
+        "deza_orbit": 2,
+        "n": 5
+      }
+    }
+  },
+  "projects-to-smaller-vertex@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "projects-to-smaller-vertex",
+    "seconds": 0.07
+  },
+  "projects-to-smaller-vertex@7": {
+    "counterexample": "results/ledger/counterexamples/projects-to-smaller-vertex_n7.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 7,
+    "rule": "projects-to-smaller-vertex",
+    "seconds": 0.01,
+    "witness": {
+      "x": {
+        "coords": [
+          "1/4",
+          "1/2",
+          "3/4",
+          "1/4",
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/2",
+          "1/2",
+          "1/4",
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/2",
+          "3/4",
+          "1/2",
+          "3/4",
+          "1/2",
+          "1/4",
+          "1/2",
+          "1/4"
+        ],
+        "deza_orbit": 6,
+        "n": 7
+      }
+    }
+  },
+  "projects-to-smaller-vertex@8": {
+    "counterexample": "results/ledger/counterexamples/projects-to-smaller-vertex_n8.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 8,
+    "rule": "projects-to-smaller-vertex",
+    "seconds": 0.02,
+    "witness": {
+      "x": {
+        "coords": [
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/2",
+          "1/2",
+          "1/4",
+          "1/4",
+          "3/4",
+          "1/2",
+          "1/4",
+          "3/4",
+          "1/4",
+          "3/4",
+          "1/4",
+          "3/4",
+          "1/2",
+          "1/2",
+          "1/2"
+        ],
+        "deza_orbit": 17,
+        "n": 8
+      }
+    }
+  },
+  "sporadic-are-vertices@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "rule": "sporadic-are-vertices",
+    "seconds": 0.0
+  },
+  "sporadic-are-vertices@8": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 8,
+    "rule": "sporadic-are-vertices",
+    "seconds": 0.0
+  },
+  "switch-class-nonadjacent@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "rule": "switch-class-nonadjacent",
+    "seconds": 0.02
+  },
+  "switch-class-nonadjacent@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "switch-class-nonadjacent",
+    "seconds": 2.49
+  },
+  "switch-class-nonadjacent@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "rule": "switch-class-nonadjacent",
+    "seconds": 0.89
+  },
+  "switch-class-nonadjacent@8": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 8,
+    "rule": "switch-class-nonadjacent",
+    "seconds": 15.58
+  },
+  "third-valued-is-graphic@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "rule": "third-valued-is-graphic",
+    "seconds": 0.0
+  },
+  "third-valued-is-graphic@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "third-valued-is-graphic",
+    "seconds": 0.01
+  },
+  "third-valued-is-graphic@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "rule": "third-valued-is-graphic",
+    "seconds": 0.0
+  },
+  "third-valued-is-graphic@8": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 8,
+    "rule": "third-valued-is-graphic",
+    "seconds": 0.02
+  },
+  "three-projections-imply-vertex@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "three-projections-imply-vertex",
+    "seconds": 0.0
+  },
+  "three-projections-imply-vertex@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "rule": "three-projections-imply-vertex",
+    "seconds": 0.0
+  },
+  "three-projections-imply-vertex@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "three-projections-imply-vertex",
+    "seconds": 0.08
+  },
+  "three-projections-imply-vertex@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "rule": "three-projections-imply-vertex",
+    "seconds": 4.53
+  },
+  "vertex-moves-cover-M1@3": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 3,
+    "rule": "vertex-moves-cover-M1",
+    "seconds": 1.89
+  },
+  "vertex-moves-cover-M1@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "vertex-moves-cover-M1",
+    "seconds": 0.0
+  },
+  "vertex-moves-cover-M1@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "rule": "vertex-moves-cover-M1",
+    "seconds": 0.01
+  },
+  "vertex-moves-cover-M1@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "vertex-moves-cover-M1",
+    "seconds": 0.5
+  },
+  "vertex-moves-cover-M1@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "rule": "vertex-moves-cover-M1",
+    "seconds": 1.3
+  },
+  "vertex-moves-cover@3": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 3,
+    "rule": "vertex-moves-cover",
+    "seconds": 2.76
+  },
+  "vertex-moves-cover@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "rule": "vertex-moves-cover",
+    "seconds": 0.0
+  },
+  "vertex-moves-cover@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "rule": "vertex-moves-cover",
+    "seconds": 0.01
+  },
+  "vertex-moves-cover@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "rule": "vertex-moves-cover",
+    "seconds": 0.49
+  },
+  "vertex-moves-cover@7": {
+    "counterexample": "results/ledger/counterexamples/vertex-moves-cover_n7.json",
+    "error": null,
+    "holds": false,
+    "kind": "structural",
+    "n": 7,
+    "rule": "vertex-moves-cover",
+    "seconds": 1.26,
+    "witness": {
+      "x": {
+        "coords": [
+          "1/6",
+          "1/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/6",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "2/3"
+        ],
+        "deza_orbit": 12,
+        "n": 7
+      }
+    }
+  }
+}

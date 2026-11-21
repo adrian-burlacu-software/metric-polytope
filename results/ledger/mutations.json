@@ -1,0 +1,156 @@
+[
+  {
+    "breaks_at": 9,
+    "evidence": "Deza\u2013Indik 2007: 1,221 known orbits of m_9 vertices not adjacent to any cut; example (1/9)(2,2,3,3,4,4,5,5,4,3,5,6,6,3,3,5,5,2,4,3,5,6,3,3,6,6,5,3,2,6,6,3,3,5,3,4).",
+    "holds": "n <= 8 (Deza et al., complete m_8)",
+    "id": "M0",
+    "rule": "dominating-set",
+    "statement": "Every vertex of m_n is adjacent to a cut (Laurent\u2013Poljak 1992).",
+    "status": "LITERATURE \u2014 not yet verified in code (Phase 7)"
+  },
+  {
+    "breaks_at": 3,
+    "counterexample": "results/ledger/counterexamples/no-simple-vertex_n3.json",
+    "holds": [
+      4,
+      6,
+      7
+    ],
+    "id": "M1",
+    "rule": "no-simple-vertex",
+    "source": "S12",
+    "statement": "No vertex is simple (incidence = C(n,2)); literature: true for n \u2264 7, false at n = 8.",
+    "status": "VERIFIED in code",
+    "witness": {
+      "x": {
+        "coords": [
+          "0",
+          "0",
+          "0"
+        ],
+        "deza_orbit": 1,
+        "n": 3
+      }
+    }
+  },
+  {
+    "breaks_at": 5,
+    "counterexample": "results/ledger/counterexamples/projects-to-smaller-vertex_n5.json",
+    "holds": [
+      4,
+      6
+    ],
+    "id": "M2",
+    "rule": "projects-to-smaller-vertex",
+    "source": "user rule; LP92 Ex. 2.14 predicts failure at n = 7",
+    "statement": "Every vertex has a node whose deletion leaves a vertex of m_{n-1}.",
+    "status": "VERIFIED in code",
+    "witness": {
+      "x": {
+        "coords": [
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "2/3"
+        ],
+        "deza_orbit": 2,
+        "n": 5
+      }
+    }
+  },
+  {
+    "breaks_at": 5,
+    "counterexample": "results/ledger/counterexamples/lift-fiber-complete_n5.json",
+    "holds": [
+      4,
+      6
+    ],
+    "id": "M3",
+    "rule": "lift-fiber-complete",
+    "source": "user rule (generative version)",
+    "statement": "Every orbit of m_n contains a vertex of the fiber over some vertex of m_{n-1}.",
+    "status": "VERIFIED in code",
+    "witness": {
+      "x": {
+        "coords": [
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "2/3"
+        ],
+        "deza_orbit": 2,
+        "n": 5
+      }
+    }
+  },
+  {
+    "breaks_at": 7,
+    "counterexample": "results/ledger/counterexamples/vertex-moves-cover_n7.json",
+    "extension": {
+      "level": 1,
+      "rechecked_by": {
+        "vertex-moves-cover-M1": {
+          "3": true,
+          "4": true,
+          "5": true,
+          "6": true,
+          "7": true
+        }
+      },
+      "rule": "gen-lift-multipartite",
+      "source": "(generative gen-lift-multipartite (n) :domain (4) :source \"M1 (this work)\" :fixes \"vertex-moves-cover\" :level 1 :doc \"Vertices of the fiber over the (non-vertex) metric (1/3)d(K_p) of a complete multipartite graph on n\u22121 nodes.\" (concat-all (for ((p (partitions (- n 1)))) (where (> (len p) 1)) (fiber-vertices (lift-partial (third-metric (kparts p)))))))"
+    },
+    "holds": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "id": "M4",
+    "rule": "vertex-moves-cover",
+    "source": "Phase 4c coverage (this work)",
+    "statement": "Every orbit of m_n is reached from the literature base pieces by moves whose intermediate points are all vertices.",
+    "status": "VERIFIED in code",
+    "witness": {
+      "x": {
+        "coords": [
+          "1/6",
+          "1/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "1/6",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "1/3",
+          "1/3",
+          "1/3",
+          "2/3",
+          "2/3",
+          "2/3"
+        ],
+        "deza_orbit": 12,
+        "n": 7
+      }
+    }
+  }
+]

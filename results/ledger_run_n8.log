@@ -107,3 +107,52 @@
 [at-least-two-cuts@5] 0.03s holds=True
 [at-least-two-cuts@6] 6.98s holds=True
 [at-least-two-cuts@7] 2.67s holds=True
+[at-least-two-cuts@8] 48.38s holds=True
+[no-cut-set@6] 6.08s holds=True
+[third-valued-is-graphic@5] 0.0s holds=True
+[third-valued-is-graphic@6] 0.01s holds=True
+[third-valued-is-graphic@7] 0.0s holds=True
+[third-valued-is-graphic@8] 0.02s holds=True
+[no-simple-vertex@3] 0.0s holds=False
+[no-simple-vertex@4] 0.0s holds=True
+[no-simple-vertex@5] 0.0s holds=False
+[no-simple-vertex@6] 0.01s holds=True
+[no-simple-vertex@7] 0.0s holds=True
+[no-simple-vertex@8] 0.01s holds=False
+[switch-class-nonadjacent@5] 0.02s holds=True
+[switch-class-nonadjacent@6] 2.49s holds=True
+[switch-class-nonadjacent@7] 0.89s holds=True
+[switch-class-nonadjacent@8] 15.58s holds=True
+[projects-to-smaller-vertex@4] 0.0s holds=True
+[projects-to-smaller-vertex@5] 0.0s holds=False
+[projects-to-smaller-vertex@6] 0.07s holds=True
+[projects-to-smaller-vertex@7] 0.01s holds=False
+[projects-to-smaller-vertex@8] 0.02s holds=False
+[lift-fiber-complete@4] 0.0s holds=True
+[lift-fiber-complete@5] 0.0s holds=False
+[lift-fiber-complete@6] 0.13s holds=True
+[lift-fiber-complete@7] 5.91s holds=False
+[lift-fiber-complete@8] 23.8s holds=False
+[sporadic-are-vertices@7] 0.0s holds=True
+[sporadic-are-vertices@8] 0.0s holds=True
+[closure ledger-C-lit-v] round 1: +1 orbits (1.4s)  per n: {3: 1, 4: 1, 5: 2, 6: 3, 7: 12}
+[closure ledger-C-lit-v] round 2: +0 orbits (0.0s)  per n: {3: 1, 4: 1, 5: 2, 6: 3, 7: 12}
+[vertex-moves-cover@3] 2.76s holds=True
+[vertex-moves-cover@4] 0.0s holds=True
+[vertex-moves-cover@5] 0.01s holds=True
+[vertex-moves-cover@6] 0.49s holds=True
+[vertex-moves-cover@7] 1.26s holds=False
+[gen-lift-multipartite@4] 0.0s orbits=[]
+[gen-lift-multipartite@5] 0.01s orbits=[2]
+[gen-lift-multipartite@6] 0.02s orbits=[2, 3]
+[gen-lift-multipartite@7] 0.11s orbits=[4, 5, 8, 11, 12, 13]
+[gen-lift-multipartite@8] 0.48s orbits=[7, 8, 13, 28, 36, 44, 49, 63, 64, 65, 67, 81, 82, 95, 98, 102, 148, 151, 153, 196, 234]
+[closure ledger-C-lit-v-M1] round 1: +1 orbits (0.3s)  per n: {3: 1, 4: 1, 5: 2, 6: 3, 7: 13}
+[closure ledger-C-lit-v-M1] round 2: +0 orbits (0.0s)  per n: {3: 1, 4: 1, 5: 2, 6: 3, 7: 13}
+[vertex-moves-cover-M1@3] 1.89s holds=True
+[vertex-moves-cover-M1@4] 0.0s holds=True
+[vertex-moves-cover-M1@5] 0.01s holds=True
+[vertex-moves-cover-M1@6] 0.5s holds=True
+[vertex-moves-cover-M1@7] 1.3s holds=True
+wrote rules.md (152 task records)
+exit 0

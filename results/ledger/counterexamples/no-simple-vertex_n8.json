@@ -1,0 +1,44 @@
+{
+  "binding": {
+    "x": "<8|3|1,1,1,1,1,1,2,1,1,1,1,2,1,1,1,2,1,1,2,1,2,2,2,1,2,2,1,1>"
+  },
+  "n": 8,
+  "rule": "no-simple-vertex",
+  "rule_source": "(structural no-simple-vertex (n) :domain (3) :source \"S12\" :doc \"No vertex is simple (incidence = C(n,2)); literature: true for n \u2264 7, false at n = 8.\" (forall ((x (vertices n))) (> (incidence x) (binom n 2))))",
+  "witness": {
+    "x": {
+      "coords": [
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "2/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "2/3",
+        "1/3",
+        "1/3",
+        "1/3",
+        "2/3",
+        "1/3",
+        "1/3",
+        "2/3",
+        "1/3",
+        "2/3",
+        "2/3",
+        "2/3",
+        "1/3",
+        "2/3",
+        "2/3",
+        "1/3",
+        "1/3"
+      ],
+      "deza_orbit": 532,
+      "n": 8
+    }
+  }
+}
