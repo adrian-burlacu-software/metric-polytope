@@ -8,7 +8,7 @@ Design (seeded, saved to results/n9/sample_<design>.json):
   C  : coarse strata  <=8, 9–11, 12–14, 15–17, >=18  (2,000 each)
 Per orbit: exact vertex test, incidence, canonical key, stabilizer -> orbit size, adjacent to some cut, block
 decomposition X* (free / vertex blocks), derivation depth (detour / vertex-only, uniform base incl. all graph metrics
-on 9 nodes), middle types (count, new vs the n <= 8 catalog; atom classification dropped for runtime).
+on 9 nodes), middle types dropped for runtime (user decision; finite-middle-vocabulary already broke at n = 6).
 Parallel (--workers), one atomic JSONL file per chunk in checkpoints/n9_sample_<design>/, resumable.
 Usage: python -u scripts/n9_sample.py --design A [--workers 19] [--draw-only] [--report-only]
 """
@@ -90,10 +90,9 @@ def _init():
     import detour_depth2 as d2
     group.perm_src(9)
     base = {int(n): set(v) for n, v in json.loads(BASE.read_text()).items() if not n.startswith("_")}
-    cat = json.loads((ROOT / "results" / "phase6" / "catalog.json").read_text(encoding="utf-8"))
     _W.update(coords=np.load(COORDS, mmap_mode="r"), den=np.load(DENS, mmap_mode="r"), engine=blocks.Engine(),
               dpF=d2.DP(base, vertex_mode=False, extra_base=_graphic9), dpV=d2.DP(base, vertex_mode=True, extra_base=_graphic9),
-              old_types=set(cat), nonconst={})
+              )
 
 
 def _graphic9(y):
@@ -114,7 +113,7 @@ def _pairs9():
 
 
 def analyse_row(r):
-    from metricpoly import blocks, core, group, middles
+    from metricpoly import blocks, core, group
     from metricpoly.core import Point
     from metricpoly.dsl.prims import p_adjacent, p_cuts, p_vertex
     x = Point.make(9, int(_W["den"][r]), [int(v) for v in _W["coords"][r]])
@@ -131,19 +130,8 @@ def analyse_row(r):
     dV, _ = _W["dpV"].point_depth(x)
     out["depth_detour"] = None if dF == math.inf else int(dF)
     out["depth_vertex"] = None if dV == math.inf else int(dV)
-    types = {middles.canonical_type(Mx[np.ix_(T, U)], x.D) for T, U in _pairs9()}
-    new = [k for k in types if k not in _W["old_types"]]
-    # atom classification of new types dropped (user decision 2026-11-21: ~1/3 of runtime)
-    # constant-up-to-flips blocks are 'new' at n = 9 merely by size; count the non-constant new types separately
-    nc = []
-    for k in new:
-        if k not in _W["nonconst"]:
-            M, D = middles.decode(k)
-            _W["nonconst"][k] = not blocks.is_const_up_to_flips(M, D)
-        if _W["nonconst"][k]:
-            nc.append(k)
-    out.update(types=len(types), new_types=len(new), new_nonconst=len(nc),
-               new_nonconst_old_den=sum(1 for k in nc if int(k.split("|")[1]) <= 15))
+    # middle types dropped (user decision 2026-11-22): finite-middle-vocabulary already broke at n = 6 and Phase 6
+    # found no reachability signal; chunks written before this change also carry types / new_types fields (ignored)
     return out
 
 
@@ -219,8 +207,6 @@ def report(design):
         "fractal: blocks are vertices (any level)": lambda r: r["X_vb"] is not None,
         "derivable with detours": lambda r: r["depth_detour"] is not None,
         "derivable vertex-only": lambda r: r["depth_vertex"] is not None,
-        "carries a new non-constant middle type (vs n<=8 catalog)": lambda r: r["new_nonconst"] > 0,
-        "carries a new non-constant middle type with denominator <= 15": lambda r: r["new_nonconst_old_den"] > 0,
     }
     U = [R[r] for r in sample["uniform"] if r in R]
     md = ["# n = 9 sample study", "",
@@ -262,31 +248,30 @@ def report(design):
         md.append(f"- {name}: stratified {100 * strat_est[name]:.2f}%  vs uniform {100 * out['uniform'][name]['p']:.2f}%")
     # within-stratum comparisons: reachable (detour) vs unreachable
     md += ["", "## Within-denominator: derivable vs not derivable (detours allowed)", "",
-           "Mean new non-constant middle types per orbit and share with structured decomposition; one-sided permutation test "
-           "(20,000 permutations) on new non-constant middle types with denominator <= 15, Holm-corrected across strata.", "",
-           "| stratum | derivable n | not n | mean new non-const types (der / not) | mean new non-const den<=15 (der / not) | structured X* (der / not) | p (raw) | p (Holm) |",
-           "|---|---|---|---|---|---|---|---|"]
+           "Share with structured decomposition (X* <= 2val) and share not adjacent to any cut; two-sided permutation "
+           "test (20,000 permutations) on the structured share, Holm-corrected across strata.", "",
+           "| stratum | derivable n | not n | structured X* (der / not) | not adjacent to a cut (der / not) | p (raw) | p (Holm) |",
+           "|---|---|---|---|---|---|---|"]
     tests = []
     for s, info in sample["strata"].items():
         rows = [R[r] for r in info["rows"] if r in R]
         a = [r for r in rows if r["depth_detour"] is not None]
         b = [r for r in rows if r["depth_detour"] is None]
         if len(a) < 20 or len(b) < 20:
-            md.append(f"| {s} | {len(a)} | {len(b)} | — | — | — | (group < 20) | |")
+            md.append(f"| {s} | {len(a)} | {len(b)} | — | — | (group < 20) | |")
             continue
-        va = np.array([r["new_nonconst_old_den"] for r in a], float)
-        vb = np.array([r["new_nonconst_old_den"] for r in b], float)
+        va = np.array([r["X_free"] is not None and r["X_free"] <= 2 for r in a], float)
+        vb = np.array([r["X_free"] is not None and r["X_free"] <= 2 for r in b], float)
         allv, lab = np.concatenate([va, vb]), np.r_[np.zeros(len(va)), np.ones(len(vb))].astype(bool)
-        obs = allv[lab].mean() - allv[~lab].mean()
+        obs = abs(allv[lab].mean() - allv[~lab].mean())
         cnt = 0
         for _ in range(20000):
             pl = rng.permutation(lab)
-            cnt += allv[pl].mean() - allv[~pl].mean() >= obs
+            cnt += abs(allv[pl].mean() - allv[~pl].mean()) >= obs - 1e-12
         p = (cnt + 1) / 20001
-        sa = np.mean([r["X_free"] is not None and r["X_free"] <= 2 for r in a])
-        sb = np.mean([r["X_free"] is not None and r["X_free"] <= 2 for r in b])
-        tests.append([s, p, len(a), len(b), np.mean([r["new_nonconst"] for r in a]), np.mean([r["new_nonconst"] for r in b]),
-                      va.mean(), vb.mean(), sa, sb])
+        ca = np.mean([not r["adj_cut"] for r in a])
+        cb = np.mean([not r["adj_cut"] for r in b])
+        tests.append([s, p, len(a), len(b), va.mean(), vb.mean(), ca, cb])
     order = sorted(range(len(tests)), key=lambda i: tests[i][1])
     m = len(tests)
     holm, running = [0.0] * m, 0.0
@@ -294,8 +279,8 @@ def report(design):
         running = max(running, min(1.0, (m - rank) * tests[i][1]))
         holm[i] = running
     for i, t in enumerate(tests):
-        md.append(f"| {t[0]} | {t[2]} | {t[3]} | {t[4]:.1f} / {t[5]:.1f} | {t[6]:.2f} / {t[7]:.2f} | "
-                  f"{100 * t[8]:.0f}% / {100 * t[9]:.0f}% | {t[1]:.4f} | {holm[i]:.4f} |")
+        md.append(f"| {t[0]} | {t[2]} | {t[3]} | {100 * t[4]:.0f}% / {100 * t[5]:.0f}% | "
+                  f"{100 * t[6]:.0f}% / {100 * t[7]:.0f}% | {t[1]:.4f} | {holm[i]:.4f} |")
         out["comparisons"][t[0]] = {"p": t[1], "p_holm": holm[i], "n_der": t[2], "n_not": t[3]}
     atomic_write_json(OUT / f"report_{design}.json", out)
     atomic_write_text(OUT / f"report_{design}.md", "\n".join(md) + "\n")
