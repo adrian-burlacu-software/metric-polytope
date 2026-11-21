@@ -1,0 +1,29 @@
+;;; mutations.mpr — rules found to break in this project, and the DSL extensions that repair them.
+;;; Every extension carries :fixes "<broken rule>" and :level (1 = DSL-only, 2 = new primitive, 3 = new base case).
+
+;; ---------------------------------------------------------------- literature base pieces (data-free rules)
+(define lit-seeds
+  (concat-all
+    (for ((n (range 3 8)))
+      (concat (gen-cuts n) (gen-anticuts n) (gen-graphic n) (gen-multipartite n) (gen-avis-paths n)
+              (if (<= n 6) (gen-rays n) (list)) (gen-tree-suspension n)))))
+(define vertex-moves (list twin dup radial radial2 radial3 lift-fiber))   ; glue-all adds nothing for n <= 7 (Phase 4c)
+
+;; ---------------------------------------------------------------- rule that breaks (mutation M1)
+(define C-lit-v (closure lit-seeds vertex-moves :max-n 7 :checkpoint "ledger-C-lit-v"))
+(structural vertex-moves-cover (n) :domain (3 7) :source "Phase 4c coverage (this work)"
+  :doc "Every orbit of m_n is reached from the literature base pieces by moves whose intermediate points are all vertices."
+  (forall ((x (vertices n))) (in-orbits? x (closure-orbits C-lit-v n))))
+
+;; ---------------------------------------------------------------- M1 repair (level 1: DSL only)
+(generative gen-lift-multipartite (n) :domain (4) :source "M1 (this work)" :fixes "vertex-moves-cover" :level 1
+  :doc "Vertices of the fiber over the (non-vertex) metric (1/3)d(K_p) of a complete multipartite graph on n−1 nodes."
+  (concat-all (for ((p (partitions (- n 1)))) (where (> (len p) 1))
+    (fiber-vertices (lift-partial (third-metric (kparts p)))))))
+
+(define C-lit-v-M1
+  (closure (concat lit-seeds (concat-all (for ((n (range 4 8))) (gen-lift-multipartite n))))
+           vertex-moves :max-n 7 :checkpoint "ledger-C-lit-v-M1"))
+(structural vertex-moves-cover-M1 (n) :domain (3 7) :source "M1 (this work)"
+  :doc "As vertex-moves-cover, with gen-lift-multipartite added to the base pieces."
+  (forall ((x (vertices n))) (in-orbits? x (closure-orbits C-lit-v-M1 n))))
