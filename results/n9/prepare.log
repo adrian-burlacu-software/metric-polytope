@@ -1,0 +1,119 @@
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+[graphs9] extension chunks 1/76  buckets 28151  12s
+[graphs9] extension chunks 2/76  buckets 53051  12s
+[graphs9] extension chunks 3/76  buckets 75962  12s
+[graphs9] extension chunks 4/76  buckets 95567  13s
+[graphs9] extension chunks 5/76  buckets 113530  13s
+[graphs9] extension chunks 6/76  buckets 128992  13s
+[graphs9] extension chunks 7/76  buckets 143155  13s
+[graphs9] extension chunks 8/76  buckets 155673  13s
+[graphs9] extension chunks 9/76  buckets 167129  13s
+[graphs9] extension chunks 10/76  buckets 177260  13s
+[graphs9] extension chunks 11/76  buckets 187149  14s
+[graphs9] extension chunks 12/76  buckets 195496  14s
+[graphs9] extension chunks 13/76  buckets 203029  14s
+[graphs9] extension chunks 14/76  buckets 209339  15s
+[graphs9] extension chunks 15/76  buckets 215745  15s
+[graphs9] extension chunks 16/76  buckets 221176  15s
+[graphs9] extension chunks 17/76  buckets 226145  15s
+[graphs9] extension chunks 18/76  buckets 230117  16s
+[graphs9] extension chunks 19/76  buckets 233775  16s
+[graphs9] extension chunks 20/76  buckets 237310  24s
+[graphs9] extension chunks 21/76  buckets 240530  25s
+[graphs9] extension chunks 22/76  buckets 243336  25s
+[graphs9] extension chunks 23/76  buckets 246012  25s
+[graphs9] extension chunks 24/76  buckets 248180  26s
+[graphs9] extension chunks 25/76  buckets 250257  26s
+[graphs9] extension chunks 26/76  buckets 252117  26s
+[graphs9] extension chunks 27/76  buckets 253780  27s
+[graphs9] extension chunks 28/76  buckets 255307  27s
+[graphs9] extension chunks 29/76  buckets 256626  27s
+[graphs9] extension chunks 30/76  buckets 257674  27s
+[graphs9] extension chunks 31/76  buckets 258618  28s
+[graphs9] extension chunks 32/76  buckets 259513  29s
+[graphs9] extension chunks 33/76  buckets 260295  29s
+[graphs9] extension chunks 34/76  buckets 261087  29s
+[graphs9] extension chunks 35/76  buckets 261709  29s
+[graphs9] extension chunks 36/76  buckets 262233  30s
+[graphs9] extension chunks 37/76  buckets 262713  30s
+[graphs9] extension chunks 38/76  buckets 263162  30s
+[graphs9] extension chunks 39/76  buckets 263519  37s
+[graphs9] extension chunks 40/76  buckets 263859  38s
+[graphs9] extension chunks 41/76  buckets 264173  39s
+[graphs9] extension chunks 42/76  buckets 264472  39s
+[graphs9] extension chunks 43/76  buckets 264679  39s
+[graphs9] extension chunks 44/76  buckets 264832  40s
+[graphs9] extension chunks 45/76  buckets 264982  41s
+[graphs9] extension chunks 46/76  buckets 265132  41s
+[graphs9] extension chunks 47/76  buckets 265261  41s
+[graphs9] extension chunks 48/76  buckets 265358  41s
+[graphs9] extension chunks 49/76  buckets 265436  42s
+[graphs9] extension chunks 50/76  buckets 265501  42s
+[graphs9] extension chunks 51/76  buckets 265588  43s
+[graphs9] extension chunks 52/76  buckets 265633  43s
+[graphs9] extension chunks 53/76  buckets 265658  44s
+[graphs9] extension chunks 54/76  buckets 265695  45s
+[graphs9] extension chunks 55/76  buckets 265719  46s
+[graphs9] extension chunks 56/76  buckets 265740  46s
+[graphs9] extension chunks 57/76  buckets 265753  46s
+[graphs9] extension chunks 58/76  buckets 265766  50s
+[graphs9] extension chunks 59/76  buckets 265777  52s
+[graphs9] extension chunks 60/76  buckets 265782  52s
+[graphs9] extension chunks 61/76  buckets 265788  53s
+[graphs9] extension chunks 62/76  buckets 265792  53s
+[graphs9] extension chunks 63/76  buckets 265799  53s
+[graphs9] extension chunks 64/76  buckets 265811  54s
+[graphs9] extension chunks 65/76  buckets 265815  54s
+[graphs9] extension chunks 66/76  buckets 265816  55s
+[graphs9] extension chunks 67/76  buckets 265817  55s
+[graphs9] extension chunks 68/76  buckets 265817  55s
+[graphs9] extension chunks 69/76  buckets 265817  55s
+[graphs9] extension chunks 70/76  buckets 265817  55s
+[graphs9] extension chunks 71/76  buckets 265817  56s
+[graphs9] extension chunks 72/76  buckets 265817  56s
+[graphs9] extension chunks 73/76  buckets 265817  56s
+[graphs9] extension chunks 74/76  buckets 265817  56s
+[graphs9] extension chunks 75/76  buckets 265817  56s
+[graphs9] extension chunks 76/76  buckets 265817  57s
+[graphs9] dedupe 20000/265817  60s
+[graphs9] dedupe 40000/265817  65s
+[graphs9] dedupe 60000/265817  68s
+[graphs9] dedupe 80000/265817  72s
+[graphs9] dedupe 100000/265817  75s
