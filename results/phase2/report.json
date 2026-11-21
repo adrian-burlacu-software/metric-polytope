@@ -1,7 +1,7 @@
 {
   "job_state": {
-    "code_version": "a09c22c7b551f6de",
-    "git_head": "no-commit+dirty",
+    "code_version": "6be828c3d6c41313",
+    "git_head": "48a0844050a1a71f10d49025195b73afcb461bb3",
     "params": {
       "enum_n": [
         3,
@@ -24,7 +24,7 @@
   },
   "raw": {
     "canon_crosscheck": {
-      "_seconds": 2.41,
+      "_seconds": 2.421,
       "n3": {
         "fast_eq_brute_all": true,
         "fast_eq_switchcanon_def": true,
@@ -53,7 +53,7 @@
       }
     },
     "deza_reps_n3": {
-      "_seconds": 0.001,
+      "_seconds": 0.002,
       "all_vertices": true,
       "distinct_orbits": 1,
       "group_order": 24,
@@ -85,7 +85,7 @@
       "total_vertices": 8
     },
     "deza_reps_n5": {
-      "_seconds": 0.003,
+      "_seconds": 0.002,
       "all_vertices": true,
       "distinct_orbits": 2,
       "group_order": 1920,
@@ -123,7 +123,7 @@
       "total_vertices": 544
     },
     "deza_reps_n7": {
-      "_seconds": 0.073,
+      "_seconds": 0.075,
       "all_vertices": true,
       "distinct_orbits": 13,
       "group_order": 322560,
@@ -163,7 +163,7 @@
       "total_vertices": 275840
     },
     "deza_reps_n8": {
-      "_seconds": 8.999,
+      "_seconds": 8.97,
       "all_vertices": true,
       "distinct_orbits": 533,
       "group_order": 5160960,
@@ -1243,7 +1243,7 @@
       "total_vertices": 1550825600
     },
     "enum_n3": {
-      "_seconds": 0.01,
+      "_seconds": 0.011,
       "all_vertices": true,
       "canon_set_equals_deza": true,
       "deza_orbit_union_equals_enum": true,
@@ -1257,7 +1257,7 @@
       "vertices": 4
     },
     "enum_n4": {
-      "_seconds": 0.007,
+      "_seconds": 0.006,
       "all_vertices": true,
       "canon_set_equals_deza": true,
       "deza_orbit_union_equals_enum": true,
@@ -1271,7 +1271,7 @@
       "vertices": 8
     },
     "enum_n5": {
-      "_seconds": 0.036,
+      "_seconds": 0.032,
       "all_vertices": true,
       "canon_set_equals_deza": true,
       "deza_orbit_union_equals_enum": true,
@@ -1286,11 +1286,11 @@
       "vertices": 32
     },
     "enum_n6": {
-      "_seconds": 0.821,
+      "_seconds": 0.826,
       "all_vertices": true,
       "canon_set_equals_deza": true,
       "deza_orbit_union_equals_enum": true,
-      "enum_seconds": 0.362,
+      "enum_seconds": 0.359,
       "file": "data/generated/m6_vertices.json",
       "orbit_sizes": [
         32,
@@ -1302,7 +1302,7 @@
       "vertices": 544
     },
     "faces_n4": {
-      "_seconds": 0.018,
+      "_seconds": 0.02,
       "deza_reps_check": {
         "1": {
           "codim_ok": true,
@@ -1492,7 +1492,7 @@
       }
     ],
     "faces_n6": {
-      "_seconds": 0.491,
+      "_seconds": 0.5,
       "deza_reps_check": {
         "1": {
           "codim_ok": true,
@@ -1999,7 +1999,7 @@
       }
     ],
     "faces_n7": {
-      "_seconds": 11.55,
+      "_seconds": 11.813,
       "deza_reps_check": {
         "1": {
           "codim_ok": true,
@@ -2822,7 +2822,7 @@
       "facets": 40
     },
     "facets_n6": {
-      "_seconds": 0.52,
+      "_seconds": 0.508,
       "all_facet_defining": true,
       "facet_orbits": 1,
       "facets": 80
@@ -2842,7 +2842,7 @@
       "ours": 16
     },
     "ine_order_n5": {
-      "_seconds": 0.0,
+      "_seconds": 0.001,
       "deza": 40,
       "deza_distinct": 40,
       "equal_as_sets": true,
@@ -2870,7 +2870,7 @@
       "ours": 224
     },
     "patterns": {
-      "_seconds": 0.28,
+      "_seconds": 0.281,
       "n3": {
         "clauses_distinct": true,
         "cut_tight_iff_NAE": true,
@@ -2913,15 +2913,15 @@
       "rays": 3
     },
     "rays_n4": {
-      "_seconds": 0.0,
+      "_seconds": 0.001,
       "rays": 7
     },
     "rays_n5": {
-      "_seconds": 0.003,
+      "_seconds": 0.004,
       "rays": 25
     },
     "rays_n6": {
-      "_seconds": 0.066,
+      "_seconds": 0.064,
       "rays": 296
     }
   },
@@ -3360,11 +3360,11 @@
     },
     {
       "n": 6,
-      "note": "see orbit-stabilizer row",
+      "note": "page says 554; exact enumeration gives 544 (see orbit-stabilizer row)",
       "ours": 544,
       "published": 554,
       "quantity": "vertices (cdd exact enumeration)",
-      "status": "MISMATCH"
+      "status": "SOURCE-TYPO"
     },
     {
       "n": 6,

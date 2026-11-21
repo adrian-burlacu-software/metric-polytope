@@ -1,6 +1,6 @@
 # Phase 2 verification report
 
-code_version `a09c22c7b551f6de`, git `no-commit+dirty`, seed 20261121
+code_version `6be828c3d6c41313`, git `48a0844050a1a71f10d49025195b73afcb461bb3`, seed 20261121
 
 | quantity | n | published | ours | status | note |
 |---|---|---|---|---|---|
@@ -58,7 +58,7 @@ code_version `a09c22c7b551f6de`, git `no-commit+dirty`, seed 20261121
 | facets (all facet-defining) | 5 | 40 | 40 | PASS |  |
 | facet orbits | 5 | 1 | 1 | PASS |  |
 | extreme rays of metric cone M_n (cdd) | 5 | 25 | 25 | PASS |  |
-| vertices (cdd exact enumeration) | 6 | 554 | 544 | MISMATCH | see orbit-stabilizer row |
+| vertices (cdd exact enumeration) | 6 | 554 | 544 | SOURCE-TYPO | page says 554; exact enumeration gives 544 (see orbit-stabilizer row) |
 | vertex orbits (canonicalizing all enumerated vertices) | 6 | 3 | 3 | PASS |  |
 | enumerated orbits == Deza orbits; orbit union == vertex set | 6 | True | True | PASS |  |
 | facets (all facet-defining) | 6 | 80 | 80 | PASS |  |
