@@ -89,8 +89,9 @@ def radial_preds(y: Point):
 
 
 class DP:
-    def __init__(self, base, vertex_mode):
+    def __init__(self, base, vertex_mode, extra_base=None):
         self.base, self.vmode = base, vertex_mode
+        self.extra_base = extra_base    # optional exact predicate y -> bool (e.g. graph-metric orbit test at n = 9)
         self.memo = {}          # canonical key -> (depth, how)
 
     def point_depth(self, x: Point):
@@ -110,7 +111,7 @@ class DP:
         return d_of[(1 << n) - 1], key_of[(1 << n) - 1]
 
     def _solve(self, y, T, mask, d_of, M, D):
-        if group.canonical(y).key() in self.base.get(y.n, ()):
+        if group.canonical(y).key() in self.base.get(y.n, ()) or (self.extra_base is not None and self.extra_base(y)):
             return (0, "base")
         if self.vmode and not p_vertex(y):
             return (INF, None)

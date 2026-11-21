@@ -1,0 +1,10 @@
+[base] 14689 distinct base points generated  5s
+[base] canonical 2000/14689  10s
+[base] canonical 4000/14689  26s
+[base] canonical 6000/14689  43s
+[base] canonical 8000/14689  50s
+[base] canonical 10000/14689  53s
+[base] canonical 12000/14689  55s
+[base] canonical 14000/14689  160s
+[base] orbits per n: {3: 4, 4: 8, 5: 23, 6: 86, 7: 531, 8: 6198, 9: 91}; total 247s
+exit 0

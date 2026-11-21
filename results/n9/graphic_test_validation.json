@@ -1,0 +1,58 @@
+{
+  "n3": {
+    "graph_images_failing": 0,
+    "graph_orbits": 2,
+    "graphic_vertex_orbits": 0,
+    "graphs": 2,
+    "mismatches": 0,
+    "vertex_reps": 4
+  },
+  "n4": {
+    "graph_images_failing": 0,
+    "graph_orbits": 5,
+    "graphic_vertex_orbits": 0,
+    "graphs": 6,
+    "mismatches": 0,
+    "vertex_reps": 8
+  },
+  "n5": {
+    "graph_images_failing": 0,
+    "graph_orbits": 18,
+    "graphic_vertex_orbits": 16,
+    "graphs": 21,
+    "mismatches": 0,
+    "vertex_reps": 32
+  },
+  "n6": {
+    "graph_images_failing": 0,
+    "graph_orbits": 81,
+    "graphic_vertex_orbits": 512,
+    "graphs": 112,
+    "mismatches": 0,
+    "vertex_reps": 544
+  },
+  "n7": {
+    "graph_images_failing": 0,
+    "graph_orbits": 526,
+    "graphic_vertex_orbits": 10,
+    "graphs": 853,
+    "mismatches": 0,
+    "vertex_reps": 13
+  },
+  "n8": {
+    "graph_images_failing": 0,
+    "graphic_vertex_orbits": 107,
+    "graphs": 11117,
+    "positives_failing_key_check": 0,
+    "vertex_reps": 533
+  },
+  "n9": {
+    "graph_images_failing": 0,
+    "graphic_rows": 17,
+    "orbit_rows_tested": 3000,
+    "positives_failing_key_check": 0,
+    "random_graphs": 3000
+  },
+  "ok": true,
+  "seed": 20261121
+}

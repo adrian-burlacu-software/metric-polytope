@@ -3,8 +3,10 @@
  1. all non-isomorphic graphs on 9 nodes (extend each 8-node graph by a node with every neighbour set; exact dedupe
     with degree-sequence + WL-hash buckets and nx.is_isomorphic); checked against OEIS A000088 / A001349
     (274,668 graphs, 261,080 connected); cached in data/generated/graphs9.json
- 2. canonical keys of the UNIFORM base pieces for n <= 9 (graph metrics of all connected graphs, cuts, anticuts,
-    complete multipartite ± edge, Avis paths, tree suspensions); cached in results/n9/base_keys.json
+ 2. canonical keys of the UNIFORM base pieces (cuts, anticuts, complete multipartite ± edge, Avis paths, tree
+    suspensions, and graph metrics for n <= 8), computed in parallel; cached in results/n9/base_keys.json.
+    n = 9 graph metrics are NOT tabulated (261,080 keys, ~4 h); they are recognised by the exact test
+    metricpoly.graphic.orbit_is_graphic, validated by scripts/validate_graphic_test.py
 Usage: python -u scripts/n9_prepare.py [--workers 19]
 """
 from __future__ import annotations
@@ -55,16 +57,6 @@ def _dedupe_bucket(item):
     return [(sorted(h.edges()), nx.is_connected(h)) for h in reps]
 
 
-def _graph_key(E):
-    from metricpoly import group
-    from metricpoly.dsl.prims import p_gmetric, p_scale, p_triameter
-    from metricpoly.dsl.values import Graph
-    from fractions import Fraction
-    G = Graph.make(9, E)
-    x = p_scale(Fraction(2, int(p_triameter(G))), p_gmetric(G))          # x_G = (2/τ) d_G
-    return group.canonical(x).key()
-
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--workers", type=int, default=19)
@@ -93,33 +85,42 @@ def main():
         from metricpoly.jobs import atomic_write_text
         atomic_write_text(GRAPHS9, json.dumps([E for E, _ in reps]))
     if not BASE.exists():
-        from metricpoly import group
+        # canonical keys of the UNIFORM base pieces: n <= 8 all rules (as in the n = 8 DP), n = 9 all rules except
+        # gen-graphic -- n = 9 graph metrics are recognised by the exact test metricpoly.graphic.orbit_is_graphic
         from metricpoly.dsl.interp import Interpreter
-        from metricpoly.dsl.prims import p_connected, p_feasible
-        from metricpoly.dsl.values import Graph
+        from metricpoly.dsl.prims import p_feasible
         sys.path.insert(0, str(ROOT / "scripts"))
         import detour_depth2 as d2
         I = Interpreter()
         for f in ("stdlib.mpr", "literature.mpr"):
             I.load_file(ROOT / "rules" / f)
         I.finalize()
-        keys = {n: set(v) for n, v in d2.base_keys(I, d2.UNIFORM, 8).items()}       # n <= 8 as before
-        k9 = set()
-        for name in ["gen-cuts", "gen-anticuts", "gen-multipartite", "gen-tree-suspension"]:
-            for p in I.run_rule(I.rules[name], 9):
-                if p.n == 9 and p_feasible(p):
-                    k9.add(group.canonical(p).key())
-        print(f"[base] non-graphic base pieces at n=9: {len(k9)}  {time.time() - t0:.0f}s", flush=True)
-        conn = [E for E in json.loads(GRAPHS9.read_text()) if p_connected(Graph.make(9, E))]
+        pts = []
+        for name in d2.UNIFORM:
+            r = I.rules[name]
+            d = tuple(r.meta.get("domain", (3,)))
+            hi = 9 if name != "gen-graphic" else 8
+            for n in range(max(3, d[0]), min(hi, d[1] if len(d) > 1 else hi) + 1):
+                pts.extend(p for p in I.run_rule(r, n) if p.n == n and p_feasible(p))
+        uniq = sorted(set(pts), key=lambda p: (p.n, p.D, p.nums))
+        print(f"[base] {len(uniq)} distinct base points generated  {time.time() - t0:.0f}s", flush=True)
+        keys = {}
         with mp.Pool(args.workers) as pool:
-            for k, key in enumerate(pool.imap_unordered(_graph_key, conn, chunksize=500), 1):
-                k9.add(key)
-                if k % 20000 == 0:
-                    print(f"[base] graph metrics {k}/{len(conn)}  {time.time() - t0:.0f}s", flush=True)
-        keys[9] = k9
+            for k, (n, key) in enumerate(pool.imap_unordered(_canon_key, uniq, chunksize=4), 1):
+                keys.setdefault(n, set()).add(key)
+                if k % 2000 == 0:
+                    print(f"[base] canonical {k}/{len(uniq)}  {time.time() - t0:.0f}s", flush=True)
         from metricpoly.jobs import atomic_write_json
-        atomic_write_json(BASE, {str(n): sorted(v) for n, v in keys.items()})
-        print(f"[base] n=9 base orbits: {len(k9)}; total {time.time() - t0:.0f}s", flush=True)
+        out = {str(n): sorted(v) for n, v in sorted(keys.items())}
+        out["_note"] = "n=9 excludes graph metrics; use metricpoly.graphic.orbit_is_graphic for those"
+        atomic_write_json(BASE, out)
+        print(f"[base] orbits per n: {{{', '.join(f'{n}: {len(v)}' for n, v in sorted(keys.items()))}}}; "
+              f"total {time.time() - t0:.0f}s", flush=True)
+
+
+def _canon_key(p):
+    from metricpoly import group
+    return p.n, group.canonical(p).key()
 
 
 if __name__ == "__main__":

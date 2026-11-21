@@ -117,3 +117,50 @@ C:\Users\adria\Desktop\dev\metric\.venv\Lib\site-packages\networkx\algorithms\gr
 [graphs9] dedupe 60000/265817  68s
 [graphs9] dedupe 80000/265817  72s
 [graphs9] dedupe 100000/265817  75s
+[graphs9] dedupe 120000/265817  79s
+[graphs9] dedupe 140000/265817  82s
+[graphs9] dedupe 160000/265817  85s
+[graphs9] dedupe 180000/265817  89s
+[graphs9] dedupe 200000/265817  92s
+[graphs9] dedupe 220000/265817  95s
+[graphs9] dedupe 240000/265817  98s
+[graphs9] dedupe 260000/265817  100s
+[graphs9] 274668 graphs, 261080 connected (expected (274668, 261080))
+[base] non-graphic base pieces at n=9: 91  1472s
+[base] graph metrics 20000/261080  2648s
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\spawn.py", line 113, in spawn_main
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\spawn.py", line 113, in spawn_main
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\spawn.py", line 113, in spawn_main
+    new_handle = reduction.duplicate(pipe_handle,
+    new_handle = reduction.duplicate(pipe_handle,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    new_handle = reduction.duplicate(pipe_handle,
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\reduction.py", line 79, in duplicate
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\reduction.py", line 79, in duplicate
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\reduction.py", line 79, in duplicate
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\spawn.py", line 113, in spawn_main
+    new_handle = reduction.duplicate(pipe_handle,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\reduction.py", line 79, in duplicate
+    return _winapi.DuplicateHandle(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+    return _winapi.DuplicateHandle(
+    return _winapi.DuplicateHandle(
+    return _winapi.DuplicateHandle(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied
+PermissionError: [WinError 5] Access is denied
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied
