@@ -170,6 +170,45 @@ def canonical(x: Point, chunk_rows: int = 200_000) -> Point:
     return Point(n, D, tuple(int(v) for v in best))
 
 
+def canonical_with_element(x: Point) -> Tuple[Point, int, int]:
+    """(canonical form c, p, s) with apply(n, p, s, x) == c."""
+    n, D = x.n, x.D
+    X = x.array()[perm_src(n)]
+    pre = np.minimum(X[:, :n - 1], D - X[:, :n - 1])
+    surv = lexmin_rows(pre)
+    rows, ss = _consistent_switchings(X[surv][:, :n - 1], pre[surv[0]], D, n)
+    F = switch_flips(n)
+    best, arg = None, None
+    for c0 in range(0, rows.size, 200_000):
+        r, s = rows[c0:c0 + 200_000], ss[c0:c0 + 200_000]
+        Y = np.where(F[s], D - X[surv][r], X[surv][r])
+        k = lexmin_rows(Y)[0]
+        if _lt(Y[k], best):
+            best, arg = Y[k].copy(), (int(surv[r[k]]), int(s[k]))
+    return Point(n, D, tuple(int(v) for v in best)), arg[0], arg[1]
+
+
+def switch_canon_fast(x: Point) -> Point:
+    """= switch_canon(x), but the switching is forced by x_{0j} (branch only on x_{0j} = 1/2)."""
+    n, D = x.n, x.D
+    X = x.array()[None, :]
+    target = np.minimum(X[:, :n - 1], D - X[:, :n - 1])[0]
+    rows, ss = _consistent_switchings(X[:, :n - 1], target, D, n)
+    Y = np.where(switch_flips(n)[ss], D - X[0][None, :], X[0][None, :])
+    return Point(n, D, tuple(int(v) for v in Y[lexmin_rows(Y)[0]]))
+
+
+@lru_cache(maxsize=None)
+def ineq_action(n: int, p: int, s: int) -> np.ndarray:
+    """out[f] = index of the facet g.f for g = (p, s); slack is preserved: slack(g.x, g.f) = slack(x, f)."""
+    from .patterns import catalog_clauses, clause_index, permute_clause, switch_clause
+    C = catalog_clauses(n)
+    ci = clause_index(n)
+    pi = perms(n)[p]
+    S = [v for v in range(1, n) if (s >> (v - 1)) & 1]
+    return np.array([ci[switch_clause(permute_clause(c, pi), S)] for c in C], dtype=np.int64)
+
+
 def canonical_via_switch_canon(x: Point) -> Point:
     """min over pi of switch_canon(pi.x) -- the literal user definition, O(n! 2^(n-1))."""
     n = x.n
