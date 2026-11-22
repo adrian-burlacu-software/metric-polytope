@@ -1,0 +1,26 @@
+[closure n=8] 533 listed orbits, 533 distinct keys, checking 533  (1s)
+[closure n=8] batch 1/2: walked 499, flagged 1, misses 0, 2182s; elapsed 36.4 min
+[closure n=8] batch 2/2: walked 33, flagged 0, misses 0, 1s; elapsed 36.4 min
+{
+ "n": 8,
+ "listed_orbits": 533,
+ "checked": 533,
+ "walked": 532,
+ "flagged_hard": [
+  {
+   "flag": "hard: no result within 600 s",
+   "row": 0,
+   "tight": 168
+  }
+ ],
+ "nonvertex_neighbours": 0,
+ "rays_mean": 1467.501879699248,
+ "rays_max": 137758,
+ "closed": true,
+ "complete_if_no_flags": false,
+ "code_version": "55232a203a7e2f50",
+ "git": "7fae403ee50e95dbf5476d7e69440ad7e62ff98f+dirty",
+ "seconds": 2183.4
+}
+misses: 0
+exit 0

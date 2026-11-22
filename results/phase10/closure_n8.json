@@ -1,0 +1,22 @@
+{
+  "checked": 533,
+  "closed": true,
+  "code_version": "55232a203a7e2f50",
+  "complete_if_no_flags": false,
+  "flagged_hard": [
+    {
+      "flag": "hard: no result within 600 s",
+      "row": 0,
+      "tight": 168
+    }
+  ],
+  "git": "7fae403ee50e95dbf5476d7e69440ad7e62ff98f+dirty",
+  "listed_orbits": 533,
+  "misses": [],
+  "n": 8,
+  "nonvertex_neighbours": 0,
+  "rays_max": 137758,
+  "rays_mean": 1467.501879699248,
+  "seconds": 2183.4,
+  "walked": 532
+}
