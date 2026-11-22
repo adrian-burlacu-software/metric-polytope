@@ -23,6 +23,7 @@ from .core import Point, pairs
 from .graphic import is_graph_metric
 
 RADIAL_MAX = 14
+BU_MAX = 12          # bottom-up search enumerates all subsets: 2^n
 GLUE_MAX = 11
 
 
@@ -308,3 +309,149 @@ def reachable(x: Point, budget: float = 120.0, small_oracle=None):
     if r:
         return True, len(memo)
     return (None if incomplete[0] else False), len(memo)
+
+
+# ------------------------------------------------------------------ bottom-up search with user moves (Phase 9c)
+def reachable_bu(x: Point, moves=None, apply_move=None, budget: float = 120.0):
+    """Bottom-up over all node subsets of x (|T| >= 3), mirroring metricpoly.reach.Engine:
+    round 0 base tests; unary rounds lift -> radial -> accepted user moves applied FORWARD from reached subsets
+    (outputs matched to subsets by the bliss canonical form, after an orbit-invariant filter); glue stage last (only
+    splits whose parts are reached); repeat to a fixpoint.
+    moves: list of (name, grow); apply_move(name, point) -> list of output points (whole orbit of the input).
+    Returns (True / False / None, stats). None = budget exhausted or a size limit skipped a move (glue > GLUE_MAX,
+    radial > RADIAL_MAX) or a base test was undecided."""
+    from .canon_large import canonical_key
+    from .reach import orbit_invariant
+    t_end = time.time() + budget
+    moves = moves or []
+    M, D, n = matrix(x), x.D, x.n
+    if n > BU_MAX:
+        return None, {"skipped": f"n = {n} > {BU_MAX}: all-subset search not attempted"}
+    full = (1 << n) - 1
+    masks = [m for m in range(1, full + 1) if bin(m).count("1") >= 3]
+    masks.sort(key=lambda m: bin(m).count("1"))
+    pts = {m: from_matrix(M, D, [v for v in range(n) if (m >> v) & 1]) for m in masks}
+    incomplete = False
+    reached = {}
+    for m in masks:
+        if time.time() > t_end:
+            return None, {"rounds": 0, "reached_subsets": len(reached), "timeout": True}
+        b = is_base(pts[m])
+        if b:
+            reached[m] = 0
+        elif b is None:
+            incomplete = True
+    key_of, inv_of = {}, {}
+    applied = set()
+    r = 0
+
+    def done():
+        return full in reached
+
+    while not done():
+        progress = False
+        while not done():                                     # unary rounds
+            r += 1
+            new = {}
+            for m in masks:
+                if m in reached or m in new:
+                    continue
+                y = pts[m]
+                T = [v for v in range(n) if (m >> v) & 1]
+                k = len(T)
+                if k > 3:
+                    for a, v in enumerate(T):                 # lift
+                        sub = m & ~(1 << v)
+                        if reached.get(sub, 99) <= r - 1 and _fiber_vertex(
+                                y, [(min(a, b2), max(a, b2)) for b2 in range(k) if b2 != a]):
+                            new[m] = r
+                            break
+                if m in new:
+                    continue
+                if k <= RADIAL_MAX:                           # radial
+                    for R in _radial_preds(y):
+                        if reached.get(sum(1 << T[i] for i in R), 99) <= r - 1:
+                            new[m] = r
+                            break
+                elif k > 3:
+                    incomplete = True
+            for name, grow in moves:                          # user moves, forward from reached subsets
+                src = [m for m, rr in reached.items() if rr <= r - 1 and (name, m) not in applied]
+                for m in src:
+                    if time.time() > t_end:
+                        return None, {"rounds": r, "reached_subsets": len(reached), "timeout": True}
+                    applied.add((name, m))
+                    k_out = bin(m).count("1") + grow
+                    tgt = [t for t in masks if bin(t).count("1") == k_out and t not in reached and t not in new]
+                    if not tgt:
+                        continue
+                    for t in tgt:
+                        if t not in inv_of:
+                            inv_of[t] = orbit_invariant(pts[t])
+                    want = {}
+                    for t in tgt:
+                        want.setdefault(inv_of[t], []).append(t)
+                    for o in apply_move(name, pts[m]):
+                        if o.n != k_out:
+                            continue
+                        cand = want.get(orbit_invariant(o))
+                        if not cand:
+                            continue
+                        ko = canonical_key(o)
+                        for t in cand:
+                            if t not in key_of:
+                                key_of[t] = canonical_key(pts[t])
+                            if key_of[t] == ko and t not in new:
+                                new[t] = r
+            reached.update(new)
+            if not new:
+                break
+            progress = True
+            if time.time() > t_end:
+                return None, {"rounds": r, "reached_subsets": len(reached), "timeout": True}
+        if done():
+            break
+        r += 1                                                # glue stage
+        gnew = {}
+        for m in masks:
+            if m in reached:
+                continue
+            T = [v for v in range(n) if (m >> v) & 1]
+            k = len(T)
+            if k > GLUE_MAX:
+                incomplete = True
+                continue
+            y = pts[m]
+            fl = (1 << k) - 1
+            hit = False
+            for am in range(1, fl):
+                if bin(am).count("1") < 3:
+                    continue
+                Ab = [i for i in range(k) if (am >> i) & 1]
+                if sum(1 << T[i] for i in Ab) not in reached:
+                    continue
+                for kk in range(1, len(Ab)):
+                    for K in itertools.combinations(Ab, kk):
+                        bm = (fl & ~am) | sum(1 << i for i in K)
+                        if bin(bm).count("1") < 3 or sum(1 << T[i] for i in range(k) if (bm >> i) & 1) not in reached:
+                            continue
+                        onlyA = [i for i in Ab if i not in K]
+                        onlyB = [i for i in range(k) if (bm >> i) & 1 and i not in K]
+                        if _fiber_vertex(y, [(min(i, j), max(i, j)) for i in onlyA for j in onlyB]):
+                            hit = True
+                            break
+                    if hit:
+                        break
+                if hit:
+                    break
+            if hit:
+                gnew[m] = r
+            if time.time() > t_end:
+                return None, {"rounds": r, "reached_subsets": len(reached), "timeout": True}
+        reached.update(gnew)
+        if not gnew:
+            break
+    stats = {"rounds": r, "reached_subsets": len(reached), "subsets": len(masks)}
+    if done():
+        return True, stats
+    return (None if incomplete else False), stats

@@ -1,0 +1,62 @@
+{
+ "moves": {
+  "radial-normalized": 1
+ },
+ "budget_s": 60.0,
+ "seconds": 114.4,
+ "a_n8_agree_with_engine": 37,
+ "a_checked": 40,
+ "a_undecided": 0,
+ "a_disagree": [
+  {
+   "tag": "a",
+   "n": 8,
+   "id": 206,
+   "engine": true,
+   "verdict": false,
+   "stats": {
+    "rounds": 2,
+    "reached_subsets": 7,
+    "subsets": 219
+   },
+   "s": 0.8,
+   "job": 5
+  },
+  {
+   "tag": "a",
+   "n": 8,
+   "id": 501,
+   "engine": true,
+   "verdict": false,
+   "stats": {
+    "rounds": 2,
+    "reached_subsets": 28,
+    "subsets": 219
+   },
+   "s": 1.7,
+   "job": 16
+  },
+  {
+   "tag": "a",
+   "n": 8,
+   "id": 516,
+   "engine": true,
+   "verdict": false,
+   "stats": {
+    "rounds": 2,
+    "reached_subsets": 22,
+    "subsets": 219
+   },
+   "s": 1.0,
+   "job": 19
+  }
+ ],
+ "b_without_moves_unreachable": 63,
+ "b_checked": 63,
+ "b_other": [],
+ "c_with_moves": {
+  "True": 0,
+  "False": 62,
+  "None": 18
+ }
+}

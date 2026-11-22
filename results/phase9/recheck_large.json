@@ -1,0 +1,1166 @@
+{
+  "a_checked": 40,
+  "a_disagree": [
+    {
+      "engine": true,
+      "id": 206,
+      "job": 5,
+      "n": 8,
+      "s": 0.8,
+      "stats": {
+        "reached_subsets": 7,
+        "rounds": 2,
+        "subsets": 219
+      },
+      "tag": "a",
+      "verdict": false
+    },
+    {
+      "engine": true,
+      "id": 501,
+      "job": 16,
+      "n": 8,
+      "s": 1.7,
+      "stats": {
+        "reached_subsets": 28,
+        "rounds": 2,
+        "subsets": 219
+      },
+      "tag": "a",
+      "verdict": false
+    },
+    {
+      "engine": true,
+      "id": 516,
+      "job": 19,
+      "n": 8,
+      "s": 1.0,
+      "stats": {
+        "reached_subsets": 22,
+        "rounds": 2,
+        "subsets": 219
+      },
+      "tag": "a",
+      "verdict": false
+    }
+  ],
+  "a_n8_agree_with_engine": 37,
+  "a_undecided": 0,
+  "b_checked": 63,
+  "b_other": [],
+  "b_without_moves_unreachable": 63,
+  "budget_s": 60.0,
+  "c_rows": [
+    {
+      "D": 50,
+      "job": 103,
+      "n": 10,
+      "round": "round_02",
+      "s": 4.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 43,
+      "job": 104,
+      "n": 10,
+      "round": "round_02",
+      "s": 4.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 41,
+      "job": 105,
+      "n": 10,
+      "round": "round_02",
+      "s": 4.5,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 37,
+      "job": 106,
+      "n": 10,
+      "round": "round_02",
+      "s": 4.6,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 31,
+      "job": 107,
+      "n": 10,
+      "round": "round_02",
+      "s": 4.6,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 29,
+      "job": 108,
+      "n": 10,
+      "round": "round_02",
+      "s": 4.7,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 27,
+      "job": 109,
+      "n": 10,
+      "round": "round_02",
+      "s": 4.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 25,
+      "job": 110,
+      "n": 10,
+      "round": "round_02",
+      "s": 5.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 23,
+      "job": 111,
+      "n": 10,
+      "round": "round_02",
+      "s": 5.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 19,
+      "job": 112,
+      "n": 10,
+      "round": "round_02",
+      "s": 5.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 43,
+      "job": 113,
+      "n": 10,
+      "round": "round_02",
+      "s": 5.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 41,
+      "job": 114,
+      "n": 10,
+      "round": "round_02",
+      "s": 4.8,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "job": 115,
+      "n": 10,
+      "round": "round_02",
+      "s": 6.2,
+      "stats": {
+        "reached_subsets": 33,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 14,
+      "job": 116,
+      "n": 10,
+      "round": "round_02",
+      "s": 4.7,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 14,
+      "job": 117,
+      "n": 10,
+      "round": "round_02",
+      "s": 4.5,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 53,
+      "job": 118,
+      "n": 11,
+      "round": "round_02",
+      "s": 12.6,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 49,
+      "job": 119,
+      "n": 11,
+      "round": "round_02",
+      "s": 12.8,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 47,
+      "job": 120,
+      "n": 11,
+      "round": "round_02",
+      "s": 12.7,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 43,
+      "job": 121,
+      "n": 11,
+      "round": "round_02",
+      "s": 12.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 41,
+      "job": 122,
+      "n": 11,
+      "round": "round_02",
+      "s": 12.7,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 37,
+      "job": 123,
+      "n": 11,
+      "round": "round_02",
+      "s": 13.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 31,
+      "job": 124,
+      "n": 11,
+      "round": "round_02",
+      "s": 13.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 29,
+      "job": 125,
+      "n": 11,
+      "round": "round_02",
+      "s": 13.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 69,
+      "job": 126,
+      "n": 12,
+      "round": "round_02",
+      "s": 43.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 53,
+      "job": 127,
+      "n": 12,
+      "round": "round_02",
+      "s": 42.5,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 49,
+      "job": 128,
+      "n": 12,
+      "round": "round_02",
+      "s": 43.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 47,
+      "job": 129,
+      "n": 12,
+      "round": "round_02",
+      "s": 43.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 46,
+      "job": 130,
+      "n": 12,
+      "round": "round_02",
+      "s": 44.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 43,
+      "job": 131,
+      "n": 12,
+      "round": "round_02",
+      "s": 42.7,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 41,
+      "job": 132,
+      "n": 12,
+      "round": "round_02",
+      "s": 42.8,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 37,
+      "job": 133,
+      "n": 12,
+      "round": "round_02",
+      "s": 42.6,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 43,
+      "job": 134,
+      "n": 15,
+      "round": "round_02",
+      "s": 0.0,
+      "stats": {
+        "skipped": "n = 15 > 12: all-subset search not attempted"
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 53,
+      "job": 135,
+      "n": 15,
+      "round": "round_02",
+      "s": 0.0,
+      "stats": {
+        "skipped": "n = 15 > 12: all-subset search not attempted"
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 47,
+      "job": 136,
+      "n": 15,
+      "round": "round_02",
+      "s": 0.0,
+      "stats": {
+        "skipped": "n = 15 > 12: all-subset search not attempted"
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 49,
+      "job": 137,
+      "n": 15,
+      "round": "round_02",
+      "s": 0.0,
+      "stats": {
+        "skipped": "n = 15 > 12: all-subset search not attempted"
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 53,
+      "job": 138,
+      "n": 20,
+      "round": "round_02",
+      "s": 0.0,
+      "stats": {
+        "skipped": "n = 20 > 12: all-subset search not attempted"
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 41,
+      "job": 139,
+      "n": 17,
+      "round": "round_02",
+      "s": 0.0,
+      "stats": {
+        "skipped": "n = 17 > 12: all-subset search not attempted"
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 41,
+      "job": 140,
+      "n": 20,
+      "round": "round_02",
+      "s": 0.0,
+      "stats": {
+        "skipped": "n = 20 > 12: all-subset search not attempted"
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 47,
+      "job": 141,
+      "n": 20,
+      "round": "round_02",
+      "s": 0.0,
+      "stats": {
+        "skipped": "n = 20 > 12: all-subset search not attempted"
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 43,
+      "job": 142,
+      "n": 20,
+      "round": "round_02",
+      "s": 0.0,
+      "stats": {
+        "skipped": "n = 20 > 12: all-subset search not attempted"
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 7,
+      "job": 143,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.7,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 8,
+      "job": 144,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "job": 145,
+      "n": 10,
+      "round": "round_03",
+      "s": 6.5,
+      "stats": {
+        "reached_subsets": 58,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 10,
+      "job": 146,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.6,
+      "stats": {
+        "reached_subsets": 10,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 11,
+      "job": 147,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.6,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 12,
+      "job": 148,
+      "n": 10,
+      "round": "round_03",
+      "s": 5.0,
+      "stats": {
+        "reached_subsets": 28,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 13,
+      "job": 149,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.6,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 14,
+      "job": 150,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "job": 151,
+      "n": 10,
+      "round": "round_03",
+      "s": 5.1,
+      "stats": {
+        "reached_subsets": 28,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 16,
+      "job": 152,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 17,
+      "job": 153,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 18,
+      "job": 154,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.3,
+      "stats": {
+        "reached_subsets": 1,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 20,
+      "job": 155,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.5,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 21,
+      "job": 156,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.4,
+      "stats": {
+        "reached_subsets": 2,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 22,
+      "job": 157,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 24,
+      "job": 158,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 32,
+      "job": 159,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 7,
+      "job": 160,
+      "n": 11,
+      "round": "round_03",
+      "s": 65.5,
+      "stats": {
+        "reached_subsets": 30,
+        "rounds": 3,
+        "timeout": true
+      },
+      "tag": "c",
+      "verdict": null
+    },
+    {
+      "D": 8,
+      "job": 161,
+      "n": 11,
+      "round": "round_03",
+      "s": 14.6,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "job": 162,
+      "n": 11,
+      "round": "round_03",
+      "s": 15.9,
+      "stats": {
+        "reached_subsets": 47,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 11,
+      "job": 163,
+      "n": 11,
+      "round": "round_03",
+      "s": 13.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 12,
+      "job": 164,
+      "n": 11,
+      "round": "round_03",
+      "s": 35.0,
+      "stats": {
+        "reached_subsets": 230,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 13,
+      "job": 165,
+      "n": 11,
+      "round": "round_03",
+      "s": 13.3,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 14,
+      "job": 166,
+      "n": 11,
+      "round": "round_03",
+      "s": 13.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "job": 167,
+      "n": 11,
+      "round": "round_03",
+      "s": 15.1,
+      "stats": {
+        "reached_subsets": 42,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 16,
+      "job": 168,
+      "n": 11,
+      "round": "round_03",
+      "s": 13.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 17,
+      "job": 169,
+      "n": 11,
+      "round": "round_03",
+      "s": 13.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 18,
+      "job": 170,
+      "n": 11,
+      "round": "round_03",
+      "s": 13.8,
+      "stats": {
+        "reached_subsets": 21,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 19,
+      "job": 171,
+      "n": 11,
+      "round": "round_03",
+      "s": 13.3,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 20,
+      "job": 172,
+      "n": 11,
+      "round": "round_03",
+      "s": 13.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 21,
+      "job": 173,
+      "n": 11,
+      "round": "round_03",
+      "s": 12.6,
+      "stats": {
+        "reached_subsets": 2,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 22,
+      "job": 174,
+      "n": 11,
+      "round": "round_03",
+      "s": 12.5,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 42,
+      "job": 175,
+      "n": 11,
+      "round": "round_03",
+      "s": 12.5,
+      "stats": {
+        "reached_subsets": 19,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 7,
+      "job": 176,
+      "n": 10,
+      "round": "round_03",
+      "s": 13.8,
+      "stats": {
+        "reached_subsets": 12,
+        "rounds": 3,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 8,
+      "job": 177,
+      "n": 10,
+      "round": "round_03",
+      "s": 4.8,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "job": 178,
+      "n": 10,
+      "round": "round_03",
+      "s": 5.3,
+      "stats": {
+        "reached_subsets": 27,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "job": 179,
+      "n": 10,
+      "round": "round_03",
+      "s": 6.9,
+      "stats": {
+        "reached_subsets": 77,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "job": 180,
+      "n": 11,
+      "round": "round_03",
+      "s": 9.0,
+      "stats": {
+        "reached_subsets": 76,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "job": 181,
+      "n": 11,
+      "round": "round_03",
+      "s": 7.6,
+      "stats": {
+        "reached_subsets": 67,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "tag": "c",
+      "verdict": false
+    },
+    {
+      "D": 10,
+      "job": 182,
+      "n": 10,
+      "round": "round_03",
+      "s": 3.3,
+      "stats": {
+        "reached_subsets": 10,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "tag": "c",
+      "verdict": false
+    }
+  ],
+  "c_with_moves": {
+    "False": 62,
+    "None": 18,
+    "True": 0
+  },
+  "moves": {
+    "radial-normalized": 1
+  },
+  "seconds": 114.4
+}
