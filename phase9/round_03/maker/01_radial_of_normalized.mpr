@@ -1,0 +1,4 @@
+(define (tau3 x) (max-over ((T (subsets (size x) 3))) (perimeter x T)))
+(move radial-normalized (x) :grow 1
+  :doc "Radial extension of the ray normalization: rescale x to its perimeter facet (2x/tau(x), C10) and apply Lambda^1 (C5); reaches points whose restriction is a multiple of a reached point."
+  (if (> (tau3 x) 0) (list (radial-ext 1 (scale (/ 2 (tau3 x)) x))) (list)))
