@@ -1,0 +1,125 @@
+a_n6_k0 {'P_k_vertices': 32, 'vertices_extending_to_m6': 32, 'equal': True} 0.0
+a_n6_k1 {'P_k_vertices': 64, 'vertices_extending_to_m6': 64, 'equal': True} 0.1
+a_n6_k2 {'P_k_vertices': 96, 'vertices_extending_to_m6': 96, 'equal': True} 0.1
+a_n6_k3 {'P_k_vertices': 160, 'vertices_extending_to_m6': 160, 'equal': True} 0.2
+a_n6_k4 {'P_k_vertices': 320, 'vertices_extending_to_m6': 320, 'equal': True} 0.4
+a_n6_k5 {'P_k_vertices': 544, 'vertices_extending_to_m6': 544, 'equal': True} 0.8
+a_n8_k0 40/40 1.0
+a_n8_k1 40/40 1.2
+a_n8_k2 40/40 1.4
+a_n8_k3 40/40 1.7
+a_n8_k4 40/40 1.9
+a_n8_k5 40/40 2.2
+a_n8_k6 40/40 2.4
+a_n8_k7 40/40 2.7
+a_n9_k0 40/40 3.1
+a_n9_k1 40/40 3.5
+a_n9_k2 40/40 4.0
+a_n9_k3 40/40 4.4
+a_n9_k4 40/40 4.9
+a_n9_k5 40/40 5.4
+a_n9_k6 40/40 6.0
+a_n9_k7 40/40 6.6
+a_n9_k8 40/40 7.2
+{'a_n8_k0_random_vertices_extend': '40/40', 'a_n8_k1_random_vertices_extend': '40/40', 'a_n8_k2_random_vertices_extend': '40/40', 'a_n8_k3_random_vertices_extend': '40/40', 'a_n8_k4_random_vertices_extend': '40/40', 'a_n8_k5_random_vertices_extend': '40/40', 'a_n8_k6_random_vertices_extend': '40/40', 'a_n8_k7_random_vertices_extend': '40/40', 'a_n9_k0_random_vertices_extend': '40/40', 'a_n9_k1_random_vertices_extend': '40/40', 'a_n9_k2_random_vertices_extend': '40/40', 'a_n9_k3_random_vertices_extend': '40/40', 'a_n9_k4_random_vertices_extend': '40/40', 'a_n9_k5_random_vertices_extend': '40/40', 'a_n9_k6_random_vertices_extend': '40/40', 'a_n9_k7_random_vertices_extend': '40/40', 'a_n9_k8_random_vertices_extend': '40/40'} 7.2
+{'b_n6_k0': {'vertices': 32, 'brute_orbits': 2, 'key_orbits': 2, 'partition_equal': True, 'orbit_sizes_equal': True}, 'b_n6_k1': {'vertices': 64, 'brute_orbits': 2, 'key_orbits': 2, 'partition_equal': True, 'orbit_sizes_equal': True}, 'b_n6_k2': {'vertices': 96, 'brute_orbits': 2, 'key_orbits': 2, 'partition_equal': True, 'orbit_sizes_equal': True}, 'b_n6_k3': {'vertices': 160, 'brute_orbits': 3, 'key_orbits': 3, 'partition_equal': True, 'orbit_sizes_equal': True}, 'b_n6_k4': {'vertices': 320, 'brute_orbits': 3, 'key_orbits': 3, 'partition_equal': True, 'orbit_sizes_equal': True}, 'b_n6_k5': {'vertices': 544, 'brute_orbits': 3, 'key_orbits': 3, 'partition_equal': True, 'orbit_sizes_equal': True}} 8.6
+{
+ "a_n6_k0": {
+  "P_k_vertices": 32,
+  "vertices_extending_to_m6": 32,
+  "equal": true
+ },
+ "a_n6_k1": {
+  "P_k_vertices": 64,
+  "vertices_extending_to_m6": 64,
+  "equal": true
+ },
+ "a_n6_k2": {
+  "P_k_vertices": 96,
+  "vertices_extending_to_m6": 96,
+  "equal": true
+ },
+ "a_n6_k3": {
+  "P_k_vertices": 160,
+  "vertices_extending_to_m6": 160,
+  "equal": true
+ },
+ "a_n6_k4": {
+  "P_k_vertices": 320,
+  "vertices_extending_to_m6": 320,
+  "equal": true
+ },
+ "a_n6_k5": {
+  "P_k_vertices": 544,
+  "vertices_extending_to_m6": 544,
+  "equal": true
+ },
+ "a_n8_k0_random_vertices_extend": "40/40",
+ "a_n8_k1_random_vertices_extend": "40/40",
+ "a_n8_k2_random_vertices_extend": "40/40",
+ "a_n8_k3_random_vertices_extend": "40/40",
+ "a_n8_k4_random_vertices_extend": "40/40",
+ "a_n8_k5_random_vertices_extend": "40/40",
+ "a_n8_k6_random_vertices_extend": "40/40",
+ "a_n8_k7_random_vertices_extend": "40/40",
+ "a_n9_k0_random_vertices_extend": "40/40",
+ "a_n9_k1_random_vertices_extend": "40/40",
+ "a_n9_k2_random_vertices_extend": "40/40",
+ "a_n9_k3_random_vertices_extend": "40/40",
+ "a_n9_k4_random_vertices_extend": "40/40",
+ "a_n9_k5_random_vertices_extend": "40/40",
+ "a_n9_k6_random_vertices_extend": "40/40",
+ "a_n9_k7_random_vertices_extend": "40/40",
+ "a_n9_k8_random_vertices_extend": "40/40",
+ "b_n6_k0": {
+  "vertices": 32,
+  "brute_orbits": 2,
+  "key_orbits": 2,
+  "partition_equal": true,
+  "orbit_sizes_equal": true
+ },
+ "b_n6_k1": {
+  "vertices": 64,
+  "brute_orbits": 2,
+  "key_orbits": 2,
+  "partition_equal": true,
+  "orbit_sizes_equal": true
+ },
+ "b_n6_k2": {
+  "vertices": 96,
+  "brute_orbits": 2,
+  "key_orbits": 2,
+  "partition_equal": true,
+  "orbit_sizes_equal": true
+ },
+ "b_n6_k3": {
+  "vertices": 160,
+  "brute_orbits": 3,
+  "key_orbits": 3,
+  "partition_equal": true,
+  "orbit_sizes_equal": true
+ },
+ "b_n6_k4": {
+  "vertices": 320,
+  "brute_orbits": 3,
+  "key_orbits": 3,
+  "partition_equal": true,
+  "orbit_sizes_equal": true
+ },
+ "b_n6_k5": {
+  "vertices": 544,
+  "brute_orbits": 3,
+  "key_orbits": 3,
+  "partition_equal": true,
+  "orbit_sizes_equal": true
+ },
+ "c_n8_full_rung": {
+  "reps": 533,
+  "distinct_keys": 533,
+  "orbit_size_mismatch": 0,
+  "vertex_total": 1550825600,
+  "expected_total": 1550825600
+ },
+ "c_n9_k3_k5_k7_k8_image_mismatch": 0,
+ "seconds": 14.9
+}
