@@ -1,0 +1,12 @@
+;; Round 04 maker proposal 03: cheap subset of proposal 01 -- midpoints between a twin / antitwin column of x
+;; (C3, itself a fiber vertex) and any vertex of the lift fiber over x. 2n*|V| outputs instead of |V|^2/2.
+;; Restriction-preserving (only the new column is built) and G-equivariant.
+(define (tm-twin x i b n)
+  (for ((j (range 0 n))) (if (= j i) b (if (= b 0) (entry x i j) (- 1 (entry x i j))))))
+(define (tm-col t a n)
+  (mvcat-list (for ((j (range 0 n))) (/ (+ (nth t j) (entry a j n)) 2))))
+(move twin-fiber-midpoints (x) :grow 1
+  :doc "New node at the midpoint between a twin/antitwin of some node i and a vertex of the lift fiber over x: a cheap family of fiber-edge midpoints, the commonest unreached one-node extensions."
+  (let ((V (fiber-vertices (lift-partial x))))
+    (for ((i (range 0 (size x))) (b (range 0 2)) (a V))
+      (block x (tm-col (tm-twin x i b (size x)) a (size x)) (const 1 0)))))

@@ -1,0 +1,12 @@
+;; Round 04 maker proposal 01: midpoints of pairs of fiber vertices of the one-node lift.
+;; Keeps x as the restriction to its first (size x) nodes (only the new column is built), so it is restriction-
+;; preserving on every input, vertex or not. G-equivariant: lift-partial and fiber-vertices are, and averaging two
+;; points commutes with switching and permutation.
+(define (fm-mid-col a b n)
+  (mvcat-list (for ((j (range 0 n))) (/ (+ (entry a j n) (entry b j n)) 2))))
+(move fiber-midpoints (x) :grow 1
+  :doc "New node whose distance column is the midpoint of two vertices of the lift fiber over x (fiber-edge midpoints are the commonest form of unreached one-node extensions of reached nodes)."
+  (let ((V (fiber-vertices (lift-partial x))))
+    (for ((i (range 0 (len V))) (j (range 0 (len V))))
+      (where (< i j))
+      (block x (fm-mid-col (nth V i) (nth V j) (size x)) (const 1 0)))))
