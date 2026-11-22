@@ -182,6 +182,13 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log, variant=False):
         if len(mv.params) != 1 or not isinstance(mv.grow, int) or mv.grow < 1:
             rec.update(status="rejected: only unary moves with integer :grow >= 1 are supported by the engine")
             return rec, reached
+        if not variant:
+            ok, why = restriction_preserving(I, mv)
+            rec["restriction_preserving"] = ok
+            if not ok:
+                rec.update(status="rejected: main-track moves must keep their input as a restriction (" + why +
+                                  "); resubmit with :variant \"nonvertex\" to put it on the variant track")
+                return rec, reached
         um = _user_moves(I, st)
         um[name] = (mv, mv.grow)
         with Forward(eng, [path], eng.workers, [k for k in eng.rep if k not in reached]) as fw:
@@ -231,11 +238,68 @@ def _append_accepted(src, rec, path=None):
         f.write(f"\n;; accepted in Phase 9 ({rec['file']}): {rec.get('reason', '')}\n{src.strip()}\n")
 
 
+def restriction_preserving(I, mv, samples=12, seed=20261122):
+    """Probe: on random vertices of m_5 and m_6, every output must contain (up to symmetry) the input as a
+    restriction. Needed so that per-target reachability stays complete (every intermediate is a restriction)."""
+    import itertools as it
+    import random
+    from metricpoly.dsl.prims import p_vertices
+    rng = random.Random(seed)
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import detour_depth2 as d2
+    from fractions import Fraction
+    from metricpoly.core import Point as _P
+    verts = list(p_vertices(5)) + list(p_vertices(6))
+    # intermediate points of derivations are often NOT vertices: probe halved vertices and restrictions too
+    halves = [_P.from_fractions(v.n, [f / 2 for f in v.fractions()]) for v in rng.sample(verts, samples)]
+    restr = []
+    for x in rng.sample(list(deza.load_ext(7)) + list(deza.load_ext(8)), samples):
+        S = sorted(rng.sample(range(x.n), rng.choice([5, 6])))
+        restr.append(d2.restrict(d2.matrix(x), x.D, S))
+    pool = rng.sample(verts, samples) + halves + restr
+    for y in pool:
+        try:
+            outs = I.apply_move(mv, [y])
+        except Exception as ex:
+            return False, f"error on probe: {type(ex).__name__}"
+        ky = group.canonical(y).key()
+        for o in outs:
+            M = d2.matrix(o)
+            if not any(group.canonical(d2.restrict(M, o.D, S)).key() == ky
+                       for S in it.combinations(range(o.n), y.n)):
+                return False, f"an output on a {y.n}-node probe does not contain the input"
+    return True, "ok"
+
+
+_LR = {}
+
+
+def _large_init():
+    I, _ = interpreter([])
+    st = load_json(CK / "state.json")
+    _LR["I"] = I
+    _LR["moves"] = [(n_, int(g)) for n_, g in st["moves"].items() if n_ in I.moves]
+
+
+def _large_apply(name, p):
+    from metricpoly import core as _core
+    I = _LR["I"]
+    try:
+        return [o for o in I.apply_move(I.moves[name], [p], as_orbits=True) if _core.is_feasible(o)]
+    except Exception:
+        return []
+
+
 def _large_reach(x):
-    from metricpoly.reach_large import reachable
+    """n <= BU_MAX: bottom-up search with the accepted moves (complete when all moves are restriction-preserving);
+    larger n: top-down search with the built-in moves only (verdict noted as such)."""
+    from metricpoly.reach_large import BU_MAX, reachable, reachable_bu
     t = time.time()
+    if x.n <= BU_MAX:
+        v, stats = reachable_bu(x, _LR["moves"], _large_apply, budget=LARGE_BUDGET)
+        return v, stats, round(time.time() - t, 1)
     v, nodes = reachable(x, budget=LARGE_BUDGET)
-    return v, nodes, round(time.time() - t, 1)
+    return v, {"nodes": nodes, "note": "top-down, built-in moves only"}, round(time.time() - t, 1)
 
 
 def eval_candidates(path, eng, T, reached, st, base, I):
@@ -314,7 +378,7 @@ def eval_candidates(path, eng, T, reached, st, base, I):
     pend = [r for r in out if "_x" in r]
     if pend:
         import multiprocessing as mp
-        with mp.Pool(min(len(pend), eng.workers)) as pool:
+        with mp.Pool(min(len(pend), eng.workers), initializer=_large_init) as pool:
             res = pool.map(_large_reach, [r["_x"] for r in pend], chunksize=1)
         for r, (v, nodes, secs) in zip(pend, res):
             del r["_x"]

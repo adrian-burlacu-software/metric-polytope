@@ -34,7 +34,13 @@ n = 8: 266 of 533 unreached; n = 9: 876 of 1,000.
   enters the main numbers.
 - **Every n:** the `:domain` must have no upper bound, so write `(lo)`, not `(lo hi)`. A family that only works for
   small n is rejected.
-- Round 1's `scaled-graph-metrics` (d_G/k, non-vertex) now lives in the variant. Don't resubmit it to the main track.
+- **Moves must keep their input as a restriction.** Every output of a main-track move must contain its input, up to
+  symmetry, on some subset of its nodes; lift, gluing, radial, twin and dup all do. Moves that rescale or otherwise
+  change the input's coordinates are rejected on the main track. Without this rule, "unreachable" stops being an
+  exact verdict. The judge tests it on probe points, including non-vertices; you may submit such moves only with
+  `:variant "nonvertex"`.
+- Round 1's `scaled-graph-metrics` (d_G/k, non-vertex) and round 3's `radial-normalized` (which rescales its input)
+  now live in the variant. Don't resubmit them to the main track.
 
 ## What to propose
 At most 8 proposals. Each one goes in its own file `phase9/round_{R}/maker/NN_name.mpr` and defines **exactly one**

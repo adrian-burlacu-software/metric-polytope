@@ -1,5 +1,5 @@
 {
- "variant": "non-vertex base pieces (kept separate from the main numbers; user decision 2026-11-22)",
+ "variant": "variant track: non-vertex base pieces and non-restriction-preserving moves (kept out of the main numbers; user decisions 2026-11-22)",
  "rules": [
   {
    "round": 1,
@@ -14,6 +14,16 @@
     "8": "165/533 (31.0%)",
     "9": "663/1000 (66.3%)"
    }
+  },
+  {
+   "round": 3,
+   "rule": "radial-normalized",
+   "kind": "move (rescales its input; not restriction-preserving)",
+   "targets_gained_against_main_state": {
+    "8": 37,
+    "9": 36
+   },
+   "note": "measured against the main state of round 3 (not combined with scaled-graph-metrics); with this move 'unreachable' is only an upper bound"
   }
  ]
 }
