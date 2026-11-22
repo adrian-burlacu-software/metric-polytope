@@ -8,3 +8,5 @@ pycddlib==3.0.0
 Pygments==2.21.0
 pytest==9.2.0
 sympy==1.14.0
+igraph==1.0.0
+texttable==1.7.3
