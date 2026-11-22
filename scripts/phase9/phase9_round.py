@@ -24,6 +24,7 @@ from metricpoly.reach import Engine  # noqa: E402
 PY = sys.executable
 VARIANT_FILE = ROOT / "rules" / "phase9_variant_nonvertex.mpr"
 VDIR = CK / "variant_nonvertex"
+LARGE_BUDGET = 60.0
 DRY = {"on": False}
 
 
@@ -287,7 +288,17 @@ def eval_candidates(path, eng, T, reached, st, base, I):
                     r["status"] = ("rejected: reachable by the current rule set" if k in reached
                                    else "CONFIRMED unreachable (exact engine)")
             else:
-                r["status"] = "CONFIRMED vertex (n >= 10: reachability not evaluated in 9a)"
+                # n >= 10: no canonical forms; exact top-down search (metricpoly/reach_large.py, validated n <= 9)
+                from metricpoly.reach_large import reachable
+                from metricpoly.dsl.ext.phase8_prims import p_den_bound_ok
+                r["denominator_bound_violated"] = not p_den_bound_ok(x.D, x.n)
+                v, nodes = reachable(x, budget=LARGE_BUDGET)
+                r["search_nodes"] = nodes
+                r["status"] = {True: "rejected: reachable by the current rule set",
+                               False: "CONFIRMED unreachable (complete search)",
+                               None: "CONFIRMED vertex; reachability UNDECIDED (budget or size limits)"}[v]
+                if r["denominator_bound_violated"]:
+                    r["status"] += "; provably unreachable by the denominator lemma (Theorem 4)"
         out.append(r)
     return out
 
