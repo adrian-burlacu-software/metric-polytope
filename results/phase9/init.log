@@ -1,0 +1,45 @@
+[engine] +1546 targets, 130959 nodes  29s
+[engine] round 1: +378 (unary)  reached 737/130959
+[engine] round 2: +377 (unary)  reached 1114/130959
+[engine] round 3: +337 (unary)  reached 1451/130959
+[engine] round 4: +157 (unary)  reached 1608/130959
+[engine] round 5: +27 (unary)  reached 1635/130959
+[engine] round 6: +1 (unary)  reached 1636/130959
+[engine] round 7: +0 (unary)  reached 1636/130959
+[engine] round 8: +258 (glue)  reached 1894/130959
+[engine] round 9: +60 (unary)  reached 1954/130959
+[engine] round 10: +16 (unary)  reached 1970/130959
+[engine] round 11: +2 (unary)  reached 1972/130959
+[engine] round 12: +0 (unary)  reached 1972/130959
+[engine] round 13: +7 (glue)  reached 1979/130959
+[engine] round 14: +0 (unary)  reached 1979/130959
+[engine] round 15: +0 (glue)  reached 1979/130959
+{
+ "summary": {
+  "7": {
+   "targets": 13,
+   "reached": 13,
+   "unreached": 0,
+   "unreached_fraction": 0.0
+  },
+  "8": {
+   "targets": 533,
+   "reached": 267,
+   "unreached": 266,
+   "unreached_fraction": 0.49906191369606
+  },
+  "9": {
+   "targets": 1000,
+   "reached": 124,
+   "unreached": 876,
+   "unreached_fraction": 0.876
+  }
+ },
+ "validation": {
+  "n8_equal_to_phase4c_DP": true,
+  "n8_diff": [],
+  "n9_equal_to_designA": true,
+  "n9_diff": []
+ }
+}
+exit 0

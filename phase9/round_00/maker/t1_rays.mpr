@@ -1,0 +1,2 @@
+(generative test-rays-copy (n) :domain (3 6) :doc "test: cone rays scaled to vertices (already known; expect no gain)"
+  (for ((r (cone-rays n))) (ray-to-vertex r)))

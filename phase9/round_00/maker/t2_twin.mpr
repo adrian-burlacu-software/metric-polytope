@@ -1,0 +1,2 @@
+(move test-twin (x) :grow 1 :doc "test: copy of twin (expect no gain)"
+  (for ((i (range 0 (size x))) (b (range 0 2))) (twin-of i b x)))

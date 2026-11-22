@@ -1,0 +1,2 @@
+(structural test-den-claim (n) :domain (3 8) :doc "test claim: every vertex has denominator <= 15"
+  (forall ((x (vertices n))) (<= (denominator x) 15)))

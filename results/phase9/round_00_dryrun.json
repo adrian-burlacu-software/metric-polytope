@@ -1,0 +1,267 @@
+{
+  "budget_per_rule": 120.0,
+  "candidates": [
+    {
+      "D": 3,
+      "claim": "counterexample",
+      "deza_orbit": 532,
+      "feasible": true,
+      "file": "phase9/round_00/breaker/test.json",
+      "how": "ledger",
+      "key": "8|3|1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,2,1,2,2,1,2,1,2,1,1,2,2,2",
+      "n": 8,
+      "point": {
+        "D": 3,
+        "n": 8,
+        "nums": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          2,
+          1,
+          2,
+          2,
+          2,
+          1,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      "rule": "no-simple-vertex",
+      "status": "CONFIRMED counterexample",
+      "tight": 28,
+      "vertex": true
+    },
+    {
+      "D": 8,
+      "claim": "unreachable",
+      "deza_orbit": 52,
+      "feasible": true,
+      "file": "phase9/round_00/breaker/test.json",
+      "how": "known unreached",
+      "key": "8|8|1,2,2,3,4,4,4,3,3,2,3,3,3,4,5,2,6,6,5,2,6,6,5,1,5,4,6,4",
+      "n": 8,
+      "point": {
+        "D": 8,
+        "n": 8,
+        "nums": [
+          1,
+          2,
+          2,
+          4,
+          4,
+          4,
+          5,
+          3,
+          3,
+          3,
+          5,
+          5,
+          6,
+          4,
+          2,
+          2,
+          2,
+          3,
+          2,
+          2,
+          2,
+          3,
+          2,
+          4,
+          3,
+          4,
+          5,
+          1
+        ]
+      },
+      "rule": "all-moves-cover",
+      "status": "CONFIRMED unreachable (exact engine)",
+      "tight": 40,
+      "vertex": true
+    },
+    {
+      "D": 1,
+      "claim": "unreachable",
+      "deza_orbit": 1,
+      "feasible": true,
+      "file": "phase9/round_00/breaker/test.json",
+      "how": "known reached",
+      "key": "8|1|0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+      "n": 8,
+      "point": {
+        "D": 1,
+        "n": 8,
+        "nums": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "rule": "all-moves-cover",
+      "status": "rejected: reachable by the current rule set",
+      "tight": 168,
+      "vertex": true
+    },
+    {
+      "D": 1,
+      "claim": "counterexample",
+      "deza_orbit": 1,
+      "feasible": true,
+      "file": "phase9/round_00/breaker/test.json",
+      "how": "not a vertex?",
+      "key": "4|1|0,0,0,0,0,0",
+      "n": 4,
+      "point": {
+        "D": 1,
+        "n": 4,
+        "nums": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      "rule": "no-simple-vertex",
+      "status": "rejected: n = 4 outside the rule's domain [6]",
+      "tight": 12,
+      "vertex": true
+    }
+  ],
+  "code_version": "9312b4c52cd61ebe",
+  "git": "4e1d3b69183e667b63d080e525f7650a2716c0f7+dirty",
+  "proposals": [
+    {
+      "file": "phase9/round_00/maker/t1_rays.mpr",
+      "kind": "generative (new base pieces)",
+      "name": "test-rays-copy",
+      "new_base_orbits": 0,
+      "orbits": 7,
+      "points": 331,
+      "probe_seconds": 0.59,
+      "reason": "test: cone rays scaled to vertices (already known; expect no gain)",
+      "seconds": 0.8,
+      "status": "dropped: no gain (no new base orbit)"
+    },
+    {
+      "file": "phase9/round_00/maker/t3_claim.mpr",
+      "holds": {
+        "3": true,
+        "4": true,
+        "5": true,
+        "6": true,
+        "7": true,
+        "8": true
+      },
+      "kind": "structural claim",
+      "name": "test-den-claim",
+      "probe_seconds": 0.62,
+      "reason": "test claim: every vertex has denominator <= 15",
+      "seconds": 0.6,
+      "status": "ACCEPTED (claim; open to the breaker)"
+    },
+    {
+      "file": "phase9/round_00/maker/t2_twin.mpr",
+      "kind": "move",
+      "name": "test-twin",
+      "nodes_gained": 0,
+      "probe_seconds": 0.71,
+      "reason": "test: copy of twin (expect no gain)",
+      "seconds": 136.9,
+      "status": "dropped: no gain within budget",
+      "targets_gained": {},
+      "targets_gained_ids": {},
+      "timed_out": true
+    }
+  ],
+  "round": 0,
+  "round_cap": 1800,
+  "seconds": 153.1,
+  "smallest_counterexamples": {
+    "no-simple-vertex": "8"
+  },
+  "unreached_after": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 267,
+      "targets": 533,
+      "unreached": 266,
+      "unreached_fraction": 0.49906191369606
+    },
+    "9": {
+      "reached": 124,
+      "targets": 1000,
+      "unreached": 876,
+      "unreached_fraction": 0.876
+    }
+  },
+  "unreached_before": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 267,
+      "targets": 533,
+      "unreached": 266,
+      "unreached_fraction": 0.49906191369606
+    },
+    "9": {
+      "reached": 124,
+      "targets": 1000,
+      "unreached": 876,
+      "unreached_fraction": 0.876
+    }
+  }
+}
