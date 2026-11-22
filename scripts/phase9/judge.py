@@ -112,7 +112,7 @@ def main():
     ap.add_argument("round_no", nargs="?", type=int)
     ap.add_argument("--budget", type=float, default=300)
     ap.add_argument("--workers", type=int, default=19)
-    ap.add_argument("--round-cap", type=float, default=3600)   # 1 h per round (user decision 2026-11-22)
+    ap.add_argument("--round-cap", type=float, default=1800)   # 30 min per round (user decision 2026-11-22, back from 1 h)
     ap.add_argument("--dry-run", action="store_true", help="evaluate but change no state (testing)")
     args = ap.parse_args()
     if args.cmd == "init":
