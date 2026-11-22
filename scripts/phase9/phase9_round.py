@@ -231,6 +231,13 @@ def _append_accepted(src, rec, path=None):
         f.write(f"\n;; accepted in Phase 9 ({rec['file']}): {rec.get('reason', '')}\n{src.strip()}\n")
 
 
+def _large_reach(x):
+    from metricpoly.reach_large import reachable
+    t = time.time()
+    v, nodes = reachable(x, budget=LARGE_BUDGET)
+    return v, nodes, round(time.time() - t, 1)
+
+
 def eval_candidates(path, eng, T, reached, st, base, I):
     out = []
     for it in load_json(path) if isinstance(load_json(path), list) else [load_json(path)]:
@@ -289,17 +296,23 @@ def eval_candidates(path, eng, T, reached, st, base, I):
                                    else "CONFIRMED unreachable (exact engine)")
             else:
                 # n >= 10: no canonical forms; exact top-down search (metricpoly/reach_large.py, validated n <= 9)
-                from metricpoly.reach_large import reachable
                 from metricpoly.dsl.ext.phase8_prims import p_den_bound_ok
                 r["denominator_bound_violated"] = not p_den_bound_ok(x.D, x.n)
-                v, nodes = reachable(x, budget=LARGE_BUDGET)
-                r["search_nodes"] = nodes
-                r["status"] = {True: "rejected: reachable by the current rule set",
-                               False: "CONFIRMED unreachable (complete search)",
-                               None: "CONFIRMED vertex; reachability UNDECIDED (budget or size limits)"}[v]
-                if r["denominator_bound_violated"]:
-                    r["status"] += "; provably unreachable by the denominator lemma (Theorem 4)"
+                r["_x"] = x                                     # searched in parallel below
         out.append(r)
+    pend = [r for r in out if "_x" in r]
+    if pend:
+        import multiprocessing as mp
+        with mp.Pool(min(len(pend), eng.workers)) as pool:
+            res = pool.map(_large_reach, [r["_x"] for r in pend], chunksize=1)
+        for r, (v, nodes, secs) in zip(pend, res):
+            del r["_x"]
+            r["search_nodes"], r["search_seconds"] = nodes, secs
+            r["status"] = {True: "rejected: reachable by the current rule set",
+                           False: "CONFIRMED unreachable (complete search)",
+                           None: "CONFIRMED vertex; reachability UNDECIDED (budget or size limits)"}[v]
+            if r["denominator_bound_violated"]:
+                r["status"] += "; provably unreachable by the denominator lemma (Theorem 4)"
     return out
 
 
