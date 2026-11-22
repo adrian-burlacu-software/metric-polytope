@@ -1,0 +1,14 @@
+[MET_8 closure] 3918 candidate ray orbits; phase A: 3914 non-cut orbits
+  ... 3908 done, 6 running, 300s
+  ... 3911 done, 3 running, 600s
+  ... 3912 done, 2 running, 900s
+  ... 3913 done, 1 running, 1201s
+[MET_8 closure] phase A done: 3914 walked, 0 flagged, 1344s
+{
+ "phase": "A only",
+ "walked": 3914,
+ "flagged": [],
+ "outside_candidates": [],
+ "seconds": 1343.7
+}
+exit 0

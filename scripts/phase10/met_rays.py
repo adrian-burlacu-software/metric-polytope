@@ -184,6 +184,9 @@ def _run_jobs(jobs, workers, stuck_timeout, part, hard_cap=None):
     return done
 
 
+PHASE_A_ONLY = {"on": False}
+
+
 def cmd_closure(n, workers, timeout, cut_cap):
     """Closure check of the candidate ray orbits of MET_n (Q_n's vertex graph) with the Balinski skip.
     Phase A: every non-cut ray orbit (stuck timeout). Phase B: the cut-ray orbits δ(S), |S| >= 2 (hard cap each,
@@ -208,6 +211,11 @@ def cmd_closure(n, workers, timeout, cut_cap):
     A = _run_jobs(others, workers, timeout, ck / "phaseA.jsonl")
     print(f"[MET_{n} closure] phase A done: {sum(1 for r in A.values() if 'flag' not in r)} walked, "
           f"{sum(1 for r in A.values() if 'flag' in r)} flagged, {time.time() - t0:.0f}s", flush=True)
+    if PHASE_A_ONLY["on"]:
+        return {"phase": "A only", "walked": sum(1 for r in A.values() if "flag" not in r),
+                "flagged": [k for k, r in A.items() if "flag" in r],
+                "outside_candidates": sorted({k for r in A.values() if "flag" not in r for k in r["nbr_keys"] if k not in cand}),
+                "seconds": round(time.time() - t0, 1)}
     cut_jobs = [(n, cutkeys[s], cand[cutkeys[s]][0], cand[cutkeys[s]][1]) for s in cutkeys if s >= 2]
     print(f"[MET_{n} closure] phase B: cut rays |S| = 2..{n // 2} (cap {cut_cap:.0f} s each, in parallel)", flush=True)
     B = _run_jobs(cut_jobs, len(cut_jobs), timeout, ck / "phaseB.jsonl", hard_cap=cut_cap)
@@ -235,14 +243,16 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("cmd", choices=["validate", "candidates", "time", "closure"])
     ap.add_argument("--cut-cap", type=float, default=7200)
+    ap.add_argument("--phase-a-only", action="store_true")
     ap.add_argument("--n", type=int, default=8)
     ap.add_argument("--workers", type=int, default=19)
     ap.add_argument("--timeout", type=float, default=600)
     a = ap.parse_args()
+    PHASE_A_ONLY["on"] = a.phase_a_only
     out = {"validate": lambda: cmd_validate(a.workers), "candidates": lambda: cmd_candidates(a.n, a.workers),
            "time": lambda: cmd_time(a.n, a.workers, a.timeout),
            "closure": lambda: cmd_closure(a.n, a.workers, a.timeout, a.cut_cap)}[a.cmd]()
-    atomic_write_json(ROOT / "results" / "phase10" / f"met_rays_{a.cmd}_n{a.n}.json", out)
+    atomic_write_json(ROOT / "results" / "phase10" / f"met_rays_{a.cmd}{'_phaseA' if a.phase_a_only else ''}_n{a.n}.json", out)
     print(json.dumps(out, indent=1, default=str)[:3000])
 
 

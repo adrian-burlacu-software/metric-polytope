@@ -91,6 +91,8 @@ def main():
     ap.add_argument("--sizes", nargs="+", type=int, default=[4, 3, 2, 1])
     ap.add_argument("--threads", type=int, default=8)
     ap.add_argument("--validate", action="store_true", help="compare with cdd neighbours (small n)")
+    ap.add_argument("--flagged", action="store_true",
+                    help="also walk the ray orbits flagged in the cdd phase-A run (checkpoints/phase10/met_closure_n*/phaseA.jsonl)")
     a = ap.parse_args()
     n = a.n
     cand = set(json.loads((ROOT / "results" / "phase10" / f"met_ray_orbits_n{n}.json").read_text()))
@@ -114,6 +116,24 @@ def main():
         print(f"[n={n} |S|={s}] tight {r['tight']}, cone rays {r['cone_rays']}, normaliz {r['normaliz_s']} s, "
               f"neighbour orbits {len(r['nbr_orbits'])}, outside candidates {len(r['outside_candidates'])}"
               + (f", cdd agrees {r['cdd_same_neighbour_orbits']}" if a.validate else ""), flush=True)
+    if a.flagged:
+        cand_full = json.loads((ROOT / "results" / "phase10" / f"met_ray_orbits_n{n}.json").read_text())
+        part = ROOT / "checkpoints" / "phase10" / f"met_closure_n{n}" / "phaseA.jsonl"
+        flagged = [json.loads(l)["key"] for l in part.read_text(encoding="utf-8").splitlines()
+                   if l.strip() and "flag" in json.loads(l)]
+        for i, key in enumerate(flagged):
+            tag = f"flag:{key}"
+            if tag in out:
+                continue
+            D, x = cand_full[key][0], tuple(cand_full[key][1])
+            t0 = time.time()
+            r = neighbours_via_nmz(n, D, x, a.threads, f"n{n}_F{i}")
+            r["outside_candidates"] = [k for k in r["nbr_orbits"] if k not in cand]
+            r["seconds"] = round(time.time() - t0, 1)
+            out[tag] = {k: v for k, v in r.items() if k != "nbr_orbits"} | {"neighbour_orbits": len(r["nbr_orbits"])}
+            atomic_write_json(outp, out)
+            print(f"[n={n} flagged {i + 1}/{len(flagged)}] tight {r['tight']}, cone rays {r['cone_rays']}, "
+                  f"normaliz {r['normaliz_s']} s, outside candidates {len(r['outside_candidates'])}", flush=True)
 
 
 if __name__ == "__main__":
