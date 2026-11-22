@@ -1,0 +1,31 @@
+[round 97] t-bounded: rejected: must run at every n (domain has an upper bound: [3, 6])  gain {}
+[round 97] t-scaled-var: dropped: no gain (no new base orbit)  gain {}
+[round 97] t-scaled-main: dropped: no gain (no new base orbit)  gain {}
+# Phase 9 round 97
+
+Main-track numbers only. Non-vertex variant proposals are marked VARIANT and are tracked in results/phase9/variant_nonvertex.json.
+
+Judge time 3.3 s; budget per rule 120.0 s; round cap 1800 s.
+
+## Proposals (rule maker)
+
+| file | name | kind | status | targets gained (n: count) | s |
+|---|---|---|---|---|---|
+| phase9/round_97/maker/c_bounded.mpr | t-bounded |  | rejected: must run at every n (domain has an upper bound: [3, 6]) |  |  |
+| phase9/round_97/maker/b_var.mpr | t-scaled-var | generative (new base pieces) (VARIANT) | dropped: no gain (no new base orbit) |  | 0.7 |
+| phase9/round_97/maker/a_main.mpr | t-scaled-main | generative (new base pieces) | dropped: no gain (no new base orbit) |  | 0.6 |
+
+## Candidates (rule breaker)
+
+| file | claim | rule | n | D | vertex | status |
+|---|---|---|---|---|---|---|
+
+## Unreached targets (fraction)
+
+| n | before | after |
+|---|---|---|
+| 7 | 0/13 (0.0%) | 0/13 (0.0%) |
+| 8 | 266/533 (49.9%) | 266/533 (49.9%) |
+| 9 | 876/1000 (87.6%) | 876/1000 (87.6%) |
+
+exit 0

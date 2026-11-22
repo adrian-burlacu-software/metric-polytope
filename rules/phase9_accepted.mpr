@@ -1,7 +1,0 @@
-
-;; accepted in Phase 9 (phase9/round_01/maker/01_scaled_graph_metrics.mpr): Non-graphic points d_G/k of connected graphs G with tau(G) < 2k <= 4n: odd-prime denominators k (5, 9, 11, 13) not carried by graph metrics x_G on the same node set.
-(generative scaled-graph-metrics (n) :domain (3 7)
-  :doc "Non-graphic points d_G/k of connected graphs G with tau(G) < 2k <= 4n: odd-prime denominators k (5, 9, 11, 13) not carried by graph metrics x_G on the same node set."
-  (for ((G (graphs n :connected)) (k (range 2 (+ (* 2 n) 1))))
-    (where (< (triameter G) (* 2 k)))
-    (scale (/ 1 k) (gmetric G))))

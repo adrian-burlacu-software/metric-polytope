@@ -1,0 +1,87 @@
+{
+  "budget_per_rule": 120.0,
+  "candidates": [],
+  "code_version": "1293faaeca06fcef",
+  "git": "5d0dd969fbd922a1b3204b2474058e580f983756+dirty",
+  "proposals": [
+    {
+      "file": "phase9/round_97/maker/c_bounded.mpr",
+      "name": "t-bounded",
+      "probe_seconds": 0.28,
+      "status": "rejected: must run at every n (domain has an upper bound: [3, 6])",
+      "track": "main"
+    },
+    {
+      "file": "phase9/round_97/maker/b_var.mpr",
+      "kind": "generative (new base pieces)",
+      "name": "t-scaled-var",
+      "new_base_orbits": 0,
+      "non_vertex_points_discarded": 0,
+      "orbits": 166,
+      "points": 245,
+      "probe_seconds": 0.62,
+      "reason": "test: same points on the variant track",
+      "seconds": 0.7,
+      "status": "dropped: no gain (no new base orbit)",
+      "track": "VARIANT non-vertex (separate numbers)"
+    },
+    {
+      "file": "phase9/round_97/maker/a_main.mpr",
+      "kind": "generative (new base pieces)",
+      "name": "t-scaled-main",
+      "new_base_orbits": 0,
+      "non_vertex_points_discarded": 238,
+      "orbits": 3,
+      "points": 7,
+      "probe_seconds": 0.63,
+      "reason": "test: non-vertex points on the main track (expect all discarded)",
+      "seconds": 0.6,
+      "status": "dropped: no gain (no new base orbit)",
+      "track": "main"
+    }
+  ],
+  "round": 97,
+  "round_cap": 1800,
+  "seconds": 3.3,
+  "smallest_counterexamples": {},
+  "unreached_after": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 267,
+      "targets": 533,
+      "unreached": 266,
+      "unreached_fraction": 0.49906191369606
+    },
+    "9": {
+      "reached": 124,
+      "targets": 1000,
+      "unreached": 876,
+      "unreached_fraction": 0.876
+    }
+  },
+  "unreached_before": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 267,
+      "targets": 533,
+      "unreached": 266,
+      "unreached_fraction": 0.49906191369606
+    },
+    "9": {
+      "reached": 124,
+      "targets": 1000,
+      "unreached": 876,
+      "unreached_fraction": 0.876
+    }
+  }
+}

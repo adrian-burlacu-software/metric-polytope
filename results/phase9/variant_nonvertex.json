@@ -1,0 +1,19 @@
+{
+ "variant": "non-vertex base pieces (kept separate from the main numbers; user decision 2026-11-22)",
+ "rules": [
+  {
+   "round": 1,
+   "rule": "scaled-graph-metrics",
+   "file": "rules/phase9_variant_nonvertex.mpr",
+   "new_base_orbits": 10090,
+   "targets_gained": {
+    "8": 101,
+    "9": 213
+   },
+   "unreached_after": {
+    "8": "165/533 (31.0%)",
+    "9": "663/1000 (66.3%)"
+   }
+  }
+ ]
+}

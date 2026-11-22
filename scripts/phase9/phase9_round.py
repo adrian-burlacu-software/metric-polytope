@@ -22,6 +22,8 @@ from metricpoly.jobs import atomic_write_json, atomic_write_text, code_version, 
 from metricpoly.reach import Engine  # noqa: E402
 
 PY = sys.executable
+VARIANT_FILE = ROOT / "rules" / "phase9_variant_nonvertex.mpr"
+VDIR = CK / "variant_nonvertex"
 DRY = {"on": False}
 
 
@@ -75,9 +77,10 @@ class Forward:
         return dict(zip(keys, res))
 
 
-def load_state():
-    reached = {k: tuple(v) for k, v in load_json(CK / "reached.json").items()}
-    st = load_json(CK / "state.json") if (CK / "state.json").exists() else {"extra_base": [], "moves": {}, "history": []}
+def load_state(d=None):
+    d = d or CK
+    reached = {k: tuple(v) for k, v in load_json(d / "reached.json").items()}
+    st = load_json(d / "state.json") if (d / "state.json").exists() else {"extra_base": [], "moves": {}, "history": []}
     return reached, st
 
 
@@ -108,8 +111,10 @@ def _gain(eng, T, before, after):
     return g
 
 
-def eval_proposal(path, eng, T, reached, st, base, budget, log):
-    rec = {"file": str(Path(path).relative_to(ROOT).as_posix()), "status": None}
+def eval_proposal(path, eng, T, reached, st, base, budget, log, variant=False):
+    rec = {"file": str(Path(path).relative_to(ROOT).as_posix()), "status": None,
+           "track": "VARIANT non-vertex (separate numbers)" if variant else "main"}
+    acc_path = VARIANT_FILE if variant else ACCEPTED
     try:
         I, names = interpreter([path])
     except Exception as ex:
@@ -121,6 +126,11 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log):
         return rec, reached
     name = tops[0]
     rec["name"] = name
+    obj = I.rules.get(name) or I.moves.get(name)
+    dom = obj.meta.get("domain", (3,))
+    if len(dom) > 1:
+        rec.update(status=f"rejected: must run at every n (domain has an upper bound: {list(dom)})")
+        return rec, reached
     src = Path(path).read_text(encoding="utf-8")
     t0 = time.time()
     if name in I.rules and I.rules[name].kind == "generative":
@@ -140,7 +150,10 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log):
                 rec.update(status="rejected: generation failed", error=cp.stderr[-400:])
                 return rec, reached
             pts = [point_from_json(d) for d in load_json(emit)]
-        pts = [p for p in pts if verify_vertex(p)["feasible"]]          # judge re-verifies; never trusts the tool
+        chk = [(p, verify_vertex(p)) for p in pts]                     # judge re-verifies; never trusts the tool
+        rec["non_vertex_points_discarded"] = 0 if variant else sum(1 for _, v in chk if v["feasible"] and not v["vertex"])
+        # main track: base pieces must be exact vertices of m_k; the non-vertex variant accepts feasible points
+        pts = [p for p, v in chk if (v["feasible"] if variant else v["vertex"])]
         keys = {group.canonical(p).key() for p in pts if p.n <= 9}
         new_keys = {k for k in keys if k not in base.get(int(k.split("|")[0]), ()) and k not in st["extra_base"]}
         rec.update(points=len(pts), orbits=len(keys), new_base_orbits=len(new_keys))
@@ -157,7 +170,7 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log):
         if g:
             st["extra_base"] = sorted(set(st["extra_base"]) | new_keys)
             rec["status"] = "ACCEPTED"
-            _append_accepted(src, rec)
+            _append_accepted(src, rec, acc_path)
             return rec, after
         rec["status"] = "dropped: no gain" + (" within budget" if to else "")
         return rec, reached
@@ -179,7 +192,7 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log):
         if g:
             st["moves"][name] = mv.grow
             rec["status"] = "ACCEPTED"
-            _append_accepted(src, rec)
+            _append_accepted(src, rec, acc_path)
             return rec, after
         rec["status"] = "dropped: no gain" + (" within budget" if to else "")
         return rec, reached
@@ -204,16 +217,16 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log):
         rec["status"] = f"broken by the judge at n = {bad[0]} (exhaustive data)"
     elif holds and all(v is True for v in holds.values()):
         rec["status"] = "ACCEPTED (claim; open to the breaker)"
-        _append_accepted(src, rec)
+        _append_accepted(src, rec, acc_path)
     else:
         rec["status"] = "rejected: errors or no tested n"
     return rec, reached
 
 
-def _append_accepted(src, rec):
+def _append_accepted(src, rec, path=None):
     if DRY["on"]:
         return
-    with open(ACCEPTED, "a", encoding="utf-8", newline="\n") as f:
+    with open(path or ACCEPTED, "a", encoding="utf-8", newline="\n") as f:
         f.write(f"\n;; accepted in Phase 9 ({rec['file']}): {rec.get('reason', '')}\n{src.strip()}\n")
 
 
@@ -306,7 +319,20 @@ def cmd_round(args):
         if time.time() - t_start > args.round_cap:
             results.append({"file": str(p.relative_to(ROOT).as_posix()), "status": "deferred: round cap reached"})
             continue
-        rec, reached = eval_proposal(p, eng, T, reached, st, base, args.budget, None)
+        is_var = ':variant "nonvertex"' in p.read_text(encoding="utf-8")
+        if is_var:
+            vreached, vst = load_state(VDIR)
+            rec, vreached = eval_proposal(p, eng, T, vreached, vst, base, args.budget, None, variant=True)
+            if not DRY["on"]:
+                atomic_write_json(VDIR / "reached.json", {k: list(v) for k, v in vreached.items()})
+                atomic_write_json(VDIR / "state.json", vst)
+                vlog = load_json(OUT / "variant_nonvertex.json")
+                vlog["rules"].append({"round": R, "rule": rec.get("name"), "status": rec["status"],
+                                      "targets_gained": rec.get("targets_gained"),
+                                      "unreached_after": summarize(eng, T, vreached)})
+                atomic_write_json(OUT / "variant_nonvertex.json", vlog)
+        else:
+            rec, reached = eval_proposal(p, eng, T, reached, st, base, args.budget, None)
         rec["probe_seconds"] = round(probe[p], 2)
         results.append(rec)
         print(f"[round {R}] {rec.get('name', p.name)}: {rec['status']}  gain {rec.get('targets_gained', {})}", flush=True)
@@ -344,10 +370,12 @@ def cmd_round(args):
 
 def render(rep):
     md = [f"# Phase 9 round {rep['round']}", "",
+          "Main-track numbers only. Non-vertex variant proposals are marked VARIANT and are tracked in "
+          "results/phase9/variant_nonvertex.json.", "",
           f"Judge time {rep['seconds']} s; budget per rule {rep['budget_per_rule']} s; round cap {rep['round_cap']} s.", "",
           "## Proposals (rule maker)", "", "| file | name | kind | status | targets gained (n: count) | s |", "|---|---|---|---|---|---|"]
     for p in rep["proposals"]:
-        md.append(f"| {p['file']} | {p.get('name', '')} | {p.get('kind', '')} | {p['status']} | "
+        md.append(f"| {p['file']} | {p.get('name', '')} | {p.get('kind', '')}{' (VARIANT)' if p.get('track', '').startswith('VAR') else ''} | {p['status']} | "
                   f"{p.get('targets_gained', '')} | {p.get('seconds', '')} |")
     md += ["", "## Candidates (rule breaker)", "", "| file | claim | rule | n | D | vertex | status |", "|---|---|---|---|---|---|---|"]
     for c in rep["candidates"]:

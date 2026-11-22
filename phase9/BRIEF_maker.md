@@ -25,11 +25,22 @@ n = 8: 266 of 533 unreached; n = 9: 876 of 1,000.
   divides den(x), some restriction x|T with p | den(x|T) must itself be a base piece. Targeted seeds therefore need
   that prime in their denominator.
 
+## Hard rules (decided by the user after round 1)
+- **Base pieces must be true vertices of m_k.** The judge discards every generated point that isn't an exact vertex.
+  The existing graph-metric base is the only non-vertex exception. Intermediate points of a derivation may still be
+  non-vertices (detours).
+- **Non-vertex seeds** are allowed only as a separate variant. Put `:variant "nonvertex"` in the rule's header. The
+  judge evaluates such a rule on a separate state and logs it in `results/phase9/variant_nonvertex.json`; it never
+  enters the main numbers.
+- **Every n:** the `:domain` must have no upper bound, so write `(lo)`, not `(lo hi)`. A family that only works for
+  small n is rejected.
+- Round 1's `scaled-graph-metrics` (d_G/k, non-vertex) now lives in the variant. Don't resubmit it to the main track.
+
 ## What to propose
 At most 8 proposals. Each one goes in its own file `phase9/round_{R}/maker/NN_name.mpr` and defines **exactly one**
 top-level form:
-- `(generative NAME (n) :domain (3) :doc "one-line reason" BODY)`: new base pieces. It must be a family defined for
-  every n (domain open-ended or as wide as possible), not a single hard-coded point.
+- `(generative NAME (n) :domain (3) :doc "one-line reason" BODY)`: new base pieces, which must be vertices. It must be a
+  family defined for every n (open-ended domain), not a single hard-coded point.
 - `(move NAME (x) :grow k :doc "one-line reason" BODY)`: a new **unary** move that adds k ≥ 1 nodes.
 - `(structural NAME (n) :domain (lo hi) :doc "one-line reason" BODY)`: a claim. It's accepted only if it holds on
   all of the judge's data for n ≤ 8, and the breaker will then attack it.
