@@ -1,0 +1,34 @@
+{
+  "balinski_skip_valid": true,
+  "candidate_ray_orbits": 46,
+  "candidate_set_is_all_rays_of_MET": true,
+  "cut_rays": {
+    "2": {
+      "key": "Q7|10|0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0",
+      "nonvertex": 0,
+      "rays": 11662,
+      "s": 18.14,
+      "tight": 82
+    },
+    "3": {
+      "key": "Q7|12|0,0,1,1,1,1,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0",
+      "nonvertex": 0,
+      "rays": 9842,
+      "s": 15.1,
+      "tight": 77
+    }
+  },
+  "dim_Q": 20,
+  "flagged_orbits": [],
+  "n": 7,
+  "neighbour_orbits_outside_candidates": 0,
+  "nonvertex_neighbours": 0,
+  "outside_examples": [],
+  "rays_total": 55226,
+  "seconds": 21.1,
+  "skipped_orbits": [
+    "Q7|6|1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+  ],
+  "skipped_vertices": 7,
+  "walked_orbits": 45
+}

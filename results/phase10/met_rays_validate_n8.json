@@ -1,0 +1,18 @@
+{
+  "n5": {
+    "cdd_ray_orbits": 3,
+    "cdd_rays": 25,
+    "extracted_ray_orbits": 3,
+    "extracted_size_sum": 25,
+    "orbit_sizes_match_cdd": true,
+    "same_orbit_set": true
+  },
+  "n6": {
+    "cdd_ray_orbits": 8,
+    "cdd_rays": 296,
+    "extracted_ray_orbits": 8,
+    "extracted_size_sum": 296,
+    "orbit_sizes_match_cdd": true,
+    "same_orbit_set": true
+  }
+}
