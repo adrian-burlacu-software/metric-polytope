@@ -540,6 +540,22 @@ Status legend: holds for every tested n / **BREAKS** at the first failing n (cou
 (generative gen-lift-multipartite (n) :domain (4) :source "M1 (this work)" :fixes "vertex-moves-cover" :level 1 :doc "Vertices of the fiber over the (non-vertex) metric (1/3)d(K_p) of a complete multipartite graph on n−1 nodes." (concat-all (for ((p (partitions (- n 1)))) (where (> (len p) 1)) (fiber-vertices (lift-partial (third-metric (kparts p)))))))
 ```
 
+## Verified results
+
+Statements proved by exact computation (not DSL rules). Each lists its argument, the evidence files, and any assumption taken from the literature.
+
+### R1: Deza's m_8 vertex list is complete (independent proof)
+
+- Statement: The 533 switching ⋊ S_8 orbits of vertices of m_8 listed by Deza et al. are all the vertices of m_8.
+- Status: PROVED by exact computation (Phase 10, 2026-11-22), with one theorem from the literature
+- Argument: (1) Closure: every listed orbit except the cut orbit was walked. Its tangent-cone extreme rays were computed exactly with cdd, each was followed to the next vertex, the vertex was checked exactly (tight rows of rank 28), canonicalised with bliss, and found in the list (0 misses, 0 non-vertex steps). (2) Cap lemma: let F be linear with F <= 0 on all cuts. The vertices with F > 0 induce a connected subgraph that contains no cut. If that subgraph contains one listed vertex, it is entirely listed, because by (1) every listed non-cut vertex has all its neighbours listed. (3) Each facet class of CUT_8 gets one exact LP over m_8: either max F <= 0 (an empty cap, certified by an exact dual) or the optimum is an exact vertex of m_8 that is in the list. Symmetry carries this to every facet in the class. (4) CUT_8 is full-dimensional, so every vertex of m_8 that is not a cut violates some facet of CUT_8 and therefore lies in a cap. Hence every vertex is listed.
+- Assumption (literature): The SMAPO list of 147 facet classes of CUT_8 (Christof–Reinelt) is complete. This was proved in M. Deza, M. Dutour Sikirić, 'Enumeration of the facets of cut polytopes over some highly symmetric graphs', arXiv:1501.05407; the abstract was checked on 2026-11-22. Each class representative and each class size was re-verified exactly here; the class sizes sum to 217,093,472.
+- Evidence: results/phase10/closure_n8.json: 533 listed orbits, 532 walked, 0 misses, 0 non-vertex neighbours; only the cut orbit was flagged (scripts/phase10/closure_check.py --n 8)
+- Evidence: results/phase10/cap_lemma_n8.json: 147 classes, facet data verified, 146 positive caps with all optima listed (25 distinct orbits, none of them the cut), 1 empty cap (triangle), all dual certificates exact; negative control: dropping one optimum orbit makes 38 classes fail (scripts/phase10/cap_lemma_lp.py --n 8; the same pipeline passes for n = 5, 6, 7)
+- Evidence: data/smapo/: SMAPO files with SHA256SUMS.txt and SOURCES.md
+- Evidence: commit 1458be1
+- Cross-check: Cut neighbourhood route (independent of CUT_8): the neighbours of the zero cut are the extreme rays of MET_8, and 119,269,588 rays in 3,918 orbits were extracted from the list, matching the literature count. All 3,914 non-cut ray orbits of Q_8 = MET_8 ∩ {sum = 1} were walked with 0 rays outside the list (results/phase10/met_rays_closure_phaseA_n8.json). For the cut ray |S| = 4, Normaliz found 7,005,072 tangent-cone rays in 6,746 stabiliser orbits, with every orbit's ray count equal to its size and 0 neighbours outside the list (results/phase10/nmz_cut_rays_n8.json). The cut rays |S| = 3, 2, 1 are running; with them this route gives a second proof that does not depend on the CUT_8 facet list.
+
 ## Mutation log
 
 A mutation = a rule that holds up to some n and breaks at the next tested n. Literature entries are marked as such until verified.

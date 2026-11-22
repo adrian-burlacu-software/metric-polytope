@@ -5,6 +5,8 @@ Data: full vertex sets n <= 6 (cdd, Phase 2); Deza orbit representatives n = 7, 
 Each (rule, n) is one checkpointed task. Counterexamples are saved to results/ledger/counterexamples/.
 
 Usage: python -u scripts/phase4c_ledger.py [--max-n 7] [--only RULE ...] [--resume] [--force]
+       python -u scripts/phase4c_ledger.py --max-n 9 --render-only   (rebuild rules.md from the saved results only,
+       read-only: no rule is run and the job state is not touched; verified results come from results/ledger/results.json)
 """
 from __future__ import annotations
 
@@ -64,7 +66,15 @@ def main():
     add_job_args(ap)
     ap.add_argument("--max-n", type=int, default=7)
     ap.add_argument("--only", nargs="*", default=None)
+    ap.add_argument("--render-only", action="store_true")
     args = ap.parse_args()
+    if args.render_only:
+        I = Interpreter(seed=args.seed)
+        for f in FILES:
+            I.load_file(ROOT / "rules" / f)
+        I.finalize()
+        write_ledger(I, _ReadOnlyJob(f"phase4c_ledger_n{args.max_n}"), args)
+        return
     params = {"max_n": args.max_n, "files": FILES, "only": args.only}
     job = Job(f"phase4c_ledger_n{args.max_n}" + ("_" + "_".join(args.only) if args.only else ""), params, args.seed,
               resume=args.resume, force=args.force)
@@ -112,6 +122,43 @@ def main():
                   (f"holds={rec['holds']}" if rule.kind == "structural" else f"orbits={rec['orbits']}")), flush=True)
             job.record(task, rec)
     write_ledger(I, job, args)
+
+
+class _ReadOnlyJob:
+    """The saved state and latest result per task of a ledger job, read without modifying anything."""
+
+    def __init__(self, name):
+        d = ROOT / "checkpoints" / name
+        self.state = json.loads((d / "state.json").read_text(encoding="utf-8"))
+        self._res = {}
+        for line in (d / "results.jsonl").read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                r = json.loads(line)
+                self._res[r["task"]] = r["result"]
+
+    def results(self):
+        return dict(self._res)
+
+
+def verified_results_md():
+    """Verified results that are not rules (theorems checked by computation), from results/ledger/results.json."""
+    path = OUT / "results.json"
+    if not path.exists():
+        return []
+    md = ["## Verified results", "",
+          "Statements proved by exact computation (not DSL rules). Each lists its argument, the evidence files, "
+          "and any assumption taken from the literature.", ""]
+    for e in json.loads(path.read_text(encoding="utf-8")):
+        md += [f"### {e['id']}: {e['title']}", "", f"- Statement: {e['statement']}", f"- Status: {e['status']}",
+               f"- Argument: {e['argument']}"]
+        for a in e.get("assumptions", []):
+            md.append(f"- Assumption (literature): {a}")
+        for ev in e.get("evidence", []):
+            md.append(f"- Evidence: {ev}")
+        for c in e.get("cross_checks", []):
+            md.append(f"- Cross-check: {c}")
+        md.append("")
+    return md
 
 
 def write_ledger(I, job, args):
@@ -178,6 +225,7 @@ def write_ledger(I, job, args):
                 c.name: {str(v["n"]): v.get("holds") for v in R.values() if v.get("rule") == c.name} for c in checked}
         log.append(entry)
         k += 1
+    md += verified_results_md()
     md += ["## Mutation log", "",
            "A mutation = a rule that holds up to some n and breaks at the next tested n. Literature entries are "
            "marked as such until verified.", ""]
