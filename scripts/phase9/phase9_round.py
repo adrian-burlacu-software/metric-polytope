@@ -297,7 +297,18 @@ def eval_candidates(path, eng, T, reached, st, base, I):
             else:
                 # n >= 10: no canonical forms; exact top-down search (metricpoly/reach_large.py, validated n <= 9)
                 from metricpoly.dsl.ext.phase8_prims import p_den_bound_ok
+                from metricpoly.canon_large import canonical_key as _ck
                 r["denominator_bound_violated"] = not p_den_bound_ok(x.D, x.n)
+                r["key"] = _ck(x)                               # bliss-based canonical form (validated n <= 9)
+                reg_path = OUT / "large_orbits.json"
+                reg = load_json(reg_path) if reg_path.exists() else {}
+                if r["key"] in reg:
+                    r["status"] = f"rejected: duplicate orbit (first seen {reg[r['key']]})"
+                    out.append(r)
+                    continue
+                if not DRY["on"]:
+                    reg[r["key"]] = f"{Path(path).parent.parent.name}, n = {x.n}, D = {x.D}"
+                    atomic_write_json(reg_path, reg)
                 r["_x"] = x                                     # searched in parallel below
         out.append(r)
     pend = [r for r in out if "_x" in r]
