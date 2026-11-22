@@ -1,0 +1,32 @@
+{
+  "1": {
+    "cdd_same_neighbour_orbits": true,
+    "cone_rays": 190,
+    "neighbour_orbits": 8,
+    "nonvertex": 0,
+    "normaliz_s": 0.1,
+    "outside_candidates": [],
+    "seconds": 0.5,
+    "tight": 52
+  },
+  "2": {
+    "cdd_same_neighbour_orbits": true,
+    "cone_rays": 158,
+    "neighbour_orbits": 8,
+    "nonvertex": 0,
+    "normaliz_s": 0.1,
+    "outside_candidates": [],
+    "seconds": 0.4,
+    "tight": 46
+  },
+  "3": {
+    "cdd_same_neighbour_orbits": true,
+    "cone_rays": 156,
+    "neighbour_orbits": 8,
+    "nonvertex": 0,
+    "normaliz_s": 0.1,
+    "outside_candidates": [],
+    "seconds": 0.5,
+    "tight": 44
+  }
+}
