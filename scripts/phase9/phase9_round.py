@@ -326,7 +326,8 @@ def cmd_round(args):
             if c["rule"] not in smallest or c["n"] < smallest[c["rule"]]["n"]:
                 smallest[c["rule"]] = c
     for rule, c in smallest.items():
-        atomic_write_json(cdir / f"{rule}_n{c['n']}_round{R:02d}.json", c)
+        if not DRY["on"]:
+            atomic_write_json(cdir / f"{rule}_n{c['n']}_round{R:02d}.json", c)
     after = summarize(eng, T, reached)
     st["history"].append({"round": R, "before": before, "after": after})
     if not DRY["on"]:

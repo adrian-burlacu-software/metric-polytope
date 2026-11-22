@@ -72,7 +72,7 @@ def targets():
 def summarize(eng, T, reached):
     out = {}
     for n in (7, 8, 9):
-        ids = [i for i, (m, _, _) in enumerate(T) if m == n]
+        ids = [i for i, (m, o, _) in enumerate(T) if m == n and isinstance(o, int)]   # breaker-added points excluded
         r = sum(1 for i in ids if eng.target_key(i) in reached)
         out[n] = {"targets": len(ids), "reached": r, "unreached": len(ids) - r,
                   "unreached_fraction": (len(ids) - r) / len(ids)}
