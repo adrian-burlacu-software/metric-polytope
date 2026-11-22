@@ -1,0 +1,17 @@
+{
+  "PASS_all_optima_listed": true,
+  "all_dual_certified": true,
+  "all_facets": true,
+  "all_optima_vertices": true,
+  "all_valid": true,
+  "classes": 164506,
+  "distinct_optimum_orbits": 2477,
+  "empty_caps": 1,
+  "list_orbits": 1056367,
+  "positive_caps": 164505,
+  "seconds_total_cpu": 10831.5,
+  "sizes_integral": true,
+  "stated_total": 12246651158320,
+  "sum_class_sizes": 12246651158320,
+  "unlisted_optima": []
+}
