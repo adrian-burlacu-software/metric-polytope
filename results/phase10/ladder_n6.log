@@ -1,0 +1,17 @@
+[rung 0] DONE: 2 orbits, 32 vertices, denominators {1: 1, 3: 1}, 0.0 s, flagged 0
+[rung 1] seeded 2 orbits from rung 0 (0s)
+[rung 1] wave 1: walked 2, new 0, total 2, mean rays 18, 0s
+[rung 1] DONE: 2 orbits, 64 vertices, denominators {1: 1, 3: 1}, 0.3 s, flagged 0
+[rung 2] seeded 2 orbits from rung 1 (0s)
+[rung 2] wave 1: walked 2, new 0, total 2, mean rays 28, 0s
+[rung 2] DONE: 2 orbits, 96 vertices, denominators {1: 1, 3: 1}, 0.3 s, flagged 0
+[rung 3] seeded 2 orbits from rung 2 (0s)
+[rung 3] wave 1: walked 2, new 1, total 3, mean rays 42, 0s
+[rung 3] wave 2: walked 1, new 0, total 3, mean rays 13, 1s
+[rung 3] DONE: 3 orbits, 160 vertices, denominators {1: 1, 3: 2}, 0.7 s, flagged 0
+[rung 4] seeded 3 orbits from rung 3 (0s)
+[rung 4] wave 1: walked 3, new 0, total 3, mean rays 67, 0s
+[rung 4] DONE: 3 orbits, 320 vertices, denominators {1: 1, 3: 2}, 0.4 s, flagged 0
+[rung 5] seeded 3 orbits from rung 4 (0s)
+[rung 5] wave 1: walked 3, new 0, total 3, mean rays 134, 1s
+[rung 5] DONE: 3 orbits, 544 vertices, denominators {1: 1, 3: 2}, 0.6 s, flagged 0

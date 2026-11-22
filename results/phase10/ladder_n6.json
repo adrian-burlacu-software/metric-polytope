@@ -1,0 +1,88 @@
+{
+  "code_version": "e39e8b686d948caf",
+  "git": "87cf40427492677703ebbbffcf9711bf5cca0340+dirty",
+  "params": {
+    "nK": 5,
+    "orbit_timeout": 600
+  },
+  "summary": {
+    "0": {
+      "denominators": {
+        "1": 1,
+        "3": 1
+      },
+      "flagged_hard": [],
+      "group_order": 1920,
+      "max_incidence": 30,
+      "orbits": 2,
+      "rung": 0,
+      "seconds": 0.0,
+      "vertices": 32
+    },
+    "1": {
+      "denominators": {
+        "1": 1,
+        "3": 1
+      },
+      "flagged_hard": [],
+      "group_order": 768,
+      "max_incidence": 31,
+      "orbits": 2,
+      "rung": 1,
+      "seconds": 0.3,
+      "vertices": 64
+    },
+    "2": {
+      "denominators": {
+        "1": 1,
+        "3": 1
+      },
+      "flagged_hard": [],
+      "group_order": 384,
+      "max_incidence": 33,
+      "orbits": 2,
+      "rung": 2,
+      "seconds": 0.3,
+      "vertices": 96
+    },
+    "3": {
+      "denominators": {
+        "1": 1,
+        "3": 2
+      },
+      "flagged_hard": [],
+      "group_order": 384,
+      "max_incidence": 39,
+      "orbits": 3,
+      "rung": 3,
+      "seconds": 0.7,
+      "vertices": 160
+    },
+    "4": {
+      "denominators": {
+        "1": 1,
+        "3": 2
+      },
+      "flagged_hard": [],
+      "group_order": 1536,
+      "max_incidence": 48,
+      "orbits": 3,
+      "rung": 4,
+      "seconds": 0.4,
+      "vertices": 320
+    },
+    "5": {
+      "denominators": {
+        "1": 1,
+        "3": 2
+      },
+      "flagged_hard": [],
+      "group_order": 23040,
+      "max_incidence": 60,
+      "orbits": 3,
+      "rung": 5,
+      "seconds": 0.6,
+      "vertices": 544
+    }
+  }
+}
