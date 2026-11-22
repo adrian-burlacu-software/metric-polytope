@@ -61,9 +61,10 @@ def _fw_apply(args):
 class Forward:
     """Pool of interpreters (rule set + given files) applying user moves forward to node representatives."""
 
-    def __init__(self, eng, files, workers, unreached_keys):
+    def __init__(self, eng, files, workers, unreached_keys, deadline=None):
         self.eng, self.files, self.workers = eng, [str(f) for f in files], workers
         self.invs = set(eng.invariants(list(unreached_keys)).values())
+        self.deadline = deadline            # hard: a runaway forward application is cut off at the deadline
 
     def __enter__(self):
         import multiprocessing as mp
@@ -74,7 +75,12 @@ class Forward:
         self.pool.terminate()
 
     def __call__(self, name, keys):
-        res = self.pool.map(_fw_apply, [(name, self.eng.point(k)) for k in keys], chunksize=4)
+        import multiprocessing as mp
+        job = self.pool.map_async(_fw_apply, [(name, self.eng.point(k)) for k in keys], chunksize=4)
+        try:
+            res = job.get(timeout=None if self.deadline is None else max(1.0, self.deadline - time.time()))
+        except mp.TimeoutError:
+            return {}                       # engine sees the deadline passed and reports a timeout
         return dict(zip(keys, res))
 
 
@@ -188,7 +194,7 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log, variant=False):
             rec.update(status="dropped: no gain (no new base orbit)", seconds=round(time.time() - t0, 1))
             return rec, reached
         is_base = make_is_base(base, set(st["extra_base"]) | new_keys)
-        with Forward(eng, [path], eng.workers, [k for k in eng.rep if k not in reached]) as fw:
+        with Forward(eng, [path], eng.workers, [k for k in eng.rep if k not in reached], deadline=t0 + budget) as fw:
             after, to = eng.run(is_base, _user_moves(I, st), I, deadline=t0 + budget, skip=reached, verbose=False,
                                 forward=fw)
         g = _gain(eng, T, reached, after)
@@ -217,7 +223,7 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log, variant=False):
                 return rec, reached
         um = _user_moves(I, st)
         um[name] = (mv, mv.grow)
-        with Forward(eng, [path], eng.workers, [k for k in eng.rep if k not in reached]) as fw:
+        with Forward(eng, [path], eng.workers, [k for k in eng.rep if k not in reached], deadline=t0 + budget) as fw:
             after, to = eng.run(make_is_base(base, set(st["extra_base"])), um, I, deadline=t0 + budget, skip=reached,
                                 verbose=False, forward=fw)
         g = _gain(eng, T, reached, after)
@@ -405,7 +411,15 @@ def eval_candidates(path, eng, T, reached, st, base, I):
     if pend:
         import multiprocessing as mp
         with mp.Pool(min(len(pend), eng.workers), initializer=_large_init) as pool:
-            res = pool.map(_large_reach, [r["_x"] for r in pend], chunksize=1)
+            jobs = [pool.apply_async(_large_reach, (r["_x"],)) for r in pend]
+            res = []
+            t_hard = time.time() + LARGE_BUDGET * (1 + len(pend) / max(1, min(len(pend), eng.workers))) + 30
+            for jb in jobs:                 # hard timeout: a runaway forward application cannot block the round
+                try:
+                    res.append(jb.get(timeout=max(1.0, t_hard - time.time())))
+                except mp.TimeoutError:
+                    res.append((None, {"hard_timeout": True}, None))
+            pool.terminate()
         for r, (v, nodes, secs) in zip(pend, res):
             del r["_x"]
             r["search_nodes"], r["search_seconds"] = nodes, secs
