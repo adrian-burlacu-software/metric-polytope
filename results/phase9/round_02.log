@@ -1,0 +1,65 @@
+# Phase 9 round 2
+
+Main-track numbers only. Non-vertex variant proposals are marked VARIANT and are tracked in results/phase9/variant_nonvertex.json.
+
+Judge time 113.6 s; budget per rule 300.0 s; round cap 1800 s.
+
+## Proposals (rule maker)
+
+| file | name | kind | status | targets gained (n: count) | s |
+|---|---|---|---|---|---|
+
+## Candidates (rule breaker)
+
+| file | claim | rule | n | D | vertex | status |
+|---|---|---|---|---|---|---|
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 50 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 43 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 41 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 37 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 31 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 29 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 27 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 25 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 23 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 19 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 43 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 41 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 15 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 14 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 10 | 14 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 11 | 53 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 11 | 49 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 11 | 47 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 11 | 43 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 11 | 41 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 11 | 37 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 11 | 31 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 11 | 29 | True | CONFIRMED unreachable (complete search); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 12 | 69 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 12 | 53 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 12 | 49 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 12 | 47 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 12 | 46 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 12 | 43 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 12 | 41 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 12 | 37 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 15 | 43 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 15 | 53 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 15 | 47 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 15 | 49 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 20 | 53 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 17 | 41 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 20 | 41 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 20 | 47 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+| phase9/round_02/breaker/candidates.json | unreachable | all-moves-cover | 20 | 43 | True | CONFIRMED vertex; reachability UNDECIDED (budget or size limits); provably unreachable by the denominator lemma (Theorem 4) |
+
+## Unreached targets (fraction)
+
+| n | before | after |
+|---|---|---|
+| 7 | 0/13 (0.0%) | 0/13 (0.0%) |
+| 8 | 266/533 (49.9%) | 266/533 (49.9%) |
+| 9 | 876/1000 (87.6%) | 876/1000 (87.6%) |
+
+exit 0

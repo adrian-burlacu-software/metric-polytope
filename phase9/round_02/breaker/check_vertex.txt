@@ -1,0 +1,322 @@
+[
+ {
+  "feasible": true,
+  "tight": 50,
+  "dim": 45,
+  "vertex": true,
+  "D": 50,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 52,
+  "dim": 45,
+  "vertex": true,
+  "D": 43,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 49,
+  "dim": 45,
+  "vertex": true,
+  "D": 41,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 54,
+  "dim": 45,
+  "vertex": true,
+  "D": 37,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 52,
+  "dim": 45,
+  "vertex": true,
+  "D": 31,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 62,
+  "dim": 45,
+  "vertex": true,
+  "D": 29,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 60,
+  "dim": 45,
+  "vertex": true,
+  "D": 27,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 66,
+  "dim": 45,
+  "vertex": true,
+  "D": 25,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 57,
+  "dim": 45,
+  "vertex": true,
+  "D": 23,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 59,
+  "dim": 45,
+  "vertex": true,
+  "D": 19,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 46,
+  "dim": 45,
+  "vertex": true,
+  "D": 43,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 49,
+  "dim": 45,
+  "vertex": true,
+  "D": 41,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 57,
+  "dim": 45,
+  "vertex": true,
+  "D": 15,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 88,
+  "dim": 45,
+  "vertex": true,
+  "D": 14,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 60,
+  "dim": 45,
+  "vertex": true,
+  "D": 14,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 60,
+  "dim": 55,
+  "vertex": true,
+  "D": 53,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 59,
+  "dim": 55,
+  "vertex": true,
+  "D": 49,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 60,
+  "dim": 55,
+  "vertex": true,
+  "D": 47,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 74,
+  "dim": 55,
+  "vertex": true,
+  "D": 43,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 86,
+  "dim": 55,
+  "vertex": true,
+  "D": 41,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 89,
+  "dim": 55,
+  "vertex": true,
+  "D": 37,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 70,
+  "dim": 55,
+  "vertex": true,
+  "D": 31,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 97,
+  "dim": 55,
+  "vertex": true,
+  "D": 29,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 77,
+  "dim": 66,
+  "vertex": true,
+  "D": 69,
+  "n": 12
+ },
+ {
+  "feasible": true,
+  "tight": 76,
+  "dim": 66,
+  "vertex": true,
+  "D": 53,
+  "n": 12
+ },
+ {
+  "feasible": true,
+  "tight": 72,
+  "dim": 66,
+  "vertex": true,
+  "D": 49,
+  "n": 12
+ },
+ {
+  "feasible": true,
+  "tight": 85,
+  "dim": 66,
+  "vertex": true,
+  "D": 47,
+  "n": 12
+ },
+ {
+  "feasible": true,
+  "tight": 92,
+  "dim": 66,
+  "vertex": true,
+  "D": 46,
+  "n": 12
+ },
+ {
+  "feasible": true,
+  "tight": 111,
+  "dim": 66,
+  "vertex": true,
+  "D": 43,
+  "n": 12
+ },
+ {
+  "feasible": true,
+  "tight": 97,
+  "dim": 66,
+  "vertex": true,
+  "D": 41,
+  "n": 12
+ },
+ {
+  "feasible": true,
+  "tight": 115,
+  "dim": 66,
+  "vertex": true,
+  "D": 37,
+  "n": 12
+ },
+ {
+  "feasible": true,
+  "tight": 120,
+  "dim": 105,
+  "vertex": true,
+  "D": 43,
+  "n": 15
+ },
+ {
+  "feasible": true,
+  "tight": 166,
+  "dim": 105,
+  "vertex": true,
+  "D": 53,
+  "n": 15
+ },
+ {
+  "feasible": true,
+  "tight": 127,
+  "dim": 105,
+  "vertex": true,
+  "D": 47,
+  "n": 15
+ },
+ {
+  "feasible": true,
+  "tight": 121,
+  "dim": 105,
+  "vertex": true,
+  "D": 49,
+  "n": 15
+ },
+ {
+  "feasible": true,
+  "tight": 225,
+  "dim": 190,
+  "vertex": true,
+  "D": 53,
+  "n": 20
+ },
+ {
+  "feasible": true,
+  "tight": 175,
+  "dim": 136,
+  "vertex": true,
+  "D": 41,
+  "n": 17
+ },
+ {
+  "feasible": true,
+  "tight": 277,
+  "dim": 190,
+  "vertex": true,
+  "D": 41,
+  "n": 20
+ },
+ {
+  "feasible": true,
+  "tight": 335,
+  "dim": 190,
+  "vertex": true,
+  "D": 47,
+  "n": 20
+ },
+ {
+  "feasible": true,
+  "tight": 277,
+  "dim": 190,
+  "vertex": true,
+  "D": 43,
+  "n": 20
+ }
+]

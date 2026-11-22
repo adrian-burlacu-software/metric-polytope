@@ -362,7 +362,7 @@ def cmd_round(args):
         print(f"[round {R}] {rec.get('name', p.name)}: {rec['status']}  gain {rec.get('targets_gained', {})}", flush=True)
     I, _ = interpreter([])
     cands = []
-    for c in sorted((rdir / "breaker").glob("*.json")) if (rdir / "breaker").exists() else []:
+    for c in sorted((rdir / "breaker").glob("candidates*.json")) if (rdir / "breaker").exists() else []:
         if time.time() - t_start > args.round_cap:
             cands.append({"file": str(c.relative_to(ROOT).as_posix()), "status": "deferred: round cap reached"})
             continue
