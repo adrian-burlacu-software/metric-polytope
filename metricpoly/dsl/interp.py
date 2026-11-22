@@ -558,7 +558,11 @@ class Interpreter:
             return self.modes[key]
 
         def keys(xs):
-            return frozenset(group.canonical(p).key() for p in self.apply_move_raw(mv, xs))
+            # orbit keys of the outputs: bliss-based canonical form (exact, any n; same orbit partition as
+            # group.canonical, validated in scripts/phase9/validate_canon_large.py). group.canonical enumerates all
+            # n! permutations and takes minutes for the size-10 outputs of a size-9 input.
+            from ..canon_large import canonical_key
+            return frozenset(canonical_key(p) for p in self.apply_move_raw(mv, xs))
 
         base = keys(args)
 
