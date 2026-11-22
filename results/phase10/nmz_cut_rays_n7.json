@@ -1,12 +1,15 @@
 {
   "1": {
-    "cdd_same_neighbour_orbits": true,
     "cone_rays": 18502,
+    "count_vs_orbit_size_mismatches": 0,
     "neighbour_orbits": 41,
     "nonvertex": 0,
-    "normaliz_s": 7.7,
+    "normaliz_input": "dual: cone of the rows of -A_T, SupportHyperplanes",
     "outside_candidates": [],
-    "seconds": 59.5,
+    "postprocess_s": 1.2,
+    "ray_orbits_under_stabiliser": 77,
+    "source": "checkpoints/phase10/nmz_dual/n7_S1.out",
+    "stabiliser_order": 720,
     "tight": 92
   },
   "2": {

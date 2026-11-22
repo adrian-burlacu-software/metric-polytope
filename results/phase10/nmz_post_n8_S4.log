@@ -1,0 +1,17 @@
+  chunks 1, rays 20000, orbits 161, 4 s
+  chunks 26, rays 520000, orbits 973, 7 s
+  chunks 51, rays 1020000, orbits 1523, 11 s
+  chunks 76, rays 1520000, orbits 2502, 17 s
+  chunks 101, rays 2020000, orbits 2766, 21 s
+  chunks 126, rays 2520000, orbits 3866, 26 s
+  chunks 151, rays 3020000, orbits 4678, 30 s
+  chunks 176, rays 3520000, orbits 5552, 35 s
+  chunks 201, rays 4020000, orbits 5588, 40 s
+  chunks 226, rays 4520000, orbits 5840, 44 s
+  chunks 251, rays 5020000, orbits 6504, 48 s
+  chunks 276, rays 5520000, orbits 6710, 53 s
+  chunks 301, rays 6020000, orbits 6714, 58 s
+  chunks 326, rays 6520000, orbits 6746, 62 s
+  chunks 351, rays 7005072, orbits 6746, 65 s
+rays 7005072, orbits 6746, count/orbit-size mismatches 0, 65 s
+[n=8 |S|=4] rays 7005072, orbits 6746, mismatches 0, neighbour orbits 3196, nonvertex 0, outside candidates 0

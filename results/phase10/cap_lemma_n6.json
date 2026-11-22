@@ -1,0 +1,48 @@
+{
+  "PASS": true,
+  "all_optima_listed": true,
+  "classes": 3,
+  "distinct_optimum_orbits": 2,
+  "empty_caps": 1,
+  "facet_data_verified": true,
+  "lp": [
+    {
+      "D": 3,
+      "class": 1,
+      "dual_certified": true,
+      "is_cut": false,
+      "key": "6|3|2,2,2,2,1,2,2,2,1,2,2,1,2,1,1",
+      "listed": true,
+      "max": "4/3",
+      "vertex": true
+    },
+    {
+      "D": 3,
+      "class": 2,
+      "dual_certified": true,
+      "is_cut": false,
+      "key": "6|3|2,2,1,2,2,2,1,2,2,1,2,2,1,1,0",
+      "listed": true,
+      "max": "2/3",
+      "vertex": true
+    },
+    {
+      "class": 3,
+      "dual_certified": true,
+      "empty_cap": true,
+      "max": "0"
+    }
+  ],
+  "n": 6,
+  "negative_control": {
+    "classes_now_failing": [
+      1
+    ],
+    "dropped_orbit": "6|3|2,2,2,2,1,2,2,2,1,2,2,1,2,1,1",
+    "test_fails": true
+  },
+  "positive_caps": 2,
+  "seconds": 0.0,
+  "stated_total": 368,
+  "sum_class_sizes": 368
+}

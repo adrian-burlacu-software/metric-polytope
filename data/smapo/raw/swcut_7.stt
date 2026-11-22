@@ -1,0 +1,17 @@
+
+Total number of facets:                     116764
+Total number of facets at one vertex:        38780         
+
+NUMBER      ROOTS     FACETS     FACETS
+                   AT VERTEX
+     1         21       2205       6720
+     2         26        546       1344
+     3         21        147        448
+     4         21       8820      26880
+     5         30        630       1344
+     6         21      13230      40320
+     7         21       5292      16128
+     8         21       7560      23040
+     9         35         35         64
+    10         40        210        336
+    11         48        105        140

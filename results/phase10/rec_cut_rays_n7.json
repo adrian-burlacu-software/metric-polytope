@@ -1,0 +1,77 @@
+{
+  "1": {
+    "balinski_skipped_orbits": 1,
+    "balinski_skipped_vertices": 6,
+    "calls": {
+      "balinski_skips": 1,
+      "cdd": 31,
+      "nmz": 45,
+      "nmz_timeout": 0,
+      "rec": 0
+    },
+    "cone_rays": 18502,
+    "direct_cone_rays": 18502,
+    "expanded": 76,
+    "group_order": 720,
+    "max_depth": 1,
+    "neighbour_orbits": 41,
+    "nonvertex": 0,
+    "outside_candidates": [],
+    "ray_orbits": 77,
+    "same_count": true,
+    "same_neighbour_orbits": true,
+    "seconds": 7.3,
+    "section_dim": 19,
+    "tight": 92
+  },
+  "2": {
+    "balinski_skipped_orbits": 1,
+    "balinski_skipped_vertices": 5,
+    "calls": {
+      "balinski_skips": 1,
+      "cdd": 48,
+      "nmz": 54,
+      "nmz_timeout": 0,
+      "rec": 0
+    },
+    "cone_rays": 11662,
+    "direct_cone_rays": 11662,
+    "expanded": 102,
+    "group_order": 240,
+    "max_depth": 1,
+    "neighbour_orbits": 44,
+    "nonvertex": 0,
+    "outside_candidates": [],
+    "ray_orbits": 103,
+    "same_count": true,
+    "same_neighbour_orbits": true,
+    "seconds": 8.0,
+    "section_dim": 19,
+    "tight": 82
+  },
+  "3": {
+    "balinski_skipped_orbits": 4,
+    "balinski_skipped_vertices": 17,
+    "calls": {
+      "balinski_skips": 4,
+      "cdd": 50,
+      "nmz": 65,
+      "nmz_timeout": 0,
+      "rec": 0
+    },
+    "cone_rays": 9842,
+    "direct_cone_rays": 9842,
+    "expanded": 115,
+    "group_order": 144,
+    "max_depth": 1,
+    "neighbour_orbits": 43,
+    "nonvertex": 0,
+    "outside_candidates": [],
+    "ray_orbits": 119,
+    "same_count": true,
+    "same_neighbour_orbits": true,
+    "seconds": 7.8,
+    "section_dim": 19,
+    "tight": 77
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "4": {
+    "cone_rays": 7005072,
+    "count_vs_orbit_size_mismatches": 0,
+    "neighbour_orbits": 3196,
+    "nonvertex": 0,
+    "normaliz_input": "inequalities (primal), ExtremeRays, 20 threads",
+    "outside_candidates": [],
+    "postprocess_s": 67.3,
+    "ray_orbits_under_stabiliser": 6746,
+    "source": "checkpoints/phase10/nmz/n8_S4.out",
+    "stabiliser_order": 1152,
+    "tight": 122
+  }
+}

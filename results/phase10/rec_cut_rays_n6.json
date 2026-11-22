@@ -1,0 +1,65 @@
+{
+  "1": {
+    "calls": {
+      "balinski_skips": 616,
+      "cdd": 0,
+      "nmz": 549,
+      "nmz_timeout": 97,
+      "rec": 98
+    },
+    "cone_rays": 190,
+    "direct_cone_rays": 190,
+    "group_order": 120,
+    "max_depth": 3,
+    "neighbour_orbits": 8,
+    "nonvertex": 0,
+    "outside_candidates": [],
+    "ray_orbits": 11,
+    "same_count": true,
+    "same_neighbour_orbits": true,
+    "seconds": 19.7,
+    "tight": 52
+  },
+  "2": {
+    "calls": {
+      "balinski_skips": 837,
+      "cdd": 0,
+      "nmz": 730,
+      "nmz_timeout": 117,
+      "rec": 118
+    },
+    "cone_rays": 158,
+    "direct_cone_rays": 158,
+    "group_order": 48,
+    "max_depth": 3,
+    "neighbour_orbits": 8,
+    "nonvertex": 0,
+    "outside_candidates": [],
+    "ray_orbits": 14,
+    "same_count": true,
+    "same_neighbour_orbits": true,
+    "seconds": 26.9,
+    "tight": 46
+  },
+  "3": {
+    "calls": {
+      "balinski_skips": 555,
+      "cdd": 0,
+      "nmz": 445,
+      "nmz_timeout": 79,
+      "rec": 80
+    },
+    "cone_rays": 156,
+    "direct_cone_rays": 156,
+    "group_order": 72,
+    "max_depth": 3,
+    "neighbour_orbits": 8,
+    "nonvertex": 0,
+    "outside_candidates": [],
+    "ray_orbits": 10,
+    "same_count": true,
+    "same_neighbour_orbits": true,
+    "seconds": 17.2,
+    "tight": 44
+  }
+}

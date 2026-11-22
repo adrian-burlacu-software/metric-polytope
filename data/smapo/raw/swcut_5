@@ -1,0 +1,10 @@
+DIM = 10
+
+INDEX
+AB AC AD AE BC BD BE CD CE DE 
+
+INEQUALITIES_SECTION
+(  1) -1 -1 -1 1 1 1 -1 1 -1 -1  <= 0 
+(  2) -1 -1  0 0 1 0  0 0  0  0  <= 0 
+
+END
