@@ -1,0 +1,6 @@
+round 1 move adds 1078 reached 1979 time 32
+round 2 move adds 2342 reached 6316 time 166
+round 3 move adds 706 reached 9850 time 205
+round 4 move adds 44 reached 10654 time 211
+round 5 move adds 0 reached 10699 time 213
+['mid'] gained nodes 8720 Counter({7: 4026, 6: 2692, 8: 1510, 5: 307, 9: 172, 4: 13}) targets 234 checks 8120 time 213

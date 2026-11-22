@@ -1,0 +1,7 @@
+moves [('radial-normalized', 1), ('partial-dup', 1), ('partial-pendant', 1)]
+10 9 d1  None 40.2
+11 12 d1  None 73.3
+10 9 d1  None 40.6
+11 17 d1  False 5.2
+11 14 d3  False 4.8
+10 10 d3  None 40.3

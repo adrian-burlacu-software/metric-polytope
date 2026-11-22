@@ -1,0 +1,17 @@
+pool 93
+10 11 False False 4.3
+10 15 False False 15.4
+10 9 False True 13.5
+11 9 False True 41.8
+11 12 True True 2.5
+11 12 True True 4.3
+11 9 False True 44.5
+10 14 True True 0.3
+11 8 True True 4.5
+11 15 False False 13.2
+11 15 False False 12.9
+11 7 True True 0.0
+11 18 False False 49.0
+11 24 False False 15.3
+11 9 False True 53.8
+done 15

@@ -1,0 +1,234 @@
+[
+ {
+  "feasible": true,
+  "tight": 63,
+  "dim": 45,
+  "vertex": true,
+  "D": 9,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 80,
+  "dim": 45,
+  "vertex": true,
+  "D": 9,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 72,
+  "dim": 45,
+  "vertex": true,
+  "D": 9,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 95,
+  "dim": 45,
+  "vertex": true,
+  "D": 9,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 62,
+  "dim": 45,
+  "vertex": true,
+  "D": 9,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 96,
+  "dim": 45,
+  "vertex": true,
+  "D": 10,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 93,
+  "dim": 45,
+  "vertex": true,
+  "D": 10,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 68,
+  "dim": 45,
+  "vertex": true,
+  "D": 11,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 60,
+  "dim": 45,
+  "vertex": true,
+  "D": 11,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 63,
+  "dim": 45,
+  "vertex": true,
+  "D": 11,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 54,
+  "dim": 45,
+  "vertex": true,
+  "D": 13,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 55,
+  "dim": 45,
+  "vertex": true,
+  "D": 15,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 61,
+  "dim": 45,
+  "vertex": true,
+  "D": 15,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 97,
+  "dim": 55,
+  "vertex": true,
+  "D": 9,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 127,
+  "dim": 55,
+  "vertex": true,
+  "D": 9,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 128,
+  "dim": 55,
+  "vertex": true,
+  "D": 9,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 72,
+  "dim": 55,
+  "vertex": true,
+  "D": 9,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 107,
+  "dim": 55,
+  "vertex": true,
+  "D": 9,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 98,
+  "dim": 55,
+  "vertex": true,
+  "D": 10,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 80,
+  "dim": 55,
+  "vertex": true,
+  "D": 11,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 96,
+  "dim": 55,
+  "vertex": true,
+  "D": 11,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 101,
+  "dim": 55,
+  "vertex": true,
+  "D": 11,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 72,
+  "dim": 55,
+  "vertex": true,
+  "D": 11,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 73,
+  "dim": 55,
+  "vertex": true,
+  "D": 11,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 94,
+  "dim": 55,
+  "vertex": true,
+  "D": 11,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 78,
+  "dim": 55,
+  "vertex": true,
+  "D": 12,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 66,
+  "dim": 55,
+  "vertex": true,
+  "D": 12,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 73,
+  "dim": 55,
+  "vertex": true,
+  "D": 13,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 82,
+  "dim": 55,
+  "vertex": true,
+  "D": 14,
+  "n": 11
+ }
+]

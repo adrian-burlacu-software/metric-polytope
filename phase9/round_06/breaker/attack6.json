@@ -1,0 +1,18 @@
+{
+ "dup-recentre": {
+  "inputs": 26,
+  "outputs": 21240,
+  "infeasible": 0,
+  "restriction_bad": 0,
+  "vertices": 7150,
+  "equivariance_fail": 0
+ },
+ "dup-midshift": {
+  "inputs": 26,
+  "outputs": 708,
+  "infeasible": 0,
+  "restriction_bad": 0,
+  "vertices": 320,
+  "equivariance_fail": 0
+ }
+}

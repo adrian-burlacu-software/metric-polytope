@@ -1,0 +1,5 @@
+round 1 adds 52 reached 1979 time 3
+round 2 adds 18 reached 2902 time 6
+round 3 adds 0 reached 3035 time 7
+['pendant'] ['1/2', '1/3', '2/3', '1/4', '3/4'] gained 1056 [(4, 5), (5, 48), (6, 187), (7, 394), (8, 327), (9, 95)] targets 131 [(8, 39), (9, 92)] time 7
+cols per input by input size {3: (6, 18, 17), 4: (6, 24, 22), 5: (12, 30, 27), 6: (12, 36, 31), 7: (26, 42, 34)}

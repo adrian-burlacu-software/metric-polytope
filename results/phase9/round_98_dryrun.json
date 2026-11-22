@@ -1,0 +1,65 @@
+{
+  "budget_per_rule": 240.0,
+  "candidates": [],
+  "code_version": "757196cd208eba6c",
+  "git": "4e1d3b69183e667b63d080e525f7650a2716c0f7+dirty",
+  "proposals": [
+    {
+      "file": "phase9/round_98/maker/t2_twin.mpr",
+      "kind": "move",
+      "name": "test-twin",
+      "nodes_gained": 0,
+      "probe_seconds": 0.68,
+      "reason": "test: copy of twin (expect no gain)",
+      "seconds": 538.8,
+      "status": "dropped: no gain within budget",
+      "targets_gained": {},
+      "targets_gained_ids": {},
+      "timed_out": true
+    }
+  ],
+  "round": 98,
+  "round_cap": 1800,
+  "seconds": 539.8,
+  "smallest_counterexamples": {},
+  "unreached_after": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 267,
+      "targets": 533,
+      "unreached": 266,
+      "unreached_fraction": 0.49906191369606
+    },
+    "9": {
+      "reached": 124,
+      "targets": 1000,
+      "unreached": 876,
+      "unreached_fraction": 0.876
+    }
+  },
+  "unreached_before": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 267,
+      "targets": 533,
+      "unreached": 266,
+      "unreached_fraction": 0.49906191369606
+    },
+    "9": {
+      "reached": 124,
+      "targets": 1000,
+      "unreached": 876,
+      "unreached_fraction": 0.876
+    }
+  }
+}

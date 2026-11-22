@@ -1,0 +1,4 @@
+round 1 adds 9 reached 1979 time 3
+round 2 adds 0 reached 2022 time 4
+['rc_twin'] ['1/2'] gained 43 [(5, 3), (6, 8), (7, 15), (8, 13), (9, 4)] targets 6 [(8, 3), (9, 3)] time 4
+cols per input by input size {3: (2, 12, 11), 4: (2, 16, 15), 5: (14, 20, 19), 6: (18, 24, 24), 7: (26, 28, 28)}

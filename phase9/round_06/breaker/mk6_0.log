@@ -1,0 +1,9 @@
+moves [('dup-midshift', 1)]
+10 15  False 1.6
+11 12  False 4.1
+11 15  False 4.0
+11 18  False 4.0
+11 24  False 4.3
+10 10  False 4.6
+11 11  False 3.8
+10 11  False 1.3

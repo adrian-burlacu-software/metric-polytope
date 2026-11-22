@@ -1,0 +1,194 @@
+[
+ {
+  "feasible": true,
+  "tight": 67,
+  "dim": 45,
+  "vertex": true,
+  "D": 9,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 56,
+  "dim": 45,
+  "vertex": true,
+  "D": 9,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 72,
+  "dim": 45,
+  "vertex": true,
+  "D": 9,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 87,
+  "dim": 45,
+  "vertex": true,
+  "D": 9,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 57,
+  "dim": 45,
+  "vertex": true,
+  "D": 10,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 58,
+  "dim": 45,
+  "vertex": true,
+  "D": 10,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 106,
+  "dim": 45,
+  "vertex": true,
+  "D": 10,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 102,
+  "dim": 45,
+  "vertex": true,
+  "D": 11,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 66,
+  "dim": 45,
+  "vertex": true,
+  "D": 11,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 88,
+  "dim": 55,
+  "vertex": true,
+  "D": 8,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 105,
+  "dim": 55,
+  "vertex": true,
+  "D": 9,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 137,
+  "dim": 55,
+  "vertex": true,
+  "D": 9,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 104,
+  "dim": 55,
+  "vertex": true,
+  "D": 9,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 103,
+  "dim": 55,
+  "vertex": true,
+  "D": 12,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 82,
+  "dim": 55,
+  "vertex": true,
+  "D": 14,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 73,
+  "dim": 55,
+  "vertex": true,
+  "D": 14,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 99,
+  "dim": 55,
+  "vertex": true,
+  "D": 15,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 93,
+  "dim": 55,
+  "vertex": true,
+  "D": 17,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 81,
+  "dim": 45,
+  "vertex": true,
+  "D": 9,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 58,
+  "dim": 45,
+  "vertex": true,
+  "D": 10,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 91,
+  "dim": 55,
+  "vertex": true,
+  "D": 8,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 142,
+  "dim": 55,
+  "vertex": true,
+  "D": 9,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 72,
+  "dim": 55,
+  "vertex": true,
+  "D": 14,
+  "n": 11
+ },
+ {
+  "feasible": true,
+  "tight": 83,
+  "dim": 45,
+  "vertex": true,
+  "D": 9,
+  "n": 10
+ }
+]

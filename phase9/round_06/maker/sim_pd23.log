@@ -1,0 +1,8 @@
+round 1 adds 199 reached 7354 time 20
+round 2 adds 62 reached 8444 time 24
+round 3 adds 6 reached 8560 time 26
+round 4 adds 0 reached 8566 time 27
+['pd2', 'pd3'] ['1'] ['1/2'] gained 1212 [(4, 2), (5, 42), (6, 300), (7, 553), (8, 277), (9, 38)] targets 70 [(8, 32), (9, 38)] time 27
+ n 8 target D [(10, 32)]
+ n 9 target D [(7, 5), (10, 29), (12, 3), (15, 1)]
+cols per input by input size {3: (1, 12, 9), 4: (1, 34, 28), 5: (11, 79, 55), 6: (28, 133, 97), 7: (108, 210, 153)}

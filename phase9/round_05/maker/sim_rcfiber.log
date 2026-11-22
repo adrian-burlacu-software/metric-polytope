@@ -1,0 +1,6 @@
+round 1 adds 276 reached 1979 time 40
+round 2 adds 305 reached 3693 time 127
+round 3 adds 28 reached 4172 time 138
+round 4 adds 0 reached 4201 time 139
+['rc_fiber'] ['1/2'] gained 2222 [(4, 2), (5, 50), (6, 422), (7, 1009), (8, 633), (9, 106)] targets 142 [(8, 40), (9, 102)] time 139
+cols per input by input size {3: (2, 26, 14), 4: (2, 128, 50), 5: (16, 558, 213), 6: (20, 1728, 725), 7: (368, 4046, 2371)}

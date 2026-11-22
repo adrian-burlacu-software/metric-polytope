@@ -1,0 +1,6 @@
+round 1 move adds 298 reached 1979 time 36
+round 2 move adds 661 reached 5136 time 166
+round 3 move adds 167 reached 7068 time 209
+round 4 move adds 1 reached 7318 time 214
+round 5 move adds 0 reached 7319 time 215
+['third'] gained nodes 5340 Counter({7: 2552, 6: 1302, 8: 1089, 5: 242, 9: 130, 4: 25}) targets 232 checks 8831 time 215

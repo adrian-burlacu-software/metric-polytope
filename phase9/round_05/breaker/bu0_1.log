@@ -1,0 +1,7 @@
+moves []
+10 9 d1  False 5.6
+11 9 d0  False 5.1
+10 9 d3  False 2.4
+11 15 d1  False 5.1
+10 9 d1  False 2.1
+10 10 d3  False 3.9
