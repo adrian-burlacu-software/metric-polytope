@@ -1,0 +1,2319 @@
+{
+  "moves": {
+    "dup-midshift": 1,
+    "partial-dup": 1
+  },
+  "rows": [
+    {
+      "D": 50,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_10 maximizing 1000*(sum of tight rows of lift^1(Deza n=9 ro",
+      "n": 10,
+      "round": 2,
+      "s": 3.8,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 43,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_10 maximizing 1000*(sum of tight rows of lift^1(Deza n=9 ro",
+      "n": 10,
+      "round": 2,
+      "s": 3.8,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 41,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_10 maximizing 1000*(sum of tight rows of lift^1(Deza n=9 ro",
+      "n": 10,
+      "round": 2,
+      "s": 3.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 37,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_10 maximizing 1000*(sum of tight rows of lift^1(Deza n=9 ro",
+      "n": 10,
+      "round": 2,
+      "s": 4.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 31,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_10 maximizing 1000*(sum of tight rows of lift^1(Deza n=9 ro",
+      "n": 10,
+      "round": 2,
+      "s": 4.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 29,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_10 maximizing 1000*(sum of tight rows of lift^1(Deza n=9 ro",
+      "n": 10,
+      "round": 2,
+      "s": 4.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 27,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_10 maximizing 1000*(sum of tight rows of lift^1(Deza n=9 ro",
+      "n": 10,
+      "round": 2,
+      "s": 3.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 25,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_10 maximizing 1000*(sum of tight rows of lift^1(Deza n=9 ro",
+      "n": 10,
+      "round": 2,
+      "s": 3.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 23,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_10 maximizing 1000*(sum of tight rows of lift^1(Deza n=9 ro",
+      "n": 10,
+      "round": 2,
+      "s": 4.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 19,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_10 maximizing 1000*(sum of tight rows of lift^1(Deza n=9 ro",
+      "n": 10,
+      "round": 2,
+      "s": 4.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 43,
+      "bound_violated": true,
+      "how": "fiber vertex of lift(Deza n=9 row 1056365, D=43) (exact LP, random objective)",
+      "n": 10,
+      "round": 2,
+      "s": 3.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 41,
+      "bound_violated": true,
+      "how": "fiber vertex of lift(Deza n=9 row 1056348, D=41) (exact LP, random objective)",
+      "n": 10,
+      "round": 2,
+      "s": 3.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "fiber vertex of glue(unreached n=8 target id 451, itself) over 6 shared nodes (c",
+      "n": 10,
+      "round": 2,
+      "s": 43.8,
+      "stats": {
+        "reached_subsets": 231,
+        "rounds": 6,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 14,
+      "bound_violated": false,
+      "how": "fiber vertex of glue(unreached n=8 target id 325, itself) over 6 shared nodes (c",
+      "n": 10,
+      "round": 2,
+      "s": 3.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 14,
+      "bound_violated": false,
+      "how": "fiber vertex of lift(fiber vertex of lift(unreached n=8 target id 370))",
+      "n": 10,
+      "round": 2,
+      "s": 3.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 53,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_11 maximizing 1000*(sum of tight rows of lift^2(Deza n=9 ro",
+      "n": 11,
+      "round": 2,
+      "s": 9.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 49,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_11 maximizing 1000*(sum of tight rows of lift^2(Deza n=9 ro",
+      "n": 11,
+      "round": 2,
+      "s": 9.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 47,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_11 maximizing 1000*(sum of tight rows of lift-to-n=11 of a ",
+      "n": 11,
+      "round": 2,
+      "s": 9.5,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 43,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_11 maximizing 1000*(sum of tight rows of lift^2(Deza n=9 ro",
+      "n": 11,
+      "round": 2,
+      "s": 9.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 41,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_11 maximizing 1000*(sum of tight rows of lift^2(Deza n=9 ro",
+      "n": 11,
+      "round": 2,
+      "s": 10.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 37,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_11 maximizing 1000*(sum of tight rows of lift^2(Deza n=9 ro",
+      "n": 11,
+      "round": 2,
+      "s": 10.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 31,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_11 maximizing 1000*(sum of tight rows of lift^2(Deza n=9 ro",
+      "n": 11,
+      "round": 2,
+      "s": 10.7,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 29,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_11 maximizing 1000*(sum of tight rows of lift^2(Deza n=9 ro",
+      "n": 11,
+      "round": 2,
+      "s": 10.7,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 69,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_12 maximizing 1000*(sum of tight rows of lift-to-n=12 of a ",
+      "n": 12,
+      "round": 2,
+      "s": 40.7,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "verdict": null
+    },
+    {
+      "D": 53,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_12 maximizing 1000*(sum of tight rows of lift-to-n=12 of a ",
+      "n": 12,
+      "round": 2,
+      "s": 40.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "verdict": null
+    },
+    {
+      "D": 49,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_12 maximizing 1000*(sum of tight rows of lift-to-n=12 of a ",
+      "n": 12,
+      "round": 2,
+      "s": 40.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "verdict": null
+    },
+    {
+      "D": 47,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_12 maximizing 1000*(sum of tight rows of lift-to-n=12 of a ",
+      "n": 12,
+      "round": 2,
+      "s": 41.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "verdict": null
+    },
+    {
+      "D": 46,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_12 maximizing 1000*(sum of tight rows of lift^3(Deza n=9 ro",
+      "n": 12,
+      "round": 2,
+      "s": 41.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "verdict": null
+    },
+    {
+      "D": 43,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_12 maximizing 1000*(sum of tight rows of lift^3(Deza n=9 ro",
+      "n": 12,
+      "round": 2,
+      "s": 40.7,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "verdict": null
+    },
+    {
+      "D": 41,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_12 maximizing 1000*(sum of tight rows of lift^3(Deza n=9 ro",
+      "n": 12,
+      "round": 2,
+      "s": 40.6,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "verdict": null
+    },
+    {
+      "D": 37,
+      "bound_violated": true,
+      "how": "exact LP vertex of m_12 maximizing 1000*(sum of tight rows of lift^3(Deza n=9 ro",
+      "n": 12,
+      "round": 2,
+      "s": 40.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 4017
+      },
+      "verdict": null
+    },
+    {
+      "D": 43,
+      "bound_violated": true,
+      "how": "fiber vertex of glue(Deza n=9 row 1056366 D=43, itself) over 3 shared nodes",
+      "n": 15,
+      "round": 2,
+      "s": 84.1,
+      "stats": {
+        "nodes": 3720,
+        "note": "top-down, built-in moves only"
+      },
+      "verdict": null
+    },
+    {
+      "D": 53,
+      "bound_violated": true,
+      "how": "fiber vertex of glue(the n=11 D=53 face-walk vertex (also a candidate in this li",
+      "n": 15,
+      "round": 2,
+      "s": 84.0,
+      "stats": {
+        "nodes": 3699,
+        "note": "top-down, built-in moves only"
+      },
+      "verdict": null
+    },
+    {
+      "D": 47,
+      "bound_violated": true,
+      "how": "lift^4 (fiber vertices, random objectives) of the n=11 D=47 face-walk vertex (al",
+      "n": 15,
+      "round": 2,
+      "s": 84.4,
+      "stats": {
+        "nodes": 3702,
+        "note": "top-down, built-in moves only"
+      },
+      "verdict": null
+    },
+    {
+      "D": 49,
+      "bound_violated": true,
+      "how": "lift^3 (fiber vertices, random objectives) of the n=12 D=49 face-walk vertex (al",
+      "n": 15,
+      "round": 2,
+      "s": 84.4,
+      "stats": {
+        "nodes": 3669,
+        "note": "top-down, built-in moves only"
+      },
+      "verdict": null
+    },
+    {
+      "D": 53,
+      "bound_violated": true,
+      "how": "fiber vertex of glue(the n=11 D=53 face-walk vertex (also a candidate in this li",
+      "n": 20,
+      "round": 2,
+      "s": 84.6,
+      "stats": {
+        "nodes": 3934,
+        "note": "top-down, built-in moves only"
+      },
+      "verdict": null
+    },
+    {
+      "D": 41,
+      "bound_violated": true,
+      "how": "fiber vertex of glue(Deza n=9 row 1056348 D=41, itself) over 1 shared nodes",
+      "n": 17,
+      "round": 2,
+      "s": 84.6,
+      "stats": {
+        "nodes": 3641,
+        "note": "top-down, built-in moves only"
+      },
+      "verdict": null
+    },
+    {
+      "D": 41,
+      "bound_violated": true,
+      "how": "lift^3 (fiber vertices) of glue(Deza n=9 row 1056348 D=41, itself) over 1 shared",
+      "n": 20,
+      "round": 2,
+      "s": 62.7,
+      "stats": {
+        "nodes": 1997,
+        "note": "top-down, built-in moves only"
+      },
+      "verdict": null
+    },
+    {
+      "D": 47,
+      "bound_violated": true,
+      "how": "lift^8 (fiber vertices, random objectives) of the n=12 D=47 face-walk vertex (al",
+      "n": 20,
+      "round": 2,
+      "s": 83.4,
+      "stats": {
+        "nodes": 3010,
+        "note": "top-down, built-in moves only"
+      },
+      "verdict": null
+    },
+    {
+      "D": 43,
+      "bound_violated": true,
+      "how": "lift^11 (fiber vertices, random objectives) of Deza n=9 row 1056366 D=43",
+      "n": 20,
+      "round": 2,
+      "s": 73.1,
+      "stats": {
+        "nodes": 20,
+        "note": "top-down, built-in moves only"
+      },
+      "verdict": null
+    },
+    {
+      "D": 7,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=8 D=7 and n=8 D=7 over |K|=6; reach_large(budget 2",
+      "n": 10,
+      "round": 3,
+      "s": 5.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 8,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=9 D=8 and n=8 D=8 over |K|=7; reach_large(budget 2",
+      "n": 10,
+      "round": 3,
+      "s": 4.6,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=8 D=9 and n=9 D=9 over |K|=7; reach_large(budget 2",
+      "n": 10,
+      "round": 3,
+      "s": 42.6,
+      "stats": {
+        "reached_subsets": 226,
+        "rounds": 5,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 10,
+      "bound_violated": false,
+      "how": "W:face walk from L:lift chain of unreached n=9 target D=10 to n=10; reach_large(",
+      "n": 10,
+      "round": 3,
+      "s": 25.1,
+      "stats": {
+        "reached_subsets": 42,
+        "rounds": 5,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=9 D=11 and n=8 D=11 over |K|=7; reach_large(budget",
+      "n": 10,
+      "round": 3,
+      "s": 5.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 12,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=8 D=12 and n=9 D=12 over |K|=7; reach_large(budget",
+      "n": 10,
+      "round": 3,
+      "s": 47.6,
+      "stats": {
+        "reached_subsets": 127,
+        "rounds": 7,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 13,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=8 D=13 and n=9 D=13 over |K|=7; reach_large(budget",
+      "n": 10,
+      "round": 3,
+      "s": 5.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 14,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=9 D=14 and n=8 D=14 over |K|=7; reach_large(budget",
+      "n": 10,
+      "round": 3,
+      "s": 5.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "W:face walk from L:lift chain of unreached n=9 target D=15 to n=10; reach_large(",
+      "n": 10,
+      "round": 3,
+      "s": 35.1,
+      "stats": {
+        "reached_subsets": 54,
+        "rounds": 8,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 16,
+      "bound_violated": false,
+      "how": "W:face walk from L:lift chain of unreached n=9 target D=13 to n=10; reach_large(",
+      "n": 10,
+      "round": 3,
+      "s": 5.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 17,
+      "bound_violated": false,
+      "how": "W:face walk from L:lift chain of unreached n=9 target D=17 to n=10; reach_large(",
+      "n": 10,
+      "round": 3,
+      "s": 5.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 18,
+      "bound_violated": false,
+      "how": "W:face walk from L:lift chain of unreached n=9 target D=11 to n=10; reach_large(",
+      "n": 10,
+      "round": 3,
+      "s": 5.2,
+      "stats": {
+        "reached_subsets": 1,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 20,
+      "bound_violated": false,
+      "how": "W:face walk from L:lift chain of unreached n=9 target D=13 to n=10; reach_large(",
+      "n": 10,
+      "round": 3,
+      "s": 4.7,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 21,
+      "bound_violated": false,
+      "how": "L:lift chain of unreached n=9 target D=21 to n=10; reach_large(budget 20s) = Fal",
+      "n": 10,
+      "round": 3,
+      "s": 5.0,
+      "stats": {
+        "reached_subsets": 2,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 22,
+      "bound_violated": false,
+      "how": "L:lift chain of unreached n=9 target D=22 to n=10; reach_large(budget 20s) = Fal",
+      "n": 10,
+      "round": 3,
+      "s": 4.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 24,
+      "bound_violated": false,
+      "how": "L:lift chain of unreached n=9 target D=24 to n=10; reach_large(budget 20s) = Fal",
+      "n": 10,
+      "round": 3,
+      "s": 4.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 32,
+      "bound_violated": false,
+      "how": "W:face walk from L:lift chain of unreached n=9 target D=22 to n=10; reach_large(",
+      "n": 10,
+      "round": 3,
+      "s": 5.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 7,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=9 D=7 and n=8 D=7 over |K|=6; reach_large(budget 2",
+      "n": 11,
+      "round": 3,
+      "s": 61.1,
+      "stats": {
+        "reached_subsets": 35,
+        "rounds": 3,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 8,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=8 D=8 and n=9 D=8 over |K|=6; reach_large(budget 2",
+      "n": 11,
+      "round": 3,
+      "s": 15.6,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=8 D=9 and n=9 D=9 over |K|=6; reach_large(budget 2",
+      "n": 11,
+      "round": 3,
+      "s": 62.8,
+      "stats": {
+        "reached_subsets": 228,
+        "rounds": 4,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=9 D=11 and n=8 D=11 over |K|=6; reach_large(budget",
+      "n": 11,
+      "round": 3,
+      "s": 13.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 12,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=9 D=12 and n=9 D=12 over |K|=7; reach_large(budget",
+      "n": 11,
+      "round": 3,
+      "s": 60.0,
+      "stats": {
+        "reached_subsets": 319,
+        "rounds": 3,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 13,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=9 D=13 and n=8 D=13 over |K|=6; reach_large(budget",
+      "n": 11,
+      "round": 3,
+      "s": 14.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 14,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=9 D=14 and n=9 D=14 over |K|=7; reach_large(budget",
+      "n": 11,
+      "round": 3,
+      "s": 13.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=9 D=15 and n=9 D=15 over |K|=7; reach_large(budget",
+      "n": 11,
+      "round": 3,
+      "s": 70.9,
+      "stats": {
+        "reached_subsets": 127,
+        "rounds": 5,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 16,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=9 D=16 and n=9 D=16 over |K|=7; reach_large(budget",
+      "n": 11,
+      "round": 3,
+      "s": 13.5,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 17,
+      "bound_violated": false,
+      "how": "L:lift chain of unreached n=9 target D=17 to n=11; reach_large(budget 20s) = Fal",
+      "n": 11,
+      "round": 3,
+      "s": 13.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 18,
+      "bound_violated": false,
+      "how": "G:glue of unreached targets n=9 D=9 and n=9 D=18 over |K|=7; reach_large(budget ",
+      "n": 11,
+      "round": 3,
+      "s": 68.8,
+      "stats": {
+        "reached_subsets": 64,
+        "rounds": 5,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 19,
+      "bound_violated": false,
+      "how": "L:lift chain of unreached n=9 target D=19 to n=11; reach_large(budget 20s) = Fal",
+      "n": 11,
+      "round": 3,
+      "s": 12.7,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 20,
+      "bound_violated": false,
+      "how": "W:face walk from L:lift chain of unreached n=9 target D=13 to n=11; reach_large(",
+      "n": 11,
+      "round": 3,
+      "s": 13.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 21,
+      "bound_violated": false,
+      "how": "L:lift chain of unreached n=9 target D=21 to n=11; reach_large(budget 20s) = Fal",
+      "n": 11,
+      "round": 3,
+      "s": 13.0,
+      "stats": {
+        "reached_subsets": 2,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 22,
+      "bound_violated": false,
+      "how": "L:lift chain of unreached n=9 target D=22 to n=11; reach_large(budget 20s) = Fal",
+      "n": 11,
+      "round": 3,
+      "s": 12.8,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 42,
+      "bound_violated": false,
+      "how": "L:lift chain of unreached n=9 target D=21 to n=11; reach_large(budget 20s) = Fal",
+      "n": 11,
+      "round": 3,
+      "s": 15.1,
+      "stats": {
+        "reached_subsets": 19,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 7,
+      "bound_violated": false,
+      "how": "L:lift chain of unreached n=9 target D=7 to n=10; reach_large(budget 20s) = Fals",
+      "n": 10,
+      "round": 3,
+      "s": 24.0,
+      "stats": {
+        "reached_subsets": 36,
+        "rounds": 3,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 8,
+      "bound_violated": false,
+      "how": "W:face walk from L:lift chain of unreached n=9 target D=18 to n=10; reach_large(",
+      "n": 10,
+      "round": 3,
+      "s": 5.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "W:face walk from L:lift chain of unreached n=9 target D=9 to n=10; reach_large(b",
+      "n": 10,
+      "round": 3,
+      "s": 48.0,
+      "stats": {
+        "reached_subsets": 258,
+        "rounds": 6,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "L:lift chain of unreached n=8 target D=9 to n=10; reach_large(budget 20s) = Fals",
+      "n": 10,
+      "round": 3,
+      "s": 42.9,
+      "stats": {
+        "reached_subsets": 340,
+        "rounds": 4,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "W:face walk from G:glue of unreached targets n=9 D=9 and n=8 D=9 over |K|=6; rea",
+      "n": 11,
+      "round": 3,
+      "s": 60.0,
+      "stats": {
+        "reached_subsets": 454,
+        "rounds": 4,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "L:lift chain of unreached n=8 target D=9 to n=11; reach_large(budget 20s) = Fals",
+      "n": 11,
+      "round": 3,
+      "s": 60.0,
+      "stats": {
+        "reached_subsets": 367,
+        "rounds": 4,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 10,
+      "bound_violated": false,
+      "how": "L:lift chain of unreached n=9 target D=10 to n=10; reach_large(budget 20s) = Fal",
+      "n": 10,
+      "round": 3,
+      "s": 24.3,
+      "stats": {
+        "reached_subsets": 48,
+        "rounds": 5,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RL:lift chain of reached n=9 D=14 to n=10 (b",
+      "n": 10,
+      "round": 4,
+      "s": 51.8,
+      "stats": {
+        "reached_subsets": 404,
+        "rounds": 5,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RW:face walk from RL:lift chain of reached n",
+      "n": 10,
+      "round": 4,
+      "s": 45.3,
+      "stats": {
+        "reached_subsets": 423,
+        "rounds": 4,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RL:lift chain of reached n=8 D=6 to n=10 (bu",
+      "n": 10,
+      "round": 4,
+      "s": 52.1,
+      "stats": {
+        "reached_subsets": 374,
+        "rounds": 5,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "RW:face walk from RL:lift chain of reached n=8 D=8 to n=10 (built only from reac",
+      "n": 10,
+      "round": 4,
+      "s": 5.2,
+      "stats": {
+        "reached_subsets": 3,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RL:lift chain of reached n=9 D=10 to n=10 (b",
+      "n": 10,
+      "round": 4,
+      "s": 41.7,
+      "stats": {
+        "reached_subsets": 122,
+        "rounds": 6,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 10,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RL:lift chain of reached n=8 D=10 to n=10 (b",
+      "n": 10,
+      "round": 4,
+      "s": 13.7,
+      "stats": {
+        "reached_subsets": 21,
+        "rounds": 4,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 10,
+      "bound_violated": false,
+      "how": "RW:face walk from RL:lift chain of reached n=8 D=8 to n=10 (built only from reac",
+      "n": 10,
+      "round": 4,
+      "s": 38.0,
+      "stats": {
+        "reached_subsets": 88,
+        "rounds": 6,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "RM:mix of [RW:face walk from RW:face walk from RW:face w] and [RW:face walk from",
+      "n": 10,
+      "round": 4,
+      "s": 4.3,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RW:face walk from RW:face walk from RL:lift ",
+      "n": 10,
+      "round": 4,
+      "s": 4.3,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RW:face walk from RW:face walk from RW:face ",
+      "n": 10,
+      "round": 4,
+      "s": 4.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 13,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RL:lift chain of reached n=9 D=12 to n=10 (b",
+      "n": 10,
+      "round": 4,
+      "s": 4.3,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "RW:face walk from RL:lift chain of reached n=9 D=12 to n=10 (built only from rea",
+      "n": 10,
+      "round": 4,
+      "s": 4.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RW:face walk from RL:lift chain of reached n",
+      "n": 10,
+      "round": 4,
+      "s": 43.2,
+      "stats": {
+        "reached_subsets": 164,
+        "rounds": 6,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "RW:face walk from RG:glue of reached n=9 D=12 and n=8 D=6 over |K|=6 (built only",
+      "n": 11,
+      "round": 4,
+      "s": 60.0,
+      "stats": {
+        "reached_subsets": 323,
+        "rounds": 4,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RL:lift chain of reached n=9 D=6 to n=11 (bu",
+      "n": 11,
+      "round": 4,
+      "s": 69.8,
+      "stats": {
+        "reached_subsets": 101,
+        "rounds": 5,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RG:glue of reached n=9 D=10 and n=8 D=10 ove",
+      "n": 11,
+      "round": 4,
+      "s": 13.9,
+      "stats": {
+        "reached_subsets": 3,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "RW:face walk from RL:lift chain of reached n=9 D=6 to n=11 (built only from reac",
+      "n": 11,
+      "round": 4,
+      "s": 60.0,
+      "stats": {
+        "reached_subsets": 223,
+        "rounds": 4,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RL:lift chain of reached n=8 D=6 to n=11 (bu",
+      "n": 11,
+      "round": 4,
+      "s": 60.0,
+      "stats": {
+        "reached_subsets": 193,
+        "rounds": 4,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 10,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RW:face walk from RW:face walk from RL:lift ",
+      "n": 11,
+      "round": 4,
+      "s": 69.0,
+      "stats": {
+        "reached_subsets": 192,
+        "rounds": 5,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "RW:face walk from RG:glue of reached n=9 D=10 and n=9 D=10 over |K|=7 (built onl",
+      "n": 11,
+      "round": 4,
+      "s": 13.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "RW:face walk from RG:glue of reached n=9 D=12 and n=9 D=12 over |K|=7 (built onl",
+      "n": 11,
+      "round": 4,
+      "s": 12.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "RW:face walk from RL:lift chain of reached n=9 D=10 to n=11 (built only from rea",
+      "n": 11,
+      "round": 4,
+      "s": 12.7,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RG:glue of reached n=8 D=6 and n=9 D=6 over ",
+      "n": 11,
+      "round": 4,
+      "s": 12.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RG:glue of reached n=8 D=14 and n=8 D=14 ove",
+      "n": 11,
+      "round": 4,
+      "s": 12.3,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RW:face walk from RG:glue of reached n=8 D=1",
+      "n": 11,
+      "round": 4,
+      "s": 12.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 12,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RG:glue of reached n=8 D=8 and n=8 D=8 over ",
+      "n": 11,
+      "round": 4,
+      "s": 24.5,
+      "stats": {
+        "reached_subsets": 13,
+        "rounds": 3,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 12,
+      "bound_violated": false,
+      "how": "RW:face walk from RW:face walk from RW:face walk from RW:face walk from RW:face ",
+      "n": 11,
+      "round": 4,
+      "s": 61.3,
+      "stats": {
+        "reached_subsets": 63,
+        "rounds": 5,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 13,
+      "bound_violated": false,
+      "how": "RW:face walk from RL:lift chain of reached n=9 D=6 to n=11 (built only from reac",
+      "n": 11,
+      "round": 4,
+      "s": 12.8,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 14,
+      "bound_violated": false,
+      "how": "RW:face walk from RG:glue of reached n=9 D=7 and n=8 D=7 over |K|=6 (built only ",
+      "n": 11,
+      "round": 4,
+      "s": 63.0,
+      "stats": {
+        "reached_subsets": 51,
+        "rounds": 4,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "d1 walk, 1 step(s) from reachable start [RG:glue of reached n=9 D=10 and n=8 D=1",
+      "n": 10,
+      "round": 5,
+      "s": 45.0,
+      "stats": {
+        "reached_subsets": 338,
+        "rounds": 5,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "d1 walk, 3 step(s) from reachable start [RL:lift chain of reached n=8 D=6], 1 st",
+      "n": 10,
+      "round": 5,
+      "s": 41.5,
+      "stats": {
+        "reached_subsets": 178,
+        "rounds": 6,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "d1 walk, 4 step(s) from reachable start [RL:lift chain of reached n=8 D=6], 1 st",
+      "n": 10,
+      "round": 5,
+      "s": 46.4,
+      "stats": {
+        "reached_subsets": 452,
+        "rounds": 5,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "d3 walk, 1 step(s) from reachable start [RL:lift chain of reached n=8 D=3], 1 st",
+      "n": 10,
+      "round": 5,
+      "s": 38.1,
+      "stats": {
+        "reached_subsets": 448,
+        "rounds": 4,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 10,
+      "bound_violated": false,
+      "how": "d1 walk, 1 step(s) from reachable start [RG:glue of reached n=8 D=10 and n=8 D=1",
+      "n": 10,
+      "round": 5,
+      "s": 26.3,
+      "stats": {
+        "reached_subsets": 73,
+        "rounds": 5,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 10,
+      "bound_violated": false,
+      "how": "d1 walk, 1 step(s) from reachable start [RL:lift chain of reached n=9 D=15], 1 s",
+      "n": 10,
+      "round": 5,
+      "s": 4.4,
+      "stats": {
+        "reached_subsets": 4,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 10,
+      "bound_violated": false,
+      "how": "d3 walk, 1 step(s) from reachable start [RL:lift chain of reached n=8 D=6], 1 st",
+      "n": 10,
+      "round": 5,
+      "s": 29.1,
+      "stats": {
+        "reached_subsets": 57,
+        "rounds": 6,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "d1 walk, 1 step(s) from reachable start [RL:lift chain of reached n=8 D=10], 1 s",
+      "n": 10,
+      "round": 5,
+      "s": 4.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "d1 walk, 4 step(s) from reachable start [RG:glue of reached n=8 D=6 and n=9 D=6 ",
+      "n": 10,
+      "round": 5,
+      "s": 4.2,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 8,
+      "bound_violated": false,
+      "how": "d1 walk, 3 step(s) from reachable start [RG:glue of reached n=9 D=7 and n=8 D=7 ",
+      "n": 11,
+      "round": 5,
+      "s": 13.5,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "d0 walk, 3 step(s) from reachable start [RG:glue of reached n=8 D=14 and n=9 D=1",
+      "n": 11,
+      "round": 5,
+      "s": 60.0,
+      "stats": {
+        "reached_subsets": 436,
+        "rounds": 4,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "d3 walk, 1 step(s) from reachable start [RL:lift chain of reached n=8 D=7], 1 st",
+      "n": 11,
+      "round": 5,
+      "s": 60.2,
+      "stats": {
+        "reached_subsets": 223,
+        "rounds": 4,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "d3 walk, 2 step(s) from reachable start [RG:glue of reached n=9 D=7 and n=8 D=7 ",
+      "n": 11,
+      "round": 5,
+      "s": 60.6,
+      "stats": {
+        "reached_subsets": 354,
+        "rounds": 3,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 12,
+      "bound_violated": false,
+      "how": "d1 walk, 1 step(s) from reachable start [RL:lift chain of reached n=9 D=12], 1 s",
+      "n": 11,
+      "round": 5,
+      "s": 60.0,
+      "stats": {
+        "reached_subsets": 510,
+        "rounds": 2,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 14,
+      "bound_violated": false,
+      "how": "d0 walk, 2 step(s) from reachable start [RL:lift chain of reached n=9 D=8], 1 st",
+      "n": 11,
+      "round": 5,
+      "s": 13.2,
+      "stats": {
+        "reached_subsets": 9,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 14,
+      "bound_violated": false,
+      "how": "d3 walk, 3 step(s) from reachable start [RG:glue of reached n=9 D=10 and n=8 D=1",
+      "n": 11,
+      "round": 5,
+      "s": 12.3,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "d1 walk, 2 step(s) from reachable start [RL:lift chain of reached n=8 D=6], 1 st",
+      "n": 11,
+      "round": 5,
+      "s": 60.0,
+      "stats": {
+        "reached_subsets": 352,
+        "rounds": 4,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 17,
+      "bound_violated": false,
+      "how": "d1 walk, 1 step(s) from reachable start [RL:lift chain of reached n=8 D=4], 1 st",
+      "n": 11,
+      "round": 5,
+      "s": 13.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "d1 walk, 2 step(s) from reachable start [RG:glue of reached n=9 D=10 and n=8 D=1",
+      "n": 10,
+      "round": 5,
+      "s": 46.6,
+      "stats": {
+        "reached_subsets": 634,
+        "rounds": 4,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 10,
+      "bound_violated": false,
+      "how": "d1 walk, 4 step(s) from reachable start [RL:lift chain of reached n=8 D=6], 2 st",
+      "n": 10,
+      "round": 5,
+      "s": 26.6,
+      "stats": {
+        "reached_subsets": 28,
+        "rounds": 6,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 8,
+      "bound_violated": false,
+      "how": "d1 walk, 4 step(s) from reachable start [RG:glue of reached n=9 D=7 and n=8 D=7 ",
+      "n": 11,
+      "round": 5,
+      "s": 13.5,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "d3 walk, 2 step(s) from reachable start [RL:lift chain of reached n=8 D=7], 2 st",
+      "n": 11,
+      "round": 5,
+      "s": 60.0,
+      "stats": {
+        "reached_subsets": 450,
+        "rounds": 4,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 14,
+      "bound_violated": false,
+      "how": "d3 walk, 4 step(s) from reachable start [RG:glue of reached n=9 D=10 and n=8 D=1",
+      "n": 11,
+      "round": 5,
+      "s": 12.4,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 9,
+      "bound_violated": false,
+      "how": "d1 walk, 3 step(s) from reachable start [RG:glue of reached n=9 D=10 and n=8 D=1",
+      "n": 10,
+      "round": 5,
+      "s": 49.7,
+      "stats": {
+        "reached_subsets": 690,
+        "rounds": 4,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 10,
+      "round": 6,
+      "s": 4.6,
+      "stats": {
+        "reached_subsets": 1,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 10,
+      "round": 6,
+      "s": 32.3,
+      "stats": {
+        "reached_subsets": 58,
+        "rounds": 9,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 10,
+      "round": 6,
+      "s": 4.3,
+      "stats": {
+        "reached_subsets": 1,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 10,
+      "round": 6,
+      "s": 4.4,
+      "stats": {
+        "reached_subsets": 1,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 12,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 24.9,
+      "stats": {
+        "reached_subsets": 13,
+        "rounds": 3,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 12.5,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 12.8,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 13.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 13.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 15,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 13.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 18,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 63.3,
+      "stats": {
+        "reached_subsets": 59,
+        "rounds": 9,
+        "timeout": true
+      },
+      "verdict": null
+    },
+    {
+      "D": 18,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 42.2,
+      "stats": {
+        "reached_subsets": 45,
+        "rounds": 7,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 18,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 23.5,
+      "stats": {
+        "reached_subsets": 5,
+        "rounds": 3,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 18,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 41.8,
+      "stats": {
+        "reached_subsets": 57,
+        "rounds": 7,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 18,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 41.3,
+      "stats": {
+        "reached_subsets": 57,
+        "rounds": 7,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 21,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 13.7,
+      "stats": {
+        "reached_subsets": 23,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 24,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 13.5,
+      "stats": {
+        "reached_subsets": 20,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 24,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 36.2,
+      "stats": {
+        "reached_subsets": 36,
+        "rounds": 5,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 42,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 13.6,
+      "stats": {
+        "reached_subsets": 19,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 42,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 11,
+      "round": 6,
+      "s": 12.2,
+      "stats": {
+        "reached_subsets": 19,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 10,
+      "bound_violated": false,
+      "how": "walk6 edge walk 1 step(s) from reachable start (RL:lift chain of reached n=8 D=8",
+      "n": 10,
+      "round": 6,
+      "s": 13.0,
+      "stats": {
+        "reached_subsets": 22,
+        "rounds": 4,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 13,
+      "bound_violated": false,
+      "how": "walk6 edge walk 1 step(s) from reachable start (RL:lift chain of reached n=9 D=1",
+      "n": 10,
+      "round": 6,
+      "s": 4.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 14,
+      "bound_violated": false,
+      "how": "walk6 edge walk 2 step(s) from reachable start (RL:lift chain of reached n=9 D=1",
+      "n": 10,
+      "round": 6,
+      "s": 4.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 8,
+      "bound_violated": false,
+      "how": "walk6 edge walk 3 step(s) from reachable start (RG:glue of reached n=9 D=10 and ",
+      "n": 11,
+      "round": 6,
+      "s": 11.7,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "walk6 edge walk 3 step(s) from reachable start (RL:lift chain of reached n=8 D=6",
+      "n": 11,
+      "round": 6,
+      "s": 11.3,
+      "stats": {
+        "reached_subsets": 1,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 13,
+      "bound_violated": false,
+      "how": "walk6 edge walk 1 step(s) from reachable start (RG:glue of reached n=9 D=10 and ",
+      "n": 11,
+      "round": 6,
+      "s": 11.0,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 1981
+      },
+      "verdict": false
+    },
+    {
+      "D": 8,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 10,
+      "round": 6,
+      "s": 4.9,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 10,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 10,
+      "round": 6,
+      "s": 17.8,
+      "stats": {
+        "reached_subsets": 87,
+        "rounds": 5,
+        "subsets": 968
+      },
+      "verdict": true
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 10,
+      "round": 6,
+      "s": 4.5,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    },
+    {
+      "D": 11,
+      "bound_violated": false,
+      "how": "gen6 edge walk from earlier unreachable candidates; reachable() False, reachable",
+      "n": 10,
+      "round": 6,
+      "s": 4.1,
+      "stats": {
+        "reached_subsets": 0,
+        "rounds": 2,
+        "subsets": 968
+      },
+      "verdict": false
+    }
+  ],
+  "seconds": 254.5,
+  "summary": {
+    "round 2": {
+      "reachable": 1,
+      "total": 40,
+      "undecided": 17,
+      "undecided_but_bound_violated": 17,
+      "unreachable": 22
+    },
+    "round 3": {
+      "reachable": 7,
+      "total": 40,
+      "undecided": 7,
+      "undecided_but_bound_violated": 0,
+      "unreachable": 26
+    },
+    "round 4": {
+      "reachable": 6,
+      "total": 29,
+      "undecided": 7,
+      "undecided_but_bound_violated": 0,
+      "unreachable": 16
+    },
+    "round 5": {
+      "reachable": 9,
+      "total": 24,
+      "undecided": 6,
+      "undecided_but_bound_violated": 0,
+      "unreachable": 9
+    },
+    "round 6": {
+      "reachable": 1,
+      "total": 30,
+      "undecided": 1,
+      "undecided_but_bound_violated": 0,
+      "unreachable": 28
+    }
+  }
+}

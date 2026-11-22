@@ -1,0 +1,26 @@
+;; Round 06 maker proposal 01: dup-recentre. Start from a copy of node i placed at distance t*delta_i from i (the
+;; partial-dup column, t = p/q with q <= 4, or t = 1 = stdlib dup), then move ONE other entry j of that column to the
+;; point s of its feasible interval [L_j, U_j] (s in {1/4, 1/3, 1/2, 2/3, 3/4}), where
+;;   L_j = max_{k != j} |b_k - x_jk|,   U_j = min_{k != j} min(b_k + x_jk, 2 - b_k - x_jk)
+;; are the triangle bounds on entry j given the other entries b_k of the column. This is a second fiber-edge
+;; direction off the twin--dup edge (partial-dup moves entry i only; with entry i nonzero, entry j is no longer pinned).
+;; Only the new column is built, so x stays the restriction on its first nodes. G-equivariant: delta_i and [L_j, U_j]
+;; are switching-invariant up to s <-> 1 - s, and the s set is symmetric. n (n-1) * 6 * 5 outputs per input.
+(define (dr-delta x i)
+  (min-over ((j (range 0 (size x)))) (where (not (= j i)))
+    (min (* 2 (entry x i j)) (- 2 (* 2 (entry x i j))))))
+(define (dr-b x i a k) (if (= k i) a (entry x i k)))
+(define (dr-lo x i a j)
+  (max-over ((k (range 0 (size x)))) (where (not (= k j)))
+    (max (- (dr-b x i a k) (entry x j k)) (- (entry x j k) (dr-b x i a k)))))
+(define (dr-hi x i a j)
+  (min-over ((k (range 0 (size x)))) (where (not (= k j)))
+    (min (+ (dr-b x i a k) (entry x j k)) (- 2 (+ (dr-b x i a k) (entry x j k))))))
+(define dr-ts (list 1/4 1/3 1/2 2/3 3/4 1))
+(define dr-ss (list 1/4 1/3 1/2 2/3 3/4))
+(move dup-recentre (x) :grow 1
+  :doc "Partial-dup column of node i (t <= 1, q <= 4) with one other entry j moved to s in its feasible triangle interval: a second fiber-edge direction off the twin--dup edge."
+  (for ((i (range 0 (size x))) (t dr-ts) (j (range 0 (size x))) (s dr-ss)) (where (not (= j i)))
+    (let ((a (* t (dr-delta x i))))
+      (let ((lo (dr-lo x i a j)) (hi (dr-hi x i a j)))
+        (block x (mset (mset (col x i) i 0 a) j 0 (+ lo (* s (- hi lo)))) (const 1 0))))))

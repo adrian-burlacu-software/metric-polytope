@@ -1,0 +1,23 @@
+;; Round 06 maker proposal 02: dup-midshift (cheap core of 01). Take the stdlib dup column of node i (copy of i at the
+;; largest feasible distance delta_i = min_j min(2 x_ij, 2 - 2 x_ij)), then move ONE other entry j of that column to the
+;; midpoint of its feasible interval [L_j, U_j]:
+;;   L_j = max_{k != j} |b_k - x_jk|,   U_j = min_{k != j} min(b_k + x_jk, 2 - b_k - x_jk).
+;; With entry i at delta_i > 0, entry j is no longer pinned to x_ij, so this is a fiber-edge direction off the dup
+;; vertex that partial-dup (entry i only) does not use. Only the new column is built, so x stays the restriction on
+;; its first nodes. G-equivariant (delta_i and the midpoint of [L_j, U_j] are switching-invariant).
+;; n (n - 1) outputs per input.
+(define (dm-delta x i)
+  (min-over ((j (range 0 (size x)))) (where (not (= j i)))
+    (min (* 2 (entry x i j)) (- 2 (* 2 (entry x i j))))))
+(define (dm-b x i a k) (if (= k i) a (entry x i k)))
+(define (dm-lo x i a j)
+  (max-over ((k (range 0 (size x)))) (where (not (= k j)))
+    (max (- (dm-b x i a k) (entry x j k)) (- (entry x j k) (dm-b x i a k)))))
+(define (dm-hi x i a j)
+  (min-over ((k (range 0 (size x)))) (where (not (= k j)))
+    (min (+ (dm-b x i a k) (entry x j k)) (- 2 (+ (dm-b x i a k) (entry x j k))))))
+(move dup-midshift (x) :grow 1
+  :doc "Dup column of node i (copy at the largest feasible distance) with one other entry j moved to the midpoint of its feasible triangle interval: a fiber-edge direction off the dup vertex."
+  (for ((i (range 0 (size x))) (j (range 0 (size x)))) (where (not (= j i)))
+    (let ((a (dm-delta x i)))
+      (block x (mset (mset (col x i) i 0 a) j 0 (/ (+ (dm-lo x i a j) (dm-hi x i a j)) 2)) (const 1 0)))))

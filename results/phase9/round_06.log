@@ -1,0 +1,68 @@
+[round 6] dup-midshift: ACCEPTED  gain {8: 32, 9: 36}
+[round 6] dup-recentre: dropped: no gain within budget  gain {}
+[round 6] RETRY dup-recentre (from round 6, 900 s): dropped: no gain within budget  gain {}
+# Phase 9 round 6
+
+Main-track numbers only. Non-vertex variant proposals are marked VARIANT and are tracked in results/phase9/variant_nonvertex.json.
+
+Judge time 1363.8 s; budget per rule 300.0 s (one retry at 900 s for rules still gaining); round cap 1800 s.
+
+## Proposals (rule maker)
+
+| file | name | kind | status | targets gained (n: count) | s |
+|---|---|---|---|---|---|
+| phase9/round_06/maker/02_dup_midshift.mpr | dup-midshift | move | ACCEPTED | {8: 32, 9: 36} | 100.9 |
+| phase9/round_06/maker/01_dup_recentre.mpr | dup-recentre | move | dropped: no gain within budget | {} | 300.7 |
+| phase9/round_06/maker/01_dup_recentre.mpr | dup-recentre | move | dropped: no gain within budget | {} | 900.6 |
+
+## Coverage of rules with gains (per size and denominator)
+
+| rule | status | n | gained | share of unreached | denominators (D: count) | verdict |
+|---|---|---|---|---|---|---|
+| dup-midshift | ACCEPTED | 8 | 32 | 21.1% | {10: 32} | broad |
+| dup-midshift | ACCEPTED | 9 | 36 | 5.4% | {7: 5, 10: 28, 12: 3} | broad |
+
+## Candidates (rule breaker)
+
+| file | claim | rule | n | D | vertex | status |
+|---|---|---|---|---|---|---|
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 10 | 15 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 10 | 15 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 10 | 15 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 10 | 15 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 12 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 15 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 15 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 15 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 15 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 15 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 18 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 18 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 18 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 18 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 18 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 21 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 24 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 24 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 42 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 42 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 10 | 10 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 10 | 13 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 10 | 14 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 8 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 11 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 11 | 13 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 10 | 8 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 10 | 10 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 10 | 11 | True | CONFIRMED unreachable (complete search) |
+| phase9/round_06/breaker/candidates.json | unreachable | all-moves-cover | 10 | 11 | True | CONFIRMED unreachable (complete search) |
+
+## Unreached targets (fraction)
+
+| n | before | after |
+|---|---|---|
+| 7 | 0/13 (0.0%) | 0/13 (0.0%) |
+| 8 | 152/533 (28.5%) | 120/533 (22.5%) |
+| 9 | 664/1000 (66.4%) | 628/1000 (62.8%) |
+
+exit 0

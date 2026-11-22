@@ -307,11 +307,14 @@ def restriction_preserving(I, mv, samples=12, seed=20261122):
 _LR = {}
 
 
-def _large_init():
+def _large_init(moves=None):
+    """moves: the accepted moves {name: grow} from the IN-MEMORY round state (state.json is only written at the end of
+    a round, so reading it here missed moves accepted earlier in the same round; bug found in round 6)."""
     I, _ = interpreter([])
-    st = load_json(CK / "state.json")
+    if moves is None:
+        moves = load_json(CK / "state.json")["moves"]
     _LR["I"] = I
-    _LR["moves"] = [(n_, int(g)) for n_, g in st["moves"].items() if n_ in I.moves]
+    _LR["moves"] = [(n_, int(g)) for n_, g in moves.items() if n_ in I.moves]
 
 
 def _large_apply(name, p):
@@ -411,7 +414,7 @@ def eval_candidates(path, eng, T, reached, st, base, I):
     pend = [r for r in out if "_x" in r]
     if pend:
         import multiprocessing as mp
-        with mp.Pool(min(len(pend), eng.workers), initializer=_large_init) as pool:
+        with mp.Pool(min(len(pend), eng.workers), initializer=_large_init, initargs=(dict(st["moves"]),)) as pool:
             jobs = [pool.apply_async(_large_reach, (r["_x"],)) for r in pend]
             res = []
             t_hard = time.time() + LARGE_BUDGET * (1 + len(pend) / max(1, min(len(pend), eng.workers))) + 30
