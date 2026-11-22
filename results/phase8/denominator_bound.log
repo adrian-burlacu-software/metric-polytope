@@ -1,0 +1,11 @@
+C3 3 {'graphs': 2, 'max_tau': 4, 'bound_2(k-1)': 4, 'holds': True, 'attained': True, 'den_divides_tau_violations': 0} 0s
+C3 4 {'graphs': 6, 'max_tau': 6, 'bound_2(k-1)': 6, 'holds': True, 'attained': True, 'den_divides_tau_violations': 0} 0s
+C3 5 {'graphs': 21, 'max_tau': 8, 'bound_2(k-1)': 8, 'holds': True, 'attained': True, 'den_divides_tau_violations': 0} 0s
+C3 6 {'graphs': 112, 'max_tau': 10, 'bound_2(k-1)': 10, 'holds': True, 'attained': True, 'den_divides_tau_violations': 0} 0s
+C3 7 {'graphs': 853, 'max_tau': 12, 'bound_2(k-1)': 12, 'holds': True, 'attained': True, 'den_divides_tau_violations': 0} 0s
+C3 8 {'graphs': 11117, 'max_tau': 14, 'bound_2(k-1)': 14, 'holds': True, 'attained': True, 'den_divides_tau_violations': 0} 3s
+C3 9 {'graphs': 261080, 'max_tau': 16, 'bound_2(k-1)': 16, 'holds': True, 'attained': True, 'den_divides_tau_violations': 0} 78s
+C4 {'orbits': 47979, 'derivable': 9029, 'derivable_violating_bound': 0, 'sample_orbits_violating_bound': 6505}
+C5 {'orbits': 1056367, 'excluded_by_theorem': 79159, 'excluded_share': 0.07493513144579488, 'excluded_by_denominator': {17: 39031, 19: 27957, 23: 6389, 25: 3020, 27: 1948, 29: 509, 31: 229, 34: 48, 37: 22, 38: 2, 41: 2, 43: 2}} {'orbits': 533, 'excluded_by_theorem': 0}
+OK 79s
+exit 0

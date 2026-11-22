@@ -400,6 +400,60 @@
     "rule": "denominator-lemma-lift",
     "seconds": 1.17
   },
+  "denominator-prime-bound@3": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 3,
+    "partial_data": false,
+    "rule": "denominator-prime-bound",
+    "seconds": 243.01
+  },
+  "denominator-prime-bound@4": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 4,
+    "partial_data": false,
+    "rule": "denominator-prime-bound",
+    "seconds": 0.01
+  },
+  "denominator-prime-bound@5": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 5,
+    "partial_data": false,
+    "rule": "denominator-prime-bound",
+    "seconds": 0.04
+  },
+  "denominator-prime-bound@6": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 6,
+    "partial_data": false,
+    "rule": "denominator-prime-bound",
+    "seconds": 1.92
+  },
+  "denominator-prime-bound@7": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 7,
+    "partial_data": false,
+    "rule": "denominator-prime-bound",
+    "seconds": 0.57
+  },
+  "denominator-prime-bound@8": {
+    "error": null,
+    "holds": true,
+    "kind": "structural",
+    "n": 8,
+    "partial_data": false,
+    "rule": "denominator-prime-bound",
+    "seconds": 32.82
+  },
   "dominating-set@3": {
     "error": null,
     "holds": true,

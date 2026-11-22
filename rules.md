@@ -293,6 +293,17 @@ Status legend: holds for every tested n / **BREAKS** at the first failing n (cou
 (structural all-moves-cover (n) :domain (3 8) :source "Phase 4c (this work)" :doc "As above, with non-vertex intermediate points (detours) allowed." (forall ((x (vertices n))) (derivable? x #t)))
 ```
 
+### `denominator-prime-bound`
+
+- English: If x is derivable from the uniform base by lift, radial 1–3, gluing, twin, dup and symmetries (detours allowed), every odd prime power exactly dividing den(x) is at most 2n − 3.
+- Source: docs/denominator_lemma.md, Theorem 4 (this work; proof sketch, computer checks separate)
+- Formula: `denominator-prime-bound(n) := ∀ x ∈ V(m_n): (der_⊤(x) ⇒ denbound(den(x),n))`
+- Holds for n = [3, 4, 5, 6, 7, 8]
+
+```lisp
+(structural denominator-prime-bound (n) :domain (3 8) :source "docs/denominator_lemma.md, Theorem 4 (this work; proof sketch, computer checks separate)" :doc "If x is derivable from the uniform base by lift, radial 1–3, gluing, twin, dup and symmetries (detours allowed), every odd prime power exactly dividing den(x) is at most 2n − 3." (forall ((x (vertices n))) (implies (derivable? x #t) (den-bound-ok? (denominator x) n))))
+```
+
 ## Generative rules
 
 ### `gen-cuts`
