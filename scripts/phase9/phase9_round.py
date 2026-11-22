@@ -106,10 +106,36 @@ def _user_moves(I, st):
 def _gain(eng, T, before, after):
     g = {}
     for i, (n, o, _) in enumerate(T):
+        if not isinstance(o, int):                     # breaker-added points do not count as coverage
+            continue
         k = eng.target_key(i)
         if k in after and k not in before:
             g.setdefault(n, []).append(o)
     return g
+
+
+def coverage(eng, T, before, g):
+    """Breadth of a rule's gain (user criterion: a rule catching a handful at one denominator is a disguised list).
+    Per n: targets gained, share of that n's unreached targets, gains per denominator, distinct denominators."""
+    out = {}
+    for n, ids in g.items():
+        dens = {}
+        unr = 0
+        for i, (m, o, x) in enumerate(T):
+            if m != n or not isinstance(o, int):
+                continue
+            if eng.target_key(i) not in before:
+                unr += 1
+            if o in ids:
+                dens[x.D] = dens.get(x.D, 0) + 1
+        out[n] = {"gained": len(ids), "share_of_unreached": round(len(ids) / max(unr, 1), 4),
+                  "by_denominator": dict(sorted(dens.items())), "distinct_denominators": len(dens)}
+    tot = sum(v["gained"] for v in out.values())
+    ns = len(out)
+    nd = len({d for v in out.values() for d in v["by_denominator"]})
+    out["verdict"] = ("NARROW (likely a disguised list)" if tot < 10 or (ns == 1 and nd <= 1)
+                      else "broad" if ns >= 2 and nd >= 3 else "moderate")
+    return out
 
 
 def eval_proposal(path, eng, T, reached, st, base, budget, log, variant=False):
@@ -167,7 +193,7 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log, variant=False):
                                 forward=fw)
         g = _gain(eng, T, reached, after)
         rec.update(timed_out=to, nodes_gained=len(after) - len(reached), targets_gained={n: len(v) for n, v in g.items()},
-                   targets_gained_ids=g, seconds=round(time.time() - t0, 1))
+                   targets_gained_ids=g, coverage=coverage(eng, T, reached, g), seconds=round(time.time() - t0, 1))
         if g:
             st["extra_base"] = sorted(set(st["extra_base"]) | new_keys)
             rec["status"] = "ACCEPTED"
@@ -196,7 +222,7 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log, variant=False):
                                 verbose=False, forward=fw)
         g = _gain(eng, T, reached, after)
         rec.update(timed_out=to, nodes_gained=len(after) - len(reached), targets_gained={n: len(v) for n, v in g.items()},
-                   targets_gained_ids=g, seconds=round(time.time() - t0, 1))
+                   targets_gained_ids=g, coverage=coverage(eng, T, reached, g), seconds=round(time.time() - t0, 1))
         if g:
             st["moves"][name] = mv.grow
             rec["status"] = "ACCEPTED"
@@ -476,6 +502,17 @@ def render(rep):
     for p in rep["proposals"]:
         md.append(f"| {p['file']} | {p.get('name', '')} | {p.get('kind', '')}{' (VARIANT)' if p.get('track', '').startswith('VAR') else ''} | {p['status']} | "
                   f"{p.get('targets_gained', '')} | {p.get('seconds', '')} |")
+    cov = [p for p in rep["proposals"] if p.get("coverage")]
+    if cov:
+        md += ["", "## Coverage of rules with gains (per size and denominator)", "",
+               "| rule | status | n | gained | share of unreached | denominators (D: count) | verdict |",
+               "|---|---|---|---|---|---|---|"]
+        for p in cov:
+            c = p["coverage"]
+            for n in sorted(k for k in c if k != "verdict"):
+                v = c[n]
+                md.append(f"| {p.get('name')} | {p['status'][:20]} | {n} | {v['gained']} | "
+                          f"{100 * v['share_of_unreached']:.1f}% | {v['by_denominator']} | {c['verdict']} |")
     md += ["", "## Candidates (rule breaker)", "", "| file | claim | rule | n | D | vertex | status |", "|---|---|---|---|---|---|---|"]
     for c in rep["candidates"]:
         md.append(f"| {c['file']} | {c.get('claim')} | {c.get('rule')} | {c.get('n')} | {c.get('D')} | "
