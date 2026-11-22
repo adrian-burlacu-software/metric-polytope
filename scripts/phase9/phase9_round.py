@@ -25,6 +25,7 @@ PY = sys.executable
 VARIANT_FILE = ROOT / "rules" / "phase9_variant_nonvertex.mpr"
 VDIR = CK / "variant_nonvertex"
 LARGE_BUDGET = 60.0
+RETRY_BUDGET = 900.0        # one retry for rules dropped by the 300 s budget while still gaining (user decision)
 DRY = {"on": False}
 
 
@@ -475,6 +476,27 @@ def cmd_round(args):
         rec["probe_seconds"] = round(probe[p], 2)
         results.append(rec)
         print(f"[round {R}] {rec.get('name', p.name)}: {rec['status']}  gain {rec.get('targets_gained', {})}", flush=True)
+    # ---- one retry at RETRY_BUDGET for main-track rules dropped by the budget while still gaining sub-orbits
+    # (this round's, plus the previous round's that were never retried); cheapest first, while the round cap allows
+    def _retry_ok(rec):
+        return (rec.get("track", "main") == "main" and rec.get("timed_out") and (rec.get("nodes_gained") or 0) > 0
+                and str(rec.get("status", "")).startswith("dropped") and not rec.get("retry"))
+    retry = [(ROOT / rec["file"], rec.get("probe_seconds", 999.0), R) for rec in results if _retry_ok(rec)]
+    prev = OUT / f"round_{R - 1:02d}.json"
+    if prev.exists():
+        for rec in load_json(prev).get("proposals", []):
+            if _retry_ok(rec) and (ROOT / rec["file"]).exists():
+                retry.append((ROOT / rec["file"], rec.get("probe_seconds", 999.0), R - 1))
+    for path, ps, origin in sorted(retry, key=lambda t: t[1]):
+        if time.time() - t_start + RETRY_BUDGET > args.round_cap:
+            results.append({"file": str(path.relative_to(ROOT).as_posix()), "retry": True,
+                            "status": "retry deferred: not enough time left in the round cap"})
+            continue
+        rec, reached = eval_proposal(path, eng, T, reached, st, base, RETRY_BUDGET, None)
+        rec.update(retry=True, retry_of_round=origin, probe_seconds=ps)
+        results.append(rec)
+        print(f"[round {R}] RETRY {rec.get('name', path.name)} (from round {origin}, {RETRY_BUDGET:.0f} s): "
+              f"{rec['status']}  gain {rec.get('targets_gained', {})}", flush=True)
     I, _ = interpreter([])
     cands = []
     for c in sorted((rdir / "breaker").glob("candidates*.json")) if (rdir / "breaker").exists() else []:
@@ -511,7 +533,7 @@ def render(rep):
     md = [f"# Phase 9 round {rep['round']}", "",
           "Main-track numbers only. Non-vertex variant proposals are marked VARIANT and are tracked in "
           "results/phase9/variant_nonvertex.json.", "",
-          f"Judge time {rep['seconds']} s; budget per rule {rep['budget_per_rule']} s; round cap {rep['round_cap']} s.", "",
+          f"Judge time {rep['seconds']} s; budget per rule {rep['budget_per_rule']} s (one retry at 900 s for rules still gaining); round cap {rep['round_cap']} s.", "",
           "## Proposals (rule maker)", "", "| file | name | kind | status | targets gained (n: count) | s |", "|---|---|---|---|---|---|"]
     for p in rep["proposals"]:
         md.append(f"| {p['file']} | {p.get('name', '')} | {p.get('kind', '')}{' (VARIANT)' if p.get('track', '').startswith('VAR') else ''} | {p['status']} | "

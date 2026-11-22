@@ -57,7 +57,7 @@ Keep each rule small. Helper `(define ...)` forms are allowed in the same file. 
 Only use primitives that exist; the registry is in `metricpoly/dsl/prims.py` and `metricpoly/dsl/ext/*.py`. You may
 NOT add Python primitives.
 
-## Cost (the judge enforces a budget of 300 s per proposal)
+## Cost (budget: 300 s per proposal; one retry at 900 s if it was still gaining sub-orbits when the budget ran out)
 - New base pieces are cheap to judge: they only propagate through cached data. Prefer them.
 - New moves are applied forward by the interpreted DSL to every reached sub-orbit, on whole orbits (switching
   classes). That can take seconds per input, so a move that is slow to evaluate will hit the budget and be dropped.
