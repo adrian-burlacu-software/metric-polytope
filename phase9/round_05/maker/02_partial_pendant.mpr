@@ -1,0 +1,15 @@
+;; Round 05 maker proposal 02: partial pendant. New node hangs off node i at distance s: d(v,i) = s and
+;; d(v,j) = d(i,j) + s for all j. Feasible iff s <= s_max = (2 - max perimeter of a triangle through i)/2
+;; (degenerate j = k included). s = t*s_max for t = p/q, 0 < p < q <= 4. This is the fiber edge from the twin of i
+;; in the all-ones direction. Only the new column is built (restriction-preserving). Sn-equivariant only (the judge
+;; expands switching classes). n * 5 outputs per switching.
+(define (pp-smax x i)
+  (/ (- 2 (max-over ((j (range 0 (size x))) (k (range 0 (size x))))
+            (+ (entry x i j) (entry x i k) (entry x j k)))) 2))
+(define pp-fracs (distinct (for ((q (range 2 5)) (p (range 1 q))) (/ p q))))
+(define (pp-col x i s)
+  (mvcat-list (for ((j (range 0 (size x)))) (+ (entry x i j) s))))
+(move partial-pendant (x) :grow 1
+  :doc "New node hanging off node i at distance t*s_max (t = p/q, q <= 4), all other distances routed through i: the twin-to-pendant fiber edge."
+  (for ((i (range 0 (size x))) (t pp-fracs))
+    (block x (pp-col x i (* t (pp-smax x i))) (const 1 0))))

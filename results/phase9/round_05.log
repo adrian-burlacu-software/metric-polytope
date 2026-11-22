@@ -1,0 +1,34 @@
+[round 5] partial-pendant: dropped: no gain within budget  gain {}
+[round 5] partial-dup: ACCEPTED  gain {8: 114, 9: 212}
+[round 5] RETRY partial-pendant (from round 5, 900 s): dropped: no gain within budget  gain {}
+[round 5] RETRY twin-fiber-midpoints (from round 4, 900 s): dropped: no gain within budget  gain {}
+[round 5] RETRY fiber-midpoints (from round 4, 900 s): dropped: no gain within budget  gain {}
+Traceback (most recent call last):
+  File "C:\Users\adria\Desktop\dev\metric\scripts\phase9\judge.py", line 130, in <module>
+    main()
+  File "C:\Users\adria\Desktop\dev\metric\scripts\phase9\judge.py", line 126, in main
+    cmd_round(args)
+  File "C:\Users\adria\Desktop\dev\metric\scripts\phase9\phase9_round.py", line 527, in cmd_round
+    atomic_write_json(OUT / f"round_{R:02d}{tag}.json", rep)
+  File "C:\Users\adria\Desktop\dev\metric\metricpoly\jobs.py", line 61, in atomic_write_json
+    atomic_write_text(path, json.dumps(obj, indent=2, sort_keys=True) + "\n")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 354, in _iterencode_dict
+    items = sorted(dct.items())
+            ^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'int'
+exit 1

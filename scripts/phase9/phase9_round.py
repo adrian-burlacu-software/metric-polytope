@@ -135,7 +135,7 @@ def coverage(eng, T, before, g):
                 unr += 1
             if o in ids:
                 dens[x.D] = dens.get(x.D, 0) + 1
-        out[n] = {"gained": len(ids), "share_of_unreached": round(len(ids) / max(unr, 1), 4),
+        out[str(n)] = {"gained": len(ids), "share_of_unreached": round(len(ids) / max(unr, 1), 4),
                   "by_denominator": dict(sorted(dens.items())), "distinct_denominators": len(dens)}
     tot = sum(v["gained"] for v in out.values())
     ns = len(out)

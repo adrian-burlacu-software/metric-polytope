@@ -1,0 +1,57 @@
+== d1
+dist since last T
+(10, 1) {'T': 103, 'outbound': 13, 'stuck': 11, 'F': 7, 'dup': 22} F/tested=7/110
+(10, 2) {'stuck': 16, 'T': 8, 'outbound': 11, 'F': 2, 'dup': 3} F/tested=2/10
+(10, 3) {'stuck': 10, 'F': 1, 'outbound': 8, 'T': 2} F/tested=1/3
+(10, 4) {'T': 1, 'stuck': 6} F/tested=0/1
+(11, 1) {'T': 149, 'outbound': 10, 'dup': 11, 'stuck': 8, 'U': 1, 'F': 3} F/tested=3/153
+(11, 2) {'stuck': 13, 'dup': 4, 'T': 6, 'outbound': 1, 'F': 1} F/tested=1/7
+(11, 3) {'stuck': 6, 'T': 2, 'outbound': 2, 'dup': 2} F/tested=0/2
+(11, 4) {'stuck': 5} F/tested=0/0
+raw step
+(10, 1) {'T': 44, 'F': 4, 'dup': 8} F/tested=4/48
+(10, 2) {'T': 30, 'outbound': 8, 'dup': 10, 'F': 1, 'stuck': 7} F/tested=1/31
+(10, 3) {'outbound': 11, 'stuck': 12, 'T': 26, 'F': 2, 'dup': 5} F/tested=2/28
+(10, 4) {'stuck': 24, 'T': 14, 'outbound': 13, 'dup': 2, 'F': 3} F/tested=3/17
+(11, 1) {'T': 49, 'U': 1, 'dup': 4, 'F': 1, 'outbound': 1} F/tested=1/51
+(11, 2) {'outbound': 3, 'T': 40, 'stuck': 7, 'dup': 5, 'F': 1} F/tested=1/41
+(11, 3) {'stuck': 9, 'T': 37, 'dup': 5, 'outbound': 4, 'F': 1} F/tested=1/38
+(11, 4) {'stuck': 16, 'T': 31, 'dup': 3, 'outbound': 5, 'F': 1} F/tested=1/32
+== d3
+dist since last T
+(10, 1) {'T': 65, 'outbound': 8, 'stuck': 6, 'dup': 18, 'F': 2} F/tested=2/67
+(10, 2) {'stuck': 12, 'T': 6, 'outbound': 5, 'dup': 4} F/tested=0/6
+(10, 3) {'stuck': 8, 'outbound': 3, 'dup': 1} F/tested=0/0
+(10, 4) {'stuck': 5, 'outbound': 1} F/tested=0/0
+(11, 1) {'T': 101, 'stuck': 5, 'dup': 11, 'F': 3, 'outbound': 2} F/tested=3/104
+(11, 2) {'T': 4, 'outbound': 4, 'dup': 3, 'F': 2, 'stuck': 1} F/tested=2/6
+(11, 3) {'outbound': 1, 'stuck': 3, 'T': 1, 'dup': 1} F/tested=0/1
+(11, 4) {'outbound': 1, 'stuck': 1} F/tested=0/0
+raw step
+(10, 1) {'T': 27, 'stuck': 1, 'dup': 5, 'outbound': 1, 'F': 2} F/tested=2/29
+(10, 2) {'T': 22, 'stuck': 7, 'outbound': 3, 'dup': 4} F/tested=0/22
+(10, 3) {'outbound': 6, 'T': 14, 'stuck': 7, 'dup': 9} F/tested=0/14
+(10, 4) {'stuck': 16, 'outbound': 7, 'T': 8, 'dup': 5} F/tested=0/8
+(11, 1) {'T': 33, 'dup': 2, 'F': 1} F/tested=1/34
+(11, 2) {'T': 28, 'dup': 4, 'stuck': 1, 'F': 2, 'outbound': 1} F/tested=2/30
+(11, 3) {'stuck': 3, 'T': 25, 'dup': 6, 'F': 1, 'outbound': 1} F/tested=1/26
+(11, 4) {'T': 20, 'stuck': 6, 'outbound': 6, 'F': 1, 'dup': 3} F/tested=1/21
+== d0
+dist since last T
+(10, 1) {'T': 20, 'stuck': 15, 'dup': 4, 'outbound': 1} F/tested=0/20
+(10, 2) {'stuck': 17, 'outbound': 2} F/tested=0/0
+(10, 3) {'stuck': 14} F/tested=0/0
+(10, 4) {'stuck': 7} F/tested=0/0
+(11, 1) {'T': 31, 'stuck': 12, 'dup': 3, 'outbound': 1, 'F': 2} F/tested=2/33
+(11, 2) {'stuck': 9, 'T': 3, 'outbound': 1} F/tested=0/3
+(11, 3) {'stuck': 8} F/tested=0/0
+(11, 4) {'stuck': 1} F/tested=0/0
+raw step
+(10, 1) {'T': 13, 'stuck': 3, 'dup': 3, 'outbound': 1} F/tested=0/13
+(10, 2) {'T': 6, 'stuck': 12, 'dup': 1, 'outbound': 1} F/tested=0/6
+(10, 3) {'stuck': 19, 'T': 1} F/tested=0/1
+(10, 4) {'stuck': 19, 'outbound': 1} F/tested=0/0
+(11, 1) {'T': 16, 'dup': 2} F/tested=0/16
+(11, 2) {'T': 8, 'stuck': 7, 'outbound': 1, 'F': 1, 'dup': 1} F/tested=1/9
+(11, 3) {'T': 7, 'stuck': 9, 'outbound': 1, 'F': 1} F/tested=1/8
+(11, 4) {'stuck': 14, 'T': 3} F/tested=0/3

@@ -1,0 +1,14 @@
+;; Round 05 maker proposal 01: partial duplication. Copy node i (all distances to the others equal i's), but put the
+;; copy at distance t*delta_i from i, where delta_i = min_j min(2 d_ij, 2 - 2 d_ij) is the largest feasible value
+;; (t = 1 is stdlib dup, t = 0 is the twin). t ranges over all fractions p/q with 0 < p < q <= 6.
+;; These columns lie on the fiber edge twin--dup (round 4: unreached one-node extensions sit at t = 1/2, 1/3, 1/4 on
+;; fiber edges). Only the new column is built, so x stays the restriction to its first nodes. G-equivariant
+;; (delta_i is invariant under switching). n * 11 outputs per input, no fiber enumeration.
+(define (pd-delta x i)
+  (min-over ((j (range 0 (size x)))) (where (not (= j i)))
+    (min (* 2 (entry x i j)) (- 2 (* 2 (entry x i j))))))
+(define pd-fracs (distinct (for ((q (range 2 7)) (p (range 1 q))) (/ p q))))
+(move partial-dup (x) :grow 1
+  :doc "Copy of node i placed at distance t*delta_i from i (t = p/q, q <= 6): points on the twin--dup fiber edge, where many unreached one-node extensions sit."
+  (for ((i (range 0 (size x))) (t pd-fracs))
+    (block x (mset (col x i) i 0 (* t (pd-delta x i))) (const 1 0))))
