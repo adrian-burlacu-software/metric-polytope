@@ -1,0 +1,18 @@
+;;; Round 11 maker, proposal 02: D = 2n - 5 sister of gen-bipartite-glue, cover type the house (C_5 + chord) at 4/11 + C_4 at 4/11.
+;;; Two-stage construction as in proposal 01: stage 1 glues (4/(2n-5)) d(complement of P_{n-3}) (at an end v of the path; at n = 8 this is the house, v a roof-base node) with the
+;;; path b1 - v - b2 of (4/(2n-5)) d(C_4); stage 2 glues each stage-1 fiber vertex with the whole C_4 on (v, b1, b2).
+;;; At n = 8 all 6 D = 11 targets with this cover have v at a roof-base node of the house (round 8 called it K_{2,3}; the degree sequence is the same) and their 7-node restriction (C_4 antipode
+;;; dropped) is a stage-1 fiber vertex (stage.py), so they are vertices of the stage-2 fiber. Both stages keep only
+;;; points with denominator exactly 2n - 5 (cheap pre-filter, keeps all targets at n = 8); only exact vertices kept.
+
+(define (bc11-k2m n) (move-last (tuple 0) (scale (/ 4 (- (* 2 n) 5)) (gmetric (complement (path-graph (- n 3)))))))
+(define (bc11-c4 n) (scale (/ 4 (- (* 2 n) 5)) (gmetric (kparts (list 2 2)))))
+
+(generative gen-house-c4-d11 (n) :domain (7)
+  :doc "Vertices of the two-stage one-node glue of (4/(2n-5)) d(co-P_{n-3}) (path end) and (4/(2n-5)) d(C_4)."
+  (concat-all
+    (for ((y (fiber-vertices (glue-partial (bc11-k2m n) (restrict {0 2 3} (bc11-c4 n)) 1))))
+      (where (= (denominator y) (- (* 2 n) 5)))
+      (for ((z (fiber-vertices (glue-partial y (move-last (tuple 1) (bc11-c4 n)) 3))))
+        (where (and (= (denominator z) (- (* 2 n) 5)) (vertex? z)))
+        z))))

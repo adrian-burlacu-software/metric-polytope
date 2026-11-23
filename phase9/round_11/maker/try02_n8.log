@@ -1,0 +1,23 @@
+{
+ "gen-house-c4-d11": {
+  "kind": "generative",
+  "7": {
+   "points": 0,
+   "feasible": 0,
+   "vertices": 0,
+   "orbits": 0,
+   "hits_unreached_nodes": 0,
+   "hits_unreached_targets": 0,
+   "seconds": 0.0
+  },
+  "8": {
+   "points": 12,
+   "feasible": 12,
+   "vertices": 12,
+   "orbits": 6,
+   "hits_unreached_nodes": 6,
+   "hits_unreached_targets": 6,
+   "seconds": 21.59
+  }
+ }
+}

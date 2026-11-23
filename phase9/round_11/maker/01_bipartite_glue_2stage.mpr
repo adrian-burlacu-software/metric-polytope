@@ -1,0 +1,20 @@
+;;; Round 11 maker, proposal 01: cheap two-stage version of gen-bipartite-glue (D = 2n - 3).
+;;; Stage 1: glue (4/(2n-3)) d(K_{2,n-5}) (glued at a 2-side node v) with the 3-node path b1 - v - b2 of
+;;; (5/(2n-3)) d(C_4) (C_4 minus the antipode of v) and take the fiber vertices (2(n-4) holes, n-1 nodes).
+;;; Stage 2: glue each stage-1 vertex with the whole (5/(2n-3)) d(C_4) on the 3 nodes (v, b1, b2) (n-4 holes).
+;;; Every m_n vertex of the one-stage fiber whose (n-1)-node restriction is a stage-1 fiber vertex is produced
+;;; (it is a vertex of the stage-2 fiber). At n = 8 this holds for all 14 covered D = 13 targets (stage.py).
+;;; Both stages keep only points with denominator exactly the scale denominator (a restriction of a
+;;; denominator-D vertex has denominator dividing D); only exact vertices are kept.
+
+(define (bg2-k2m n) (move-last (tuple 0) (scale (/ 4 (- (* 2 n) 3)) (gmetric (kparts (list 2 (- n 5)))))))
+(define (bg2-c4 n) (scale (/ 5 (- (* 2 n) 3)) (gmetric (kparts (list 2 2)))))
+
+(generative gen-bipartite-glue-2stage (n) :domain (7)
+  :doc "Two-stage gen-bipartite-glue: vertices of the C_4-glue fiber over the vertices of the (K_{2,n-5}, P_3) glue fiber."
+  (concat-all
+    (for ((y (fiber-vertices (glue-partial (bg2-k2m n) (restrict {0 2 3} (bg2-c4 n)) 1))))
+      (where (= (denominator y) (- (* 2 n) 3)))
+      (for ((z (fiber-vertices (glue-partial y (move-last (tuple 1) (bg2-c4 n)) 3))))
+        (where (and (= (denominator z) (- (* 2 n) 3)) (vertex? z)))
+        z))))

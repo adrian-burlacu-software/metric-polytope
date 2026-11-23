@@ -1,0 +1,23 @@
+{
+ "gen-bipartite-glue-2stage": {
+  "kind": "generative",
+  "7": {
+   "points": 0,
+   "feasible": 0,
+   "vertices": 0,
+   "orbits": 0,
+   "hits_unreached_nodes": 0,
+   "hits_unreached_targets": 0,
+   "seconds": 0.53
+  },
+  "8": {
+   "points": 168,
+   "feasible": 168,
+   "vertices": 168,
+   "orbits": 14,
+   "hits_unreached_nodes": 0,
+   "hits_unreached_targets": 0,
+   "seconds": 23.0
+  }
+ }
+}
