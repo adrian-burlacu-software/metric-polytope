@@ -1,0 +1,10 @@
+[CUT_8] 147 classes, 147 distinct keys, all facets True (0 s)
+  145 done, 0 to expand, 0 deferred (roots > 0)
+  class 145: 80 roots, symmetric expansion
+    2180786 ridges from Normaliz (408 s)
+    37012 ridge orbits under Stab_Sn (534 s)
+    -> 145 neighbour classes, 633.4 s
+  class 146: 96 roots, symmetric expansion
+    -> Normaliz budget or memory cap exceeded
+{"n": 8, "classes": 147, "distinct_keys": 147, "all_listed_are_facets": true, "expanded": 146, "deferred": [], "errors": 0, "triangle_class": 146, "classes_adjacent_to_triangle": 147, "all_adjacent_to_triangle": true, "negative_control": {"classes_reached_from_another_class": 147, "every_single_drop_detected": true, "undetectable_if_dropped": []}, "max_class_s": 633.4, "sum_class_s": 1590.3, "wall_s": 4235.0, "PASS_closed": false}
+unlisted neighbours: 0, flagged 1
