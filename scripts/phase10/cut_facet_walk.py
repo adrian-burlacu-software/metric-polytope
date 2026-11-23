@@ -73,6 +73,11 @@ def main():
                          "reduction (cutfacets.expand_sym), after the parallel phase")
     ap.add_argument("--sym-budget", type=float, default=None, help="Normaliz time budget per class (s)")
     ap.add_argument("--only", type=str, default="", help="comma-separated class indices (0-based) to expand")
+    ap.add_argument("--adm-roots", type=int, default=0,
+                    help="classes with more roots get their ridges by recursive adjacency decomposition "
+                         "(cutfacets.expand_adm, parallel, checkpointed) instead of one Normaliz call (0 = never)")
+    ap.add_argument("--adm-hours", type=float, default=None, help="time limit for the adjacency decomposition (h)")
+    ap.add_argument("--adm-nmz-gb", type=float, default=3.0, help="memory cap per Normaliz call inside it (GB)")
     a = ap.parse_args()
     n = a.n
     t0 = time.time()
@@ -96,6 +101,8 @@ def main():
         for ln in ck.read_text(encoding="utf-8").splitlines():
             try:
                 r = json.loads(ln)
+                if "flag" in r:
+                    continue                                      # flagged earlier: retry
                 done[r["i"]] = r
             except json.JSONDecodeError:
                 pass
@@ -143,13 +150,25 @@ def main():
         for i in sorted(big, key=lambda i: roots[i]):
             print(f"  class {i}: {roots[i]} roots, symmetric expansion", flush=True)
             try:
-                r = cf.expand_sym(n, C[i][0], C[i][1], threads=a.workers, budget=a.sym_budget,
-                                  log=lambda m: print(m, flush=True))
+                if a.adm_roots and roots[i] > a.adm_roots:
+                    import os
+                    os.environ["METRIC_NMZ_MEM_GB"] = str(a.adm_nmz_gb)   # read by the spawned workers' resguard
+                    dl = None if a.adm_hours is None else time.time() + 3600 * a.adm_hours
+                    r = cf.expand_adm(n, C[i][0], C[i][1], workers=a.workers, deadline=dl,
+                                      ckpt=ROOT / "checkpoints" / "phase10" / f"ridge_adm_n{n}_c{i}.jsonl",
+                                      log=lambda m: print(m, flush=True))
+                    r["method"] = "adm"
+                else:
+                    r = cf.expand_sym(n, C[i][0], C[i][1], threads=a.workers, budget=a.sym_budget,
+                                      log=lambda m: print(m, flush=True))
+                    r["method"] = "sym"
                 r["i"] = i
-                r["method"] = "sym"
                 r["nbr"] = {k: (keys[k] if k in keys else [list(v[0]), v[1]]) for k, v in r["nbr"].items()}
             except adjdec.NmzTimeout:
                 r = {"i": i, "flag": "Normaliz budget or memory cap exceeded", "roots": roots[i]}
+            except adjdec.Stopped:
+                r = {"i": i, "flag": "adjacency decomposition stopped (time limit, halt file or RAM); resumable",
+                     "roots": roots[i]}
             done[i] = r
             fh.write(json.dumps(r) + "\n")
             fh.flush()

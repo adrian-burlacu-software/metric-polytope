@@ -200,3 +200,78 @@ def expand_sym(n: int, a, b, threads: int = 18, budget=None, log=None) -> Dict:
             raise RuntimeError("rotation did not give a facet")
         nbr.setdefault(canon(n, aG, bG), (aG, bG))
     return {"roots": len(R), "ridges": len(rid), "ridge_orbits": len(reps), "nbr": nbr, "s": round(time.time() - t, 1)}
+
+
+# ------------------------------------------------------------------ recursive ridge enumeration (very degenerate facets)
+#
+# Dual formulation. For a facet a0·x <= 0 through the zero cut with roots R, the ridge functionals y = (h, h0) in
+# R^(m+1) (h0 + h·c >= 0 on the roots) form the cone {y : -(c, 1)·y <= 0 for c in R}, whose lineality is spanned by
+# (a0, 0). Adding the rows ±(a0, 0) cuts that line out:
+#     K = {y : -(c,1)·y <= 0 (c in R),  ±(a0,0)·y <= 0}        pointed, dimension m, extreme rays = ridges of the facet
+# (each ridge functional, projected orthogonally away from a0). K is invariant under G = Stab_{S_n}(a0), which permutes
+# the roots and fixes the homogenising coordinate, so adjdec's recursive adjacency decomposition applies unchanged:
+# vertices of K's section are enumerated orbit by orbit under G (exact LP start, exact steps = rotations inside the
+# facet, neighbours from the tangent cones by cdd / Normaliz / recursion, Balinski stop).
+
+def ridge_cone(n: int, a0) -> np.ndarray:
+    C, _ = cut_matrix(n)
+    R = roots(n, a0, 0)
+    P = np.hstack([C[R], np.ones((len(R), 1), dtype=np.int64)])
+    l = np.array(list(a0) + [0], dtype=np.int64)
+    return np.vstack([-P, l[None, :], -l[None, :]])
+
+
+def ridges_adm(n: int, a0, workers: int = 0, ckpt=None, log=print, threads: int = 1, deadline=None):
+    """Orbit representatives (under Stab_{S_n}(a0)) of the ridges of a0·x <= 0, by recursive adjacency
+    decomposition. Returns ([(h0, h, orbit size)], info)."""
+    m = len(pairs(n))
+    AT = ridge_cone(n, a0)
+    F = [tuple(int(v) for v in a0)]
+    if workers:
+        orb, stats, info = adjdec.decompose_parallel(n, AT, F, m, workers, ckpt, log=log, deadline=deadline)
+    else:
+        ctx = adjdec.Ctx(threads=threads, tag=f"radm{n}")
+        orb = adjdec.decompose(n, AT, F, m, 0, ctx)
+        stats, info = ctx.stats, {}
+    out = []
+    for (D, y), sz in orb.values():
+        out.append((int(y[m]), tuple(int(v) for v in y[:m]), sz))
+    info = dict(info, stats=stats.as_dict(), orbits=len(out), ridges=sum(s for *_, s in out))
+    return out, info
+
+
+def expand_adm(n: int, a, b, workers: int = 0, ckpt=None, log=None, threads: int = 1, deadline=None) -> Dict:
+    """expand_sym with the ridges from ridges_adm instead of one Normaliz call."""
+    import time
+    t = time.time()
+    _, sets = cut_matrix(n)
+    R = roots(n, a, b)
+    a0, b0 = switch(n, a, b, sets[R[0]])
+    assert b0 == 0
+    reps, info = ridges_adm(n, a0, workers, ckpt, log or (lambda *_: None), threads, deadline)
+    if log:
+        log(f"    {info['orbits']} ridge orbits ({info['ridges']} ridges) by adjacency decomposition "
+            f"({time.time() - t:.0f} s) {info['stats']}")
+    nbr = {}
+    if workers:
+        import multiprocessing as mp
+        with mp.get_context("spawn").Pool(workers) as pool:
+            for k, rep in pool.imap_unordered(_rot, [(n, tuple(a0), h0, h) for h0, h, _ in reps], chunksize=256):
+                nbr.setdefault(k, rep)
+    else:
+        for h0, h, _ in reps:
+            k, rep = _rot((n, tuple(a0), h0, h))
+            nbr.setdefault(k, rep)
+    if log:
+        log(f"    {len(nbr)} neighbour classes ({time.time() - t:.0f} s)")
+    return {"roots": len(R), "ridges": info["ridges"], "ridge_orbits": info["orbits"], "adm": info, "nbr": nbr,
+            "s": round(time.time() - t, 1)}
+
+
+def _rot(args):
+    """Rotate facet a0·x <= 0 about ridge (h0, h); returns (canonical key, representative). Raises if not a facet."""
+    n, a0, h0, h = args
+    aG, bG = rotate(n, a0, 0, h0, h)
+    if not is_facet(n, aG, bG):
+        raise RuntimeError("rotation did not give a facet")
+    return canon(n, aG, bG), (aG, bG)

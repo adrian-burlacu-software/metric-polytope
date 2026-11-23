@@ -153,20 +153,24 @@ def _colored_graph(n: int, cols: List[tuple]):
 
 
 def fix_key(n: int, F: List[Tuple[int, ...]], p: Point) -> str:
-    """Canonical key of point p under G_F."""
+    """Canonical key of point p under G_F. Vectors may carry extra coordinates after the C(n,2) pair coordinates
+    (e.g. a homogenising coordinate); S_n fixes them, so they enter the key verbatim and do not colour the graph."""
     D, nums = p
-    cols = [tuple(f[e] for f in F) + (int(nums[e]),) for e in range(len(nums))]
+    m = len(pairs(n))
+    cols = [tuple(f[e] for f in F) + (int(nums[e]),) for e in range(m)]
     g, colors = _colored_graph(n, cols)
     lab = g.canonical_permutation(color=colors)
     order = [v for v in lab if v < n]
     pr = pairs(n)
     idx = {e: t for t, e in enumerate(pr)}
     vals = [cols[idx[(min(order[a], order[b]), max(order[a], order[b]))]] for a, b in pr]
-    return f"{D}|" + ";".join(",".join(map(str, c)) for c in vals)
+    ext = "" if len(nums) == m else "/" + ",".join(str(int(v)) for v in nums[m:])
+    return f"{D}{ext}|" + ";".join(",".join(map(str, c)) for c in vals)
 
 
 def group_order(n: int, F: List[Tuple[int, ...]]) -> int:
-    return _group_order(n, tuple(F))
+    m = len(pairs(n))
+    return _group_order(n, tuple(tuple(f[:m]) for f in F))
 
 
 @lru_cache(maxsize=4096)
@@ -178,7 +182,7 @@ def _group_order(n, F) -> int:
 
 def orbit_size(n: int, F: List[Tuple[int, ...]], p: Point) -> int:
     D, nums = p
-    cols = [tuple(f[e] for f in F) + (int(nums[e]),) for e in range(len(nums))]
+    cols = [tuple(f[e] for f in F) + (int(nums[e]),) for e in range(len(pairs(n)))]
     g, colors = _colored_graph(n, cols)
     return group_order(n, F) // g.count_automorphisms(color=colors)
 
@@ -309,6 +313,12 @@ def _rays_to_orbits(n, AT, F, rays):
     return out
 
 
+def _n_lines(AT) -> int:
+    """Number of rows r of AT whose negative -r is also a row (counted once per pair)."""
+    S = {tuple(int(v) for v in r) for r in AT}
+    return sum(1 for r in S if tuple(-v for v in r) in S and r > tuple(-v for v in r))
+
+
 def solve_cone(n, AT, F, cone_dim, depth, ctx: Ctx, force_recurse=False):
     """Orbit representatives under G_F of the extreme rays of {AT d <= 0} (a pointed cone of dimension cone_dim),
     as {key: ((D, nums) on the section a·d = -1, orbit size)}."""
@@ -317,7 +327,7 @@ def solve_cone(n, AT, F, cone_dim, depth, ctx: Ctx, force_recurse=False):
     ctx.stats.max_depth = max(ctx.stats.max_depth, depth)
     rows = len(AT)
     if not force_recurse:
-        excess = rows - cone_dim
+        excess = rows - 2 * _n_lines(AT) - cone_dim       # each ±row pair (a line of the dual) cuts one dimension
         if excess <= CDD_EXCESS:
             ctx.stats.calls["cdd"] += 1
             return _rays_to_orbits(n, AT, F, cone_rays_cdd(AT))
@@ -328,6 +338,11 @@ def solve_cone(n, AT, F, cone_dim, depth, ctx: Ctx, force_recurse=False):
             return _rays_to_orbits(n, AT, F, rays)
         except NmzTimeout:
             ctx.stats.calls["nmz_timeout"] += 1
+        except RuntimeError:
+            # Normaliz 3.11.1 can exit with code 3 after "Cone not pointed. Restarting computation" (seen on a
+            # simplicial cone given with 4 ±row pairs). cdd is exact; use it instead.
+            ctx.stats.calls["nmz_fail_cdd"] = ctx.stats.calls.get("nmz_fail_cdd", 0) + 1
+            return _rays_to_orbits(n, AT, F, cone_rays_cdd(AT))
     ctx.stats.calls["rec"] += 1
     return decompose(n, AT, F, cone_dim, depth, ctx)
 
@@ -345,12 +360,18 @@ def expand(n, P: HPoly, F, p: Point, cone_dim, depth, ctx: Ctx):
     return out
 
 
-def _start(P):
+def _start(P, tries: int = 1):
+    """An exact LP vertex; with tries > 1, the least degenerate (fewest tight rows) of that many random LP vertices,
+    so that the first expansions are cheap and the queue fills before the degenerate orbits are reached."""
     rng = np.random.default_rng(12345)
-    start = P.lp_vertex(rng.integers(-1000, 1000, size=P.m).tolist())
-    if not P.is_vertex(*start):
+    best = None
+    for _ in range(tries):
+        q = P.lp_vertex(rng.integers(-1000, 1000, size=P.m).tolist())
+        if best is None or len(P.tight(*q)) < len(P.tight(*best)):
+            best = q
+    if not P.is_vertex(*best):
         raise RuntimeError("LP start is not a vertex")
-    return start
+    return best
 
 
 def decompose(n, AT, F, cone_dim, depth, ctx: Ctx):
@@ -403,9 +424,11 @@ def _wtask(key, p, threads, tag):
     return key, [[q[0], list(q[1])] for q in nb], ctx.stats.as_dict(), time.time() - t0
 
 
-def decompose_parallel(n, AT, F, cone_dim, workers, ckpt: Path, log=print):
+def decompose_parallel(n, AT, F, cone_dim, workers, ckpt: Path, log=print, deadline=None, mem_floor_gb=6.0):
     """Top-level adjacency decomposition with a process pool. Checkpoint: one JSONL line per expanded orbit
-    {key, p, nbrs, stats, secs}; resumes from it. Returns ({key: (p, size)}, Stats, info)."""
+    {key, p, nbrs, stats, secs}; resumes from it. Returns ({key: (p, size)}, Stats, info).
+    Raises Stopped (after stopping the workers; resumable from the checkpoint) when time.time() passes `deadline`,
+    when the file ckpt.with_suffix('.halt') exists, or when available RAM drops below mem_floor_gb."""
     import heapq
     import multiprocessing as mp
     P = section(AT)
@@ -423,7 +446,7 @@ def decompose_parallel(n, AT, F, cone_dim, workers, ckpt: Path, log=print):
             rows[k] = len(P.tight(*q))
         return k
 
-    add(_start(P))
+    add(_start(P, tries=16))
     if ckpt.exists():
         for ln in ckpt.read_text(encoding="utf-8").splitlines():
             try:
@@ -459,6 +482,16 @@ def decompose_parallel(n, AT, F, cone_dim, workers, ckpt: Path, log=print):
                 if not inflight:
                     break
                 time.sleep(0.2)
+                if deadline is not None and time.time() > deadline:
+                    log("deadline reached: stopping (resumable)")
+                    raise Stopped()
+                if ckpt.with_suffix(".halt").exists():
+                    log("halt file found: stopping (resumable)")
+                    raise Stopped()
+                import psutil
+                if psutil.virtual_memory().available < mem_floor_gb * 2 ** 30:
+                    log(f"available RAM below {mem_floor_gb} GB: stopping (resumable)")
+                    raise Stopped()
                 for k in [k for k, ar in inflight.items() if ar.ready()]:
                     key, nbrs, st, secs = inflight.pop(k).get()
                     if nbrs is None:
