@@ -1,5 +1,7 @@
 # Roadmap: an unconditional proof that Deza's m_9 vertex list is complete
 
+> **2026-11-23: project paused by decision; work returns to Phase 9.** The enumerations are too large to finish the m_9 proof in reasonable time. Where things stand: m_8 is complete (cap lemma); CUT_5–7 closed by the facet walk; CUT_8 146/147 classes closed, triangle class 77,566 of 77,595 ridge orbits expanded (29 degenerate orbits left, 12 of them not skippable by the star criterion; checkpoint `checkpoints/phase10/ridge_adm_n8_c146.jsonl`, 0.4 GB, resume with `cut_facet_walk.py --n 8 --workers 16 --adm-roots 90`). Extrapolated CUT_9 triangle: 10^7–10^8 ridge orbits plus a tail of CUT_8-triangle-sized subproblems; weeks at best. A2 and B′3 not started.
+
 Status legend: ✅ done · 🟡 running · ⏸ waiting for OK · ⬜ not started · ❌ failed / abandoned
 
 Last updated: 2026-11-23
@@ -177,3 +179,4 @@ needs all vertices of R(H*), the polytope cut out by H*, with CUT_9 ⊆ R ⊆ m_
 - 2026-11-23: B0 done (literature). Track B switched from the sandwich plan to B′ (facet-side recursive adjacency decomposition, the 2015 CUT_8 method).
 - 2026-11-23: B′2 at CUT_8: 146/147 classes expanded (class 145, 80 roots: 2,180,786 ridges, 37,012 orbits, 633 s), 0 unlisted, negative control passes, all adjacent to a triangle. The triangle class (96 roots) timed out at 1 h in direct Normaliz, so it needs recursive ridge enumeration. A2 marked not started (Track B first).
 - 2026-11-23: recursive ridge enumeration validated (n = 6, 7, and CUT_8 class 124). Fixes in `adjdec`: excess counts ±row pairs once (a simplicial cone was sent to Normaliz, which crashed with exit 3 after its non-pointed restart); Normaliz failure falls back to cdd. CUT_8 triangle trial: the default LP start ridge has 80 of 96 roots and did not finish in 9 min; with the least degenerate of 16 starts, 28,998 ridge orbits expanded in 504 s (45,920 found, queue 16,921 and levelling off).
+- 2026-11-23: CUT_8 triangle run stopped at 77,566 / 77,595 orbits (the remaining ones take ~1 h+ each in recursion); star criterion added and validated. Project paused by decision; back to Phase 9.
