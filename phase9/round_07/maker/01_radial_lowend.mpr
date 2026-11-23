@@ -1,0 +1,31 @@
+;; Round 07 maker proposal 01: radial-lowend (group C: reached pieces blocked above 5 nodes, D = 10 at n = 8).
+;; In every switching frame z = r_S(x) and for every node j on a pair attaining maxc(z): put the new node at the radial distance
+;; alpha = maxc(z minus node j) / 2 from every node k != j (the Lambda^1 column of the restriction z|_{-j}), and at the
+;; LOW end of its feasible interval from j:  L_j = max_{k != j} |alpha - z_jk|  (needs L_j <= U_j,
+;; U_j = min_{k != j} min(alpha + z_jk, 2 - alpha - z_jk)); then switch back with S.
+;; Group C frontier analysis (fc.py): the unreached 6-node restrictions of the D = 10 targets sit at the midpoint of a
+;; fiber edge whose direction is a +-1 vector; in a switched frame their new column is constant except one entry, which
+;; is exactly this column. Only the new column is built, so x stays the restriction on its first nodes.
+;; G-equivariant (all switchings are enumerated inside the move). About 2^(n-1) * 1.6 candidate columns per input
+;; (j restricted to the nodes of a maximum pair of z: the j that matter, sim3.py radx vs radxm).
+(define (rl-alpha z j) (/ (maxc (restrict (all-but (size z) j) z)) 2))
+(define (rl-lo z j a)
+  (max-over ((k (range 0 (size z)))) (where (not (= k j)))
+    (max (- a (entry z j k)) (- (entry z j k) a))))
+(define (rl-hi z j a)
+  (min-over ((k (range 0 (size z)))) (where (not (= k j)))
+    (min (+ a (entry z j k)) (- 2 (+ a (entry z j k))))))
+(move radial-lowend (x) :grow 1
+  :doc "In each switching frame and for each node j of a maximum pair: new node at the radial distance maxc(x minus j)/2 from all nodes but j, and at the low end of its feasible interval from j (fiber-edge points of the group-C D = 10 targets)."
+  (concat-all
+    (for ((S (switchings (size x))))
+      (let ((z (switch S x)))
+        (let ((mx (maxc z)))
+          (concat-all
+            (for ((j (range 0 (size x))))
+              (where (exists ((c (range 0 (size x)))) (= (entry z j c) mx)))
+              (let ((a (rl-alpha z j)))
+                (let ((lo (rl-lo z j a)))
+                  (if (<= lo (rl-hi z j a))
+                      (list (switch S (block z (mset (mconst (size x) 1 a) j 0 lo) (const 1 0))))
+                      (list)))))))))))

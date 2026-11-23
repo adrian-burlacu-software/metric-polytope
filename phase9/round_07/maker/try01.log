@@ -1,0 +1,11 @@
+{
+ "radial-lowend": {
+  "kind": "move",
+  "grow": 1,
+  "probed_inputs": 20,
+  "outputs": 2565,
+  "feasible": 2565,
+  "vertices": 158,
+  "seconds": 1.82
+ }
+}

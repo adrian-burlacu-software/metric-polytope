@@ -1,0 +1,2 @@
+dup-thirdshift n 9 pairs tested 400 of 971 hits by Z size {6: 0, 5: 2, 8: 0, 7: 0} tested by size {6: 157, 5: 196, 8: 5, 7: 42} 20 s
+(dsl, sim) agreement {(False, False): 386, (False, True): 12, (True, False): 2}

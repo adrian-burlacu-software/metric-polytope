@@ -1,0 +1,11 @@
+{
+ "dup-thirdshift": {
+  "kind": "move",
+  "grow": 1,
+  "probed_inputs": 20,
+  "outputs": 3552,
+  "feasible": 3552,
+  "vertices": 1440,
+  "seconds": 4.95
+ }
+}

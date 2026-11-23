@@ -1,0 +1,8 @@
+round 1 adds 248 reached 8368 time 33
+round 2 adds 79 reached 9581 time 42
+round 3 adds 18 reached 9776 time 43
+round 4 adds 0 reached 9805 time 45
+['radx'] ['1/2'] ['0', '1/2', '1'] gained 1437 [(4, 2), (5, 53), (6, 397), (7, 676), (8, 279), (9, 30)] targets 48 [(8, 18), (9, 30)] time 45
+ n 8 target D [(6, 2), (10, 16)]
+ n 9 target D [(10, 16), (12, 10), (14, 1), (18, 2), (20, 1)]
+cols per input by input size {3: (3, 19, 15), 4: (3, 50, 42), 5: (35, 138, 107), 6: (73, 321, 263), 7: (384, 728, 629)}

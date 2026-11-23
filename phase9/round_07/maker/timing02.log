@@ -1,0 +1,4 @@
+dup-thirdshift n 5 mode G outputs/input 120 sec/input 0.05
+dup-thirdshift n 6 mode G outputs/input 180 sec/input 0.1
+dup-thirdshift n 7 mode G outputs/input 252 sec/input 0.21
+dup-thirdshift n 8 mode G outputs/input 336 sec/input 0.26
