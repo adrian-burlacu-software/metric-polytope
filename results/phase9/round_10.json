@@ -1,0 +1,140 @@
+{
+  "budget_per_rule": 300.0,
+  "candidates": [],
+  "code_version": "c7c27e255b7e3cfe",
+  "git": "222670d974bd666fb7fb754d6d10a0f59a2668ab",
+  "proposals": [
+    {
+      "coverage": {
+        "8": {
+          "by_denominator": {
+            "13": 14
+          },
+          "distinct_denominators": 1,
+          "gained": 14,
+          "share_of_unreached": 0.1414
+        },
+        "9": {
+          "by_denominator": {
+            "13": 11
+          },
+          "distinct_denominators": 1,
+          "gained": 11,
+          "share_of_unreached": 0.0187
+        },
+        "verdict": "moderate"
+      },
+      "file": "phase9/round_10/maker/01_bipartite_glue.mpr",
+      "generated_ns": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "generation_seconds": 918.3,
+      "generation_seconds_per_n": {
+        "3": 0.2,
+        "4": 0.2,
+        "5": 0.3,
+        "6": 0.2,
+        "7": 1.3,
+        "8": 267.2
+      },
+      "generation_timed_out_at_n": 9,
+      "kind": "generative (new base pieces)",
+      "name": "gen-bipartite-glue",
+      "new_base_orbits": 14,
+      "nodes_gained": 26,
+      "non_vertex_points_discarded": 35550,
+      "orbits": 14,
+      "points": 168,
+      "probe_seconds": 0.25,
+      "reason": "Vertices of the one-node glue fiber of (4/(2n-3)) d(K_{2,n-5}) (glued at a 2-side node) and (5/(2n-3)) d(C_4).",
+      "seconds": 1002.9,
+      "status": "ACCEPTED (judged on n <= 8; generation at n = 9 did not finish within the 900 s allowance)",
+      "targets_gained": {
+        "8": 14,
+        "9": 11
+      },
+      "targets_gained_ids": {
+        "8": [
+          383,
+          385,
+          406,
+          407,
+          497,
+          498,
+          512,
+          513,
+          514,
+          515,
+          517,
+          519,
+          522,
+          524
+        ],
+        "9": [
+          149139,
+          509058,
+          627819,
+          748856,
+          760786,
+          760808,
+          761598,
+          776430,
+          777009,
+          806766,
+          811582
+        ]
+      },
+      "timed_out": false,
+      "track": "main"
+    }
+  ],
+  "round": 10,
+  "round_cap": 1800,
+  "seconds": 1003.7,
+  "smallest_counterexamples": {},
+  "unreached_after": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 448,
+      "targets": 533,
+      "unreached": 85,
+      "unreached_fraction": 0.15947467166979362
+    },
+    "9": {
+      "reached": 422,
+      "targets": 1000,
+      "unreached": 578,
+      "unreached_fraction": 0.578
+    }
+  },
+  "unreached_before": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 434,
+      "targets": 533,
+      "unreached": 99,
+      "unreached_fraction": 0.18574108818011256
+    },
+    "9": {
+      "reached": 411,
+      "targets": 1000,
+      "unreached": 589,
+      "unreached_fraction": 0.589
+    }
+  }
+}
