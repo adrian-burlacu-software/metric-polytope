@@ -1,0 +1,65 @@
+{
+  "50": {
+    "classes": [
+      {
+        "class": 75,
+        "members_at_zero": 4368,
+        "roots": 52
+      },
+      {
+        "class": 115,
+        "members_at_zero": 448,
+        "roots": 56
+      },
+      {
+        "class": 125,
+        "members_at_zero": 2520,
+        "roots": 60
+      },
+      {
+        "class": 145,
+        "members_at_zero": 280,
+        "roots": 70
+      },
+      {
+        "class": 146,
+        "members_at_zero": 560,
+        "roots": 80
+      },
+      {
+        "class": 147,
+        "members_at_zero": 168,
+        "roots": 96
+      }
+    ],
+    "inequalities": 8344,
+    "min_roots": 50,
+    "normaliz_s": 185.4,
+    "seconds": 185.4,
+    "status": "memory cap exceeded"
+  },
+  "60": {
+    "classes": [
+      {
+        "class": 145,
+        "members_at_zero": 280,
+        "roots": 70
+      },
+      {
+        "class": 146,
+        "members_at_zero": 560,
+        "roots": 80
+      },
+      {
+        "class": 147,
+        "members_at_zero": 168,
+        "roots": 96
+      }
+    ],
+    "inequalities": 1008,
+    "min_roots": 60,
+    "normaliz_s": 1205.2,
+    "seconds": 1205.2,
+    "status": "time budget exceeded"
+  }
+}

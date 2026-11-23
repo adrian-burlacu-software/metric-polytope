@@ -1,0 +1,48 @@
+{
+  "0": {
+    "all_cut_rays_present": true,
+    "classes": [
+      {
+        "class": 1,
+        "members_at_zero": 90,
+        "roots": 15
+      },
+      {
+        "class": 2,
+        "members_at_zero": 60,
+        "roots": 20
+      },
+      {
+        "class": 3,
+        "members_at_zero": 60,
+        "roots": 24
+      }
+    ],
+    "inequalities": 210,
+    "min_roots": 0,
+    "normaliz_s": 127.1,
+    "orbits": 3,
+    "rays": 31,
+    "seconds": 127.1,
+    "status": "done",
+    "valid": true
+  },
+  "999": {
+    "all_cut_rays_present": true,
+    "classes": [
+      {
+        "class": 3,
+        "members_at_zero": 60,
+        "roots": 24
+      }
+    ],
+    "inequalities": 60,
+    "min_roots": 999,
+    "normaliz_s": 0.1,
+    "orbits": 8,
+    "rays": 296,
+    "seconds": 0.1,
+    "status": "done",
+    "valid": true
+  }
+}

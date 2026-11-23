@@ -268,7 +268,11 @@ def _nmz_run(AT, tag, threads, budget, ctx):
         outf.unlink(missing_ok=True)
         raise
     if pr.returncode != 0:
-        raise RuntimeError(f"normaliz failed: {pr.stderr.read()[-500:]}")
+        keep = NMZ_WORK / f"failed_{tag}.in"                          # keep the input for diagnosis (small)
+        inp.replace(keep)
+        outf.unlink(missing_ok=True)
+        raise RuntimeError(f"normaliz failed: exit {pr.returncode} ({hex(pr.returncode & 0xFFFFFFFF)}), "
+                           f"{len(AT)} rows x {AT.shape[1]}, input kept at {keep}: {pr.stderr.read()[-500:]}")
     lines = outf.read_text().splitlines()
     inp.unlink(missing_ok=True)
     outf.unlink(missing_ok=True)

@@ -1,0 +1,84 @@
+{
+  "0": {
+    "classes": [
+      {
+        "class": 1,
+        "members_at_zero": 2205,
+        "roots": 21
+      },
+      {
+        "class": 2,
+        "members_at_zero": 546,
+        "roots": 26
+      },
+      {
+        "class": 3,
+        "members_at_zero": 147,
+        "roots": 21
+      },
+      {
+        "class": 4,
+        "members_at_zero": 8820,
+        "roots": 21
+      },
+      {
+        "class": 5,
+        "members_at_zero": 630,
+        "roots": 30
+      },
+      {
+        "class": 6,
+        "members_at_zero": 13230,
+        "roots": 21
+      },
+      {
+        "class": 7,
+        "members_at_zero": 5292,
+        "roots": 21
+      },
+      {
+        "class": 8,
+        "members_at_zero": 7560,
+        "roots": 21
+      },
+      {
+        "class": 9,
+        "members_at_zero": 35,
+        "roots": 35
+      },
+      {
+        "class": 10,
+        "members_at_zero": 210,
+        "roots": 40
+      },
+      {
+        "class": 11,
+        "members_at_zero": 105,
+        "roots": 48
+      }
+    ],
+    "inequalities": 38780,
+    "min_roots": 0,
+    "normaliz_s": 303.9,
+    "seconds": 303.9,
+    "status": "time budget exceeded"
+  },
+  "999": {
+    "all_cut_rays_present": true,
+    "classes": [
+      {
+        "class": 11,
+        "members_at_zero": 105,
+        "roots": 48
+      }
+    ],
+    "inequalities": 105,
+    "min_roots": 999,
+    "normaliz_s": 4.9,
+    "orbits": 46,
+    "rays": 55226,
+    "seconds": 7.3,
+    "status": "done",
+    "valid": true
+  }
+}

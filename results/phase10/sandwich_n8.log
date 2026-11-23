@@ -1,0 +1,4 @@
+[n=8 roots>60] 3 classes, 1008 inequalities at the zero cut (4 s)
+{"min_roots": 60, "inequalities": 1008, "status": "time budget exceeded", "normaliz_s": 1205.2, "seconds": 1205.2}
+[n=8 roots>50] 6 classes, 8344 inequalities at the zero cut (11 s)
+{"min_roots": 50, "inequalities": 8344, "status": "memory cap exceeded", "normaliz_s": 185.4, "seconds": 185.4}

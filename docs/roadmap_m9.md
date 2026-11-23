@@ -106,7 +106,7 @@ rays) than MET_9, which is too big to enumerate.
 | Step | What | Status | Evidence / estimate |
 |---|---|---|---|
 | B0 | Literature: exactly where Deza and Dutour Sikirić stopped for CUT_9, which classes are unfinished, and why. Read the open copies (arXiv:math/0201110, arXiv:1501.05407, the SMAPO pages). If a source is paywalled, say so. | ⬜ | Under 1 h of reading. Could kill the plan or sharpen H*. |
-| B1 | **Gate E1 (m_8):** the tangent cone of R at the zero cut, ray count for growing H*. Does it fall steeply from MET_8 (119,269,588) towards the cut cone (127)? | 🟡 | `scripts/phase10/sandwich_cone.py`, validated on MET_6 (296), MET_7 (55,226) and the m_6 cut cone (31). Running: more than 60 roots (1,008 inequalities) and more than 50 roots (8,344), 20 min cap each. |
+| B1 | **Gate E1 (m_8):** the tangent cone of R at the zero cut, ray count for growing H*. Does it fall steeply from MET_8 (119,269,588) towards the cut cone (127)? | ❌ inconclusive, leaning negative | Direct Normaliz: more than 60 roots (1,008 inequalities) hit the 20 min cap; more than 50 roots (8,344) hit the 40 GB cap in 3 min. The symmetry walk (adjdec) cannot do even the m_7 cut cone (63 rays from 38,780 inequalities) in 5 min, because the cut rays of these cones are extremely degenerate. Finding: enlarging H* moves the degeneracy from the zero cut onto the cut rays of R's cone. As H* grows the cone tends to the cut cone, whose rays are as hard as MET's. `results/phase10/sandwich_cone_n8.json`. |
 | B2 | **Gate E2 (m_9):** the same cone at m_9. More than 120 roots gives 2,898 inequalities; more than 80 roots gives 1.43 million, which needs symmetry reduction (adjdec with group S_9). | ⬜ | Depends on B1. Each run capped at 20–30 min and 40 GB. |
 | B3 | Choose H*, trading the number of degenerate facet classes left unexpanded against the size of R's zero-cut cone. | ⬜ | Depends on B1, B2. |
 | B4 | Facet-side closure walk over every class not in H*: ridges of each facet (the facets of the 35-dimensional polytope spanned by its roots), rotation about each ridge over the 256 cuts, canonical form under switchings ⋊ S_9, membership in the SMAPO list. Validate on CUT_6, CUT_7, CUT_8 (known complete). | ⬜ | To build. Cost unknown until timed on a sample; near-simplicial classes should be cheap. |
@@ -137,3 +137,4 @@ list is complete with no assumption.
 
 - 2026-11-22: A1 done (fed26f9).
 - 2026-11-23: hard-orbit table (9df8e48); sandwich-cone tool validated at n = 6, 7; B1 started.
+- 2026-11-23: B1 inconclusive, leaning negative. Neither direct Normaliz nor the symmetry walk can compute R's zero-cut cone at m_8 within the caps, and the walk fails even on the m_7 cut cone. Track B is paused pending a decision; options are in the next session note.
