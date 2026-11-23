@@ -25,6 +25,7 @@ import time
 from pathlib import Path
 
 import numpy as np
+import psutil
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
@@ -94,6 +95,9 @@ def main():
     ap.add_argument("--workers", type=int, default=19)
     ap.add_argument("--timeout", type=float, default=600)
     ap.add_argument("--limit", type=int, default=0, help="only the first K rows (testing)")
+    ap.add_argument("--defer-incidence", type=int, default=80,
+                    help="n = 9: orbits with at least this many tight inequalities are not walked here but flagged "
+                         "'deferred' for the hard-orbit step (A3); 0 = walk everything")
     ap.add_argument("--keep-partials", dest="prune_partials", action="store_false",
                     help="keep per-orbit neighbour detail after each batch (default: delete it; ~10-30 GB at n = 9)")
     args = ap.parse_args()
@@ -108,6 +112,12 @@ def main():
     listset = set(lh)
     print(f"[closure n={n}] {len(de)} listed orbits, {len(listset)} distinct keys, checking {N}  ({time.time() - t0:.0f}s)",
           flush=True)
+    deferred = {}
+    if n == 9 and args.defer_incidence:
+        inc = np.load(ROOT / "data/deza/orbits9/orbits9.npz")["incidence"]
+        deferred = {int(r): int(inc[r]) for r in np.nonzero(inc[:N] >= args.defer_incidence)[0]}
+        print(f"[closure n={n}] {len(deferred)} orbits with incidence >= {args.defer_incidence} deferred to the "
+              f"hard-orbit step", flush=True)
     batches = [(b, list(range(b * BATCH, min((b + 1) * BATCH, N)))) for b in range((N + BATCH - 1) // BATCH)]
     for b, rows in batches:
         path = ck / f"batch_{b:05d}.json"
@@ -125,11 +135,15 @@ def main():
                 if line.strip():
                     x = json.loads(line)
                     res[x["row"]] = x
+        for r in rows:
+            if r not in res and r in deferred:
+                res[r] = {"row": r, "flag": f"deferred: incidence {deferred[r]} >= {args.defer_incidence}",
+                          "tight": deferred[r]}
         todo = [r for r in rows if r not in res]
         if todo:
             with mp.Pool(args.workers) as pool, open(part, "a", encoding="utf-8", newline="\n") as pf:
                 asy = {r: pool.apply_async(_walk, ((n, r, int(de[r]), [int(v) for v in co[r]]),)) for r in todo}
-                last = time.time()
+                last = last_mem = time.time()
                 while asy:
                     done_now = [r for r, a in asy.items() if a.ready()]
                     for r in done_now:
@@ -150,6 +164,19 @@ def main():
                         asy.clear()
                     if not done_now:
                         time.sleep(0.5)
+                    if time.time() - last > 2 * args.timeout:
+                        pool.terminate()
+                        raise SystemExit(f"stalled: nothing finished for {2 * args.timeout:.0f} s in batch {b}; "
+                                         f"stopping (resumable). Pending rows: {sorted(asy)[:30]}")
+                    if time.time() - last_mem > 10:
+                        last_mem = time.time()
+                        avail = psutil.virtual_memory().available / 2 ** 30
+                        worst = max((resguard.private_gb(c.pid) for c in psutil.Process().children(recursive=True)),
+                                    default=0.0)
+                        if avail < 8 or worst > 12:
+                            pool.terminate()
+                            raise SystemExit(f"memory guard: {avail:.1f} GB available, largest worker {worst:.1f} GB; "
+                                             f"stopping (resumable). Pending rows: {sorted(asy)[:30]}")
                     if not resguard.disk_ok():
                         pool.terminate()
                         resguard.require_disk()                 # raises LowDisk; finished orbits are in the partial

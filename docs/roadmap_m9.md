@@ -12,7 +12,7 @@ Deza's own page says "probably complete": adjacency was computed for all orbits 
 The proof has two tracks:
 
 - **Track A** proves the list complete *assuming* the SMAPO list of CUT_9 facets is complete.
-- **Track B** tries to prove that assumption.
+- **Track B** tries to prove that assumption (plan B′: facet-side recursive adjacency decomposition).
 
 CUT_9 facet completeness is open in the literature: SMAPO calls the list "possibly complete".
 Track A alone already goes beyond what has been published.
@@ -37,14 +37,14 @@ The argument is the cap lemma (see `scripts/phase10/cap_lemma_lp.py`, docstring)
 | Step | What | Status | Evidence / estimate |
 |---|---|---|---|
 | A1 | One exact LP per CUT_9 facet class (164,506 classes, sizes sum to 12,246,651,158,320). Every optimum is an exact vertex and is in the list. | ✅ | `results/phase10/cap_lemma_n9.json`, commit fed26f9. 0 unlisted optima, 2,477 distinct optimum orbits, all dual certificates exact. |
-| A2 | Closure walk: expand every listed non-cut orbit (1,056,367 rows) and check every neighbour is listed. | ⏸ | `scripts/phase10/closure_check.py --n 9`. About 40 h on 19 workers, under 1 GB disk (per-batch detail is pruned; stops at under 15 GB free). |
-| A3 | Hard orbits: the ones A2 flags (no result within 600 s). Expected to be about the 20 most degenerate (table below). Each tangent cone is enumerated with Normaliz (40 GB cap) or the recursive decomposition (`metricpoly/adjdec.py`). | ⬜ | Table done: `results/phase10/hard_orbits_n9.json`, commit 9df8e48. Cone sizes unknown; somewhere in 10^5–10^9 rays is plausible. Capped trials first. |
+| A2 | Closure walk: expand every listed orbit with incidence < 80 (1,056,311 rows) and check every neighbour is listed. The 56 orbits with incidence ≥ 80 are deferred to A3; walking them in-process could hang all workers. | 🟡 testing | `scripts/phase10/closure_check.py --n 9` (deferral, memory guard: RAM < 8 GB or a worker > 12 GB; stall guard: 20 min). 200-orbit test on the hardest region running 2026-11-23. Full run about 40 h on 18 workers, under 1 GB disk. |
+| A3 | Hard orbits: the 56 deferred orbits (incidence ≥ 80, including the cut) plus any A2 flags. Each tangent cone is enumerated with Normaliz (40 GB cap) or the recursive decomposition (`metricpoly/adjdec.py`). The cut orbit is covered by the cap lemma (A1) and needs no expansion. | ⬜ | Table: `results/phase10/hard_orbits_n9.json`, commit 9df8e48. Cone sizes unknown; 10^5–10^9 rays plausible. Capped trials first. |
 
 A3 cannot be skipped.
 The cap lemma lets us leave unexpanded only the vertices whose convex hull has a known facet list, and that is the cuts.
 Putting a hard orbit into H would need the facets of conv(cuts ∪ that orbit), which nobody has.
 
-**Track A is done when:** A2 reports 0 misses, and every orbit A2 flags is expanded in A3 with 0 misses.
+**Track A is done when:** A2 reports 0 misses, and every deferred or flagged non-cut orbit is expanded in A3 with 0 misses.
 **Result:** "Deza's m_9 list is complete if the SMAPO CUT_9 facet list is complete."
 
 ### The most degenerate listed orbits (candidates for Deza's 20)
@@ -74,56 +74,92 @@ Calibration from m_8:
 
 ---
 
-## Track B: is the CUT_9 facet list complete? (the "sandwich" attack)
+## Track B: is the CUT_9 facet list complete?
 
-### The idea
+**Current plan: B′, the facet-side recursive adjacency decomposition.** This is the method Deza and Dutour Sikirić used
+to complete CUT_8 in 2015, scaled to n = 9. Adopted 2026-11-23, replacing the "sandwich" plan, whose gate failed (see
+the history below).
 
-Walk the facets of CUT_9 the same way Track A walks the vertices of m_9: rotate each facet about each ridge to find its
-neighbouring facet and check the neighbour is listed.
+### The argument
 
-- Most classes are cheap. 45,233 of the 164,506 are simplices (exactly 36 roots), and 161,291 have at most 45 roots.
-- A few classes are very degenerate. The triangle class has 192 roots and 18 classes have more than 80. These are the
-  facet-side counterpart of the hard vertex orbits.
+The facets of CUT_9 form a connected graph: two facets are adjacent when they share a ridge (a 34-dimensional face).
+Take the 164,506 listed classes. If every listed class is **expanded**, meaning every neighbour of its representative
+is again listed, then the list is complete. Symmetry carries this from the representative to the whole class.
 
-To avoid expanding the degenerate classes H*, use the cap lemma on the polar polytope:
+**Expanding a facet F.** F's neighbours correspond to its ridges, and its ridges are the facets of the 35-dimensional
+polytope F′ = conv(roots of F), where the roots are the cuts on F. So:
+1. Enumerate the facets of F′ up to Stab(F).
+2. For each ridge, rotate F about it (an exact gift-wrapping step over the 256 cuts) to get the neighbouring facet G.
+3. Check that G is valid and is a facet (its tight cuts have affine rank 35).
+4. Canonicalise G under switchings ⋊ S_9: switch it to the zero cut by each of its roots, take the S_9 canonical form
+   with bliss, and keep the minimum.
+5. Look G up in the SMAPO list.
 
-- Let R = R(H*) be the polytope cut out by the inequalities in H*. Since H* includes the triangle class,
-  CUT_9 ⊆ R ⊆ m_9.
-- For each vertex v of R, solve one LP: find the CUT_9 facet most violated by v. Polar about z = (½, …, ½), a facet
-  a·x ≤ b becomes y = a / (b − a·z), and "v violates the facet" becomes y·(v − z) > 1.
-- If every such optimum is a listed facet, and every listed facet outside H* has all its neighbours listed, then the
-  facet list is complete.
-- Coverage: a facet f of CUT_9 not in H* must be violated by some vertex of R. Otherwise f would be valid on R and
-  tight on a 35-dimensional face, so f would be a facet of R. Every facet of R is in H*, so f would be in H*.
+**Cheap classes.** If F has exactly 36 roots, F′ is a simplex: 36 ridges, no enumeration needed. That is 45,233
+classes. Classes with up to about 45 roots have small F′, which cdd or Normaliz handle instantly; 161,291 classes have
+at most 45 roots.
 
-**Why this is not circular.** With H* = the triangles alone, R = m_9 and we are back to needing Track A, so the
-argument goes round in a circle. With a larger H*, R is a different polytope that sits between CUT_9 and m_9 and is
-smaller than m_9. The bet is that its hardest vertex, the zero cut, has a tangent cone much nearer the cut cone (255
-rays) than MET_9, which is too big to enumerate.
+**Degenerate classes.** These are the classes with many roots: the triangle class has 192, 18 classes have more than 80
+and 97 have more than 60. For them, enumerating the facets of F′ is itself a recursive adjacency decomposition under
+Stab(F). Inside a sub-decomposition, an unexpanded orbit may be skipped by Theorem 1 of arXiv:1501.05407 (from
+Balinski) applied at *that* level: either it has at most (dim − 1) members, or all its members contain a common
+vertex. This is exactly how CUT_8 was finished: 33 orbits could not be skipped at the top level, but could be at
+deeper levels. At the top level no skip is assumed. Every class gets expanded, directly or recursively.
+
+**The crux is the triangle class.** Its F′ has 192 cuts in dimension 35. There is a conjecture that every facet of
+CUT_n is adjacent to a triangle facet; it is checked for n ≤ 8. If it holds, F′'s facets reach essentially every
+class, so expanding the triangle is nearly the whole problem one dimension down. On the other hand the group Stab(F)
+is large, and the deeper-level skips apply there.
+
+**What does not work.** Leaving the triangle class unexpanded and covering it with the polar cap lemma would require
+m_9's vertex list, which is Track A. That is circular, so it is not part of this plan.
 
 ### Steps
 
 | Step | What | Status | Evidence / estimate |
 |---|---|---|---|
-| B0 | Literature: exactly where Deza and Dutour Sikirić stopped for CUT_9, which classes are unfinished, and why. Read the open copies (arXiv:math/0201110, arXiv:1501.05407, the SMAPO pages). If a source is paywalled, say so. | ⬜ | Under 1 h of reading. Could kill the plan or sharpen H*. |
-| B1 | **Gate E1 (m_8):** the tangent cone of R at the zero cut, ray count for growing H*. Does it fall steeply from MET_8 (119,269,588) towards the cut cone (127)? | ❌ inconclusive, leaning negative | Direct Normaliz: more than 60 roots (1,008 inequalities) hit the 20 min cap; more than 50 roots (8,344) hit the 40 GB cap in 3 min. The symmetry walk (adjdec) cannot do even the m_7 cut cone (63 rays from 38,780 inequalities) in 5 min, because the cut rays of these cones are extremely degenerate. Finding: enlarging H* moves the degeneracy from the zero cut onto the cut rays of R's cone. As H* grows the cone tends to the cut cone, whose rays are as hard as MET's. `results/phase10/sandwich_cone_n8.json`. |
-| B2 | **Gate E2 (m_9):** the same cone at m_9. More than 120 roots gives 2,898 inequalities; more than 80 roots gives 1.43 million, which needs symmetry reduction (adjdec with group S_9). | ⬜ | Depends on B1. Each run capped at 20–30 min and 40 GB. |
-| B3 | Choose H*, trading the number of degenerate facet classes left unexpanded against the size of R's zero-cut cone. | ⬜ | Depends on B1, B2. |
-| B4 | Facet-side closure walk over every class not in H*: ridges of each facet (the facets of the 35-dimensional polytope spanned by its roots), rotation about each ridge over the 256 cuts, canonical form under switchings ⋊ S_9, membership in the SMAPO list. Validate on CUT_6, CUT_7, CUT_8 (known complete). | ⬜ | To build. Cost unknown until timed on a sample; near-simplicial classes should be cheap. |
-| B5 | Enumerate **all** vertex orbits of R(H*): an adjacency-decomposition walk from a start vertex, with the zero cut's cone (from B2) as the hardest piece. No list exists to check against, so this is a genuine enumeration. | ⬜ | Unknown. **The riskiest step.** R may have more vertices than m_9, or hard vertices of its own. |
-| B6 | Dual cap LPs: one exact LP per vertex orbit of R over the polar of CUT_9 (256 constraints). Each optimum must be a listed facet class or the cap must be empty, with exact dual certificates. | ⬜ | Cheap per LP; the count depends on B5. |
-| B7 | End-to-end validation at n = 7 and n = 8, where the facet lists are known complete. Include a negative control: drop a class and confirm the test fails. | ⬜ | Before trusting B4–B6 at n = 9. |
+| B0 | Literature: where Deza and Dutour Sikirić stopped for CUT_9, and why. | ✅ | See "B0 findings" below. |
+| B′1 | Tools: ridge enumeration for a facet (F′ = conv(roots), exact rank checks, cdd/Normaliz under the memory cap); exact rotation about a ridge; facet canonical form under switchings ⋊ S_9; recursive decomposition under Stab(F) with Theorem 1 skips at deeper levels. | ⬜ | Builds on `metricpoly/adjdec.py`. |
+| B′2 | Validation: reproduce completeness of CUT_6 (3 classes), CUT_7 (11) and CUT_8 (147, as in 2015), with a negative control (drop a class, the walk must find it). Also check the triangle-adjacency conjecture at n ≤ 8. | ⬜ | Before anything at n = 9. |
+| B′3 | Timing sample at n = 9: about 1,000 classes stratified by roots, giving a cost estimate for the whole walk. | ⬜ | Short; the estimate is reported before the full run. |
+| B′4 | Walk all non-degenerate classes (roots ≤ T, with T chosen from B′3): about 164,000 classes. | ⬜ | Expected to be the bulk of the classes and the cheap part. |
+| B′5 | Degenerate classes except the triangle (roots > T, about 100 classes): recursive decomposition of each F′ under Stab(F). | ⬜ | Unknown; capped trials first, from the least degenerate up. |
+| B′6 | **Triangle class** (192 roots): recursive decomposition of F′ under its stabiliser, with deeper-level skips. | ⬜ | **The riskiest step**, possibly the whole difficulty of the problem. Capped trial first. |
+| B′7 | Assemble: every class expanded, 0 unlisted neighbours. Cross-check the triangle-adjacency conjecture at n = 9 for free. | ⬜ | |
 
-**Kill criteria** (stop Track B and report honestly if any of these happen):
-- B0 shows a known obstruction that applies to this scheme.
-- B1 and B2 show the zero-cut cone of R does not shrink usefully for any H* we can afford: it blows past the 40 GB
-  cap, or stays near MET size.
-- B5 finds R has unmanageably many vertex orbits, or hard vertices of its own that are as bad as m_9's.
+**Kill criteria** (stop and report honestly):
+- B′2 fails to reproduce CUT_8 completeness, so the tools are wrong.
+- B′6 cannot be done within the caps (40 GB per call, disk guard, time budgets agreed beforehand), even with recursion
+  and deeper-level skips.
 
-**Track B is done when:** B4 reports 0 misses on all classes outside H*, B5's enumeration of R is complete, B6 finds
-every optimum listed, and B7 passes.
-**Result:** "the SMAPO CUT_9 facet list (164,506 classes) is complete." Together with Track A this proves Deza's m_9
-list is complete with no assumption.
+**Track B is done when:** all 164,506 classes are expanded (directly or recursively, with skips only at deeper levels
+and only by Theorem 1), 0 unlisted neighbours are found, and B′2 has passed.
+**Result:** "the SMAPO CUT_9 facet list is complete", which is new. Together with Track A, Deza's m_9 list is complete
+with no assumption.
+
+### B0 findings (read 2026-11-23)
+
+- **arXiv:math/0201011** (Deza and Dutour, 2002; text extracted from the arXiv PDF). Section 1: "For the cones MET8, CUT8 ... the adjacency decomposition method gives a lower bound which is conjectured to be the exact value". Also: "For cones CUT9, MET9, ... the adjacency decomposition method gives only an estimate of the complexity." So CUT_9 was never closed by the method in that paper.
+- The same paper states a conjecture: "every facet of CUTn is adjacent to a triangle inequality facet".
+- **arXiv:1501.05407** (Deza and Dutour Sikirić, 2015; HTML v6, since the PDF text was unreadable). It completes CUT_8 / CUTP_8 by *recursive* adjacency decomposition. There is no K_9 / CUT_9 row; Table 1 stops at n ≤ 8.
+  - Skip criteria (Theorem 1, after Balinski): an unexpanded orbit may be skipped if its members number at most m − 1, or if they all contain a common vertex. The second works because removing the edges of one face leaves the graph connected.
+  - For CUT_8: "We had to treat the 33 remaining orbits of facets since we could not apply Theorem 1. However, we could apply the theorem in deeper levels of the recursive adjacency method."
+  - The triangle-adjacency conjecture is confirmed for n = 8.
+- **Consequences for Track B.**
+  1. The experts' route is the *facet-side* recursive adjacency decomposition (our B4, done for every class), with the common-vertex criterion applied *inside* the sub-decompositions of the degenerate facets. Nothing on record shows it was ever run to completion at n = 9.
+  2. The sandwich gate (B1) failed for a reason consistent with that: the hard part is the cut rays / degenerate facets themselves.
+  3. Revised plan, adopted as B′ above: B4′, the facet-side walk over **all** 164,506 classes. For each degenerate class F, enumerate F's ridges, which are the facets of the 35-dimensional polytope conv(roots of F) (192 cuts for the triangle class), by recursive decomposition under Stab(F), using the common-vertex skip at deeper levels as in 2015.
+  4. The conjecture "every facet is adjacent to a triangle facet" is a cheap sanity check on the walk.
+
+### History: the sandwich plan (abandoned 2026-11-23)
+
+The idea: leave the degenerate facet classes H* unexpanded and cover them with the cap lemma on the polar side. That
+needs all vertices of R(H*), the polytope cut out by H*, with CUT_9 ⊆ R ⊆ m_9.
+
+| Step | What | Status | Evidence |
+|---|---|---|---|
+| B1 | Gate E1 (m_8): ray count of R's tangent cone at the zero cut. | ❌ | Direct Normaliz: more than 60 roots (1,008 inequalities) hit the 20 min cap; more than 50 roots (8,344) hit the 40 GB cap. The symmetry walk cannot do even the m_7 cut cone (63 rays from 38,780 inequalities) in 5 min. Enlarging H* moves the degeneracy onto the cut rays. `results/phase10/sandwich_cone_n8.json`, commit e848445. |
+| B2–B6 | Gate at m_9, choose H*, walk, enumerate R, dual LPs. | — superseded | |
 
 ---
 
@@ -138,3 +174,4 @@ list is complete with no assumption.
 - 2026-11-22: A1 done (fed26f9).
 - 2026-11-23: hard-orbit table (9df8e48); sandwich-cone tool validated at n = 6, 7; B1 started.
 - 2026-11-23: B1 inconclusive, leaning negative. Neither direct Normaliz nor the symmetry walk can compute R's zero-cut cone at m_8 within the caps, and the walk fails even on the m_7 cut cone. Track B is paused pending a decision; options are in the next session note.
+- 2026-11-23: B0 done (literature). Track B switched from the sandwich plan to B′ (facet-side recursive adjacency decomposition, the 2015 CUT_8 method).
