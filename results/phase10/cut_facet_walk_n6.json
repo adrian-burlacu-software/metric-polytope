@@ -1,0 +1,23 @@
+{
+  "PASS_closed": true,
+  "all_adjacent_to_triangle": true,
+  "all_listed_are_facets": true,
+  "classes": 3,
+  "classes_adjacent_to_triangle": 3,
+  "deferred": [],
+  "distinct_keys": 3,
+  "errors": 0,
+  "expanded": 3,
+  "flagged": [],
+  "max_class_s": 0.204,
+  "n": 6,
+  "negative_control": {
+    "classes_reached_from_another_class": 3,
+    "every_single_drop_detected": true,
+    "undetectable_if_dropped": []
+  },
+  "sum_class_s": 0.4,
+  "triangle_class": 2,
+  "unlisted_neighbours": [],
+  "wall_s": 1.1
+}
