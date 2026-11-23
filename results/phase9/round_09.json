@@ -1,0 +1,61 @@
+{
+  "budget_per_rule": 300.0,
+  "candidates": [],
+  "code_version": "3bd368fc442fd8ce",
+  "git": "ecbc0d6c3eb87714941a6414745bde4a04d88d05",
+  "proposals": [
+    {
+      "file": "phase9/round_09/maker/01_bipartite_glue.mpr",
+      "kind": "generative (new base pieces)",
+      "name": "gen-bipartite-glue",
+      "probe_seconds": 0.23,
+      "reason": "Vertices of the one-node glue fiber of (4/(2n-3)) d(K_{2,n-5}) (glued at a 2-side node) and (5/(2n-3)) d(C_4).",
+      "status": "dropped: generation exceeded the 900 s generation allowance",
+      "track": "main"
+    }
+  ],
+  "round": 9,
+  "round_cap": 1800,
+  "seconds": 900.8,
+  "smallest_counterexamples": {},
+  "unreached_after": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 434,
+      "targets": 533,
+      "unreached": 99,
+      "unreached_fraction": 0.18574108818011256
+    },
+    "9": {
+      "reached": 411,
+      "targets": 1000,
+      "unreached": 589,
+      "unreached_fraction": 0.589
+    }
+  },
+  "unreached_before": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 434,
+      "targets": 533,
+      "unreached": 99,
+      "unreached_fraction": 0.18574108818011256
+    },
+    "9": {
+      "reached": 411,
+      "targets": 1000,
+      "unreached": 589,
+      "unreached_fraction": 0.589
+    }
+  }
+}
