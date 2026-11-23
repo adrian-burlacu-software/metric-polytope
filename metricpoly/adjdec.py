@@ -424,11 +424,20 @@ def _wtask(key, p, threads, tag):
     return key, [[q[0], list(q[1])] for q in nb], ctx.stats.as_dict(), time.time() - t0
 
 
-def decompose_parallel(n, AT, F, cone_dim, workers, ckpt: Path, log=print, deadline=None, mem_floor_gb=6.0):
+def decompose_parallel(n, AT, F, cone_dim, workers, ckpt: Path, log=print, deadline=None, mem_floor_gb=6.0,
+                       star=None):
     """Top-level adjacency decomposition with a process pool. Checkpoint: one JSONL line per expanded orbit
     {key, p, nbrs, stats, secs}; resumes from it. Returns ({key: (p, size)}, Stats, info).
     Raises Stopped (after stopping the workers; resumable from the checkpoint) when time.time() passes `deadline`,
-    when the file ckpt.with_suffix('.halt') exists, or when available RAM drops below mem_floor_gb."""
+    when the file ckpt.with_suffix('.halt') exists, or when available RAM drops below mem_floor_gb.
+
+    star: optional predicate on a vertex p of the section, true iff p lies on one fixed face Φ of the section (the same
+    face for all p; e.g. the facet dual to a G_F-fixed vertex of the primal). Vertices with star(p) false are expanded
+    first, and the walk stops once every unexpanded found vertex lies on Φ (Theorem 1 of Deza–Dutour Sikirić 2015,
+    second criterion). Proof: the vertices of a polytope off a face Φ induce a connected subgraph (monotone paths for
+    the functional supporting Φ), every vertex on Φ has a neighbour off Φ, so every unfound vertex is joined to an
+    expanded vertex off Φ by a path avoiding the unexpanded found vertices; the first unfound vertex on it would be a
+    neighbour of an expanded vertex, hence found."""
     import heapq
     import multiprocessing as mp
     P = section(AT)
@@ -460,7 +469,8 @@ def decompose_parallel(n, AT, F, cone_dim, workers, ckpt: Path, log=print, deadl
             done.add(r["key"])
             stats.merge(r["stats"])
     log(f"resume: {len(done)} expanded, {len(found)} found")
-    heap = [(rows[k], k) for k in found if k not in done]
+    onst = (lambda k: bool(star(found[k]))) if star else (lambda k: False)
+    heap = [(onst(k), rows[k], k) for k in found if k not in done]
     heapq.heapify(heap)
     inflight = {}
     t0 = time.time()
@@ -475,8 +485,15 @@ def decompose_parallel(n, AT, F, cone_dim, workers, ckpt: Path, log=print, deadl
                     skipped = [k for k in found if k not in done]
                     stats.calls["balinski_skips"] += len(skipped)
                     break
+                if star and done and not inflight and all(onst(k) for k in found if k not in done):
+                    skipped = [k for k in found if k not in done]
+                    stats.calls["star_skips"] = stats.calls.get("star_skips", 0) + len(skipped)
+                    log(f"star criterion: {len(skipped)} unexpanded orbits all on the fixed face; done")
+                    break
                 while heap and len(inflight) < workers:
-                    _, k = heapq.heappop(heap)
+                    if star and done and onst(heap[0][2]):
+                        break                                  # only face orbits left in the queue: never start them
+                    _, _, k = heapq.heappop(heap)
                     thr = max(1, workers // (len(inflight) + 1 + len(heap))) if len(heap) < workers else 1
                     inflight[k] = pool.apply_async(_wtask, (k, found[k], thr, f"w{len(done)}_{len(inflight)}"))
                 if not inflight:
@@ -502,7 +519,7 @@ def decompose_parallel(n, AT, F, cone_dim, workers, ckpt: Path, log=print, deadl
                         before = len(found)
                         kq = add(q)
                         if len(found) > before:
-                            heapq.heappush(heap, (rows[kq], kq))
+                            heapq.heappush(heap, (onst(kq), rows[kq], kq))
                             new += 1
                     done.add(key)
                     stats.merge(st)
@@ -517,6 +534,7 @@ def decompose_parallel(n, AT, F, cone_dim, workers, ckpt: Path, log=print, deadl
         pool.terminate()
         pool.join()
         stopfile.unlink(missing_ok=True)
-    info = {"expanded": len(done), "balinski_skipped_orbits": len(skipped),
+    info = {"expanded": len(done), "balinski_skipped_orbits": len(skipped), "skip_rule": (
+                "star" if stats.calls.get("star_skips") else "balinski" if skipped else None),
             "balinski_skipped_vertices": sum(size[k] for k in skipped), "section_dim": d_sec}
     return {k: (p, size[k]) for k, p in found.items()}, stats, info

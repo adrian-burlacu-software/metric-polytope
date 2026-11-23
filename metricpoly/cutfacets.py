@@ -221,14 +221,17 @@ def ridge_cone(n: int, a0) -> np.ndarray:
     return np.vstack([-P, l[None, :], -l[None, :]])
 
 
-def ridges_adm(n: int, a0, workers: int = 0, ckpt=None, log=print, threads: int = 1, deadline=None):
+def ridges_adm(n: int, a0, workers: int = 0, ckpt=None, log=print, threads: int = 1, deadline=None, star=True):
     """Orbit representatives (under Stab_{S_n}(a0)) of the ridges of a0·x <= 0, by recursive adjacency
     decomposition. Returns ([(h0, h, orbit size)], info)."""
     m = len(pairs(n))
     AT = ridge_cone(n, a0)
     F = [tuple(int(v) for v in a0)]
     if workers:
-        orb, stats, info = adjdec.decompose_parallel(n, AT, F, m, workers, ckpt, log=log, deadline=deadline)
+        # The zero cut is a root fixed by Stab_Sn(a0); ridges through it are those with h0 = y[m] = 0, i.e. the
+        # vertices of the section on the face dual to the zero cut, so the star criterion applies with that face.
+        orb, stats, info = adjdec.decompose_parallel(n, AT, F, m, workers, ckpt, log=log, deadline=deadline,
+                                                     star=(lambda p: int(p[1][m]) == 0) if star else None)
     else:
         ctx = adjdec.Ctx(threads=threads, tag=f"radm{n}")
         orb = adjdec.decompose(n, AT, F, m, 0, ctx)
@@ -240,7 +243,8 @@ def ridges_adm(n: int, a0, workers: int = 0, ckpt=None, log=print, threads: int 
     return out, info
 
 
-def expand_adm(n: int, a, b, workers: int = 0, ckpt=None, log=None, threads: int = 1, deadline=None) -> Dict:
+def expand_adm(n: int, a, b, workers: int = 0, ckpt=None, log=None, threads: int = 1, deadline=None,
+               star=True) -> Dict:
     """expand_sym with the ridges from ridges_adm instead of one Normaliz call."""
     import time
     t = time.time()
@@ -248,7 +252,7 @@ def expand_adm(n: int, a, b, workers: int = 0, ckpt=None, log=None, threads: int
     R = roots(n, a, b)
     a0, b0 = switch(n, a, b, sets[R[0]])
     assert b0 == 0
-    reps, info = ridges_adm(n, a0, workers, ckpt, log or (lambda *_: None), threads, deadline)
+    reps, info = ridges_adm(n, a0, workers, ckpt, log or (lambda *_: None), threads, deadline, star)
     if log:
         log(f"    {info['orbits']} ridge orbits ({info['ridges']} ridges) by adjacency decomposition "
             f"({time.time() - t:.0f} s) {info['stats']}")
