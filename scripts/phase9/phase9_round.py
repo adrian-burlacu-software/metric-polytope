@@ -26,6 +26,8 @@ VARIANT_FILE = ROOT / "rules" / "phase9_variant_nonvertex.mpr"
 VDIR = CK / "variant_nonvertex"
 LARGE_BUDGET = 60.0
 RETRY_BUDGET = 900.0        # one retry for rules dropped by the 300 s budget while still gaining (user decision)
+GEN_BUDGET = 900.0          # generative rules: separate one-off allowance to generate n = 3..9 and verify the points
+                            # (user decision 2026-11-23); the propagation budget starts after it
 DRY = {"on": False}
 
 
@@ -175,10 +177,10 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log, variant=False):
             emit = Path(td) / "pts.json"
             try:
                 cp = subprocess.run([PY, str(ROOT / "scripts/phase9/try_rule.py"), str(path), "--ns", "3-9",
-                                     "--emit", str(emit)], capture_output=True, text=True, timeout=budget / 2,
+                                     "--emit", str(emit)], capture_output=True, text=True, timeout=GEN_BUDGET,
                                     cwd=ROOT, env={**__import__("os").environ, "PYTHONIOENCODING": "utf-8"})
             except subprocess.TimeoutExpired:
-                rec.update(status="dropped: generation exceeded half the budget")
+                rec.update(status=f"dropped: generation exceeded the {GEN_BUDGET:.0f} s generation allowance")
                 return rec, reached
             if cp.returncode != 0 or not emit.exists():
                 rec.update(status="rejected: generation failed", error=cp.stderr[-400:])
@@ -195,8 +197,10 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log, variant=False):
             rec.update(status="dropped: no gain (no new base orbit)", seconds=round(time.time() - t0, 1))
             return rec, reached
         is_base = make_is_base(base, set(st["extra_base"]) | new_keys)
-        with Forward(eng, [path], eng.workers, [k for k in eng.rep if k not in reached], deadline=t0 + budget) as fw:
-            after, to = eng.run(is_base, _user_moves(I, st), I, deadline=t0 + budget, skip=reached, verbose=False,
+        rec["generation_seconds"] = round(time.time() - t0, 1)
+        t1 = time.time()                                            # propagation budget starts after generation
+        with Forward(eng, [path], eng.workers, [k for k in eng.rep if k not in reached], deadline=t1 + budget) as fw:
+            after, to = eng.run(is_base, _user_moves(I, st), I, deadline=t1 + budget, skip=reached, verbose=False,
                                 forward=fw)
         g = _gain(eng, T, reached, after)
         rec.update(timed_out=to, nodes_gained=len(after) - len(reached), targets_gained={n: len(v) for n, v in g.items()},

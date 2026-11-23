@@ -58,7 +58,9 @@ Only use primitives that exist; the registry is in `metricpoly/dsl/prims.py` and
 NOT add Python primitives.
 
 ## Cost (budget: 300 s per proposal; one retry at 900 s if it was still gaining sub-orbits when the budget ran out)
-- New base pieces are cheap to judge: they only propagate through cached data. Prefer them.
+- New base pieces are cheap to judge: they only propagate through cached data. Prefer them. Generating a family
+  gets its own one-off allowance of 900 s for n = 3–9 (user decision 2026-11-23); the 300 s budget then applies
+  to propagation only.
 - New moves are applied forward by the interpreted DSL to every reached sub-orbit, on whole orbits (switching
   classes). That can take seconds per input, so a move that is slow to evaluate will hit the budget and be dropped.
   Keep moves cheap, and G-equivariant if you can.
