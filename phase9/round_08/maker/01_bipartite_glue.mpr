@@ -1,0 +1,15 @@
+;;; Round 8 maker, proposal 01 (group B, D = 2n - 3).
+;;; Glue (4/(2n-3)) d(K_{2,n-5}) and (5/(2n-3)) d(C_4) on one node (a node of the 2-side of K_{2,n-5}, any node of C_4)
+;;; and take every vertex of the glue fiber (the 3(n-4) cross pairs are holes). At n = 8 this is K_{2,3} (4/13) and
+;;; C_4 (5/13): its fiber has 34,916 vertices, 168 of which are m_8 vertices in 14 orbits, all 14 unreached D = 13
+;;; targets (exp2.py). Both pieces are scaled graph metrics (non-vertices) used only inside the rule; outputs are kept
+;;; only when they are exact vertices.
+
+(define (k2m-c4-glue n)
+  (glue-partial (move-last (tuple 0) (scale (/ 4 (- (* 2 n) 3)) (gmetric (kparts (list 2 (- n 5))))))
+                (scale (/ 5 (- (* 2 n) 3)) (gmetric (kparts (list 2 2))))
+                1))
+
+(generative gen-bipartite-glue (n) :domain (7)
+  :doc "Vertices of the one-node glue fiber of (4/(2n-3)) d(K_{2,n-5}) (glued at a 2-side node) and (5/(2n-3)) d(C_4)."
+  (fiber-vertices (k2m-c4-glue n)))

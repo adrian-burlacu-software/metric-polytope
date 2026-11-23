@@ -1,0 +1,15 @@
+moves [('dup-midshift', 1), ('partial-dup', 1), ('radial-lowend', 1)]
+0 10 10 10 twin False 1.8
+0 10 10 10 twin False 6.1
+1 11 10 11 twin False 1.7
+1 11 10 11 twin False 1.6
+2 11 10 11 twin False 1.5
+2 11 10 11 twin False 1.7
+3 12 10 12 twin False 2.0
+3 12 10 12 twin False 3.7
+4 12 10 12 twin False 3.2
+4 12 10 12 twin None 18.7
+5 12 10 12 twin False 4.9
+5 12 10 12 twin False 3.3
+6 12 10 12 twin None 18.5
+6 12 10 12 twin False 2.9

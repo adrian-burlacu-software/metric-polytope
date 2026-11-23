@@ -487,8 +487,11 @@ def cmd_round(args):
     retry = [(ROOT / rec["file"], rec.get("probe_seconds", 999.0), R) for rec in results if _retry_ok(rec)]
     prev = OUT / f"round_{R - 1:02d}.json"
     if prev.exists():
-        for rec in load_json(prev).get("proposals", []):
-            if _retry_ok(rec) and (ROOT / rec["file"]).exists():
+        prev_recs = load_json(prev).get("proposals", [])
+        # a rule already retried in that round (accepted, dropped, or failed: anything but deferred) is not retried again
+        done_files = {r["file"] for r in prev_recs if r.get("retry") and not str(r.get("status", "")).startswith("retry deferred")}
+        for rec in prev_recs:
+            if _retry_ok(rec) and rec["file"] not in done_files and (ROOT / rec["file"]).exists():
                 retry.append((ROOT / rec["file"], rec.get("probe_seconds", 999.0), R - 1))
     for path, ps, origin in sorted(retry, key=lambda t: t[1]):
         if time.time() - t_start + RETRY_BUDGET > args.round_cap:

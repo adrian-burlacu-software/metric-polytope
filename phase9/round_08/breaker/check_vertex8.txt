@@ -1,0 +1,388 @@
+[
+ {
+  "feasible": true,
+  "tight": 42,
+  "dim": 36,
+  "vertex": true,
+  "D": 7,
+  "n": 9,
+  "key": "9|7|1,2,2,2,3,3,3,3,2,3,3,2,2,4,4,2,4,3,4,2,5,2,5,5,3,3,5,5,3,5,4,2,2,2,2,3",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 40,
+  "dim": 36,
+  "vertex": true,
+  "D": 7,
+  "n": 9,
+  "key": "9|7|1,2,2,2,2,3,3,3,2,2,3,3,2,3,4,4,3,4,2,5,2,4,3,2,5,2,4,5,4,5,5,4,5,5,4,5",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 40,
+  "dim": 36,
+  "vertex": true,
+  "D": 7,
+  "n": 9,
+  "key": "9|7|1,2,2,2,2,3,3,3,2,2,3,3,2,3,4,4,2,2,3,5,5,2,2,4,5,2,4,5,3,3,5,3,3,5,2,4",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 44,
+  "dim": 36,
+  "vertex": true,
+  "D": 7,
+  "n": 9,
+  "key": "9|7|1,1,2,2,3,3,3,3,2,1,3,2,4,4,4,2,2,2,2,3,4,4,3,3,5,5,4,3,5,5,4,2,2,2,2,4",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 40,
+  "dim": 36,
+  "vertex": true,
+  "D": 7,
+  "n": 9,
+  "key": "9|7|1,2,2,2,2,3,3,3,2,2,3,3,2,2,4,4,2,4,3,4,5,2,4,3,4,5,4,5,5,3,5,5,3,4,2,5",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 44,
+  "dim": 36,
+  "vertex": true,
+  "D": 7,
+  "n": 9,
+  "key": "9|7|1,1,2,2,3,3,3,3,2,2,2,2,3,4,4,3,3,4,2,2,4,4,4,5,5,2,4,5,5,4,2,2,6,4,5,5",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 38,
+  "dim": 36,
+  "vertex": true,
+  "D": 7,
+  "n": 9,
+  "key": "9|7|1,2,2,2,3,3,3,3,2,3,3,2,2,3,4,4,4,4,4,5,2,4,3,5,5,5,4,5,5,5,2,5,2,3,2,3",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 56,
+  "dim": 36,
+  "vertex": true,
+  "D": 7,
+  "n": 9,
+  "key": "9|7|1,1,1,3,3,3,3,3,2,2,2,2,2,4,4,2,2,2,4,4,4,4,4,2,4,4,4,2,2,6,2,6,2,4,4,6",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 54,
+  "dim": 36,
+  "vertex": true,
+  "D": 7,
+  "n": 9,
+  "key": "9|7|1,1,2,3,3,3,3,3,2,3,2,2,2,4,4,3,2,4,4,2,2,1,3,3,5,5,2,4,4,4,4,2,6,2,2,4",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 38,
+  "dim": 36,
+  "vertex": true,
+  "D": 7,
+  "n": 9,
+  "key": "9|7|1,2,2,2,2,3,3,3,2,2,3,3,2,3,4,4,2,2,4,5,2,2,2,4,5,5,4,5,3,3,5,4,3,5,2,4",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 40,
+  "dim": 36,
+  "vertex": true,
+  "D": 7,
+  "n": 9,
+  "key": "9|7|1,2,2,2,2,3,3,3,2,2,3,3,2,3,4,4,2,3,4,5,2,2,4,3,5,2,4,5,5,4,1,5,5,4,5,3",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 43,
+  "dim": 36,
+  "vertex": true,
+  "D": 7,
+  "n": 9,
+  "key": "9|7|1,2,2,2,3,3,3,3,3,3,3,2,2,4,4,3,4,4,5,2,5,4,5,5,5,2,5,5,5,2,4,2,5,4,3,3",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 41,
+  "dim": 36,
+  "vertex": true,
+  "D": 10,
+  "n": 9,
+  "key": "9|10|2,2,3,4,4,5,5,5,4,3,4,4,3,3,3,5,4,6,3,7,7,5,7,2,6,6,8,7,3,3,5,7,7,4,6,6",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 44,
+  "dim": 36,
+  "vertex": true,
+  "D": 10,
+  "n": 9,
+  "key": "9|10|1,2,3,3,4,4,5,5,3,4,4,3,3,4,4,3,3,4,6,3,7,6,7,3,6,4,7,7,6,4,6,7,3,7,7,6",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 40,
+  "dim": 36,
+  "vertex": true,
+  "D": 10,
+  "n": 9,
+  "key": "9|10|2,2,3,3,4,4,5,5,4,3,3,4,6,3,3,3,5,6,4,3,7,6,7,7,4,4,7,7,4,4,6,3,3,3,3,6",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 38,
+  "dim": 36,
+  "vertex": true,
+  "D": 10,
+  "n": 9,
+  "key": "9|10|2,2,3,3,4,4,5,5,4,3,3,4,6,3,3,5,5,4,2,3,5,6,7,3,6,4,7,7,6,6,6,7,7,3,7,4",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 37,
+  "dim": 36,
+  "vertex": true,
+  "D": 10,
+  "n": 9,
+  "key": "9|10|2,3,3,3,3,4,4,5,3,3,5,5,6,6,3,6,4,6,3,7,6,6,6,7,3,6,4,7,3,8,7,7,6,4,3,7",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 37,
+  "dim": 36,
+  "vertex": true,
+  "D": 10,
+  "n": 9,
+  "key": "9|10|2,2,3,3,4,4,4,5,4,3,3,4,4,6,3,3,3,4,6,4,7,6,3,7,7,4,7,7,7,6,6,6,7,4,7,3",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 40,
+  "dim": 36,
+  "vertex": true,
+  "D": 12,
+  "n": 9,
+  "key": "9|12|2,3,3,3,4,6,6,6,5,5,5,4,4,4,4,4,6,7,3,5,9,6,7,3,9,7,7,3,7,9,8,8,8,8,8,8",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 40,
+  "dim": 36,
+  "vertex": true,
+  "D": 12,
+  "n": 9,
+  "key": "9|12|2,3,4,5,6,6,6,6,5,4,7,4,4,4,4,7,8,7,7,9,9,9,8,8,8,8,5,7,3,7,8,8,8,4,8,4",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 37,
+  "dim": 36,
+  "vertex": true,
+  "D": 12,
+  "n": 9,
+  "key": "9|12|2,3,4,5,5,5,5,6,5,6,3,5,7,7,4,7,8,8,4,4,3,7,9,7,9,4,8,4,4,7,4,4,7,8,3,5",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 39,
+  "dim": 36,
+  "vertex": true,
+  "D": 12,
+  "n": 9,
+  "key": "9|12|2,3,3,4,5,6,6,6,3,5,4,5,4,4,4,6,7,8,3,7,7,7,8,3,5,9,9,8,8,8,5,7,7,8,8,8",
+  "unreached_node": false,
+  "unreached_target": false
+ },
+ {
+  "feasible": true,
+  "tight": 51,
+  "dim": 45,
+  "vertex": true,
+  "D": 7,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 56,
+  "dim": 45,
+  "vertex": true,
+  "D": 7,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 60,
+  "dim": 45,
+  "vertex": true,
+  "D": 7,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 55,
+  "dim": 45,
+  "vertex": true,
+  "D": 7,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 58,
+  "dim": 45,
+  "vertex": true,
+  "D": 7,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 59,
+  "dim": 45,
+  "vertex": true,
+  "D": 7,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 54,
+  "dim": 45,
+  "vertex": true,
+  "D": 10,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 59,
+  "dim": 45,
+  "vertex": true,
+  "D": 10,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 55,
+  "dim": 45,
+  "vertex": true,
+  "D": 11,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 60,
+  "dim": 45,
+  "vertex": true,
+  "D": 11,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 60,
+  "dim": 45,
+  "vertex": true,
+  "D": 11,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 65,
+  "dim": 45,
+  "vertex": true,
+  "D": 11,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 71,
+  "dim": 45,
+  "vertex": true,
+  "D": 7,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 66,
+  "dim": 45,
+  "vertex": true,
+  "D": 7,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 68,
+  "dim": 45,
+  "vertex": true,
+  "D": 7,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 68,
+  "dim": 45,
+  "vertex": true,
+  "D": 7,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 90,
+  "dim": 45,
+  "vertex": true,
+  "D": 7,
+  "n": 10
+ },
+ {
+  "feasible": true,
+  "tight": 87,
+  "dim": 45,
+  "vertex": true,
+  "D": 7,
+  "n": 10
+ }
+]
