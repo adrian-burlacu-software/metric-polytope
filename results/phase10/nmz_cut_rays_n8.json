@@ -1,4 +1,37 @@
 {
+  "1": {
+    "normaliz_input": "dual: cone of the rows of -A_T, SupportHyperplanes",
+    "note": "Normaliz finished the Fourier-Motzkin pass (log: 26,447,638 support hyperplanes after the last generator) but then hit 'Cone not pointed. Restarting computation' (the two sum rows put a line in the dual cone) and the restart step ran on one core and reached ~99 GB committed memory (commit limit 116 GB, C: nearly full). It was killed before writing any output, so the count is unverified and no neighbour was checked. A rerun would put the input in the sum = 0 subspace to avoid the restart (~4 h, peak ~60 GB estimated).",
+    "source_log": "checkpoints/phase10/nmz_dual/n8_S1.log",
+    "status": "NOT COMPLETED (killed by user decision, 2026-11-23)",
+    "tight": 149
+  },
+  "2": {
+    "cone_rays": 10637072,
+    "count_vs_orbit_size_mismatches": 0,
+    "neighbour_orbits": 3641,
+    "nonvertex": 0,
+    "normaliz_input": "dual: cone of the rows of -A_T, SupportHyperplanes",
+    "outside_candidates": [],
+    "postprocess_s": 80.4,
+    "ray_orbits_under_stabiliser": 8877,
+    "source": "checkpoints/phase10/nmz_dual/n8_S2.out",
+    "stabiliser_order": 1440,
+    "tight": 134
+  },
+  "3": {
+    "cone_rays": 8107996,
+    "count_vs_orbit_size_mismatches": 0,
+    "neighbour_orbits": 3766,
+    "nonvertex": 0,
+    "normaliz_input": "dual: cone of the rows of -A_T, SupportHyperplanes",
+    "outside_candidates": [],
+    "postprocess_s": 62.1,
+    "ray_orbits_under_stabiliser": 12573,
+    "source": "checkpoints/phase10/nmz_dual/n8_S3.out",
+    "stabiliser_order": 720,
+    "tight": 125
+  },
   "4": {
     "cone_rays": 7005072,
     "count_vs_orbit_size_mismatches": 0,

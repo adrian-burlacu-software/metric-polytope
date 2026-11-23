@@ -1,0 +1,9 @@
+normaliz exit 0 for S3, 3275 s wall
+rays 8107996, orbits 12573, count/orbit-size mismatches 0, 59 s
+[n=8 |S|=3] rays 8107996, orbits 12573, mismatches 0, neighbour orbits 3766, nonvertex 0, outside candidates 0
+normaliz exit 0 for S2, 4934 s wall
+rays 10637072, orbits 8877, count/orbit-size mismatches 0, 78 s
+[n=8 |S|=2] rays 10637072, orbits 8877, mismatches 0, neighbour orbits 3641, nonvertex 0, outside candidates 0
+normaliz exit 1 for S1, 17627 s wall
+Traceback (most recent call last):
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\adria\\Desktop\\dev\\metric\\checkpoints\\phase10\\nmz_dual\\n8_S1.out'
