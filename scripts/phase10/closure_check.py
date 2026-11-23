@@ -29,6 +29,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
+from metricpoly import resguard  # noqa: E402
 from metricpoly.jobs import atomic_write_json, code_version, git_head  # noqa: E402
 
 BATCH = 500
@@ -93,6 +94,8 @@ def main():
     ap.add_argument("--workers", type=int, default=19)
     ap.add_argument("--timeout", type=float, default=600)
     ap.add_argument("--limit", type=int, default=0, help="only the first K rows (testing)")
+    ap.add_argument("--keep-partials", dest="prune_partials", action="store_false",
+                    help="keep per-orbit neighbour detail after each batch (default: delete it; ~10-30 GB at n = 9)")
     args = ap.parse_args()
     n = args.n
     ck = ROOT / "checkpoints" / "phase10" / f"closure_n{n}"
@@ -109,7 +112,11 @@ def main():
     for b, rows in batches:
         path = ck / f"batch_{b:05d}.json"
         if path.exists():
+            part0 = ck / f"batch_{b:05d}.partial.jsonl"
+            if args.prune_partials and part0.exists():
+                part0.unlink()                                  # summary saved: the per-orbit detail is not needed
             continue
+        resguard.require_disk()                                 # stop cleanly before starting a batch on a full disk
         tb = time.time()
         part = ck / f"batch_{b:05d}.partial.jsonl"           # per-orbit results as they finish (kept on interrupt)
         res = {}
@@ -143,6 +150,9 @@ def main():
                         asy.clear()
                     if not done_now:
                         time.sleep(0.5)
+                    if not resguard.disk_ok():
+                        pool.terminate()
+                        resguard.require_disk()                 # raises LowDisk; finished orbits are in the partial
                 pool.terminate()
         misses = {}
         for r, x in res.items():
@@ -156,6 +166,8 @@ def main():
                "nonvertex_neighbours": sum(x.get("nonvertex", 0) for x in res.values()),
                "misses": list(misses.values())}
         atomic_write_json(path, rec)
+        if args.prune_partials:
+            part.unlink(missing_ok=True)                        # the batch summary holds everything the report needs
         done = b + 1
         el = time.time() - t0
         print(f"[closure n={n}] batch {done}/{len(batches)}: walked {rec['walked']}, flagged {len(rec['flagged'])}, "

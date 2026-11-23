@@ -30,6 +30,7 @@ import cdd.gmp
 import igraph as ig
 import numpy as np
 
+from . import resguard
 from .core import pairs
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -199,7 +200,7 @@ NMZ_BUDGET = 120.0  # seconds before a degenerate cone falls back to recursion
 
 class Stats:
     def __init__(self):
-        self.calls = {"cdd": 0, "nmz": 0, "nmz_timeout": 0, "rec": 0, "balinski_skips": 0}
+        self.calls = {"cdd": 0, "nmz": 0, "nmz_timeout": 0, "nmz_memcap": 0, "rec": 0, "balinski_skips": 0}
         self.max_depth = 0
 
     def merge(self, other: dict):
@@ -243,6 +244,7 @@ def _nmz_run(AT, tag, threads, budget, ctx):
     pr = subprocess.Popen([str(NMZ), "-c", f"-x={threads}", str(inp)], stdout=subprocess.DEVNULL,
                           stderr=subprocess.PIPE, cwd=NMZ_WORK)
     t0 = time.time()
+    k = 0
     try:
         while True:
             try:
@@ -253,6 +255,12 @@ def _nmz_run(AT, tag, threads, budget, ctx):
                     raise Stopped()
                 if budget is not None and time.time() - t0 > budget:
                     raise NmzTimeout()
+                k += 1
+                if k % 10 == 0:                                   # every ~5 s: memory and disk guards
+                    if resguard.private_gb(pr.pid) > resguard.NMZ_MEM_GB:
+                        ctx.stats.calls["nmz_memcap"] += 1
+                        raise NmzTimeout()                        # too big for one call: recurse instead
+                    resguard.require_disk()                       # LowDisk stops the whole job
     except BaseException:
         pr.kill()
         pr.wait()
