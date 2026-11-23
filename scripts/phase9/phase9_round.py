@@ -147,6 +147,14 @@ def coverage(eng, T, before, g):
     return out
 
 
+def _gen_note(rec) -> str:
+    """Status suffix for a generative rule whose generation stopped early (judged on the sizes that finished)."""
+    if rec.get("generation_timed_out_at_n") is None:
+        return ""
+    return (f" (judged on n <= {max(rec['generated_ns'])}; generation at n = {rec['generation_timed_out_at_n']} "
+            f"did not finish within the {GEN_BUDGET:.0f} s allowance)")
+
+
 def eval_proposal(path, eng, T, reached, st, base, budget, log, variant=False):
     rec = {"file": str(Path(path).relative_to(ROOT).as_posix()), "status": None,
            "track": "VARIANT non-vertex (separate numbers)" if variant else "main"}
@@ -173,19 +181,35 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log, variant=False):
         rule = I.rules[name]
         rec["kind"] = "generative (new base pieces)"
         rec["reason"] = rule.meta.get("doc", "")
+        # one n at a time within the GEN_BUDGET allowance; if the allowance runs out at some n, the rule is judged on
+        # the sizes that finished (user decision 2026-11-23) and the report says which sizes were not generated
+        pts, done_ns, gen_s = [], [], {}
         with tempfile.TemporaryDirectory() as td:
-            emit = Path(td) / "pts.json"
-            try:
-                cp = subprocess.run([PY, str(ROOT / "scripts/phase9/try_rule.py"), str(path), "--ns", "3-9",
-                                     "--emit", str(emit)], capture_output=True, text=True, timeout=GEN_BUDGET,
-                                    cwd=ROOT, env={**__import__("os").environ, "PYTHONIOENCODING": "utf-8"})
-            except subprocess.TimeoutExpired:
-                rec.update(status=f"dropped: generation exceeded the {GEN_BUDGET:.0f} s generation allowance")
-                return rec, reached
-            if cp.returncode != 0 or not emit.exists():
-                rec.update(status="rejected: generation failed", error=cp.stderr[-400:])
-                return rec, reached
-            pts = [point_from_json(d) for d in load_json(emit)]
+            for n_gen in range(3, 10):
+                left = GEN_BUDGET - (time.time() - t0)
+                if left <= 0:
+                    rec["generation_timed_out_at_n"] = n_gen
+                    break
+                emit = Path(td) / f"pts_{n_gen}.json"
+                tg = time.time()
+                try:
+                    cp = subprocess.run([PY, str(ROOT / "scripts/phase9/try_rule.py"), str(path), "--ns", str(n_gen),
+                                         "--emit", str(emit)], capture_output=True, text=True, timeout=left,
+                                        cwd=ROOT, env={**__import__("os").environ, "PYTHONIOENCODING": "utf-8"})
+                except subprocess.TimeoutExpired:
+                    rec["generation_timed_out_at_n"] = n_gen
+                    break
+                if cp.returncode != 0 or not emit.exists():
+                    rec.update(status=f"rejected: generation failed at n = {n_gen}", error=cp.stderr[-400:])
+                    return rec, reached
+                pts += [point_from_json(d) for d in load_json(emit)]
+                done_ns.append(n_gen)
+                gen_s[n_gen] = round(time.time() - tg, 1)
+        rec.update(generated_ns=done_ns, generation_seconds_per_n=gen_s)
+        if not pts:
+            rec.update(status=f"dropped: no points generated within the {GEN_BUDGET:.0f} s generation allowance "
+                              f"(sizes finished: {done_ns})")
+            return rec, reached
         chk = [(p, verify_vertex(p)) for p in pts]                     # judge re-verifies; never trusts the tool
         rec["non_vertex_points_discarded"] = 0 if variant else sum(1 for _, v in chk if v["feasible"] and not v["vertex"])
         # main track: base pieces must be exact vertices of m_k; the non-vertex variant accepts feasible points
@@ -194,7 +218,7 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log, variant=False):
         new_keys = {k for k in keys if k not in base.get(int(k.split("|")[0]), ()) and k not in st["extra_base"]}
         rec.update(points=len(pts), orbits=len(keys), new_base_orbits=len(new_keys))
         if not new_keys:
-            rec.update(status="dropped: no gain (no new base orbit)", seconds=round(time.time() - t0, 1))
+            rec.update(status="dropped: no gain (no new base orbit)" + _gen_note(rec), seconds=round(time.time() - t0, 1))
             return rec, reached
         is_base = make_is_base(base, set(st["extra_base"]) | new_keys)
         rec["generation_seconds"] = round(time.time() - t0, 1)
@@ -207,10 +231,10 @@ def eval_proposal(path, eng, T, reached, st, base, budget, log, variant=False):
                    targets_gained_ids=g, coverage=coverage(eng, T, reached, g), seconds=round(time.time() - t0, 1))
         if g:
             st["extra_base"] = sorted(set(st["extra_base"]) | new_keys)
-            rec["status"] = "ACCEPTED"
+            rec["status"] = "ACCEPTED" + _gen_note(rec)
             _append_accepted(src, rec, acc_path)
             return rec, after
-        rec["status"] = "dropped: no gain" + (" within budget" if to else "")
+        rec["status"] = "dropped: no gain" + (" within budget" if to else "") + _gen_note(rec)
         return rec, reached
     if name in I.moves:
         mv = I.moves[name]
