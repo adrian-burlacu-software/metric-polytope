@@ -1,6 +1,6 @@
 {
   "break_rung_histogram": {
-    "0": 30
+    "0": 22
   },
   "by_largest_reached": {
     "0": {
@@ -19,28 +19,10 @@
         "7": 7,
         "none": 2
       }
-    },
-    "3": {
-      "D": {
-        "9": 7
-      },
-      "odd_primes": {
-        "3": 7
-      }
-    },
-    "5": {
-      "D": {
-        "12": 1
-      },
-      "odd_primes": {
-        "3": 1
-      }
     }
   },
   "largest_reached_restriction_histogram": {
-    "0": 22,
-    "3": 7,
-    "5": 1
+    "0": 22
   },
   "n": 8,
   "rows": [
@@ -148,29 +130,6 @@
       "reached_restrictions_by_size": {}
     },
     {
-      "D": 9,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1
-      },
-      "largest_reached_restriction": 3,
-      "odd_primes": [
-        3
-      ],
-      "orbit": 143,
-      "reached_restrictions_by_size": {
-        "3": 2
-      }
-    },
-    {
       "D": 7,
       "blockers": [],
       "break_rung": 0,
@@ -213,29 +172,6 @@
       "reached_restrictions_by_size": {}
     },
     {
-      "D": 9,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1
-      },
-      "largest_reached_restriction": 3,
-      "odd_primes": [
-        3
-      ],
-      "orbit": 164,
-      "reached_restrictions_by_size": {
-        "3": 1
-      }
-    },
-    {
       "D": 11,
       "blockers": [],
       "break_rung": 0,
@@ -257,52 +193,6 @@
       "reached_restrictions_by_size": {}
     },
     {
-      "D": 9,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1
-      },
-      "largest_reached_restriction": 3,
-      "odd_primes": [
-        3
-      ],
-      "orbit": 178,
-      "reached_restrictions_by_size": {
-        "3": 1
-      }
-    },
-    {
-      "D": 9,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1
-      },
-      "largest_reached_restriction": 3,
-      "odd_primes": [
-        3
-      ],
-      "orbit": 179,
-      "reached_restrictions_by_size": {
-        "3": 1
-      }
-    },
-    {
       "D": 11,
       "blockers": [],
       "break_rung": 0,
@@ -322,29 +212,6 @@
       ],
       "orbit": 180,
       "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 9,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1
-      },
-      "largest_reached_restriction": 3,
-      "odd_primes": [
-        3
-      ],
-      "orbit": 183,
-      "reached_restrictions_by_size": {
-        "3": 1
-      }
     },
     {
       "D": 11,
@@ -387,52 +254,6 @@
       ],
       "orbit": 229,
       "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 9,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1
-      },
-      "largest_reached_restriction": 3,
-      "odd_primes": [
-        3
-      ],
-      "orbit": 280,
-      "reached_restrictions_by_size": {
-        "3": 1
-      }
-    },
-    {
-      "D": 9,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1
-      },
-      "largest_reached_restriction": 3,
-      "odd_primes": [
-        3
-      ],
-      "orbit": 282,
-      "reached_restrictions_by_size": {
-        "3": 1
-      }
     },
     {
       "D": 14,
@@ -559,31 +380,6 @@
       "reached_restrictions_by_size": {}
     },
     {
-      "D": 12,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1
-      },
-      "largest_reached_restriction": 5,
-      "odd_primes": [
-        3
-      ],
-      "orbit": 475,
-      "reached_restrictions_by_size": {
-        "3": 10,
-        "4": 5,
-        "5": 1
-      }
-    },
-    {
       "D": 10,
       "blockers": [],
       "break_rung": 0,
@@ -689,7 +485,7 @@
       "reached_restrictions_by_size": {}
     }
   ],
-  "seconds": 15.7,
+  "seconds": 15.6,
   "top_blockers": [],
-  "unreached_targets": 30
+  "unreached_targets": 22
 }
