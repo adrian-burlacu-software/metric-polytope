@@ -1,0 +1,115 @@
+# Phase 9 — Rule maker brief (round 13)
+
+You propose new rules for the metric-polytope rule language, the DSL. Your proposals count only when the judge
+(`scripts/phase9/judge.py`) confirms them in code. Nothing you claim is accepted on your word.
+
+## Goal
+Make as many currently **unreachable** orbits reachable as possible. The targets are:
+- all orbits of m_7 (13) and m_8 (533);
+- 1,000 seeded orbits of the n = 9 sample.
+
+The current unreached targets are in `results/phase9/unreached_targets.json`, with fields n, id, D, nums and key;
+a point is x = nums / D, over the pairs in lexicographic order. That file also covers the 128k unreached sub-orbits
+(restrictions of targets) in `results/phase9/unreached_nodes.json`, by canonical key. At the start of this round:
+n = 8: 30 of 533 unreached; n = 9: 555 of 1,000 (the file also lists breaker points at n = 9). Accepted so far:
+moves partial-dup, dup-midshift, radial-lowend, dup-thirdshift; base families gen-bipartite-glue (round 10),
+gen-house-c4-d11 and gen-house-p4-d11 (round 11), gen-dyadic-tower-w1 and gen-dyadic-tower-w2 (round 12).
+
+## How reachability works (the judge's engine, `metricpoly/reach.py`)
+- **Base pieces:** cuts; anticuts; complete multipartite (1/3)d(G), with or without one edge removed; tree
+  suspensions; Avis paths; and **all graph metrics** x_G = (2/τ)·d_G. A new base piece must therefore be something
+  that is not a graph metric.
+- **Moves:** lift (vertex of the fiber when one node is added), radial Λ^1–Λ^3, and gluing with any overlap.
+  Intermediate points may be non-vertices.
+- An orbit is reached if some chain of moves from base pieces produces it. Every intermediate point is a
+  restriction of the target, so your rule helps only if it hits unreached sub-orbits.
+- **Useful theory:** `docs/denominator_lemma.md`. Moves multiply denominators by at most 2. So if an odd prime p
+  divides den(x), some restriction x|T with p | den(x|T) must itself be a base piece. Targeted seeds therefore need
+  that prime in their denominator.
+
+## Round 13 aim: the rule behind round 12's dyadic towers, cheap enough to run at n = 9
+Round 12 accepted `gen-dyadic-tower-w1` and `gen-dyadic-tower-w2` (`rules/phase9_accepted.mpr`; source, analysis
+scripts and notes in `phase9/round_12/maker/`, read NOTES.md first). Each one takes a fixed, hand-picked 6-node
+non-vertex core w = (1/8) d_W (W a weighted graph with weights 2 and 3), lifts it one node at a time, keeps the fiber
+vertices with denominator exactly 8, and outputs the exact m_n vertices at level n - 6. Together they reached 47 of
+the 49 D = 8 targets at n = 8 (w1: 41, w2: 6 more), but:
+- the cores are hard-coded, and no reason is known why these cores work;
+- the tower enumerates whole fibers level by level, so n = 9 did not finish within the judge's 900 s generation
+  allowance. Their 15 n = 9 gains came only through the n = 8 pieces.
+
+Unreached dyadic targets at n = 9: 15 with D = 8 and 59 with D = 16. Both families are judged on n <= 8, so anything
+that reaches the n = 9 dyadic targets is new.
+
+Tasks, in priority order (proposals must be generative rules, not moves):
+1. **Explain the towers.** Which lifts keep denominator 8? Which fiber vertices along the chain are m_n vertices? Is
+   there a description of the 53 + 31 n = 8 output orbits (and of the cores) that doesn't need the fibers, for example
+   as (1/8) d_W for weighted graphs W of a describable shape, or a combinatorial rule for where the new node attaches?
+   Peel the n = 9 D = 8 and D = 16 targets (round 12's peel.py) and check whether they sit on towers over w1, w2 or
+   related cores, and at what scale (does 16 at n = 9 come from halving?).
+2. **Build a cheap generator from that explanation**: one that constructs the vertices directly, finishes n = 8 well
+   under the round 12 times (177 s and 102 s), and finishes n = 9 within about 10 minutes in try_rule (`--ns 9`).
+   Duplicates of round 12's base orbits are harmless; what counts is new n = 9 targets. A rule that replaces the
+   cores by a family of cores indexed by n is better than one more hard-coded core.
+3. **If no explanation is found**, say so plainly in NOTES.md with the evidence. A negative result here is useful: it
+   tells us the dyadic vertices are not built by a short rule.
+
+Run try_rule at n = 9 for every proposal and report the timing. A proposal whose n = 9 generation does not finish is
+judged on n <= 8 only, and it will gain nothing at n = 8 (round 12 already covers those targets).
+
+## Hard rules (decided by the user after round 1)
+- **Base pieces must be true vertices of m_k.** The judge discards every generated point that isn't an exact vertex.
+  The existing graph-metric base is the only non-vertex exception. Intermediate points of a derivation may still be
+  non-vertices (detours).
+- **Non-vertex seeds** are allowed only as a separate variant. Put `:variant "nonvertex"` in the rule's header. The
+  judge evaluates such a rule on a separate state and logs it in `results/phase9/variant_nonvertex.json`; it never
+  enters the main numbers.
+- **Every n:** the `:domain` must have no upper bound, so write `(lo)`, not `(lo hi)`. A family that only works for
+  small n is rejected.
+- **Moves must keep their input as a restriction.** Every output of a main-track move must contain its input, up to
+  symmetry, on some subset of its nodes; lift, gluing, radial, twin and dup all do. Moves that rescale or otherwise
+  change the input's coordinates are rejected on the main track. Without this rule, "unreachable" stops being an
+  exact verdict. The judge tests it on probe points, including non-vertices; you may submit such moves only with
+  `:variant "nonvertex"`.
+- Round 1's `scaled-graph-metrics` (d_G/k, non-vertex) and round 3's `radial-normalized` (which rescales its input)
+  now live in the variant. Don't resubmit them to the main track.
+
+## What to propose
+At most 8 proposals. Each one goes in its own file `phase9/round_13/maker/NN_name.mpr` and defines **exactly one**
+top-level form:
+- `(generative NAME (n) :domain (3) :doc "one-line reason" BODY)`: new base pieces, which must be vertices. It must be a
+  family defined for every n (open-ended domain), not a single hard-coded point.
+- `(move NAME (x) :grow k :doc "one-line reason" BODY)`: a new **unary** move that adds k ≥ 1 nodes.
+- `(structural NAME (n) :domain (lo hi) :doc "one-line reason" BODY)`: a claim. It's accepted only if it holds on
+  all of the judge's data for n ≤ 8, and the breaker will then attack it.
+
+Keep each rule small. Helper `(define ...)` forms are allowed in the same file. For the language, read
+`docs/dsl_grammar.md`, and for idioms `rules/stdlib.mpr`, `rules/literature.mpr`, `rules/mutations.mpr` and
+`rules/phase7.mpr`. `gen-lift-multipartite` in mutations.mpr is a worked example of a rule that fixed a break.
+Only use primitives that exist; the registry is in `metricpoly/dsl/prims.py` and `metricpoly/dsl/ext/*.py`. You may
+NOT add Python primitives.
+
+## Cost (budget: 300 s per proposal; one retry at 900 s if it was still gaining sub-orbits when the budget ran out)
+- New base pieces are cheap to judge: they only propagate through cached data. Prefer them. Generating a family
+  gets its own one-off allowance of 900 s for n = 3–9 (user decision 2026-11-23); the 300 s budget then applies
+  to propagation only.
+- New moves are applied forward by the interpreted DSL to every reached sub-orbit, on whole orbits (switching
+  classes). That can take seconds per input, so a move that is slow to evaluate will hit the budget and be dropped.
+  Keep moves cheap, and G-equivariant if you can.
+
+## Tools (use them; they are exact)
+- `.venv/Scripts/python scripts/phase9/try_rule.py FILE.mpr --ns 3-9` loads your file on top of the current rule set
+  and reports, for each n: points, exact feasibility, vertices, orbits, and how many hit unreached sub-orbits
+  (`hits_unreached_nodes`) and unreached targets.
+- `.venv/Scripts/python scripts/phase9/check_point.py FILE.json` gives exact vertex and orbit checks for points you
+  build by hand.
+
+## Rules of conduct
+- Write only inside `phase9/round_13/maker/`. Don't edit `rules/`, `results/`, `checkpoints/`, `scripts/` or
+  `metricpoly/`.
+- Compute: keep any single command under 5 minutes, except `try_rule.py --ns 9` runs, which may take up to 10 minutes
+  each (use a timeout). Use at most 4 processes and at most about 25 minutes of compute in total. Don't run the judge
+  yourself.
+- For every proposal, add a line to `phase9/round_13/maker/NOTES.md` with: the file, a one-line reason, and what
+  `try_rule.py` reported (`hits_unreached_nodes` per n). Be honest: a proposal with 0 hits will very likely be
+  dropped.
+- Finish with a short summary: what you proposed, why, and the try_rule evidence.
