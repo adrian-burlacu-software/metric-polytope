@@ -222,3 +222,32 @@
                                (+ (* (- 1 t) (tt-tw x i k))
                                   (* t (if (= a 0) (tt-dp x j d k) (- 1 (tt-dp x j d k)))))))
                  (const 1 0)))))))
+
+;; accepted in Phase 9 (phase9/round_14/maker/01_twin_dup_blend.mpr): Point at t in {1/4, 1/2, 3/4} of the segment from the twin column of node i to the dup or antidup column of node j (all fiber points): fiber-edge points of the group-C targets.
+;; Round 14 maker proposal 01: twin-dup-blend (group C: partly reached targets, factor 3 in D).
+;; New column b = (1 - t) twin_i + t Q_j with Q_j in {dup_j, antidup_j}, all nodes i, j (i = j allowed),
+;; t in {1/4, 1/2, 3/4}:
+;;   twin_i    : b_k = x_ik (k != i), b_i = 0                                (copy of node i)
+;;   dup_j     : b_k = x_jk (k != j), b_j = delta_j,  delta_j = min_{k != j} min(2 x_jk, 2 - 2 x_jk)
+;;   antidup_j : 1 - dup_j
+;; All three are fiber points over x, so every blend is feasible (convex combination). Frontier analysis (face.py): the
+;; unreached one-node extensions of the group-C targets sit at 1/4, 1/3, 1/2 of fiber edges twin--antidup and
+;; twin--dup. Taking dup AND antidup makes the family closed under switching (twin_i + antidup_j becomes
+;; twin_i + dup_j when i and j are switched apart), so the move is G-equivariant. Only the new column is built, so x
+;; stays the restriction on its first nodes. 6 n^2 outputs per input.
+(define (tb-delta x j)
+  (min-over ((k (range 0 (size x)))) (where (not (= k j)))
+    (min (* 2 (entry x j k)) (- 2 (* 2 (entry x j k))))))
+(define (tb-tw x i k) (if (= k i) 0 (entry x i k)))
+(define (tb-dp x j d k) (if (= k j) d (entry x j k)))
+(move twin-dup-blend (x) :grow 1
+  :doc "Point at t in {1/4, 1/2, 3/4} of the segment from the twin column of node i to the dup or antidup column of node j (all fiber points): fiber-edge points of the group-C targets."
+  (concat-all
+    (for ((j (range 0 (size x))))
+      (let ((d (tb-delta x j)))
+        (for ((i (range 0 (size x))) (t (list 1/4 1/2 3/4)) (a (list 0 1)))
+          (block x
+                 (mvcat-list (for ((k (range 0 (size x))))
+                               (+ (* (- 1 t) (tb-tw x i k))
+                                  (* t (if (= a 0) (tb-dp x j d k) (- 1 (tb-dp x j d k)))))))
+                 (const 1 0)))))))

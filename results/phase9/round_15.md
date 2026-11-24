@@ -1,0 +1,31 @@
+# Phase 9 round 15
+
+Main-track numbers only. Non-vertex variant proposals are marked VARIANT and are tracked in results/phase9/variant_nonvertex.json.
+
+Judge time 681.6 s; budget per rule 300 s (one retry at 900 s for rules still gaining); round cap 1800 s.
+
+## Proposals (rule maker)
+
+| file | name | kind | status | targets gained (n: count) | s |
+|---|---|---|---|---|---|
+| phase9/round_14/maker/01_twin_dup_blend.mpr | twin-dup-blend | move | ACCEPTED | {8: 1, 9: 22} | 680.9 |
+
+## Coverage of rules with gains (per size and denominator)
+
+| rule | status | n | gained | share of unreached | denominators (D: count) | verdict |
+|---|---|---|---|---|---|---|
+| twin-dup-blend | ACCEPTED | 8 | 1 | 4.3% | {12: 1} | broad |
+| twin-dup-blend | ACCEPTED | 9 | 22 | 4.1% | {10: 1, 12: 18, 18: 3} | broad |
+
+## Candidates (rule breaker)
+
+| file | claim | rule | n | D | vertex | status |
+|---|---|---|---|---|---|---|
+
+## Unreached targets (fraction)
+
+| n | before | after |
+|---|---|---|
+| 7 | 0/13 (0.0%) | 0/13 (0.0%) |
+| 8 | 23/533 (4.3%) | 22/533 (4.1%) |
+| 9 | 537/1000 (53.7%) | 515/1000 (51.5%) |

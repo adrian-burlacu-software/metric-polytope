@@ -1,0 +1,121 @@
+{
+  "budget_per_rule": 300,
+  "candidates": [],
+  "code_version": "c7c27e255b7e3cfe",
+  "git": "b2c05a9e677431ffea53ba5ecf8a56bc6c25a59d",
+  "proposals": [
+    {
+      "coverage": {
+        "8": {
+          "by_denominator": {
+            "12": 1
+          },
+          "distinct_denominators": 1,
+          "gained": 1,
+          "share_of_unreached": 0.0435
+        },
+        "9": {
+          "by_denominator": {
+            "10": 1,
+            "12": 18,
+            "18": 3
+          },
+          "distinct_denominators": 3,
+          "gained": 22,
+          "share_of_unreached": 0.041
+        },
+        "verdict": "broad"
+      },
+      "file": "phase9/round_14/maker/01_twin_dup_blend.mpr",
+      "kind": "move",
+      "name": "twin-dup-blend",
+      "nodes_gained": 4756,
+      "probe_seconds": 1.91,
+      "reason": "Point at t in {1/4, 1/2, 3/4} of the segment from the twin column of node i to the dup or antidup column of node j (all fiber points): fiber-edge points of the group-C targets.",
+      "restriction_preserving": true,
+      "retry": true,
+      "retry_of_round": 14,
+      "seconds": 680.9,
+      "status": "ACCEPTED",
+      "targets_gained": {
+        "8": 1,
+        "9": 22
+      },
+      "targets_gained_ids": {
+        "8": [
+          475
+        ],
+        "9": [
+          154758,
+          335185,
+          386119,
+          466299,
+          485344,
+          489772,
+          490250,
+          508088,
+          510128,
+          511805,
+          514338,
+          523808,
+          523866,
+          540932,
+          545649,
+          546400,
+          564731,
+          592406,
+          625974,
+          931613,
+          941969,
+          953302
+        ]
+      },
+      "timed_out": false,
+      "track": "main"
+    }
+  ],
+  "round": 15,
+  "round_cap": 1800,
+  "seconds": 681.6,
+  "smallest_counterexamples": {},
+  "unreached_after": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 511,
+      "targets": 533,
+      "unreached": 22,
+      "unreached_fraction": 0.04127579737335835
+    },
+    "9": {
+      "reached": 485,
+      "targets": 1000,
+      "unreached": 515,
+      "unreached_fraction": 0.515
+    }
+  },
+  "unreached_before": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 510,
+      "targets": 533,
+      "unreached": 23,
+      "unreached_fraction": 0.043151969981238276
+    },
+    "9": {
+      "reached": 463,
+      "targets": 1000,
+      "unreached": 537,
+      "unreached_fraction": 0.537
+    }
+  }
+}
