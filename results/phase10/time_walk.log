@@ -1,0 +1,16 @@
+{
+ "orbits": 100,
+ "completed": 100,
+ "flagged": [],
+ "mean_rays": 120.19,
+ "median_rays": 51.0,
+ "max_rays": 2228,
+ "mean_s_per_orbit": 1.16518,
+ "median_s": 0.6085,
+ "max_s": 13.125,
+ "mean_s_rays": 0.66214,
+ "mean_s_complete_canon": 0.5031300000000001,
+ "non_vertex_neighbours_total": 0,
+ "wall_seconds": 13.6
+}
+exit 0

@@ -37,7 +37,7 @@ D = 9 .. 43 present, preferring rows with `adj_cut = False`. No point needed to 
 vertex orbit is already one of Deza's reps, so a built point would coincide with a picked row.
 
 ## Tool check
-`check_point.py candidates.json` (output saved as `aux/check_candidates.json.txt`): all 40 points are exact vertices
+`check_point.py candidates.json` (output saved as `scans/check_candidates.json.txt`): all 40 points are exact vertices
 with 40 distinct orbit keys, none is a current target/unreached node; `rule_fails_here = True` for all 40, i.e. the
 `at-least-two-cuts` counterexample fails the rule and the 39 unreachable points fail `all-moves-cover` (not derivable).
-Auxiliary scan outputs were moved to `aux/*.json.txt` so that `candidates.json` is the only JSON file here.
+Auxiliary scan outputs were moved to `scans/*.json.txt` so that `candidates.json` is the only JSON file here.
