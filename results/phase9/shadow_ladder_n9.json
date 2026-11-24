@@ -1,14 +1,14 @@
 {
   "break_rung_histogram": {
-    "0": 578
+    "0": 555
   },
   "by_largest_reached": {
     "0": {
       "D": {
         "7": 1,
-        "8": 30,
+        "8": 15,
         "10": 24,
-        "11": 106,
+        "11": 98,
         "13": 116,
         "14": 66,
         "15": 4,
@@ -26,7 +26,7 @@
         "31": 1
       },
       "odd_primes": {
-        "11": 114,
+        "11": 106,
         "13": 117,
         "17": 27,
         "19": 21,
@@ -37,7 +37,7 @@
         "31": 1,
         "5": 33,
         "7": 67,
-        "none": 89
+        "none": 74
       }
     },
     "3": {
@@ -109,7 +109,7 @@
     }
   },
   "largest_reached_restriction_histogram": {
-    "0": 491,
+    "0": 468,
     "3": 41,
     "4": 7,
     "5": 20,
@@ -135,47 +135,7 @@
       },
       "largest_reached_restriction": 0,
       "odd_primes": [],
-      "orbit": 26268,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
       "orbit": 32300,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
-      "orbit": 32578,
       "reached_restrictions_by_size": {}
     },
     {
@@ -285,67 +245,7 @@
       },
       "largest_reached_restriction": 0,
       "odd_primes": [],
-      "orbit": 50155,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
-      "orbit": 60867,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
       "orbit": 64948,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
-      "orbit": 69648,
       "reached_restrictions_by_size": {}
     },
     {
@@ -500,28 +400,6 @@
         11
       ],
       "orbit": 106146,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 11,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [
-        11
-      ],
-      "orbit": 106341,
       "reached_restrictions_by_size": {}
     },
     {
@@ -1072,107 +950,7 @@
       },
       "largest_reached_restriction": 0,
       "odd_primes": [],
-      "orbit": 166008,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
-      "orbit": 166122,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
-      "orbit": 166295,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
       "orbit": 168439,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
-      "orbit": 170051,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
-      "orbit": 173394,
       "reached_restrictions_by_size": {}
     },
     {
@@ -1272,46 +1050,6 @@
       },
       "largest_reached_restriction": 0,
       "odd_primes": [],
-      "orbit": 185602,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
-      "orbit": 185937,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
       "orbit": 187463,
       "reached_restrictions_by_size": {}
     },
@@ -1352,26 +1090,6 @@
       },
       "largest_reached_restriction": 0,
       "odd_primes": [],
-      "orbit": 190682,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
       "orbit": 191174,
       "reached_restrictions_by_size": {}
     },
@@ -1393,46 +1111,6 @@
       "largest_reached_restriction": 0,
       "odd_primes": [],
       "orbit": 192595,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
-      "orbit": 194459,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 8,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [],
-      "orbit": 196882,
       "reached_restrictions_by_size": {}
     },
     {
@@ -1961,28 +1639,6 @@
       "odd_primes": [
         11
       ],
-      "orbit": 330858,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 11,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [
-        11
-      ],
       "orbit": 330911,
       "reached_restrictions_by_size": {}
     },
@@ -2251,28 +1907,6 @@
       "odd_primes": [
         11
       ],
-      "orbit": 348510,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 11,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [
-        11
-      ],
       "orbit": 352889,
       "reached_restrictions_by_size": {}
     },
@@ -2318,28 +1952,6 @@
         11
       ],
       "orbit": 352974,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 11,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [
-        11
-      ],
-      "orbit": 357242,
       "reached_restrictions_by_size": {}
     },
     {
@@ -3687,28 +3299,6 @@
       "odd_primes": [
         11
       ],
-      "orbit": 468135,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 11,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [
-        11
-      ],
       "orbit": 468414,
       "reached_restrictions_by_size": {}
     },
@@ -3776,28 +3366,6 @@
         11
       ],
       "orbit": 469733,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 11,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [
-        11
-      ],
-      "orbit": 469844,
       "reached_restrictions_by_size": {}
     },
     {
@@ -3952,28 +3520,6 @@
         11
       ],
       "orbit": 479537,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 11,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [
-        11
-      ],
-      "orbit": 480703,
       "reached_restrictions_by_size": {}
     },
     {
@@ -4227,28 +3773,6 @@
         11
       ],
       "orbit": 497191,
-      "reached_restrictions_by_size": {}
-    },
-    {
-      "D": 11,
-      "blockers": [],
-      "break_rung": 0,
-      "k_w": {
-        "0": -1,
-        "1": -1,
-        "2": -1,
-        "3": -1,
-        "4": -1,
-        "5": -1,
-        "6": -1,
-        "7": -1,
-        "8": -1
-      },
-      "largest_reached_restriction": 0,
-      "odd_primes": [
-        11
-      ],
-      "orbit": 497887,
       "reached_restrictions_by_size": {}
     },
     {
@@ -12981,7 +12505,7 @@
       "reached_restrictions_by_size": {}
     }
   ],
-  "seconds": 143.6,
+  "seconds": 142.6,
   "top_blockers": [],
-  "unreached_targets": 578
+  "unreached_targets": 555
 }
