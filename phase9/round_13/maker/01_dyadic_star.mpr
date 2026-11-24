@@ -1,0 +1,46 @@
+;;; Round 13 maker, proposal 01: dyadic star over the round 12 cores w1, w2 (cheap replacement of the lift tower).
+;;; Explanation found (star.py, star3.py): most tower outputs are STARS over the core: X contains the core w on 6 nodes,
+;;; every other node a sees w through a D = 8 lift column c_a (w + a is a vertex of the one-node fiber over w), and
+;;; each distance between two non-core nodes a, b is an END of its interval over the core alone:
+;;;   lo(a,b) = max_k |c_a(k) - c_b(k)|,   hi(a,b) = min_k min(c_a(k) + c_b(k), 2 - c_a(k) - c_b(k)).
+;;; n = 8: 46 of the 53 w1-tower outputs and 27 of the 31 w2-tower outputs are such stars; n = 9: 5 of the 15 unreached
+;;; D = 8 targets are stars (32300, 177660, 183143, 192595 over w1; 71763 over w2) with every pair at an interval end.
+;;; Construction: no fibers above 7 nodes. Columns = D = 8 lift columns of w (one per switching pair c, 1 - c: column
+;;; sum <= 3). Pruned to columns that occur in some m_8 star vertex (pair stage); then (n - 6) distinct columns are
+;;; combined, each new pair distance lo or hi, infeasible partial stars dropped; outputs = exact m_n vertices.
+;;; Open-ended: defined for every n >= 6 (n = 6, 7 give no vertex).
+
+(define ds-cores (list (lit 6 8 (2 2 3 3 3 2 3 3 5 5 5 3 6 2 4)) (lit 6 8 (2 2 2 3 3 2 4 3 3 4 5 5 5 5 6))))
+(define (ds-cols w)
+  (for ((z (fiber-vertices (lift-partial w))))
+    (where (and (= (denominator z) 8) (<= (sum (for ((k (range 0 6))) (entry z k 6))) 3)))
+    (for ((k (range 0 6))) (entry z k 6))))
+(define (ds-lo a b) (max-over ((k (range 0 6))) (max (- (nth a k) (nth b k)) (- (nth b k) (nth a k)))))
+(define (ds-hi a b) (min-over ((k (range 0 6))) (min (+ (nth a k) (nth b k)) (- 2 (+ (nth a k) (nth b k))))))
+;; all value lists for the new column c against the chosen columns sel (each entry lo or hi)
+(define (ds-vals sel c m)
+  (if (= m 0) (list (list))
+      (concat-all (for ((v (ds-vals sel c (- m 1))))
+        (let ((b (nth sel (- m 1))))
+          (list (concat v (list (ds-lo b c))) (concat v (list (ds-hi b c)))))))))
+(define (ds-add Y sel c)
+  (for ((v (ds-vals sel c (len sel))) (Z (list (block Y (mvcat-list (concat c v)) (const 1 0)))))
+    (where (feasible? Z)) Z))
+;; states: (list Y sel last-index), sel = chosen columns in order
+(define (ds-level w cols k)
+  (if (= k 0) (list (list w (list) (- 0 1)))
+      (concat-all (for ((s (ds-level w cols (- k 1))))
+        (concat-all (for ((i (range (+ (nth s 2) 1) (len cols))))
+          (for ((Z (ds-add (nth s 0) (nth s 1) (nth cols i))))
+            (list Z (concat (nth s 1) (list (nth cols i))) i))))))))
+(define (ds-used w cols)
+  (let ((V2 (for ((s (ds-level w cols 2))) (where (vertex? (nth s 0))) (nth s 1))))
+    (for ((a cols)) (where (exists ((p V2)) (in a p))) a)))
+
+(generative gen-dyadic-star (n) :domain (6)
+  :doc "Stars over the dyadic cores w1, w2: n - 6 D = 8 lift columns of the core, every pair distance at an end of its interval over the core."
+  (concat-all
+    (for ((w ds-cores))
+      (let ((cols (ds-cols w)))
+        (let ((uc (if (<= n 8) cols (ds-used w cols))))
+          (for ((s (ds-level w uc (- n 6)))) (where (vertex? (nth s 0))) (nth s 0)))))))

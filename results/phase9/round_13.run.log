@@ -1,0 +1,66 @@
+[round 13] gen-dyadic-star: dropped: no gain (no new base orbit) (judged on n <= 8; generation at n = 9 did not finish within the 900 s allowance)  gain {}
+# Phase 9 round 13
+
+Main-track numbers only. Non-vertex variant proposals are marked VARIANT and are tracked in results/phase9/variant_nonvertex.json.
+
+Judge time 1735.5 s; budget per rule 300 s (one retry at 900 s for rules still gaining); round cap 1800 s.
+
+## Proposals (rule maker)
+
+| file | name | kind | status | targets gained (n: count) | s |
+|---|---|---|---|---|---|
+| phase9/round_13/maker/01_dyadic_star.mpr | gen-dyadic-star | generative (new base pieces) | dropped: no gain (no new base orbit) (judged on n <= 8; generation at n = 9 did not finish within the 900 s allowance) |  | 901.4 |
+
+## Candidates (rule breaker)
+
+| file | claim | rule | n | D | vertex | status |
+|---|---|---|---|---|---|---|
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+| phase9/round_13/breaker/candidates.json | unreachable | all-moves-cover | 9 | 7 | True | CONFIRMED unreachable (exact engine) |
+
+## Unreached targets (fraction)
+
+| n | before | after |
+|---|---|---|
+| 7 | 0/13 (0.0%) | 0/13 (0.0%) |
+| 8 | 30/533 (5.6%) | 30/533 (5.6%) |
+| 9 | 555/1000 (55.5%) | 555/1000 (55.5%) |
+
