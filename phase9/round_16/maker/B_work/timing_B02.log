@@ -1,0 +1,4 @@
+twin-dup-sevenths n 5 mode G outputs/input 300 sec/input 0.06
+twin-dup-sevenths n 6 mode G outputs/input 432 sec/input 0.12
+twin-dup-sevenths n 7 mode G outputs/input 588 sec/input 0.27
+twin-dup-sevenths n 8 mode G outputs/input 768 sec/input 0.49

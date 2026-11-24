@@ -1,0 +1,8 @@
+round 1 adds 44 reached 17956 time 109
+round 2 adds 76 reached 18155 time 123
+round 3 adds 75 reached 18669 time 139
+round 4 adds 3 reached 18796 time 142
+round 5 adds 0 reached 18801 time 145
+['bl:tw-ad@1/5@2/5@3/5@4/5', 'bl:tw-dp@1/5@2/5@3/5@4/5'] gained 845 [(4, 6), (5, 56), (6, 245), (7, 336), (8, 173), (9, 29)] targets 21 [(9, 21)] time 145 
+ n 8 target D []
+ n 9 target D [(15, 21)]

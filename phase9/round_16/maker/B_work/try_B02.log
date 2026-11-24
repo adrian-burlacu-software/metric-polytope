@@ -1,0 +1,11 @@
+{
+ "twin-dup-sevenths": {
+  "kind": "move",
+  "grow": 1,
+  "probed_inputs": 20,
+  "outputs": 8532,
+  "feasible": 8532,
+  "vertices": 558,
+  "seconds": 8.58
+ }
+}

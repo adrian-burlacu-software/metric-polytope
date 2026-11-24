@@ -1,0 +1,116 @@
+129370 Counter({5: 1}) ov1 0 ov2 0
+133846 Counter({5: 1}) ov1 0 ov2 0
+143175 Counter({5: 1}) ov1 0 ov2 0
+156711 Counter({5: 1}) ov1 0 ov2 0
+158161 Counter({5: 1, 7: 1}) ov1 0 ov2 0
+160840 Counter({5: 2, 6: 1, 7: 1}) ov1 0 ov2 0
+383135 Counter({5: 2, 7: 1}) ov1 0 ov2 0
+397706 Counter({5: 1, 8: 1}) ov1 0 ov2 0
+397992 Counter({5: 2}) ov1 0 ov2 0
+402439 Counter({5: 1}) ov1 0 ov2 0
+403932 Counter({5: 1}) ov1 0 ov2 0
+403984 Counter({5: 1}) ov1 0 ov2 0
+424351 Counter({5: 1}) ov1 0 ov2 0
+427157 Counter({5: 2}) ov1 0 ov2 0
+462551 Counter({5: 2}) ov1 0 ov2 0
+467732 Counter({5: 2, 7: 1, 8: 1}) ov1 0 ov2 0
+483126 Counter() ov1 0 ov2 0
+506046 Counter({5: 1}) ov1 0 ov2 0
+513072 Counter({5: 1}) ov1 0 ov2 0
+520623 Counter() ov1 0 ov2 0
+521389 Counter({5: 1}) ov1 0 ov2 0
+521911 Counter() ov1 0 ov2 0
+523222 Counter({5: 3}) ov1 0 ov2 0
+523264 Counter({5: 3}) ov1 0 ov2 0
+529888 Counter({5: 1}) ov1 0 ov2 0
+535194 Counter({5: 1}) ov1 0 ov2 0
+536974 Counter({5: 1}) ov1 0 ov2 0
+545615 Counter({5: 1}) ov1 0 ov2 0
+547624 Counter({5: 1}) ov1 0 ov2 0
+549147 Counter({5: 1}) ov1 0 ov2 0
+552726 Counter({5: 1}) ov1 0 ov2 0
+553398 Counter({5: 2}) ov1 0 ov2 0
+553869 Counter({5: 1}) ov1 0 ov2 0
+553921 Counter({5: 1}) ov1 0 ov2 0
+556862 Counter() ov1 0 ov2 0
+556993 Counter({5: 1}) ov1 0 ov2 0
+558236 Counter({5: 2}) ov1 0 ov2 0
+567168 Counter({5: 1}) ov1 0 ov2 0
+569273 Counter({5: 1}) ov1 0 ov2 0
+574694 Counter({5: 2}) ov1 0 ov2 0
+579732 Counter({5: 1}) ov1 0 ov2 0
+579913 Counter({5: 1}) ov1 0 ov2 0
+585436 Counter({5: 1}) ov1 0 ov2 0
+588484 Counter({5: 2}) ov1 0 ov2 0
+590356 Counter({5: 1}) ov1 0 ov2 0
+593550 Counter({5: 1}) ov1 0 ov2 0
+596563 Counter() ov1 0 ov2 0
+597685 Counter({5: 1}) ov1 0 ov2 0
+603672 Counter() ov1 0 ov2 0
+604247 Counter({5: 2}) ov1 0 ov2 0
+604470 Counter({5: 3}) ov1 0 ov2 0
+608662 Counter({5: 1}) ov1 0 ov2 0
+609485 Counter({5: 1}) ov1 0 ov2 0
+614673 Counter({5: 1, 7: 1}) ov1 0 ov2 0
+616130 Counter({5: 3, 8: 1}) ov1 0 ov2 0
+617434 Counter({5: 1, 7: 1, 8: 1}) ov1 0 ov2 0
+621645 Counter({5: 1}) ov1 0 ov2 0
+621777 Counter({5: 1}) ov1 0 ov2 0
+628999 Counter({5: 2}) ov1 0 ov2 0
+630116 Counter() ov1 0 ov2 0
+631976 Counter() ov1 0 ov2 0
+653666 Counter({5: 1}) ov1 0 ov2 0
+658059 Counter({5: 1, 7: 1}) ov1 0 ov2 0
+668808 Counter() ov1 0 ov2 0
+673866 Counter({5: 1}) ov1 0 ov2 0
+673978 Counter() ov1 0 ov2 0
+674004 Counter({5: 1}) ov1 0 ov2 0
+674424 Counter({5: 2}) ov1 0 ov2 0
+674606 Counter({5: 2}) ov1 0 ov2 0
+676698 Counter({5: 1}) ov1 0 ov2 0
+683143 Counter({5: 1}) ov1 0 ov2 0
+683740 Counter({5: 3, 7: 1}) ov1 0 ov2 0
+702631 Counter({5: 1}) ov1 0 ov2 0
+757550 Counter() ov1 0 ov2 0
+758545 Counter() ov1 0 ov2 0
+759376 Counter({5: 1}) ov1 0 ov2 0
+760754 Counter({5: 1}) ov1 0 ov2 0
+762891 Counter() ov1 0 ov2 0
+766793 Counter({5: 1}) ov1 0 ov2 0
+770194 Counter() ov1 0 ov2 0
+773710 Counter({5: 1}) ov1 0 ov2 0
+776846 Counter() ov1 0 ov2 0
+777109 Counter({5: 1}) ov1 0 ov2 0
+777859 Counter({5: 2}) ov1 0 ov2 0
+779594 Counter({5: 1}) ov1 0 ov2 0
+779736 Counter({5: 1}) ov1 0 ov2 0
+780408 Counter({5: 1}) ov1 0 ov2 0
+781741 Counter({5: 1}) ov1 0 ov2 0
+782357 Counter() ov1 0 ov2 0
+782538 Counter({5: 1}) ov1 0 ov2 0
+782754 Counter({5: 1}) ov1 0 ov2 0
+782969 Counter() ov1 0 ov2 0
+784086 Counter() ov1 0 ov2 0
+787877 Counter({5: 1}) ov1 0 ov2 0
+790537 Counter({5: 1}) ov1 0 ov2 0
+790692 Counter({5: 1}) ov1 0 ov2 0
+792813 Counter({5: 1}) ov1 0 ov2 0
+795381 Counter({5: 1}) ov1 0 ov2 0
+795454 Counter({5: 1}) ov1 0 ov2 0
+795740 Counter({5: 1}) ov1 0 ov2 0
+805016 Counter() ov1 0 ov2 0
+806061 Counter() ov1 0 ov2 0
+806411 Counter() ov1 0 ov2 0
+809728 Counter({5: 1}) ov1 0 ov2 0
+810517 Counter({5: 2}) ov1 0 ov2 0
+817093 Counter() ov1 0 ov2 0
+817396 Counter({5: 1}) ov1 0 ov2 0
+817623 Counter({5: 1}) ov1 0 ov2 0
+819685 Counter() ov1 0 ov2 0
+823022 Counter({5: 1}) ov1 0 ov2 0
+830625 Counter({5: 1}) ov1 0 ov2 0
+831093 Counter({5: 1}) ov1 0 ov2 0
+831675 Counter() ov1 0 ov2 0
+838392 Counter({5: 1}) ov1 0 ov2 0
+850519 Counter({5: 1}) ov1 0 ov2 0
+covers (ov1, ov2): {(False, False): 115} max size {5: 81, 7: 6, 8: 4, 0: 24}

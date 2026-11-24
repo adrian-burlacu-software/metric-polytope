@@ -1,0 +1,147 @@
+{
+  "budget_per_rule": 300,
+  "candidates": [],
+  "code_version": "c7c27e255b7e3cfe",
+  "git": "2ceee5711c5b0ebe78bb6f70d887966456d0f8a3",
+  "proposals": [
+    {
+      "coverage": {
+        "verdict": "NARROW (likely a disguised list)"
+      },
+      "file": "phase9/round_16/maker/B01_twin_dup_fifths.mpr",
+      "kind": "move",
+      "name": "twin-dup-fifths",
+      "nodes_gained": 43,
+      "probe_seconds": 2.26,
+      "reason": "Point at t in {1/5, 2/5, 3/5, 4/5} of the segment from the twin column of node i to the dup or antidup column of node j: fiber-edge points of the partly reached D = 15 targets, bringing in the prime 5.",
+      "restriction_preserving": true,
+      "seconds": 300.9,
+      "status": "dropped: no gain within budget",
+      "targets_gained": {},
+      "targets_gained_ids": {},
+      "timed_out": true,
+      "track": "main"
+    },
+    {
+      "coverage": {
+        "verdict": "NARROW (likely a disguised list)"
+      },
+      "file": "phase9/round_16/maker/B02_twin_dup_sevenths.mpr",
+      "kind": "move",
+      "name": "twin-dup-sevenths",
+      "nodes_gained": 17,
+      "probe_seconds": 3.03,
+      "reason": "Point at t = k/7 (k = 1..6) of the segment from the twin column of node i to the dup or antidup column of node j: fiber-edge points of the partly reached D = 21 targets, bringing in the prime 7.",
+      "restriction_preserving": true,
+      "seconds": 300.6,
+      "status": "dropped: no gain within budget",
+      "targets_gained": {},
+      "targets_gained_ids": {},
+      "timed_out": true,
+      "track": "main"
+    },
+    {
+      "coverage": {
+        "9": {
+          "by_denominator": {
+            "15": 21
+          },
+          "distinct_denominators": 1,
+          "gained": 21,
+          "share_of_unreached": 0.0408
+        },
+        "verdict": "NARROW (likely a disguised list)"
+      },
+      "file": "phase9/round_16/maker/B01_twin_dup_fifths.mpr",
+      "kind": "move",
+      "name": "twin-dup-fifths",
+      "nodes_gained": 1528,
+      "probe_seconds": 2.26,
+      "reason": "Point at t in {1/5, 2/5, 3/5, 4/5} of the segment from the twin column of node i to the dup or antidup column of node j: fiber-edge points of the partly reached D = 15 targets, bringing in the prime 5.",
+      "restriction_preserving": true,
+      "retry": true,
+      "retry_of_round": 16,
+      "seconds": 875.4,
+      "status": "ACCEPTED",
+      "targets_gained": {
+        "9": 21
+      },
+      "targets_gained_ids": {
+        "9": [
+          641994,
+          667366,
+          678199,
+          686456,
+          693396,
+          702231,
+          705055,
+          705451,
+          788651,
+          817713,
+          823652,
+          842281,
+          869481,
+          874062,
+          892210,
+          892435,
+          896765,
+          898676,
+          900466,
+          901655,
+          929012
+        ]
+      },
+      "timed_out": false,
+      "track": "main"
+    },
+    {
+      "file": "phase9/round_16/maker/B02_twin_dup_sevenths.mpr",
+      "retry": true,
+      "status": "retry deferred: not enough time left in the round cap"
+    }
+  ],
+  "round": 16,
+  "round_cap": 1800,
+  "seconds": 1482.8,
+  "smallest_counterexamples": {},
+  "unreached_after": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 511,
+      "targets": 533,
+      "unreached": 22,
+      "unreached_fraction": 0.04127579737335835
+    },
+    "9": {
+      "reached": 506,
+      "targets": 1000,
+      "unreached": 494,
+      "unreached_fraction": 0.494
+    }
+  },
+  "unreached_before": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 511,
+      "targets": 533,
+      "unreached": 22,
+      "unreached_fraction": 0.04127579737335835
+    },
+    "9": {
+      "reached": 485,
+      "targets": 1000,
+      "unreached": 515,
+      "unreached_fraction": 0.515
+    }
+  }
+}

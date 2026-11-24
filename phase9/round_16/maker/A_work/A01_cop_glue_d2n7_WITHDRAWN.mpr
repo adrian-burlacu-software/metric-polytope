@@ -1,0 +1,27 @@
+;;; Round 16 maker A, proposal 01: D = 2n - 7 sister of the round 11 house families, built from the n = 9 D = 11 targets.
+;;; At n = 9, 14 of the 98 D = 11 targets (nothing reached) have a one-node cover x|A = (4/11) d(co-P_6), x|B = h/11 d(H),
+;;; |A| = 6, |B| = 4 (A_work/stage9.py); v sits at position 0, 1 or 2 of the complement path. Two-stage glue as in round 11:
+;;; stage 1 glues (4/D) d(co-P_{n-3}) (node p of the path moved last = v) with H minus one node u, stage 2 glues each stage-1
+;;; fiber vertex with the whole H. Here H = C_4 at 4/D (u a neighbour of v) or P_4 at 3/D (v an end, u its neighbour),
+;;; the two (H, u) choices that pass the stage test for most targets. D = 2n - 7; only exact vertices with denominator D kept.
+
+(define (a16-cop n p) (move-last (tuple p) (scale (/ 4 (- (* 2 n) 7)) (gmetric (complement (path-graph (- n 3)))))))
+(define (a16-c4 n) (scale (/ 4 (- (* 2 n) 7)) (gmetric (kparts (list 2 2)))))
+(define (a16-p4 n) (move-last (tuple 1) (scale (/ 3 (- (* 2 n) 7)) (gmetric (path-graph 4)))))
+
+(define (a16-two-stage n g h)
+  (concat-all
+    (for ((y (fiber-vertices (glue-partial g (restrict {0 1 2} h) 1))))
+      (where (= (denominator y) (- (* 2 n) 7)))
+      (for ((z (fiber-vertices (glue-partial y h 3))))
+        (where (and (= (denominator z) (- (* 2 n) 7)) (vertex? z)))
+        z))))
+
+(generative gen-cop-glue-d2n7 (n) :domain (9)
+  :doc "Two-stage one-node glue of (4/(2n-7)) d(co-P_{n-3}) (path position 0, 1, 2) with C_4 at 4/(2n-7) or P_4 at 3/(2n-7)."
+  (concat-all
+    (list (a16-two-stage n (a16-cop n 0) (a16-c4 n))
+          (a16-two-stage n (a16-cop n 2) (a16-c4 n))
+          (a16-two-stage n (a16-cop n 0) (a16-p4 n))
+          (a16-two-stage n (a16-cop n 1) (a16-p4 n))
+          (a16-two-stage n (a16-cop n 2) (a16-p4 n)))))

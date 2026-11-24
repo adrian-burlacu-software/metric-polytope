@@ -1,0 +1,28 @@
+;; Round 16 maker C, proposal 01: twin-dup-fifth (partly reached n = 9 targets with D = 15).
+;; New column b = (1 - t) twin_i + t Q_j with Q_j in {dup_j, antidup_j}, all nodes i, j (i = j allowed),
+;; t in {1/5, 2/5, 3/5, 4/5}:
+;;   twin_i    : b_k = x_ik (k != i), b_i = 0                                (copy of node i)
+;;   dup_j     : b_k = x_jk (k != j), b_j = delta_j,  delta_j = min_{k != j} min(2 x_jk, 2 - 2 x_jk)
+;;   antidup_j : 1 - dup_j
+;; Same segments as the accepted twin-dup-third / twin-dup-blend, at fifths. All three columns are fiber points over
+;; x, so every blend is feasible (convex combination); only the new column is built, so x stays the restriction on its
+;; first nodes. dup AND antidup make the family switching-closed (G-equivariant). 8 n^2 outputs per input.
+;; Frontier analysis (round 16, C_work/tri2.py): every frontier column of the partly reached D = 15 targets lies at
+;; 1/5 .. 4/5 of a twin--antidup or twin--dup segment (mostly i = j). Sim (C_work/simC.py, background = all six
+;; accepted moves): 21 n = 9 targets, all D = 15 (10 whose reached restrictions already carry 5, 11 that need 5).
+(define (tf-delta x j)
+  (min-over ((k (range 0 (size x)))) (where (not (= k j)))
+    (min (* 2 (entry x j k)) (- 2 (* 2 (entry x j k))))))
+(define (tf-tw x i k) (if (= k i) 0 (entry x i k)))
+(define (tf-dp x j d k) (if (= k j) d (entry x j k)))
+(move twin-dup-fifth (x) :grow 1
+  :doc "Point at t in {1/5, 2/5, 3/5, 4/5} of the segment from the twin column of node i to the dup or antidup column of node j (fiber points): frontier columns of the partly reached D = 15 targets."
+  (concat-all
+    (for ((j (range 0 (size x))))
+      (let ((d (tf-delta x j)))
+        (for ((i (range 0 (size x))) (t (list 1/5 2/5 3/5 4/5)) (a (list 0 1)))
+          (block x
+                 (mvcat-list (for ((k (range 0 (size x))))
+                               (+ (* (- 1 t) (tf-tw x i k))
+                                  (* t (if (= a 0) (tf-dp x j d k) (- 1 (tf-dp x j d k)))))))
+                 (const 1 0)))))))

@@ -1,0 +1,11 @@
+{
+ "twin-dup-fifths": {
+  "kind": "move",
+  "grow": 1,
+  "probed_inputs": 20,
+  "outputs": 5688,
+  "feasible": 5688,
+  "vertices": 372,
+  "seconds": 5.27
+ }
+}
