@@ -275,3 +275,27 @@
                                (+ (* (- 1 t) (tf-tw x i k))
                                   (* t (if (= a 0) (tf-dp x j d k) (- 1 (tf-dp x j d k)))))))
                  (const 1 0)))))))
+
+;; accepted in Phase 9 (phase9/round_16/maker/B02_twin_dup_sevenths.mpr): Point at t = k/7 (k = 1..6) of the segment from the twin column of node i to the dup or antidup column of node j: fiber-edge points of the partly reached D = 21 targets, bringing in the prime 7.
+;; Round 16 maker track B, proposal 02: twin-dup-sevenths (bring in the prime 7 by a move).
+;; New column b = (1 - t) twin_i + t Q_j with Q_j in {dup_j, antidup_j}, all nodes i, j (i = j allowed), t in {k/7, k = 1..6}:
+;;   twin_i    : b_k = x_ik (k != i), b_i = 0
+;;   dup_j     : b_k = x_jk (k != j), b_j = delta_j,  delta_j = min_{k != j} min(2 x_jk, 2 - 2 x_jk)
+;;   antidup_j : 1 - dup_j
+;; Same segment as the accepted twin-dup-blend / twin-dup-third, at sevenths instead of quarters/thirds.
+(define (ts-delta x j)
+  (min-over ((k (range 0 (size x)))) (where (not (= k j)))
+    (min (* 2 (entry x j k)) (- 2 (* 2 (entry x j k))))))
+(define (ts-tw x i k) (if (= k i) 0 (entry x i k)))
+(define (ts-dp x j d k) (if (= k j) d (entry x j k)))
+(move twin-dup-sevenths (x) :grow 1
+  :doc "Point at t = k/7 (k = 1..6) of the segment from the twin column of node i to the dup or antidup column of node j: fiber-edge points of the partly reached D = 21 targets, bringing in the prime 7."
+  (concat-all
+    (for ((j (range 0 (size x))))
+      (let ((d (ts-delta x j)))
+        (for ((i (range 0 (size x))) (t (list 1/7 2/7 3/7 4/7 5/7 6/7)) (a (list 0 1)))
+          (block x
+                 (mvcat-list (for ((k (range 0 (size x))))
+                               (+ (* (- 1 t) (ts-tw x i k))
+                                  (* t (if (= a 0) (ts-dp x j d k) (- 1 (ts-dp x j d k)))))))
+                 (const 1 0)))))))

@@ -1,0 +1,92 @@
+{
+  "budget_per_rule": 300,
+  "candidates": [],
+  "code_version": "c7c27e255b7e3cfe",
+  "git": "03f40e7696e2438bc7a2fcaf14253bcd067ffd8a",
+  "proposals": [
+    {
+      "coverage": {
+        "9": {
+          "by_denominator": {
+            "21": 7
+          },
+          "distinct_denominators": 1,
+          "gained": 7,
+          "share_of_unreached": 0.0142
+        },
+        "verdict": "NARROW (likely a disguised list)"
+      },
+      "file": "phase9/round_16/maker/B02_twin_dup_sevenths.mpr",
+      "kind": "move",
+      "name": "twin-dup-sevenths",
+      "nodes_gained": 302,
+      "probe_seconds": 3.03,
+      "reason": "Point at t = k/7 (k = 1..6) of the segment from the twin column of node i to the dup or antidup column of node j: fiber-edge points of the partly reached D = 21 targets, bringing in the prime 7.",
+      "restriction_preserving": true,
+      "retry": true,
+      "retry_of_round": 16,
+      "seconds": 792.3,
+      "status": "ACCEPTED",
+      "targets_gained": {
+        "9": 7
+      },
+      "targets_gained_ids": {
+        "9": [
+          966931,
+          967782,
+          970168,
+          1016514,
+          1019206,
+          1032607,
+          1032784
+        ]
+      },
+      "timed_out": false,
+      "track": "main"
+    }
+  ],
+  "round": 17,
+  "round_cap": 1800,
+  "seconds": 793.0,
+  "smallest_counterexamples": {},
+  "unreached_after": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 511,
+      "targets": 533,
+      "unreached": 22,
+      "unreached_fraction": 0.04127579737335835
+    },
+    "9": {
+      "reached": 513,
+      "targets": 1000,
+      "unreached": 487,
+      "unreached_fraction": 0.487
+    }
+  },
+  "unreached_before": {
+    "7": {
+      "reached": 13,
+      "targets": 13,
+      "unreached": 0,
+      "unreached_fraction": 0.0
+    },
+    "8": {
+      "reached": 511,
+      "targets": 533,
+      "unreached": 22,
+      "unreached_fraction": 0.04127579737335835
+    },
+    "9": {
+      "reached": 506,
+      "targets": 1000,
+      "unreached": 494,
+      "unreached_fraction": 0.494
+    }
+  }
+}

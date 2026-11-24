@@ -1,4 +1,4 @@
-# Phase 9 status after round 15 (2026-11-24)
+# Phase 9 status after round 17 (2026-11-24)
 
 Phase 9 is the rule game. A rule maker proposes ways to build vertices of the metric polytope m_n from smaller
 pieces, a rule breaker looks for vertices the rules cannot build and for counterexamples to claims, and an exact judge
@@ -47,9 +47,12 @@ Unreached targets on the main track. m_7 was fully reached throughout.
 | 11 | 77 | 570 | base families gen-house-c4-d11, gen-house-p4-d11 |
 | 12 | 30 | 555 | base families gen-dyadic-tower-w1, -w2 (judged on n ≤ 8) |
 | 14 | 23 | 537 | move twin-dup-third (retry) |
-| 15 | **22 (4.1%)** | **515 (51.5%)** | move twin-dup-blend (retry) |
+| 15 | 22 | 515 | move twin-dup-blend (retry) |
+| 16 | 22 | 494 | move twin-dup-fifths (retry) |
+| 17 | **22 (4.1%)** | **487 (48.7%)** | move twin-dup-sevenths (retry) |
 
-Rounds 1–4, 9 and 13 accepted nothing on the main track. Round 1's scaled graph metrics and round 3's
+Rounds 1–4, 9 and 13 accepted nothing on the main track. Rounds 15–17 gained only at n = 9; the 22 remaining m_8
+targets have nothing reached. Round 1's scaled graph metrics and round 3's
 radial-normalized were later moved to the variant track because they break the hard rules.
 
 The breaker's unreachable claims were confirmed 387 times in rounds 1–14. Some points were confirmed again in later
@@ -67,8 +70,10 @@ rounds. Rounds 11–14 submitted only n = 9 points that are not targets.
 | dup-thirdshift | 8 | partial dup at t ∈ {1/4, 3/4, 1}, with one other entry at 1/3 or 2/3 of its interval | 3 / 12 |
 | twin-dup-third | 14 | point at 1/3 or 2/3 of the segment from twin_i to dup_j or antidup_j | 7 / 18 |
 | twin-dup-blend | 15 | the same segment at t ∈ {1/4, 1/2, 3/4} | 1 / 22 |
+| twin-dup-fifths | 16 | the same segment at t = k/5; brings in the prime 5 (judge: narrow, all D = 15) | 0 / 21 |
+| twin-dup-sevenths | 17 | the same segment at t = k/7; brings in the prime 7 (judge: narrow, all D = 21) | 0 / 7 |
 
-All six put the new node on a low-dimensional face of the one-node fiber, mostly an edge, at a simple rational
+All eight put the new node on a low-dimensional face of the one-node fiber, mostly an edge, at a simple rational
 position. That is the one kind of shortcut that kept working.
 
 ### Base families (vertices only)
@@ -107,14 +112,20 @@ unreached target, therefore splits the unreached targets exactly (`scripts/phase
 | | unreached | nothing reached (needs a base piece at that n) | some restriction reached |
 |---|---|---|---|
 | m_8 | 22 | 22 | 0 |
-| m_9 | 515 | 468 | 47 |
+| m_9 (after round 17) | 487 | 468 | 19 |
 
-The **denominator lemma** (`docs/denominator_lemma.md`) sharpens this. Moves multiply denominators by at most 2. If
-an odd prime p divides a target's denominator, some restriction carrying p must be a base piece. Of the 47 partly
-reached m_9 targets:
-- 38 carry the prime 5 or 7, and per round 14's analysis most of those have no reached restriction carrying that
-  prime;
-- only 9 have a denominator built from 2 and 3 alone (12, 18, 24, 27).
+The **denominator lemma** (`docs/denominator_lemma.md`) sharpens this. The moves of rounds 5–15 multiply
+denominators only by 2 or 3. If another odd prime p divides a target's denominator, either a restriction carrying p
+is a base piece, or some move must introduce p. Rounds 16–17 added the second kind: twin-dup-fifths and
+twin-dup-sevenths put the new node at fifths or sevenths of a fiber edge, and reached 28 of the 38 partly reached
+targets with D = 15 or 21.
+
+The 19 partly reached m_9 targets left after round 17:
+- 10 carry 5 or 7 (D = 15: 7, D = 21: 3). Round 16 found that fifths and sevenths on the twin–twin and twin–antidup
+  segments as well reach at least 34 of the original 38 in simulation. At least 4 need 3- or 4-dimensional fiber
+  faces.
+- 9 have a denominator built from 2 and 3 alone (D = 18: 3, 24: 3, 27: 2, 12: 1). No segment or 2-face blend of
+  special columns tried in rounds 14 and 16 reaches them.
 
 So moves, which apply at every n, are close to exhausted on these targets. Everything else needs new base pieces.
 
@@ -138,7 +149,16 @@ This is the main finding of rounds 10–13.
 
 **In short:** the move shortcuts carry across n, but they only reach targets that already have a reached part. The
 base-piece shortcuts reach the "nothing reached" targets at one n and break at the next. Between m_8 and m_9 the
-generative picture breaks at the base: about 47% of the m_9 sample would need base pieces that are new at n = 9.
+generative picture breaks at the base: about 47% of the m_9 sample (468 targets) would need base pieces that are new
+at n = 9.
+
+Round 16 (track A) tested this targets-first on the 214 m_9 targets with D = 11 or 13 and found nothing to build an
+open-ended family from:
+- D = 13 (116 targets): only 24 have a one-node cover by two scaled graph metrics, and no cover type covers more than 2.
+- D = 11 (98): one weak shape, round 11's house glue at scale 2n − 7 instead of 2n − 5. It covers 14 targets spread
+  over about 10 variants, and the DSL could not generate it at n = 9 within 10 minutes.
+- Almost no 8-node restriction of these targets lies on an extreme ray of MET_8: 4 of 115 at D = 13, 2 of 97 at D = 11.
+  So gluing or lifting rescaled smaller vertices cannot reach them.
 
 ## 5. What is left
 
@@ -151,7 +171,7 @@ generative picture breaks at the base: about 47% of the m_9 sample would need ba
 - D = 11: ids 93, 140, 159, 167, 215, 229, 470 and 504 have no cover by two scaled graph metrics.
 - D = 8: the 2 targets need cores of their own (round 12).
 
-**m_9: 515 unreached.**
+**m_9: 487 unreached.**
 - Nothing reached: 468.
 
   | D | count |
@@ -165,8 +185,8 @@ generative picture breaks at the base: about 47% of the m_9 sample would need ba
   | 19 | 21 |
   | 8 | 15 |
   | other | 42 |
-- Partly reached: 47. The largest reached restriction has 3 nodes for 29 of them, 4 for 2, 5 for 7, 6 for 8 and 7
-  for 1.
+- Partly reached: 19 (D = 15: 7, D = 21: 3, D = 18: 3, D = 24: 3, D = 27: 2, D = 12: 1). The largest reached
+  restriction has 3 nodes for 6 of them, 4 for 4, 5 for 5 and 6 for 4. See §4.2.
 
 ## 6. Negative results worth keeping
 
@@ -197,13 +217,18 @@ generative picture breaks at the base: about 47% of the m_9 sample would need ba
 - **Retries are carried over.** A rule dropped at 300 s while still gaining is retried at 900 s, and if the round
   cap runs out, in the next round. Rounds 8, 10 and 15 existed for that.
 
-## 8. Directions not yet tried
+## 8. Directions
 
-1. **Base pieces at n = 9, built targets-first** for D = 11 and 13 (214 targets). The risk is narrow, n-specific
-   families, as in rounds 10–12.
-2. **A move that brings in the prime 5 or 7** for the 38 partly reached m_9 targets with D = 15 or 21. It would have
-   to introduce the prime without breaking the restriction rule, for example a radial value with a fifth.
-3. **Higher-dimensional fiber faces**, for the 9 remaining 2,3-denominator targets: centroids of 2-faces. Round 14
-   found 19 targets in simulation but at O(n³) columns per input.
+Directions 1–3 below were tried in rounds 16–17 (three parallel maker tracks, `phase9/round_16/`).
+
+1. **Base pieces at n = 9, built targets-first** for D = 11 and 13 (214 targets). *Tried (round 16, track A): no
+   proposal.* No shared structure was found to build an open-ended family from (§4.3).
+2. **A move that brings in the prime 5 or 7** for the partly reached m_9 targets with D = 15 or 21. *Tried (rounds
+   16–17, track B): twin-dup-fifths and twin-dup-sevenths accepted, 28 targets.* Not yet proposed: the same fifths and
+   sevenths on the twin–twin and twin–antidup segments, which reach at least 34 of the original 38 in simulation.
+3. **Higher-dimensional fiber faces**, for the 2,3-denominator targets. *Tried (round 16, track C): nothing to
+   propose.* Round 14's centroid of three special columns now gains only 2 targets, because twin-dup-third and
+   twin-dup-blend took the rest. A cheaper O(n²) triangle family costs about 12k columns per 8-node input. The 9
+   remaining 2,3-denominator targets are not reached by any segment or 2-face blend tried.
 4. **Accept the barrier as the result.** Document that the generative description of m_n needs new base pieces at
-   each n, and measure how that set grows from m_8 to m_9.
+   each n, and measure how that set grows from m_8 to m_9. *Not started.* Rounds 16–17 strengthen the case for it.
