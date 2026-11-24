@@ -1,0 +1,32 @@
+{
+ "gen-dyadic-tower-w1": {
+  "kind": "generative",
+  "6": {
+   "points": 0,
+   "feasible": 0,
+   "vertices": 0,
+   "orbits": 0,
+   "hits_unreached_nodes": 0,
+   "hits_unreached_targets": 0,
+   "seconds": 0.0
+  },
+  "7": {
+   "points": 0,
+   "feasible": 0,
+   "vertices": 0,
+   "orbits": 0,
+   "hits_unreached_nodes": 0,
+   "hits_unreached_targets": 0,
+   "seconds": 0.19
+  },
+  "8": {
+   "points": 53,
+   "feasible": 53,
+   "vertices": 53,
+   "orbits": 53,
+   "hits_unreached_nodes": 41,
+   "hits_unreached_targets": 41,
+   "seconds": 177.29
+  }
+ }
+}

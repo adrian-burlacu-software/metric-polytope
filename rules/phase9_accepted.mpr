@@ -156,3 +156,40 @@
       (for ((z (fiber-vertices (glue-partial y (bp11-p4 n) 3))))
         (where (and (= (denominator z) (- (* 2 n) 5)) (vertex? z)))
         z))))
+
+;; accepted in Phase 9 (phase9/round_12/maker/01_dyadic_tower_w1.mpr): Vertices among the (n-6)-fold D = 8 lift tower over the dyadic 6-node core (1/8) d_W (K_3 + P_3 at weight 2, 5 cross edges at weight 3).
+;;; Round 12 maker, proposal 01: dyadic (D = 8) lift tower over a fixed 6-node core.
+;;; Core w1 = (1/8) d_W on 6 nodes, W = weight-2 triangle {0,1,2} and weight-2 path 4-3-5, weight-3 edges 0-3, 0-5, 1-3,
+;;; 2-4, 2-5 (here given in its canonical frame; w1 is NOT a vertex of m_6). Level k = orbits of the fiber vertices
+;;; of the one-node lift of level k-1 with denominator exactly 8; output = level n-6 points that are exact vertices of m_n.
+;;; At n = 8 (double lift) this contains 41 of the 49 unreached D = 8 targets (peel analysis, w6.py: each of them is a
+;;; vertex of the fiber over a 7-node restriction y which is itself a vertex of the fiber over w1).
+;;; Open-ended (the tower continues at every n), but levels >= 8 grow fast: n = 9 may not finish in the allowance.
+
+(define dy8-w1 (lit 6 8 (2 2 3 3 3 2 3 3 5 5 5 3 6 2 4)))
+(define (dy8-up L)
+  (orbits (concat-all (for ((y L)) (for ((z (fiber-vertices (lift-partial y)))) (where (= (denominator z) 8)) z)))))
+(define (dy8-level w k) (if (= k 0) (list w) (dy8-up (dy8-level w (- k 1)))))
+
+(generative gen-dyadic-tower-w1 (n) :domain (6)
+  :doc "Vertices among the (n-6)-fold D = 8 lift tower over the dyadic 6-node core (1/8) d_W (K_3 + P_3 at weight 2, 5 cross edges at weight 3)."
+  (for ((z (dy8-level dy8-w1 (- n 6)))) (where (vertex? z)) z))
+
+;; accepted in Phase 9 (phase9/round_12/maker/02_dyadic_tower_w2.mpr): Vertices among the (n-6)-fold D = 8 lift tower over the dyadic 6-node core (1/8) d_W (paw at weight 2, two nodes joined to a triangle edge at weight 3).
+;;; Round 12 maker, proposal 02: dyadic (D = 8) lift tower over a fixed 6-node core.
+;;; Core w2 = (1/8) d_W on 6 nodes (canonical frame), W = weight-2 paw (triangle {0,1,2} + pendant 0-3), and nodes 4, 5
+;;; each joined to 0 and 1 by weight-3 edges (w2 is NOT a vertex of m_6). Level k = orbits of the fiber vertices
+;;; of the one-node lift of level k-1 with denominator exactly 8; output = level n-6 points that are exact vertices of m_n.
+;;; At n = 8 (double lift) this is predicted to contain 19 of the 49 unreached D = 8 targets, 6 of them not covered by
+;;; proposal 01 (peel analysis, w6.py: each is a vertex of the fiber over a 7-node restriction y which is itself a
+;;; vertex of the fiber over w2).
+;;; Open-ended (the tower continues at every n), but levels >= 8 grow fast: n = 9 may not finish in the allowance.
+
+(define dy8-w2 (lit 6 8 (2 2 2 3 3 2 4 3 3 4 5 5 5 5 6)))
+(define (dy8b-up L)
+  (orbits (concat-all (for ((y L)) (for ((z (fiber-vertices (lift-partial y)))) (where (= (denominator z) 8)) z)))))
+(define (dy8b-level w k) (if (= k 0) (list w) (dy8b-up (dy8b-level w (- k 1)))))
+
+(generative gen-dyadic-tower-w2 (n) :domain (6)
+  :doc "Vertices among the (n-6)-fold D = 8 lift tower over the dyadic 6-node core (1/8) d_W (paw at weight 2, two nodes joined to a triangle edge at weight 3)."
+  (for ((z (dy8b-level dy8-w2 (- n 6)))) (where (vertex? z)) z))

@@ -1,0 +1,14 @@
+{
+ "gen-dyadic-tower-w2": {
+  "kind": "generative",
+  "8": {
+   "points": 31,
+   "feasible": 31,
+   "vertices": 31,
+   "orbits": 31,
+   "hits_unreached_nodes": 19,
+   "hits_unreached_targets": 19,
+   "seconds": 102.35
+  }
+ }
+}
