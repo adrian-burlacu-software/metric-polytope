@@ -1,0 +1,4 @@
+twin-dup-blend n 5 mode G outputs/input 150 sec/input 0.03
+twin-dup-blend n 6 mode G outputs/input 216 sec/input 0.05
+twin-dup-blend n 7 mode G outputs/input 294 sec/input 0.17
+twin-dup-blend n 8 mode G outputs/input 384 sec/input 0.13

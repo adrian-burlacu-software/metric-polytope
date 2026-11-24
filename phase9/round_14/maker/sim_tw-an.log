@@ -1,0 +1,8 @@
+round 1 adds 36 reached 11194 time 40
+round 2 adds 93 reached 11776 time 47
+round 3 adds 21 reached 12118 time 50
+round 4 adds 1 reached 12149 time 51
+round 5 adds 0 reached 12150 time 53
+['bl:tw-an'] gained 956 [(4, 5), (5, 50), (6, 294), (7, 482), (8, 118), (9, 7)] targets 6 [(9, 6)] time 53 
+ n 8 target D []
+ n 9 target D [(9, 4), (18, 1), (27, 1)]

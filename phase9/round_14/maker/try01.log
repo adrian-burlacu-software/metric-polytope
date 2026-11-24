@@ -1,0 +1,11 @@
+{
+ "twin-dup-blend": {
+  "kind": "move",
+  "grow": 1,
+  "probed_inputs": 20,
+  "outputs": 4266,
+  "feasible": 4266,
+  "vertices": 279,
+  "seconds": 4.04
+ }
+}

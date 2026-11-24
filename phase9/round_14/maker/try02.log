@@ -1,0 +1,11 @@
+{
+ "twin-dup-third": {
+  "kind": "move",
+  "grow": 1,
+  "probed_inputs": 20,
+  "outputs": 2844,
+  "feasible": 2844,
+  "vertices": 186,
+  "seconds": 2.29
+ }
+}

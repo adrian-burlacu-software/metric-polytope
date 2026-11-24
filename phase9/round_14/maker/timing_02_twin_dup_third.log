@@ -1,0 +1,4 @@
+twin-dup-third n 5 mode G outputs/input 100 sec/input 0.02
+twin-dup-third n 6 mode G outputs/input 144 sec/input 0.04
+twin-dup-third n 7 mode G outputs/input 196 sec/input 0.06
+twin-dup-third n 8 mode G outputs/input 256 sec/input 0.17

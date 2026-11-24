@@ -1,0 +1,7 @@
+round 1 adds 185 reached 11194 time 137
+round 2 adds 191 reached 12663 time 195
+round 3 adds 64 reached 13514 time 223
+round 4 adds 0 reached 13625 time 225
+['cen'] gained 2431 [(4, 13), (5, 148), (6, 913), (7, 1114), (8, 229), (9, 14)] targets 19 [(8, 7), (9, 12)] time 225 
+ n 8 target D [(9, 7)]
+ n 9 target D [(9, 5), (12, 1), (15, 2), (18, 3), (27, 1)]
