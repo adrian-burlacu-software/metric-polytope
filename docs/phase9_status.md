@@ -411,3 +411,53 @@ of weight patterns goes 2, 9, 270+.
 exceptions, and graph-indexed families need a growing number of weight patterns. Caveat: the weight alphabet is one
 way to cut families; a family with parametrised weights could merge many alphabets, so this is evidence, not a proof,
 that no finite graph-indexed rule set exists.
+
+## 15. Do parametrised weights collapse the weight patterns? (2026-11-25)
+
+`scripts/phase9/graph_families.py`, results `results/phase9/graph_families.json` (m_5..m_8 complete, 20,000 sampled
+m_9 orbits, one switching per orbit: the one with the simplest alphabet).
+
+| n | cut-adjacent vertices | alphabets (intervals {a..b}) | orbits with an interval alphabet | unweighted minimal graphs | most weightings on one graph |
+|---|---|---|---|---|---|
+| 7 | 12 | 2 (2) | 100% | 11 | 1 |
+| 8 | 532 | 9 (8) | 99.4% | 256 | 12 |
+| 9 | 19,973 sampled | 270 (36) | 89.5% | 8,006 | 48 (in a 2% sample) |
+
+- **Alphabets collapse partly.** Most orbits use an interval of weights, so "which weights occur" is two numbers
+  (a, b) for about 90% of m_9, not 270 separate patterns.
+- **The weights are not a function of the graph.** At n = 8, 256 graphs carry 532 orbits: 163 graphs carry one vertex,
+  93 carry 2 to 12. At n = 9 the sample already shows graphs with 48 different weightings. A rule "graph ↦ vertex"
+  therefore needs the weighting as extra input, and the number of graphs itself grows (11, 256, over 8,000 sampled).
+- (At n = 8 there are 516 weighted graphs for 532 orbits: merging distance-0 twins forgets which node was doubled.)
+
+So parametrised weights do not rescue a finite rule set: the pattern count shrinks, but the information a rule must
+supply per vertex (a graph on up to n nodes plus a weighting) grows with n.
+
+## 16. Conclusion of Phase 9 (2026-11-25)
+
+**Question.** Is there a generative description of the vertices of m_n that is shorter than the list: a fixed set of
+rules valid for all n, plus exceptions?
+
+**Answer through n = 9: no, in every form tried, and each failure is measured.**
+
+1. *Moves from smaller vertices* (rounds 1–17: 8 accepted moves, 5 base families). They reach 511 of 533 m_8 orbits
+   and 513 of 1,000 sampled m_9 targets. Applied to all of m_8 they give at most 6.6% of m_9, and no move of this
+   kind can exceed 36.2%, because 63.8% of m_9 orbits contain no smaller vertex (4/13, 219/533, 673,787/1,056,367 for
+   n = 7, 8, 9). Exceptions grow (§9, §14).
+2. *Base families* reach the remaining targets at one n and do not continue to n + 1 (§4.3).
+3. *One-node steps without the vertex requirement.* Every one of the 1,056,366 non-cut m_9 orbits is a chain of
+   determined one-node steps over a seed of at most 5 nodes (at most 4 for all but 8 orbits), and the steps come in 6
+   kinds, anchored by cycles of length 2, 3, 5 or 7 (§9, §10). But the kinds do not say which step to take: a generator
+   built from them is complete on m_8 and is a lattice search growing like D^9 to D^11, with 0.04–0.3% of candidates
+   being vertices; no local feature tried separates the useful steps (§11–§13).
+4. *Graph-indexed families.* The unweighted graph metrics are all of m_5 and m_6, 92% of m_7, 20% of m_8, 0.6% of
+   m_9. Weight patterns go 2, 9, 270+; a graph does not determine its weighting (§14, §15).
+
+**What is established.** (a) The structure in item 3: a uniform, exact normal form for every known m_9 vertex.
+(b) The primitive share and the move ceiling: a proof-from-data that restriction-keeping rules cannot describe m_9.
+(c) Reproduced from the literature as checks: 1,221 m_9 orbits not adjacent to a cut; every m_8 orbit adjacent.
+(d) Where a shortcut would have to live: in a non-local choice among fiber vertices. The useful part of the search
+tree is output-sized (§12), so the cost of m_n is the cost of that choice.
+
+**Limits.** n ≤ 9 only (n = 10: 7 walk samples). The m_9 list is Deza's, "probably complete", not proved. The
+generator results are for m_8 with D ≤ 6. "No local feature" means the six features of §13, not all possible ones.
