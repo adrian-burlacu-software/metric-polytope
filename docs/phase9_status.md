@@ -352,3 +352,30 @@ at D ≥ 4. Each useful point has about 2–5 useful extensions out of 4–65 op
 with the level (to 4–9% at the last step for D ≥ 4). So a perfect local choice rule would turn the search into an
 output-sized construction: that is the prize. Whether a *local* rule exists is the open question; the useful and
 non-useful extensions recorded here are the data to test candidate rules on.
+
+## 13. Local features do not choose the step (2026-11-25)
+
+`scripts/phase9/choice_features.py`, results `results/phase9/choice_features_n8.json`. Every distinct extension of
+every useful point (§12), labelled useful or not, with local features: excess tight rows of the child, tight rows
+through the new node (and their excess over the k a determined step needs), whether the child is a vertex of
+m_{k+1}, the step's longest anchor, the new coordinates' denominator, and whether the new node is a twin. For each
+feature, the strictest threshold that keeps every useful extension, and the share of options it keeps:
+
+| D | step | useful / options | best safe single-feature rule (share kept) |
+|---|---|---|---|
+| 4 | 4→5 | 24 / 43 | excess ≤ 3 (86%) |
+| 4 | 6→7 | 67 / 334 | new-node rows ≤ 20 (96%) |
+| 4 | 7→8 | 42 / 469 | excess ≥ 10 (50%) |
+| 5 | 5→6 | 95 / 267 | excess ≤ 8 (91%) |
+| 5 | 6→7 | 151 / 664 | excess ≤ 14 (90%) |
+| 5 | 7→8 | 66 / 1,223 | excess ≥ 5 (68%) |
+| 6 | 5→6 | 432 / 1,244 | none below 99.8% |
+| 6 | 6→7 | 984 / 5,875 | none below 99.9% |
+| 6 | 7→8 | 770 / 18,792 | excess ≥ −1 (82%) |
+
+**Reading.** No single local feature prunes safely at the intermediate steps: the best keeps 86–100% of the options,
+while only 17–56% are useful. The degeneracy guess is wrong in direction: at intermediate steps useful children have
+*fewer* excess tight rows than the most degenerate non-useful ones, and twins are mostly but not always non-useful
+(D = 6, 6→7: 34 useful, 510 not). Being a vertex of m_{k+1} is rare for intermediates (they are mostly not vertices,
+which is the §9 primitive share again). At the last step the real filter is the vertex test itself. So within these
+features the choice is not local: a useful intermediate looks like a non-useful one until the build is finished.
