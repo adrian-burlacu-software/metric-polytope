@@ -365,7 +365,20 @@ the upper bound 2^(2.38n²(1+o(1))) for all faces, and show that metrizability o
 linear program; as far as we could see they do not consider generators or bounded-scope criteria. Corollary 1 is
 thus Avis's bound transferred to orbits of m_n, and Theorem 1 is an elementary consequence of it; what is new here,
 to our knowledge, is the formulation as a limit on generators, the locality invariant with Theorem 3, and the
-computations. We have not made a systematic literature search (Section 8).
+computations.
+
+Other related work found in a literature pass (searches on extreme and prime metrics, characterisations of extreme
+rays, forbidden configurations, recent work on vertices of m_n). Bandelt and Dress [BD92] decompose a metric into
+split metrics and a split-prime residue; extreme rays other than cuts are split-prime, but split-prime metrics need
+not be extreme, so this gives a necessary condition only (it is condition 05 of C8). Koolen, Moulton and Tönges
+[KMT00] and Sturmfels and Yu [SY04] classify the six-point metrics. Lavrov [La25] generalises Avis's isometric-cycle
+criterion to metrics on simplicial posets and states that the classification of extreme metrics for general n is
+open. Bodwin [Bo18] characterises the path systems that are unique shortest paths of a weighted graph by forbidden
+subsystems coming from two-coloured polyhedra; his examples have 4 to 10 nodes and the family is not bounded in
+size. That result concerns faces of the metric cone of a different kind (strict metrizability), but it is the
+closest analogue we know of the phenomenon measured by L: obstructions that cannot be confined to a bounded number
+of points. In none of these did we find the locality invariant, a bound on generators, or a statement that extreme
+rays admit no bounded-scope characterisation. [La25] and [Bo18] were read in part only.
 
 ## 7. Reproduction
 
@@ -401,15 +414,19 @@ vertex" and "is a ray" verdict is exact; the locality closure uses rational arit
    (the best case for a local rule): 9% of the sampled m_9 orbits have no switching with L ≤ 5.
 4. **Theorem 1 no longer rests on [A80, Thm 3.3]**: the case p = 1/2 is proved in Theorem 3(b). That proof has not
    been read by anyone other than its author.
-5. **Novelty.** The lower bound on the number of rays is known ([A80], quoted in [CL25]). We found no earlier
-   statement of Theorem 1 or of locality in a few targeted searches; this is not a systematic search, and [CL25]
-   was read through a summary for its last section.
+5. **Novelty.** The lower bound on the number of rays is known ([A80], quoted in [CL25]). A literature pass
+   (Section 6) found no earlier statement of Theorem 1 or of locality. It was done with web searches and partial
+   readings ([CL25] §7, [La25] §4.2 onwards and [Bo18] §2.2 onwards were seen in summary only); MathSciNet/zbMATH
+   forward citations of [A80], [L96] and [DI07] have not been checked and should be before submission.
 6. **"What L bounds"** is a statement about deductions of two-term proportionalities. A local rule that carries
    longer linear relations between subsets is not covered and would need a wider definition.
 
 ## References
 
 - [A80] D. Avis, On the extreme rays of the metric cone, Canad. J. Math. 32 (1980) 126–144.
+- [BD92] H.-J. Bandelt, A. W. M. Dress, A canonical decomposition theory for metrics on a finite set, Adv. Math. 92
+  (1992) 47–105.
+- [Bo18] G. Bodwin, On the structure of unique shortest paths in graphs, arXiv:1804.09745.
 - [CL25] D. Cizma, N. Linial, On the number of path systems, arXiv:2508.21379v3 (2025).
 - [DD-web] A. Deza, metric polytope data page, www.cas.mcmaster.ca/~deza/metric.html.
 - [DDF96] A. Deza, M. Deza, K. Fukuda, On skeletons, diameters and volumes of metric polyhedra, LNCS 1120 (1996)
@@ -420,6 +437,10 @@ vertex" and "is a ray" verdict is exact; the locality closure uses rational arit
   118–128.
 - [DI07] A. Deza, G. Indik, A counterexample to the dominating set conjecture, Optim. Lett. 1 (2007) 163–169.
 - [DL97] M. Deza, M. Laurent, Geometry of Cuts and Metrics, Springer, 1997.
+- [KMT00] J. Koolen, V. Moulton, U. Tönges, A classification of the six-point prime metrics, European J. Combin. 21
+  (2000) 815–829.
+- [La25] A. Lavrov, Ternary relations and their polytopes, arXiv:2509.06811 (2025).
 - [L96] M. Laurent, Graphic vertices of the metric polytope, Discrete Math. 151 (1996) 131–153.
 - [LP92] M. Laurent, S. Poljak, One-third-integrality in the max-cut problem, Math. Programming 71 (1995) 29–50
   (CWI Report BS-R9209, 1992).
+- [SY04] B. Sturmfels, J. Yu, Classification of six-point metrics, Electron. J. Combin. 11 (2004) R44.
