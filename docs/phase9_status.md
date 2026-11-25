@@ -262,3 +262,35 @@ reached; n = 9: 9/14 (two runs); n = 10: 4/7. Every unreached verdict was an exh
 budget; unreached denominators 10, 11, 13, 13, 16, 17. Samples are small and biased toward the twin starts (walks at
 n ≥ 9 are slow: cdd enumeration explodes at degenerate vertices, so steps are gated by tight-row count), so only the
 trend counts: the reached share falls from n = 8 to n = 9 and stays roughly level at n = 10.
+
+## 10. Rules or exceptions? Step types of the peel chains (2026-11-25)
+
+Question (user): either the rules keep growing or the exceptions do. The "exceptions grow" reading of §9 (primitive
+share 64%) holds only for moves that must keep a *vertex* restriction. Without that requirement, the seed result says
+almost every vertex is a chain of one-node steps, so the question becomes how many kinds of step there are.
+
+**Step types are signed graphs.** Peeling v from S, each tight triangle (v, a, b) gives a row u_a − u_b = c ("diff")
+or u_a + u_b = c ("sum") in the unknowns u_a = x_va. The step is determined iff every component of this signed graph on
+S − v has an unbalanced cycle (odd number of sum edges); the rest of the component is tree propagation. So a step's
+rule is its anchors: the shortest unbalanced cycle length per component (2 = a diff and a sum row on one pair).
+Script `scripts/phase9/step_types.py`, results `results/phase9/step_types.json`. Per vertex: the chain reaching the
+smallest seed, then the smallest longest anchor.
+
+| n | vertices | longest anchor (count) | distinct step signatures (new) |
+|---|---|---|---|
+| 7 | 12 | 3: 12 | 3 (1) |
+| 8 | 532 | 3: 528, 5: 2, 7: 2 | 5 (2: [5], [7]) |
+| 9 | 20,000 sampled | 3: 19,711, 5: 259, 7: 30 | 5 (0) |
+| 10 | 7 (walk samples) | 3: 7 | 1 (0) |
+
+Signatures are [2], [3], [3, 3], [5], [7]. At n = 8 the 7-cycle is the longest possible, so these data alone cannot
+bound the anchor length. **Growth test** (`scripts/phase9/anchor_growth.py`, `results/phase9/anchor_growth.json`):
+Avis doubling of the path P_d (literature C9), checked exactly as vertices, n = 8, 11, 14 with D = 4, 5, 6: every chain
+uses 3-cycle anchors only, also when minimising over all chains. Unbounded denominators do not force longer anchors.
+
+**Reading.** The kinds of step do not grow (5 signatures through n = 9, none new at n = 9; a family with unbounded
+denominators needs only 3-anchors). The chain leaves the seed's ≤ 6 coordinates free; they are pinned at the end by the
+remaining tight rows (the closing condition), which is where the denominators come from. So neither the rules nor the
+exceptions grow: what grows is the number of *choices* (which triangles are tight at each step, which closing). The
+Phase 9 barrier is the requirement that intermediates be vertices. Open: the branching of a generator built from these
+steps on non-vertex intermediates, i.e. whether the choices can be made by rule rather than by search.

@@ -1,0 +1,110 @@
+[
+  {
+    "D": 4,
+    "bottleneck": 3,
+    "chain": [
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ]
+    ],
+    "d": 3,
+    "min_bottleneck_any_chain": 3,
+    "n": 8,
+    "s": 0.0,
+    "seed": 3,
+    "vertex": true
+  },
+  {
+    "D": 5,
+    "bottleneck": 3,
+    "chain": [
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ]
+    ],
+    "d": 4,
+    "min_bottleneck_any_chain": 3,
+    "n": 11,
+    "s": 0.5,
+    "seed": 3,
+    "vertex": true
+  },
+  {
+    "D": 6,
+    "bottleneck": 3,
+    "chain": [
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ]
+    ],
+    "d": 5,
+    "min_bottleneck_any_chain": 3,
+    "n": 14,
+    "s": 7.3,
+    "seed": 3,
+    "vertex": true
+  }
+]
