@@ -103,6 +103,45 @@ def classes(rows):
     return out
 
 
+def run_all9(a, t0):
+    """Full m_9 list in resumable chunks (checkpoints/phase9/gfam9/chunk_NNNNNNN.json); stop with a .halt file there."""
+    import json
+    ck = ROOT / "checkpoints/phase9/gfam9"
+    ck.mkdir(parents=True, exist_ok=True)
+    d = np.load(ROOT / "data/deza/orbits9/den.npy", mmap_mode="r")
+    c = np.load(ROOT / "data/deza/orbits9/coords.npy", mmap_mode="r")
+    N = len(d)
+    with mp.get_context("spawn").Pool(a.workers) as pool:
+        for lo in range(0, N, a.chunk):
+            f = ck / f"chunk_{lo:07d}.json"
+            if f.exists():
+                continue
+            if (ck / ".halt").exists():
+                print("halt file found, stopping", flush=True)
+                return None
+            pts = [(i, Point.make(9, int(d[i]), [int(t) for t in c[i]])) for i in range(lo, min(N, lo + a.chunk))
+                   if d[i] > 1]
+            rows, notray = [], []
+            for (i, _x), r in zip(pts, pool.imap(analyse, pts, chunksize=32)):
+                if r is None:
+                    notray.append(i)
+                else:
+                    r["i"] = i
+                    r["alphabet"] = list(r["alphabet"])
+                    rows.append(r)
+            atomic_write_json(f, {"lo": lo, "rows": rows, "not_cut_adjacent": notray})
+            print(f"  chunk {lo}: {len(rows)} rows, {len(notray)} not cut-adjacent ({time.time() - t0:.0f} s)", flush=True)
+    res, notray = [], 0
+    for f in sorted(ck.glob("chunk_*.json")):
+        j = json.loads(f.read_text())
+        notray += len(j["not_cut_adjacent"])
+        for r in j["rows"]:
+            r["alphabet"] = tuple(r["alphabet"])
+            r["edges"] = [tuple(e) for e in r["edges"]]
+            res.append(r)
+    return res, notray
+
+
 def is_interval(al):
     return list(al) == list(range(al[0], al[-1] + 1))
 
@@ -112,8 +151,23 @@ def main():
     ap.add_argument("--m9", type=int, default=20000)
     ap.add_argument("--workers", type=int, default=16)
     ap.add_argument("--seed", type=int, default=20261125)
+    ap.add_argument("--all9", action="store_true", help="full m_9 list, resumable chunks")
+    ap.add_argument("--chunk", type=int, default=50000)
     a = ap.parse_args()
     t0 = time.time()
+    if a.all9:
+        got = run_all9(a, t0)
+        if got is None:
+            return
+        res9, notray = got
+        print(f"{len(res9)} cut-adjacent m_9 orbits loaded, {notray} not cut-adjacent ({time.time() - t0:.0f} s)", flush=True)
+        report(res9, {"set": "deza9all", "not_cut_adjacent": notray}, "graph_families_m9all.json", t0)
+        # the two simplest families, for the family study (alphabet {1} and {1, 2})
+        fam = [{"i": r["i"], "D": r["D"], "alphabet": list(r["alphabet"]), "nodes": r["nodes"], "edges": r["edges"]}
+               for r in res9 if r["alphabet"] in ((1,), (1, 2))]
+        atomic_write_json(ROOT / "results/phase9/graph_family_12_m9.json", fam)
+        print(f"{len(fam)} orbits with alphabet [1] or [1, 2] saved", flush=True)
+        return
     pts = load_set("m8", 0, 0)
     d = np.load(ROOT / "data/deza/orbits9/den.npy", mmap_mode="r")
     c = np.load(ROOT / "data/deza/orbits9/coords.npy", mmap_mode="r")
@@ -123,7 +177,11 @@ def main():
     with mp.get_context("spawn").Pool(a.workers) as pool:
         res = [r for r in pool.imap_unordered(analyse, pts, chunksize=16) if r is not None]
     print(f"{len(res)} cut-adjacent vertices analysed ({time.time() - t0:.0f} s)", flush=True)
-    out = {"m9_sample": a.m9, "per_n": {}}
+    report(res, {"m9_sample": a.m9}, "graph_families.json", t0)
+
+
+def report(res, head, name, t0):
+    out = dict(head, per_n={})
     for n in sorted({r["n"] for r in res}):
         R = [r for r in res if r["n"] == n]
         al = Counter(r["alphabet"] for r in R)
@@ -148,7 +206,7 @@ def main():
               f"unweighted graphs {len(cl)}, weighted {o['weighted_graphs']}; weightings per graph {o['weightings_per_unweighted_graph']} "
               f"({time.time() - t0:.0f} s)", flush=True)
     out["seconds"] = round(time.time() - t0, 1)
-    atomic_write_json(ROOT / "results/phase9/graph_families.json", out)
+    atomic_write_json(ROOT / "results/phase9" / name, out)
 
 
 if __name__ == "__main__":
