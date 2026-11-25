@@ -480,7 +480,7 @@ N ≤ 36: 20 also have a switching whose subdivision is an extreme ray; 10 do no
 
 **Reading.** The property is not a characterisation: two thirds of the sampled non-vertices have it too, so "is a
 restriction of an unweighted graph vertex" does not select vertices. It fits the literature's picture that graphic
-extreme rays are very abundant (Avis; to be checked against the source). It is a true statement about m_8 but not a
+extreme rays are very abundant (Avis 1980, Theorems 3.3 and 3.5; checked against the source, see §20). It is a true statement about m_8 but not a
 rule. What would make it one is a condition on the pair (G*, node subset) that guarantees the restriction is a
 vertex; that is the peel problem of §10–§13 in other words.
 
@@ -542,3 +542,84 @@ the elliptope), on m_7, m_8 and the 1,000 m_9 targets, split by reached / unreac
 (−0.85..−0.25), unreached −0.44 (−0.75..−0.20). P(unreached below reached) = 0.43 and 0.47; 0.46 within equal
 denominators. The most negative orbits are reached ones. **No extra signal**; ledger note added to `rules.md`, no rule
 proposed. Denominators do separate the groups (n = 9: D = 13: 116 of 127 unreached; D = 16: 59 of 59; D = 9: 0 of 87).
+
+## 20. A counting theorem: small-choice rules have infinitely many exceptions (2026-11-25)
+
+**Source, read directly** (D. Avis, *On the extreme rays of the metric cone*, Canad. J. Math. 32 (1980) 126–144):
+- Theorem 3.3: for 0 < ε < 1/5 and n^(−1/5+ε) ≤ p ≤ 1 − n^(−1/4+ε), Prob(G_{n,p} induces an extreme ray) = 1 − o(1).
+  Remark after the proof (p. 138): with p = 1/2 "there are 2^C(n,2) (1 − o(1)) distinct extreme rays".
+- Theorem 2.4: if G is 1-ic-colorable (all edges in one class under "opposite edges of an even isometric cycle"),
+  d_G is an extreme ray. The converse is false (Fig. 2.3); adding merge steps, "it is beginning to look like we are
+  back to solving the original system of tight constraints" (p. 132–133). Round 18's claims 01–03 are this procedure
+  and its extensions, and round 18 reached the same end.
+- Theorem 3.5: every rational metric on m points is the restriction of an extreme ray on some n ≥ m points. This is
+  why the subdivision property of §17 cannot characterise vertices.
+- Theorem 3.2: dense m-partite graphs (parts ≥ 3, few missing edges) induce extreme rays; 10^C(n,2) labelled graphs
+  on 3n points from this alone.
+
+**From rays to orbits of m_n.** A ray d of MET_n scaled to x = 2d/τ (τ the largest triangle perimeter) is a vertex
+of m_n: the tight triangle equalities have rank C(n,2) − 1 and vanish on x, the tight perimeter equality does not.
+Distinct labelled graphs give distinct d_G. An orbit of m_n under S_n × switching contains at most n!·2^(n−1) points.
+Hence
+
+    (number of orbits of vertices of m_n)  ≥  2^C(n,2) (1 − o(1)) / (n! · 2^(n−1))  =  2^(n²/2 − O(n log n)).
+
+**Theorem (counting).** Let a generator consist of a finite list of exceptions and finitely many rules, each of which
+takes an object on n − 1 nodes (a vertex or any intermediate point) and a choice among at most 2^b(n) alternatives and
+returns an object on n nodes. If b(n) ≤ (1 − δ)·n for some δ > 0 and all large n, the generator produces at most
+2^((1−δ)n²/2 + O(n)) objects on n nodes, so the share of orbits of m_n it reaches tends to 0. In particular it has
+infinitely many exceptions at every large n, not finitely many.
+
+*Proof.* If N(n) is the number of objects on n nodes, N(n) ≤ r·2^b(n)·N(n − 1) + e with r rules and e exceptions;
+iterate and compare with the lower bound above. ∎
+
+**What it covers.** Every rule type of rounds 1–17 (a bounded or polynomial choice per added node: b(n) = O(log n)),
+the fiber generator of §11 for a fixed denominator, and any "family with boundedly many parameters". For these,
+"finitely many rules plus finitely many exceptions" is impossible, and the measured growth (13, 533, 1,056,367) is
+the beginning of it.
+
+**What it does not cover.** Rules whose choice has about n bits per added node, i.e. rules that take a whole graph
+(or weighted graph) as input. There the opposite holds for the unweighted family: the one rule "x = 2 d_G / τ" is
+correct for almost all graphs. But (a) deciding *which* graphs is the tight-system rank, with no combinatorial
+characterisation known (Avis; round 18); (b) at n = 9 unweighted graphs give 0.52% of the orbits, and whether
+weighted rays outnumber graphic ones asymptotically is not known to us (upper bound on all vertices: 2^O(n² log n)).
+
+**Answer to "finite rules or infinite exceptions".** For rules with a small choice per node: infinite exceptions,
+proved. For rules that take a graph as input: the rule is the definition (tight rank), and the question becomes
+whether a finite *combinatorial* test replaces the rank; §21 measures that.
+
+## 21. Locality: how many nodes a rule must inspect at once (2026-11-25)
+
+`scripts/phase9/locality.py`, `results/phase9/locality.md` / `.json` (116 s, exact arithmetic).
+
+**Measure.** For a ray d on k nodes, the level-s closure solves, for every s-subset W of nodes, the tight triangle
+equalities inside W exactly, merges the pairs they force to be proportional, and repeats over all W to a fixpoint.
+L(d) is the smallest s at which everything is merged. The closure at s + 1 contains the one at s and s = k is the
+definition, so 4 ≤ L ≤ k. Any rule that examines at most s nodes at a time, with unlimited propagation between the
+examinations, certifies only rays with L ≤ s. (Level 4 already contains Avis's ic-colouring for 4-cycles and all of
+round 18's closure: the 88 rays missed there have L = 4 or 5.)
+
+**All weights (vertices of m_n as rays, simplest switching).**
+
+| n | orbits | L = 4 | 5 | 6 | 7 | 8 | mean L |
+|---|---|---|---|---|---|---|---|
+| 7 | 12 (all) | 12 | | | | | 4.00 |
+| 8 | 532 (all) | 403 | 124 | 4 | 1 | | 4.27 |
+| 9 | 30,008 (sample, k = 9 only) | 8,778 | 14,458 | 6,123 | 629 | 20 | 4.96 |
+
+Share certified by 4-node inspection: 100%, 76%, 29%. Largest L: 4, 7, 8, i.e. n − 1 at n = 8 and n = 9.
+
+**Family {1,2}.** k ≤ 7: all L = 4. k = 8 (complete, 925): 916 at 4, 9 at 5. k = 9 (27,963 from m_9): 27,177 at 4,
+780 at 5, 5 at 6, 1 at 7. The breaker's constructed rays on 10 and 11 nodes are almost all L = 4 (99.2%, 99.6%),
+as expected from local constructions; they say nothing about typical rays.
+
+**Reading.** The number of nodes a rule must see at once grows with n: one more node adds about 0.3 then 0.7 to the
+mean, the 4-node rules lose 24% and then 71% of the orbits, and the worst case tracks n − 1. A fixed finite set of
+local rules (any fixed s) is therefore complete at n = 7 only, and by §20's Theorem 3.5 of Avis (any rational metric
+embeds in a ray) there is no reason for L to stay bounded. This is the "rules keep growing" side, measured: at every
+n there are orbits whose proof needs nearly the whole tight system. No ray in the data has L = k.
+
+**Limits.** n = 9 is a 2.9% sample (the largest L on the full list could be 9); one switching per orbit, and L may
+depend on the switching; L is defined through this closure, and a cleverer bounded rule could do better on some
+rays, though none can beat the full system on s nodes. Unbounded growth of L with n is observed for n = 7, 8, 9 and
+is not proved.

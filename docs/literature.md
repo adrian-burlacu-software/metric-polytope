@@ -187,3 +187,13 @@ diagonal value), `radial(m, α, ·)` (C5), `graph_metric(G, scale)` and `triamet
 (vertex test, denominators, incidence, projection-to-vertex, adjacency to cuts, switching-class adjacency).
 Two constructions need a *selection* among valid outputs (C4's min, C11's extension), so the DSL needs a
 deterministic "choose" combinator with an explicit rule.
+
+### Avis 1980, read directly (2026-11-25) — `PRIMARY`
+D. Avis, *On the extreme rays of the metric cone*, Canad. J. Math. 32 (1980) 126–144, doi 10.4153/CJM-1980-010-0.
+- Thm 2.4 (1-ic-colorable ⇒ extreme ray; converse false). Thm 3.2: dense m-partite graphs: parts V_1..V_m with
+  |V_i| ≥ 3 and ||V_i ∪ V_j|| ≥ |V_i||V_j| − max(|V_i|, |V_j|) + 2 ("almost complete" = this). Thm 3.3: G_{n,p} induces
+  an extreme ray with probability 1 − o(1) for n^(−1/5+ε) ≤ p ≤ 1 − n^(−1/4+ε); hence 2^C(n,2)(1 − o(1)) labelled
+  graphic extreme rays. Lemma 3.4 / Thm 3.5: F(G) (two copies of G joined by a matching, plus a new vertex per edge
+  u1v1 joined to u1 and v2) is an extreme ray containing G isometrically; every rational metric is a restriction of
+  an extreme ray. Thm 4.2 (zero distances), Thm 4.4 (union of two overlapping extreme rays is an extreme ray).
+- This resolves the `UNREAD` in C8 and gives the construction behind C9 from the primary source.

@@ -139,6 +139,18 @@ At 9 nodes it misses 76 of the 27,963 rays, and 46 of 46,436 further rays built 
 condition found rejects 92% of near-miss non-rays. No exact combinatorial characterisation was found
 (`docs/phase9_status.md` §18).
 
+**Two results that close the question for bounded rules** (`docs/phase9_status.md` §20, §21).
+
+*Counting.* By a theorem of Avis (1980, Thm 3.3) almost all graphs on n nodes induce extreme rays, so m_n has at least
+2^(n²/2 − O(n log n)) orbits of vertices. A generator made of finitely many rules, each choosing among at most
+2^((1−δ)n) alternatives when it adds the n-th node, produces at most 2^((1−δ)n²/2 + O(n)) objects. Its share of the
+orbits tends to 0, so it has infinitely many exceptions. Every rule type of §2–§4 is of this kind.
+
+*Locality.* For rules that take a whole weighted graph as input, measure how many nodes must be examined together to
+prove the ray (solve the tight equalities inside every s-subset, merge, repeat). The smallest sufficient s is 4 for
+all of m_7; at n = 8 it is 4 for 76% of the orbits and reaches 7; at n = 9 (30,008 sampled) it is 4 for 29%, 5 for
+48%, 6 for 20%, and reaches 8. Rules with a fixed inspection size lose ground at every n.
+
 ## 6. Conclusions
 
 1. Restriction-keeping rules cannot describe m_9: at least 63.8% of its orbits are out of their reach.
@@ -147,6 +159,9 @@ condition found rejects 92% of near-miss non-rays. No exact combinatorial charac
 3. The normal form does not give a construction. The cost of generating m_n is the cost of choosing, among the
    determined steps, the few that lead to vertices; within the features tested this choice is not local.
 4. Graph-indexed families do not stay finite in number either.
+5. "Finitely many rules plus finitely many exceptions" is impossible for rules with a small choice per node (proved,
+   given Avis's theorem), and for graph-input rules the size of what a rule must inspect grows with n (measured for
+   n = 7, 8, 9, not proved in general).
 
 ## 7. Limits
 
@@ -168,4 +183,5 @@ All scripts are in `scripts/phase9/`, all outputs in `results/phase9/`.
 | 2 (move capacity) | `move_capacity.py` | `move_capacity.json` |
 | 3 (step kinds) | `step_types.py`, `anchor_growth.py` | `step_types_m9all.json`, `anchor_growth.json` |
 | 4 | `fiber_generator.py`, `useful_share.py`, `choice_features.py` | `fiber_generator_n8.json`, `useful_share_n8.json`, `choice_features_n8.json` |
+| 5 (locality) | `locality.py` | `locality.md` |
 | 5 | `graph_types.py`, `graph_families.py` | `graph_types.json`, `graph_families.json`, `graph_families_m9all.json`; family: `family12.py`, `judge_family.py`, `round_18_family.md` |
