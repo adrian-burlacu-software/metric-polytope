@@ -461,3 +461,25 @@ tree is output-sized (§12), so the cost of m_n is the cost of that choice.
 
 **Limits.** n ≤ 9 only (n = 10: 7 walk samples). The m_9 list is Deza's, "probably complete", not proved. The
 generator results are for m_8 with D ≤ 6. "No local feature" means the six features of §13, not all possible ones.
+
+## 17. Family study, first test: weighted vertices as restrictions of unweighted graph metrics (2026-11-25)
+
+`scripts/phase9/subdivision_test.py`, `scripts/phase9/subdivision_control.py`; results
+`results/phase9/subdivision_test.json`, `results/phase9/subdivision_control.json`.
+
+**Claim tested.** Replace every weight-w edge of a vertex's minimal weighted graph (§14) by a path of w unit edges.
+The vertex's metric is the restriction of the path metric of this unweighted graph G* on N ≥ n nodes. Is d(G*) an
+extreme ray of the metric cone MET_N (exact: tight triangle rows of rank C(N,2) − 1)?
+
+**Result on m_8.** Yes for all 532 non-cut orbits (N from 5 to 67), for a suitable switching. With the
+simplest-alphabet switching 531 pass; orbit 165 (D = 7) fails there (corank 2) and passes with 14 of its 15 other
+valid switchings. Also yes for all 12 non-cut orbits of m_7 and the 3 of m_5, m_6.
+
+**Control.** 30 non-vertices of m_8 (sibling extensions from the §11 generator, D = 3..6), all 128 switchings tried,
+N ≤ 36: 20 also have a switching whose subdivision is an extreme ray; 10 do not (smallest corank 2 to 4).
+
+**Reading.** The property is not a characterisation: two thirds of the sampled non-vertices have it too, so "is a
+restriction of an unweighted graph vertex" does not select vertices. It fits the literature's picture that graphic
+extreme rays are very abundant (Avis; to be checked against the source). It is a true statement about m_8 but not a
+rule. What would make it one is a condition on the pair (G*, node subset) that guarantees the restriction is a
+vertex; that is the peel problem of §10–§13 in other words.

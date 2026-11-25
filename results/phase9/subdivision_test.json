@@ -1,0 +1,7950 @@
+{
+  "nmax": 70,
+  "rows": [
+    {
+      "D": 3,
+      "N": 5,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n5:1",
+      "n": 5,
+      "nodes": 5,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 5,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n6:1",
+      "n": 6,
+      "nodes": 5,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 6,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n6:2",
+      "n": 6,
+      "nodes": 6,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 5,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n7:1",
+      "n": 7,
+      "nodes": 5,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n7:10",
+      "n": 7,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n7:11",
+      "n": 7,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n7:12",
+      "n": 7,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 5,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:1",
+      "n": 8,
+      "nodes": 5,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n7:6",
+      "n": 7,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n7:7",
+      "n": 7,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n7:8",
+      "n": 7,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n7:9",
+      "n": 7,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 5,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n7:2",
+      "n": 7,
+      "nodes": 5,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 6,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n7:3",
+      "n": 7,
+      "nodes": 6,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n7:4",
+      "n": 7,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 4,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n7:5",
+      "n": 7,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 4,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:10",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:11",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:12",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:13",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:6",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:7",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 4,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:8",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 4,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:9",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 4,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:14",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 4,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:15",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 4,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:16",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 4,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:17",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 4,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:18",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:19",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:20",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:21",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:22",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:23",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 4,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:24",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 4,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:25",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 5,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:2",
+      "n": 8,
+      "nodes": 5,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 5,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:3",
+      "n": 8,
+      "nodes": 5,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 6,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:4",
+      "n": 8,
+      "nodes": 6,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 6,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:5",
+      "n": 8,
+      "nodes": 6,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:26",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:27",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:28",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:29",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:30",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:31",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:32",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:33",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 10,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:38",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 11,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:39",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:40",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:41",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:34",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:35",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:36",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 14,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:37",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 7,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:42",
+      "n": 8,
+      "nodes": 7,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 18,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:43",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 12,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:44",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 13,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:45",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:46",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 17,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:47",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:48",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:49",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:54",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:55",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 14,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:56",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:57",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:62",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:63",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:64",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:65",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 4,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:58",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 14,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:59",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:60",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 18,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:61",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 4,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:70",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 22,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:71",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 19,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:72",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 15,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:73",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 17,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:74",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 17,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:75",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:76",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 14,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:77",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 19,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:66",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:67",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 17,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:68",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 28,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:69",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 15,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:50",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 22,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:51",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 37,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:52",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:53",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 18,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:82",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:83",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 18,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:84",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 18,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:85",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 15,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:78",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 18,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:79",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:80",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:81",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:94",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:95",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:96",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:97",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:98",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:99",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 17,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:100",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:101",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:102",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:103",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:104",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 18,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:105",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 19,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:106",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 19,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:107",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 19,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:108",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:109",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:86",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 30,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:87",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 19,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:88",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 18,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:89",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 15,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:110",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:111",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:112",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 15,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:113",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:114",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:115",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:116",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:117",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:130",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 18,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:131",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:132",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:133",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 33,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:90",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 19,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:91",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 36,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:92",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 13,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:93",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:126",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 17,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:127",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 30,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:128",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 29,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:129",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 15,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:142",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 20,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:143",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:144",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:145",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 38,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:118",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:119",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 18,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:120",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:121",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:146",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:147",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:148",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:149",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:150",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:151",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 19,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:152",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 19,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:153",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:138",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:139",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 28,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:140",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:141",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:162",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 14,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:163",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 19,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:164",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 9,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 2,
+      "key": "n8:165",
+      "n": 8,
+      "nodes": 8,
+      "ray": false,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:170",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:171",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 19,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:172",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:173",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:134",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 39,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:135",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 17,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:136",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:137",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 36,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:122",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 33,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:123",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:124",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:125",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:154",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:155",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:156",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 33,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:157",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 22,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:186",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:187",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:188",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 22,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:189",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:182",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:183",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 17,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:184",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 24,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:185",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:190",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 36,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:191",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 9,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:192",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:193",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:174",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 17,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:175",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 31,
+      "alphabet": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:176",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 12,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:177",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 9,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:194",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:195",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:196",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:197",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 13,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:178",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 40,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:179",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 23,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:180",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 16,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:181",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 29,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:198",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 22,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:199",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:200",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:201",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 39,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:158",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 24,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:159",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:160",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 35,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:161",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 42,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:166",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:167",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 39,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:168",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 28,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:169",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 35,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:210",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 32,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:211",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 9,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:212",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 9,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:213",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:202",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 36,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:203",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:204",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 34,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:205",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 27,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:218",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 29,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:219",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 25,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:220",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 25,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:221",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:234",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:235",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:236",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:237",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:206",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 31,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:207",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 29,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:208",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:209",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:226",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 5,
+      "N": 15,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:227",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 17,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:228",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 29,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:229",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 31,
+      "alphabet": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:230",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:231",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:232",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:233",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 41,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:222",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:223",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:224",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:225",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:246",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:247",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:248",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:249",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 42,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:214",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:215",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 35,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:216",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 18,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:217",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:238",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:239",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 33,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:240",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 36,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:241",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:250",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:251",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:252",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 39,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:253",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:254",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 36,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:255",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 29,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:256",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:257",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:258",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:259",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 29,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:260",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:261",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:242",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 29,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:243",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:244",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 38,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:245",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 31,
+      "alphabet": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:274",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:275",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 29,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:276",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:277",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 40,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:262",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:263",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 35,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:264",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:265",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 28,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:282",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:283",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:284",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:285",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:278",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 14,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:279",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 39,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:280",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 13,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:281",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 25,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:290",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 36,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:291",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 31,
+      "alphabet": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:292",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:293",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:298",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:299",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 29,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:300",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 35,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:301",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 36,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:286",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:287",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 7,
+      "N": 22,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:288",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 34,
+      "alphabet": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:289",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:294",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:295",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 29,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:296",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 36,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:297",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 35,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:302",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 29,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:303",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:304",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 39,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:305",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:310",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:311",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 23,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:312",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:313",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 43,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:270",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 31,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:271",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 32,
+      "alphabet": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:272",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 43,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:273",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 35,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:314",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:315",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 35,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:316",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 38,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:317",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 22,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:330",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:331",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:332",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 27,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:333",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 42,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:306",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 40,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:307",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 32,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:308",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 32,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:309",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 42,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:326",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 39,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:327",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:328",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:329",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:334",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:335",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:336",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:337",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 38,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:338",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 36,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:339",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:340",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 36,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:341",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:346",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:347",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 27,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:348",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:349",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 46,
+      "alphabet": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:342",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:343",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 20,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:344",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 38,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:345",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 19,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:354",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 19,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:355",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 36,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:356",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 27,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:357",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:358",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:359",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 34,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:360",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 36,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:361",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 40,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:318",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 54,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:319",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 35,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:320",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 39,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:321",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 32,
+      "alphabet": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:370",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 33,
+      "alphabet": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:371",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:372",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:373",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 18,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:362",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 36,
+      "alphabet": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:363",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:364",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 36,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:365",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:266",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 45,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:267",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 56,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:268",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 19,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:269",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 19,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:350",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 39,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:351",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 39,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:352",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 42,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:353",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 32,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:374",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 31,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:375",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 36,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:376",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 32,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:377",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 32,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:386",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 23,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:387",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:388",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:389",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:378",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 36,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:379",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:380",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:381",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 36,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:322",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 40,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:323",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 14,
+      "N": 58,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:324",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:325",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:366",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:367",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 33,
+      "alphabet": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:368",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 14,
+      "N": 54,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:369",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:390",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:391",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 38,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:392",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 47,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:393",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 44,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:398",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:399",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:400",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:401",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:394",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 45,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:395",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 38,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:396",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:397",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 35,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:410",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 35,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:411",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:412",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:413",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:414",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:415",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 38,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:416",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:417",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:418",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 36,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:419",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 29,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:420",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 39,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:421",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:426",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 38,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:427",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:428",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 35,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:429",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 38,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:430",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 22,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:431",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:432",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:433",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 35,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:422",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 38,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:423",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:424",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 32,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:425",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 39,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:402",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 29,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:403",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 46,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:404",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 57,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:405",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 19,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:446",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 36,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:447",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:448",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 33,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:449",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:438",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 35,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:439",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:440",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:441",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:434",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:435",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 33,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:436",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 14,
+      "N": 54,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:437",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 42,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:442",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 21,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:443",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 38,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:444",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 52,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:445",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 40,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:458",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 42,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:459",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 38,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:460",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 41,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:461",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:466",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:467",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 32,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:468",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 46,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:469",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:470",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:471",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 35,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:472",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:473",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 31,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:454",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 46,
+      "alphabet": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:455",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 50,
+      "alphabet": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:456",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 42,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:457",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:462",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 48,
+      "alphabet": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:463",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 32,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:464",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:465",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 58,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:406",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 28,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:407",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 54,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:408",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 35,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:409",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 58,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:382",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 32,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:383",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 55,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:384",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:385",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 29,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:490",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 31,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:491",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:492",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 46,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:493",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 30,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:486",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 38,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:487",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 22,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:488",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 51,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:489",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:482",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 43,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:483",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 46,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:484",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:485",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:478",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 45,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:479",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 36,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:480",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 50,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:481",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 25,
+      "alphabet": [
+        1,
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:502",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 43,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:503",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 36,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:504",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 33,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:505",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 15,
+      "N": 67,
+      "alphabet": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:450",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 10,
+      "N": 38,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:451",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 33,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:452",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 50,
+      "alphabet": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:453",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 58,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:474",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 52,
+      "alphabet": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:475",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 11,
+      "N": 47,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:476",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 6,
+      "N": 22,
+      "alphabet": [
+        1,
+        2
+      ],
+      "corank": 1,
+      "key": "n8:477",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:506",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 61,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:507",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 34,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:508",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 33,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:509",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:498",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 14,
+      "N": 62,
+      "alphabet": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "corank": 1,
+      "key": "n8:499",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 38,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:500",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 43,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:501",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:526",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 36,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:527",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 35,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:528",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 37,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:529",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 39,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:530",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:531",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 3,
+      "N": 8,
+      "alphabet": [
+        1
+      ],
+      "corank": 1,
+      "key": "n8:532",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 35,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:494",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 38,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:495",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 59,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:496",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 56,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:497",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 57,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:514",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 32,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:515",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 59,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:516",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 32,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:517",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 8,
+      "N": 31,
+      "alphabet": [
+        2,
+        3
+      ],
+      "corank": 1,
+      "key": "n8:510",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 58,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:511",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 59,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:512",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 53,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:513",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 56,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:518",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 53,
+      "alphabet": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:519",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 14,
+      "N": 62,
+      "alphabet": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "corank": 1,
+      "key": "n8:520",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 55,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:521",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 9,
+      "N": 35,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:522",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 13,
+      "N": 54,
+      "alphabet": [
+        3,
+        4,
+        5
+      ],
+      "corank": 1,
+      "key": "n8:523",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 12,
+      "N": 51,
+      "alphabet": [
+        2,
+        3,
+        4
+      ],
+      "corank": 1,
+      "key": "n8:524",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    },
+    {
+      "D": 14,
+      "N": 64,
+      "alphabet": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "corank": 1,
+      "key": "n8:525",
+      "n": 8,
+      "nodes": 8,
+      "ray": true,
+      "restriction_ok": true
+    }
+  ],
+  "summary": {
+    "n5 [1]": {
+      "N": {
+        "5": 1
+      },
+      "corank_not_ray": {},
+      "orbits": 1,
+      "ray": 1
+    },
+    "n6 [1]": {
+      "N": {
+        "5": 1,
+        "6": 1
+      },
+      "corank_not_ray": {},
+      "orbits": 2,
+      "ray": 2
+    },
+    "n7 [1, 2]": {
+      "N": {
+        "16": 1
+      },
+      "corank_not_ray": {},
+      "orbits": 1,
+      "ray": 1
+    },
+    "n7 [1]": {
+      "N": {
+        "5": 2,
+        "6": 1,
+        "7": 8
+      },
+      "corank_not_ray": {},
+      "orbits": 11,
+      "ray": 11
+    },
+    "n8 [1, 2, 3, 4]": {
+      "N": {
+        "31": 4,
+        "32": 2,
+        "33": 2,
+        "34": 1,
+        "36": 1
+      },
+      "corank_not_ray": {},
+      "orbits": 10,
+      "ray": 10
+    },
+    "n8 [1, 2, 3]": {
+      "N": {
+        "18": 2,
+        "19": 2,
+        "20": 2,
+        "21": 3,
+        "22": 4,
+        "23": 1,
+        "24": 2,
+        "25": 4,
+        "28": 5,
+        "29": 2,
+        "30": 2,
+        "31": 2,
+        "32": 1,
+        "33": 1
+      },
+      "corank_not_ray": {},
+      "orbits": 33,
+      "ray": 33
+    },
+    "n8 [1, 2]": {
+      "N": {
+        "9": 5,
+        "10": 1,
+        "11": 1,
+        "12": 2,
+        "13": 4,
+        "14": 6,
+        "15": 7,
+        "16": 16,
+        "17": 10,
+        "18": 10,
+        "19": 14,
+        "20": 16,
+        "21": 12,
+        "22": 6,
+        "23": 2
+      },
+      "corank_not_ray": {
+        "2": 1
+      },
+      "not a ray": 1,
+      "orbits": 112,
+      "ray": 111
+    },
+    "n8 [1]": {
+      "N": {
+        "5": 3,
+        "6": 2,
+        "7": 18,
+        "8": 84
+      },
+      "corank_not_ray": {},
+      "orbits": 107,
+      "ray": 107
+    },
+    "n8 [2, 3, 4, 5]": {
+      "N": {
+        "46": 2,
+        "48": 1,
+        "50": 2,
+        "52": 1,
+        "53": 1,
+        "67": 1
+      },
+      "corank_not_ray": {},
+      "orbits": 8,
+      "ray": 8
+    },
+    "n8 [2, 3, 4]": {
+      "N": {
+        "30": 1,
+        "31": 1,
+        "33": 2,
+        "34": 2,
+        "35": 13,
+        "36": 14,
+        "37": 28,
+        "38": 12,
+        "39": 13,
+        "40": 6,
+        "41": 2,
+        "42": 8,
+        "43": 5,
+        "44": 1,
+        "45": 3,
+        "46": 4,
+        "47": 2,
+        "50": 1,
+        "51": 2,
+        "52": 1,
+        "54": 2
+      },
+      "corank_not_ray": {},
+      "orbits": 123,
+      "ray": 123
+    },
+    "n8 [2, 3]": {
+      "N": {
+        "27": 4,
+        "28": 16,
+        "29": 13,
+        "30": 24,
+        "31": 3,
+        "32": 11,
+        "33": 6,
+        "34": 15,
+        "35": 6,
+        "36": 8,
+        "37": 5,
+        "38": 5
+      },
+      "corank_not_ray": {},
+      "orbits": 116,
+      "ray": 116
+    },
+    "n8 [2, 4, 5, 6]": {
+      "N": {
+        "62": 2,
+        "64": 1
+      },
+      "corank_not_ray": {},
+      "orbits": 3,
+      "ray": 3
+    },
+    "n8 [3, 4, 5]": {
+      "N": {
+        "53": 1,
+        "54": 3,
+        "55": 2,
+        "56": 3,
+        "57": 2,
+        "58": 5,
+        "59": 3,
+        "61": 1
+      },
+      "corank_not_ray": {},
+      "orbits": 20,
+      "ray": 20
+    }
+  }
+}
