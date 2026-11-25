@@ -1,0 +1,42 @@
+{
+  "10": {
+    "graphs": 300,
+    "locality_4": 70,
+    "rays": 70
+  },
+  "12": {
+    "graphs": 300,
+    "locality_4": 181,
+    "rays": 182
+  },
+  "14": {
+    "graphs": 300,
+    "locality_4": 242,
+    "rays": 242
+  },
+  "16": {
+    "graphs": 300,
+    "locality_4": 272,
+    "rays": 272
+  },
+  "20": {
+    "graphs": 300,
+    "locality_4": 298,
+    "rays": 298
+  },
+  "24": {
+    "graphs": 300,
+    "locality_4": 300,
+    "rays": 300
+  },
+  "6": {
+    "graphs": 300,
+    "locality_4": 2,
+    "rays": 2
+  },
+  "8": {
+    "graphs": 300,
+    "locality_4": 17,
+    "rays": 17
+  }
+}

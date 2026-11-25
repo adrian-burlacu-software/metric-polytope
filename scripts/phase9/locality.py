@@ -168,8 +168,64 @@ def load_sets(a):
     return items
 
 
+def _job9(r):
+    k, e = F.relabel([tuple(t) for t in r["edges"]])
+    return r["i"], r["D"], k, locality(k, F.metric(k, e).tolist())
+
+
+def run_all9(a):
+    """Every cut-adjacent orbit of the m_9 list (weighted graphs from checkpoints/phase9/gfam9), resumable per chunk
+    in checkpoints/phase9/loc9; a .halt file there stops it."""
+    t0 = time.time()
+    src = sorted((ROOT / "checkpoints/phase9/gfam9").glob("chunk_*.json"))
+    ck = ROOT / "checkpoints/phase9/loc9"
+    ck.mkdir(parents=True, exist_ok=True)
+    with mp.get_context("spawn").Pool(a.workers) as pool:
+        for f in src:
+            g = ck / f.name
+            if g.exists():
+                continue
+            if (ck / ".halt").exists():
+                print("halt file found, stopping", flush=True)
+                return
+            rows = json.loads(f.read_text())["rows"]
+            kL, DL, high = Counter(), Counter(), []
+            for i, D, k, L in pool.imap_unordered(_job9, rows, chunksize=64):
+                assert L is not None, i
+                kL[f"{k}|{L}"] += 1
+                DL[f"{D}|{L}"] += 1
+                if L >= 7 or L == k:
+                    high.append({"i": i, "D": D, "k": k, "L": L})
+            atomic_write_json(g, {"rows": len(rows), "kL": dict(kL), "DL": dict(DL), "high": sorted(high, key=lambda h: h["i"])})
+            print(f"  {f.name}: {len(rows)} rows ({time.time() - t0:.0f} s)", flush=True)
+    kL, DL, high, n = Counter(), Counter(), [], 0
+    for g in sorted(ck.glob("chunk_*.json")):
+        j = json.loads(g.read_text())
+        n += j["rows"]
+        kL.update(j["kL"])
+        DL.update(j["DL"])
+        high += j["high"]
+    by_k = {}
+    for key, v in kL.items():
+        k, L = key.split("|")
+        by_k.setdefault(k, {})[L] = v
+    by_D = {}
+    for key, v in DL.items():
+        D, L = key.split("|")
+        by_D.setdefault(D, {})[L] = v
+    out = {"orbits": n, "by_nodes": {k: dict(sorted(v.items())) for k, v in sorted(by_k.items())},
+           "by_denominator": {D: dict(sorted(v.items())) for D, v in sorted(by_D.items(), key=lambda t: int(t[0]))},
+           "L_equals_k": [h for h in high if h["L"] == h["k"]], "L_ge_8": [h for h in high if h["L"] >= 8],
+           "L_7_count": sum(1 for h in high if h["L"] == 7), "seconds": round(time.time() - t0, 1)}
+    atomic_write_json(ROOT / "results/phase9/locality_m9all.json", out)
+    for k, v in out["by_nodes"].items():
+        print(f"k = {k}: {v}", flush=True)
+    print(f"{n} orbits; L = k for {len(out['L_equals_k'])}; L >= 8 for {len(out['L_ge_8'])} ({out['seconds']} s)", flush=True)
+
+
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--all9", action="store_true", help="every cut-adjacent orbit of the m_9 list, resumable")
     ap.add_argument("--fam9", type=int, default=2000)
     ap.add_argument("--brk", type=int, default=600)
     ap.add_argument("--m9", type=int, default=2000)
@@ -177,6 +233,8 @@ def main():
     ap.add_argument("--seed", type=int, default=20261125)
     ap.add_argument("--limit", type=int, default=0, help="timing test: only the first N items of a shuffled list")
     a = ap.parse_args()
+    if a.all9:
+        return run_all9(a)
     t0 = time.time()
     items = load_sets(a)
     if a.limit:

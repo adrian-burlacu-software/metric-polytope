@@ -1,0 +1,33 @@
+{
+  "5": {
+    "extreme_rays": 25,
+    "match": true,
+    "orbits_under_S_n": 3,
+    "published": 25
+  },
+  "6": {
+    "extreme_rays": 296,
+    "match": true,
+    "orbits_under_S_n": 8,
+    "published": 296
+  },
+  "7": {
+    "extreme_rays": 55226,
+    "match": true,
+    "orbits_under_S_n": 46,
+    "published": 55226
+  },
+  "8": {
+    "extreme_rays": 119269588,
+    "match": true,
+    "orbits_under_S_n": 3918,
+    "published": 119269588
+  },
+  "positive_rays_per_k": {
+    "5": 1,
+    "6": 3,
+    "7": 33,
+    "8": 3751
+  },
+  "seconds": 25.7
+}
