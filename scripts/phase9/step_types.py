@@ -148,30 +148,42 @@ def main():
         pts += [(f"n10:{r['key']}", Point.make(10, r["D"], r["nums"])) for r in json.loads(s10.read_text())["rows"]]
     pts = [(k, x) for k, x in pts if x.D > 1]                            # cuts are trivial
     print(f"{len(pts)} vertices ({time.time() - t0:.0f} s)", flush=True)
+    agg = {}
     with mp.get_context("spawn").Pool(a.workers) as pool:
-        res = pool.map(analyse, pts, chunksize=64)
+        for i, r in enumerate(pool.imap(analyse, pts, chunksize=64)):
+            g = agg.setdefault(r["n"], {"R": 0, "seed": Counter(), "bott": Counter(), "anc": Counter(),
+                                        "comp": Counter(), "sigs": Counter(), "top": []})
+            g["R"] += 1
+            g["seed"][r["seed"]] += 1
+            g["bott"][r["bottleneck"]] += 1
+            for st in r["chain"]:
+                g["comp"][len(st)] += 1
+                g["sigs"][tuple(st)] += 1
+                for L in st:
+                    g["anc"][L] += 1
+            if r["bottleneck"] >= 7 and len(g["top"]) < 20:
+                g["top"].append({k: r[k] for k in ("key", "D", "bottleneck", "chain")})
+            if (i + 1) % 100000 == 0:
+                print(f"  {i + 1} done ({time.time() - t0:.0f} s)", flush=True)
     out = {"m9_sample": int(a.m9), "per_n": {}}
     seen_sigs = set()
-    for n in sorted({r["n"] for r in res}):
-        R = [r for r in res if r["n"] == n]
-        anchors = Counter(L for r in R for st in r["chain"] for L in st)
-        comps = Counter(len(st) for r in R for st in r["chain"])
-        sigs = {tuple(st) for r in R for st in r["chain"]}
+    for n in sorted(agg):
+        g = agg[n]
+        sigs = set(g["sigs"])
         new = sigs - seen_sigs
         seen_sigs |= sigs
         out["per_n"][str(n)] = {
-            "vertices": len(R), "seed": dict(sorted(Counter(r["seed"] for r in R).items())),
-            "bottleneck": dict(sorted(Counter(r["bottleneck"] for r in R).items())),
-            "anchor_lengths": dict(sorted(anchors.items())), "components_per_step": dict(sorted(comps.items())),
+            "vertices": g["R"], "seed": dict(sorted(g["seed"].items())), "bottleneck": dict(sorted(g["bott"].items())),
+            "anchor_lengths": dict(sorted(g["anc"].items())), "components_per_step": dict(sorted(g["comp"].items())),
             "distinct_step_signatures": len(sigs), "new_vs_smaller_n": len(new),
-            "new_signatures": sorted(list(map(list, new)))[:50],
-            "max_bottleneck_examples": [{k: r[k] for k in ("key", "D", "bottleneck", "chain")}
-                                        for r in sorted(R, key=lambda r: -r["bottleneck"])[:5]]}
+            "signatures": {str(list(k)): v for k, v in sorted(g["sigs"].items())},
+            "new_signatures": sorted(list(map(list, new))), "long_anchor_examples": g["top"]}
         o = out["per_n"][str(n)]
-        print(f"n = {n}: {len(R)} vertices; bottleneck {o['bottleneck']}; anchors {o['anchor_lengths']}; "
+        print(f"n = {n}: {g['R']} vertices; bottleneck {o['bottleneck']}; anchors {o['anchor_lengths']}; "
               f"components/step {o['components_per_step']}; signatures {len(sigs)} ({len(new)} new)", flush=True)
     out["seconds"] = round(time.time() - t0, 1)
-    atomic_write_json(ROOT / "results/phase9/step_types.json", out)
+    name = "step_types.json" if a.m9 < 10 ** 6 else "step_types_m9all.json"
+    atomic_write_json(ROOT / "results/phase9" / name, out)
 
 
 if __name__ == "__main__":

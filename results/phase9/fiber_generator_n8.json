@@ -1,0 +1,158 @@
+{
+  "3": {
+    "D": 3,
+    "deza_orbits_D": 52,
+    "extra_not_in_deza": 0,
+    "final_candidates": 2958,
+    "found": 52,
+    "levels": {
+      "3": 4,
+      "4": 8,
+      "5": 14,
+      "6": 29,
+      "7": 64,
+      "8 (candidates, not merged)": 2958
+    },
+    "missed": 0,
+    "per_point": {
+      "4": {
+        "fiber_vertices_mean": 12.5,
+        "kept_mean": 7.0
+      },
+      "5": {
+        "fiber_vertices_mean": 18.4,
+        "kept_mean": 10.6
+      },
+      "6": {
+        "fiber_vertices_mean": 31.2,
+        "kept_mean": 18.2
+      },
+      "7": {
+        "fiber_vertices_mean": 74.8,
+        "kept_mean": 46.2
+      }
+    },
+    "seconds_cumulative": 20.9,
+    "vertex_candidates": 1274,
+    "vertex_share_last_level": 0.4307,
+    "vertices": 53,
+    "vertices_with_D": 52
+  },
+  "4": {
+    "D": 4,
+    "deza_orbits_D": 12,
+    "extra_not_in_deza": 0,
+    "final_candidates": 67164,
+    "found": 12,
+    "levels": {
+      "3": 7,
+      "4": 23,
+      "5": 49,
+      "6": 155,
+      "7": 670,
+      "8 (candidates, not merged)": 67164
+    },
+    "missed": 0,
+    "per_point": {
+      "4": {
+        "fiber_vertices_mean": 19.5,
+        "kept_mean": 11.0
+      },
+      "5": {
+        "fiber_vertices_mean": 28.7,
+        "kept_mean": 16.4
+      },
+      "6": {
+        "fiber_vertices_mean": 59.0,
+        "kept_mean": 34.0
+      },
+      "7": {
+        "fiber_vertices_mean": 172.3,
+        "kept_mean": 100.2
+      }
+    },
+    "seconds_cumulative": 27.8,
+    "vertex_candidates": 190,
+    "vertex_share_last_level": 0.00283,
+    "vertices": 13,
+    "vertices_with_D": 12
+  },
+  "5": {
+    "D": 5,
+    "deza_orbits_D": 15,
+    "extra_not_in_deza": 0,
+    "final_candidates": 757052,
+    "found": 15,
+    "levels": {
+      "3": 9,
+      "4": 38,
+      "5": 115,
+      "6": 538,
+      "7": 4446,
+      "8 (candidates, not merged)": 757052
+    },
+    "missed": 0,
+    "per_point": {
+      "4": {
+        "fiber_vertices_mean": 23.4,
+        "kept_mean": 12.9
+      },
+      "5": {
+        "fiber_vertices_mean": 39.4,
+        "kept_mean": 23.3
+      },
+      "6": {
+        "fiber_vertices_mean": 91.9,
+        "kept_mean": 55.1
+      },
+      "7": {
+        "fiber_vertices_mean": 285.7,
+        "kept_mean": 170.3
+      }
+    },
+    "seconds_cumulative": 88.0,
+    "vertex_candidates": 302,
+    "vertex_share_last_level": 0.0004,
+    "vertices": 16,
+    "vertices_with_D": 15
+  },
+  "6": {
+    "D": 6,
+    "deza_orbits_D": 95,
+    "extra_not_in_deza": 0,
+    "final_candidates": 5215846,
+    "found": 95,
+    "levels": {
+      "3": 14,
+      "4": 85,
+      "5": 311,
+      "6": 1871,
+      "7": 22788,
+      "8 (candidates, not merged)": 5215846
+    },
+    "missed": 0,
+    "per_point": {
+      "4": {
+        "fiber_vertices_mean": 28.5,
+        "kept_mean": 15.6
+      },
+      "5": {
+        "fiber_vertices_mean": 47.7,
+        "kept_mean": 28.6
+      },
+      "6": {
+        "fiber_vertices_mean": 116.1,
+        "kept_mean": 72.0
+      },
+      "7": {
+        "fiber_vertices_mean": 372.2,
+        "kept_mean": 228.9
+      }
+    },
+    "seconds_cumulative": 385.8,
+    "vertex_candidates": 3436,
+    "vertex_share_last_level": 0.00066,
+    "vertices": 148,
+    "vertices_with_D": 95
+  }
+}

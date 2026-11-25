@@ -283,7 +283,12 @@ smallest seed, then the smallest longest anchor.
 | 9 | 20,000 sampled | 3: 19,711, 5: 259, 7: 30 | 5 (0) |
 | 10 | 7 (walk samples) | 3: 7 | 1 (0) |
 
-Signatures are [2], [3], [3, 3], [5], [7]. At n = 8 the 7-cycle is the longest possible, so these data alone cannot
+**Full m_9 list** (1,056,366 non-cut orbits, `results/phase9/step_types_m9all.json`, 39 min): longest anchor
+3: 1,042,960; 5: 11,843; 7: 1,563; no 8. Step signatures [3] 5,760,177, [3, 3] 88,230, [5] 11,967, [2] 3,497,
+[7] 1,565, and one new at n = 9: [3, 5] (22 steps), a two-component step combining existing anchors, not a new anchor
+kind.
+
+Signatures through n = 8 are [2], [3], [3, 3], [5], [7]. At n = 8 the 7-cycle is the longest possible, so these data alone cannot
 bound the anchor length. **Growth test** (`scripts/phase9/anchor_growth.py`, `results/phase9/anchor_growth.json`):
 Avis doubling of the path P_d (literature C9), checked exactly as vertices, n = 8, 11, 14 with D = 4, 5, 6: every chain
 uses 3-cycle anchors only, also when minimising over all chains. Unbounded denominators do not force longer anchors.
@@ -294,3 +299,28 @@ remaining tight rows (the closing condition), which is where the denominators co
 exceptions grow: what grows is the number of *choices* (which triangles are tight at each step, which closing). The
 Phase 9 barrier is the requirement that intermediates be vertices. Open: the branching of a generator built from these
 steps on non-vertex intermediates, i.e. whether the choices can be made by rule rather than by search.
+
+## 11. A generator from the step types, on m_8: complete, but it is a search (2026-11-25)
+
+`scripts/phase9/fiber_generator.py`, results `results/phase9/fiber_generator_n8.json`. For a target denominator D:
+all 3- and 4-node points of m_k in (1/D)Z up to symmetry (seeds), then at each level every vertex of the one-node
+fiber that lies in (1/D)Z (exactly the determined steps of §10; intermediates need not be vertices), orbits merged;
+at level 8 every candidate is tested for being a vertex of m_8.
+
+| D | level 4 | 5 | 6 | 7 | level-8 candidates | of which vertices | Deza orbits with this D found |
+|---|---|---|---|---|---|---|---|
+| 3 | 8 | 14 | 29 | 64 | 2,958 | 1,274 (43%) | 52 / 52 |
+| 4 | 23 | 49 | 155 | 670 | 67,164 | 190 (0.28%) | 12 / 12 |
+| 5 | 38 | 115 | 538 | 4,446 | 757,052 | 302 (0.04%) | 15 / 15 |
+| 6 | 85 | 311 | 1,871 | 22,788 | 5,215,846 | 3,436 (0.07%) | 95 / 95 |
+
+(Level sizes are orbits; level-8 candidates are counted with repeats. "Vertices" includes vertices whose denominator
+divides D.) Fiber vertices per point grow from about 12 at level 4 to about 75–170 at level 7.
+
+**Reading.** The generator is complete (every orbit found, none missed), so the five step types really do generate
+m_8. But nothing in it picks the right step: almost all branches die at the final vertex test, and the tree grows like
+D^9 to D^11 (level-7 orbits ×356 and candidates ×1,760 from D = 3 to D = 6). Extrapolated to D = 15, the largest m_8
+denominator, that is about 10^11 candidates. So the answer to "rules or exceptions" is: the rules are finite, but they
+are not a shortcut. Generating m_n with them is a lattice search whose size is set by the denominators, i.e. vertex
+enumeration in another form. A shortcut would need a rule that chooses the step (which fiber vertex) from local data;
+the vertex share above (0.04–0.3% at D ≥ 4) measures how far a blind choice is from that.
