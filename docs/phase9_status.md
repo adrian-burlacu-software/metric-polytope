@@ -232,3 +232,33 @@ Directions 1–3 below were tried in rounds 16–17 (three parallel maker tracks
    remaining 2,3-denominator targets are not reached by any segment or 2-face blend tried.
 4. **Accept the barrier as the result.** Document that the generative description of m_n needs new base pieces at
    each n, and measure how that set grows from m_8 to m_9. *Not started.* Rounds 16–17 strengthen the case for it.
+
+## 9. Structure of the vertices (ideas 1–4, 2026-11-24/25)
+
+Four measurements after round 17, to see what a generative description has to cover. Scripts
+`scripts/phase9/vertex_structure.py` and `scripts/phase9/sample_reach.py`; results in `results/phase9/vertex_structure_*.json`
+and `results/phase9/sample_reach_n*.json`. All exact (rank mod 2^31−1 with an exact fallback when deficient).
+
+**1. Seed size.** Peel nodes one at a time while the restriction stays a vertex of the one-node fiber over the smaller
+restriction; the seed is the smallest node set reached. Full m_9 list (1,056,367 orbits, 100 min on 16 workers): seed 3:
+583,636; seed 4: 472,722; seed 5: 8 (Deza indices 3562, 3638, 3820 with D = 3; 251870, 263569, 294178 with D = 9;
+510482 with D = 11; 575790 with D = 12); seed 2: the cut orbit only. All m_8 orbits have seed ≤ 4. So almost every
+vertex is a chain of one-node fiber vertices over a 3- or 4-node seed. The obstacle is not the seed but which fiber
+vertex each step picks.
+
+**2. Primitive share** (no restriction on 3 ≤ k < n nodes is a vertex of m_k): n = 7: 4/13; n = 8: 219/533;
+n = 9: 673,787/1,056,367 (63.8%; 647/1000 among the Phase 9 targets). The share grows with n, which is the
+restriction barrier of §4.2 in numbers. Largest vertex restriction at n = 9: none 673,787; 8 nodes 159,525;
+7 nodes 7,316; 6 nodes 500; 5 nodes 215,239.
+
+**3. Cut adjacency.** Every m_8 orbit is adjacent to a cut. At n = 9, 1,221 orbits are not, exactly the count in the
+literature (Laurent–Poljak dominating-set conjecture, false at n = 9; `docs/literature.md` S8, C10), which validates
+the test; denominators 6–33, mostly 12, 15, 18, 21. Not new: up to switching, cut-adjacent vertices are the scaled
+rays of the metric cone (C10), so through n = 8 m_n is "switchings of scaled MET_n rays", and that fails at n = 9.
+
+**4. Reached share away from the target lists.** Random walks on the vertex graph of m_n from twin starts; verdict by
+the main engine (reached.json) or the judge's bottom-up search with all accepted moves, 300 s each. n = 8: 27/27
+reached; n = 9: 9/14 (two runs); n = 10: 4/7. Every unreached verdict was an exhausted search (4–7 s), none over
+budget; unreached denominators 10, 11, 13, 13, 16, 17. Samples are small and biased toward the twin starts (walks at
+n ≥ 9 are slow: cdd enumeration explodes at degenerate vertices, so steps are gated by tight-row count), so only the
+trend counts: the reached share falls from n = 8 to n = 9 and stays roughly level at n = 10.
