@@ -20,7 +20,7 @@ proper subset of the points suffices. The share of rays with L = 4 is 97% and 72
 orbits on the m_9 list. We also record a uniform normal form for the known
 vertices of m_9 (every vertex is built from at most 5 nodes by one-node steps of six kinds) and show by measurement
 that it does not yield a construction. Whether L is unbounded is left open; the largest values found are 9 at
-n = 9 and n = 12.
+n = 9 and 11 at n = 14.
 
 ## 1. Introduction
 
@@ -270,8 +270,12 @@ closure at s = k ends with one class exactly for the rays.
 **C3‴ (beyond the lists).** (a) Metrics invariant under a cyclic group: the extreme rays of the invariant subcone
 were enumerated exactly and tested (`sym_search.py`). Two orbits of 5 points (n = 10): 294 rays of MET_10, with
 L = 4, 6, 8 for 254, 20, 20 of them. Two orbits of 6 points (n = 12): 3,019 rays of MET_12, largest L = 9 (24 rays).
-One fixed point and two orbits of 5 (n = 11): 1,332 rays, largest L = 8. These are lower bounds for the maximum of L
-at n = 10, 11, 12 from a thin slice of the rays. (b) The graph K_1 ∨ C_8² (a centre joined to the square of the
+One fixed point and two orbits of 5 (n = 11): 1,332 rays, largest L = 8. Two orbits of 7 points with an additional
+reflection (dihedral symmetry, n = 14; a partial run over 1,237 rays of MET_14): 13 rays with L > 10, and L = 11
+exactly for the five that were computed in full, for example the ray with d(A_i, A_{i+j}) = 6, 2, 4 for
+j = 1, 2, 3, d(B_i, B_{i+j}) = 4, 4, 8 and d(A_0, B_j) = 3, 3, 5, 5, 7, 5, 5 for j = 0, ..., 6. With the same
+symmetry two orbits of 5 give at most L = 8. These are lower bounds for the maximum of L at n = 10, 11, 12, 14
+from a thin slice of the rays: at least 8, 8, 9, 11. (b) The graph K_1 ∨ C_8² (a centre joined to the square of the
 8-cycle; 9 nodes, diameter 2) is a graphic extreme ray with L = 7; K_1 ∨ C_m² is an extreme ray with L = 7 for
 every m from 8 to 13, so this family does not have growing locality. (c) Adding a point to the rays of MET_8 with
 L ≥ 6 (all fiber vertices, beam search to 11 points, 6,794 rays) never gave L above 7. (d) 54 random extreme rays
@@ -388,7 +392,8 @@ vertex" and "is a ray" verdict is exact; the locality closure uses rational arit
 1. **Conjecture 1 is open.** The growth of L (4, 4, 5, 7, 9 for n = 5..9) is a computation. A proof needs an explicit
    family of rays with a certificate that the level-s closure stalls. Attempts so far: apex over (complements of)
    odd cycles and over circulant rims (bounded L), one-point extensions (no gain), random descent (L ≤ 5), cyclic
-   two-orbit metrics (L = 8, 9 at n = 10, 12, but no closed form in the orbit size yet).
+   and dihedral two-orbit metrics (L = 8, 9, 11 at n = 10, 12, 14: growth continues, but we have no closed form in
+   the orbit size yet, which is what a proof needs).
 2. **The m_9 list is not proved complete**, so C2, C4, C5, C7 are statements about the list. The count in the file
    is one less than the published one (Section 5); the authors of the list could confirm which is right.
 3. **C2 uses one switching per orbit.** For n ≤ 8 all switchings are covered by C1, and for n = 9 a sample of
