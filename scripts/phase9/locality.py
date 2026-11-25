@@ -272,3 +272,53 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def closure_classes(k, d, s):
+    """Number of classes of cl_s(d), computed exactly by running the level-s closure on its own (every smaller
+    subset is contained in an s-subset, so this is the full level-s closure). cl_s has one class iff L(d) <= s."""
+    P = list(itertools.combinations(range(k), 2))
+    idx = {p: i for i, p in enumerate(P)}
+    par = list(range(len(P)))
+
+    def find(x):
+        while par[x] != x:
+            par[x] = par[par[x]]
+            x = par[x]
+        return x
+
+    T = [(a, b, m) for a, b in P for m in range(k) if m != a and m != b and d[a][b] == d[a][m] + d[m][b]]
+    subs = []
+    for W in itertools.combinations(range(k), s):
+        Ws = set(W)
+        subs.append([(idx[(a, b)], idx[(min(a, m), max(a, m))], idx[(min(m, b), max(m, b))], d[a][b], d[a][m], d[m][b])
+                     for a, b, m in T if a in Ws and b in Ws and m in Ws])
+    ncls = len(P)
+    changed = True
+    while changed and ncls > 1:
+        changed = False
+        for tw in subs:
+            rows, seen, var = [], set(), {}
+            for pa, pp, pq, da, dp, dq in tw:
+                r = {}
+                for cl, c in ((find(pa), da), (find(pp), -dp), (find(pq), -dq)):
+                    r[cl] = r.get(cl, 0) + c
+                r = {c_: v for c_, v in r.items() if v}
+                key = tuple(sorted(r.items()))
+                if r and key not in seen:
+                    seen.add(key)
+                    rows.append(r)
+            for r in rows:
+                for c_ in r:
+                    var.setdefault(c_, len(var))
+            if len(var) < 2:
+                continue
+            names = list(var)
+            for g in _forced_equal([{var[c_]: v for c_, v in r.items()} for r in rows], len(var)):
+                for j in g[1:]:
+                    ra, rb = find(names[g[0]]), find(names[j])
+                    if ra != rb:
+                        par[ra] = rb
+                        ncls -= 1
+                        changed = True
+    return ncls

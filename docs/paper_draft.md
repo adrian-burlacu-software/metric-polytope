@@ -19,8 +19,9 @@ m_9. The largest value is 4, 4, 5, 7 for n = 5, 6, 7, 8 and 9 on the m_9 list: t
 proper subset of the points suffices. The share of rays with L = 4 is 97% and 72% for n = 7, 8, and 30% of the
 orbits on the m_9 list. We also record a uniform normal form for the known
 vertices of m_9 (every vertex is built from at most 5 nodes by one-node steps of six kinds) and show by measurement
-that it does not yield a construction. Whether L is unbounded is left open; the largest values found are 9 at
-n = 9, 12 at n = 14, 13 at n = 15 (exact) and 17 at n = 18 (computed modulo a prime).
+that it does not yield a construction. Finally we prove that L is unbounded: an explicit chiral family C_t of
+extreme rays on 2t points (t odd, t ≥ 9) has L(C_t) > t/6, and L(C_t) = 2t for t ≤ 15 by exact computation. Hence
+no criterion that inspects a bounded number of points at a time characterises the extreme rays of the metric cone.
 
 ## 1. Introduction
 
@@ -53,7 +54,8 @@ vertex lists the required scope grows with n (Section 5).
 **Contributions.**
 1. Theorem 1 (counting bound), with a complete proof from Avis's Theorem 3.3 [A80].
 2. The locality invariant: Proposition 2 (well defined, sound, complete at s = n), Theorem 3 (L = 4 under Avis's
-   criterion).
+   criterion), and Theorem 4: an explicit family of extreme rays with unbounded locality (L > n/12, and L = n in
+   all computed cases).
 3. Exact computations: L for all extreme rays of MET_n, n ≤ 8, and for the m_9 list (Computations C1–C3); the
    primitive vertices and the ceiling they put on restriction-keeping rules (C4); a normal form for the m_9 list
    (C5) and the cost of using it as a generator (C6).
@@ -322,7 +324,8 @@ forces merges beyond the 4-point ones.
 **Largest locality known per n.** 4, 4, 5, 7 for n = 5, ..., 8 (complete lists); 9 for n = 9 (the m_9 list); at least
 8, 8, 9, 12, 13, 17*, 16* for n = 10, 11, 12, 14, 15, 18, 22.
 
-**Conjecture 1.** sup { L(d) : d an extreme ray of MET_n } → ∞ as n → ∞.
+**Theorem (see §5a).** sup { L(d) : d an extreme ray of MET_n } → ∞ as n → ∞; an explicit family has
+L > n/12 for all its members and L = n for the members computed.
 
 **Fact (from C1, C2).** L(d) ≤ n − 1 for every extreme ray of MET_n, n ≤ 8, but max L = n for n = 9.
 
@@ -381,6 +384,124 @@ m_8 and 1,000 sampled orbits of m_9, λ does not separate the orbits reached by 
 others (probability that an unreached orbit has smaller λ than a reached one: 0.43, 0.47; 0.46 at equal
 denominators).
 
+## 5a. Locality is unbounded
+
+**The family C_t.** For odd t ≥ 9 let C_t be the following function on the 2t points A_i, B_i (i ∈ Z_t), where
+|i − j| denotes the cyclic distance and offsets o are taken in (−t/2, t/2):
+
+| pair | distance |
+|---|---|
+| A_i, A_j | 16 if \|i − j\| = 1; 12 if \|i − j\| = 2; 8 if \|i − j\| ≥ 3 |
+| B_i, B_j | 10 if \|i − j\| = 1; 20 if \|i − j\| = 2; 22 if \|i − j\| ≥ 3 |
+| A_i, B_{i+o} | 13, 11, 7, 9, 19 for o = −2, −1, 0, 1, 2; 15 if \|o\| ≥ 3 |
+
+C_t is invariant under the rotation i ↦ i + 1 and has no reflection symmetry. C_∞ denotes the same rule on the
+line (i ∈ Z, ordinary offsets).
+
+**Theorem 4.** (a) For every odd t ≥ 9, C_t is a metric and spans an extreme ray of MET_2t.
+(b) For every odd t ≥ 9 and every s ≤ t/6, the level-s closure of C_t is not total. Hence L(C_t) > t/6 and
+
+    sup { L(d) : d an extreme ray of MET_n } > n/12   for every n = 2t, t odd, t ≥ 9;  in particular it is unbounded.
+
+(c) (Computation, exact.) L(C_t) = 2t for t = 9, 11, 13, 15: no proper subset of the 18, 22, 26, 30 points proves
+extremality. (With arithmetic modulo 2^31 − 1 the same holds for every odd t from 9 to 23, i.e. up to 46 points.)
+
+So Conjecture 1 of earlier drafts is a theorem, and no rule that examines a bounded number of points at a time
+characterises the extreme rays of the metric cone.
+
+*Proof of (a).* *Patterns.* A distance of C_t depends on the kinds of the two points and on their offset capped at
+±3. For t ≥ 9 every configuration of three points, described by kinds and capped offsets, occurs already in C_9
+(two of the three cyclic gaps determine the capped configuration, and all combinations with gaps 0, 1, 2 or "at
+least 3" are realised when t = 9), and the same configurations occur in C_∞. Therefore the triangle inequalities,
+and the list of types of tight triples, need to be checked only for t = 9; the check (V1 in `family_C_proof.py`)
+shows that C_9 is a metric and that there are 11 types of tight triples, written long = short + short:
+
+    A_iA_{i+1} = A_iA_k + A_kA_{i+1} (k far from both);            A_iA_{i+1} = A_iB_{i+1} + B_{i+1}A_{i+1};
+    A_iB_{i+2} = A_iA_{i+2} + A_{i+2}B_{i+2} = A_iA_{i+3} + A_{i+3}B_{i+2} = A_iB_{i+1} + B_{i+1}B_{i+2};
+    A_iB_j = A_iA_j + A_jB_j (|i − j| ≥ 3);
+    B_iB_{i+2} = B_iA_{i+2} + A_{i+2}B_{i+2} = B_iA_{i+1} + A_{i+1}B_{i+2} = B_iB_{i+1} + B_{i+1}B_{i+2};
+    B_iB_j = B_iA_i + A_iB_j (|i − j| ≥ 3; also with i and j exchanged);    B_iB_{i+3} = B_iA_{i+2} + A_{i+2}B_{i+3}.
+
+*The A-pairs.* Let x be a solution of the tight system. Write f(i, k) = x(A_iA_k) for |i − k| ≥ 3 and
+ε_i = x(A_iA_{i+1}). By the first type, ε_i = f(i, k) + f(k, i + 1) whenever k − i ∈ [4, t − 3]. For
+k − i ∈ [4, t − 4] this gives four equations for the two pairs {i, i+1} and {k, k+1}:
+ε_i = f(i,k) + f(i+1,k) = f(i,k+1) + f(i+1,k+1) and ε_k = f(i,k) + f(i,k+1) = f(i+1,k) + f(i+1,k+1), hence
+f(i+1, k) = f(i, k+1) and f(i, k) = f(i+1, k+1). The second identity shows that f(i, i + δ) does not depend on i
+for δ ∈ [4, t − 4], and the first, with δ = 4 and δ = t − 4, extends this to δ = 3 and δ = t − 3 (here t ≥ 9 is
+used). So f(i, i + δ) = f(δ) with f(δ − 1) = f(δ + 1) for δ ∈ [4, t − 4], and f(δ) = f(t − δ) because the two
+offsets describe the same pair. As t is odd, δ and t − δ have different parity, so f is constant, say α, and
+ε_i = 2α.
+
+*The recurrence.* Put s_i = x(A_iB_i), p_i = x(A_iB_{i+1}), q_i = x(A_iB_{i+2}), m_i = x(A_iB_{i−1}),
+w_i = x(A_iB_{i−2}), b_i = x(B_iB_{i+1}), c_i = x(B_iB_{i+2}), e_i = x(A_iA_{i+2}). The tight triples give
+p_i = 2α − s_{i+1}; q_i = e_i + s_{i+2} = α + m_{i+3} = p_i + b_{i+1}; x(A_iB_j) = α + s_j and
+x(B_iB_j) = s_i + s_j + α for |i − j| ≥ 3; c_i = w_{i+2} + s_{i+2} = m_{i+1} + p_{i+1} = b_i + b_{i+1};
+s_i + s_{i+3} + α = w_{i+2} + p_{i+2}. Eliminating m, b, c, w: the two expressions of c_i through m, p and through
+w, s become
+
+    q_{i−1} + q_i − q_{i−2} = 5α − s_i − s_{i+1} − s_{i+2},      q_{i−1} + q_i = 3α − s_{i+1} + s_{i+2} + 2s_{i+3},
+
+whence q_i = −2α + s_{i+2} + 2s_{i+4} + 2s_{i+5} and then
+
+    s_i + 2 s_{i+3} + s_{i+4} = (7/2) α      for all i ∈ Z_t.                                            (REC)
+
+*Rigidity.* The characteristic polynomial of (REC) is z⁴ + 2z³ + 1 = (z + 1)(z³ + z² − z + 1). The cubic has no
+rational root, so it is irreducible, and no cyclotomic polynomial has degree 3; hence its roots are not roots of
+unity. For odd t, −1 is not a t-th root of unity either. So the circulant system (REC) on Z_t has only the constant
+solution s_i = (7/8)α, and then p, q, m, w, b, c, e and all far pairs are determined by α. The solution space of the
+tight system is a line, i.e. C_t is extreme. ∎
+
+*Proof of (b).* *Solutions on the line.* Let α ∈ R and let (s_j), j ∈ Z, satisfy (REC) for all i ∈ Z. Define x on the
+pairs of C_∞ by the formulas above (x = α on A-pairs at distance ≥ 3, 2α at distance 1, and so on; the full list is
+in `family_C_proof.py`). Then x satisfies every tight triple of C_∞: by the pattern argument it suffices to check the
+triples inside a window of 13 positions, and for each of these 397 triples the equation is a rational combination of
+instances of (REC) (check V2, exact). Let λ ≈ −1.8393 be the real root of z³ + z² − z + 1. Then α = 8,
+s_j = 7 + λ^j is such a sequence; write D(P) = (x(P) − d(P))/d(P) for the resulting relative deviation of a pair P
+of C_∞. Call two pairs of C_∞ *related* if both are A-pairs at distance 1 or ≥ 3, or if they are A_iB_j and
+A_{i′}B_j with |i − j|, |i′ − j| ≥ 3.
+
+*Lemma S.* D(P) = D(Q) only if P = Q or P and Q are related.
+*Proof.* D vanishes on the A-pairs at distance 1 or ≥ 3, and D(A_iB_j) = λ^j/15 for |i − j| ≥ 3. For each of the
+other eight types of pairs, D of the pair at position i is λ^i·κ with an explicit κ ∈ Q(λ), and all nine values of
+κ (including 1/15) are nonzero. An equality between two such pairs reads κ = λ^k κ′; since |λ| > 1 this determines k
+up to finitely many candidates, bounded rigorously by rational enclosures of λ, and none of them gives equality in
+Q(λ) (check V3, exact). For a B-pair at distance g ≥ 3, D = λ^i(1 + λ^g)/22; an equality with a pair of another type
+reads λ^h(1 + λ^{−g}) = 22κ′ for an integer h, where |1 + λ^{−g}| ∈ [1 − |λ|^{−3}, 1 + |λ|^{−3}] bounds h and each h
+leaves at most one g; again no equality occurs (V3). For two different B-pairs at distances ≥ 3, λ^i + λ^j =
+λ^{i′} + λ^{j′}: if the largest exponent occurs on both sides the pairs coincide, and otherwise the largest term
+exceeds the sum of the absolute values of the other three, because |λ|^{−1} + |λ|^{−3} + |λ|^{−4} < 0.8. Finally
+D ≠ 0 for every pair that is not an A-pair at distance 1 or ≥ 3. ∎
+
+*The partition.* Let π be the partition of the pairs of C_t whose classes are: the set of all A-pairs at cyclic
+distance 1 or ≥ 3; for each j the set of pairs A_iB_j with |i − j| ≥ 3; and all other pairs as singletons. π is not
+total. We show that π is closed under the merges of level s when t ≥ 6s; since cl_s is the finest partition closed
+under these merges (Proposition 2(i)), cl_s refines π and is not total.
+
+Let W be a set of at most s points of C_t. Its points occupy at most s positions of Z_t, so if t ≥ 6s some run of
+5 consecutive positions is free. Cutting the cycle inside this run identifies the positions of W with integers in an
+interval of t − 5 consecutive integers, and this identification ψ: W → C_∞ preserves distances: two points at line
+offset o, 1 ≤ o ≤ t − 6, have cyclic offset o if o < t/2, and o − t otherwise; in the second case o ≥ 5 and
+t − o ≥ 6, so the pair is far (offset of absolute value at least 3) both on the line and on the cycle, where the
+distance does not depend on the offset. Hence the tight triples inside W are tight triples of C_∞, and for every real c the function
+u_c(P) = 1 + c·D(ψP) on the pairs inside W is a solution of T_W in the normalised variables (a combination of the
+solutions d and x). It is constant on the classes of π: D = 0 on the first class, and D(ψ(A_iB_j)) = λ^{ψ(j)}/15 on
+the classes of the second kind. So u_c solves T_W(π). If W forced two different classes C ∋ P, C′ ∋ Q of π to be
+equal, we would have u_c(P) = u_c(Q) for all c, i.e. D(ψP) = D(ψQ), and by Lemma S the pairs ψP, ψQ would be equal
+or related, i.e. P and Q would lie in the same class of π. So no merge is forced, π is closed at level s, and
+L(C_t) > s for every s ≤ t/6. ∎
+
+**Remarks.** (1) The proof of (b) gives L(C_t) > t/6; the computations (c) show L(C_t) = 2t for t ≤ 15 (t ≤ 23
+modulo a prime), and we expect L(C_t) = 2t for all odd t ≥ 9. (2) The level-(2t − 1) closure of C_t has exactly
+(t² + 13t + 2)/2 classes for t = 9, 11, 13, 15, the number of classes of π. (3) Replacing d(A_i, A_{i+2}) = 12 by 16
+gives a second family with the same properties (computed for t = 9, ..., 15). (4) How the family was found: the
+families of this shape are the extreme rays of a fixed 12-dimensional cone of "patterns of radius 2"
+(`pattern_hunt.py`); of its 26,319 rays with positive distances, 9,464 give extreme rays of MET_2t for at least two
+t between 9 and 14, and 96 pass two filters (classes left unmerged on the cycle, and no merge forced on an open
+stretch); 8 of the 96 have L = 2t at t = 9, 11, 13, and they are C_t, its variant (3), their mirror images and
+the versions with A and B exchanged. (5) The mirror-symmetric analogue K_t of C3⁗ has the recurrence
+s_i + s_{i+1} + 2s_{i+2} + s_{i+3} + s_{i+4} = 6K, all of whose characteristic roots are roots of unity; this is
+why its locality stays bounded, and why the chiral family does not.
+
 ## 6. Related work
 
 Avis [A80] introduced graphic extreme rays, the isometric-cycle criterion, the density theorem used here and the
@@ -418,6 +539,7 @@ Scripts in `scripts/phase9/`, outputs in `results/phase9/`.
 | C3″ | `random_graph_locality.py` | `random_graph_locality.json` |
 | C2 | `locality.py --all9` | `locality_m9all.json` |
 | C2′ | `locality_switch9.py` | `locality_switch9.json` |
+| Theorem 4 | `family_C.py`, `family_C_proof.py`, `family_C_structure.py`, `pattern_hunt.py`, `cand_pattern.py` | `family_C.json`, `family_C_proof.json`, `pattern_hunt.json`, `cand_pattern.json` |
 | C3‴ | `sym_search.py`, `locality_climb.py`, `random_ray_locality.py` | `sym_search.json`, `locality_climb.json`, `random_ray_locality.json` |
 | C3⁗ | `sym_search.py --mirror 0 1 --fast`, `famK.py`, `famK_level.py`, `family_scan.py`, `window_test.py`, `exact_check.py` | `sym_search.json`, `family_scan.json`, `window_test.json`, `exact_check.json` |
 | C4, C5 | `vertex_structure.py`, `step_types.py` | `vertex_structure_deza9all.json`, `step_types_m9all.json` |
@@ -431,7 +553,10 @@ vertex" and "is a ray" verdict is exact; the locality closure uses rational arit
 
 ## 8. What is not established
 
-1. **Conjecture 1 is open.** The growth of L (4, 4, 5, 7, 9 for n = 5..9) is a computation. A proof needs an explicit
+1. **Conjecture 1 is now Theorem 4.** Its proof is new and has been checked only by its author and by the script
+   `family_C_proof.py`; it should be read by a second person. The equality L(C_t) = 2t for all odd t is proved only
+   for t ≤ 15. What follows in this item is the history of the attempts.
+   *Earlier status:* **Conjecture 1 was open.** The growth of L (4, 4, 5, 7, 9 for n = 5..9) is a computation. A proof needs an explicit
    family of rays with a certificate that the level-s closure stalls. Attempts so far: apex over (complements of)
    odd cycles and over circulant rims (bounded L), one-point extensions (no gain), random descent (L ≤ 5), cyclic
    and dihedral two-orbit metrics (L = 8, 12, 17 at n = 10, 14, 18; the closed-form family K_t reaches 16 and then

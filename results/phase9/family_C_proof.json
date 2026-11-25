@@ -1,0 +1,116 @@
+{
+  "V1": {
+    "C_9_is_a_metric": true,
+    "same_types_on_cycles_9_11_13": true,
+    "tight_types_line": [
+      "('AA1', ('AAF', 'AAF'))",
+      "('AA1', ('AB+0', 'AB+1'))",
+      "('AB+2', ('AA2', 'AB+0'))",
+      "('AB+2', ('AAF', 'AB-1'))",
+      "('AB+2', ('AB+1', 'BB1'))",
+      "('ABF', ('AAF', 'AB+0'))",
+      "('BB2', ('AB+0', 'AB-2'))",
+      "('BB2', ('AB+1', 'AB-1'))",
+      "('BB2', ('BB1', 'BB1'))",
+      "('BBF', ('AB+0', 'ABF'))",
+      "('BBF', ('AB+1', 'AB-2'))"
+    ]
+  },
+  "V2": {
+    "formulas_reproduce_d_at_alpha8_s7": true,
+    "not_implied_by_REC": 0,
+    "tight_triples_in_window": 397
+  },
+  "V3": {
+    "coincidences_between_near_types": [],
+    "coincidences_farBB_vs_near": [],
+    "lambda_interval": [
+      -1.8392867552141612,
+      -1.8392867552141612
+    ],
+    "near_types": {
+      "F (A_k B_i, far)": {
+        "Dn_at_anchor_0": [
+          "1/15",
+          "0",
+          "0"
+        ],
+        "abs_lower": 0.06666666666666667,
+        "abs_upper": 0.06666666666666667
+      },
+      "b (B_i B_i+1)": {
+        "Dn_at_anchor_0": [
+          "1/10",
+          "-1/10",
+          "1/5"
+        ],
+        "abs_lower": 0.9605238291026637,
+        "abs_upper": 0.9605238291026637
+      },
+      "c (B_i B_i+2)": {
+        "Dn_at_anchor_0": [
+          "-1/20",
+          "1/10",
+          "-1/20"
+        ],
+        "abs_lower": 0.403077463916728,
+        "abs_upper": 0.403077463916728
+      },
+      "e (A_i A_i+2)": {
+        "Dn_at_anchor_0": [
+          "-1/6",
+          "1/6",
+          "-1/3"
+        ],
+        "abs_lower": 1.6008730485044393,
+        "abs_upper": 1.6008730485044393
+      },
+      "m (A_i B_i-1)": {
+        "Dn_at_anchor_0": [
+          "1/11",
+          "1/11",
+          "1/11"
+        ],
+        "abs_lower": 0.23124445569927968,
+        "abs_upper": 0.23124445569927968
+      },
+      "p (A_i B_i+1)": {
+        "Dn_at_anchor_0": [
+          "0",
+          "-1/9",
+          "0"
+        ],
+        "abs_lower": 0.2043651950237957,
+        "abs_upper": 0.2043651950237957
+      },
+      "q (A_i B_i+2)": {
+        "Dn_at_anchor_0": [
+          "-2/19",
+          "2/19",
+          "-3/19"
+        ],
+        "abs_lower": 0.8330263586393176,
+        "abs_upper": 0.8330263586393176
+      },
+      "s (A_i B_i)": {
+        "Dn_at_anchor_0": [
+          "1/7",
+          "0",
+          "0"
+        ],
+        "abs_lower": 0.14285714285714285,
+        "abs_upper": 0.14285714285714285
+      },
+      "w (A_i B_i-2)": {
+        "Dn_at_anchor_0": [
+          "0",
+          "0",
+          "-1/13"
+        ],
+        "abs_lower": 0.26022890522355674,
+        "abs_upper": 0.26022890522355674
+      }
+    },
+    "shift_range_checked": 5
+  }
+}

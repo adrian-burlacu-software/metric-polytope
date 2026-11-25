@@ -1,0 +1,110 @@
+{
+  "t10_a12": {
+    "L_equals_n": false,
+    "classes_level_n_minus_1": null,
+    "extreme_ray": false,
+    "metric": true,
+    "n": 20,
+    "seconds": 0,
+    "tight_triples": 220
+  },
+  "t10_a16": {
+    "L_equals_n": false,
+    "classes_level_n_minus_1": null,
+    "extreme_ray": false,
+    "metric": true,
+    "n": 20,
+    "seconds": 0,
+    "tight_triples": 240
+  },
+  "t11_a12": {
+    "L_equals_n": true,
+    "classes_level_n_minus_1": 133,
+    "extreme_ray": true,
+    "metric": true,
+    "n": 22,
+    "seconds": 40,
+    "tight_triples": 275
+  },
+  "t11_a16": {
+    "L_equals_n": true,
+    "classes_level_n_minus_1": 122,
+    "extreme_ray": true,
+    "metric": true,
+    "n": 22,
+    "seconds": 34,
+    "tight_triples": 308
+  },
+  "t13_a12": {
+    "L_equals_n": true,
+    "classes_level_n_minus_1": 170,
+    "extreme_ray": true,
+    "metric": true,
+    "n": 26,
+    "seconds": 102,
+    "tight_triples": 403
+  },
+  "t13_a16": {
+    "L_equals_n": true,
+    "classes_level_n_minus_1": 157,
+    "extreme_ray": true,
+    "metric": true,
+    "n": 26,
+    "seconds": 87,
+    "tight_triples": 468
+  },
+  "t15_a12": {
+    "L_equals_n": true,
+    "classes_level_n_minus_1": 211,
+    "extreme_ray": true,
+    "metric": true,
+    "n": 30,
+    "seconds": 237,
+    "tight_triples": 555
+  },
+  "t15_a16": {
+    "L_equals_n": true,
+    "classes_level_n_minus_1": 196,
+    "extreme_ray": true,
+    "metric": true,
+    "n": 30,
+    "seconds": 212,
+    "tight_triples": 660
+  },
+  "t7_a12": {
+    "L_equals_n": false,
+    "classes_level_n_minus_1": null,
+    "extreme_ray": false,
+    "metric": true,
+    "n": 14,
+    "seconds": 0,
+    "tight_triples": 91
+  },
+  "t7_a16": {
+    "L_equals_n": false,
+    "classes_level_n_minus_1": null,
+    "extreme_ray": false,
+    "metric": true,
+    "n": 14,
+    "seconds": 0,
+    "tight_triples": 84
+  },
+  "t9_a12": {
+    "L_equals_n": true,
+    "classes_level_n_minus_1": 100,
+    "extreme_ray": true,
+    "metric": true,
+    "n": 18,
+    "seconds": 11,
+    "tight_triples": 171
+  },
+  "t9_a16": {
+    "L_equals_n": true,
+    "classes_level_n_minus_1": 91,
+    "extreme_ray": true,
+    "metric": true,
+    "n": 18,
+    "seconds": 9,
+    "tight_triples": 180
+  }
+}
