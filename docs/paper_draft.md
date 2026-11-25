@@ -20,7 +20,7 @@ proper subset of the points suffices. The share of rays with L = 4 is 97% and 72
 orbits on the m_9 list. We also record a uniform normal form for the known
 vertices of m_9 (every vertex is built from at most 5 nodes by one-node steps of six kinds) and show by measurement
 that it does not yield a construction. Whether L is unbounded is left open; the largest values found are 9 at
-n = 9 and 11 at n = 14.
+n = 9, 12 at n = 14, 13 at n = 15 (exact) and 17 at n = 18 (computed modulo a prime).
 
 ## 1. Introduction
 
@@ -294,6 +294,34 @@ MET_8 with L = 7: the pair (2, 6) has two midpoints, giving 4B + 3A = 4C + 3D on
 Unbounded locality would follow from a family in which such a derivation needs t relations on disjoint point
 sets, with t growing.
 
+**C3⁗ (symmetric rays on 14 to 26 points; a closed-form family).** Notation: two orbits A_i, B_i (i mod t) under the
+dihedral group. Values marked * were computed with the symmetry-reduced closure modulo 2^31 − 1
+(`locality_fast.py`) and not yet re-run in exact arithmetic.
+(a) Exhaustive search of the dihedral two-orbit rays (`sym_search.py --mirror 0 1`): t = 5 (62 rays of MET_10):
+largest L = 8; t = 7 (3,497 rays of MET_14): largest L = 12 (exact); t = 9 (55,300 rays of MET_18 tested, of
+132,051 candidates): largest L = 17*. With a fixed centre added, t = 7 (n = 15): largest L = 13 (exact).
+(b) The family K_t: d(A_i, A_{i±1}) = 10, d(A_i, A_{i±2}) = 20, d(A_i, A_j) = 26 otherwise; d(B_i, B_{i±1}) = 24,
+d(B_i, B_j) = 12 otherwise; d(A_i, B_i) = 7, d(A_i, B_{i±1}) = 17, d(A_i, B_{i±2}) = 13, d(A_i, B_j) = 19 otherwise.
+It is the shortest-path metric of the graph with a cycle on the A_i (weight 10), all non-consecutive pairs of B's
+(12), spokes A_iB_i (7) and cross edges A_iB_{i±2} (13); the weights are forced by three coincidences of geodesics.
+K_7 is an extreme ray with L = 12 (exact), K_11 with L = 16*, K_13 with 14 < L ≤ 16*, and K_9 is not a ray.
+(c) Explanation. After the 4-point merges the classes are: one class K for all pairs of B's, and singletons
+s_i = [A_iB_i], e_i = [A_iA_{i+1}], [A_iB_{i±2}]; eliminating the others leaves the recurrence
+s_i + s_{i+1} + 2s_{i+2} + s_{i+3} + s_{i+4} = 6K for all i mod t. Its symbol (1 + ω²)(1 + ω + ω²) vanishes exactly
+at the primitive 3rd and 4th roots of unity, so K_t cannot be an extreme ray when 3 or 4 divides t, and every
+solution along an open stretch of the cycle has period 12, so 13 consecutive positions force s_j = s_{j+12}; this
+caps the locality of the family, in agreement with (b). By computation K_t is an extreme ray for
+t = 7, 11, 13, 17, 19 and for no other t from 7 to 20; the failure for t = 10, 14 (even, not divisible by 3 or 4)
+is not explained by this recurrence alone.
+(d) Consequence for a proof of Conjecture 1: a family of this kind whose recurrence has a root that is not a root of
+unity (or a multiple root) would have no merge forced on any open stretch, and its locality would grow linearly
+with t. A scan of the 1,094 local-pattern families obtained by extending the 3,497 rays of (a) for t = 7 (rays at
+t = 11 and 13; `family_scan.py`, `window_test.py`) found none: in each, an open window of 14 positions already
+forces merges beyond the 4-point ones.
+
+**Largest locality known per n.** 4, 4, 5, 7 for n = 5, ..., 8 (complete lists); 9 for n = 9 (the m_9 list); at least
+8, 8, 9, 12, 13, 17*, 16* for n = 10, 11, 12, 14, 15, 18, 22.
+
 **Conjecture 1.** sup { L(d) : d an extreme ray of MET_n } → ∞ as n → ∞.
 
 **Fact (from C1, C2).** L(d) ≤ n − 1 for every extreme ray of MET_n, n ≤ 8, but max L = n for n = 9.
@@ -391,6 +419,7 @@ Scripts in `scripts/phase9/`, outputs in `results/phase9/`.
 | C2 | `locality.py --all9` | `locality_m9all.json` |
 | C2′ | `locality_switch9.py` | `locality_switch9.json` |
 | C3‴ | `sym_search.py`, `locality_climb.py`, `random_ray_locality.py` | `sym_search.json`, `locality_climb.json`, `random_ray_locality.json` |
+| C3⁗ | `sym_search.py --mirror 0 1 --fast`, `famK.py`, `famK_level.py`, `family_scan.py`, `window_test.py`, `exact_check.py` | `sym_search.json`, `family_scan.json`, `window_test.json`, `exact_check.json` |
 | C4, C5 | `vertex_structure.py`, `step_types.py` | `vertex_structure_deza9all.json`, `step_types_m9all.json` |
 | C6 | `fiber_generator.py`, `useful_share.py`, `choice_features.py` | `fiber_generator_n8.json`, `useful_share_n8.json`, `choice_features_n8.json` |
 | C7 | `graph_families.py --all9` | `graph_families_m9all.json` |
@@ -405,8 +434,10 @@ vertex" and "is a ray" verdict is exact; the locality closure uses rational arit
 1. **Conjecture 1 is open.** The growth of L (4, 4, 5, 7, 9 for n = 5..9) is a computation. A proof needs an explicit
    family of rays with a certificate that the level-s closure stalls. Attempts so far: apex over (complements of)
    odd cycles and over circulant rims (bounded L), one-point extensions (no gain), random descent (L ≤ 5), cyclic
-   and dihedral two-orbit metrics (L = 8, 9, 11 at n = 10, 12, 14: growth continues, but we have no closed form in
-   the orbit size yet, which is what a proof needs).
+   and dihedral two-orbit metrics (L = 8, 12, 17 at n = 10, 14, 18; the closed-form family K_t reaches 16 and then
+   saturates for a reason we understand, C3⁗). What a proof needs is identified: a symmetric family whose reduced
+   recurrence has no forced period. None of the 1,094 mirror-symmetric local-pattern families tested has this;
+   families without mirror symmetry have not been scanned.
 2. **The m_9 list is not proved complete**, so C2, C4, C5, C7 are statements about the list. The count in the file
    is one less than the published one (Section 5); the authors of the list could confirm which is right.
 3. **C2 uses one switching per orbit.** For n ≤ 8 all switchings are covered by C1, and for n = 9 a sample of

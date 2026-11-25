@@ -152,7 +152,7 @@ def main():
     old[f"fixed{a.fixed}_orbits{a.orbits}_t{a.t}" + ("_mirror" + "_".join(map(str, a.mirror)) if a.mirror is not None else "") + ("_fast" if a.fast else "")] = {
         "n": n, "invariant_cone_rays": len(rays), "positive": len(items), "extreme_in_MET": sum(c.values()),
         "locality": {str(k): v for k, v in c.items()}, "smax": a.smax or n, "fast_mod_p": bool(a.fast),
-        "best": [{"L": (L if L < 10 ** 6 else None), "d": [list(r) for r in M]} for L, M in res[:1500] if L >= 8],
+        "best": [{"L": (L if L < 10 ** 6 else None), "d": [list(r) for r in M]} for L, M in res[:6000]],
         "seconds": round(time.time() - t0, 1)}
     atomic_write_json(f, old)
 

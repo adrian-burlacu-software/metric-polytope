@@ -59,7 +59,7 @@ def forced_equal_mod(M):
     return [g for g in groups.values() if len(g) > 1]
 
 
-def locality_fast(n, d, G=None, smax=None, smin=4):
+def locality_fast(n, d, G=None, smax=None, smin=4, levels=None):
     G = G or [list(range(n))]
     P = list(itertools.combinations(range(n), 2))
     idx = {p: i for i, p in enumerate(P)}
@@ -77,7 +77,7 @@ def locality_fast(n, d, G=None, smax=None, smin=4):
            d[a][b], d[a][m], d[m][b]) for a, b, m in T]
     ncls = len(P)
     profile = {}
-    for s in range(smin, (smax or n) + 1):
+    for s in (levels if levels is not None else range(smin, (smax or n) + 1)):
         seen, subs = set(), []
         for W in itertools.combinations(range(n), s):
             if W in seen:
