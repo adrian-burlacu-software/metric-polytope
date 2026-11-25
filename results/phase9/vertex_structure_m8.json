@@ -1,0 +1,5582 @@
+{
+  "rows": [
+    {
+      "D": 1,
+      "cut_adjacent": true,
+      "key": "n5:0",
+      "largest_vertex_restriction": 4,
+      "n": 5,
+      "primitive": false,
+      "s": 0.002,
+      "seed": 2
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n5:1",
+      "largest_vertex_restriction": 0,
+      "n": 5,
+      "primitive": true,
+      "s": 0.002,
+      "seed": 3
+    },
+    {
+      "D": 1,
+      "cut_adjacent": true,
+      "key": "n6:0",
+      "largest_vertex_restriction": 5,
+      "n": 6,
+      "primitive": false,
+      "s": 0.004,
+      "seed": 2
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n6:1",
+      "largest_vertex_restriction": 5,
+      "n": 6,
+      "primitive": false,
+      "s": 0.004,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n6:2",
+      "largest_vertex_restriction": 5,
+      "n": 6,
+      "primitive": false,
+      "s": 0.003,
+      "seed": 3
+    },
+    {
+      "D": 1,
+      "cut_adjacent": true,
+      "key": "n7:0",
+      "largest_vertex_restriction": 6,
+      "n": 7,
+      "primitive": false,
+      "s": 0.01,
+      "seed": 2
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n7:1",
+      "largest_vertex_restriction": 6,
+      "n": 7,
+      "primitive": false,
+      "s": 0.013,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n7:2",
+      "largest_vertex_restriction": 6,
+      "n": 7,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n7:3",
+      "largest_vertex_restriction": 6,
+      "n": 7,
+      "primitive": false,
+      "s": 0.011,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n7:4",
+      "largest_vertex_restriction": 6,
+      "n": 7,
+      "primitive": false,
+      "s": 0.009,
+      "seed": 3
+    },
+    {
+      "D": 4,
+      "cut_adjacent": true,
+      "key": "n7:5",
+      "largest_vertex_restriction": 0,
+      "n": 7,
+      "primitive": true,
+      "s": 0.016,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n7:6",
+      "largest_vertex_restriction": 0,
+      "n": 7,
+      "primitive": true,
+      "s": 0.013,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n7:7",
+      "largest_vertex_restriction": 6,
+      "n": 7,
+      "primitive": false,
+      "s": 0.007,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n7:8",
+      "largest_vertex_restriction": 0,
+      "n": 7,
+      "primitive": true,
+      "s": 0.007,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n7:9",
+      "largest_vertex_restriction": 0,
+      "n": 7,
+      "primitive": true,
+      "s": 0.009,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n7:10",
+      "largest_vertex_restriction": 5,
+      "n": 7,
+      "primitive": false,
+      "s": 0.007,
+      "seed": 4
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n7:11",
+      "largest_vertex_restriction": 5,
+      "n": 7,
+      "primitive": false,
+      "s": 0.007,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n7:12",
+      "largest_vertex_restriction": 5,
+      "n": 7,
+      "primitive": false,
+      "s": 0.008,
+      "seed": 4
+    },
+    {
+      "D": 1,
+      "cut_adjacent": true,
+      "key": "n8:0",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.032,
+      "seed": 2
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:1",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.039,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:2",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:3",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:4",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:5",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:6",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.022,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:7",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.034,
+      "seed": 3
+    },
+    {
+      "D": 4,
+      "cut_adjacent": true,
+      "key": "n8:8",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.059,
+      "seed": 3
+    },
+    {
+      "D": 4,
+      "cut_adjacent": true,
+      "key": "n8:9",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.068,
+      "seed": 3
+    },
+    {
+      "D": 4,
+      "cut_adjacent": true,
+      "key": "n8:10",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.05,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:11",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.057,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:12",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:13",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.034,
+      "seed": 3
+    },
+    {
+      "D": 4,
+      "cut_adjacent": true,
+      "key": "n8:14",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 4,
+      "cut_adjacent": true,
+      "key": "n8:15",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 4,
+      "cut_adjacent": true,
+      "key": "n8:16",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.038,
+      "seed": 3
+    },
+    {
+      "D": 4,
+      "cut_adjacent": true,
+      "key": "n8:17",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.038,
+      "seed": 3
+    },
+    {
+      "D": 4,
+      "cut_adjacent": true,
+      "key": "n8:18",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:19",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.022,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:20",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:21",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.04,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:22",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.048,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:23",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.041,
+      "seed": 4
+    },
+    {
+      "D": 4,
+      "cut_adjacent": true,
+      "key": "n8:24",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 4,
+      "cut_adjacent": true,
+      "key": "n8:25",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:26",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:27",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:28",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.039,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:29",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.033,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:30",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.018,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:31",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.016,
+      "seed": 4
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:32",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:33",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:34",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.048,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:35",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.024,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:36",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.022,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:37",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.046,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:38",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.071,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:39",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.038,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:40",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:41",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.019,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:42",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.036,
+      "seed": 4
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:43",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:44",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.044,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:45",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.046,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:46",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:47",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.041,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:48",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:49",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.034,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:50",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:51",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:52",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.035,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:53",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:54",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.018,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:55",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:56",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.024,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:57",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 4,
+      "cut_adjacent": true,
+      "key": "n8:58",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.051,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:59",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:60",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:61",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:62",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:63",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:64",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 4
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:65",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:66",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:67",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:68",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:69",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.045,
+      "seed": 3
+    },
+    {
+      "D": 4,
+      "cut_adjacent": true,
+      "key": "n8:70",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:71",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:72",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.037,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:73",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.054,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:74",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.047,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:75",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.046,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:76",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:77",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:78",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.041,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:79",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.057,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:80",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.035,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:81",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:82",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:83",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:84",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:85",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:86",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:87",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:88",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.038,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:89",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:90",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:91",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.038,
+      "seed": 3
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:92",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.042,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:93",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.044,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:94",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.015,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:95",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.012,
+      "seed": 4
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:96",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:97",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.024,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:98",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:99",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.036,
+      "seed": 4
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:100",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:101",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:102",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.034,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:103",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:104",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:105",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.04,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:106",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:107",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:108",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.049,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:109",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:110",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:111",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:112",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.042,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:113",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.043,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:114",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:115",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:116",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:117",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:118",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:119",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:120",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:121",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.014,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:122",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:123",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.018,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:124",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:125",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.018,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:126",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:127",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:128",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.035,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:129",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.035,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:130",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.041,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:131",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.047,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:132",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:133",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:134",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:135",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.022,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:136",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:137",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:138",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.043,
+      "seed": 3
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:139",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.034,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:140",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:141",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.044,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:142",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.046,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:143",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.024,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:144",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:145",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:146",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:147",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:148",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.024,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:149",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:150",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:151",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:152",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:153",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:154",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:155",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:156",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:157",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.041,
+      "seed": 3
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:158",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:159",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:160",
+      "largest_vertex_restriction": 6,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:161",
+      "largest_vertex_restriction": 6,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:162",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.018,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:163",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:164",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:165",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:166",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.039,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:167",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:168",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:169",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:170",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:171",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:172",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:173",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:174",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.034,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:175",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:176",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:177",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:178",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:179",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:180",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.024,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:181",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.037,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:182",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.035,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:183",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:184",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:185",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:186",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.041,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:187",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:188",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:189",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:190",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:191",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:192",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:193",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:194",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:195",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:196",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:197",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:198",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.035,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:199",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:200",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:201",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.04,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:202",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:203",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.037,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:204",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.037,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:205",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.037,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:206",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:207",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.043,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:208",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.041,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:209",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:210",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:211",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:212",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.022,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:213",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.016,
+      "seed": 3
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:214",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.035,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:215",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:216",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:217",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.035,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:218",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:219",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.035,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:220",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:221",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:222",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.034,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:223",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.04,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:224",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.034,
+      "seed": 4
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:225",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.039,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:226",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 5,
+      "cut_adjacent": true,
+      "key": "n8:227",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:228",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:229",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:230",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:231",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.017,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:232",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.018,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:233",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.019,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:234",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.015,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:235",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.014,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:236",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.014,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:237",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.015,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:238",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.013,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:239",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:240",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.039,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:241",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.035,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:242",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:243",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:244",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:245",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:246",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.031,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:247",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:248",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.038,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:249",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.035,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:250",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.033,
+      "seed": 4
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:251",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.018,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:252",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.016,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:253",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:254",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:255",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:256",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:257",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.037,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:258",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:259",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:260",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.026,
+      "seed": 4
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:261",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:262",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:263",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:264",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:265",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:266",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:267",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:268",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.015,
+      "seed": 4
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:269",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.039,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:270",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:271",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.035,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:272",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:273",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:274",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:275",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:276",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:277",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:278",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:279",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:280",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:281",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:282",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.038,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:283",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.024,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:284",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:285",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:286",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:287",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 7,
+      "cut_adjacent": true,
+      "key": "n8:288",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.034,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:289",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:290",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:291",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:292",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:293",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:294",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.014,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:295",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:296",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.026,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:297",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.024,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:298",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.016,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:299",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.017,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:300",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:301",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.016,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:302",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:303",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.016,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:304",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:305",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.018,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:306",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:307",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:308",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:309",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.022,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:310",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:311",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:312",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:313",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:314",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.015,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:315",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:316",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 4
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:317",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:318",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.038,
+      "seed": 3
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:319",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:320",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:321",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.024,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:322",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:323",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 14,
+      "cut_adjacent": true,
+      "key": "n8:324",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:325",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.016,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:326",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:327",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:328",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.038,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:329",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.037,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:330",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:331",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.026,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:332",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:333",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:334",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:335",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.018,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:336",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.038,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:337",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:338",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:339",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:340",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:341",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:342",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.022,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:343",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:344",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:345",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:346",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.016,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:347",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:348",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:349",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:350",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:351",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:352",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:353",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:354",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 4
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:355",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:356",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:357",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.023,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:358",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:359",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:360",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:361",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:362",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:363",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:364",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.032,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:365",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:366",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:367",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.014,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:368",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.014,
+      "seed": 3
+    },
+    {
+      "D": 14,
+      "cut_adjacent": true,
+      "key": "n8:369",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:370",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.016,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:371",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:372",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.032,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:373",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.03,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:374",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:375",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:376",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:377",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:378",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:379",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:380",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:381",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.024,
+      "seed": 3
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:382",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:383",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:384",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.025,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:385",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:386",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.033,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:387",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:388",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:389",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:390",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.013,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:391",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:392",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.024,
+      "seed": 4
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:393",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:394",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:395",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.024,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:396",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.03,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:397",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:398",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:399",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:400",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:401",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:402",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:403",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:404",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:405",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:406",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:407",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.03,
+      "seed": 4
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:408",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:409",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:410",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:411",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:412",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:413",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:414",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:415",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:416",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 4
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:417",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:418",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.022,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:419",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.013,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:420",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:421",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:422",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.023,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:423",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.024,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:424",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.022,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:425",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.014,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:426",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:427",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.037,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:428",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.035,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:429",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:430",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:431",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:432",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:433",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.029,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:434",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.022,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:435",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:436",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 14,
+      "cut_adjacent": true,
+      "key": "n8:437",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:438",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:439",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:440",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:441",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 4
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:442",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:443",
+      "largest_vertex_restriction": 7,
+      "n": 8,
+      "primitive": false,
+      "s": 0.012,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:444",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.017,
+      "seed": 3
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:445",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.015,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:446",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 4
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:447",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.031,
+      "seed": 3
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:448",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.024,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:449",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 15,
+      "cut_adjacent": true,
+      "key": "n8:450",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.022,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:451",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.036,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:452",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.024,
+      "seed": 3
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:453",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.03,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:454",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:455",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 3
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:456",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:457",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:458",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.016,
+      "seed": 3
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:459",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:460",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.018,
+      "seed": 4
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:461",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.014,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:462",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:463",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.024,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:464",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:465",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.024,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:466",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:467",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.028,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:468",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.029,
+      "seed": 4
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:469",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:470",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.024,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:471",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.024,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:472",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:473",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.025,
+      "seed": 4
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:474",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.024,
+      "seed": 3
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:475",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 4
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:476",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.025,
+      "seed": 4
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:477",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:478",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.026,
+      "seed": 4
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:479",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.025,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:480",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 4
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:481",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:482",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.022,
+      "seed": 3
+    },
+    {
+      "D": 10,
+      "cut_adjacent": true,
+      "key": "n8:483",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.013,
+      "seed": 4
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:484",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:485",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.027,
+      "seed": 4
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:486",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:487",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.022,
+      "seed": 4
+    },
+    {
+      "D": 6,
+      "cut_adjacent": true,
+      "key": "n8:488",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.014,
+      "seed": 4
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:489",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:490",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.034,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:491",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.026,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:492",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 3
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:493",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:494",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:495",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:496",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.026,
+      "seed": 3
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:497",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:498",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.013,
+      "seed": 3
+    },
+    {
+      "D": 14,
+      "cut_adjacent": true,
+      "key": "n8:499",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.016,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:500",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.026,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:501",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 4
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:502",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.025,
+      "seed": 4
+    },
+    {
+      "D": 11,
+      "cut_adjacent": true,
+      "key": "n8:503",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:504",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.021,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:505",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.013,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:506",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.023,
+      "seed": 3
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:507",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:508",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:509",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.025,
+      "seed": 3
+    },
+    {
+      "D": 8,
+      "cut_adjacent": true,
+      "key": "n8:510",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.018,
+      "seed": 4
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:511",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.017,
+      "seed": 4
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:512",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.015,
+      "seed": 4
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:513",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.02,
+      "seed": 3
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:514",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.027,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:515",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.029,
+      "seed": 4
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:516",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.021,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:517",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.013,
+      "seed": 4
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:518",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.031,
+      "seed": 4
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:519",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.019,
+      "seed": 3
+    },
+    {
+      "D": 14,
+      "cut_adjacent": true,
+      "key": "n8:520",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.012,
+      "seed": 3
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:521",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.013,
+      "seed": 4
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:522",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.028,
+      "seed": 4
+    },
+    {
+      "D": 13,
+      "cut_adjacent": true,
+      "key": "n8:523",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.02,
+      "seed": 4
+    },
+    {
+      "D": 12,
+      "cut_adjacent": true,
+      "key": "n8:524",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.012,
+      "seed": 3
+    },
+    {
+      "D": 14,
+      "cut_adjacent": true,
+      "key": "n8:525",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.012,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:526",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.022,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:527",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.014,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:528",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.013,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:529",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.013,
+      "seed": 3
+    },
+    {
+      "D": 9,
+      "cut_adjacent": true,
+      "key": "n8:530",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.012,
+      "seed": 3
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:531",
+      "largest_vertex_restriction": 0,
+      "n": 8,
+      "primitive": true,
+      "s": 0.015,
+      "seed": 4
+    },
+    {
+      "D": 3,
+      "cut_adjacent": true,
+      "key": "n8:532",
+      "largest_vertex_restriction": 5,
+      "n": 8,
+      "primitive": false,
+      "s": 0.02,
+      "seed": 4
+    }
+  ],
+  "seconds": 2.0,
+  "set": "m8",
+  "summary": {
+    "5": {
+      "cut_adjacent": 2,
+      "largest_vertex_restriction": {
+        "0": 1,
+        "4": 1
+      },
+      "max_s": 0.002,
+      "mean_s": 0.002,
+      "orbits": 2,
+      "primitive": 1,
+      "seed_size": {
+        "2": 1,
+        "3": 1
+      }
+    },
+    "6": {
+      "cut_adjacent": 3,
+      "largest_vertex_restriction": {
+        "5": 3
+      },
+      "max_s": 0.004,
+      "mean_s": 0.004,
+      "orbits": 3,
+      "primitive": 0,
+      "seed_size": {
+        "2": 1,
+        "3": 2
+      }
+    },
+    "7": {
+      "cut_adjacent": 13,
+      "largest_vertex_restriction": {
+        "0": 4,
+        "5": 3,
+        "6": 6
+      },
+      "max_s": 0.021,
+      "mean_s": 0.011,
+      "orbits": 13,
+      "primitive": 4,
+      "seed_size": {
+        "2": 1,
+        "3": 10,
+        "4": 2
+      }
+    },
+    "8": {
+      "cut_adjacent": 533,
+      "largest_vertex_restriction": {
+        "0": 219,
+        "5": 145,
+        "6": 2,
+        "7": 167
+      },
+      "max_s": 0.071,
+      "mean_s": 0.027,
+      "orbits": 533,
+      "primitive": 219,
+      "seed_size": {
+        "2": 1,
+        "3": 430,
+        "4": 102
+      }
+    }
+  }
+}
