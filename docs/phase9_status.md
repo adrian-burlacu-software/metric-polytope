@@ -324,3 +324,31 @@ denominator, that is about 10^11 candidates. So the answer to "rules or exceptio
 are not a shortcut. Generating m_n with them is a lattice search whose size is set by the denominators, i.e. vertex
 enumeration in another form. A shortcut would need a rule that chooses the step (which fiber vertex) from local data;
 the vertex share above (0.04–0.3% at D ≥ 4) measures how far a blind choice is from that.
+
+## 12. What a perfect step-choice rule would save (2026-11-25)
+
+`scripts/phase9/useful_share.py`, results `results/phase9/useful_share_n8.json`. A level-k point of the §11 generator
+is *useful* if it is x|S for an m_8 vertex x (denominator dividing D) with S on a build chain of x (buildable from
+4 nodes by determined steps and extendable to all 8). Choice ratio: for each useful point, its distinct kept
+one-node extensions and how many of them are useful.
+
+| D | useful / generator orbits, level 4 | 5 | 6 | 7 | vertex orbits (D' divides D) |
+|---|---|---|---|---|---|
+| 3 | 3 / 8 | 8 / 14 | 15 / 29 | 31 / 64 | 52 |
+| 4 | 12 / 23 | 16 / 49 | 24 / 155 | 22 / 670 | 12 |
+| 5 | 15 / 38 | 24 / 115 | 37 / 538 | 37 / 4,446 | 15 |
+| 6 | 39 / 85 | 92 / 311 | 200 / 1,871 | 287 / 22,788 | 147 |
+
+| D | useful children per useful point / distinct options, step 4→5 | 5→6 | 6→7 | 7→8 |
+|---|---|---|---|---|
+| 3 | 3.0 / 3.0 | 3.3 / 4.0 | 4.5 / 5.7 | 5.9 / 14.1 |
+| 4 | 2.0 / 3.6 | 3.0 / 8.2 | 2.8 / 13.9 | 1.9 / 21.3 |
+| 5 | 2.5 / 5.3 | 4.0 / 11.1 | 4.1 / 17.9 | 1.8 / 33.1 |
+| 6 | 3.2 / 5.8 | 4.7 / 13.5 | 4.9 / 29.4 | 2.7 / 65.5 |
+
+**Reading.** The useful tree is small and stays close to the size of the answer (at D = 6: 39, 92, 200, 287 orbits,
+ending in 147 vertices), while the blind tree grows to 22,788 orbits at level 7. Only 1–3% of level-7 orbits are useful
+at D ≥ 4. Each useful point has about 2–5 useful extensions out of 4–65 options, and the share of good options falls
+with the level (to 4–9% at the last step for D ≥ 4). So a perfect local choice rule would turn the search into an
+output-sized construction: that is the prize. Whether a *local* rule exists is the open question; the useful and
+non-useful extensions recorded here are the data to test candidate rules on.

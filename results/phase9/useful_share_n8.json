@@ -1,0 +1,246 @@
+{
+  "3": {
+    "D": 3,
+    "choices": {
+      "4->5": {
+        "fiber_vertices_mean": 15.3,
+        "kept_distinct_mean": 3.0,
+        "useful_child_share": 1.0,
+        "useful_children_mean": 3.0,
+        "useful_points": 3
+      },
+      "5->6": {
+        "fiber_vertices_mean": 23.8,
+        "kept_distinct_mean": 4.0,
+        "useful_child_share": 0.8125,
+        "useful_children_mean": 3.25,
+        "useful_points": 8
+      },
+      "6->7": {
+        "fiber_vertices_mean": 43.3,
+        "kept_distinct_mean": 5.7,
+        "useful_child_share": 0.7907,
+        "useful_children_mean": 4.53,
+        "useful_points": 15
+      },
+      "7->8": {
+        "fiber_vertices_mean": 125.4,
+        "kept_distinct_mean": 14.1,
+        "useful_child_share": 0.4174,
+        "useful_children_mean": 5.87,
+        "useful_points": 31
+      }
+    },
+    "levels": {
+      "4": {
+        "generator": 8,
+        "share": 0.375,
+        "useful": 3
+      },
+      "5": {
+        "generator": 14,
+        "share": 0.57143,
+        "useful": 8
+      },
+      "6": {
+        "generator": 29,
+        "share": 0.51724,
+        "useful": 15
+      },
+      "7": {
+        "generator": 64,
+        "share": 0.48438,
+        "useful": 31
+      },
+      "8": {
+        "generator": null,
+        "share": null,
+        "useful": 52
+      }
+    },
+    "vertex_orbits_dividing_D": 52
+  },
+  "4": {
+    "D": 4,
+    "choices": {
+      "4->5": {
+        "fiber_vertices_mean": 23.5,
+        "kept_distinct_mean": 3.6,
+        "useful_child_share": 0.5581,
+        "useful_children_mean": 2.0,
+        "useful_points": 12
+      },
+      "5->6": {
+        "fiber_vertices_mean": 41.5,
+        "kept_distinct_mean": 8.2,
+        "useful_child_share": 0.3664,
+        "useful_children_mean": 3.0,
+        "useful_points": 16
+      },
+      "6->7": {
+        "fiber_vertices_mean": 71.0,
+        "kept_distinct_mean": 13.9,
+        "useful_child_share": 0.2006,
+        "useful_children_mean": 2.79,
+        "useful_points": 24
+      },
+      "7->8": {
+        "fiber_vertices_mean": 119.1,
+        "kept_distinct_mean": 21.3,
+        "useful_child_share": 0.0896,
+        "useful_children_mean": 1.91,
+        "useful_points": 22
+      }
+    },
+    "levels": {
+      "4": {
+        "generator": 23,
+        "share": 0.52174,
+        "useful": 12
+      },
+      "5": {
+        "generator": 49,
+        "share": 0.32653,
+        "useful": 16
+      },
+      "6": {
+        "generator": 155,
+        "share": 0.15484,
+        "useful": 24
+      },
+      "7": {
+        "generator": 670,
+        "share": 0.03284,
+        "useful": 22
+      },
+      "8": {
+        "generator": null,
+        "share": null,
+        "useful": 12
+      }
+    },
+    "vertex_orbits_dividing_D": 12
+  },
+  "5": {
+    "D": 5,
+    "choices": {
+      "4->5": {
+        "fiber_vertices_mean": 24.8,
+        "kept_distinct_mean": 5.3,
+        "useful_child_share": 0.4684,
+        "useful_children_mean": 2.47,
+        "useful_points": 15
+      },
+      "5->6": {
+        "fiber_vertices_mean": 41.1,
+        "kept_distinct_mean": 11.1,
+        "useful_child_share": 0.3558,
+        "useful_children_mean": 3.96,
+        "useful_points": 24
+      },
+      "6->7": {
+        "fiber_vertices_mean": 65.7,
+        "kept_distinct_mean": 17.9,
+        "useful_child_share": 0.2274,
+        "useful_children_mean": 4.08,
+        "useful_points": 37
+      },
+      "7->8": {
+        "fiber_vertices_mean": 125.3,
+        "kept_distinct_mean": 33.1,
+        "useful_child_share": 0.054,
+        "useful_children_mean": 1.78,
+        "useful_points": 37
+      }
+    },
+    "levels": {
+      "4": {
+        "generator": 38,
+        "share": 0.39474,
+        "useful": 15
+      },
+      "5": {
+        "generator": 115,
+        "share": 0.2087,
+        "useful": 24
+      },
+      "6": {
+        "generator": 538,
+        "share": 0.06877,
+        "useful": 37
+      },
+      "7": {
+        "generator": 4446,
+        "share": 0.00832,
+        "useful": 37
+      },
+      "8": {
+        "generator": null,
+        "share": null,
+        "useful": 15
+      }
+    },
+    "vertex_orbits_dividing_D": 15
+  },
+  "6": {
+    "D": 6,
+    "choices": {
+      "4->5": {
+        "fiber_vertices_mean": 29.8,
+        "kept_distinct_mean": 5.8,
+        "useful_child_share": 0.5463,
+        "useful_children_mean": 3.18,
+        "useful_points": 39
+      },
+      "5->6": {
+        "fiber_vertices_mean": 51.9,
+        "kept_distinct_mean": 13.5,
+        "useful_child_share": 0.3473,
+        "useful_children_mean": 4.7,
+        "useful_points": 92
+      },
+      "6->7": {
+        "fiber_vertices_mean": 113.9,
+        "kept_distinct_mean": 29.4,
+        "useful_child_share": 0.1675,
+        "useful_children_mean": 4.92,
+        "useful_points": 200
+      },
+      "7->8": {
+        "fiber_vertices_mean": 264.4,
+        "kept_distinct_mean": 65.5,
+        "useful_child_share": 0.041,
+        "useful_children_mean": 2.68,
+        "useful_points": 287
+      }
+    },
+    "levels": {
+      "4": {
+        "generator": 85,
+        "share": 0.45882,
+        "useful": 39
+      },
+      "5": {
+        "generator": 311,
+        "share": 0.29582,
+        "useful": 92
+      },
+      "6": {
+        "generator": 1871,
+        "share": 0.10689,
+        "useful": 200
+      },
+      "7": {
+        "generator": 22788,
+        "share": 0.01259,
+        "useful": 287
+      },
+      "8": {
+        "generator": null,
+        "share": null,
+        "useful": 147
+      }
+    },
+    "vertex_orbits_dividing_D": 147
+  }
+}
