@@ -106,14 +106,35 @@ def pools():
                 print(f"k = {k} {name}: {len(uniq)} distinct non-rays ({time.time() - t0:.0f} s)", flush=True)
 
 
+def _load_claim(path):
+    spec = importlib.util.spec_from_file_location(Path(path).stem, path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def _eval_job(args):
+    """Evaluate one claim file on a chunk of (k, edges) items, in a worker process."""
+    path, items = args
+    fn = _load_claim(path).claim
+    return [bool(fn(k, e)) for k, e in items]
+
+
+def _pmap(pool, path, items, size=200):
+    parts = pool.map(_eval_job, [(path, items[i:i + size]) for i in range(0, len(items), size)])
+    return [v for p in parts for v in p]
+
+
 def judge(rdir):
+    import multiprocessing as mp
     t0 = time.time()
+    pool = mp.get_context("spawn").Pool(12)
     rdir = ROOT / rdir
     pos = {k: load(f"rays_k{k}.json") for k in range(5, 10)}
     neg = {k: load(f"nonrays_heldout_k{k}.json") + load(f"nonrays_public_k{k}.json") for k in range(6, 10)}
     cands = []
     raw, seen = [], set()
-    for fn_ in ("candidates.json", "new_rays.json"):          # every candidate is tested against every claim
+    for fn_ in ("candidates.json", "new_rays.json", "pool_nonrays.json"):          # every candidate is tested against every claim
         cf = rdir / "breaker" / fn_
         if cf.exists():
             for c in json.loads(cf.read_text()):
@@ -122,43 +143,49 @@ def judge(rdir):
                     seen.add(sig)
                     raw.append(c)
     if raw:
-        for c in raw:
-            k, e = int(c["k"]), [tuple(x) for x in c["edges"]]
-            v = F.check(k, e)
+        verd = pool.starmap(F.check, [(int(c["k"]), [tuple(x) for x in c["edges"]]) for c in raw], chunksize=64)
+        for c, v in zip(raw, verd):
             ok12 = set(v["weights"]) <= {1, 2}
             cands.append(dict(c, verdict=v, in_scope=bool(v["connected"] and v["minimal"] and ok12)))
+    print(f"{len(cands)} breaker candidates checked exactly, {sum(c['in_scope'] for c in cands)} in scope, "
+          f"{sum(c['in_scope'] and c['verdict']['ray'] for c in cands)} rays ({time.time() - t0:.0f} s)", flush=True)
+    scope = [c for c in cands if c["in_scope"]]
     res = []
-    for f in sorted((rdir / "maker").glob("*.py")):
-        spec = importlib.util.spec_from_file_location(f.stem, f)
-        mod = importlib.util.module_from_spec(spec)
+    for f in sorted(q for q in (rdir / "maker").glob("*.py") if q.name[:2].isdigit()):
         row = {"file": f.name}
         try:
-            spec.loader.exec_module(mod)
-            kind, fn = mod.KIND, mod.claim
+            mod = _load_claim(f)
+            kind = mod.KIND
             row.update(name=getattr(mod, "NAME", f.stem), kind=kind, statement=mod.STATEMENT)
             t = time.time()
             per_k, viol = {}, []
             for k in sorted(pos):
-                tp = sum(1 for kk, e in pos[k] if fn(kk, e))
-                tn = [e for kk, e in neg.get(k, []) if fn(kk, e)]
+                pv = _pmap(pool, str(f), pos[k])
+                nv = _pmap(pool, str(f), neg.get(k, []))
+                tp = sum(pv)
+                tn = [e for (kk, e), v in zip(neg.get(k, []), nv) if v]
                 per_k[str(k)] = {"rays": len(pos[k]), "rays_true": tp, "nonrays": len(neg.get(k, [])),
                                  "nonrays_true": len(tn)}
                 if kind in ("necessary", "iff") and tp < len(pos[k]):
-                    bad = next(e for kk, e in pos[k] if not fn(kk, e))
+                    bad = next(e for (kk, e), v in zip(pos[k], pv) if not v)
                     viol.append({"k": k, "why": "a ray where the claim is False", "count": len(pos[k]) - tp,
                                  "edges": bad})
                 if kind in ("sufficient", "iff") and tn:
                     viol.append({"k": k, "why": "a non-ray where the claim is True", "count": len(tn),
                                  "edges": tn[0]})
-            for c in cands:
-                if not c["in_scope"]:
-                    continue
-                val = bool(fn(int(c["k"]), [tuple(x) for x in c["edges"]]))
-                if c["verdict"]["ray"] and not val and kind in ("necessary", "iff"):
-                    viol.append({"k": c["k"], "why": "breaker: a ray where the claim is False", "edges": c["edges"]})
-                if not c["verdict"]["ray"] and val and kind in ("sufficient", "iff"):
-                    viol.append({"k": c["k"], "why": "breaker: a non-ray where the claim is True",
-                                 "edges": c["edges"]})
+            cv = _pmap(pool, str(f), [(int(c["k"]), [tuple(x) for x in c["edges"]]) for c in scope])
+            cr = [(c, v) for c, v in zip(scope, cv) if c["verdict"]["ray"]]
+            cn = [(c, v) for c, v in zip(scope, cv) if not c["verdict"]["ray"]]
+            badr = [c for c, v in cr if not v]
+            badn = [c for c, v in cn if v]
+            if badr and kind in ("necessary", "iff"):
+                viol.append({"k": badr[0]["k"], "why": "breaker: a ray where the claim is False", "count": len(badr),
+                             "edges": badr[0]["edges"]})
+            if badn and kind in ("sufficient", "iff"):
+                viol.append({"k": badn[0]["k"], "why": "breaker: a non-ray where the claim is True",
+                             "count": len(badn), "edges": badn[0]["edges"]})
+            row["breaker"] = {"rays": len(cr), "rays_true": len(cr) - len(badr), "nonrays": len(cn),
+                              "nonrays_true": len(badn)}
             R = sum(v["rays"] for v in per_k.values())
             RT = sum(v["rays_true"] for v in per_k.values())
             N = sum(v["nonrays"] for v in per_k.values())
@@ -172,7 +199,9 @@ def judge(rdir):
         print(f"{row['file']}: {row.get('kind')} {row['status']} rays accepted {row.get('rays_accepted')} "
               f"non-rays rejected {row.get('nonrays_rejected')} ({row.get('seconds')} s)", flush=True)
     out = {"round": rdir.name, "positives": {str(k): len(v) for k, v in pos.items()},
-           "nonrays": {str(k): len(v) for k, v in neg.items()}, "claims": res, "candidates": cands,
+           "nonrays": {str(k): len(v) for k, v in neg.items()}, "claims": res, "candidates": cands[:200], "candidates_total": len(cands),
+           "candidate_rays_per_k": {str(k): sum(1 for c in scope if c["verdict"]["ray"] and int(c["k"]) == k)
+                                    for k in sorted({int(c["k"]) for c in scope})},
            "seconds": round(time.time() - t0, 1)}
     atomic_write_json(ROOT / "results/phase9" / f"{rdir.name}_family.json", out)
     lines = [f"# Phase 9 {rdir.name}: family {{1,2}} claims", "",
@@ -183,11 +212,16 @@ def judge(rdir):
         first = (str(v[0]["k"]) + ": " + v[0]["why"]) if v else r.get("error", "")
         lines.append(f"| {r['file']} | {r.get('kind')} | {r['status']} | {r.get('rays_accepted')} | "
                      f"{r.get('nonrays_rejected')} | {first} |")
+    lines += ["", "## On the breaker's objects (candidates.json and new_rays.json, all checked exactly)", "",
+              "| file | rays | claim True on rays | non-rays | claim True on non-rays |", "|---|---|---|---|---|"]
+    lines += [f"| {r['file']} | {r['breaker']['rays']} | {r['breaker']['rays_true']} | {r['breaker']['nonrays']} | "
+              f"{r['breaker']['nonrays_true']} |" for r in res if "breaker" in r]
+    pool.close()
     lines += ["", "## Statements", ""]
     lines += [f"- **{r.get('name', r['file'])}** ({r.get('kind')}): {r.get('statement', '')}" for r in res]
     lines += ["", "## Breaker candidates", "", "| k | claim | in scope | ray | how |", "|---|---|---|---|---|"]
     lines += [f"| {c['k']} | {c.get('claim')} | {c['in_scope']} | {c['verdict']['ray']} | {c.get('how', '')} |"
-              for c in cands]
+              for c in cands[:60]]
     (ROOT / "results/phase9" / f"{rdir.name}_family.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 

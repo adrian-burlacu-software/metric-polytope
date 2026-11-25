@@ -1,0 +1,21 @@
+(9, 'add node') 766
+(9, 'glue') 83
+(9, 'perturb') 376
+(9, 'random') 220
+(9, 'split') 188
+(9, 'subdivide') 217
+(9, 'twin') 1264
+(10, 'add node') 1638
+(10, 'glue') 395
+(10, 'perturb') 524
+(10, 'random') 420
+(10, 'split') 535
+(10, 'subdivide') 669
+(10, 'twin') 2800
+(11, 'add node') 1418
+(11, 'glue') 473
+(11, 'random') 579
+(11, 'split') 543
+(11, 'subdivide') 516
+(11, 'twin') 1924
+rays 15548 nonrays 1907

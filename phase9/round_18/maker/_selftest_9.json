@@ -1,0 +1,28 @@
+{
+ "rays_k9": {
+  "n": 27963,
+  "accepted": {
+   "01_unit_rectangle_class": 836,
+   "02_rectangle_propagation": 12143,
+   "03_exchange_closure_sufficient": 27887,
+   "04_exchange_closure_iff": 27887,
+   "05_split_prime": 27963,
+   "06_geodesic_exchange_connected": 27963,
+   "07_exchange_quotient_connected": 27963,
+   "08_combined_necessary": 27963
+  }
+ },
+ "nonrays_public_k9": {
+  "n": 1511,
+  "accepted": {
+   "01_unit_rectangle_class": 0,
+   "02_rectangle_propagation": 0,
+   "03_exchange_closure_sufficient": 0,
+   "04_exchange_closure_iff": 0,
+   "05_split_prime": 670,
+   "06_geodesic_exchange_connected": 494,
+   "07_exchange_quotient_connected": 790,
+   "08_combined_necessary": 208
+  }
+ }
+}

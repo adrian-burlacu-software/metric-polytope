@@ -1,0 +1,93 @@
+{
+ "rays_k5": {
+  "n": 1,
+  "accepted": {
+   "01_unit_rectangle_class": 1,
+   "02_rectangle_propagation": 1,
+   "03_exchange_closure_sufficient": 1,
+   "04_unweighted_closure_necessary": 1,
+   "05_split_prime": 1,
+   "06_geodesic_exchange_connected": 1,
+   "07_exchange_quotient_connected": 1,
+   "08_combined_necessary": 1
+  }
+ },
+ "rays_k6": {
+  "n": 3,
+  "accepted": {
+   "01_unit_rectangle_class": 3,
+   "02_rectangle_propagation": 3,
+   "03_exchange_closure_sufficient": 3,
+   "04_unweighted_closure_necessary": 3,
+   "05_split_prime": 3,
+   "06_geodesic_exchange_connected": 3,
+   "07_exchange_quotient_connected": 3,
+   "08_combined_necessary": 3
+  }
+ },
+ "nonrays_public_k6": {
+  "n": 56,
+  "accepted": {
+   "01_unit_rectangle_class": 0,
+   "02_rectangle_propagation": 0,
+   "03_exchange_closure_sufficient": 0,
+   "04_unweighted_closure_necessary": 29,
+   "05_split_prime": 6,
+   "06_geodesic_exchange_connected": 3,
+   "07_exchange_quotient_connected": 11,
+   "08_combined_necessary": 0
+  }
+ },
+ "rays_k7": {
+  "n": 28,
+  "accepted": {
+   "01_unit_rectangle_class": 10,
+   "02_rectangle_propagation": 19,
+   "03_exchange_closure_sufficient": 28,
+   "04_unweighted_closure_necessary": 28,
+   "05_split_prime": 28,
+   "06_geodesic_exchange_connected": 28,
+   "07_exchange_quotient_connected": 28,
+   "08_combined_necessary": 28
+  }
+ },
+ "nonrays_public_k7": {
+  "n": 641,
+  "accepted": {
+   "01_unit_rectangle_class": 0,
+   "02_rectangle_propagation": 0,
+   "03_exchange_closure_sufficient": 0,
+   "04_unweighted_closure_necessary": 459,
+   "05_split_prime": 102,
+   "06_geodesic_exchange_connected": 58,
+   "07_exchange_quotient_connected": 179,
+   "08_combined_necessary": 10
+  }
+ },
+ "rays_k8": {
+  "n": 925,
+  "accepted": {
+   "01_unit_rectangle_class": 105,
+   "02_rectangle_propagation": 527,
+   "03_exchange_closure_sufficient": 925,
+   "04_unweighted_closure_necessary": 925,
+   "05_split_prime": 925,
+   "06_geodesic_exchange_connected": 925,
+   "07_exchange_quotient_connected": 925,
+   "08_combined_necessary": 925
+  }
+ },
+ "nonrays_public_k8": {
+  "n": 1466,
+  "accepted": {
+   "01_unit_rectangle_class": 0,
+   "02_rectangle_propagation": 0,
+   "03_exchange_closure_sufficient": 0,
+   "04_unweighted_closure_necessary": 1114,
+   "05_split_prime": 448,
+   "06_geodesic_exchange_connected": 423,
+   "07_exchange_quotient_connected": 601,
+   "08_combined_necessary": 81
+  }
+ }
+}

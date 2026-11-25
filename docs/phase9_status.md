@@ -483,3 +483,49 @@ restriction of an unweighted graph vertex" does not select vertices. It fits the
 extreme rays are very abundant (Avis; to be checked against the source). It is a true statement about m_8 but not a
 rule. What would make it one is a condition on the pair (G*, node subset) that guarantees the restriction is a
 vertex; that is the peel problem of §10–§13 in other words.
+
+## 18. Family study, round 18: conditions for the {1,2}-weighted rays (2026-11-25)
+
+Setup `scripts/phase9/family12.py`, judge `scripts/phase9/judge_family.py`, briefs and agent folders
+`phase9/round_18/`, verdicts `results/phase9/round_18_family.json` / `.md`.
+
+**The family.** Extreme rays of MET_k whose minimal graph has weights in {1, 2}. Complete lists for k = 5..8:
+1, 3, 28, 925 (of 1, 3, 33, 3,751 rays in all). From the full m_9 graph run (below): 5,520 orbits with weights {1}
+and 23,645 with {1, 2}, giving 27,963 distinct graphs on 9 nodes, all re-confirmed as rays.
+
+**Full m_9 graph run** (`graph_families.py --all9`, chunks in `checkpoints/phase9/gfam9/`): 1,055,145 cut-adjacent
+orbits, 1,221 not. 1,273 weight sets occur (the 20,000 sample showed 270), 48 of them intervals carrying 89.5% of the
+orbits; largest weight 21; most common set {2, 3, 4} (217,616 orbits); unweighted 0.52%, {1, 2} 2.2%.
+
+**Round.** The maker proposed 8 conditions; the breaker built 46,436 new rays (8,011 / 21,487 / 16,938 on 9 / 10 / 11
+nodes) and 6,345 non-rays on 9–11 nodes. The judge tested every claim on 28,920 data rays, 3,674 public and 3,670
+held-out non-rays, and all 52,781 breaker objects (each checked exactly). No submitted claim was broken.
+
+| claim | kind | data rays accepted | data non-rays rejected | breaker rays accepted | breaker non-rays rejected |
+|---|---|---|---|---|---|
+| 01 unit rectangle class | sufficient | 3.3% | 100% | 10.4% | 100% |
+| 02 rectangle propagation | sufficient | 43.9% | 100% | 72.0% | 100% |
+| 03 exchange closure | sufficient | 99.74% | 100% | 99.90% | 100% |
+| 04 unweighted closure | necessary (conjecture) | 100% | 18% | 100% | 24% |
+| 05 split-prime | necessary | 100% | 67% | 100% | 53% |
+| 06 geodesic exchange connected | necessary | 100% | 74% | 100% | 58% |
+| 07 exchange quotient connected | necessary | 100% | 57% | 100% | 48% |
+| 08 = 2-connected + 05 + 06 + 07 | necessary | 100% | 92% | 100% | 87% |
+
+**The idea.** A solution of the tight system is fixed by its values on the edges, and the constraints are "two
+geodesics of the same pair have equal length". A geodesic rectangle forces opposite sides equal; an odd closed chain
+of such exchanges forces two pair-classes equal; then a tight triple with one unknown class determines it. Claim 03
+says: if these three deductions determine everything, the graph is a ray. It is sound for every k and every weight
+set (each step is a consequence of tight equalities).
+
+**No iff.** "Ray iff the closure of 03 succeeds" holds for all 957 rays with k ≤ 8 and fails at k = 9: 76 of the
+27,963 data rays, and 46 of the breaker's 46,436 (first found independently by the breaker, 12 submitted). The misses
+have weight-2 edges and need three relations combined; the closure combines two. So the same pattern as the rest of
+Phase 9 appears inside the simplest weighted family: the rule is complete through n = 8 and exceptions start at n = 9.
+
+**Reservations.** (a) 02, 03, 04, 07 are restricted deduction procedures on the tight relations, not static graph
+properties: 03 is an incomplete linear solver, which is why it is sound and why it cannot be an iff. The claims free
+of this are 01, 05, 06. (b) 04 is a conjecture with no proof (unweighted rays only: 5,519 in the data). (c) Proofs
+are sketches in the file docstrings; 05 quotes Bandelt–Dress from memory. (d) Non-rays are perturbations of rays, a
+biased sample. (e) Both agents slightly exceeded a compute rule (maker: one command 5 min 46 s; breaker: 25 min
+total).
