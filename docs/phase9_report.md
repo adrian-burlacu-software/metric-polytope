@@ -13,8 +13,8 @@ enumeration. Through n = 9 the answer is no in every form we tried, and each fai
 - Without that restriction a uniform normal form does exist: every known vertex of m_9 is built from at most 5 nodes
   by one-node steps of six kinds. But the kinds do not determine which step to take, and a generator built from them
   is a search whose size grows like the 9th to 11th power of the denominator.
-- Families indexed by a graph need more and more weight patterns (2, 9, over 270 for n = 7, 8, 9), and a graph does not
-  determine its weights.
+- Families indexed by a graph need more and more weight patterns (2, 9, 1,273 for n = 7, 8, 9), and a graph does not
+  determine its weights: at n = 9 one graph carries 34 vertices on average and up to 2,177.
 
 The positive results are the normal form, the exact ceiling on restriction-keeping rules, and a measurement of where
 the difficulty sits: the part of the search that leads to vertices is about as large as the answer, and the cost is
@@ -125,11 +125,19 @@ them, with coprime integer weights.
 | 5, 6 | 1, 2 | 1 | 100% | 1, 2 | 1 |
 | 7 | 12 | 2 | 92% | 11 | 1 |
 | 8 | 532 | 9 | 20% | 256 | 12 |
-| 9 | 20,000 sampled | 270 | 0.6% | 8,006 | 48 |
+| 9 | 1,055,145 | 1,273 | 0.52% | 31,061 | 2,177 |
 
-About 90% of the m_9 orbits use an interval of weights {a, ..., b}, so the weight sets themselves are simple. But the
-family that is all of m_5 and m_6 is 0.6% of m_9, the number of graphs grows, and one graph carries many vertices, so
-a rule "graph ↦ vertex" needs the weights as additional input.
+89.5% of the m_9 orbits use an interval of weights {a, ..., b} (48 intervals; the largest weight is 21), so the
+weight sets themselves are simple. But the family that is all of m_5 and m_6 is 0.52% of m_9, and the 1,055,145
+orbits sit on only 31,061 graphs: 34 per graph on average, 2,177 on one, and only 5,910 graphs carry a single
+vertex. A rule "graph ↦ vertex" needs the weights as additional input.
+
+**The simplest weighted family.** For the rays with weights 1 and 2 only (1, 3, 28, 925 on 5 to 8 nodes; 27,963
+known on 9), a deduction rule on geodesics (opposite sides of a geodesic rectangle are equal; odd chains of such
+exchanges; then triangles with one unknown) is a proved sufficient condition and is also necessary through 8 nodes.
+At 9 nodes it misses 76 of the 27,963 rays, and 46 of 46,436 further rays built on 9 to 11 nodes. The best necessary
+condition found rejects 92% of near-miss non-rays. No exact combinatorial characterisation was found
+(`docs/phase9_status.md` §18).
 
 ## 6. Conclusions
 
@@ -146,7 +154,9 @@ a rule "graph ↦ vertex" needs the weights as additional input.
 - The m_9 list is not proved complete. Statements about "all of m_9" are about the known list.
 - The generator measurements are for m_8 and D ≤ 6; larger D is extrapolated.
 - "No local feature" refers to the six features of §4.
-- The graph statistics at n = 9 are from a sample of 20,000 orbits and one switching per orbit.
+- The graph statistics at n = 9 use one switching per orbit (the one with the simplest weight set).
+- A side test of the distance to the elliptope (smallest eigenvalue of J − 2X) found no relation to which orbits the
+  rules reach.
 
 ## 8. Reproduction
 
@@ -158,4 +168,4 @@ All scripts are in `scripts/phase9/`, all outputs in `results/phase9/`.
 | 2 (move capacity) | `move_capacity.py` | `move_capacity.json` |
 | 3 (step kinds) | `step_types.py`, `anchor_growth.py` | `step_types_m9all.json`, `anchor_growth.json` |
 | 4 | `fiber_generator.py`, `useful_share.py`, `choice_features.py` | `fiber_generator_n8.json`, `useful_share_n8.json`, `choice_features_n8.json` |
-| 5 | `graph_types.py`, `graph_families.py` | `graph_types.json`, `graph_families.json` |
+| 5 | `graph_types.py`, `graph_families.py` | `graph_types.json`, `graph_families.json`, `graph_families_m9all.json`; family: `family12.py`, `judge_family.py`, `round_18_family.md` |

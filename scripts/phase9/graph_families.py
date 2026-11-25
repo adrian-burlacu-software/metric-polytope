@@ -84,22 +84,31 @@ def classes(rows):
         buckets[(r["nodes"], len(r["edges"]), r["h"])].append(r)
     out = []                                   # list of classes; class = list of weighted classes; each = list of rows
     em = numerical_edge_match("w", 0)
+    done, t0 = 0, time.time()
     for rs in buckets.values():
-        cls = []                               # [(G0, [ (Gw, [rows]) ])]
+        cls = []                               # [(G0, {hw: [(Gw, [rows])]})]; weighted classes indexed by their hash
         for r in rs:
             G = build(r)
-            for G0, wcls in cls:
-                if nx.is_isomorphic(G0, G):
-                    for Gw, lst in wcls:
-                        if nx.is_isomorphic(Gw, G, edge_match=em):
-                            lst.append(r)
-                            break
-                    else:
-                        wcls.append((G, [r]))
+            hit = False
+            for _G0, wcls in cls:              # a weighted isomorphism settles both questions at once
+                for Gw, lst in wcls.get(r["hw"], ()):
+                    if nx.is_isomorphic(Gw, G, edge_match=em):
+                        lst.append(r)
+                        hit = True
+                        break
+                if hit:
                     break
-            else:
-                cls.append((G, [(G, [r])]))
-        out += [[lst for _, lst in wcls] for _, wcls in cls]
+            if not hit:
+                for G0, wcls in cls:
+                    if nx.is_isomorphic(G0, G):
+                        wcls.setdefault(r["hw"], []).append((G, [r]))
+                        break
+                else:
+                    cls.append((G, {r["hw"]: [(G, [r])]}))
+            done += 1
+            if done % 100000 == 0:
+                print(f"    classes: {done} of {len(rows)} rows ({time.time() - t0:.0f} s)", flush=True)
+        out += [[lst for ws in wcls.values() for _, lst in ws] for _, wcls in cls]
     return out
 
 

@@ -495,7 +495,11 @@ and 23,645 with {1, 2}, giving 27,963 distinct graphs on 9 nodes, all re-confirm
 
 **Full m_9 graph run** (`graph_families.py --all9`, chunks in `checkpoints/phase9/gfam9/`): 1,055,145 cut-adjacent
 orbits, 1,221 not. 1,273 weight sets occur (the 20,000 sample showed 270), 48 of them intervals carrying 89.5% of the
-orbits; largest weight 21; most common set {2, 3, 4} (217,616 orbits); unweighted 0.52%, {1, 2} 2.2%.
+orbits; largest weight 21; most common set {2, 3, 4} (217,616 orbits); unweighted 0.52%, {1, 2} 2.2%. The orbits sit
+on 31,061 distinct underlying graphs (1,052,364 weighted graphs): 33.9 weightings per graph on average, median 7,
+maximum 2,177; 5,910 graphs carry one weighting; 2,463 graphs with 100 or more carry 640,607 of the weightings
+(`results/phase9/graph_families_m9all.json`). The first run's grouping step scanned all weightings of a graph per
+orbit and was stopped after 100 minutes; indexed by weighted hash it takes 5 minutes.
 
 **Round.** The maker proposed 8 conditions; the breaker built 46,436 new rays (8,011 / 21,487 / 16,938 on 9 / 10 / 11
 nodes) and 6,345 non-rays on 9–11 nodes. The judge tested every claim on 28,920 data rays, 3,674 public and 3,670
@@ -529,3 +533,12 @@ of this are 01, 05, 06. (b) 04 is a conjecture with no proof (unweighted rays on
 are sketches in the file docstrings; 05 quotes Bandelt–Dress from memory. (d) Non-rays are perturbations of rays, a
 biased sample. (e) Both agents slightly exceeded a compute rule (maker: one command 5 min 46 s; breaker: 25 min
 total).
+
+## 19. Side experiment: elliptope distance (2026-11-25)
+
+`scripts/phase9/elliptope.py`, `results/phase9/elliptope.md`. Y = J − 2X, λ = λ_min(Y) (orbit invariant; λ ≥ 0 iff in
+the elliptope), on m_7, m_8 and the 1,000 m_9 targets, split by reached / unreached after round 17. Only the cut has
+λ ≥ 0. n = 8: reached median −0.41 (range −1.33..0), unreached −0.39 (−0.58..−0.27). n = 9: reached −0.45
+(−0.85..−0.25), unreached −0.44 (−0.75..−0.20). P(unreached below reached) = 0.43 and 0.47; 0.46 within equal
+denominators. The most negative orbits are reached ones. **No extra signal**; ledger note added to `rules.md`, no rule
+proposed. Denominators do separate the groups (n = 9: D = 13: 116 of 127 unreached; D = 16: 59 of 59; D = 9: 0 of 87).

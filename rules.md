@@ -631,3 +631,6 @@ A mutation = a rule that holds up to some n and breaks at the next tested n. Lit
 - Status: VERIFIED in code
 - Counterexample file: `results/ledger/counterexamples/all-moves-cover_n8.json`
 
+
+### Note (2026-11-25): elliptope distance: no extra signal
+- λ_min(J − 2X) on m_7, m_8 and the 1,000 m_9 targets vs reached / unreached after round 17: the two groups overlap fully (P(unreached below reached) = 0.43 at n = 8, 0.47 at n = 9; 0.46 within equal denominators). No rule proposed. `scripts/phase9/elliptope.py`, `results/phase9/elliptope.md`.
