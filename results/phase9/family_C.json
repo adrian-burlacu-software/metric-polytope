@@ -71,6 +71,60 @@
     "seconds": 212,
     "tight_triples": 660
   },
+  "t17_a12": {
+    "L_equals_n": true,
+    "classes_level_n_minus_1": 256,
+    "extreme_ray": true,
+    "metric": true,
+    "n": 34,
+    "seconds": 650,
+    "tight_triples": 731
+  },
+  "t17_a16": {
+    "L_equals_n": true,
+    "classes_level_n_minus_1": 239,
+    "extreme_ray": true,
+    "metric": true,
+    "n": 34,
+    "seconds": 586,
+    "tight_triples": 884
+  },
+  "t19_a12": {
+    "L_equals_n": true,
+    "classes_level_n_minus_1": 305,
+    "extreme_ray": true,
+    "metric": true,
+    "n": 38,
+    "seconds": 1261,
+    "tight_triples": 931
+  },
+  "t19_a16": {
+    "L_equals_n": true,
+    "classes_level_n_minus_1": 286,
+    "extreme_ray": true,
+    "metric": true,
+    "n": 38,
+    "seconds": 1157,
+    "tight_triples": 1140
+  },
+  "t21_a12": {
+    "L_equals_n": true,
+    "classes_level_n_minus_1": 358,
+    "extreme_ray": true,
+    "metric": true,
+    "n": 42,
+    "seconds": 2426,
+    "tight_triples": 1155
+  },
+  "t21_a16": {
+    "L_equals_n": true,
+    "classes_level_n_minus_1": 337,
+    "extreme_ray": true,
+    "metric": true,
+    "n": 42,
+    "seconds": 2295,
+    "tight_triples": 1428
+  },
   "t7_a12": {
     "L_equals_n": false,
     "classes_level_n_minus_1": null,

@@ -20,7 +20,7 @@ proper subset of the points suffices. The share of rays with L = 4 is 97% and 72
 orbits on the m_9 list. We also record a uniform normal form for the known
 vertices of m_9 (every vertex is built from at most 5 nodes by one-node steps of six kinds) and show by measurement
 that it does not yield a construction. Finally we prove that L is unbounded: an explicit chiral family C_t of
-extreme rays on 2t points (t odd, t ≥ 9) has L(C_t) > t/6, and L(C_t) = 2t for t ≤ 15 by exact computation. Hence
+extreme rays on 2t points (t odd, t ≥ 9) has L(C_t) > t/6, and L(C_t) = 2t for t ≤ 21 by exact computation. Hence
 no criterion that inspects a bounded number of points at a time characterises the extreme rays of the metric cone.
 
 ## 1. Introduction
@@ -403,7 +403,7 @@ line (i ∈ Z, ordinary offsets).
 
     sup { L(d) : d an extreme ray of MET_n } > n/12   for every n = 2t, t odd, t ≥ 9;  in particular it is unbounded.
 
-(c) (Computation, exact.) L(C_t) = 2t for t = 9, 11, 13, 15: no proper subset of the 18, 22, 26, 30 points proves
+(c) (Computation, exact.) L(C_t) = 2t for every odd t from 9 to 21: no proper subset of the 18, 22, ..., 42 points proves
 extremality. (With arithmetic modulo 2^31 − 1 the same holds for every odd t from 9 to 23, i.e. up to 46 points.)
 
 So Conjecture 1 of earlier drafts is a theorem, and no rule that examines a bounded number of points at a time
@@ -490,9 +490,9 @@ equal, we would have u_c(P) = u_c(Q) for all c, i.e. D(ψP) = D(ψQ), and by Lem
 or related, i.e. P and Q would lie in the same class of π. So no merge is forced, π is closed at level s, and
 L(C_t) > s for every s ≤ t/6. ∎
 
-**Remarks.** (1) The proof of (b) gives L(C_t) > t/6; the computations (c) show L(C_t) = 2t for t ≤ 15 (t ≤ 23
+**Remarks.** (1) The proof of (b) gives L(C_t) > t/6; the computations (c) show L(C_t) = 2t for t ≤ 21 (t ≤ 23
 modulo a prime), and we expect L(C_t) = 2t for all odd t ≥ 9. (2) The level-(2t − 1) closure of C_t has exactly
-(t² + 13t + 2)/2 classes for t = 9, 11, 13, 15, the number of classes of π. (3) Replacing d(A_i, A_{i+2}) = 12 by 16
+(t² + 13t + 2)/2 classes for every odd t from 9 to 21, the number of classes of π. (3) Replacing d(A_i, A_{i+2}) = 12 by 16
 gives a second family with the same properties (computed for t = 9, ..., 15). (4) How the family was found: the
 families of this shape are the extreme rays of a fixed 12-dimensional cone of "patterns of radius 2"
 (`pattern_hunt.py`); of its 26,319 rays with positive distances, 9,464 give extreme rays of MET_2t for at least two
