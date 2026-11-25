@@ -623,3 +623,27 @@ n there are orbits whose proof needs nearly the whole tight system. No ray in th
 depend on the switching; L is defined through this closure, and a cleverer bounded rule could do better on some
 rays, though none can beat the full system on s nodes. Unbounded growth of L with n is observed for n = 7, 8, 9 and
 is not proved.
+
+## 22. Locality is unbounded: the family C_t (2026-11-25)
+
+Full statement and proof: `docs/paper_draft.md` §5a (Theorem 4). Scripts `family_C.py`, `family_C_proof.py`,
+`family_C_structure.py`, `pattern_hunt.py`, `cand_pattern.py`.
+
+**Family.** 2t points A_i, B_i (i mod t, t odd ≥ 9): d(A,A) = 16, 12, 8 at cyclic distance 1, 2, ≥ 3;
+d(B,B) = 10, 20, 22; d(A_i, B_{i+o}) = 13, 11, 7, 9, 19 for o = −2..2, 15 otherwise. Chiral (no mirror symmetry).
+
+**Results.** (a) Extreme ray of MET_2t for every odd t ≥ 9: after showing that all far A-pairs are equal, the tight
+system reduces to s_i + 2s_{i+3} + s_{i+4} = (7/2)α on Z_t; its characteristic polynomial
+z⁴ + 2z³ + 1 = (z + 1)(z³ + z² − z + 1) has no root that is a t-th root of unity for odd t. (b) L(C_t) > t/6 for
+every odd t ≥ 9 (proof: an explicit partition is closed under all merges of level s ≤ t/6, using the solution
+s_j = 7 + λ^j on the line, λ the real root of the cubic; finite exact checks in `family_C_proof.py`). (c) L = 2t
+exactly for t = 9, 11, 13, 15 (rational arithmetic), and modulo a prime up to t = 23.
+
+**How it was found.** Mirror-symmetric local-pattern families all saturate (their recurrences have only
+root-of-unity modes; §C3⁗ of the draft). The complete list of radius-2 patterns without mirror symmetry (26,319 rays
+of a 12-dimensional cone) contains 96 passing the period-free filters, of which 8 (one family and a variant, up to
+mirror image and exchange of A and B) have L = n at 18, 22 and 26 points.
+
+**Consequence.** The "rules keep growing" side is now a theorem for graph-input rules as well: no rule that inspects
+a bounded number of points characterises extreme rays of the metric cone. Together with §20 (small-choice
+generators reach a vanishing share of the orbits), neither kind of finite rule set exists.

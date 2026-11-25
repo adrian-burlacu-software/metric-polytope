@@ -159,9 +159,10 @@ all of m_7; at n = 8 it is 4 for 76% of the orbits and reaches 7; at n = 9 (30,0
 3. The normal form does not give a construction. The cost of generating m_n is the cost of choosing, among the
    determined steps, the few that lead to vertices; within the features tested this choice is not local.
 4. Graph-indexed families do not stay finite in number either.
-5. "Finitely many rules plus finitely many exceptions" is impossible for rules with a small choice per node (proved,
-   given Avis's theorem), and for graph-input rules the size of what a rule must inspect grows with n (measured for
-   n = 7, 8, 9, not proved in general).
+5. "Finitely many rules plus finitely many exceptions" is impossible for rules with a small choice per node
+   (proved), and for graph-input rules the number of points a rule must inspect is unbounded (proved: an explicit
+   family of extreme rays on 2t points needs more than t/6 points, and all 2t in the cases computed; see
+   `docs/paper_draft.md`, Theorem 4).
 
 ## 7. Limits
 

@@ -369,7 +369,7 @@ def main():
             if lo > Fr(1) / lam_lo ** 3:                           # |c| > |lambda|^-3 >= |lambda|^-g
                 continue
             g = 3
-            while Fr(1) / lam_hi ** g >= lo and g < 5000:          # |lambda|^-g >= lower bound of |c|
+            while Fr(1) / lam_lo ** g >= lo and g < 5000:          # |lambda|^-g <= lam_lo^-g ; stop once that is below |c|
                 if is_zero(tuple(a - b for a, b in zip(c, power(-g)))):
                     far_coincid.append((n2, h, g))
                 g += 1
