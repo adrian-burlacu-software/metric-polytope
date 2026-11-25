@@ -1,0 +1,52 @@
+{
+  "inputs": 533,
+  "m9_non_primitive": 382580,
+  "m9_orbits": 1056367,
+  "m9_with_8node_vertex_restriction": 159525,
+  "outputs_per_input_max": 1456,
+  "outputs_per_input_mean": 131.4,
+  "per_move": {
+    "dup-midshift": {
+      "outputs": 29848,
+      "seconds": 120.7,
+      "vertex_outputs": 4820
+    },
+    "dup-thirdshift": {
+      "outputs": 179088,
+      "seconds": 716.6,
+      "vertex_outputs": 11768
+    },
+    "partial-dup": {
+      "outputs": 46904,
+      "seconds": 105.4,
+      "vertex_outputs": 836
+    },
+    "radial-lowend": {
+      "outputs": 308655,
+      "seconds": 984.8,
+      "vertex_outputs": 49413
+    },
+    "twin-dup-blend": {
+      "outputs": 204672,
+      "seconds": 475.9,
+      "vertex_outputs": 642
+    },
+    "twin-dup-fifths": {
+      "outputs": 272896,
+      "seconds": 642.9,
+      "vertex_outputs": 856
+    },
+    "twin-dup-sevenths": {
+      "outputs": 409344,
+      "seconds": 964.7,
+      "vertex_outputs": 1284
+    },
+    "twin-dup-third": {
+      "outputs": 136448,
+      "seconds": 324.4,
+      "vertex_outputs": 428
+    }
+  },
+  "seconds": 275.7,
+  "vertex_outputs_total_upper_bound": 70047
+}

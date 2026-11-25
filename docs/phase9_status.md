@@ -379,3 +379,35 @@ while only 17–56% are useful. The degeneracy guess is wrong in direction: at i
 (D = 6, 6→7: 34 useful, 510 not). Being a vertex of m_{k+1} is rare for intermediates (they are mostly not vertices,
 which is the §9 primitive share again). At the last step the real filter is the vertex test itself. So within these
 features the choice is not local: a useful intermediate looks like a non-useful one until the build is finished.
+
+## 14. Rules or exceptions, tested on both sides (2026-11-25)
+
+A generator that needs the vertex test as a filter (§11) is not a rule set. With rules that must output vertices,
+either the rules or the exceptions grow. Two tests, one per side.
+
+**Exceptions under bounded moves** (`scripts/phase9/move_capacity.py`, `results/phase9/move_capacity.json`). All 8
+accepted moves applied to all 533 m_8 orbits (reached or not) give 70,047 outputs that are vertices of m_9, counted
+without merging orbits, so at most 70,047 orbits: 6.6% of the 1,056,367 known m_9 orbits (mean 131 per input, max
+1,456). Ceilings that hold for *any* move keeping its input as a vertex restriction (§9 data): 159,525 m_9 orbits
+(15.1%) have an 8-node vertex restriction, 382,580 (36.2%) have any vertex restriction. So at least 63.8% of m_9 is
+out of reach of every such move, whatever is proposed; the orbit count grows ×41 then ×1,982 per node while a move
+with a bounded choice gives polynomially many outputs. On this side the exceptions grow.
+
+**Rules as graph-indexed families** (`scripts/phase9/graph_types.py`, `results/phase9/graph_types.json`). Each
+cut-adjacent vertex is, after a switching, a scaled shortest-path metric of its minimal weighted graph; its type is
+the set of edge weights (minimised over valid switchings). Alphabet {1} = unweighted graph metric.
+
+| n | vertices | distinct weight alphabets | unweighted share | typical alphabet size | largest weight |
+|---|---|---|---|---|---|
+| 5, 6 | 1, 2 | 1 | 100% | 1 | 1 |
+| 7 | 12 | 2 | 92% | 1 | 2 |
+| 8 | 532 | 9 | 20% | 2–3 | 6 |
+| 9 | 20,000 sampled (27 not cut-adjacent) | 270 (99 in a 2,000 sample: not saturated) | 0.6% | 3–4 | 15 |
+
+On this side the rules grow: the unweighted family, which is all of m_5 and m_6, covers 0.6% of m_9, and the number
+of weight patterns goes 2, 9, 270+.
+
+**Reading.** Through n = 9 both grow, each in its own framework: bounded moves leave a growing majority of
+exceptions, and graph-indexed families need a growing number of weight patterns. Caveat: the weight alphabet is one
+way to cut families; a family with parametrised weights could merge many alphabets, so this is evidence, not a proof,
+that no finite graph-indexed rule set exists.
