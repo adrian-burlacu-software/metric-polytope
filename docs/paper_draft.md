@@ -596,8 +596,16 @@ extreme metrics for general n is open. Bodwin [Bo18] characterises the path syst
 of a weighted graph by forbidden subsystems coming from two-coloured polyhedra; his examples have 4 to 10 nodes and
 the family is not bounded in size. That result concerns faces of the metric cone of a different kind (strict
 metrizability), but it is the closest analogue we know of Theorem 4: obstructions that cannot be confined to a
-bounded number of points. In none of these did we find the locality invariant, a bound on generators, or a
+bounded number of points. Melleray, Petrov and Vershik [MPV08] study extreme rays under the name of linearly rigid
+metric spaces; they pose as an open question to describe the extremal metric spaces on n points and to estimate
+their number. Casabella, Joswig and Kastner [CJK24] classify the metric spaces on seven points through subdivisions
+of hypersimplices and give new infinite families of rays. Feldman and Kehoe [FK26] give further families of
+extreme rays (bowtie metrics). In none of these did we find the locality invariant, a bound on generators, or a
 statement that extreme rays admit no bounded-scope characterisation.
+
+*Forward citations.* We went through the works citing [A80] (68), [L96] (26) and [DI07] (6) in the OpenAlex index
+(November 2026) and read those whose titles concern extreme rays, vertices of the metric polytope or criteria for
+extremality; none contains a result of the kind of Theorems 4 or 6.
 
 ## 9. Reproduction
 
@@ -631,9 +639,15 @@ values marked * in C5 and C6 and the parenthesis of Theorem 4(c).
    `homogeneous`, `admissible`, `build_classes`); an independent re-implementation would be the strongest check.
 2. **Theorem 4(c) for 9 ≤ t ≤ 21** rests on the closure computation, not on the proof; the construction of the
    proof also passes its guard for t = 19, 21, so the two methods agree where both were run.
-3. **Citations.** MathSciNet/zbMATH forward citations of [A80], [L96] and [DI07] have not been checked. [CL25] §7,
-   [La25] §4.2 onwards and [Bo18] §2.2 onwards were read in summary only. The page numbers of [KMT00] and [SY04]
-   are from memory.
+3. **Citations.** Forward citations of [A80], [L96], [DI07] were checked in OpenAlex only (2026-11-26); zbMATH
+   refused automated access and MathSciNet needs a subscription, so one of the two should still be consulted by
+   hand. Citing relations and titles were taken from the index, partly through machine summaries. Not read in
+   full text: Karzanov, *Metrics with finite sets of primitive extensions* (Ann. Comb. 2, 1998); Grishukhin,
+   *Computing extreme rays of the metric cone for seven points* (European J. Combin. 13, 1992); Avis, *Extremal
+   metrics induced by graphs* (Ann. Discrete Math. 8, 1980); the thesis on the "metric body" behind [FK26]; [FK26]
+   itself (record description only); the second half of [CJK24]. [CL25] §7, [La25] §4.2 onwards and [Bo18] §2.2
+   onwards were read in summary only. The page numbers of [KMT00] and [SY04] are from memory; the bibliographic
+   data of [MPV08], [CJK24], [FK26] come from index records and should be checked against the papers.
 4. **The m_9 count.** The file has one orbit fewer than published (Section 6); the authors of the list could
    confirm which number is right.
 5. **Values marked *** (C5, C6) should be re-run in rational arithmetic or dropped.
@@ -646,7 +660,13 @@ values marked * in C5 and C6 and the parenthesis of Theorem 4(c).
 - [BD92] H.-J. Bandelt, A. W. M. Dress, A canonical decomposition theory for metrics on a finite set, Adv. Math. 92
   (1992) 47–105.
 - [Bo18] G. Bodwin, On the structure of unique shortest paths in graphs, arXiv:1804.09745.
+- [CJK24] L. Casabella, M. Joswig, L. Kastner, Subdivisions of hypersimplices: with a view toward finite metric
+  spaces, Exp. Math. (2024), arXiv:2402.17665.
 - [CL25] D. Cizma, N. Linial, On the number of path systems, arXiv:2508.21379v3 (2025).
+- [FK26] D. V. Feldman, E. R. Kehoe, Extreme rays of the metric cone and the metric body: bowtie metrics and
+  half-one extremality, preprint, Zenodo, doi:10.5281/zenodo.21898516 (2026).
+- [MPV08] J. Melleray, F. V. Petrov, A. M. Vershik, Linearly rigid metric spaces and the embedding problem, Fund.
+  Math. 199 (2008) 177–194, arXiv:math/0611049.
 - [DD-web] A. Deza, metric polytope data page, www.cas.mcmaster.ca/~deza/metric.html.
 - [DDF96] A. Deza, M. Deza, K. Fukuda, On skeletons, diameters and volumes of metric polyhedra, LNCS 1120 (1996)
   112–128.

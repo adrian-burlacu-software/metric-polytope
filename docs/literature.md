@@ -197,3 +197,20 @@ D. Avis, *On the extreme rays of the metric cone*, Canad. J. Math. 32 (1980) 126
   u1v1 joined to u1 and v2) is an extreme ray containing G isometrically; every rational metric is a restriction of
   an extreme ray. Thm 4.2 (zero distances), Thm 4.4 (union of two overlapping extreme rays is an extreme ray).
 - This resolves the `UNREAD` in C8 and gives the construction behind C9 from the primary source.
+
+## Forward-citation check, 2026-11-26 (OpenAlex only)
+
+Works citing Avis 1980 (68), Laurent 1996 (26) and Deza–Indik 2007 (6) were listed from OpenAlex; zbMATH Open
+returned HTTP 403 to automated access. Titles concerning extreme rays, vertices of the metric polytope or
+extremality criteria were followed up. Nothing found that states a bounded-scope impossibility, a locality
+measure, a 2^(cn²) count beyond Avis / Cizma–Linial, or a limit on generators.
+
+- Melleray, Petrov, Vershik 2008 (arXiv math/0611049): extremal = on an extreme ray of the semimetric cone; open
+  Question 6 asks to describe extremal n-point spaces and estimate their number. Now cited.
+- Casabella, Joswig, Kastner 2024 (arXiv 2402.17665): seven-point classification via hypersimplex subdivisions; new
+  families of rays. Read to about 40%. Now cited.
+- Feldman, Kehoe 2026 (Zenodo): bowtie metrics as extreme rays, metric body. Record description only.
+- Bondarenko–Nikolaev 2014/2015, Nikolaev 2015: integrality of relaxations, vertex denominators growing
+  exponentially. Not about extremality criteria.
+- Not read (no accessible text): Karzanov 1998 (primitive extensions), Grishukhin 1992 (rays for seven points),
+  Avis 1980 (Ann. Discrete Math. 8), the "metric body" thesis (core.ac.uk, 403).
