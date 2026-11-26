@@ -768,9 +768,9 @@ assistant; neither they nor the proofs have yet been checked by a second person.
 4. **The m_9 count.** The file has one orbit fewer than published (Section 6); the authors of the list could
    confirm which number is right.
 5. **Values marked *** (Comp. 5, Comp. 6) should be re-run in rational arithmetic or dropped.
-7. **Permanent archive.** The repository is on GitHub (private as of 2026-11-26). Before submission: choose a
+7. **Permanent archive.** The repository is public on GitHub since 2026-11-26. Before submission: choose a
    licence, check that the third-party data in `data/deza/raw/` and `data/smapo/raw/` may be redistributed (or
-   remove them and keep the download scripts and checksums), make the repository public, archive a tagged release
+   remove them and keep the download scripts and checksums), archive a tagged release
    at Zenodo, and replace the last sentence of Section 9 by the DOI.
 6. **Earlier numbering.** In the project notes (`docs/phase9_status.md`) Theorem 6 is "Theorem 1", Proposition 5 is
    "Corollary 1", and Comp. 3–12 appear as Comp. 2′, Comp. 3–3⁗, Comp. 4–9.
