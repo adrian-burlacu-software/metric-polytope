@@ -1,0 +1,917 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=2.6cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{lemmaS}{Lemma S}
+\newtheorem*{lemmaP}{Lemma P}
+\newtheorem*{avis}{Theorem}
+\newtheorem*{fact}{Fact (from C1, C2)}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem{question}{Question}
+\newtheorem*{questionz}{Question}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{remarks}{Remarks}
+
+\newcommand{\MET}{\mathrm{MET}}
+\newcommand{\cl}{\mathrm{cl}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\comp}[1]{\medskip\noindent\textbf{#1}}
+\newcommand{\step}[1]{\smallskip\noindent\emph{#1}}
+
+\title{No bounded-scope characterisation of the extreme rays of the metric cone}
+\author{Adrian Burlacu}
+\date{Draft of 26 November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A metric on $n$ points spans an extreme ray of the metric cone $\MET_n$ exactly when its tight triangle equalities
+have rank $\binom n2 - 1$. We ask whether this rank condition can be replaced by a test that looks at a bounded
+number of points at a time. To measure this we introduce the \emph{locality} $L(d)$ of an extreme ray $d$: the least
+$s$ such that extremality of $d$ can be derived by solving the tight equalities inside sets of $s$ points and
+propagating the proportionalities obtained. We prove that $L = 4$, the smallest possible value, for every graph
+covered by Avis's isometric-cycle criterion, hence for almost all graphs, and that $L$ is nevertheless unbounded: an
+explicit chiral family $C_t$ of extreme rays on $2t$ points ($t$ odd, $t \ge 9$) has $L(C_t) = 2t$, that is, no
+proper subset of the points proves extremality (the bound $L(C_t) > t/6$ has a short proof; the equality is
+computer-assisted, with exact arithmetic). Hence no criterion of bounded scope characterises the extreme rays of the
+metric cone, or the vertices of the metric polytope $m_n$ adjacent to a cut. We compute $L$ exactly for all extreme
+rays of $\MET_n$, $n \le 8$, and for the 1,055,145 cut-adjacent orbits of the known vertex list of $m_9$: the largest
+values are $4, 4, 5, 7$ for $n = 5, \dots, 8$ and $9$ on the $m_9$ list, and the share of rays with $L = 4$ falls
+from 97\% ($n = 7$) to 30\% ($n = 9$). We also show, by a counting argument resting on a theorem of Avis, that a
+generator of vertices of $m_n$ which makes fewer than $(1 - \delta)n$ bits of choice when it adds the $n$-th node
+produces a vanishing share of the orbits, so that no finite set of such rules with a finite list of exceptions
+describes the vertices.
+\end{abstract}
+
+Every statement below is marked \textbf{Theorem} / \textbf{Proposition} / \textbf{Lemma} (proved here),
+\textbf{Computation} (items C1--C12: exact computer results on a stated data set) or \textbf{Question} (open).
+
+\section{Introduction}
+
+The metric cone $\MET_n$ is the set of $x \in \R^{\binom n2}$ with $x_{ij} \le x_{ik} + x_{jk}$ for all triples, and
+the metric polytope $m_n$ is its intersection with the half-spaces $x_{ij} + x_{ik} + x_{jk} \le 2$. The cut polytope
+is contained in $m_n$ and has the same integral vertices, and $m_n$ is the standard linear relaxation of max-cut; its
+fractional vertices are what separates the relaxation from the problem. Complete vertex lists are known for
+$n \le 8$ \cite{DFPS01,DFMV03}, and for $n = 9$ there is a list of 1,056,368 orbits conjectured to be complete
+\cite{DI07}. Constructions of infinite families are known (cuts and anticuts, trivial extensions, graphic vertices,
+Avis's doubling, gluing; see \cite{LP92,L96,DL97}), but they account for a small and shrinking part of the lists, and
+no description of the vertices other than enumeration is known.
+
+\begin{questionz}
+Is there a finite set of rules, valid for every $n$, and a finite list of exceptions, which together produce exactly
+the vertices of $m_n$?
+\end{questionz}
+
+The answer depends on what a rule may do, and we separate two regimes.
+
+\emph{Graph-input rules.} A rule receives a weighted graph on $n$ nodes and returns its shortest-path metric, scaled.
+Every vertex adjacent to a cut arises this way, and the rule is correct exactly when the metric is an extreme ray of
+$\MET_n$, that is, when its tight triangle equalities have rank $\binom n2 - 1$. The question becomes whether this
+rank condition can be replaced by a combinatorial test of bounded scope, in the way Avis's isometric-cycle criterion
+\cite{A80} does for a large class of graphs. We measure the scope a test needs by the locality $L$
+(Section~\ref{sec:locality}).
+
+\emph{Small-choice rules.} A rule receives an object on $n - 1$ nodes and a bounded or slowly growing amount of
+choice and returns an object on $n$ nodes. All classical constructions are of this kind.
+
+\paragraph{Results.}
+\begin{enumerate}[leftmargin=*]
+\item \emph{Locality.} The invariant $L$ is well defined, sound and complete (Proposition~\ref{prop:closure}). It
+  equals 4 for every graph covered by the isometric-cycle criterion, and for almost all graphs
+  (Theorem~\ref{thm:four}).
+\item \emph{Locality is unbounded} (Theorem~\ref{thm:main}, the main result). An explicit family $C_t$ of extreme
+  rays on $n = 2t$ points has $L = n$. The proof reduces the tight system of $C_t$ to a linear recurrence around the
+  cycle whose characteristic polynomial has a root $\lambda$ that is not a root of unity. On any set of points that
+  misses five consecutive positions this root yields a second solution of the local equations, which no local
+  deduction can exclude; this gives $L > n/12$ by hand. When a single point is removed, the recurrence is broken at
+  that point only, and a solution that decays like $\lambda^{-k}$ away from the break still exists; showing that it
+  separates all classes is a finite exact computation, uniform in $t$.
+\item \emph{Counting.} The number of orbits of vertices of $m_n$ is at least $2^{n^2/2 - O(n \log n)}$
+  (Proposition~\ref{prop:count}, from Avis's density theorem), and a generator with at most $(1 - \delta)n$ bits of
+  choice per node produces a vanishing share of them (Theorem~\ref{thm:generator}).
+\item \emph{Exact computations.} $L$ for all extreme rays of $\MET_n$, $n \le 8$, and for the $m_9$ list (C1--C3);
+  searches for large locality beyond the lists (C4--C6); and negative results for four other candidate descriptions
+  of the $m_9$ list (C7--C12).
+\end{enumerate}
+
+Together, 1 and 2 say that the scope of the rank condition is the smallest possible for a typical graph and
+unbounded in the worst case; the computations show that on the actual vertex lists the typical case is already
+leaving the minimum at $n = 9$.
+
+\section{Preliminaries}
+
+\paragraph{Symmetries.} The symmetry group of $m_n$ is generated by the permutations of the nodes and the switchings
+$r_S(x)_{ij} = 1 - x_{ij}$ for $ij$ in the cut $\delta(S)$, $x_{ij}$ otherwise. It has order $n!\cdot 2^{n-1}$ for
+$n \ge 5$. ``Orbit'' means an orbit of this group. The cuts are the integral vertices and form one orbit.
+
+\paragraph{Tight systems.} For a metric $d$ on $n$ points, a triple $(a, m, b)$ is \emph{tight} if
+$d_{ab} = d_{am} + d_{mb}$ ($m$ is between $a$ and $b$). The \emph{tight system} $T(d)$ is the set of linear
+equations $x_{ab} = x_{am} + x_{mb}$ over the tight triples. $d$ spans an extreme ray of $\MET_n$ iff the solution
+space of $T(d)$ is the line through $d$, i.e.\ $\operatorname{rank} T(d) = \binom n2 - 1$.
+
+\begin{lemma}[rays give vertices]\label{lem:vertex}
+Let $d$ span an extreme ray of $\MET_n$, $n \ge 3$, and let $\tau$ be the largest perimeter
+$d_{ij} + d_{ik} + d_{jk}$. Then $x = (2/\tau)\cdot d$ is a vertex of $m_n$, and it is adjacent to the cut vertex $0$.
+\end{lemma}
+
+\begin{proof}
+$x \in m_n$ by the choice of $\tau$. The equations of $T(d)$ are tight at $x$ and have rank $\binom n2 - 1$; each of
+them vanishes at $x$. A triple attaining $\tau$ gives a tight perimeter inequality $x_{ij} + x_{ik} + x_{jk} = 2$,
+which does not vanish at $x$ and is therefore independent of them. So the tight inequalities at $x$ have rank
+$\binom n2$. The segment from $0$ to $x$ lies on the $\binom n2 - 1$ independent facets of $T(d)$, so it is an edge.
+\end{proof}
+
+Conversely, a vertex of $m_n$ adjacent to a cut is, after the switching that moves this cut to $0$, of the form
+$(2/\tau)d$ for an extreme ray $d$ \cite{LP92}. Every vertex of $m_n$, $n \le 8$, is adjacent to a cut; on the $m_9$
+list 1,221 orbits are not \cite{DI07} (re-derived in C7 below).
+
+\paragraph{Weighted graphs.} For a metric $d$ with positive distances, the \emph{minimal graph} has an edge $ab$ of
+weight $d_{ab}$ whenever no third point is between $a$ and $b$; $d$ is its shortest-path metric. We scale $d$ to
+coprime integers and call the set of weights the \emph{alphabet}. \emph{Graphic} means alphabet $\{1\}$; $d_G$
+denotes the shortest-path metric of a connected graph $G$.
+
+\section{Locality of an extreme ray}\label{sec:locality}
+
+Let $d$ be a metric on a node set $V$, $|V| = k \ge 4$, with positive distances. Write a solution $x$ of $T(d)$ as
+$x_p = d_p\cdot u_p$ over the pairs $p$; then $u \equiv 1$ is a solution, and $d$ is extreme iff every solution has
+$u$ constant.
+
+\begin{definition}[level-$s$ closure, locality]
+Let $\pi$ be a partition of the pairs, and $W \subseteq V$. The system $T_W(\pi)$ consists of the equations
+$d_{ab}\cdot u_{[ab]} = d_{am}\cdot u_{[am]} + d_{mb}\cdot u_{[mb]}$ for the tight triples with $a, m, b \in W$, in
+one variable $u_C$ per class $C$ of $\pi$ that contains a pair inside $W$. $W$ \emph{forces} $C = C'$ under $\pi$ if
+$u_C = u_{C'}$ in every solution of $T_W(\pi)$. The \emph{level-$s$ closure} $\cl_s(d)$ is the finest partition
+$\pi$ that is closed under merging $C$ and $C'$ whenever some $W$ with $|W| = s$ forces $C = C'$ under $\pi$. The
+\emph{locality} $L(d)$ is the least $s \ge 4$ such that $\cl_s(d)$ has a single class; $L(d) = \infty$ if there is
+none.
+\end{definition}
+
+\begin{proposition}\label{prop:closure}
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
+\item $\cl_s(d)$ is well defined, and is the result of applying the merges in any order until none applies.
+\item (Soundness) If two pairs $p, q$ are in the same class of $\cl_s(d)$, then $x_p/d_p = x_q/d_q$ for every
+  solution $x$ of $T(d)$. Hence $L(d) < \infty$ implies that $d$ is extreme.
+\item $\cl_s(d)$ refines $\cl_{s+1}(d)$, and $\cl_k(d)$ has a single class iff $d$ is extreme. Hence $d$ is extreme
+  iff $L(d) \le k$, and then $4 \le L(d) \le k$.
+\item $L$ is invariant under relabelling and scaling.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) If $\pi$ refines $\pi'$, every solution of $T_W(\pi')$ is a solution of $T_W(\pi)$ that is constant on the
+classes of $\pi'$; so a merge forced under $\pi$ is forced, or already made, under $\pi'$. The merge operator is
+therefore monotone on the lattice of partitions and has a least closed partition above the discrete one, reached by
+any maximal sequence of merges. (ii) By induction on the sequence of merges: if $u$ is constant on the classes of
+$\pi$ for every solution of $T(d)$, then the restriction of $u$ to the pairs inside $W$ solves $T_W(\pi)$, so a
+forced merge preserves the property. (iii) A set $W$ of size $s$ is contained in a set $W'$ of size $s + 1$ and
+$T_W(\pi) \subseteq T_{W'}(\pi)$, which gives the refinement. For $W = V$ and $\pi$ discrete, $T_V(\pi)$ is $T(d)$
+in the variables $u$, and it forces all classes equal iff its solution space is spanned by $u \equiv 1$. (iv) is
+clear.
+\end{proof}
+
+\paragraph{What $L$ bounds.} Call a deduction \emph{$s$-local} if it derives a proportionality $x_p = c\cdot x_q$
+from the tight equations among at most $s$ nodes, used together with proportionalities derived earlier. By (i), the
+proportionalities derivable by $s$-local deductions are exactly those of $\cl_s(d)$. So a test for extremality that
+proceeds by $s$-local deductions succeeds on $d$ iff $L(d) \le s$, and a characterisation of extreme rays by
+forbidden or required configurations on at most $s$ nodes, closed under such propagation, cannot be complete unless
+$L \le s$ on all rays. The notion covers deductions of two-term proportionalities; a local rule that carries longer
+linear relations from one subset to another is not covered and would need a wider definition.
+
+\begin{theorem}\label{thm:four}
+Let $G$ be a connected graph on $k \ge 4$ nodes.
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=*]
+\item If all edges of $G$ fall into one class under the relation generated by ``opposite edges of an even isometric
+  cycle'' ($G$ is 1-ic-colorable in the sense of Avis \cite[\S2]{A80}), then $L(d_G) = 4$; in particular $d_G$ is
+  extreme.
+\item For $G = G(n, 1/2)$, with probability $1 - o(1)$: $G$ is connected and any two edges of $G$ are linked by a
+  chain of induced 4-cycles in which consecutive edges are opposite. Hence $L(d_G) = 4$ for
+  $2^{\binom n2}\cdot(1 - o(1))$ labelled graphs on $n$ nodes.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(a) Let $1, 2, \dots, 2t$ be an isometric cycle of $G$, $t \ge 2$, and $W = \{1, 2, t + 1, t + 2\}$. The triples
+$(1, t + 2, t + 1)$, $(1, 2, t + 1)$, $(2, 1, t + 2)$, $(2, t + 1, t + 2)$ (middle node between the outer two) are
+tight and lie in $W$. They give $x_{1,t+1} = x_{1,t+2} + x_{t+1,t+2} = x_{1,2} + x_{2,t+1}$ and
+$x_{2,t+2} = x_{1,2} + x_{1,t+2} = x_{2,t+1} + x_{t+1,t+2}$; subtracting the two resulting equalities gives
+$x_{1,2} = x_{t+1,t+2}$ (this is \cite[Lemma 2.3]{A80}). Both pairs have $d = 1$, so $W$ forces their classes equal
+under any partition. Hence all edges lie in one class $E$ of $\cl_4(d_G)$. Let $ab$ be a pair at distance $j \ge 2$
+and $m$ a neighbour of $a$ on a geodesic from $a$ to $b$. If $[mb] = E$ (induction on $j$), the equation
+$j\cdot u_{ab} = u_E + (j - 1)\cdot u_E$ inside any 4-set $W \supseteq \{a, m, b\}$ forces $[ab] = E$. So $\cl_4$ has
+one class, $L \le 4$, and $L \ge 4$ by definition; extremality follows from Proposition~\ref{prop:closure}(ii),
+without using \cite[Thm 2.4]{A80}.
+
+(b) Fix distinct nodes $s, t, u, v$ and split the other $n - 4$ nodes into $\lfloor (n - 4)/2 \rfloor$ pairs
+$\{x, y\}$. For a pair, let $A_{x,y}$ be the event that $xs, xy, xv, yt, yu$ are edges and $xt, xu, ys, yv$ are not;
+it has probability $2^{-9}$, and the events for different pairs are independent of each other and of the presence of
+$st$ and $uv$, since they concern disjoint sets of pairs of nodes. If $st$ and $uv$ are edges and $A_{x,y}$ holds,
+then $s, t, y, x$ and $u, v, x, y$ are induced 4-cycles, in which $st$ and $uv$ are both opposite to $xy$
+\cite[Fig.~3.5]{A80}. There are at most $3\binom n4$ choices of two disjoint pairs $st$, $uv$, so the probability
+that some two disjoint edges are not linked in this way is at most
+$3\binom n4 (1 - 2^{-9})^{\lfloor (n-4)/2 \rfloor} \to 0$. Two edges with a common endpoint are linked through a
+third edge disjoint from both, which exists unless some $n - 3$ nodes span no edge, an event of probability at most
+$\binom n3\cdot 2^{-\binom{n-3}{2}} \to 0$. The probability of an isolated node is at most $n\cdot 2^{-(n-1)} \to 0$,
+and a graph without isolated nodes in which all edges are linked by chains of 4-cycles is connected. An induced
+4-cycle is isometric, so (a) applies.
+\end{proof}
+
+Part (b) is the case $p = 1/2$ of Avis's density theorem \cite[Thm 3.3]{A80}, with the stronger conclusion $L = 4$;
+the argument follows Avis's and treats explicitly the pairs of edges with a common endpoint.
+
+\begin{remark}[finite $n$]
+The union bound in (b) is effective only for $n$ in the thousands, but the conclusion sets in much earlier (C4
+below): of 300 samples of $G(n, 1/2)$ each, the shares with $d_G$ extreme are 0.7\%, 6\%, 23\%, 61\%, 81\%, 91\%,
+99.3\%, 100\% for $n = 6, 8, 10, 12, 14, 16, 20, 24$, and all but one of these 1,383 rays have $L = 4$.
+\end{remark}
+
+\section{Locality is unbounded}\label{sec:main}
+
+\paragraph{The family $C_t$.} For odd $t \ge 9$ let $C_t$ be the following function on the $2t$ points $A_i, B_i$
+($i \in \Z_t$), where $|i - j|$ denotes the cyclic distance and offsets $o$ are taken in $(-t/2, t/2)$:
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+pair & distance \\
+\midrule
+$A_i, A_j$ & $16$ if $|i - j| = 1$;\quad $12$ if $|i - j| = 2$;\quad $8$ if $|i - j| \ge 3$ \\
+$B_i, B_j$ & $10$ if $|i - j| = 1$;\quad $20$ if $|i - j| = 2$;\quad $22$ if $|i - j| \ge 3$ \\
+$A_i, B_{i+o}$ & $13, 11, 7, 9, 19$ for $o = -2, -1, 0, 1, 2$;\quad $15$ if $|o| \ge 3$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+$C_t$ is invariant under the rotation $i \mapsto i + 1$ and has no reflection symmetry. $C_\infty$ denotes the same
+rule on the line ($i \in \Z$, ordinary offsets).
+
+\begin{theorem}\label{thm:main}
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=*]
+\item For every odd $t \ge 9$, $C_t$ is a metric and spans an extreme ray of $\MET_{2t}$.
+\item For every odd $t \ge 9$ and every $s \le t/6$, the level-$s$ closure of $C_t$ is not total. Hence
+  $L(C_t) > t/6$ and
+  \[
+    \sup\,\{\, L(d) : d \text{ an extreme ray of } \MET_n \,\} > n/12 \qquad\text{for every } n = 2t,\ t \text{ odd},\ t \ge 9;
+  \]
+  in particular it is unbounded.
+\item $L(C_t) = 2t$ for every odd $t \ge 9$: no proper subset of the points proves extremality. (Computer-assisted:
+  for $t \le 21$ by exact computation of the level-$(2t - 1)$ closure; for $t \ge 23$ by the proof below, which uses
+  exact finite checks in $\Q(\lambda)$.)
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+No test that proceeds by $s$-local deductions, for any fixed $s$, characterises the extreme rays of the metric cone;
+by Lemma~\ref{lem:vertex} the same holds for the vertices of $m_n$ adjacent to a cut. Moreover
+$\max\,\{ L(d) : d \text{ extreme in } \MET_n \} = n$ for every $n \equiv 2 \pmod 4$, $n \ge 18$.
+\end{corollary}
+
+\begin{proof}[Proof of (a)]
+\step{Patterns.} A distance of $C_t$ depends on the kinds of the two points and on their offset capped at $\pm 3$.
+For $t \ge 9$ every configuration of three points, described by kinds and capped offsets, occurs already in $C_9$
+(two of the three cyclic gaps determine the capped configuration, and all combinations with gaps $0$, $1$, $2$ or
+``at least 3'' are realised when $t = 9$), and the same configurations occur in $C_\infty$. Therefore the triangle
+inequalities, and the list of types of tight triples, need to be checked only for $t = 9$; the check (V1 in
+\file{family\_C\_proof.py}) shows that $C_9$ is a metric and that there are 11 types of tight triples, written
+long = short + short:
+\begin{align*}
+& A_iA_{i+1} = A_iA_k + A_kA_{i+1}\ (k \text{ far from both}); \qquad A_iA_{i+1} = A_iB_{i+1} + B_{i+1}A_{i+1};\\
+& A_iB_{i+2} = A_iA_{i+2} + A_{i+2}B_{i+2} = A_iA_{i+3} + A_{i+3}B_{i+2} = A_iB_{i+1} + B_{i+1}B_{i+2};\\
+& A_iB_j = A_iA_j + A_jB_j\ (|i - j| \ge 3);\\
+& B_iB_{i+2} = B_iA_{i+2} + A_{i+2}B_{i+2} = B_iA_{i+1} + A_{i+1}B_{i+2} = B_iB_{i+1} + B_{i+1}B_{i+2};\\
+& B_iB_j = B_iA_i + A_iB_j\ (|i - j| \ge 3;\text{ also with $i$ and $j$ exchanged}); \qquad
+  B_iB_{i+3} = B_iA_{i+2} + A_{i+2}B_{i+3}.
+\end{align*}
+
+\step{The $A$-pairs.} Let $x$ be a solution of the tight system. Write $f(i, k) = x(A_iA_k)$ for $|i - k| \ge 3$ and
+$\eps_i = x(A_iA_{i+1})$. By the first type, $\eps_i = f(i, k) + f(k, i + 1)$ whenever $k - i \in [4, t - 3]$. For
+$k - i \in [4, t - 4]$ this gives four equations for the two pairs $\{i, i+1\}$ and $\{k, k+1\}$:
+$\eps_i = f(i,k) + f(i+1,k) = f(i,k+1) + f(i+1,k+1)$ and $\eps_k = f(i,k) + f(i,k+1) = f(i+1,k) + f(i+1,k+1)$, hence
+$f(i+1, k) = f(i, k+1)$ and $f(i, k) = f(i+1, k+1)$. The second identity shows that $f(i, i + \delta)$ does not
+depend on $i$ for $\delta \in [4, t - 4]$, and the first, with $\delta = 4$ and $\delta = t - 4$, extends this to
+$\delta = 3$ and $\delta = t - 3$ (here $t \ge 9$ is used). So $f(i, i + \delta) = f(\delta)$ with
+$f(\delta - 1) = f(\delta + 1)$ for $\delta \in [4, t - 4]$, and $f(\delta) = f(t - \delta)$ because the two offsets
+describe the same pair. As $t$ is odd, $\delta$ and $t - \delta$ have different parity, so $f$ is constant, say
+$\alpha$, and $\eps_i = 2\alpha$.
+
+\step{The recurrence.} Put $s_i = x(A_iB_i)$, $p_i = x(A_iB_{i+1})$, $q_i = x(A_iB_{i+2})$, $m_i = x(A_iB_{i-1})$,
+$w_i = x(A_iB_{i-2})$, $b_i = x(B_iB_{i+1})$, $c_i = x(B_iB_{i+2})$, $e_i = x(A_iA_{i+2})$. The tight triples give
+$p_i = 2\alpha - s_{i+1}$; $q_i = e_i + s_{i+2} = \alpha + m_{i+3} = p_i + b_{i+1}$; $x(A_iB_j) = \alpha + s_j$ and
+$x(B_iB_j) = s_i + s_j + \alpha$ for $|i - j| \ge 3$; $c_i = w_{i+2} + s_{i+2} = m_{i+1} + p_{i+1} = b_i + b_{i+1}$;
+$s_i + s_{i+3} + \alpha = w_{i+2} + p_{i+2}$. Hence $m_{i+3} = q_i - \alpha$, $b_{i+1} = q_i - 2\alpha + s_{i+1}$ and
+$w_{i+2} = s_i + 2s_{i+3} - \alpha$, and the two expressions of $c_i = b_i + b_{i+1}$ through $m, p$ and through
+$w, s$ become
+\[
+  q_{i-1} + q_i - q_{i-2} = 5\alpha - s_i - s_{i+1} - s_{i+2}, \qquad
+  q_{i-1} + q_i = 3\alpha - s_{i+1} + s_{i+2} + 2s_{i+3},
+\]
+whence $q_i = -2\alpha + s_{i+2} + 2s_{i+4} + 2s_{i+5}$ and then
+\begin{equation}\label{eq:rec}\tag{REC}
+  s_i + 2 s_{i+3} + s_{i+4} = \tfrac72\,\alpha \qquad\text{for all } i \in \Z_t.
+\end{equation}
+
+\step{Rigidity.} The characteristic polynomial of \eqref{eq:rec} is $z^4 + 2z^3 + 1 = (z + 1)(z^3 + z^2 - z + 1)$.
+The cubic has no rational root, so it is irreducible, and no cyclotomic polynomial has degree 3; hence its roots are
+not roots of unity. For odd $t$, $-1$ is not a $t$-th root of unity either. So the circulant system \eqref{eq:rec}
+on $\Z_t$ has only the constant solution $s_i = (7/8)\alpha$, and then $p, q, m, w, b, c, e$ and all far pairs are
+determined by $\alpha$. The solution space of the tight system is a line, i.e.\ $C_t$ is extreme.
+\end{proof}
+
+\begin{proof}[Proof of (b)]
+\step{Solutions on the line.} Let $\alpha \in \R$ and let $(s_j)$, $j \in \Z$, satisfy \eqref{eq:rec} for all
+$i \in \Z$. Define $x$ on the pairs of $C_\infty$ by the formulas above ($x = \alpha$ on $A$-pairs at distance
+$\ge 3$, $2\alpha$ at distance 1, and so on; the full list is in \file{family\_C\_proof.py}). Then $x$ satisfies
+every tight triple of $C_\infty$: by the pattern argument it suffices to check the triples inside a window of 13
+positions, and for each of these 397 triples the equation is a rational combination of instances of \eqref{eq:rec}
+(check V2, exact). Let $\lambda \approx -1.8393$ be the real root of $z^3 + z^2 - z + 1$. Then $\alpha = 8$,
+$s_j = 7 + \lambda^j$ is such a sequence; write $D(P) = (x(P) - d(P))/d(P)$ for the resulting relative deviation of a
+pair $P$ of $C_\infty$. Call two pairs of $C_\infty$ \emph{related} if both are $A$-pairs at distance 1 or $\ge 3$,
+or if they are $A_iB_j$ and $A_{i'}B_j$ with $|i - j|, |i' - j| \ge 3$.
+
+\begin{lemmaS}
+$D(P) = D(Q)$ only if $P = Q$ or $P$ and $Q$ are related.
+\end{lemmaS}
+
+\noindent\emph{Proof of Lemma S.} $D$ vanishes on the $A$-pairs at distance 1 or $\ge 3$, and
+$D(A_iB_j) = \lambda^j/15$ for $|i - j| \ge 3$. For each of the other eight types of pairs, $D$ of the pair at
+position $i$ is $\lambda^i\cdot\kappa$ with an explicit $\kappa \in \Q(\lambda)$, and all nine values of $\kappa$
+(including $1/15$) are nonzero. An equality between two such pairs reads $\kappa = \lambda^k \kappa'$; since
+$|\lambda| > 1$ this determines $k$ up to finitely many candidates, bounded rigorously by rational enclosures of
+$\lambda$, and none of them gives equality in $\Q(\lambda)$ (check V3, exact). For a $B$-pair at distance $g \ge 3$,
+$D = \lambda^i(1 + \lambda^g)/22$; an equality with a pair of another type reads
+$\lambda^h(1 + \lambda^{-g}) = 22\kappa'$ for an integer $h$, where
+$|1 + \lambda^{-g}| \in [1 - |\lambda|^{-3}, 1 + |\lambda|^{-3}]$ bounds $h$ and each $h$ leaves at most one $g$;
+again no equality occurs (V3). For two different $B$-pairs at distances $\ge 3$,
+$\lambda^i + \lambda^j = \lambda^{i'} + \lambda^{j'}$: if the largest exponent occurs on both sides the pairs
+coincide, and otherwise the largest term exceeds the sum of the absolute values of the other three, because
+$|\lambda|^{-1} + |\lambda|^{-3} + |\lambda|^{-4} < 0.8$. Finally $D \ne 0$ for every pair that is not an $A$-pair at
+distance 1 or $\ge 3$. \hfill$\square$
+
+\step{The partition.} Let $\pi$ be the partition of the pairs of $C_t$ whose classes are: the set of all $A$-pairs
+at cyclic distance 1 or $\ge 3$; for each $j$ the set of pairs $A_iB_j$ with $|i - j| \ge 3$; and all other pairs as
+singletons. $\pi$ is not total. We show that $\pi$ is closed under the merges of level $s$ when $t \ge 6s$; since
+$\cl_s$ is the finest partition closed under these merges (Proposition~\ref{prop:closure}(i)), $\cl_s$ refines $\pi$
+and is not total.
+
+Let $W$ be a set of at most $s$ points of $C_t$. Its points occupy at most $s$ positions of $\Z_t$, which cut the
+cycle into at most $s$ runs of free positions with $t - s \ge 5s$ positions in total, so some run of 5 consecutive
+positions is free. Cutting the cycle inside this run identifies the positions of $W$ with integers in an interval
+of $t - 5$ consecutive integers, and this identification $\psi\colon W \to C_\infty$ preserves distances: two points
+at line offset $o$, $1 \le o \le t - 6$, have cyclic offset $o$ if $o < t/2$, and $o - t$ otherwise; in the second
+case $o \ge 5$ and $t - o \ge 6$, so the pair is far (offset of absolute value at least 3) both on the line and on
+the cycle, where the distance does not depend on the offset. Hence the tight triples inside $W$ are tight triples of
+$C_\infty$, and for every real $c$ the function $u_c(P) = 1 + c\cdot D(\psi P)$ on the pairs inside $W$ is a
+solution of $T_W$ in the normalised variables (a combination of the solutions $d$ and $x$). It is constant on the
+classes of $\pi$: $D = 0$ on the first class, and $D(\psi(A_iB_j)) = \lambda^{\psi(j)}/15$ on the classes of the
+second kind. So $u_c$ solves $T_W(\pi)$. If $W$ forced two different classes $C \ni P$, $C' \ni Q$ of $\pi$ to be
+equal, we would have $u_c(P) = u_c(Q)$ for all $c$, i.e.\ $D(\psi P) = D(\psi Q)$, and by Lemma S the pairs
+$\psi P$, $\psi Q$ would be equal or related, i.e.\ $P$ and $Q$ would lie in the same class of $\pi$. So no merge is
+forced, $\pi$ is closed at level $s$, and $L(C_t) > s$ for every $s \le t/6$.
+\end{proof}
+
+\begin{proof}[Proof of (c)]
+For $t \le 21$ the level-$(2t - 1)$ closure was computed in rational arithmetic and is not total
+(\file{family\_C.py}). Let $t \ge 23$. As in (b) it suffices to show that $\pi$ is closed under the merges of level
+$2t - 1$, i.e.\ that $W = V - v$ forces no two classes of $\pi$ to be equal, and by the rotation we may take
+$v = A_0$ or $v = B_0$. For each of the two we construct a solution $x$ of $T_W(\pi)$ with $x = 0$ on the first
+class of $\pi$ (a deviation from $d$, as $D$ in (b)) whose relative values $D(C) = x(C)/d(C)$ on the classes $C$ of
+$\pi$ inside $W$ are pairwise different; then $u = 1 + cD$ separates any two classes. Indices are taken modulo $t$
+and written with representatives near $0$.
+
+\step{Step 1: parametrisation.} Let numbers $\sigma_j, q_j$ ($j \in \Z_t$) be given, and in addition $p_{-1}, p_0$
+if $v = A_0$, and $w_{-1}$ if $v = B_0$. Put $p_i = -\sigma_{i+1}$ for the other $i$, and
+\[
+  m_i = q_{i-3}, \qquad b_i = q_{i-1} - p_{i-1}, \qquad w_i = \sigma_{i-2} + \sigma_{i+1} - p_i, \qquad
+  c_i = b_i + b_{i+1}
+\]
+(for $v = B_0$: $w_{-1}$ as given, and $c_{-1} = w_1 + \sigma_1$). Define $x$ on the pairs inside $W$ by $x = 0$ on
+the $A$-pairs at distance 1 or $\ge 3$, $x(A_iB_i) = \sigma_i$, $x(A_iB_{i+1}) = p_i$, $x(A_iB_{i+2}) = q_i$,
+$x(A_iB_{i-1}) = m_i$, $x(A_iB_{i-2}) = w_i$, $x(B_iB_{i+1}) = b_i$, $x(B_iB_{i+2}) = c_i$,
+$x(A_iA_{i+2}) = q_i - \sigma_{i+2}$, and $x(A_iB_j) = \sigma_j$, $x(B_iB_j) = \sigma_i + \sigma_j$ for
+$|i - j| \ge 3$. (For $v = A_0$ the numbers $\sigma_0, q_0, p_0$ belong to pairs through $A_0$; they enter as
+$\sigma_0 = x(A_iB_0)$ for $i$ far from $0$, $q_0 = x(A_3B_2)$ and $q_0 - p_0 = x(B_1B_2)$. For $v = B_0$ quantities
+with an index that would give a pair through $B_0$ are not used, and $x(A_{-2}A_0)$ is arbitrary.) Consider the
+equations
+\[
+  (5a_i)\quad c_i = w_{i+2} + \sigma_{i+2}, \qquad\qquad (5b_i)\quad c_i = m_{i+1} + p_{i+1}.
+\]
+
+\begin{lemmaP}
+$x$ is constant on the classes of $\pi$, and it satisfies all tight triples inside $W$ if $5a_i$ and $5b_i$ hold for
+all $i$ except $5a_{-2}$, $5b_{-1}$ when $v = A_0$, and except $5a_0$, $5a_{-1}$, $5a_{-2}$, $5b_0$, $5b_{-2}$ when
+$v = B_0$.
+\end{lemmaP}
+
+\noindent\emph{Proof of Lemma P.} Go through the 11 types of tight triples in the proof of (a). The triples
+$A_iA_{i+1}$ through $A_k$ read $0 = 0$; those through $B_{i+1}$ read $p_i + \sigma_{i+1} = 0$, and the two with
+$i \in \{-1, 0\}$ (for $v = A_0$), resp.\ the one with $i = -1$ (for $v = B_0$), contain $v$. The three triples for
+$A_iB_{i+2}$ are the definitions of $x(A_iA_{i+2})$, of $m_{i+3}$ and of $b_{i+1}$. $A_iB_j$ through $A_j$ reads
+$\sigma_j = \sigma_j$. The triples for $B_iB_{i+2}$ are the definition of $c_i$ (through $B_{i+1}$), $5a_i$ (through
+$A_{i+2}$) and $5b_i$ (through $A_{i+1}$). $B_iB_j$ through $A_i$ reads
+$\sigma_i + \sigma_j = \sigma_i + \sigma_j$, and $B_iB_{i+3}$ through $A_{i+2}$ is the definition of $w_{i+2}$. The
+triples that contain $v$ are exactly those in which the statement uses a free number or omits an equation: for
+$v = A_0$, the triples $(A_{-1}, B_0, A_0)$, $(A_0, B_1, A_1)$, $(A_0, A_3, B_2)$, $(A_0, B_1, B_2)$,
+$(A_i, A_0, B_0)$ free $p_{-1}$, $p_0$, $q_0$ and $\sigma_0$, and $(B_{-2}, A_0, B_0)$, $(B_{-1}, A_0, B_1)$ are
+$5a_{-2}$, $5b_{-1}$; for $v = B_0$, the triple $(B_{-1}, B_0, B_1)$ frees $c_{-1}$, which is then defined by
+$5a_{-1}$; $(B_{-3}, A_{-1}, B_0)$ frees $w_{-1}$; $(A_{-2}, A_0, B_0)$ is the only triple with the pair
+$A_{-2}A_0$; and $5a_0$, $5a_{-2}$, $5b_0$, $5b_{-2}$ concern pairs through $B_0$. \hfill$\square$
+
+\step{Step 2: the solution.} If $q_{i-2}, q_{i-1}, q_i$ are given by $q_j = \sigma_{j+2} + 2\sigma_{j+4} +
+2\sigma_{j+5}$, the $p$'s by $p_i = -\sigma_{i+1}$, and $\sigma_{i+1} + 2\sigma_{i+4} + \sigma_{i+5} = 0$, then
+$5a_i$ and $5b_i$ hold (the computation in the proof of (a)). Let $j_0 = 3$ for $v = A_0$ and $j_0 = 2$ for
+$v = B_0$, $\eps = \lambda^{-t}$, and put
+\[
+  \sigma_j = g\cdot(-1)^j + a\cdot\lambda^{j-t} \quad\text{for } j_0 \le j \le t - 1, \qquad
+  q_j = \sigma_{j+2} + 2\sigma_{j+4} + 2\sigma_{j+5} \quad\text{for } 8 \le j \le t - 8,
+\]
+with $(g, a) = (1 - \eps, 2)$ for $v = A_0$ and $(g, a) = (0, 1)$ for $v = B_0$. Both $(-1)^j$ and $\lambda^j$
+satisfy the recurrence, so $5a_i$ and $5b_i$ hold for $11 \le i \le t - 9$. The remaining unknowns are $\sigma_j$ for
+$0 \le j < j_0$ ($j = 1$ only, for $v = B_0$), $q_j$ for $|j| \le 7$, and $p_{-1}, p_0$ resp.\ $w_{-1}$: 20 resp.\
+16 unknowns. The remaining equations are those $5a_i$, $5b_i$ with $-8 \le i \le 10$ that are required by Lemma P:
+36 resp.\ 33 linear equations with rational coefficients, whose right-hand sides are of the form $r_0 + r_1\eps$
+with $r_0, r_1 \in \Q(\lambda)$ that do not depend on $t$. They are solvable with solutions of the same form (check
+W1 in \file{family\_C\_top.py}; for $v = A_0$ the system has rank 19 and one solvability condition, which is
+$(1 - \eps)a = 2g$ and explains the choice of $g$; for $v = B_0$ the solution is unique). By Lemma P this gives a
+solution $x$ of $T_W(\pi)$ for every odd $t \ge 23$. As a guard against slips in Lemma P, the solution was
+instantiated on the real cycle for $t = 19, 21, 23, 25, 27, 31$ and every tight triple of $C_t - v$ was verified
+exactly (W2). The same check confirms, class by class, that the symbolic values used in Step 3 are the values on the
+cycle.
+
+\step{Step 3: the values are pairwise different.} Away from the break the values of $x$ follow the formulas of (a)
+with $s = \sigma$, so for a pair $P$ whose formula involves only $\sigma_j$ on the stretch, at position $t - k$
+($k \ge 1$),
+\[
+  D(P) = \pm g\cdot\kappa' + a\cdot\kappa\cdot\lambda^{-k},
+\]
+where $\kappa \in \Q(\lambda)$ and $\kappa' \in \Q$ depend only on the type of the pair ($\kappa$ is the constant of
+Lemma S, $\kappa'$ the corresponding constant for the root $-1$) and the sign on the parity of $k$. The pairs for
+which this fails are 40 ($v = A_0$) resp.\ 27 ($v = B_0$) pairs near the break, with $D = r_0 + r_1\eps$, and the
+far $B$-pairs, whose value is the sum of the values of $\sigma$ at their two positions divided by 22. So an equality
+$D(P) = D(Q)$ between two classes is an equation
+\[
+  G_0 = \sum_i c_i\cdot\lambda^{-k_i}
+\]
+in at most five integer unknowns $k_i$ (the positions involved, and $t$ itself for the terms in $\eps$), with
+$G_0, c_i \in \Q(\lambda)$ taken from a finite list: 2,305 equations for $v = A_0$ and 752 for $v = B_0$. Since
+$|\lambda| > 1$ the solutions of such an equation can be listed completely: if $|G_0|$ exceeds the sum of the
+largest possible values of the terms there is none; otherwise one branches on the largest term, fixing its exponent
+at its least admissible value or raising that value; if $G_0 = 0$, one divides by the largest term. All bounds use
+rational enclosures of $\lambda$, and equalities are decided exactly in $\Q(\lambda)$. The search (check W3) finds
+109 resp.\ 53 solutions when the ranges of the $k_i$ are relaxed to $k_i \ge 1$, $t \ge 23$; in 92 resp.\ 38 of them
+$P$ and $Q$ are the same class, and in the other 17 resp.\ 15 one of the pairs sits at one of the positions near
+the break where the formula does not apply (these pairs are among the 40 resp.\ 27, with their true values). A pair
+just left of the break whose formula involves only $\sigma$'s to the right of it (for example $A_{-1}A_1$, with
+$\sigma_3$ and $\sigma_4$) belongs to the first kind with $k = t + 1$; the ranges of $k$ are set accordingly. So $D$
+takes different values on different classes, for every odd $t \ge 23$. (For $v = B_0$ the pair $A_{-2}A_0$ is
+excluded; it occurs in no tight triple inside $W$, so nothing forces its class to equal another.) Hence $W$ forces
+no merge, $\pi$ is closed at level $2t - 1$, $\cl_{2t-1}$ refines $\pi$, and $L(C_t) = 2t$.
+\end{proof}
+
+The search procedure was tested on 300 equations with planted solutions (all recovered), and by duplicating one
+class of each kind under a different name (every duplicate is reported as a coincidence); see \file{--selftest}.
+
+\paragraph{Second implementation.} Checks W1--W3 were repeated by a second program written from the text of this
+proof (\file{family\_C\_top\_check.py}; it shares no code with the first). It differs in three ways. (i) It fixes
+$R = 10$ and treats every pair with an index within $R$ of the removed point as a class of its own with an explicit
+value $r_0 + r_1\eps$, computed pair by pair from the formulas of Step 1 (354 resp.\ 334 such classes); all other
+pairs have $R < k < t - R$, where the formula $D = \pm g\kappa' + a\kappa\lambda^{-k}$ applies for every type, so no
+list of exceptional positions is needed. (ii) The equation $G_0 = \sum c_i \lambda^{-k_i}$ is solved by another
+method: some term of a solution has absolute value at least $|G_0|/(\text{number of terms})$; this term and its
+exponent are enumerated, and one recurses. (iii) A solution is discarded only if $P$ and $Q$ are the same class, if
+an exponent violates $t - k > R$ (or the corresponding bound for a far $B$-pair), or if the two points of a far
+$B$-pair are closer than 3; every other solution would be reported. Of 86,799 resp.\ 66,096 equations, 373 resp.\
+400 have solutions (69 resp.\ 36 the same class, 304 resp.\ 364 out of range), and none is reported. The cut
+solutions of the two programs are equal. The second program builds the solution on the real cycles
+$t = 23, 25, 27, 29, 31, 37, 45$ with arrays indexed modulo $t$, verifies every tight triple, and checks that the
+classes of $\pi$ inside $W$ correspond one to one, with equal values, to the instances of its list of classes that
+are in range at $t$. Its search was compared with exhaustive enumeration in a box on 150 random equations (261
+solutions, none missed), and it reports duplicated classes and classes planted to coincide at one value of $t$.
+
+\begin{remarks}
+(1) Part (b) is implied by (c); we keep it because its proof needs only Lemma S, while (c) relies on a larger
+computation.
+(2) The level-$(2t - 1)$ closure of $C_t$ has exactly $(t^2 + 13t + 2)/2$ classes for every odd $t$ from 9 to 21,
+the number of classes of $\pi$: in these cases $\cl_{2t-1} = \pi$.
+(3) Replacing $d(A_i, A_{i+2}) = 12$ by $16$ gives a second family, an extreme ray with $L = 2t$ for every odd $t$
+from 9 to 21 by the same computation.
+(4) How the family was found: the two-orbit metrics whose distances depend only on offsets capped at $\pm 3$ are,
+for all large $t$, the points of a fixed 12-dimensional cone of ``patterns of radius 2'' (\file{pattern\_hunt.py});
+of its 26,319 extreme rays with positive distances, 9,464 give extreme rays of $\MET_{2t}$ for at least two $t$
+between 9 and 14, and 96 pass two filters (classes left unmerged on the cycle, and no merge forced on an open
+stretch); 8 of the 96 have $L = 2t$ at $t = 9, 11, 13$, and they are $C_t$, its variant (3), their mirror images
+and the versions with $A$ and $B$ exchanged.
+(5) Chirality matters: the mirror-symmetric family $K_t$ of C6 reduces in the same way to a recurrence, but all its
+characteristic roots are roots of unity, every solution on an open stretch is periodic, and its locality stays
+bounded.
+\end{remarks}
+
+\section{A counting bound for small-choice generators}
+
+\begin{avis}[Avis {\cite[Thm 3.3]{A80}}]
+Let $0 < \epsilon < 1/5$ and $n^{-1/5+\epsilon} \le p \le 1 - n^{-1/4+\epsilon}$. Then the shortest-path metric of
+the random graph $G_{n,p}$ spans an extreme ray of $\MET_n$ with probability $1 - o(1)$.
+\end{avis}
+
+With $p = 1/2$ all labelled graphs are equally likely, so $2^{\binom n2}\cdot(1 - o(1))$ labelled graphs $G$ have
+$d_G$ extreme \cite[p.~138]{A80}; this lower bound on the number of extreme rays of $\MET_n$ is quoted in this form
+in \cite[\S5.1]{CL25}. The case $p = 1/2$ is also proved by Theorem~\ref{thm:four}(b), so what follows does not
+depend on \cite[Thm 3.3]{A80}.
+
+\begin{proposition}\label{prop:count}
+The number $v(n)$ of orbits of vertices of $m_n$ satisfies
+\[
+  v(n) \ \ge\ \frac{2^{\binom n2}\cdot(1 - o(1))}{n!\cdot 2^{n-1}} \ =\ 2^{n^2/2 - O(n \log n)}.
+\]
+\end{proposition}
+
+\begin{proof}
+Distinct labelled graphs have distinct metrics $d_G$, and $G$ is recovered from $x_G = (2/\tau)d_G$ as the set of
+pairs of smallest value, so the vertices $x_G$ of Lemma~\ref{lem:vertex} are distinct. An orbit has at most
+$n!\cdot 2^{n-1}$ elements.
+\end{proof}
+
+\paragraph{Upper bound.} Cizma and Linial \cite[Thm 5.5]{CL25} prove that $\MET_n$ has at most
+$2^{2.38\,n^2(1+o(1))}$ faces. Hence the number of extreme rays of $\MET_n$, and the number of orbits of vertices of
+$m_n$ adjacent to a cut, is $2^{\Theta(n^2)}$, with the constant in the exponent between $1/2$ and $2.38$.
+
+\begin{definition}[generator]
+A \emph{generator} consists of sets $O_n$ of \emph{objects on $n$ nodes} ($n \ge n_0$), a finite set $E$ of
+exceptional objects, and $r$ \emph{rules}. Each rule maps a pair (object on $n - 1$ nodes, choice
+$c \in \{1, \dots, C(n)\}$) to an object on $n$ nodes or to nothing. The generated objects are the exceptional ones
+and the outputs of rules applied to generated objects. A map from generated objects on $n$ nodes to orbits of $m_n$
+(possibly partial) says which orbit, if any, an object \emph{produces}. The \emph{choice} of the generator is
+$b(n) = \log_2 C(n)$ bits.
+\end{definition}
+
+Nothing is assumed about the objects: they may be vertices, points of $m_n$ that are not vertices, graphs, or
+partial structures. Restriction-keeping moves, families with boundedly many integer parameters of size polynomial
+in $n$, and the generator of C9 for a fixed denominator are generators with $b(n) = O(\log n)$.
+
+\begin{theorem}\label{thm:generator}
+Let a generator have $b(n) \le (1 - \delta)n$ for some $\delta > 0$ and all large $n$. Then it produces at most
+$2^{(1-\delta)n^2/2 + O(n)}$ orbits of $m_n$, and the share of the orbits of $m_n$ it produces tends to $0$. In
+particular the number of orbits it misses is unbounded, so no finite list of exceptions completes it.
+\end{theorem}
+
+\begin{proof}
+Let $N(n)$ be the number of generated objects on $n$ nodes. A generated object on $n$ nodes is exceptional or the
+output of one of $r$ rules on one of $N(n - 1)$ objects with one of $2^{b(n)}$ choices, so
+$N(n) \le r\cdot 2^{b(n)}\cdot N(n - 1) + |E|$, and by induction
+\[
+  N(n) \ \le\ (|E| + 1)\cdot\prod_{k \le n} \bigl(r\cdot 2^{b(k)} + 1\bigr) \ =\ 2^{\sum_{k \le n} b(k) + O(n)}.
+\]
+Since $b(k) \le (1 - \delta)k$ for all large $k$, $\sum_{k \le n} b(k) \le (1 - \delta)n^2/2 + O(n)$. The number of
+orbits produced is at most $N(n)$. By Proposition~\ref{prop:count}, $v(n) \ge 2^{n^2/2 - O(n \log n)}$, so
+$N(n)/v(n) \le 2^{-\delta n^2/2 + O(n \log n)} \to 0$ and $v(n) - N(n) \to \infty$. The exceptions are included in
+$N(n)$.
+\end{proof}
+
+\begin{remarks}
+(a) The bound is sharp in the choice up to a constant factor: with $b(n) = n - 1$ a rule can choose the
+neighbourhood of the new node, hence an arbitrary graph, and then the single rule $G \mapsto x_G$ produces
+$2^{n^2/2 - O(n \log n)}$ orbits; and by \cite{CL25} a choice of $4.76\cdot n$ bits per node is enough to index all
+cut-adjacent orbits.
+(b) The theorem does not need the $m_9$ list or any computation.
+(c) It is a statement about growth, and the lists show the growth has begun:
+$v(7), v(8), v(9) = 13,\ 533,\ \ge 1{,}056{,}367$, successive factors 41 and 1,982.
+\end{remarks}
+
+\begin{question}\label{q:one}
+Let $r(n)$ be the number of extreme rays of $\MET_n$. Is $\log_2 r(n) \sim n^2/2$, i.e.\ are almost all extreme rays
+graphic on the logarithmic scale, or is $\lim \log_2 r(n)/n^2 > 1/2$? By \cite{CL25} the limit, if it exists, is at
+most $2.38$. On the lists the graphic share of the cut-adjacent orbits is 92\%, 20\%, 0.52\% for $n = 7, 8, 9$
+(C10), which suggests that non-graphic rays dominate at least in number. (For vertices of $m_n$ not adjacent to a
+cut we know only the trivial bound $2^{O(n^2 \log n)}$.)
+\end{question}
+
+\section{Computations: locality on the vertex lists and beyond}
+
+All computations use exact rational arithmetic unless marked *. Lists: the vertices of $m_n$ for $n \le 8$
+(complete: \cite{DFPS01,DFMV03}; completeness for $n = 8$ was re-proved independently in this project) and the list
+of \cite{DI07} for $n = 9$ as distributed by its authors. The distributed file has 1,056,367 orbits including the
+cut orbit; \cite{DI07} and the authors' web page state 1,056,368. The file has 1,056,369 lines of which two are
+header lines, so the published number equals the number of lines minus one, which suggests a counting slip, but we
+cannot exclude that one orbit is missing from the file. We verified that the 1,056,367 rows are vertices, pairwise
+inequivalent, and include the 1,221 orbits of \cite{DI07} that are not adjacent to a cut. The $m_9$ list is not
+known to be complete, so C2, C3 and C7--C12 are statements about the list.
+
+\comp{C1 (all extreme rays of $\MET_k$, $k \le 8$).} Every extreme ray of $\MET_k$ with positive distances is
+obtained from a vertex of $m_k$ by a switching (Lemma~\ref{lem:vertex} and its converse). Running through all
+$2^{k-1}$ switchings of every orbit representative gives 1, 3, 33, 3,751 rays up to permutation for
+$k = 5, 6, 7, 8$. As a check of completeness we counted all extreme rays of $\MET_n$ from these lists (a ray on $k$
+points with automorphism group $A$ gives $k!\cdot S(n,k)/|A|$ rays on $n$ points by merging points,
+\cite[Thm 4.2]{A80}; the cuts are the case $k = 2$): the totals 25, 296, 55,226, 119,269,588 for $n = 5, 6, 7, 8$
+agree with the published values \cite{DDweb}, and the numbers of orbits under $S_n$ are 3, 8, 46, 3,918.
+\begin{center}
+\begin{tabular}{rrrrrrr}
+\toprule
+$k$ & rays & $L = 4$ & 5 & 6 & 7 & max $L$ \\
+\midrule
+5 & 1 & 1 & & & & 4 \\
+6 & 3 & 3 & & & & 4 \\
+7 & 33 & 32 & 1 & & & 5 \\
+8 & 3,751 & 2,691 & 992 & 67 & 1 & 7 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\emph{Validation of the implementation.} On 14,646 weighted graphs with 5 to 11 nodes (957 rays, 13,689 non-rays by
+the rank test) the closure at $s = k$ ends with one class exactly for the rays, as
+Proposition~\ref{prop:closure}(iii) requires.
+
+\comp{C2 (the $m_9$ list).} For each of the 1,055,145 cut-adjacent orbits, one switching to a ray (the one with the
+smallest alphabet); 3,394 of these rays have fewer than 9 distinct points and are counted with their own $k$.
+\begin{center}
+\begin{tabular}{rrrrrrrr}
+\toprule
+$k$ & rays & $L = 4$ & 5 & 6 & 7 & 8 & 9 \\
+\midrule
+5--7 & 81 & 81 & & & & & \\
+8 & 3,313 & 2,411 & 870 & 27 & 5 & & \\
+9 & 1,051,751 & 315,636 & 515,637 & 201,727 & 18,323 & 426 & 2 \\
+\bottomrule
+\end{tabular}
+\end{center}
+For $k = 9$ the shares are 30.0\%, 49.0\%, 19.2\%, 1.7\%, 0.04\% and two orbits with $L = 9$ (rows 1,048,423 and
+1,048,435 of the list, both of denominator 27, weights 5 to 10, with 37 tight triples where 35 are needed). For
+these two the closure stops changing at level 6 with 13 and 12 classes joined by 14 and 13 relations, one more than
+the number of classes: the quotient system is a single circuit, and it has no two-term consequence on fewer than
+all 9 points.
+
+\comp{C3 (dependence on the switching).} $L$ is an invariant of the ray, not of the orbit of $m_n$: different
+switchings of a vertex give different rays. For $n \le 8$ all switchings are covered by C1. For 4,000 random orbits
+of the $m_9$ list and all 256 switchings (27,826 rays, 27,737 of them on 9 distinct points) the distribution over
+the latter is $L = 4$: 30.4\%, 5: 48.4\%, 6: 19.7\%, 7: 1.5\%, 8: 0.03\%, close to the distribution of C2. Per
+orbit, the smallest $L$ over the switchings is 4 for 49\% of the orbits, 5 for 42\%, 6 for 9\%, 7 for 0.2\%; the
+largest is 4 for 5\%, 5 for 43\%, 6 for 46\%, 7 for 7\%, 8 for 0.2\%; the two differ by at most 4. So 9\% of the
+sampled orbits have no switching with $L \le 5$.
+
+\comp{Reading of C1--C3.} The largest locality is 4, 4, 5, 7, 9 for $k = 5, \dots, 9$, and the share of rays with
+$L = 4$ decreases (97\%, 72\%, 30\% for $k = 7, 8, 9$). Fixed-scope deduction characterises the extreme rays for
+$k \le 6$ (scope 4) and $k \le 7$ (scope 5) only, and at $k = 9$ there are rays whose extremality has no proof from
+any proper subset of the points. Large locality is rare on the lists: two orbits in a million at $k = 9$.
+
+\comp{C4 (random and circulant graphs).} Random graphs $G(n, 1/2)$, 300 samples for each $n$: see the remark after
+Theorem~\ref{thm:four}. Every extreme ray found among the weighted circulant graphs on 7 to 13 nodes with weights at
+most 3 has $L = 4$. High locality is not typical, and it is not a consequence of symmetry alone.
+
+\comp{C5 (searches for large locality beyond the lists).} Values marked * were computed with a symmetry-reduced
+closure modulo $2^{31} - 1$ and not re-run in rational arithmetic.
+
+(a) \emph{Two-orbit metrics.} The metrics on points $A_i, B_i$ ($i \in \Z_t$) invariant under the rotation form a
+cone whose extreme rays can be enumerated and tested. Cyclic symmetry: $t = 5$ (294 rays of $\MET_{10}$), largest
+$L = 8$; $t = 6$ (3,019 rays of $\MET_{12}$), largest $L = 9$; $t = 5$ with a fixed centre (1,332 rays of
+$\MET_{11}$), largest $L = 8$. Dihedral symmetry: $t = 7$ (3,497 rays of $\MET_{14}$), largest $L = 12$; $t = 7$
+with a fixed centre ($n = 15$), largest $L = 13$; $t = 9$ (55,300 rays of $\MET_{18}$ tested, of 132,051
+candidates), largest $L = 17$*.
+
+(b) \emph{Generic procedures do not find large locality.} Seven vertices of $m_{10}$ found by random walks on the
+skeleton (49 rays over all switchings): $L$ from 4 to 7. Adding a point to the rays of $\MET_8$ with $L \ge 6$ (beam
+search to 11 points, 6,794 rays): $L$ never above 7. Random face descent in $\MET_n$, $n = 7, \dots, 11$ (54 extreme
+rays from 280 descents, the others ended with a zero distance): $L \le 5$. The graphs $K_1 \vee C_m^2$ (a centre
+joined to the square of the $m$-cycle) are graphic extreme rays with $L = 7$ for every $m$ from 8 to 13.
+
+\comp{C6 (a symmetric family whose locality saturates).} The family $K_t$ on $A_i, B_i$ ($i \in \Z_t$):
+$d(A_i, A_{i\pm1}) = 10$, $d(A_i, A_{i\pm2}) = 20$, $d(A_i, A_j) = 26$ otherwise; $d(B_i, B_{i\pm1}) = 24$,
+$d(B_i, B_j) = 12$ otherwise; $d(A_i, B_i) = 7$, $d(A_i, B_{i\pm1}) = 17$, $d(A_i, B_{i\pm2}) = 13$,
+$d(A_i, B_j) = 19$ otherwise. It is invariant under the dihedral group. By computation $K_t$ is an extreme ray for
+$t = 7, 11, 13, 17, 19$ and for no other $t$ from 7 to 20, with $L = 12$ for $t = 7$, $L = 16$* for $t = 11$ and
+$14 < L \le 16$* for $t = 13$. After the 4-point merges the classes are one class $K$ for all pairs of $B$'s and
+singletons, and eliminating all but $s_i = [A_iB_i]$ leaves the recurrence
+$s_i + s_{i+1} + 2s_{i+2} + s_{i+3} + s_{i+4} = 6K$ for all $i$ mod $t$. Its symbol
+$(1 + \omega^2)(1 + \omega + \omega^2)$ vanishes exactly at the primitive 3rd and 4th roots of unity. So $K_t$
+cannot be an extreme ray when 3 or 4 divides $t$, and every solution along an open stretch of the cycle has period
+12, so 13 consecutive positions force $s_j = s_{j+12}$; this caps the locality of the family. (The failure for
+$t = 10, 14$ is not explained by this recurrence alone.) Of 1,094 mirror-symmetric local-pattern families obtained
+by extending the dihedral rays of C5(a) for $t = 7$, every one has a window of 14 positions that forces merges
+beyond the 4-point ones. This is what led to the chiral families of Section~\ref{sec:main}.
+
+\comp{Largest locality known per $n$.} 4, 4, 5, 7 for $n = 5, \dots, 8$ (complete lists); 9 for $n = 9$ (the $m_9$
+list); at least 8, 8, 9, 12, 13 for $n = 10, 11, 12, 14, 15$ (C5); $n$ for every $n \equiv 2 \pmod 4$, $n \ge 18$
+(Theorem~\ref{thm:main}(c)).
+
+\begin{fact}
+$L(d) \le n - 1$ for every extreme ray of $\MET_n$, $n \le 8$, but $\max L = n$ for $n = 9$.
+\end{fact}
+
+\begin{question}
+Is $\max\,\{ L(d) : d \text{ extreme in } \MET_n \} = n$ for every $n \ge 9$? By Theorem~\ref{thm:main}(c) this
+holds for $n \equiv 2 \pmod 4$, $n \ge 18$, and for $n = 9$ by C2 (the two rays exist whether or not the $m_9$ list
+is complete).
+\end{question}
+
+\begin{question}
+Does the share of orbits of $m_n$ with $L = 4$ tend to $0$? By Theorem~\ref{thm:four} and
+Proposition~\ref{prop:count} at least $2^{n^2/2 - O(n \log n)}$ orbits have $L = 4$, so this is
+Question~\ref{q:one} in another form.
+\end{question}
+
+\section{Other descriptions of the $m_9$ list}
+
+\comp{C7 (primitive vertices; cut adjacency).} Call a vertex of $m_n$ \emph{primitive} if none of its restrictions
+to $k$ nodes, $3 \le k < n$, is a vertex of $m_k$. A rule that keeps its input as a restriction of its output cannot
+produce a primitive vertex.
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$n$ & orbits & primitive & share \\
+\midrule
+7 & 13 & 4 & 31\% \\
+8 & 533 & 219 & 41\% \\
+9 & 1,056,367 & 673,787 & 63.8\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+On the $m_9$ list 1,221 orbits are not adjacent to a cut, in agreement with \cite{DI07}.
+
+\comp{C8 (a normal form).} Say node $v$ can be \emph{peeled} from the node set $S$ of a vertex $x$ if $x|_S$ is a
+vertex of the fiber of $m_S$ over $x|_{S - v}$, i.e.\ the coordinates $x_{va}$ are determined by the tight
+inequalities inside $S$ that contain $v$. Peel until no node can be peeled; the remaining set is a \emph{seed}. On
+the $m_9$ list the seed has 3 nodes for 583,636 orbits, 4 nodes for 472,722 and 5 nodes for 8. A tight triangle
+through $v$ gives an equation $x_{va} \pm x_{vb} = c$; these form a signed graph on $S - v$, and $v$ can be peeled
+iff every component has an unbalanced cycle. Describing a step by the lengths of the shortest unbalanced cycles of
+its components, the 1,056,366 non-cut orbits use six kinds of steps: one 3-cycle (5,760,177 steps), two components
+with 3-cycles (88,230), one 5-cycle (11,967), one 2-cycle (3,497), one 7-cycle (1,565), a 3-cycle and a 5-cycle
+(22).
+
+\comp{C9 (the normal form is not a construction).} The generator ``start from all points of $m_3$ and $m_4$ with
+denominator $D$, extend by all determined steps with denominator $D$, test for vertices'' finds every orbit of
+$m_8$ with $D = 3, 4, 5, 6$ (52, 12, 15, 95 orbits) and nothing else, from 2,958, 67,164, 757,052 and 5,215,846
+candidates on 8 nodes, of which 43\%, 0.28\%, 0.04\%, 0.07\% are vertices. The partial points that lie on a path to
+a vertex number 39, 92, 200, 287 on 4 to 7 nodes for $D = 6$ (against 85, 311, 1,871, 22,788 generated). Six local
+features of an extension were tested as filters that never discard a useful extension; the best keeps 86--100\% of
+the extensions where 17--56\% are useful.
+
+\comp{C10 (graph-indexed families).} Alphabets and underlying graphs of the cut-adjacent orbits:
+\begin{center}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & orbits & alphabets & graphic & underlying graphs & most orbits on one graph \\
+\midrule
+7 & 12 & 2 & 92\% & 11 & 1 \\
+8 & 532 & 9 & 20\% & 256 & 12 \\
+9 & 1,055,145 & 1,273 & 0.52\% & 31,061 & 2,177 \\
+\bottomrule
+\end{tabular}
+\end{center}
+A graph does not determine its weights, so ``graph $\mapsto$ vertex'' needs the weights as input.
+
+\comp{C11 (the simplest weighted family).} For rays with alphabet $\subseteq \{1, 2\}$ (1, 3, 28, 925 for
+$k = 5, \dots, 8$; 27,963 from the $m_9$ list) a deduction rule in the spirit of \cite[\S2]{A80} (opposite sides of
+geodesic rectangles; odd closed chains of exchanges; propagation through triples with one unknown) is sufficient for
+extremality and is necessary for all 957 rays with $k \le 8$; it fails for 76 of the 27,963 rays on 9 nodes. The
+best necessary condition found rejects 92\% of 7,344 near-miss non-rays. This repeats, for weights $\{1, 2\}$, the
+experience of \cite[pp.~132--133]{A80}.
+
+\comp{C12 (elliptope).} For $x$ in an orbit let $\lambda(x)$ be the smallest eigenvalue of $J - 2X$, an orbit
+invariant. On $m_7$, $m_8$ and 1,000 sampled orbits of $m_9$, $\lambda$ does not separate the orbits reached by 8
+restriction-keeping rules from the others (probability that an unreached orbit has smaller $\lambda$ than a reached
+one: 0.43, 0.47; 0.46 at equal denominators).
+
+\section{Related work}
+
+Avis \cite{A80} introduced graphic extreme rays, the isometric-cycle criterion, the density theorem used here and
+the embedding theorem (every rational metric is a restriction of an extreme ray, \cite[Thm 3.5]{A80}); the last
+explains why ``is a restriction of a graphic vertex'' cannot characterise vertices. Laurent and Poljak \cite{LP92}
+and Laurent \cite{L96} study graphic and one-third-integral vertices and the operations that preserve vertices. The
+lists are due to Deza, Deza, Fukuda, Pasechnik, Sato, Mizutani, Vo and Indik \cite{DDF96,DFPS01,DFMV03,DI07}. Cizma
+and Linial \cite{CL25} count path systems and faces of $\MET_n$: they quote Avis's lower bound
+$2^{\binom n2(1+o(1))}$ for the extreme rays, prove the upper bound $2^{2.38n^2(1+o(1))}$ for all faces, and show
+that metrizability of a path system is decided by a linear program; as far as we could see they do not consider
+generators or bounded-scope criteria. Proposition~\ref{prop:count} is thus Avis's bound transferred to orbits of
+$m_n$, and Theorem~\ref{thm:generator} is an elementary consequence of it. What is new here, to our knowledge, is
+the locality invariant with Theorems~\ref{thm:four} and~\ref{thm:main}, the formulation of the counting bound as a
+limit on generators, and the computations.
+
+Bandelt and Dress \cite{BD92} decompose a metric into split metrics and a split-prime residue; extreme rays other
+than cuts are split-prime, but split-prime metrics need not be extreme, so this gives a necessary condition only.
+Koolen, Moulton and T\"onges \cite{KMT00} and Sturmfels and Yu \cite{SY04} classify the six-point metrics. Lavrov
+\cite{La25} generalises Avis's isometric-cycle criterion to metrics on simplicial posets and states that the
+classification of extreme metrics for general $n$ is open. Bodwin \cite{Bo18} characterises the path systems that
+are unique shortest paths of a weighted graph by forbidden subsystems coming from two-coloured polyhedra; his
+examples have 4 to 10 nodes and the family is not bounded in size. That result concerns faces of the metric cone of
+a different kind (strict metrizability), but it is the closest analogue we know of Theorem~\ref{thm:main}:
+obstructions that cannot be confined to a bounded number of points. Melleray, Petrov and Vershik \cite{MPV08} study
+extreme rays under the name of linearly rigid metric spaces; they pose as an open question to describe the extremal
+metric spaces on $n$ points and to estimate their number. Casabella, Joswig and Kastner \cite{CJK24} classify the
+metric spaces on seven points through subdivisions of hypersimplices and give new infinite families of rays.
+Feldman and Kehoe \cite{FK26} give further families of extreme rays (bowtie metrics). In none of these did we find
+the locality invariant, a bound on generators, or a statement that extreme rays admit no bounded-scope
+characterisation.
+
+\emph{Forward citations.} We went through the works citing \cite{A80} (68), \cite{L96} (26) and \cite{DI07} (6) in
+the OpenAlex index (November 2026) and read those whose titles concern extreme rays, vertices of the metric polytope
+or criteria for extremality; none contains a result of the kind of Theorems~\ref{thm:main}
+or~\ref{thm:generator}.
+
+\section{Reproduction}
+
+Scripts in \file{scripts/phase9/}, outputs in \file{results/phase9/}.
+
+{\small\raggedright
+\begin{center}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.21\textwidth}>{\raggedright\arraybackslash}p{0.37\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}@{}}
+\toprule
+item & script & output \\
+\midrule
+Theorem~\ref{thm:main}(a), (b): checks V1--V3; remark 4 &
+  \file{family\_C\_proof.py}, \file{family\_C\_structure.py}, \file{pattern\_hunt.py}, \file{cand\_pattern.py} &
+  \file{family\_C\_proof.json}, \file{pattern\_hunt.json}, \file{cand\_pattern.json} \\
+Theorem~\ref{thm:main}(c): $t \le 21$; checks W1--W3 for $t \ge 23$ &
+  \file{family\_C.py}; \file{family\_C\_top.py} & \file{family\_C.json}; \file{family\_C\_top.json} \\
+Theorem~\ref{thm:main}(c): second implementation of W1--W3 &
+  \file{family\_C\_top\_check.py} & \file{family\_C\_top\_check.json} \\
+C1, validation & \file{locality\_checks.py}, \file{ray\_count\_check.py} &
+  \file{locality\_checks.json}, \file{ray\_count\_check.json} \\
+C2 & \file{locality.py --all9} & \file{locality\_m9all.json} \\
+C3 & \file{locality\_switch9.py} & \file{locality\_switch9.json} \\
+C4 & \file{random\_graph\_locality.py}, \file{locality\_checks.py} &
+  \file{random\_graph\_locality.json}, \file{locality\_checks.json} \\
+C5 & \file{sym\_search.py} (\file{--mirror 0 1 --fast} for the dihedral runs), \file{locality\_checks.py},
+  \file{locality\_climb.py}, \file{random\_ray\_locality.py} &
+  \file{sym\_search.json}, \file{locality\_checks.json}, \file{locality\_climb.json},
+  \file{random\_ray\_locality.json} \\
+C6 & \file{famK.py}, \file{famK\_level.py}, \file{family\_scan.py}, \file{window\_test.py}, \file{exact\_check.py} &
+  \file{family\_scan.json}, \file{window\_test.json}, \file{exact\_check.json} \\
+C7, C8 & \file{vertex\_structure.py}, \file{step\_types.py} &
+  \file{vertex\_structure\_deza9all.json}, \file{step\_types\_m9all.json} \\
+C9 & \file{fiber\_generator.py}, \file{useful\_share.py}, \file{choice\_features.py} &
+  \file{fiber\_generator\_n8.json}, \file{useful\_share\_n8.json}, \file{choice\_features\_n8.json} \\
+C10 & \file{graph\_families.py --all9} & \file{graph\_families\_m9all.json} \\
+C11 & \file{family12.py}, \file{judge\_family.py} & \file{round\_18\_family.json} \\
+C12 & \file{elliptope.py} & \file{elliptope.json} \\
+\bottomrule
+\end{tabular}
+\end{center}
+}
+
+Ranks are computed modulo $2^{31} - 1$ with an exact fallback whenever the modular rank is deficient, so every ``is
+a vertex'' and ``is a ray'' verdict is exact; the locality closure uses rational arithmetic throughout, except for
+the values marked * in C5 and C6 and the parenthesis of Theorem~\ref{thm:main}(c).
+
+\begin{thebibliography}{DFMV03}
+
+\bibitem[A80]{A80} D. Avis, On the extreme rays of the metric cone, \emph{Canad. J. Math.} 32 (1980) 126--144.
+
+\bibitem[BD92]{BD92} H.-J. Bandelt, A. W. M. Dress, A canonical decomposition theory for metrics on a finite set,
+\emph{Adv. Math.} 92 (1992) 47--105.
+
+\bibitem[Bo18]{Bo18} G. Bodwin, On the structure of unique shortest paths in graphs, arXiv:1804.09745.
+
+\bibitem[CJK24]{CJK24} L. Casabella, M. Joswig, L. Kastner, Subdivisions of hypersimplices: with a view toward
+finite metric spaces, \emph{Exp. Math.} (2024), arXiv:2402.17665.
+
+\bibitem[CL25]{CL25} D. Cizma, N. Linial, On the number of path systems, arXiv:2508.21379v3 (2025).
+
+\bibitem[DD-web]{DDweb} A. Deza, metric polytope data page, \url{www.cas.mcmaster.ca/~deza/metric.html}.
+
+\bibitem[DDF96]{DDF96} A. Deza, M. Deza, K. Fukuda, On skeletons, diameters and volumes of metric polyhedra,
+\emph{LNCS} 1120 (1996) 112--128.
+
+\bibitem[DFMV03]{DFMV03} A. Deza, K. Fukuda, T. Mizutani, C. Vo, On the face lattice of the metric polytope,
+\emph{LNCS} 2866 (2003) 118--128.
+
+\bibitem[DFPS01]{DFPS01} A. Deza, K. Fukuda, D. Pasechnik, M. Sato, On the skeleton of the metric polytope,
+\emph{LNCS} 2098 (2001) 125--136.
+
+\bibitem[DI07]{DI07} A. Deza, G. Indik, A counterexample to the dominating set conjecture, \emph{Optim. Lett.} 1
+(2007) 163--169.
+
+\bibitem[DL97]{DL97} M. Deza, M. Laurent, \emph{Geometry of Cuts and Metrics}, Springer, 1997.
+
+\bibitem[FK26]{FK26} D. V. Feldman, E. R. Kehoe, Extreme rays of the metric cone and the metric body: bowtie
+metrics and half-one extremality, preprint, Zenodo, doi:10.5281/zenodo.21898516 (2026).
+
+\bibitem[KMT00]{KMT00} J. Koolen, V. Moulton, U. T\"onges, A classification of the six-point prime metrics,
+\emph{European J. Combin.} 21 (2000) 815--829.
+
+\bibitem[La25]{La25} A. Lavrov, Ternary relations and their polytopes, arXiv:2509.06811 (2025).
+
+\bibitem[L96]{L96} M. Laurent, Graphic vertices of the metric polytope, \emph{Discrete Math.} 151 (1996) 131--153.
+
+\bibitem[LP92]{LP92} M. Laurent, S. Poljak, One-third-integrality in the max-cut problem, \emph{Math. Programming}
+71 (1995) 29--50 (CWI Report BS-R9209, 1992).
+
+\bibitem[MPV08]{MPV08} J. Melleray, F. V. Petrov, A. M. Vershik, Linearly rigid metric spaces and the embedding
+problem, \emph{Fund. Math.} 199 (2008) 177--194, arXiv:math/0611049.
+
+\bibitem[SY04]{SY04} B. Sturmfels, J. Yu, Classification of six-point metrics, \emph{Electron. J. Combin.} 11
+(2004) R44.
+
+\end{thebibliography}
+
+\end{document}
