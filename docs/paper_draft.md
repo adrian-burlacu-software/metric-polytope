@@ -592,7 +592,9 @@ closure modulo 2^31 − 1 and not re-run in rational arithmetic.
 extreme rays can be enumerated and tested. Cyclic symmetry: t = 5 (294 rays of MET_10), largest L = 8; t = 6 (3,019
 rays of MET_12), largest L = 9; t = 5 with a fixed centre (1,332 rays of MET_11), largest L = 8. Dihedral symmetry:
 t = 7 (3,497 rays of MET_14), largest L = 12; t = 7 with a fixed centre (n = 15), largest L = 13; t = 9 (55,300
-rays of MET_18 tested, of 132,051 candidates), largest L = 17*.
+rays of MET_18 tested, of 132,051 candidates), largest L = 17*; for the ray that attains it, L = 17 was
+confirmed in rational arithmetic (`exact_check.py`), as were the values 12 and 13 above, so the star concerns only
+the statement that no tested ray has a larger value.
 (b) *Generic procedures do not find large locality.* Seven vertices of m_10 found by random walks on the skeleton
 (49 rays over all switchings): L from 4 to 7. Adding a point to the rays of MET_8 with L ≥ 6 (beam search to 11
 points, 6,794 rays): L never above 7. Random face descent in MET_n, n = 7, ..., 11 (54 extreme rays from 280
@@ -694,7 +696,10 @@ Bandelt and Dress [BD92] decompose a metric into split metrics and a split-prime
 cuts are split-prime, but split-prime metrics need not be extreme, so this gives a necessary condition only.
 Koolen, Moulton and Tönges [KMT00] and Sturmfels and Yu [SY04] classify the six-point metrics. Lavrov [La25]
 generalises Avis's isometric-cycle criterion to metrics on simplicial posets and states that the classification of
-extreme metrics for general n is open. Bodwin [Bo18] characterises the path systems that are unique shortest paths
+extreme metrics for general n is open; he also considers a condition on the set of tight triangle inequalities that
+involves only the triangles through one edge ("locally feasible markings") and notes that it is necessary but not
+sufficient, already on five points. This is a consistency condition on one pattern of tight inequalities and is not
+related to the closure of Section 3. Bodwin [Bo18] characterises the path systems that are unique shortest paths
 of a weighted graph by forbidden subsystems coming from two-coloured polyhedra; his examples have 4 to 10 nodes and
 the family is not bounded in size. That result concerns faces of the metric cone of a different kind (strict
 metrizability), but it is the closest analogue we know of Theorem 4: obstructions that cannot be confined to a
@@ -768,7 +773,21 @@ assistant; neither they nor the proofs have yet been checked by a second person.
    data of [MPV08], [CJK24], [FK26] come from index records and should be checked against the papers.
 4. **The m_9 count.** The file has one orbit fewer than published (Section 6); the authors of the list could
    confirm which number is right.
-5. **Values marked *** (Comp. 5, Comp. 6) should be re-run in rational arithmetic or dropped.
+5. **Values marked *** (Comp. 5, Comp. 6). The record values 12, 13, 17 of Comp. 5(a) are exact
+   (`exact_check.json`; the 18-point run took 51 minutes). Still modular: the statement that no other tested
+   18-point ray exceeds 17, and L = 16 (t = 11, 22 points) and 14 < L ≤ 16 (t = 13, 26 points) for the family K_t
+   of Comp. 6. An exact run on 22 points is estimated at several days (extrapolating 45 s, 140 s, 3,072 s for 14,
+   15, 18 points) and was not started; either keep the stars or drop the two K_t values.
+8. **Bibliography check (2026-11-26).** All entries were compared with Crossref, arXiv and Zenodo records: volume,
+   year and pages agree for [A80], [BD92], [DDF96], [DFMV03], [DFPS01], [DI07], [KMT00], [L96], [LP92], [MPV08],
+   [SY04]; [Bo18] and [CJK24] were updated to the published versions; the DOI of [FK26] is the all-versions DOI of
+   the record. The year of volume 34 of Exp. Math. (2025) is inferred, not read from the journal page.
+9. **Sources re-read (2026-11-26), by keyword search and reading of the passages found, not cover to cover.**
+   [Bo18] whole text, [CL25] §7, [La25] §3, [FK26] abstract, section list and keyword hits: no statement about
+   bounded-scope tests for extreme rays, locality, or generators. [La25] §3 has "locally feasible markings" (now
+   mentioned in Section 8). [FK26]'s "metric body" is the set of pseudometrics with values at most 1, not m_n.
+   Still not obtained: Karzanov 1998, Grishukhin 1992 (publisher refused automated download), Avis, *Extremal
+   metrics induced by graphs* (Ann. Discrete Math. 8 (1980) 217–220); second half of [CJK24] only searched.
 7. **Permanent archive.** The repository is public on GitHub since 2026-11-26, with licences (MIT for the code,
    CC BY 4.0 for `docs/`); the third-party data in `data/deza/raw/` and `data/smapo/raw/` are kept (author's
    decision; their terms of redistribution were not checked). Release `v0.1-draft` is archived at Zenodo
@@ -782,9 +801,10 @@ assistant; neither they nor the proofs have yet been checked by a second person.
 - [A80] D. Avis, On the extreme rays of the metric cone, Canad. J. Math. 32 (1980) 126–144.
 - [BD92] H.-J. Bandelt, A. W. M. Dress, A canonical decomposition theory for metrics on a finite set, Adv. Math. 92
   (1992) 47–105.
-- [Bo18] G. Bodwin, On the structure of unique shortest paths in graphs, arXiv:1804.09745.
+- [Bo18] G. Bodwin, On the structure of unique shortest paths in graphs, in Proc. 30th ACM-SIAM Symposium on
+  Discrete Algorithms (SODA 2019), 2071–2089; arXiv:1804.09745v3 (2026).
 - [CJK24] L. Casabella, M. Joswig, L. Kastner, Subdivisions of hypersimplices: with a view toward finite metric
-  spaces, Exp. Math. (2024), arXiv:2402.17665.
+  spaces, Exp. Math. 34 (2025) 808–823 (online 2024), arXiv:2402.17665.
 - [CL25] D. Cizma, N. Linial, On the number of path systems, arXiv:2508.21379v3 (2025).
 - [FK26] D. V. Feldman, E. R. Kehoe, Extreme rays of the metric cone and the metric body: bowtie metrics and
   half-one extremality, preprint, Zenodo, doi:10.5281/zenodo.21898516 (2026).

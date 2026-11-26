@@ -498,7 +498,7 @@ no merge, $\pi$ is closed at level $2t - 1$, $\cl_{2t-1}$ refines $\pi$, and $L(
 \end{proof}
 
 The search procedure was tested on 300 equations with planted solutions (all recovered), and by duplicating one
-class of each kind under a different name (every duplicate is reported as a coincidence); see \file{--selftest}.
+class of each kind under a different name (every duplicate is reported as a coincidence); see \file{-{}-selftest}.
 
 \paragraph{Second implementation.} Checks W1--W3 were repeated by a second program written from the text of this
 proof (\file{family\_C\_top\_check.py}; it shares no code with the first). It differs in three ways. (i) It fixes
@@ -785,7 +785,9 @@ cone whose extreme rays can be enumerated and tested. Cyclic symmetry: $t = 5$ (
 $L = 8$; $t = 6$ (3,019 rays of $\MET_{12}$), largest $L = 9$; $t = 5$ with a fixed centre (1,332 rays of
 $\MET_{11}$), largest $L = 8$. Dihedral symmetry: $t = 7$ (3,497 rays of $\MET_{14}$), largest $L = 12$; $t = 7$
 with a fixed centre ($n = 15$), largest $L = 13$; $t = 9$ (55,300 rays of $\MET_{18}$ tested, of 132,051
-candidates), largest $L = 17$*.
+candidates), largest $L = 17$*; for the ray that attains it, $L = 17$ was confirmed in rational arithmetic
+(\file{exact\_check.py}), as were the values 12 and 13 above, so the star concerns only the statement that no
+tested ray has a larger value.
 
 (b) \emph{Generic procedures do not find large locality.} Seven vertices of $m_{10}$ found by random walks on the
 skeleton (49 rays over all switchings): $L$ from 4 to 7. Adding a point to the rays of $\MET_8$ with $L \ge 6$ (beam
@@ -911,7 +913,10 @@ Bandelt and Dress \cite{BD92} decompose a metric into split metrics and a split-
 than cuts are split-prime, but split-prime metrics need not be extreme, so this gives a necessary condition only.
 Koolen, Moulton and T\"onges \cite{KMT00} and Sturmfels and Yu \cite{SY04} classify the six-point metrics. Lavrov
 \cite{La25} generalises Avis's isometric-cycle criterion to metrics on simplicial posets and states that the
-classification of extreme metrics for general $n$ is open. Bodwin \cite{Bo18} characterises the path systems that
+classification of extreme metrics for general $n$ is open; he also considers a condition on the set of tight
+triangle inequalities that involves only the triangles through one edge (``locally feasible markings'') and notes
+that it is necessary but not sufficient, already on five points. This is a consistency condition on one pattern of
+tight inequalities and is not related to the closure of Section~\ref{sec:locality}. Bodwin \cite{Bo18} characterises the path systems that
 are unique shortest paths of a weighted graph by forbidden subsystems coming from two-coloured polyhedra; his
 examples have 4 to 10 nodes and the family is not bounded in size. That result concerns faces of the metric cone of
 a different kind (strict metrizability), but it is the closest analogue we know of Theorem~\ref{thm:main}:
@@ -956,11 +961,11 @@ Theorem~\ref{thm:main}(c): second implementation of W1--W3 &
   \file{family\_C\_top\_check.py} & \file{family\_C\_top\_check.json} \\
 Comp.~1, validation & \file{locality\_checks.py}, \file{ray\_count\_check.py} &
   \file{locality\_checks.json}, \file{ray\_count\_check.json} \\
-Comp.~2 & \file{locality.py --all9} & \file{locality\_m9all.json} \\
+Comp.~2 & \file{locality.py -{}-all9} & \file{locality\_m9all.json} \\
 Comp.~3 & \file{locality\_switch9.py} & \file{locality\_switch9.json} \\
 Comp.~4 & \file{random\_graph\_locality.py}, \file{locality\_checks.py} &
   \file{random\_graph\_locality.json}, \file{locality\_checks.json} \\
-Comp.~5 & \file{sym\_search.py} (\file{--mirror 0 1 --fast} for the dihedral runs), \file{locality\_checks.py},
+Comp.~5 & \file{sym\_search.py} (\file{-{}-mirror 0 1 -{}-fast} for the dihedral runs), \file{locality\_checks.py},
   \file{locality\_climb.py}, \file{random\_ray\_locality.py} &
   \file{sym\_search.json}, \file{locality\_checks.json}, \file{locality\_climb.json},
   \file{random\_ray\_locality.json} \\
@@ -970,7 +975,7 @@ Comp.~7, Comp.~8 & \file{vertex\_structure.py}, \file{step\_types.py} &
   \file{vertex\_structure\_deza9all.json}, \file{step\_types\_m9all.json} \\
 Comp.~9 & \file{fiber\_generator.py}, \file{useful\_share.py}, \file{choice\_features.py} &
   \file{fiber\_generator\_n8.json}, \file{useful\_share\_n8.json}, \file{choice\_features\_n8.json} \\
-Comp.~10 & \file{graph\_families.py --all9} & \file{graph\_families\_m9all.json} \\
+Comp.~10 & \file{graph\_families.py -{}-all9} & \file{graph\_families\_m9all.json} \\
 Comp.~11 & \file{family12.py}, \file{judge\_family.py} & \file{round\_18\_family.json} \\
 Comp.~12 & \file{elliptope.py} & \file{elliptope.json} \\
 \bottomrule
@@ -998,10 +1003,11 @@ with the assistant; neither they nor the proofs have yet been checked by a secon
 \bibitem[BD92]{BD92} H.-J. Bandelt, A. W. M. Dress, A canonical decomposition theory for metrics on a finite set,
 \emph{Adv. Math.} 92 (1992) 47--105.
 
-\bibitem[Bo18]{Bo18} G. Bodwin, On the structure of unique shortest paths in graphs, arXiv:1804.09745.
+\bibitem[Bo18]{Bo18} G. Bodwin, On the structure of unique shortest paths in graphs, in \emph{Proc. 30th
+ACM-SIAM Symposium on Discrete Algorithms (SODA 2019)}, 2071--2089; arXiv:1804.09745v3 (2026).
 
 \bibitem[CJK24]{CJK24} L. Casabella, M. Joswig, L. Kastner, Subdivisions of hypersimplices: with a view toward
-finite metric spaces, \emph{Exp. Math.} (2024), arXiv:2402.17665.
+finite metric spaces, \emph{Exp. Math.} 34 (2025) 808--823 (online 2024), arXiv:2402.17665.
 
 \bibitem[CL25]{CL25} D. Cizma, N. Linial, On the number of path systems, arXiv:2508.21379v3 (2025).
 
