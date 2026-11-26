@@ -208,14 +208,14 @@ shows that C_9 is a metric and that there are 11 types of tight triples, written
     B_iB_j = B_iA_i + A_iB_j (|i − j| ≥ 3; also with i and j exchanged);    B_iB_{i+3} = B_iA_{i+2} + A_{i+2}B_{i+3}.
 
 *The A-pairs.* Let x be a solution of the tight system. Write f(i, k) = x(A_iA_k) for |i − k| ≥ 3 and
-ε_i = x(A_iA_{i+1}). By the first type, ε_i = f(i, k) + f(k, i + 1) whenever k − i ∈ [4, t − 3]. For
+ρ_i = x(A_iA_{i+1}). By the first type, ρ_i = f(i, k) + f(k, i + 1) whenever k − i ∈ [4, t − 3]. For
 k − i ∈ [4, t − 4] this gives four equations for the two pairs {i, i+1} and {k, k+1}:
-ε_i = f(i,k) + f(i+1,k) = f(i,k+1) + f(i+1,k+1) and ε_k = f(i,k) + f(i,k+1) = f(i+1,k) + f(i+1,k+1), hence
+ρ_i = f(i,k) + f(i+1,k) = f(i,k+1) + f(i+1,k+1) and ρ_k = f(i,k) + f(i,k+1) = f(i+1,k) + f(i+1,k+1), hence
 f(i+1, k) = f(i, k+1) and f(i, k) = f(i+1, k+1). The second identity shows that f(i, i + δ) does not depend on i
 for δ ∈ [4, t − 4], and the first, with δ = 4 and δ = t − 4, extends this to δ = 3 and δ = t − 3 (here t ≥ 9 is
 used). So f(i, i + δ) = f(δ) with f(δ − 1) = f(δ + 1) for δ ∈ [4, t − 4], and f(δ) = f(t − δ) because the two
 offsets describe the same pair. As t is odd, δ and t − δ have different parity, so f is constant, say α, and
-ε_i = 2α.
+ρ_i = 2α.
 
 *The recurrence.* Put s_i = x(A_iB_i), p_i = x(A_iB_{i+1}), q_i = x(A_iB_{i+2}), m_i = x(A_iB_{i−1}),
 w_i = x(A_iB_{i−2}), b_i = x(B_iB_{i+1}), c_i = x(B_iB_{i+2}), e_i = x(A_iA_{i+2}). The tight triples give
@@ -391,7 +391,7 @@ periodic, and its locality stays bounded.
 
 ## 5. A counting bound for small-choice generators
 
-**Theorem (Avis [A80, Thm 3.3]).** Let 0 < ε < 1/5 and n^(−1/5+ε) ≤ p ≤ 1 − n^(−1/4+ε). Then the shortest-path
+**Theorem (Avis [A80, Thm 3.3]).** Let 0 < γ < 1/5 and n^(−1/5+γ) ≤ p ≤ 1 − n^(−1/4+γ). Then the shortest-path
 metric of the random graph G_{n,p} spans an extreme ray of MET_n with probability 1 − o(1).
 
 With p = 1/2 all labelled graphs are equally likely, so 2^C(n,2)·(1 − o(1)) labelled graphs G have d_G extreme

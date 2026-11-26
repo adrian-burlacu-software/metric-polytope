@@ -299,15 +299,15 @@ long = short + short:
 \end{align*}
 
 \step{The $A$-pairs.} Let $x$ be a solution of the tight system. Write $f(i, k) = x(A_iA_k)$ for $|i - k| \ge 3$ and
-$\eps_i = x(A_iA_{i+1})$. By the first type, $\eps_i = f(i, k) + f(k, i + 1)$ whenever $k - i \in [4, t - 3]$. For
+$\rho_i = x(A_iA_{i+1})$. By the first type, $\rho_i = f(i, k) + f(k, i + 1)$ whenever $k - i \in [4, t - 3]$. For
 $k - i \in [4, t - 4]$ this gives four equations for the two pairs $\{i, i+1\}$ and $\{k, k+1\}$:
-$\eps_i = f(i,k) + f(i+1,k) = f(i,k+1) + f(i+1,k+1)$ and $\eps_k = f(i,k) + f(i,k+1) = f(i+1,k) + f(i+1,k+1)$, hence
+$\rho_i = f(i,k) + f(i+1,k) = f(i,k+1) + f(i+1,k+1)$ and $\rho_k = f(i,k) + f(i,k+1) = f(i+1,k) + f(i+1,k+1)$, hence
 $f(i+1, k) = f(i, k+1)$ and $f(i, k) = f(i+1, k+1)$. The second identity shows that $f(i, i + \delta)$ does not
 depend on $i$ for $\delta \in [4, t - 4]$, and the first, with $\delta = 4$ and $\delta = t - 4$, extends this to
 $\delta = 3$ and $\delta = t - 3$ (here $t \ge 9$ is used). So $f(i, i + \delta) = f(\delta)$ with
 $f(\delta - 1) = f(\delta + 1)$ for $\delta \in [4, t - 4]$, and $f(\delta) = f(t - \delta)$ because the two offsets
 describe the same pair. As $t$ is odd, $\delta$ and $t - \delta$ have different parity, so $f$ is constant, say
-$\alpha$, and $\eps_i = 2\alpha$.
+$\alpha$, and $\rho_i = 2\alpha$.
 
 \step{The recurrence.} Put $s_i = x(A_iB_i)$, $p_i = x(A_iB_{i+1})$, $q_i = x(A_iB_{i+2})$, $m_i = x(A_iB_{i-1})$,
 $w_i = x(A_iB_{i-2})$, $b_i = x(B_iB_{i+1})$, $c_i = x(B_iB_{i+2})$, $e_i = x(A_iA_{i+2})$. The tight triples give
@@ -523,7 +523,7 @@ bounded.
 \section{A counting bound for small-choice generators}
 
 \begin{avis}[Avis {\cite[Thm 3.3]{A80}}]
-Let $0 < \epsilon < 1/5$ and $n^{-1/5+\epsilon} \le p \le 1 - n^{-1/4+\epsilon}$. Then the shortest-path metric of
+Let $0 < \gamma < 1/5$ and $n^{-1/5+\gamma} \le p \le 1 - n^{-1/4+\gamma}$. Then the shortest-path metric of
 the random graph $G_{n,p}$ spans an extreme ray of $\MET_n$ with probability $1 - o(1)$.
 \end{avis}
 
