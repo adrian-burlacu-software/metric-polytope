@@ -707,12 +707,20 @@ bounded number of points. Melleray, Petrov and Vershik [MPV08] study extreme ray
 metric spaces; they pose as an open question to describe the extremal metric spaces on n points and to estimate
 their number. Casabella, Joswig and Kastner [CJK24] classify the metric spaces on seven points through subdivisions
 of hypersimplices and give new infinite families of rays. Feldman and Kehoe [FK26] give further families of
-extreme rays (bowtie metrics). In none of these did we find the locality invariant, a bound on generators, or a
+extreme rays (bowtie metrics). Howe, Johnson and Lawrence [HJL86] study which graphs produce extreme rays of the
+cone of distance matrices. Lomonosov and Sebő [LS93] ask when the distance function of a graph is the only length
+function, up to scaling, for which all minimum-cardinality paths are shortest, that is, when d_G is extreme, and
+determine the extreme rays of the face of the metric cone that contains d_G; for bipartite G these are exactly the
+summands of the metric decomposition of Graham and Winkler. This is a class of graphs for which extremality has a
+combinatorial description, in contrast with Theorem 4, which concerns weighted, non-graphic rays. In none of these
+did we find the locality invariant, a bound on generators, or a
 statement that extreme rays cannot be recognised by local deduction on a bounded number of points.
 
-*Forward citations.* We went through the works citing [A80] (68), [L96] (26) and [DI07] (6) in the OpenAlex index
-(November 2026) and read those whose titles concern extreme rays, vertices of the metric polytope or criteria for
-extremality; none contains a result of the kind of Theorems 4 or 6.
+*Forward citations.* We went through the works citing [A80] (68), [L96] (26) and [DI07] (6) in the OpenAlex index,
+and those citing [A80] (33), [L96] (14), [DI07] (2), [LP92] (4) and Grishukhin's enumeration for seven points (16)
+in zbMATH Open (both in November 2026), together with keyword searches in zbMATH Open for extreme rays of the
+metric cone and vertices of the metric polytope. We read those whose titles or reviews concern extreme rays,
+vertices of the metric polytope or criteria for extremality; none contains a result of the kind of Theorems 4 or 6.
 
 ## 9. Reproduction
 
@@ -762,9 +770,13 @@ assistant; neither they nor the proofs have yet been checked by a second person.
    Steps 1–2 as stated; the real-cycle checks cover these only for the values of t that were run (19 to 45).
 2. **Theorem 4(c) for 9 ≤ t ≤ 21** rests on the closure computation, not on the proof; the construction of the
    proof also passes its guard for t = 19, 21, so the two methods agree where both were run.
-3. **Citations.** Forward citations of [A80], [L96], [DI07] were checked in OpenAlex only (2026-11-26); zbMATH
-   refused automated access and MathSciNet needs a subscription, so one of the two should still be consulted by
-   hand. Citing relations and titles were taken from the index, partly through machine summaries. Not read in
+3. **Citations.** Forward citations of [A80], [L96], [DI07] were checked in OpenAlex and, through its public API,
+   in zbMATH Open (2026-11-26; also [LP92], Grishukhin 1992 and seven keyword searches). The zbMATH search found
+   two works not cited before, [HJL86] and [LS93], now in Section 8. **[LS93] must be read before submission:** its
+   description in Section 8 is taken from the zbMATH summary only, and it is the closest prior work on "when is
+   d_G extreme" (a complete combinatorial answer for bipartite graphs). The statement that Theorem 4 is not
+   anticipated by it rests on the summary. One zbMATH record citing [A80] and [DI07] (Zbl 1578.52017, 2025) is
+   hidden for licence reasons and could not be identified. MathSciNet was not consulted. Citing relations and titles were taken from the index, partly through machine summaries. Not read in
    full text: Karzanov, *Metrics with finite sets of primitive extensions* (Ann. Comb. 2, 1998); Grishukhin,
    *Computing extreme rays of the metric cone for seven points* (European J. Combin. 13, 1992); Avis, *Extremal
    metrics induced by graphs* (Ann. Discrete Math. 8, 1980); the thesis on the "metric body" behind [FK26]; [FK26]
@@ -808,6 +820,9 @@ assistant; neither they nor the proofs have yet been checked by a second person.
 - [CL25] D. Cizma, N. Linial, On the number of path systems, arXiv:2508.21379v3 (2025).
 - [FK26] D. V. Feldman, E. R. Kehoe, Extreme rays of the metric cone and the metric body: bowtie metrics and
   half-one extremality, preprint, Zenodo, doi:10.5281/zenodo.21898516 (2026).
+- [LS93] M. Lomonosov, A. Sebő, On the geodesic-structure of graphs: a polyhedral approach to metric decomposition,
+  in Integer Programming and Combinatorial Optimization (Erice, 1993), G. Rinaldi et al. (eds.), CORE,
+  Louvain-la-Neuve, 1993, 221–234.
 - [MPV08] J. Melleray, F. V. Petrov, A. M. Vershik, Linearly rigid metric spaces and the embedding problem, Fund.
   Math. 199 (2008) 177–194, arXiv:math/0611049.
 - [DD-web] A. Deza, metric polytope data page, www.cas.mcmaster.ca/~deza/metric.html.
@@ -819,6 +834,7 @@ assistant; neither they nor the proofs have yet been checked by a second person.
   118–128.
 - [DI07] A. Deza, G. Indik, A counterexample to the dominating set conjecture, Optim. Lett. 1 (2007) 163–169.
 - [DL97] M. Deza, M. Laurent, Geometry of Cuts and Metrics, Springer, 1997.
+- [HJL86] E. Howe, C. R. Johnson, J. Lawrence, The structure of distances in networks, Networks 16 (1986) 87–106.
 - [KMT00] J. Koolen, V. Moulton, U. Tönges, A classification of the six-point prime metrics, European J. Combin. 21
   (2000) 815–829.
 - [La25] A. Lavrov, Ternary relations and their polytopes, arXiv:2509.06811 (2025).
