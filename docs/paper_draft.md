@@ -172,7 +172,25 @@ both, which exists unless some n − 3 nodes span no edge, an event of probabili
 The probability of an isolated node is at most n·2^(−(n−1)) → 0, and a graph without isolated nodes in which all
 edges are linked by chains of 4-cycles is connected. An induced 4-cycle is isometric, so (a) applies. ∎
 
-Part (b) is the case p = 1/2 of Avis's density theorem [A80, Thm 3.3], with the stronger conclusion L = 4; the
+**Corollary (bipartite graphs).** Let G be a connected bipartite graph on k ≥ 4 nodes. Call two edges ab, cd
+*opposite* if d_G(a, c) = d_G(b, d), d_G(a, d) = d_G(b, c) and these two numbers are different [LS93, Prop. 4]. The
+following are equivalent: (i) d_G is extreme; (ii) all edges of G lie in one class of the transitive closure of
+oppositeness; (iii) L(d_G) = 4.
+
+*Proof.* (i) ⇒ (ii) is a theorem of Lomonosov and Sebő [LS93, Corollary 1(c) of Theorem 5]. (ii) ⇒ (iii): let ab,
+cd be opposite. The two numbers differ by one because cd is an edge; name the ends so that d_G(a, d) = d_G(b, c) = j
+and d_G(a, c) = d_G(b, d) = j + 1. If j = 0 the two edges coincide, so a, b, c, d are distinct, and the triples
+(a, d, c), (a, b, c), (b, a, d), (b, c, d) are tight and lie in W = {a, b, c, d}. As in the proof of Theorem 3(a)
+they give x_ab = x_cd, so W forces the classes of ab and cd equal, and the rest of that proof applies without
+change. (iii) ⇒ (i) is Proposition 2(ii). ∎
+
+Oppositeness is weaker than "opposite on an even isometric cycle": it asks only that four paths of the cycle be
+geodesics [LS93, p. 223]. So for bipartite graphs extremality is decided by deductions on four points, and graphic
+extreme rays of locality above 4 (such as K_1 ∨ C_m² in Comp. 5) are not bipartite. For non-bipartite graphs [LS93]
+gives no such description. The corollary was also tested on 600 random connected bipartite graphs with 5 to 10
+nodes (215 of them extreme): the three conditions agree on all of them (`bipartite_check.py`).
+
+Part (b) of Theorem 3 is the case p = 1/2 of Avis's density theorem [A80, Thm 3.3], with the stronger conclusion L = 4; the
 argument follows Avis's and treats explicitly the pairs of edges with a common endpoint.
 
 **Remark (finite n).** The union bound in (b) is effective only for n in the thousands, but the conclusion sets in
@@ -399,7 +417,12 @@ least two t between 9 and 14, and 96 pass two filters (classes left unmerged on 
 open stretch); 8 of the 96 have L = 2t at t = 9, 11, 13, and they are C_t, its variant (3), their mirror images and
 the versions with A and B exchanged. (5) Chirality matters: the mirror-symmetric family K_t of Comp. 6 reduces in the
 same way to a recurrence, but all its characteristic roots are roots of unity, every solution on an open stretch is
-periodic, and its locality stays bounded.
+periodic, and its locality stays bounded. (6) Locality is not monotone under restriction. By Avis's embedding
+(Section 5b), C_t is the restriction of the metric of a graph F(G) on more points, and the proof of [A80, Lemma 3.4]
+shows that F(G) is 1-ic-colorable, so L(d_F(G)) = 4 by Theorem 3(a). Thus a ray whose extremality has no proof on
+fewer than all of its points is a restriction of a ray whose extremality is proved four points at a time. The
+additional points serve as auxiliary variables; L measures deductions among the given points only, and Theorem 4
+says nothing about tests that are allowed to add points.
 
 ## 5. A counting bound for small-choice generators
 
@@ -708,11 +731,13 @@ metric spaces; they pose as an open question to describe the extremal metric spa
 their number. Casabella, Joswig and Kastner [CJK24] classify the metric spaces on seven points through subdivisions
 of hypersimplices and give new infinite families of rays. Feldman and Kehoe [FK26] give further families of
 extreme rays (bowtie metrics). Howe, Johnson and Lawrence [HJL86] study which graphs produce extreme rays of the
-cone of distance matrices. Lomonosov and Sebő [LS93] ask when the distance function of a graph is the only length
-function, up to scaling, for which all minimum-cardinality paths are shortest, that is, when d_G is extreme, and
-determine the extreme rays of the face of the metric cone that contains d_G; for bipartite G these are exactly the
-summands of the metric decomposition of Graham and Winkler. This is a class of graphs for which extremality has a
-combinatorial description, in contrast with Theorem 4, which concerns weighted, non-graphic rays. In none of these
+cone of distance matrices. Lomonosov and Sebő [LS93] ask which graphs are *primitive*, that is, have d_G extreme, and
+more generally describe the minimal face of the metric cone that contains d_G. For bipartite G they give a complete
+combinatorial answer: the extreme rays of that face are the characteristic vectors of the classes of an
+"oppositeness" relation on the edges, and G is primitive iff there is one class. The relation is a condition on
+four points, so in our terms their theorem says that bipartite graphic extreme rays have locality 4 (the corollary
+after Theorem 3). For arbitrary graphs they state that this does not characterise primitivity [LS93, p. 229].
+Theorem 4 shows that for weighted metrics no relation on a bounded number of points can play this role. In none of these
 did we find the locality invariant, a bound on generators, or a
 statement that extreme rays cannot be recognised by local deduction on a bounded number of points.
 
@@ -736,6 +761,7 @@ archived version.
 | Theorem 4 (a), (b): checks V1–V3; remark 4 | `family_C_proof.py`, `family_C_structure.py`, `pattern_hunt.py`, `cand_pattern.py` | `family_C_proof.json`, `pattern_hunt.json`, `cand_pattern.json` |
 | Theorem 4 (c): t ≤ 21; checks W1–W3 for t ≥ 23 | `family_C.py`; `family_C_top.py` | `family_C.json`; `family_C_top.json` |
 | Theorem 4 (c): second implementation of W1–W3 | `family_C_top_check.py` | `family_C_top_check.json` |
+| Corollary on bipartite graphs | `bipartite_check.py` | `bipartite_check.json` |
 | Comp. 1, validation | `locality_checks.py`, `ray_count_check.py` | `locality_checks.json`, `ray_count_check.json` |
 | Comp. 2 | `locality.py --all9` | `locality_m9all.json` |
 | Comp. 3 | `locality_switch9.py` | `locality_switch9.json` |
@@ -772,10 +798,10 @@ assistant; neither they nor the proofs have yet been checked by a second person.
    proof also passes its guard for t = 19, 21, so the two methods agree where both were run.
 3. **Citations.** Forward citations of [A80], [L96], [DI07] were checked in OpenAlex and, through its public API,
    in zbMATH Open (2026-11-26; also [LP92], Grishukhin 1992 and seven keyword searches). The zbMATH search found
-   two works not cited before, [HJL86] and [LS93], now in Section 8. **[LS93] must be read before submission:** its
-   description in Section 8 is taken from the zbMATH summary only, and it is the closest prior work on "when is
-   d_G extreme" (a complete combinatorial answer for bipartite graphs). The statement that Theorem 4 is not
-   anticipated by it rests on the summary. One zbMATH record citing [A80] and [DI07] (Zbl 1578.52017, 2025) is
+   two works not cited before, [HJL86] and [LS93], now in Section 8. [LS93] was then read in full (scan supplied by the author, 2026-11-26): it is the closest
+   prior work, gives the bipartite case completely, and led to the corollary after Theorem 3 and to Remark (6)
+   after Theorem 4; it does not anticipate Theorem 4. The corollary's proof and Remark (6) are new and unread by
+   anyone else. One zbMATH record citing [A80] and [DI07] (Zbl 1578.52017, 2025) is
    hidden for licence reasons and could not be identified. MathSciNet was not consulted. Citing relations and titles were taken from the index, partly through machine summaries. Not read in
    full text: Karzanov, *Metrics with finite sets of primitive extensions* (Ann. Comb. 2, 1998); Grishukhin,
    *Computing extreme rays of the metric cone for seven points* (European J. Combin. 13, 1992); Avis, *Extremal
@@ -821,8 +847,7 @@ assistant; neither they nor the proofs have yet been checked by a second person.
 - [FK26] D. V. Feldman, E. R. Kehoe, Extreme rays of the metric cone and the metric body: bowtie metrics and
   half-one extremality, preprint, Zenodo, doi:10.5281/zenodo.21898516 (2026).
 - [LS93] M. Lomonosov, A. Sebő, On the geodesic-structure of graphs: a polyhedral approach to metric decomposition,
-  in Integer Programming and Combinatorial Optimization (Erice, 1993), G. Rinaldi et al. (eds.), CORE,
-  Louvain-la-Neuve, 1993, 221–234.
+  in Third IPCO Conference (Erice, 1993), G. Rinaldi and L. Wolsey (eds.), CORE, Louvain-la-Neuve, 1993, 221–234.
 - [MPV08] J. Melleray, F. V. Petrov, A. M. Vershik, Linearly rigid metric spaces and the embedding problem, Fund.
   Math. 199 (2008) 177–194, arXiv:math/0611049.
 - [DD-web] A. Deza, metric polytope data page, www.cas.mcmaster.ca/~deza/metric.html.

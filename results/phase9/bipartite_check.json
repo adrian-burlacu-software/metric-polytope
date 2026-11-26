@@ -1,0 +1,29 @@
+{
+ "stats": {
+  "5": {
+   "graphs": 120,
+   "extreme": 40
+  },
+  "6": {
+   "graphs": 120,
+   "extreme": 34
+  },
+  "7": {
+   "graphs": 120,
+   "extreme": 42
+  },
+  "8": {
+   "graphs": 120,
+   "extreme": 48
+  },
+  "9": {
+   "graphs": 60,
+   "extreme": 26
+  },
+  "10": {
+   "graphs": 60,
+   "extreme": 25
+  }
+ },
+ "disagreements": []
+}

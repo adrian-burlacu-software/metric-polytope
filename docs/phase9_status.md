@@ -714,3 +714,16 @@ The proof joins every two points by a path of length k·d(i,j), so it needs posi
 says "with positive distances" and a remark notes that zero distances follow from [A80, Thm 4.2]. (ii) In the
 paper the computations are now "Comp. 1" to "Comp. 12" (were C1–C12, which collided with the family C_t at t = 9).
 These notes keep the old labels C1–C12.
+
+## 26. Literature follow-up and the bipartite corollary (2026-11-26)
+
+- zbMATH Open (public API) searched: works citing [A80], [L96], [DI07], [LP92], Grishukhin 1992, and seven keyword
+  queries. No result of the kind of Theorem 4 or 6. New references: Howe–Johnson–Lawrence 1986 and
+  Lomonosov–Sebő 1993 (IPCO 3), the latter read in full from a scan supplied by the author.
+- Lomonosov–Sebő: for bipartite G, d_G is extreme iff the "oppositeness" relation on edges (a condition on four
+  points) has one class. With the proof of Theorem 3(a) this gives a corollary: for bipartite graphs, extreme
+  ⟺ L = 4. Checked on 600 random bipartite graphs, 0 disagreements (`scripts/phase9/bipartite_check.py`).
+- Remark (6) after Theorem 4: L is not monotone under restriction. C_t (L = 2t) is a restriction of Avis's F(G),
+  which is 1-ic-colorable and so has L = 4. Theorem 4 therefore says nothing about tests that may add points.
+- Bibliography compared with Crossref/arXiv/Zenodo; Bodwin and Casabella–Joswig–Kastner updated to published
+  versions. Starred values: kept as they are (author's decision); the record values 12, 13, 17 are exact.
