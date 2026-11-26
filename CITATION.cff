@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "metric-polytope: code, data and paper draft for 'Extremality in the metric cone has unbounded locality'"
+type: software
+authors:
+  - family-names: Burlacu
+    given-names: Adrian
+repository-code: "https://github.com/adrian-burlacu-software/metric-polytope"
+license: MIT
+date-released: "2026-11-26"
+keywords:
+  - metric cone
+  - metric polytope
+  - extreme rays
+  - computer-assisted proof

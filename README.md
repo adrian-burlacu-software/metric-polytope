@@ -33,7 +33,7 @@ paper
 
 Python 3.12 or later, with the packages in `requirements.txt`.
 
-```
+```text
 pip install -r requirements.txt
 python scripts/phase9/family_C_proof.py          # parts (a), (b): finite checks V1-V3
 python scripts/phase9/family_C_top.py            # part (c), t >= 23: checks W1-W3
@@ -47,6 +47,15 @@ Each script writes a JSON file to `results/phase9/` and prints a summary.
 The list of vertex orbits of m_9 (Deza and Indik) is not included. It is distributed by its authors at
 <https://www.cas.mcmaster.ca/~deza/metric.html>; the checksums of the file used here are in
 `data/deza/orbits9/SHA256SUMS.txt`. The computations of the paper that are about this list need it.
+
+## Licence
+
+- Code (everything outside `docs/` and `data/`): MIT, see [LICENSE](LICENSE).
+- The paper and the notes in `docs/`: Creative Commons Attribution 4.0 International (CC BY 4.0), see
+  [docs/LICENSE-CC-BY-4.0.txt](docs/LICENSE-CC-BY-4.0.txt).
+- `data/deza/raw/` and `data/smapo/raw/` are third-party data, redistributed unchanged with their sources and
+  checksums (see `data/deza/raw/FETCHED_AT.txt` and `data/smapo/SOURCES.md`). They are not covered by the licences
+  above; the rights remain with their authors.
 
 ## Status
 

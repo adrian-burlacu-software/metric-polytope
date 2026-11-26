@@ -1,0 +1,11 @@
+{
+  "title": "metric-polytope: code, data and paper draft for 'Extremality in the metric cone has unbounded locality'",
+  "upload_type": "software",
+  "creators": [
+    {"name": "Burlacu, Adrian"}
+  ],
+  "description": "Scripts, outputs and paper draft for a computational study of the metric cone MET_n and the metric polytope m_n. Contains the two implementations of the computer-assisted part of the theorem L(C_t) = 2t (scripts/phase9/family_C_top.py and family_C_top_check.py), the locality computations on the vertex lists, and the paper (docs/paper.tex, docs/paper.pdf). Code is under the MIT licence; the paper and notes in docs/ are under CC BY 4.0; the files in data/deza/raw and data/smapo/raw are third-party data, redistributed with their sources and checksums and not covered by these licences.",
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": ["metric cone", "metric polytope", "extreme rays", "locality", "computer-assisted proof"]
+}
