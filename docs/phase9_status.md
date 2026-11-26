@@ -707,3 +707,10 @@ Limits: same author; Lemma P and Steps 1–2 are shared mathematics, checked on 
   Σ g(n_i) ≤ g(n−1) + g(q+1). A numerical check of the worst-case recurrence (5 parameter sets, n up to 40) is
   consistent with it. Unbounded overlap is excluded and Remark (d) says why: two (n−1)-point restrictions determine
   a vertex up to two possibilities, so such a rule escapes any counting argument of this kind.
+
+**Follow-up (same day).** (i) Avis's Theorem 3.5 re-read from the publisher's PDF: "If x is a rational metric on m
+points, there exists an integer n and an extreme ray d ∈ M_n so that d|m = x" — an exact restriction (d = d_F(G)/k).
+The proof joins every two points by a path of length k·d(i,j), so it needs positive distances; Proposition 7 now
+says "with positive distances" and a remark notes that zero distances follow from [A80, Thm 4.2]. (ii) In the
+paper the computations are now "Comp. 1" to "Comp. 12" (were C1–C12, which collided with the family C_t at t = 9).
+These notes keep the old labels C1–C12.

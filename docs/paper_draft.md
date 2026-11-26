@@ -67,11 +67,11 @@ does not cover it (Remark (d) after Theorem 6).
    density theorem), and a generator with at most (1 − δ)n bits of choice per node, whose rules may combine several
    inputs with bounded overlap, produces a vanishing share of them (Theorem 6).
 3b. *Hereditary tests.* A test that accepts a metric when all its restrictions to at most s points belong to an
-   allowed set, and that accepts every extreme ray, accepts every rational metric (Proposition 7, a consequence of
+   allowed set, and that accepts every extreme ray, accepts every rational metric with positive distances (Proposition 7, a consequence of
    Avis's embedding theorem).
-4. *Exact computations.* L for all extreme rays of MET_n, n ≤ 8, and for the m_9 list (C1–C3); searches for large
-   locality beyond the lists (C4–C6); and negative results for four other candidate descriptions of the m_9 list
-   (C7–C12).
+4. *Exact computations.* L for all extreme rays of MET_n, n ≤ 8, and for the m_9 list (Comp. 1–3); searches for large
+   locality beyond the lists (Comp. 4–6); and negative results for four other candidate descriptions of the m_9 list
+   (Comp. 7–12).
 
 Together, 1 and 2 say that the scope of the rank condition is the smallest possible for a typical graph and
 unbounded in the worst case. What is excluded is stated precisely in the paragraph "What L bounds" of Section 3 and
@@ -99,7 +99,7 @@ lies on the C(n,2) − 1 independent facets of T(d), so it is an edge. ∎
 
 Conversely, a vertex of m_n adjacent to a cut is, after the switching that moves this cut to 0, of the form (2/τ)d
 for an extreme ray d [LP92]. Every vertex of m_n, n ≤ 8, is adjacent to a cut; on the m_9 list 1,221 orbits are not
-[DI07] (re-derived in C7 below).
+[DI07] (re-derived in Comp. 7 below).
 
 **Weighted graphs.** For a metric d with positive distances, the *minimal graph* has an edge ab of weight d_ab
 whenever no third point is between a and b; d is its shortest-path metric. We scale d to coprime integers and call
@@ -176,7 +176,7 @@ Part (b) is the case p = 1/2 of Avis's density theorem [A80, Thm 3.3], with the 
 argument follows Avis's and treats explicitly the pairs of edges with a common endpoint.
 
 **Remark (finite n).** The union bound in (b) is effective only for n in the thousands, but the conclusion sets in
-much earlier (C4 below): of 300 samples of G(n, 1/2) each, the shares with d_G extreme are 0.7%, 6%, 23%, 61%,
+much earlier (Comp. 4 below): of 300 samples of G(n, 1/2) each, the shares with d_G extreme are 0.7%, 6%, 23%, 61%,
 81%, 91%, 99.3%, 100% for n = 6, 8, 10, 12, 14, 16, 20, 24, and all but one of these 1,383 rays have L = 4.
 
 ## 4. Locality is unbounded
@@ -397,7 +397,7 @@ offsets capped at ±3 are, for all large t, the points of a fixed 12-dimensional
 (`pattern_hunt.py`); of its 26,319 extreme rays with positive distances, 9,464 give extreme rays of MET_2t for at
 least two t between 9 and 14, and 96 pass two filters (classes left unmerged on the cycle, and no merge forced on an
 open stretch); 8 of the 96 have L = 2t at t = 9, 11, 13, and they are C_t, its variant (3), their mirror images and
-the versions with A and B exchanged. (5) Chirality matters: the mirror-symmetric family K_t of C6 reduces in the
+the versions with A and B exchanged. (5) Chirality matters: the mirror-symmetric family K_t of Comp. 6 reduces in the
 same way to a recurrence, but all its characteristic roots are roots of unity, every solution on an open stretch is
 periodic, and its locality stays bounded.
 
@@ -432,7 +432,7 @@ Nothing is assumed about the objects: they may be vertices, points of m_n that a
 structures. A rule with one input adds one or more nodes to an object. A rule with two inputs on n_1 and n_2 nodes
 that identifies k nodes of the first with k nodes of the second has n = n_1 + n_2 − k, so the condition says k ≤ q:
 gluing along at most q common points is allowed, gluing along more is not. Restriction-keeping moves, families with
-boundedly many integer parameters of size polynomial in n, and the generator of C9 for a fixed denominator are
+boundedly many integer parameters of size polynomial in n, and the generator of Comp. 9 for a fixed denominator are
 generators with one input per rule and b(n) = O(log n).
 
 **Theorem 6.** Let a generator have b(n) ≤ (1 − δ)n for some δ > 0 and all large n. Then it produces at most
@@ -483,7 +483,7 @@ positive share of the orbits is not settled by our argument.
 
 **Question 1.** Let r(n) be the number of extreme rays of MET_n. Is log₂ r(n) ~ n²/2, i.e. are almost all extreme
 rays graphic on the logarithmic scale, or is lim log₂ r(n)/n² > 1/2? By [CL25] the limit, if it exists, is at most
-2.38. On the lists the graphic share of the cut-adjacent orbits is 92%, 20%, 0.52% for n = 7, 8, 9 (C10), which
+2.38. On the lists the graphic share of the cut-adjacent orbits is 92%, 20%, 0.52% for n = 7, 8, 9 (Comp. 10), which
 suggests that non-graphic rays dominate at least in number. (For vertices of m_n not adjacent to a cut we know only
 the trivial bound 2^O(n² log n).)
 
@@ -500,18 +500,26 @@ restriction of d to every set of at most s points belongs to 𝒜.
 Equivalently, the test forbids the restrictions outside 𝒜; the set 𝒜 is arbitrary and may be infinite, but it is the
 same for all n.
 
-**Proposition 7.** A hereditary test that accepts every metric spanning an extreme ray of some MET_n accepts every
-rational metric. In particular, for no s is there a hereditary test that accepts exactly the extreme rays: on every
-n ≥ 3 points it accepts metrics that are not extreme, for instance the metric with all distances equal to 1.
+**Proposition 7.** A hereditary test that accepts every metric with positive distances spanning an extreme ray of
+some MET_n accepts every rational metric with positive distances. In particular, for no s is there a hereditary test
+that accepts exactly the extreme rays: on every n ≥ 3 points it accepts metrics that are not extreme, for instance
+the metric with all distances equal to 1.
 
-*Proof.* Let d be a rational metric on m points. By Avis's embedding theorem [A80, Thm 3.5], d is the restriction of
-a metric D on some n ≥ m points that spans an extreme ray of MET_n. Every restriction of d to at most s points is a
+*Proof.* Let d be a rational metric with positive distances on m points. Avis's embedding theorem [A80, Thm 3.5]
+states that there are an integer n and a metric D on n ≥ m points, spanning an extreme ray of MET_n, whose
+restriction to the first m points is equal to d; the restriction is d itself, not a multiple of it. In Avis's proof,
+k is the least positive integer with k·d integral, G is the graph in which every two of the m points are joined by a
+path of length k·d_ij, and D = d_F(G)/k for a graph F(G) that contains G isometrically [A80, Lemma 3.4]; so D has
+positive distances, and the construction uses that d has. Every restriction of d to at most s points is a
 restriction of D to the same points, and belongs to 𝒜 because the test accepts D. So the test accepts d. The metric
 with all distances 1 on n ≥ 3 points has no tight triple, so it is not extreme. ∎
 
 **Remarks.** (1) The proposition and Theorem 4 exclude two different kinds of test, and neither implies the other. A
 hereditary test that accepts all extreme rays is not sound, for any s: it also accepts metrics that are not extreme.
-A test by s-local deduction is always sound (Proposition 2(ii)) and fails to be complete. (2) The proposition uses
+A test by s-local deduction is always sound (Proposition 2(ii)) and fails to be complete. (2) Zero distances are excluded in the
+proposition because the construction in [A80] needs paths of positive length. They can be admitted: a metric with
+zero distances is extreme iff its restriction to one point from each class of points at distance zero is extreme
+[A80, Thm 4.2], so the embedding extends by repeating points. We do not need this. (3) The proposition uses
 that the allowed set does not depend on n. It does not cover tests that require some configuration to be present,
 Boolean combinations of forbidden and required configurations, or tests that count configurations; and Theorem 4
 does not cover deductions of relations with more than two terms. A statement that no test of bounded scope of any
@@ -526,10 +534,10 @@ n = 9 as distributed by its authors. The distributed file has 1,056,367 orbits i
 the authors' web page state 1,056,368. The file has 1,056,369 lines of which two are header lines, so the published
 number equals the number of lines minus one, which suggests a counting slip, but we cannot exclude that one orbit is
 missing from the file. We verified that the 1,056,367 rows are vertices, pairwise inequivalent, and include the
-1,221 orbits of [DI07] that are not adjacent to a cut. The m_9 list is not known to be complete, so C2, C3 and
-C7–C12 are statements about the list.
+1,221 orbits of [DI07] that are not adjacent to a cut. The m_9 list is not known to be complete, so Comp. 2, Comp. 3 and
+Comp. 7–12 are statements about the list.
 
-**C1 (all extreme rays of MET_k, k ≤ 8).** Every extreme ray of MET_k with positive distances is obtained from a
+**Comp. 1 (all extreme rays of MET_k, k ≤ 8).** Every extreme ray of MET_k with positive distances is obtained from a
 vertex of m_k by a switching (Lemma 1 and its converse). Running through all 2^(k−1) switchings of every orbit
 representative gives 1, 3, 33, 3,751 rays up to permutation for k = 5, 6, 7, 8. As a check of completeness we
 counted all extreme rays of MET_n from these lists (a ray on k points with automorphism group A gives
@@ -547,7 +555,7 @@ are 3, 8, 46, 3,918.
 *Validation of the implementation.* On 14,646 weighted graphs with 5 to 11 nodes (957 rays, 13,689 non-rays by the
 rank test) the closure at s = k ends with one class exactly for the rays, as Proposition 2(iii) requires.
 
-**C2 (the m_9 list).** For each of the 1,055,145 cut-adjacent orbits, one switching to a ray (the one with the
+**Comp. 2 (the m_9 list).** For each of the 1,055,145 cut-adjacent orbits, one switching to a ray (the one with the
 smallest alphabet); 3,394 of these rays have fewer than 9 distinct points and are counted with their own k.
 
 | k | rays | L = 4 | 5 | 6 | 7 | 8 | 9 |
@@ -561,24 +569,24 @@ of the list, both of denominator 27, weights 5 to 10, with 37 tight triples wher
 closure stops changing at level 6 with 13 and 12 classes joined by 14 and 13 relations, one more than the number of
 classes: the quotient system is a single circuit, and it has no two-term consequence on fewer than all 9 points.
 
-**C3 (dependence on the switching).** L is an invariant of the ray, not of the orbit of m_n: different switchings
-of a vertex give different rays. For n ≤ 8 all switchings are covered by C1. For 4,000 random orbits of the m_9 list
+**Comp. 3 (dependence on the switching).** L is an invariant of the ray, not of the orbit of m_n: different switchings
+of a vertex give different rays. For n ≤ 8 all switchings are covered by Comp. 1. For 4,000 random orbits of the m_9 list
 and all 256 switchings (27,826 rays, 27,737 of them on 9 distinct points) the distribution over the latter is
-L = 4: 30.4%, 5: 48.4%, 6: 19.7%, 7: 1.5%, 8: 0.03%, close to the distribution of C2. Per orbit, the smallest L over
+L = 4: 30.4%, 5: 48.4%, 6: 19.7%, 7: 1.5%, 8: 0.03%, close to the distribution of Comp. 2. Per orbit, the smallest L over
 the switchings is 4 for 49% of the orbits, 5 for 42%, 6 for 9%, 7 for 0.2%; the largest is 4 for 5%, 5 for 43%,
 6 for 46%, 7 for 7%, 8 for 0.2%; the two differ by at most 4. So 9% of the sampled orbits have no switching with
 L ≤ 5.
 
-**Reading of C1–C3.** The largest locality is 4, 4, 5, 7, 9 for k = 5, ..., 9, and the share of rays with L = 4
+**Reading of Comp. 1–3.** The largest locality is 4, 4, 5, 7, 9 for k = 5, ..., 9, and the share of rays with L = 4
 decreases (97%, 72%, 30% for k = 7, 8, 9). Fixed-scope deduction characterises the extreme rays for k ≤ 6
 (scope 4) and k ≤ 7 (scope 5) only, and at k = 9 there are rays whose extremality has no proof from any proper
 subset of the points. Large locality is rare on the lists: two orbits in a million at k = 9.
 
-**C4 (random and circulant graphs).** Random graphs G(n, 1/2), 300 samples for each n: see the remark after
+**Comp. 4 (random and circulant graphs).** Random graphs G(n, 1/2), 300 samples for each n: see the remark after
 Theorem 3. Every extreme ray found among the weighted circulant graphs on 7 to 13 nodes with weights at most 3 has
 L = 4. High locality is not typical, and it is not a consequence of symmetry alone.
 
-**C5 (searches for large locality beyond the lists).** Values marked * were computed with a symmetry-reduced
+**Comp. 5 (searches for large locality beyond the lists).** Values marked * were computed with a symmetry-reduced
 closure modulo 2^31 − 1 and not re-run in rational arithmetic.
 (a) *Two-orbit metrics.* The metrics on points A_i, B_i (i ∈ Z_t) invariant under the rotation form a cone whose
 extreme rays can be enumerated and tested. Cyclic symmetry: t = 5 (294 rays of MET_10), largest L = 8; t = 6 (3,019
@@ -591,7 +599,7 @@ points, 6,794 rays): L never above 7. Random face descent in MET_n, n = 7, ..., 
 descents, the others ended with a zero distance): L ≤ 5. The graphs K_1 ∨ C_m² (a centre joined to the square of
 the m-cycle) are graphic extreme rays with L = 7 for every m from 8 to 13.
 
-**C6 (a symmetric family whose locality saturates).** The family K_t on A_i, B_i (i ∈ Z_t): d(A_i, A_{i±1}) = 10,
+**Comp. 6 (a symmetric family whose locality saturates).** The family K_t on A_i, B_i (i ∈ Z_t): d(A_i, A_{i±1}) = 10,
 d(A_i, A_{i±2}) = 20, d(A_i, A_j) = 26 otherwise; d(B_i, B_{i±1}) = 24, d(B_i, B_j) = 12 otherwise; d(A_i, B_i) = 7,
 d(A_i, B_{i±1}) = 17, d(A_i, B_{i±2}) = 13, d(A_i, B_j) = 19 otherwise. It is invariant under the dihedral group.
 By computation K_t is an extreme ray for t = 7, 11, 13, 17, 19 and for no other t from 7 to 20, with L = 12 for
@@ -601,24 +609,24 @@ s_i + s_{i+1} + 2s_{i+2} + s_{i+3} + s_{i+4} = 6K for all i mod t. Its symbol (1
 at the primitive 3rd and 4th roots of unity. So K_t cannot be an extreme ray when 3 or 4 divides t, and every
 solution along an open stretch of the cycle has period 12, so 13 consecutive positions force s_j = s_{j+12}; this
 caps the locality of the family. (The failure for t = 10, 14 is not explained by this recurrence alone.) Of 1,094
-mirror-symmetric local-pattern families obtained by extending the dihedral rays of C5(a) for t = 7, every one has a
+mirror-symmetric local-pattern families obtained by extending the dihedral rays of Comp. 5(a) for t = 7, every one has a
 window of 14 positions that forces merges beyond the 4-point ones. This is what led to the chiral families of
 Section 4.
 
 **Largest locality known per n.** 4, 4, 5, 7 for n = 5, ..., 8 (complete lists); 9 for n = 9 (the m_9 list); at least
-8, 8, 9, 12, 13 for n = 10, 11, 12, 14, 15 (C5); n for every n ≡ 2 (mod 4), n ≥ 18 (Theorem 4(c)).
+8, 8, 9, 12, 13 for n = 10, 11, 12, 14, 15 (Comp. 5); n for every n ≡ 2 (mod 4), n ≥ 18 (Theorem 4(c)).
 
-**Fact (from C1, C2).** L(d) ≤ n − 1 for every extreme ray of MET_n, n ≤ 8, but max L = n for n = 9.
+**Fact (from Comp. 1, Comp. 2).** L(d) ≤ n − 1 for every extreme ray of MET_n, n ≤ 8, but max L = n for n = 9.
 
 **Question 2.** Is max { L(d) : d extreme in MET_n } = n for every n ≥ 9? By Theorem 4(c) this holds for
-n ≡ 2 (mod 4), n ≥ 18, and for n = 9 by C2 (the two rays exist whether or not the m_9 list is complete).
+n ≡ 2 (mod 4), n ≥ 18, and for n = 9 by Comp. 2 (the two rays exist whether or not the m_9 list is complete).
 
 **Question 3.** Does the share of orbits of m_n with L = 4 tend to 0? By Theorem 3 and Proposition 5 at least
 2^(n²/2 − O(n log n)) orbits have L = 4, so this is Question 1 in another form.
 
 ## 7. Other descriptions of the m_9 list
 
-**C7 (primitive vertices; cut adjacency).** Call a vertex of m_n *primitive* if none of its restrictions to k nodes,
+**Comp. 7 (primitive vertices; cut adjacency).** Call a vertex of m_n *primitive* if none of its restrictions to k nodes,
 3 ≤ k < n, is a vertex of m_k. A rule that keeps its input as a restriction of its output cannot produce a
 primitive vertex.
 
@@ -630,7 +638,7 @@ primitive vertex.
 
 On the m_9 list 1,221 orbits are not adjacent to a cut, in agreement with [DI07].
 
-**C8 (a normal form).** Say node v can be *peeled* from the node set S of a vertex x if x|S is a vertex of the fiber
+**Comp. 8 (a normal form).** Say node v can be *peeled* from the node set S of a vertex x if x|S is a vertex of the fiber
 of m_S over x|(S − v), i.e. the coordinates x_va are determined by the tight inequalities inside S that contain v.
 Peel until no node can be peeled; the remaining set is a *seed*. On the m_9 list the seed has 3 nodes for 583,636
 orbits, 4 nodes for 472,722 and 5 nodes for 8. A tight triangle through v gives an equation x_va ± x_vb = c; these
@@ -639,7 +647,7 @@ the lengths of the shortest unbalanced cycles of its components, the 1,056,366 n
 steps: one 3-cycle (5,760,177 steps), two components with 3-cycles (88,230), one 5-cycle (11,967), one 2-cycle
 (3,497), one 7-cycle (1,565), a 3-cycle and a 5-cycle (22).
 
-**C9 (the normal form is not a construction).** The generator "start from all points of m_3 and m_4 with
+**Comp. 9 (the normal form is not a construction).** The generator "start from all points of m_3 and m_4 with
 denominator D, extend by all determined steps with denominator D, test for vertices" finds every orbit of m_8 with
 D = 3, 4, 5, 6 (52, 12, 15, 95 orbits) and nothing else, from 2,958, 67,164, 757,052 and 5,215,846 candidates on 8
 nodes, of which 43%, 0.28%, 0.04%, 0.07% are vertices. The partial points that lie on a path to a vertex number 39,
@@ -647,7 +655,7 @@ nodes, of which 43%, 0.28%, 0.04%, 0.07% are vertices. The partial points that l
 extension were tested as filters that never discard a useful extension; the best keeps 86–100% of the extensions
 where 17–56% are useful.
 
-**C10 (graph-indexed families).** Alphabets and underlying graphs of the cut-adjacent orbits:
+**Comp. 10 (graph-indexed families).** Alphabets and underlying graphs of the cut-adjacent orbits:
 
 | n | orbits | alphabets | graphic | underlying graphs | most orbits on one graph |
 |---|---|---|---|---|---|
@@ -657,13 +665,13 @@ where 17–56% are useful.
 
 A graph does not determine its weights, so "graph ↦ vertex" needs the weights as input.
 
-**C11 (the simplest weighted family).** For rays with alphabet ⊆ {1, 2} (1, 3, 28, 925 for k = 5, ..., 8; 27,963
+**Comp. 11 (the simplest weighted family).** For rays with alphabet ⊆ {1, 2} (1, 3, 28, 925 for k = 5, ..., 8; 27,963
 from the m_9 list) a deduction rule in the spirit of [A80, §2] (opposite sides of geodesic rectangles; odd closed
 chains of exchanges; propagation through triples with one unknown) is sufficient for extremality and is necessary
 for all 957 rays with k ≤ 8; it fails for 76 of the 27,963 rays on 9 nodes. The best necessary condition found
 rejects 92% of 7,344 near-miss non-rays. This repeats, for weights {1, 2}, the experience of [A80, p. 132–133].
 
-**C12 (elliptope).** For x in an orbit let λ(x) be the smallest eigenvalue of J − 2X, an orbit invariant. On m_7,
+**Comp. 12 (elliptope).** For x in an orbit let λ(x) be the smallest eigenvalue of J − 2X, an orbit invariant. On m_7,
 m_8 and 1,000 sampled orbits of m_9, λ does not separate the orbits reached by 8 restriction-keeping rules from the
 others (probability that an unreached orbit has smaller λ than a reached one: 0.43, 0.47; 0.46 at equal
 denominators).
@@ -671,7 +679,7 @@ denominators).
 ## 8. Related work
 
 Avis [A80] introduced graphic extreme rays, the isometric-cycle criterion, the density theorem used here and the
-embedding theorem (every rational metric is a restriction of an extreme ray, [A80, Thm 3.5]); the last explains why
+embedding theorem (every rational metric with positive distances is a restriction of an extreme ray, [A80, Thm 3.5]); the last explains why
 "is a restriction of a graphic vertex" cannot characterise vertices. Laurent and Poljak [LP92] and Laurent [L96]
 study graphic and one-third-integral vertices and the operations that preserve vertices. The lists are due to Deza,
 Deza, Fukuda, Pasechnik, Sato, Mizutani, Vo and Indik [DDF96, DFPS01, DFMV03, DI07]. Cizma and Linial [CL25]
@@ -710,21 +718,21 @@ Scripts in `scripts/phase9/`, outputs in `results/phase9/`.
 | Theorem 4 (a), (b): checks V1–V3; remark 4 | `family_C_proof.py`, `family_C_structure.py`, `pattern_hunt.py`, `cand_pattern.py` | `family_C_proof.json`, `pattern_hunt.json`, `cand_pattern.json` |
 | Theorem 4 (c): t ≤ 21; checks W1–W3 for t ≥ 23 | `family_C.py`; `family_C_top.py` | `family_C.json`; `family_C_top.json` |
 | Theorem 4 (c): second implementation of W1–W3 | `family_C_top_check.py` | `family_C_top_check.json` |
-| C1, validation | `locality_checks.py`, `ray_count_check.py` | `locality_checks.json`, `ray_count_check.json` |
-| C2 | `locality.py --all9` | `locality_m9all.json` |
-| C3 | `locality_switch9.py` | `locality_switch9.json` |
-| C4 | `random_graph_locality.py`, `locality_checks.py` | `random_graph_locality.json`, `locality_checks.json` |
-| C5 | `sym_search.py` (`--mirror 0 1 --fast` for the dihedral runs), `locality_checks.py`, `locality_climb.py`, `random_ray_locality.py` | `sym_search.json`, `locality_checks.json`, `locality_climb.json`, `random_ray_locality.json` |
-| C6 | `famK.py`, `famK_level.py`, `family_scan.py`, `window_test.py`, `exact_check.py` | `family_scan.json`, `window_test.json`, `exact_check.json` |
-| C7, C8 | `vertex_structure.py`, `step_types.py` | `vertex_structure_deza9all.json`, `step_types_m9all.json` |
-| C9 | `fiber_generator.py`, `useful_share.py`, `choice_features.py` | `fiber_generator_n8.json`, `useful_share_n8.json`, `choice_features_n8.json` |
-| C10 | `graph_families.py --all9` | `graph_families_m9all.json` |
-| C11 | `family12.py`, `judge_family.py` | `round_18_family.json` |
-| C12 | `elliptope.py` | `elliptope.json` |
+| Comp. 1, validation | `locality_checks.py`, `ray_count_check.py` | `locality_checks.json`, `ray_count_check.json` |
+| Comp. 2 | `locality.py --all9` | `locality_m9all.json` |
+| Comp. 3 | `locality_switch9.py` | `locality_switch9.json` |
+| Comp. 4 | `random_graph_locality.py`, `locality_checks.py` | `random_graph_locality.json`, `locality_checks.json` |
+| Comp. 5 | `sym_search.py` (`--mirror 0 1 --fast` for the dihedral runs), `locality_checks.py`, `locality_climb.py`, `random_ray_locality.py` | `sym_search.json`, `locality_checks.json`, `locality_climb.json`, `random_ray_locality.json` |
+| Comp. 6 | `famK.py`, `famK_level.py`, `family_scan.py`, `window_test.py`, `exact_check.py` | `family_scan.json`, `window_test.json`, `exact_check.json` |
+| Comp. 7, Comp. 8 | `vertex_structure.py`, `step_types.py` | `vertex_structure_deza9all.json`, `step_types_m9all.json` |
+| Comp. 9 | `fiber_generator.py`, `useful_share.py`, `choice_features.py` | `fiber_generator_n8.json`, `useful_share_n8.json`, `choice_features_n8.json` |
+| Comp. 10 | `graph_families.py --all9` | `graph_families_m9all.json` |
+| Comp. 11 | `family12.py`, `judge_family.py` | `round_18_family.json` |
+| Comp. 12 | `elliptope.py` | `elliptope.json` |
 
 Ranks are computed modulo 2^31 − 1 with an exact fallback whenever the modular rank is deficient, so every "is a
 vertex" and "is a ray" verdict is exact; the locality closure uses rational arithmetic throughout, except for the
-values marked * in C5 and C6 and the parenthesis of Theorem 4(c).
+values marked * in Comp. 5 and Comp. 6 and the parenthesis of Theorem 4(c).
 
 ## 10. Before submission (not part of the paper)
 
@@ -746,9 +754,9 @@ values marked * in C5 and C6 and the parenthesis of Theorem 4(c).
    data of [MPV08], [CJK24], [FK26] come from index records and should be checked against the papers.
 4. **The m_9 count.** The file has one orbit fewer than published (Section 6); the authors of the list could
    confirm which number is right.
-5. **Values marked *** (C5, C6) should be re-run in rational arithmetic or dropped.
+5. **Values marked *** (Comp. 5, Comp. 6) should be re-run in rational arithmetic or dropped.
 6. **Earlier numbering.** In the project notes (`docs/phase9_status.md`) Theorem 6 is "Theorem 1", Proposition 5 is
-   "Corollary 1", and C3–C12 appear as C2′, C3–C3⁗, C4–C9.
+   "Corollary 1", and Comp. 3–12 appear as Comp. 2′, Comp. 3–3⁗, Comp. 4–9.
 
 ## References
 
