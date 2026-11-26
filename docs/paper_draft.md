@@ -359,6 +359,23 @@ and L(C_t) = 2t. ∎
 The search procedure was tested on 300 equations with planted solutions (all recovered), and by duplicating one
 class of each kind under a different name (every duplicate is reported as a coincidence); see `--selftest`.
 
+*Second implementation.* Checks W1–W3 were repeated by a second program written from the text of this proof
+(`family_C_top_check.py`; it shares no code with the first). It differs in three ways. (i) It fixes R = 10 and
+treats every pair with an index within R of the removed point as a class of its own with an explicit value
+r_0 + r_1ε, computed pair by pair from the formulas of Step 1 (354 resp. 334 such classes); all other pairs have
+R < k < t − R, where the formula D = ±gκ′ + aκλ^(−k) applies for every type, so no list of exceptional positions is
+needed. (ii) The equation G_0 = Σ c_i λ^(−k_i) is solved by another method: some term of a solution has absolute
+value at least |G_0|/(number of terms); this term and its exponent are enumerated, and one recurses. (iii) A
+solution is discarded only if P and Q are the same class, if an exponent violates t − k > R (or the corresponding
+bound for a far B-pair), or if the two points of a far B-pair are closer than 3; every other solution would be
+reported. Of 86,799 resp. 66,096 equations, 373 resp. 400 have solutions (69 resp. 36 the same class, 304 resp. 364
+out of range), and none is reported. The cut solutions of the two programs are equal. The second program builds
+the solution on the real cycles t = 23, 25, 27, 29, 31, 37, 45 with arrays indexed modulo t, verifies every tight
+triple, and checks that the classes of π inside W correspond one to one, with equal values, to the instances of its
+list of classes that are in range at t. Its search was compared with exhaustive enumeration in a box on 150 random
+equations (261 solutions, none missed), and it reports duplicated classes and classes planted to coincide at one
+value of t.
+
 **Remarks.** (1) Part (b) is implied by (c); we keep it because its proof needs only Lemma S, while (c) relies on a
 larger computation. (2) The level-(2t − 1) closure of C_t has exactly (t² + 13t + 2)/2 classes for every odd t from
 9 to 21, the number of classes of π: in these cases cl_{2t−1} = π.
@@ -615,6 +632,7 @@ Scripts in `scripts/phase9/`, outputs in `results/phase9/`.
 |---|---|---|
 | Theorem 4 (a), (b): checks V1–V3; remark 4 | `family_C_proof.py`, `family_C_structure.py`, `pattern_hunt.py`, `cand_pattern.py` | `family_C_proof.json`, `pattern_hunt.json`, `cand_pattern.json` |
 | Theorem 4 (c): t ≤ 21; checks W1–W3 for t ≥ 23 | `family_C.py`; `family_C_top.py` | `family_C.json`; `family_C_top.json` |
+| Theorem 4 (c): second implementation of W1–W3 | `family_C_top_check.py` | `family_C_top_check.json` |
 | C1, validation | `locality_checks.py`, `ray_count_check.py` | `locality_checks.json`, `ray_count_check.json` |
 | C2 | `locality.py --all9` | `locality_m9all.json` |
 | C3 | `locality_switch9.py` | `locality_switch9.json` |
@@ -635,8 +653,9 @@ values marked * in C5 and C6 and the parenthesis of Theorem 4(c).
 
 1. **Second reader.** The proofs of Theorem 4 and Theorem 3(b) have been checked only by their author and, for the
    finite checks V1–V3 and W1–W3, by `family_C_proof.py` and `family_C_top.py`. Both should be read by a second
-   person. Theorem 4(c) depends on the correctness of the search in `family_C_top.py` (about 150 lines: `solve`,
-   `homogeneous`, `admissible`, `build_classes`); an independent re-implementation would be the strongest check.
+   person. The search of Theorem 4(c) now exists in two implementations that agree (`family_C_top.py`,
+   `family_C_top_check.py`, 2026-11-26), but both were written by the same author and both rest on Lemma P and on
+   Steps 1–2 as stated; the real-cycle checks cover these only for the values of t that were run (19 to 45).
 2. **Theorem 4(c) for 9 ≤ t ≤ 21** rests on the closure computation, not on the proof; the construction of the
    proof also passes its guard for t = 19, 21, so the two methods agree where both were run.
 3. **Citations.** Forward citations of [A80], [L96], [DI07] were checked in OpenAlex only (2026-11-26); zbMATH

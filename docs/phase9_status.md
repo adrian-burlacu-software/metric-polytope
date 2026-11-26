@@ -673,3 +673,21 @@ independently before submission.
 
 **Also done.** The paper draft was restructured (Theorem 4 as the main result; statements renumbered: the counting
 theorem is now Theorem 6, the orbit count Proposition 5; computations C1–C12).
+
+## 24. Second implementation of the search for Theorem 4(c) (2026-11-26)
+
+`scripts/phase9/family_C_top_check.py`, written from the proof text in the draft, no code shared with
+`family_C_top.py`. Different basis (1, u, u², u = 1/λ), different list of classes (window of radius 10 around the
+removed point with explicit values; uniform bulk outside), different solver (enumerate a term of size ≥ |G|/n),
+and a rule that reports every solution it cannot exclude for a reason valid for all shifts.
+
+Result: 0 possible coincidences for A_0 (86,799 equations, 373 with solutions) and B_0 (66,096; 400). Cut solutions
+equal to those of the first script (scale −2 for A_0). Guards on real cycles t = 23, 25, 27, 29, 31, 37, 45: all
+tight triples; classes of π inside W ↔ in-range instances of the list, one to one, equal values. Self-test: search
+against brute force in a box (150 equations, 261 solutions, 0 missed); duplicated and planted classes reported.
+Five deliberate faults (a range widened, a far condition dropped, a window value perturbed, a cut value perturbed,
+an extra class) are all caught by the guard. The first version of the guard missed the widened range, because the
+enumeration of instances used the range itself; fixed by enumerating exponents over 1..t+R.
+
+Run time 10 s; self-test 20 s. The old script and its self-test were re-run on the same day and pass.
+Limits: same author; Lemma P and Steps 1–2 are shared mathematics, checked on real cycles only for t ≤ 45.

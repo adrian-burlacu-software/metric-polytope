@@ -1,0 +1,130 @@
+{
+ "A": {
+  "rank": 19,
+  "free": [
+   "('p', 0)"
+  ],
+  "guard": [
+   {
+    "t": 23,
+    "tight_triples": 1288,
+    "classes": 408
+   },
+   {
+    "t": 25,
+    "tight_triples": 1548,
+    "classes": 469
+   },
+   {
+    "t": 27,
+    "tight_triples": 1832,
+    "classes": 534
+   },
+   {
+    "t": 29,
+    "tight_triples": 2140,
+    "classes": 603
+   },
+   {
+    "t": 31,
+    "tight_triples": 2472,
+    "classes": 676
+   },
+   {
+    "t": 37,
+    "tight_triples": 3612,
+    "classes": 919
+   },
+   {
+    "t": 45,
+    "tight_triples": 5468,
+    "classes": 1299
+   }
+  ],
+  "window_classes": 354,
+  "bulk_families": 63,
+  "equations": 86799,
+  "solutions": 373,
+  "discarded": {
+   "exponent beyond its range (t - k too small)": 304,
+   "same class": 69
+  },
+  "coincidences": []
+ },
+ "B": {
+  "rank": 16,
+  "free": [],
+  "guard": [
+   {
+    "t": 23,
+    "tight_triples": 1335,
+    "classes": 386
+   },
+   {
+    "t": 25,
+    "tight_triples": 1601,
+    "classes": 445
+   },
+   {
+    "t": 27,
+    "tight_triples": 1891,
+    "classes": 508
+   },
+   {
+    "t": 29,
+    "tight_triples": 2205,
+    "classes": 575
+   },
+   {
+    "t": 31,
+    "tight_triples": 2543,
+    "classes": 646
+   },
+   {
+    "t": 37,
+    "tight_triples": 3701,
+    "classes": 883
+   },
+   {
+    "t": 45,
+    "tight_triples": 5581,
+    "classes": 1255
+   }
+  ],
+  "window_classes": 334,
+  "bulk_families": 30,
+  "equations": 66096,
+  "solutions": 400,
+  "discarded": {
+   "exponent beyond its range (t - k too small)": 364,
+   "same class": 36
+  },
+  "coincidences": []
+ },
+ "ok": true,
+ "T0": 23,
+ "R": 10,
+ "log": [
+  "case A_0: 20 unknowns, 36 equations, rank 19, free [('p', 0)], consistent True",
+  "   guard t = 23: 1288 tight triples hold; 408 classes = catalogue instances, values equal and pairwise different",
+  "   guard t = 25: 1548 tight triples hold; 469 classes = catalogue instances, values equal and pairwise different",
+  "   guard t = 27: 1832 tight triples hold; 534 classes = catalogue instances, values equal and pairwise different",
+  "   guard t = 29: 2140 tight triples hold; 603 classes = catalogue instances, values equal and pairwise different",
+  "   guard t = 31: 2472 tight triples hold; 676 classes = catalogue instances, values equal and pairwise different",
+  "   guard t = 37: 3612 tight triples hold; 919 classes = catalogue instances, values equal and pairwise different",
+  "   guard t = 45: 5468 tight triples hold; 1299 classes = catalogue instances, values equal and pairwise different",
+  "   354 window classes, 63 bulk families, 86799 equations, 373 solutions: 304 x exponent beyond its range (t - k too small), 69 x same class; possible coincidences: 0",
+  "   (5 s)",
+  "case B_0: 16 unknowns, 33 equations, rank 16, free [], consistent True",
+  "   guard t = 23: 1335 tight triples hold; 386 classes = catalogue instances, values equal and pairwise different",
+  "   guard t = 25: 1601 tight triples hold; 445 classes = catalogue instances, values equal and pairwise different",
+  "   guard t = 27: 1891 tight triples hold; 508 classes = catalogue instances, values equal and pairwise different",
+  "   guard t = 29: 2205 tight triples hold; 575 classes = catalogue instances, values equal and pairwise different",
+  "   guard t = 31: 2543 tight triples hold; 646 classes = catalogue instances, values equal and pairwise different",
+  "   guard t = 37: 3701 tight triples hold; 883 classes = catalogue instances, values equal and pairwise different",
+  "   guard t = 45: 5581 tight triples hold; 1255 classes = catalogue instances, values equal and pairwise different",
+  "   334 window classes, 30 bulk families, 66096 equations, 400 solutions: 364 x exponent beyond its range (t - k too small), 36 x same class; possible coincidences: 0",
+  "   (10 s)",
+  "RESULT: no two classes of pi inside V - v have equal values, for v = A_0 and B_0 and every odd t >= 23"
+ ]
+}
