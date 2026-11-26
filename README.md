@@ -6,8 +6,8 @@ paper
 > A. Burlacu, *Extremality in the metric cone has unbounded locality* (draft, November 2026):
 > [docs/paper.pdf](docs/paper.pdf), source [docs/paper.tex](docs/paper.tex).
 
-Archived at Zenodo: [doi:10.5281/zenodo.24564343](https://doi.org/10.5281/zenodo.24564343) (all versions; release `v0.1-draft` is
-[doi:10.5281/zenodo.24564344](https://doi.org/10.5281/zenodo.24564344)).
+Archived at Zenodo: [doi:10.5281/zenodo.24564343](https://doi.org/10.5281/zenodo.24564343) (resolves to the latest archived release and lists
+the earlier ones).
 
 ## What the paper proves
 

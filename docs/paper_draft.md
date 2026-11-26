@@ -752,9 +752,9 @@ vertices of the metric polytope or criteria for extremality; none contains a res
 All scripts and their outputs are in the repository https://github.com/adrian-burlacu-software/metric-polytope (scripts in `scripts/phase9/`,
 outputs in `results/phase9/`; the Python packages needed are listed in `requirements.txt`). The vertex lists of m_n
 for n ≤ 8 are included in `data/deza/raw/`. The m_9 list is not included: it has to be downloaded from its authors'
-page [DD-web], and the checksums of the file we used are in `data/deza/orbits9/SHA256SUMS.txt`. A permanent copy of the
-repository is archived at Zenodo: release `v0.1-draft` has the DOI 10.5281/zenodo.24564344, and 10.5281/zenodo.24564343 always resolves to the latest
-archived version.
+page [DD-web], and the checksums of the file we used are in `data/deza/orbits9/SHA256SUMS.txt`. Permanent copies of the
+repository are archived at Zenodo, one for each release, under the DOI 10.5281/zenodo.24564343, which resolves to the latest archived
+version and lists the earlier ones.
 
 | item | script | output |
 |---|---|---|
