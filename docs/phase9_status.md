@@ -691,3 +691,19 @@ enumeration of instances used the range itself; fixed by enumerating exponents o
 
 Run time 10 s; self-test 20 s. The old script and its self-test were re-run on the same day and pass.
 Limits: same author; Lemma P and Steps 1–2 are shared mathematics, checked on real cycles only for t ≤ 45.
+
+## 25. Two gaps from a review closed in the paper (2026-11-26)
+
+- **Title and scope.** The title is now "Extremality in the metric cone has unbounded locality"; the abstract and
+  introduction say which tests are excluded (local deduction of proportionalities; forbidden restrictions) and that
+  no claim is made about every conceivable test of bounded scope.
+- **Proposition 7 (hereditary tests, new Section 5b).** A test "every restriction to at most s points lies in an
+  allowed set" that accepts all extreme rays accepts every rational metric. Three-line proof from Avis's embedding
+  theorem [A80, Thm 3.5] (statement as read from the source in §20). Not covered: required configurations, Boolean
+  combinations, counting tests.
+- **Theorem 6 generalised to multi-input rules.** Rules may take up to a_0 inputs on n_1, ..., n_a < n nodes with
+  n_1 + ... + n_a ≤ n + q (gluing along at most q common points). The bound is now 2^((1−δ)n²/2 + O(n log n)); the
+  proof is an induction with g(x) = (1−δ)x²/2 + K·x·log₂(x+1) and the convexity bound
+  Σ g(n_i) ≤ g(n−1) + g(q+1). A numerical check of the worst-case recurrence (5 parameter sets, n up to 40) is
+  consistent with it. Unbounded overlap is excluded and Remark (d) says why: two (n−1)-point restrictions determine
+  a vertex up to two possibilities, so such a rule escapes any counting argument of this kind.

@@ -1,4 +1,4 @@
-# No bounded-scope characterisation of the extreme rays of the metric cone
+# Extremality in the metric cone has unbounded locality
 
 *Draft of 2026-11-26. Every statement is marked **Theorem** / **Proposition** / **Lemma** (proved here),
 **Computation** (exact computer result on a stated data set) or **Question** (open). Section 10 lists what still has
@@ -14,13 +14,15 @@ proportionalities obtained. We prove that L = 4, the smallest possible value, fo
 isometric-cycle criterion, hence for almost all graphs, and that L is nevertheless unbounded: an explicit chiral
 family C_t of extreme rays on 2t points (t odd, t ≥ 9) has L(C_t) = 2t, that is, no proper subset of the points
 proves extremality (the bound L(C_t) > t/6 has a short proof; the equality is computer-assisted, with exact
-arithmetic). Hence no criterion of bounded scope characterises the extreme rays of the metric cone,
-or the vertices of the metric polytope m_n adjacent to a cut. We compute L exactly for all extreme rays of MET_n,
+arithmetic). Hence no test that proceeds by such deductions on a bounded number of points characterises the extreme
+rays of the metric cone, or the vertices of the metric polytope m_n adjacent to a cut; tests that only forbid
+restrictions to a bounded number of points are excluded by Avis's embedding theorem. We compute L exactly for all extreme rays of MET_n,
 n ≤ 8, and for the 1,055,145 cut-adjacent orbits of the known vertex list of m_9: the largest values are 4, 4, 5, 7
 for n = 5, ..., 8 and 9 on the m_9 list, and the share of rays with L = 4 falls from 97% (n = 7) to 30% (n = 9).
-We also show, by a counting argument resting on a theorem of Avis, that a generator of vertices of m_n which makes
-fewer than (1 − δ)n bits of choice when it adds the n-th node produces a vanishing share of the orbits, so that no
-finite set of such rules with a finite list of exceptions describes the vertices.
+We also show, by a counting argument resting on a theorem of Avis, that a generator of vertices of m_n whose rules
+build an object on n nodes from smaller ones that overlap in a bounded number of nodes, with fewer than (1 − δ)n
+bits of choice, produces a vanishing share of the orbits, so that no finite set of such rules with a finite list of
+exceptions describes the vertices.
 
 ## 1. Introduction
 
@@ -42,10 +44,14 @@ The answer depends on what a rule may do, and we separate two regimes.
 vertex adjacent to a cut arises this way, and the rule is correct exactly when the metric is an extreme ray of MET_n,
 that is, when its tight triangle equalities have rank C(n,2) − 1. The question becomes whether this rank condition
 can be replaced by a combinatorial test of bounded scope, in the way Avis's isometric-cycle criterion [A80] does for
-a large class of graphs. We measure the scope a test needs by the locality L (Section 3).
+a large class of graphs. We treat the two simplest kinds of such tests: those that propagate proportionalities
+between distances from one bounded set of points to another, whose scope is measured by the locality L (Section 3),
+and those that only inspect the restrictions to bounded sets of points (Section 5b).
 
-*Small-choice rules.* A rule receives an object on n − 1 nodes and a bounded or slowly growing amount of choice and
-returns an object on n nodes. All classical constructions are of this kind.
+*Small-choice rules.* A rule receives one or several objects on fewer than n nodes and a bounded or slowly growing
+amount of choice and returns an object on n nodes. Trivial extensions, Avis's doubling and gluing along a bounded
+number of common points are of this kind; gluing along an unbounded number of common points is not, and our result
+does not cover it (Remark (d) after Theorem 6).
 
 **Results.**
 1. *Locality.* The invariant L is well defined, sound and complete (Proposition 2). It equals 4 for every graph
@@ -58,14 +64,19 @@ returns an object on n nodes. All classical constructions are of this kind.
    that decays like λ^(−k) away from the break still exists; showing that it separates all classes is a finite
    exact computation, uniform in t.
 3. *Counting.* The number of orbits of vertices of m_n is at least 2^(n²/2 − O(n log n)) (Proposition 5, from Avis's
-   density theorem), and a generator with at most (1 − δ)n bits of choice per node produces a vanishing share of
-   them (Theorem 6).
+   density theorem), and a generator with at most (1 − δ)n bits of choice per node, whose rules may combine several
+   inputs with bounded overlap, produces a vanishing share of them (Theorem 6).
+3b. *Hereditary tests.* A test that accepts a metric when all its restrictions to at most s points belong to an
+   allowed set, and that accepts every extreme ray, accepts every rational metric (Proposition 7, a consequence of
+   Avis's embedding theorem).
 4. *Exact computations.* L for all extreme rays of MET_n, n ≤ 8, and for the m_9 list (C1–C3); searches for large
    locality beyond the lists (C4–C6); and negative results for four other candidate descriptions of the m_9 list
    (C7–C12).
 
 Together, 1 and 2 say that the scope of the rank condition is the smallest possible for a typical graph and
-unbounded in the worst case; the computations show that on the actual vertex lists the typical case is already
+unbounded in the worst case. What is excluded is stated precisely in the paragraph "What L bounds" of Section 3 and
+in Section 5b: tests by local deduction of proportionalities, and tests by forbidden restrictions. We do not claim
+that every conceivable test of bounded scope fails. The computations show that on the actual vertex lists the typical case is already
 leaving the minimum at n = 9.
 
 ## 2. Preliminaries
@@ -130,7 +141,8 @@ derivable by s-local deductions are exactly those of cl_s(d). So a test for extr
 deductions succeeds on d iff L(d) ≤ s, and a characterisation of extreme rays by forbidden or required
 configurations on at most s nodes, closed under such propagation, cannot be complete unless L ≤ s on all rays. The
 notion covers deductions of two-term proportionalities; a local rule that carries longer linear relations from one
-subset to another is not covered and would need a wider definition.
+subset to another is not covered and would need a wider definition. Tests that do not propagate anything, and only
+require every restriction to s points to be of an allowed kind, are treated in Section 5b.
 
 **Theorem 3.** Let G be a connected graph on k ≥ 4 nodes.
 (a) If all edges of G fall into one class under the relation generated by "opposite edges of an even isometric
@@ -408,38 +420,103 @@ pairs of smallest value, so the vertices x_G of Lemma 1 are distinct. An orbit h
 number of extreme rays of MET_n, and the number of orbits of vertices of m_n adjacent to a cut, is 2^Θ(n²), with
 the constant in the exponent between 1/2 and 2.38.
 
-**Definition (generator).** A *generator* consists of sets O_n of *objects on n nodes* (n ≥ n_0), a finite set E of
-exceptional objects, and r *rules*. Each rule maps a pair (object on n − 1 nodes, choice c ∈ {1, ..., C(n)}) to an
-object on n nodes or to nothing. The generated objects are the exceptional ones and the outputs of rules applied to
-generated objects. A map from generated objects on n nodes to orbits of m_n (possibly partial) says which orbit, if
-any, an object *produces*. The *choice* of the generator is b(n) = log₂ C(n) bits.
+**Definition (generator).** A *generator* consists of sets O_n of *objects on n nodes* (n ≥ 1), a finite set E of
+exceptional objects, r *rules*, and two constants: the largest number a_0 ≥ 1 of inputs of a rule and the *overlap*
+q ≥ 0. Each rule maps a tuple (objects on n_1, ..., n_a nodes, choice c ∈ {1, ..., C(n)}) with a ≤ a_0,
+1 ≤ n_i ≤ n − 1 and n_1 + ... + n_a ≤ n + q to an object on n nodes or to nothing. The generated objects are the
+exceptional ones and the outputs of rules applied to generated objects. A map from generated objects on n nodes to
+orbits of m_n (possibly partial) says which orbit, if any, an object *produces*. The *choice* of the generator is
+b(n) = log₂ C(n) bits.
 
 Nothing is assumed about the objects: they may be vertices, points of m_n that are not vertices, graphs, or partial
-structures. Restriction-keeping moves, families with boundedly many integer parameters of size polynomial in n, and
-the generator of C9 for a fixed denominator are generators with b(n) = O(log n).
+structures. A rule with one input adds one or more nodes to an object. A rule with two inputs on n_1 and n_2 nodes
+that identifies k nodes of the first with k nodes of the second has n = n_1 + n_2 − k, so the condition says k ≤ q:
+gluing along at most q common points is allowed, gluing along more is not. Restriction-keeping moves, families with
+boundedly many integer parameters of size polynomial in n, and the generator of C9 for a fixed denominator are
+generators with one input per rule and b(n) = O(log n).
 
 **Theorem 6.** Let a generator have b(n) ≤ (1 − δ)n for some δ > 0 and all large n. Then it produces at most
-2^((1−δ)n²/2 + O(n)) orbits of m_n, and the share of the orbits of m_n it produces tends to 0. In particular the
-number of orbits it misses is unbounded, so no finite list of exceptions completes it.
+2^((1−δ)n²/2 + O(n log n)) orbits of m_n, and the share of the orbits of m_n it produces tends to 0. In particular
+the number of orbits it misses is unbounded, so no finite list of exceptions completes it.
 
-*Proof.* Let N(n) be the number of generated objects on n nodes. A generated object on n nodes is exceptional or
-the output of one of r rules on one of N(n − 1) objects with one of 2^b(n) choices, so
-N(n) ≤ r·2^b(n)·N(n − 1) + |E|, and by induction N(n) ≤ (|E| + 1)·∏_{k ≤ n} (r·2^b(k) + 1) = 2^(Σ_{k≤n} b(k) + O(n)).
-Since b(k) ≤ (1 − δ)k for all large k, Σ_{k≤n} b(k) ≤ (1 − δ)n²/2 + O(n). The number of orbits produced is at most
-N(n). By Proposition 5, v(n) ≥ 2^(n²/2 − O(n log n)), so N(n)/v(n) ≤ 2^(−δn²/2 + O(n log n)) → 0 and
-v(n) − N(n) → ∞. The exceptions are included in N(n). ∎
+*Proof.* Let N(n) be the number of generated objects on n nodes; it is finite, by induction on n. Put c = 1 − δ and,
+for a constant K chosen below, g(x) = (c/2)x² + K·x·log₂(x + 1) for x ≥ 0. g is convex and increasing, g(0) = 0, and
+for n ≥ 1, g(n) − g(n − 1) ≥ cn − c/2 + K·log₂ n, because n·log₂(n + 1) − (n − 1)·log₂ n ≥ log₂ n. We show
+N(n) ≤ 2^g(n) for all n ≥ 1.
+
+Let n_2 be such that for n ≥ n_2: b(n) ≤ cn, no exceptional object has n nodes, n > q + 2, and
+log₂ n ≥ max(1, 2(q + 1)·log₂(q + 2)). Put C_0 = log₂(r·a_0) + c/2 + c(q + 1)²/2 and choose K ≥ 2a_0 + 2C_0 so large
+that N(n) ≤ 2^g(n) for all n < n_2; this is possible because g(n) ≥ K for n ≥ 1, and neither n_2 nor C_0 depends on
+K.
+
+Let n ≥ n_2 and suppose N(k) ≤ 2^g(k) for k < n. For fixed sizes (n_1, ..., n_a) the number of input tuples is at
+most ∏ N(n_i) ≤ 2^(Σ g(n_i)). The sizes lie in the polytope {x ∈ [0, n − 1]^a : Σ x_i ≤ n + q}, and the convex
+function Σ g(x_i) attains its maximum over this polytope at a vertex. At a vertex all coordinates except at most one
+are 0 or n − 1; since 2(n − 1) > n + q, at most one coordinate equals n − 1, and then the remaining ones sum to at
+most q + 1. As g is increasing, Σ g(n_i) ≤ g(n − 1) + g(q + 1). There are at most a_0·n^(a_0) choices of the sizes,
+r rules and 2^b(n) choices, so
+
+  log₂ N(n) ≤ log₂(r·a_0) + a_0·log₂ n + cn + g(n − 1) + g(q + 1).
+
+By the choice of n_2, g(q + 1) = c(q + 1)²/2 + K(q + 1)·log₂(q + 2) ≤ c(q + 1)²/2 + (K/2)·log₂ n. Hence
+log₂ N(n) − g(n) ≤ a_0·log₂ n + C_0 − (K/2)·log₂ n ≤ 0, because K/2 ≥ a_0 + C_0 and log₂ n ≥ 1. This proves
+N(n) ≤ 2^g(n) = 2^((1−δ)n²/2 + O(n log n)).
+
+The number of orbits produced is at most N(n). By Proposition 5, v(n) ≥ 2^(n²/2 − O(n log n)), so
+N(n)/v(n) ≤ 2^(−δn²/2 + O(n log n)) → 0 and v(n) − N(n) → ∞. The exceptions are included in N(n). ∎
 
 **Remarks.** (a) The bound is sharp in the choice up to a constant factor: with b(n) = n − 1 a rule can choose the
 neighbourhood of the new node, hence an arbitrary graph, and then the single rule G ↦ x_G produces
 2^(n²/2 − O(n log n)) orbits; and by [CL25] a choice of 4.76·n bits per node is enough to index all cut-adjacent
 orbits. (b) The theorem does not need the m_9 list or any computation. (c) It is a statement about growth, and the
-lists show the growth has begun: v(7), v(8), v(9) = 13, 533, ≥ 1,056,367, successive factors 41 and 1,982.
+lists show the growth has begun: v(7), v(8), v(9) = 13, 533, ≥ 1,056,367, successive factors 41 and 1,982. (d) The
+bound on the overlap is used, and the theorem says nothing about rules that glue along an unbounded number of common
+points. In the proof, bounded overlap is what makes the product of the numbers of inputs small: the sum of the
+squares of the input sizes is at most (n − 1)² + (q + 1)². Without it, the pairs of objects on n − 1 nodes alone
+number N(n − 1)², and the induction fails. This is not only a defect of the proof. A vertex x of m_n is determined,
+up to two possibilities, by its restrictions to V ∖ {a} and V ∖ {b}: the points of m_n with these two restrictions
+differ only in the coordinate x_ab and form a segment, and a vertex of m_n on a segment contained in m_n is an
+endpoint of it. So a single rule with two inputs, overlap n − 2 and one bit of choice returns every vertex from two
+of its restrictions. Such a rule only moves the difficulty to the restrictions, which are not vertices in general
+and would have to be generated as well; whether a generator with unbounded overlap and small choice can produce a
+positive share of the orbits is not settled by our argument.
 
 **Question 1.** Let r(n) be the number of extreme rays of MET_n. Is log₂ r(n) ~ n²/2, i.e. are almost all extreme
 rays graphic on the logarithmic scale, or is lim log₂ r(n)/n² > 1/2? By [CL25] the limit, if it exists, is at most
 2.38. On the lists the graphic share of the cut-adjacent orbits is 92%, 20%, 0.52% for n = 7, 8, 9 (C10), which
 suggests that non-graphic rays dominate at least in number. (For vertices of m_n not adjacent to a cut we know only
 the trivial bound 2^O(n² log n).)
+
+## 5b. Tests by forbidden restrictions
+
+Locality measures tests that propagate proportionalities. The other simple kind of test of bounded scope does not
+propagate anything: it looks at every set of at most s points separately. Such tests are excluded, for every s, by a
+theorem of Avis.
+
+**Definition (hereditary test).** Let s ≥ 1 and let 𝒜 be a set of metrics on at most s points, closed under
+relabelling. The *hereditary test* with allowed set 𝒜 accepts a metric d, on any number of points, if the
+restriction of d to every set of at most s points belongs to 𝒜.
+
+Equivalently, the test forbids the restrictions outside 𝒜; the set 𝒜 is arbitrary and may be infinite, but it is the
+same for all n.
+
+**Proposition 7.** A hereditary test that accepts every metric spanning an extreme ray of some MET_n accepts every
+rational metric. In particular, for no s is there a hereditary test that accepts exactly the extreme rays: on every
+n ≥ 3 points it accepts metrics that are not extreme, for instance the metric with all distances equal to 1.
+
+*Proof.* Let d be a rational metric on m points. By Avis's embedding theorem [A80, Thm 3.5], d is the restriction of
+a metric D on some n ≥ m points that spans an extreme ray of MET_n. Every restriction of d to at most s points is a
+restriction of D to the same points, and belongs to 𝒜 because the test accepts D. So the test accepts d. The metric
+with all distances 1 on n ≥ 3 points has no tight triple, so it is not extreme. ∎
+
+**Remarks.** (1) The proposition and Theorem 4 exclude two different kinds of test, and neither implies the other. A
+hereditary test that accepts all extreme rays is not sound, for any s: it also accepts metrics that are not extreme.
+A test by s-local deduction is always sound (Proposition 2(ii)) and fails to be complete. (2) The proposition uses
+that the allowed set does not depend on n. It does not cover tests that require some configuration to be present,
+Boolean combinations of forbidden and required configurations, or tests that count configurations; and Theorem 4
+does not cover deductions of relations with more than two terms. A statement that no test of bounded scope of any
+kind characterises the extreme rays would need a definition of "test of bounded scope" that includes all of these,
+and we do not have one.
 
 ## 6. Computations: locality on the vertex lists and beyond
 
@@ -618,7 +695,7 @@ metric spaces; they pose as an open question to describe the extremal metric spa
 their number. Casabella, Joswig and Kastner [CJK24] classify the metric spaces on seven points through subdivisions
 of hypersimplices and give new infinite families of rays. Feldman and Kehoe [FK26] give further families of
 extreme rays (bowtie metrics). In none of these did we find the locality invariant, a bound on generators, or a
-statement that extreme rays admit no bounded-scope characterisation.
+statement that extreme rays cannot be recognised by local deduction on a bounded number of points.
 
 *Forward citations.* We went through the works citing [A80] (68), [L96] (26) and [DI07] (6) in the OpenAlex index
 (November 2026) and read those whose titles concern extreme rays, vertices of the metric polytope or criteria for
