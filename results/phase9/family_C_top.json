@@ -1,0 +1,250 @@
+{
+  "A": {
+    "CL": [
+      "-2",
+      "0",
+      "0"
+    ],
+    "CR": [
+      "2",
+      "0",
+      "0"
+    ],
+    "a": "-4",
+    "coincidences": [],
+    "cut_classes": 40,
+    "discarded": {
+      "not a member of the family (position at the break)": 17,
+      "same class": 92
+    },
+    "equations": 2305,
+    "exceptional": {
+      "b": [
+        -4,
+        -3,
+        -2,
+        -1,
+        0,
+        1,
+        2
+      ],
+      "c": [
+        -5,
+        -4,
+        -3,
+        -2,
+        -1,
+        0,
+        1,
+        2
+      ],
+      "e": [
+        -5,
+        -4,
+        -3
+      ],
+      "m": [
+        -2,
+        -1,
+        1,
+        2,
+        3
+      ],
+      "p": [
+        -1,
+        1
+      ],
+      "q": [
+        -5,
+        -4,
+        -3,
+        -2,
+        -1
+      ],
+      "s": [
+        1,
+        2
+      ],
+      "w": [
+        -1,
+        1,
+        2,
+        3,
+        4
+      ],
+      "y": [
+        0,
+        1,
+        2
+      ]
+    },
+    "families": 68,
+    "free": [
+      "('x', 'p0')"
+    ],
+    "guard": [
+      {
+        "classes": 298,
+        "t": 19,
+        "tight_triples": 840
+      },
+      {
+        "classes": 351,
+        "t": 21,
+        "tight_triples": 1052
+      },
+      {
+        "classes": 408,
+        "t": 23,
+        "tight_triples": 1288
+      },
+      {
+        "classes": 469,
+        "t": 25,
+        "tight_triples": 1548
+      },
+      {
+        "classes": 534,
+        "t": 27,
+        "tight_triples": 1832
+      },
+      {
+        "classes": 676,
+        "t": 31,
+        "tight_triples": 2472
+      }
+    ],
+    "mixed": true,
+    "relaxed_solutions": 109
+  },
+  "B": {
+    "CL": [
+      "0",
+      "0",
+      "0"
+    ],
+    "CR": [
+      "0",
+      "0",
+      "0"
+    ],
+    "a": "1",
+    "coincidences": [],
+    "cut_classes": 27,
+    "discarded": {
+      "not a member of the family (position at the break)": 15,
+      "same class": 38
+    },
+    "equations": 752,
+    "exceptional": {
+      "b": [
+        -4,
+        -3,
+        -2,
+        1
+      ],
+      "c": [
+        -5,
+        -4,
+        -3,
+        -1,
+        1
+      ],
+      "e": [
+        -5,
+        -4,
+        -3
+      ],
+      "m": [
+        -2,
+        -1,
+        0,
+        2
+      ],
+      "p": [
+        0
+      ],
+      "q": [
+        -5,
+        -4,
+        -3,
+        -1
+      ],
+      "s": [
+        1
+      ],
+      "w": [
+        -1,
+        0,
+        1,
+        3
+      ],
+      "y": [
+        1
+      ]
+    },
+    "families": 39,
+    "free": [],
+    "guard": [
+      {
+        "classes": 280,
+        "t": 19,
+        "tight_triples": 875
+      },
+      {
+        "classes": 331,
+        "t": 21,
+        "tight_triples": 1093
+      },
+      {
+        "classes": 386,
+        "t": 23,
+        "tight_triples": 1335
+      },
+      {
+        "classes": 445,
+        "t": 25,
+        "tight_triples": 1601
+      },
+      {
+        "classes": 508,
+        "t": 27,
+        "tight_triples": 1891
+      },
+      {
+        "classes": 646,
+        "t": 31,
+        "tight_triples": 2543
+      }
+    ],
+    "mixed": false,
+    "relaxed_solutions": 53
+  },
+  "T0": 23,
+  "log": [
+    "case A_0 removed: 20 cut unknowns, 36 equations, free unknowns [('x', 'p0')], 1 nonzero solvability conditions",
+    "   amplitudes: g = -2 + 2 eps on (-1)^j,  a = -4 on lam^(j-t)   (ratio a/g -> 2.000000)",
+    "   guard t = 19: 840 tight triples of C_t - A_0 hold exactly; 298 classes, values pairwise different (297 nonzero)",
+    "   guard t = 21: 1052 tight triples of C_t - A_0 hold exactly; 351 classes, values pairwise different (350 nonzero)",
+    "   guard t = 23: 1288 tight triples of C_t - A_0 hold exactly; 408 classes, values pairwise different (407 nonzero)",
+    "   guard t = 25: 1548 tight triples of C_t - A_0 hold exactly; 469 classes, values pairwise different (468 nonzero)",
+    "   guard t = 27: 1832 tight triples of C_t - A_0 hold exactly; 534 classes, values pairwise different (533 nonzero)",
+    "   guard t = 31: 2472 tight triples of C_t - A_0 hold exactly; 676 classes, values pairwise different (675 nonzero)",
+    "   68 class families: 40 cut classes, exceptional positions s: [1, 2], p: [-1, 1], q: [-5, -4, -3, -2, -1], m: [-2, -1, 1, 2, 3], w: [-1, 1, 2, 3, 4], b: [-4, -3, -2, -1, 0, 1, 2], c: [-5, -4, -3, -2, -1, 0, 1, 2], e: [-5, -4, -3], y: [0, 1, 2]",
+    "   2305 equations, 109 solutions in the relaxed ranges: 17 x not a member of the family (position at the break), 92 x same class; coincidences of different classes: 0",
+    "   (0 s)",
+    "case B_0 removed: 16 cut unknowns, 33 equations, free unknowns [], 0 nonzero solvability conditions",
+    "   amplitudes: g = 0 + 0 eps on (-1)^j,  a = 1 on lam^(j-t)",
+    "   guard t = 19: 875 tight triples of C_t - B_0 hold exactly; 280 classes, values pairwise different (279 nonzero)",
+    "   guard t = 21: 1093 tight triples of C_t - B_0 hold exactly; 331 classes, values pairwise different (330 nonzero)",
+    "   guard t = 23: 1335 tight triples of C_t - B_0 hold exactly; 386 classes, values pairwise different (385 nonzero)",
+    "   guard t = 25: 1601 tight triples of C_t - B_0 hold exactly; 445 classes, values pairwise different (444 nonzero)",
+    "   guard t = 27: 1891 tight triples of C_t - B_0 hold exactly; 508 classes, values pairwise different (507 nonzero)",
+    "   guard t = 31: 2543 tight triples of C_t - B_0 hold exactly; 646 classes, values pairwise different (645 nonzero)",
+    "   39 class families: 27 cut classes, exceptional positions s: [1], p: [0], q: [-5, -4, -3, -1], m: [-2, -1, 0, 2], w: [-1, 0, 1, 3], b: [-4, -3, -2, 1], c: [-5, -4, -3, -1, 1], e: [-5, -4, -3], y: [1]",
+    "   752 equations, 53 solutions in the relaxed ranges: 15 x not a member of the family (position at the break), 38 x same class; coincidences of different classes: 0",
+    "   (1 s)",
+    "RESULT: no forced merge for W = V - v, v = A_0 and B_0, for every odd t >= 23"
+  ],
+  "ok": true
+}

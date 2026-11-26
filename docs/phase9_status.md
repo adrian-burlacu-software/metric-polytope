@@ -647,3 +647,29 @@ mirror image and exchange of A and B) have L = n at 18, 22 and 26 points.
 **Consequence.** The "rules keep growing" side is now a theorem for graph-input rules as well: no rule that inspects
 a bounded number of points characterises extreme rays of the metric cone. Together with §20 (small-choice
 generators reach a vanishing share of the orbits), neither kind of finite rule set exists.
+
+## 23. Locality of C_t is exactly 2t for every odd t (2026-11-26)
+
+**Result (Theorem 4(c) of the draft).** L(C_t) = 2t for every odd t ≥ 9: no proper subset of the points proves
+extremality. For t ≤ 21 this is the exact closure computation (`family_C.py`; t = 17, 19, 21 added). For t ≥ 23 it
+is a computer-assisted proof, uniform in t (`family_C_top.py`).
+
+**Idea of the proof.** Removing one point (A_0 or B_0) breaks the recurrence at that point only. A solution of the
+remaining equations still exists that decays like λ^(−k) away from the break (mixed with the (−1)^j mode when A_0 is
+removed, in the fixed ratio (1 − λ^(−t))·a = 2g). Its values at the 40 resp. 27 classes near the break are solved
+exactly (20 resp. 16 unknowns, values r_0 + r_1 λ^(−t) with r_0, r_1 ∈ Q(λ)). That all classes get different values is
+a finite list of equations G_0 = Σ c_i λ^(−k_i) (2,305 and 752), each solved completely by branch and bound with
+rigorous bounds; the only solutions are identities and positions at the break.
+
+**Checks.** The solution is instantiated on the real cycles t = 19, 21, 23, 25, 27, 31: all tight triples hold
+exactly, and every class value agrees with the symbolic value used in the search. `--selftest`: 300 planted
+solutions recovered; duplicated classes are reported.
+
+**Two bugs found by these checks and fixed before the result was recorded.** (1) Pairs just left of the break whose
+formula uses only σ's right of it (e.g. A_{−1}A_1) were given the wrong exponent. (2) `(-1) ** o` with o < 0 is a
+float in Python and had entered the constants of two pair types. The first run "passed" with both bugs; the
+class-by-class comparison with the real cycle is what exposed them. The search code should be re-implemented
+independently before submission.
+
+**Also done.** The paper draft was restructured (Theorem 4 as the main result; statements renumbered: the counting
+theorem is now Theorem 6, the orbit count Proposition 5; computations C1–C12).

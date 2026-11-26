@@ -12,8 +12,9 @@ points at a time. To measure this we introduce the *locality* L(d) of an extreme
 extremality of d can be derived by solving the tight equalities inside sets of s points and propagating the
 proportionalities obtained. We prove that L = 4, the smallest possible value, for every graph covered by Avis's
 isometric-cycle criterion, hence for almost all graphs, and that L is nevertheless unbounded: an explicit chiral
-family C_t of extreme rays on 2t points (t odd, t ≥ 9) has L(C_t) > t/6, and L(C_t) = 2t for every odd t from 9
-to 21 by exact computation. Hence no criterion of bounded scope characterises the extreme rays of the metric cone,
+family C_t of extreme rays on 2t points (t odd, t ≥ 9) has L(C_t) = 2t, that is, no proper subset of the points
+proves extremality (the bound L(C_t) > t/6 has a short proof; the equality is computer-assisted, with exact
+arithmetic). Hence no criterion of bounded scope characterises the extreme rays of the metric cone,
 or the vertices of the metric polytope m_n adjacent to a cut. We compute L exactly for all extreme rays of MET_n,
 n ≤ 8, and for the 1,055,145 cut-adjacent orbits of the known vertex list of m_9: the largest values are 4, 4, 5, 7
 for n = 5, ..., 8 and 9 on the m_9 list, and the share of rays with L = 4 falls from 97% (n = 7) to 30% (n = 9).
@@ -50,10 +51,12 @@ returns an object on n nodes. All classical constructions are of this kind.
 1. *Locality.* The invariant L is well defined, sound and complete (Proposition 2). It equals 4 for every graph
    covered by the isometric-cycle criterion, and for almost all graphs (Theorem 3).
 2. *Locality is unbounded* (Theorem 4, the main result). An explicit family C_t of extreme rays on n = 2t points has
-   L > n/12, and L = n in all computed cases (18 to 42 points). The proof reduces the tight system of C_t to a
-   linear recurrence around the cycle whose characteristic polynomial has a root that is not a root of unity; on any
-   set of points that misses five consecutive positions this root yields a second solution of the local equations,
-   which no local deduction can exclude.
+   L = n. The proof reduces the tight system of C_t to a linear recurrence around the cycle whose characteristic
+   polynomial has a root λ that is not a root of unity. On any set of points that misses five consecutive positions
+   this root yields a second solution of the local equations, which no local deduction can exclude; this gives
+   L > n/12 by hand. When a single point is removed, the recurrence is broken at that point only, and a solution
+   that decays like λ^(−k) away from the break still exists; showing that it separates all classes is a finite
+   exact computation, uniform in t.
 3. *Counting.* The number of orbits of vertices of m_n is at least 2^(n²/2 − O(n log n)) (Proposition 5, from Avis's
    density theorem), and a generator with at most (1 − δ)n bits of choice per node produces a vanishing share of
    them (Theorem 6).
@@ -183,12 +186,13 @@ line (i ∈ Z, ordinary offsets).
 
     sup { L(d) : d an extreme ray of MET_n } > n/12   for every n = 2t, t odd, t ≥ 9;  in particular it is unbounded.
 
-(c) (Computation, exact.) L(C_t) = 2t for every odd t from 9 to 21: no proper subset of the 18, 22, ..., 42 points
-proves extremality. (With arithmetic modulo 2^31 − 1 the same holds for every odd t from 9 to 23, i.e. up to 46
-points.)
+(c) L(C_t) = 2t for every odd t ≥ 9: no proper subset of the points proves extremality. (Computer-assisted: for
+t ≤ 21 by exact computation of the level-(2t − 1) closure; for t ≥ 23 by the proof below, which uses exact finite
+checks in Q(λ).)
 
 **Corollary.** No test that proceeds by s-local deductions, for any fixed s, characterises the extreme rays of the
-metric cone; by Lemma 1 the same holds for the vertices of m_n adjacent to a cut.
+metric cone; by Lemma 1 the same holds for the vertices of m_n adjacent to a cut. Moreover
+max { L(d) : d extreme in MET_n } = n for every n ≡ 2 (mod 4), n ≥ 18.
 
 *Proof of (a).* *Patterns.* A distance of C_t depends on the kinds of the two points and on their offset capped at
 ±3. For t ≥ 9 every configuration of three points, described by kinds and capped offsets, occurs already in C_9
@@ -272,9 +276,92 @@ classes C ∋ P, C′ ∋ Q of π to be equal, we would have u_c(P) = u_c(Q) for
 the pairs ψP, ψQ would be equal or related, i.e. P and Q would lie in the same class of π. So no merge is forced, π
 is closed at level s, and L(C_t) > s for every s ≤ t/6. ∎
 
-**Remarks.** (1) The proof of (b) gives L(C_t) > t/6; the computations (c) show L(C_t) = 2t for t ≤ 21 (t ≤ 23
-modulo a prime), and we expect L(C_t) = 2t for all odd t ≥ 9. (2) The level-(2t − 1) closure of C_t has exactly
-(t² + 13t + 2)/2 classes for every odd t from 9 to 21, the number of classes of π: in these cases cl_{2t−1} = π.
+*Proof of (c).* For t ≤ 21 the level-(2t − 1) closure was computed in rational arithmetic and is not total
+(`family_C.py`). Let t ≥ 23. As in (b) it suffices to show that π is closed under the merges of level 2t − 1, i.e.
+that W = V − v forces no two classes of π to be equal, and by the rotation we may take v = A_0 or v = B_0. For each
+of the two we construct a solution x of T_W(π) with x = 0 on the first class of π (a deviation from d, as D in (b))
+whose relative values D(C) = x(C)/d(C) on the classes C of π inside W are pairwise different; then u = 1 + cD
+separates any two classes. Indices are taken modulo t and written with representatives near 0.
+
+*Step 1: parametrisation.* Let numbers σ_j, q_j (j ∈ Z_t) be given, and in addition p_{−1}, p_0 if v = A_0, and
+w_{−1} if v = B_0. Put p_i = −σ_{i+1} for the other i, and
+
+    m_i = q_{i−3},   b_i = q_{i−1} − p_{i−1},   w_i = σ_{i−2} + σ_{i+1} − p_i,   c_i = b_i + b_{i+1}
+
+(for v = B_0: w_{−1} as given, and c_{−1} = w_1 + σ_1). Define x on the pairs inside W by x = 0 on the A-pairs at
+distance 1 or ≥ 3, x(A_iB_i) = σ_i, x(A_iB_{i+1}) = p_i, x(A_iB_{i+2}) = q_i, x(A_iB_{i−1}) = m_i,
+x(A_iB_{i−2}) = w_i, x(B_iB_{i+1}) = b_i, x(B_iB_{i+2}) = c_i, x(A_iA_{i+2}) = q_i − σ_{i+2}, and x(A_iB_j) = σ_j,
+x(B_iB_j) = σ_i + σ_j for |i − j| ≥ 3. (For v = A_0 the numbers σ_0, q_0, p_0 belong to pairs through A_0; they
+enter as σ_0 = x(A_iB_0) for i far from 0, q_0 = x(A_3B_2) and q_0 − p_0 = x(B_1B_2). For v = B_0 quantities with an
+index that would give a pair through B_0 are not used, and x(A_{−2}A_0) is arbitrary.) Consider the equations
+
+    (5a_i)  c_i = w_{i+2} + σ_{i+2},        (5b_i)  c_i = m_{i+1} + p_{i+1}.
+
+*Lemma P.* x is constant on the classes of π, and it satisfies all tight triples inside W if 5a_i and 5b_i hold for
+all i except 5a_{−2}, 5b_{−1} when v = A_0, and except 5a_0, 5a_{−1}, 5a_{−2}, 5b_0, 5b_{−2} when v = B_0.
+*Proof.* Go through the 11 types of tight triples in the proof of (a). The triples A_iA_{i+1} through A_k read
+0 = 0; those through B_{i+1} read p_i + σ_{i+1} = 0, and the two with i ∈ {−1, 0} (for v = A_0), resp. the one with
+i = −1 (for v = B_0), contain v. The three triples for A_iB_{i+2} are the definitions of x(A_iA_{i+2}), of m_{i+3}
+and of b_{i+1}. A_iB_j through A_j reads σ_j = σ_j. The triples for B_iB_{i+2} are the definition of c_i (through
+B_{i+1}), 5a_i (through A_{i+2}) and 5b_i (through A_{i+1}). B_iB_j through A_i reads σ_i + σ_j = σ_i + σ_j, and
+B_iB_{i+3} through A_{i+2} is the definition of w_{i+2}. The triples that contain v are exactly those in which the
+statement uses a free number or omits an equation: for v = A_0, the triples (A_{−1}, B_0, A_0), (A_0, B_1, A_1),
+(A_0, A_3, B_2), (A_0, B_1, B_2), (A_i, A_0, B_0) free p_{−1}, p_0, q_0 and σ_0, and (B_{−2}, A_0, B_0),
+(B_{−1}, A_0, B_1) are 5a_{−2}, 5b_{−1}; for v = B_0, the triple (B_{−1}, B_0, B_1) frees c_{−1}, which is then
+defined by 5a_{−1}; (B_{−3}, A_{−1}, B_0) frees w_{−1}; (A_{−2}, A_0, B_0) is the only triple with the pair
+A_{−2}A_0; and 5a_0, 5a_{−2}, 5b_0, 5b_{−2} concern pairs through B_0. ∎
+
+*Step 2: the solution.* If q_{i−2}, q_{i−1}, q_i are given by q_j = σ_{j+2} + 2σ_{j+4} + 2σ_{j+5}, the p's by
+p_i = −σ_{i+1}, and σ_{i+1} + 2σ_{i+4} + σ_{i+5} = 0, then 5a_i and 5b_i hold (the computation in the proof of
+(a)). Let j_0 = 3 for v = A_0 and j_0 = 2 for v = B_0, ε = λ^(−t), and put
+
+    σ_j = g·(−1)^j + a·λ^(j−t)   for j_0 ≤ j ≤ t − 1,        q_j = σ_{j+2} + 2σ_{j+4} + 2σ_{j+5}   for 8 ≤ j ≤ t − 8,
+
+with (g, a) = (1 − ε, 2) for v = A_0 and (g, a) = (0, 1) for v = B_0. Both (−1)^j and λ^j satisfy the recurrence,
+so 5a_i and 5b_i hold for 11 ≤ i ≤ t − 9. The remaining unknowns are σ_j for 0 ≤ j < j_0 (j = 1 only, for
+v = B_0), q_j for |j| ≤ 7, and p_{−1}, p_0 resp. w_{−1}: 20 resp. 16 unknowns. The remaining equations are those
+5a_i, 5b_i with −8 ≤ i ≤ 10 that are required by Lemma P: 36 resp. 33 linear equations with rational coefficients,
+whose right-hand sides are of the form r_0 + r_1ε with r_0, r_1 ∈ Q(λ) that do not depend on t. They are solvable
+with solutions of the same form (check W1 in `family_C_top.py`; for v = A_0 the system has rank 19 and one
+solvability condition, which is (1 − ε)a = 2g and explains the choice of g; for v = B_0 the solution is unique).
+By Lemma P this gives a solution x of T_W(π) for every odd t ≥ 23. As a guard against slips in Lemma P, the solution
+was instantiated on the real cycle for t = 19, 21, 23, 25, 27, 31 and every tight triple of C_t − v was verified
+exactly (W2). The same check confirms, class by class, that the symbolic values used in Step 3 are the values on
+the cycle.
+
+*Step 3: the values are pairwise different.* Away from the break the values of x follow the formulas of (a) with
+s = σ, so for a pair P whose formula involves only σ_j on the stretch, at position t − k (k ≥ 1),
+
+    D(P) = ± g·κ′ + a·κ·λ^(−k),
+
+where κ ∈ Q(λ) and κ′ ∈ Q depend only on the type of the pair (κ is the constant of Lemma S, κ′ the corresponding
+constant for the root −1) and the sign on the parity of k. The pairs for which this fails are 40 (v = A_0) resp. 27
+(v = B_0) pairs near the break, with D = r_0 + r_1ε, and the far B-pairs, whose value is the sum of the values of
+σ at their two positions divided by 22. So an equality D(P) = D(Q) between two classes is an equation
+
+    G_0 = Σ_i c_i·λ^(−k_i)
+
+in at most five integer unknowns k_i (the positions involved, and t itself for the terms in ε), with
+G_0, c_i ∈ Q(λ) taken from a finite list: 2,305 equations for v = A_0 and 752 for v = B_0. Since |λ| > 1 the
+solutions of such an equation can be listed completely: if |G_0| exceeds the sum of the largest possible values of
+the terms there is none; otherwise one branches on the largest term, fixing its exponent at its least admissible
+value or raising that value; if G_0 = 0, one divides by the largest term. All bounds use rational enclosures of λ,
+and equalities are decided exactly in Q(λ). The search (check W3) finds 109 resp. 53 solutions when the ranges of
+the k_i are relaxed to k_i ≥ 1, t ≥ 23; in 92 resp. 38 of them P and Q are the same class, and in the other 17
+resp. 15 one of the pairs sits at one of the positions near the break where the formula does not apply (these
+pairs are among the 40 resp. 27, with their true values). A pair just left of the break whose formula involves
+only σ's to the right of it (for example A_{−1}A_1, with σ_3 and σ_4) belongs to the first kind with k = t + 1; the
+ranges of k are set accordingly. So D takes different values on different classes, for
+every odd t ≥ 23. (For v = B_0 the pair A_{−2}A_0 is excluded; it occurs in no tight triple inside W, so nothing
+forces its class to equal another.) Hence W forces no merge, π is closed at level 2t − 1, cl_{2t−1} refines π,
+and L(C_t) = 2t. ∎
+
+The search procedure was tested on 300 equations with planted solutions (all recovered), and by duplicating one
+class of each kind under a different name (every duplicate is reported as a coincidence); see `--selftest`.
+
+**Remarks.** (1) Part (b) is implied by (c); we keep it because its proof needs only Lemma S, while (c) relies on a
+larger computation. (2) The level-(2t − 1) closure of C_t has exactly (t² + 13t + 2)/2 classes for every odd t from
+9 to 21, the number of classes of π: in these cases cl_{2t−1} = π.
 (3) Replacing d(A_i, A_{i+2}) = 12 by 16 gives a second family, an extreme ray with L = 2t for every odd t from 9
 to 21 by the same computation. (4) How the family was found: the two-orbit metrics whose distances depend only on
 offsets capped at ±3 are, for all large t, the points of a fixed 12-dimensional cone of "patterns of radius 2"
@@ -425,11 +512,12 @@ window of 14 positions that forces merges beyond the 4-point ones. This is what 
 Section 4.
 
 **Largest locality known per n.** 4, 4, 5, 7 for n = 5, ..., 8 (complete lists); 9 for n = 9 (the m_9 list); at least
-8, 8, 9, 12, 13 for n = 10, 11, 12, 14, 15 (C5); n for n = 18, 22, ..., 42 (Theorem 4(c)).
+8, 8, 9, 12, 13 for n = 10, 11, 12, 14, 15 (C5); n for every n ≡ 2 (mod 4), n ≥ 18 (Theorem 4(c)).
 
 **Fact (from C1, C2).** L(d) ≤ n − 1 for every extreme ray of MET_n, n ≤ 8, but max L = n for n = 9.
 
-**Question 2.** Is max { L(d) : d extreme in MET_n } = n for every n ≥ 9? Is L(C_t) = 2t for every odd t ≥ 9?
+**Question 2.** Is max { L(d) : d extreme in MET_n } = n for every n ≥ 9? By Theorem 4(c) this holds for
+n ≡ 2 (mod 4), n ≥ 18, and for n = 9 by C2 (the two rays exist whether or not the m_9 list is complete).
 
 **Question 3.** Does the share of orbits of m_n with L = 4 tend to 0? By Theorem 3 and Proposition 5 at least
 2^(n²/2 − O(n log n)) orbits have L = 4, so this is Question 1 in another form.
@@ -517,7 +605,8 @@ Scripts in `scripts/phase9/`, outputs in `results/phase9/`.
 
 | item | script | output |
 |---|---|---|
-| Theorem 4 (checks V1–V3, part (c), remark 4) | `family_C_proof.py`, `family_C.py`, `family_C_structure.py`, `pattern_hunt.py`, `cand_pattern.py` | `family_C_proof.json`, `family_C.json`, `pattern_hunt.json`, `cand_pattern.json` |
+| Theorem 4 (a), (b): checks V1–V3; remark 4 | `family_C_proof.py`, `family_C_structure.py`, `pattern_hunt.py`, `cand_pattern.py` | `family_C_proof.json`, `pattern_hunt.json`, `cand_pattern.json` |
+| Theorem 4 (c): t ≤ 21; checks W1–W3 for t ≥ 23 | `family_C.py`; `family_C_top.py` | `family_C.json`; `family_C_top.json` |
 | C1, validation | `locality_checks.py`, `ray_count_check.py` | `locality_checks.json`, `ray_count_check.json` |
 | C2 | `locality.py --all9` | `locality_m9all.json` |
 | C3 | `locality_switch9.py` | `locality_switch9.json` |
@@ -537,8 +626,11 @@ values marked * in C5 and C6 and the parenthesis of Theorem 4(c).
 ## 10. Before submission (not part of the paper)
 
 1. **Second reader.** The proofs of Theorem 4 and Theorem 3(b) have been checked only by their author and, for the
-   finite checks V1–V3, by `family_C_proof.py`. Both should be read by a second person.
-2. **L(C_t) = 2t for all odd t** is computed for t ≤ 21 and proved only as L > t/6 (Question 2).
+   finite checks V1–V3 and W1–W3, by `family_C_proof.py` and `family_C_top.py`. Both should be read by a second
+   person. Theorem 4(c) depends on the correctness of the search in `family_C_top.py` (about 150 lines: `solve`,
+   `homogeneous`, `admissible`, `build_classes`); an independent re-implementation would be the strongest check.
+2. **Theorem 4(c) for 9 ≤ t ≤ 21** rests on the closure computation, not on the proof; the construction of the
+   proof also passes its guard for t = 19, 21, so the two methods agree where both were run.
 3. **Citations.** MathSciNet/zbMATH forward citations of [A80], [L96] and [DI07] have not been checked. [CL25] §7,
    [La25] §4.2 onwards and [Bo18] §2.2 onwards were read in summary only. The page numbers of [KMT00] and [SY04]
    are from memory.
