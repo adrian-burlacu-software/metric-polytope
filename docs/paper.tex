@@ -294,8 +294,8 @@ long = short + short:
 & A_iB_{i+2} = A_iA_{i+2} + A_{i+2}B_{i+2} = A_iA_{i+3} + A_{i+3}B_{i+2} = A_iB_{i+1} + B_{i+1}B_{i+2};\\
 & A_iB_j = A_iA_j + A_jB_j\ (|i - j| \ge 3);\\
 & B_iB_{i+2} = B_iA_{i+2} + A_{i+2}B_{i+2} = B_iA_{i+1} + A_{i+1}B_{i+2} = B_iB_{i+1} + B_{i+1}B_{i+2};\\
-& B_iB_j = B_iA_i + A_iB_j\ (|i - j| \ge 3;\text{ also with $i$ and $j$ exchanged}); \qquad
-  B_iB_{i+3} = B_iA_{i+2} + A_{i+2}B_{i+3}.
+& B_iB_j = B_iA_i + A_iB_j\ (|i - j| \ge 3;\text{ also with $i$ and $j$ exchanged});\\
+& B_iB_{i+3} = B_iA_{i+2} + A_{i+2}B_{i+3}.
 \end{align*}
 
 \step{The $A$-pairs.} Let $x$ be a solution of the tight system. Write $f(i, k) = x(A_iA_k)$ for $|i - k| \ge 3$ and
@@ -545,8 +545,8 @@ pairs of smallest value, so the vertices $x_G$ of Lemma~\ref{lem:vertex} are dis
 $n!\cdot 2^{n-1}$ elements.
 \end{proof}
 
-\paragraph{Upper bound.} Cizma and Linial \cite[Thm 5.5]{CL25} prove that $\MET_n$ has at most
-$2^{2.38\,n^2(1+o(1))}$ faces. Hence the number of extreme rays of $\MET_n$, and the number of orbits of vertices of
+\paragraph{Upper bound.} Cizma and Linial \cite[Thm 5.5]{CL25} prove that the number of faces of $\MET_n$ is at
+most $2^{2.38\,n^2(1+o(1))}$. Hence the number of extreme rays of $\MET_n$, and the number of orbits of vertices of
 $m_n$ adjacent to a cut, is $2^{\Theta(n^2)}$, with the constant in the exponent between $1/2$ and $2.38$.
 
 \begin{definition}[generator]
