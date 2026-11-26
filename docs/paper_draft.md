@@ -711,7 +711,11 @@ extremality; none contains a result of the kind of Theorems 4 or 6.
 
 ## 9. Reproduction
 
-Scripts in `scripts/phase9/`, outputs in `results/phase9/`.
+All scripts and their outputs are in the repository https://github.com/adrian-burlacu-software/metric-polytope (scripts in `scripts/phase9/`,
+outputs in `results/phase9/`; the Python packages needed are listed in `requirements.txt`). The vertex lists of m_n
+for n ≤ 8 are included in `data/deza/raw/`. The m_9 list is not included: it has to be downloaded from its authors'
+page [DD-web], and the checksums of the file we used are in `data/deza/orbits9/SHA256SUMS.txt`. A permanent archived
+copy of the repository, with a DOI, will be cited here in the final version.
 
 | item | script | output |
 |---|---|---|
@@ -734,6 +738,15 @@ Ranks are computed modulo 2^31 − 1 with an exact fallback whenever the modular
 vertex" and "is a ray" verdict is exact; the locality closure uses rational arithmetic throughout, except for the
 values marked * in Comp. 5 and Comp. 6 and the parenthesis of Theorem 4(c).
 
+## Acknowledgements and use of AI tools
+
+This work was carried out with an AI assistant, Claude (Anthropic; models Claude Opus 5.5 and Claude Fable 5.2, used
+through the tool Claude Code). Under the direction of the author, the assistant wrote the scripts, ran the
+computations and the searches that led to the family C_t, searched the literature, and drafted the proofs and the
+text of this paper. The author set the questions, decided what was pursued and what was claimed, and is responsible
+for the content. The computer-assisted part of Theorem 4(c) exists in two implementations, both written with the
+assistant; neither they nor the proofs have yet been checked by a second person.
+
 ## 10. Before submission (not part of the paper)
 
 1. **Second reader.** The proofs of Theorem 4 and Theorem 3(b) have been checked only by their author and, for the
@@ -755,6 +768,10 @@ values marked * in Comp. 5 and Comp. 6 and the parenthesis of Theorem 4(c).
 4. **The m_9 count.** The file has one orbit fewer than published (Section 6); the authors of the list could
    confirm which number is right.
 5. **Values marked *** (Comp. 5, Comp. 6) should be re-run in rational arithmetic or dropped.
+7. **Permanent archive.** The repository is on GitHub (private as of 2026-11-26). Before submission: choose a
+   licence, check that the third-party data in `data/deza/raw/` and `data/smapo/raw/` may be redistributed (or
+   remove them and keep the download scripts and checksums), make the repository public, archive a tagged release
+   at Zenodo, and replace the last sentence of Section 9 by the DOI.
 6. **Earlier numbering.** In the project notes (`docs/phase9_status.md`) Theorem 6 is "Theorem 1", Proposition 5 is
    "Corollary 1", and Comp. 3–12 appear as Comp. 2′, Comp. 3–3⁗, Comp. 4–9.
 

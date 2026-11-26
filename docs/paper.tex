@@ -930,7 +930,15 @@ or~\ref{thm:generator}.
 
 \section{Reproduction}
 
-Scripts in \file{scripts/phase9/}, outputs in \file{results/phase9/}.
+All scripts and their outputs are in the repository
+\begin{center}
+\url{https://github.com/adrian-burlacu-software/metric-polytope}
+\end{center}
+(scripts in \file{scripts/phase9/}, outputs in \file{results/phase9/}; the Python packages needed are listed in
+\file{requirements.txt}). The vertex lists of $m_n$ for $n \le 8$ are included in \file{data/deza/raw/}. The $m_9$
+list is not included: it has to be downloaded from its authors' page \cite{DDweb}, and the checksums of the file we
+used are in \file{data/deza/orbits9/SHA256SUMS.txt}. A permanent archived copy of the repository, with a DOI, will be
+cited here in the final version.
 
 {\small\raggedright
 \begin{center}
@@ -972,6 +980,15 @@ Comp.~12 & \file{elliptope.py} & \file{elliptope.json} \\
 Ranks are computed modulo $2^{31} - 1$ with an exact fallback whenever the modular rank is deficient, so every ``is
 a vertex'' and ``is a ray'' verdict is exact; the locality closure uses rational arithmetic throughout, except for
 the values marked * in Comp.~5 and Comp.~6 and the parenthesis of Theorem~\ref{thm:main}(c).
+
+\section*{Acknowledgements and use of AI tools}
+
+This work was carried out with an AI assistant, Claude (Anthropic; models Claude Opus~5.5 and Claude Fable~5.2, used
+through the tool Claude Code). Under the direction of the author, the assistant wrote the scripts, ran the
+computations and the searches that led to the family $C_t$, searched the literature, and drafted the proofs and the
+text of this paper. The author set the questions, decided what was pursued and what was claimed, and is responsible
+for the content. The computer-assisted part of Theorem~\ref{thm:main}(c) exists in two implementations, both written
+with the assistant; neither they nor the proofs have yet been checked by a second person.
 
 \begin{thebibliography}{DFMV03}
 
