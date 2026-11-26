@@ -714,8 +714,9 @@ extremality; none contains a result of the kind of Theorems 4 or 6.
 All scripts and their outputs are in the repository https://github.com/adrian-burlacu-software/metric-polytope (scripts in `scripts/phase9/`,
 outputs in `results/phase9/`; the Python packages needed are listed in `requirements.txt`). The vertex lists of m_n
 for n ≤ 8 are included in `data/deza/raw/`. The m_9 list is not included: it has to be downloaded from its authors'
-page [DD-web], and the checksums of the file we used are in `data/deza/orbits9/SHA256SUMS.txt`. A permanent archived
-copy of the repository, with a DOI, will be cited here in the final version.
+page [DD-web], and the checksums of the file we used are in `data/deza/orbits9/SHA256SUMS.txt`. A permanent copy of the
+repository is archived at Zenodo: release `v0.1-draft` has the DOI 10.5281/zenodo.24564344, and 10.5281/zenodo.24564343 always resolves to the latest
+archived version.
 
 | item | script | output |
 |---|---|---|
@@ -770,8 +771,9 @@ assistant; neither they nor the proofs have yet been checked by a second person.
 5. **Values marked *** (Comp. 5, Comp. 6) should be re-run in rational arithmetic or dropped.
 7. **Permanent archive.** The repository is public on GitHub since 2026-11-26, with licences (MIT for the code,
    CC BY 4.0 for `docs/`); the third-party data in `data/deza/raw/` and `data/smapo/raw/` are kept (author's
-   decision; their terms of redistribution were not checked). Before submission: switch the repository on at
-   Zenodo, create a tagged release, and replace the last sentence of Section 9 by the DOI.
+   decision; their terms of redistribution were not checked). Release `v0.1-draft` is archived at Zenodo
+   (doi:10.5281/zenodo.24564344; all versions: doi:10.5281/zenodo.24564343), 2026-11-26. Before submission: make a new release from the submitted
+   version and update the version DOI in Section 9.
 6. **Earlier numbering.** In the project notes (`docs/phase9_status.md`) Theorem 6 is "Theorem 1", Proposition 5 is
    "Corollary 1", and Comp. 3–12 appear as Comp. 2′, Comp. 3–3⁗, Comp. 4–9.
 
