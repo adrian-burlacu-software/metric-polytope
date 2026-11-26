@@ -1,27 +1,25 @@
-# Limits of generative descriptions of the vertices of the metric polytope
+# No bounded-scope characterisation of the extreme rays of the metric cone
 
-*Draft of 2026-11-25. Status of every statement is marked: **Theorem** (proved here), **Computation** (exact
-computer result on a stated data set), **Conjecture** / **Question** (open). Section 8 lists what a referee would
-ask to see strengthened.*
+*Draft of 2026-11-26. Every statement is marked **Theorem** / **Proposition** / **Lemma** (proved here),
+**Computation** (exact computer result on a stated data set) or **Question** (open). Section 10 lists what still has
+to be done before submission and is not part of the paper.*
 
 ## Abstract
 
-The metric polytope m_n has 13, 533 and at least 1,056,367 orbits of vertices for n = 7, 8, 9, and no description
-of its vertices other than enumeration is known. We ask whether the vertices can be produced by a fixed finite set
-of rules, valid for all n, together with a finite list of exceptions. We prove that this is impossible for every
-generator that makes fewer than (1 − δ)n bits of choice when it adds the n-th node: by a theorem of Avis the number
-of orbits is at least 2^(n²/2 − O(n log n)), and such a generator reaches a vanishing share of them. For descriptions
-that take a whole weighted graph as input we introduce the *locality* L of an extreme ray of the metric cone, the
-least number of nodes whose tight triangle equalities must be solved together in order to prove extremality. We show
-that L = 4 for every graph covered by Avis's isometric-cycle criterion, hence for almost all graphs, and we compute L
-exactly for all extreme rays of MET_n, n ≤ 8, and for all 1,055,145 cut-adjacent orbits of the known vertex list of
-m_9. The largest value is 4, 4, 5, 7 for n = 5, 6, 7, 8 and 9 on the m_9 list: two orbits of m_9 give rays for which no
-proper subset of the points suffices. The share of rays with L = 4 is 97% and 72% for n = 7, 8, and 30% of the
-orbits on the m_9 list. We also record a uniform normal form for the known
-vertices of m_9 (every vertex is built from at most 5 nodes by one-node steps of six kinds) and show by measurement
-that it does not yield a construction. Finally we prove that L is unbounded: an explicit chiral family C_t of
-extreme rays on 2t points (t odd, t ≥ 9) has L(C_t) > t/6, and L(C_t) = 2t for t ≤ 21 by exact computation. Hence
-no criterion that inspects a bounded number of points at a time characterises the extreme rays of the metric cone.
+A metric on n points spans an extreme ray of the metric cone MET_n exactly when its tight triangle equalities have
+rank C(n,2) − 1. We ask whether this rank condition can be replaced by a test that looks at a bounded number of
+points at a time. To measure this we introduce the *locality* L(d) of an extreme ray d: the least s such that
+extremality of d can be derived by solving the tight equalities inside sets of s points and propagating the
+proportionalities obtained. We prove that L = 4, the smallest possible value, for every graph covered by Avis's
+isometric-cycle criterion, hence for almost all graphs, and that L is nevertheless unbounded: an explicit chiral
+family C_t of extreme rays on 2t points (t odd, t ≥ 9) has L(C_t) > t/6, and L(C_t) = 2t for every odd t from 9
+to 21 by exact computation. Hence no criterion of bounded scope characterises the extreme rays of the metric cone,
+or the vertices of the metric polytope m_n adjacent to a cut. We compute L exactly for all extreme rays of MET_n,
+n ≤ 8, and for the 1,055,145 cut-adjacent orbits of the known vertex list of m_9: the largest values are 4, 4, 5, 7
+for n = 5, ..., 8 and 9 on the m_9 list, and the share of rays with L = 4 falls from 97% (n = 7) to 30% (n = 9).
+We also show, by a counting argument resting on a theorem of Avis, that a generator of vertices of m_n which makes
+fewer than (1 − δ)n bits of choice when it adds the n-th node produces a vanishing share of the orbits, so that no
+finite set of such rules with a finite list of exceptions describes the vertices.
 
 ## 1. Introduction
 
@@ -31,36 +29,41 @@ the same integral vertices, and m_n is the standard linear relaxation of max-cut
 separates the relaxation from the problem. Complete vertex lists are known for n ≤ 8 [DFPS01, DFMV03], and for
 n = 9 there is a list of 1,056,368 orbits conjectured to be complete [DI07]. Constructions of infinite families are
 known (cuts and anticuts, trivial extensions, graphic vertices, Avis's doubling, gluing; see [LP92, L96, DL97]), but
-they account for a small and shrinking part of the lists.
-
-We study the question in the following form.
+they account for a small and shrinking part of the lists, and no description of the vertices other than enumeration
+is known.
 
 > **Question.** Is there a finite set of rules, valid for every n, and a finite list of exceptions, which together
 > produce exactly the vertices of m_n?
 
-The answer depends on what a rule may do, and the paper separates two regimes.
-
-*Small-choice rules.* A rule receives an object on n − 1 nodes and a bounded or slowly growing amount of choice and
-returns an object on n nodes. All classical constructions are of this kind. Theorem 1 shows that no finite set of
-such rules, with any finite list of exceptions, produces more than a vanishing share of the orbits.
+The answer depends on what a rule may do, and we separate two regimes.
 
 *Graph-input rules.* A rule receives a weighted graph on n nodes and returns its shortest-path metric, scaled. Every
 vertex adjacent to a cut arises this way, and the rule is correct exactly when the metric is an extreme ray of MET_n,
 that is, when its tight triangle equalities have rank C(n,2) − 1. The question becomes whether this rank condition
-can be replaced by a combinatorial test of bounded scope. We measure the scope a test needs by the locality L
-(Section 4). For random graphs the answer is the best possible (L = 4 almost surely, Theorem 3); on the actual
-vertex lists the required scope grows with n (Section 5).
+can be replaced by a combinatorial test of bounded scope, in the way Avis's isometric-cycle criterion [A80] does for
+a large class of graphs. We measure the scope a test needs by the locality L (Section 3).
 
-**Contributions.**
-1. Theorem 1 (counting bound), with a complete proof from Avis's Theorem 3.3 [A80].
-2. The locality invariant: Proposition 2 (well defined, sound, complete at s = n), Theorem 3 (L = 4 under Avis's
-   criterion), and Theorem 4: an explicit family of extreme rays with unbounded locality (L > n/12, and L = n in
-   all computed cases).
-3. Exact computations: L for all extreme rays of MET_n, n ≤ 8, and for the m_9 list (Computations C1–C3); the
-   primitive vertices and the ceiling they put on restriction-keeping rules (C4); a normal form for the m_9 list
-   (C5) and the cost of using it as a generator (C6).
-4. Negative results for three natural candidates: graph-indexed families (C7), a deduction rule for the simplest
-   weighted family (C8), and the distance to the elliptope (C9).
+*Small-choice rules.* A rule receives an object on n − 1 nodes and a bounded or slowly growing amount of choice and
+returns an object on n nodes. All classical constructions are of this kind.
+
+**Results.**
+1. *Locality.* The invariant L is well defined, sound and complete (Proposition 2). It equals 4 for every graph
+   covered by the isometric-cycle criterion, and for almost all graphs (Theorem 3).
+2. *Locality is unbounded* (Theorem 4, the main result). An explicit family C_t of extreme rays on n = 2t points has
+   L > n/12, and L = n in all computed cases (18 to 42 points). The proof reduces the tight system of C_t to a
+   linear recurrence around the cycle whose characteristic polynomial has a root that is not a root of unity; on any
+   set of points that misses five consecutive positions this root yields a second solution of the local equations,
+   which no local deduction can exclude.
+3. *Counting.* The number of orbits of vertices of m_n is at least 2^(n²/2 − O(n log n)) (Proposition 5, from Avis's
+   density theorem), and a generator with at most (1 − δ)n bits of choice per node produces a vanishing share of
+   them (Theorem 6).
+4. *Exact computations.* L for all extreme rays of MET_n, n ≤ 8, and for the m_9 list (C1–C3); searches for large
+   locality beyond the lists (C4–C6); and negative results for four other candidate descriptions of the m_9 list
+   (C7–C12).
+
+Together, 1 and 2 say that the scope of the rank condition is the smallest possible for a typical graph and
+unbounded in the worst case; the computations show that on the actual vertex lists the typical case is already
+leaving the minimum at n = 9.
 
 ## 2. Preliminaries
 
@@ -82,74 +85,21 @@ lies on the C(n,2) − 1 independent facets of T(d), so it is an edge. ∎
 
 Conversely, a vertex of m_n adjacent to a cut is, after the switching that moves this cut to 0, of the form (2/τ)d
 for an extreme ray d [LP92]. Every vertex of m_n, n ≤ 8, is adjacent to a cut; on the m_9 list 1,221 orbits are not
-[DI07] (re-derived in C4 below).
+[DI07] (re-derived in C7 below).
 
 **Weighted graphs.** For a metric d with positive distances, the *minimal graph* has an edge ab of weight d_ab
 whenever no third point is between a and b; d is its shortest-path metric. We scale d to coprime integers and call
-the set of weights the *alphabet*. *Graphic* means alphabet {1}.
+the set of weights the *alphabet*. *Graphic* means alphabet {1}; d_G denotes the shortest-path metric of a
+connected graph G.
 
-## 3. A counting bound for small-choice generators
-
-**Theorem (Avis [A80, Thm 3.3]).** Let 0 < ε < 1/5 and n^(−1/5+ε) ≤ p ≤ 1 − n^(−1/4+ε). Then the shortest-path
-metric of the random graph G_{n,p} spans an extreme ray of MET_n with probability 1 − o(1).
-
-With p = 1/2 all labelled graphs are equally likely, so 2^C(n,2)·(1 − o(1)) labelled graphs G have d_G extreme
-[A80, p. 138]; this lower bound on the number of extreme rays of MET_n is quoted in this form in [CL25, §5.1]. To
-keep the paper self-contained we prove the case p = 1/2 in Section 4 (Theorem 3), following Avis's argument and
-closing a small gap in it (pairs of edges with a common endpoint).
-
-**Corollary 1.** The number v(n) of orbits of vertices of m_n satisfies
-v(n) ≥ 2^C(n,2)·(1 − o(1)) / (n!·2^(n−1)) = 2^(n²/2 − O(n log n)).
-
-*Proof.* Distinct labelled graphs have distinct metrics d_G, and G is recovered from x_G = (2/τ)d_G as the set of
-pairs of smallest value, so the vertices x_G of Lemma 1 are distinct. An orbit has at most n!·2^(n−1) elements. ∎
-
-**Upper bound.** Cizma and Linial [CL25, Thm 5.5] prove that MET_n has at most 2^(2.38 n²(1+o(1))) faces. Hence the
-number of extreme rays of MET_n, and the number of orbits of vertices of m_n adjacent to a cut, is 2^Θ(n²), with
-the constant in the exponent between 1/2 and 2.38.
-
-**Definition (generator).** A *generator* consists of sets O_n of *objects on n nodes* (n ≥ n_0), a finite set E of
-exceptional objects, and r *rules*. Each rule maps a pair (object on n − 1 nodes, choice c ∈ {1, ..., C(n)}) to an
-object on n nodes or to nothing. The generated objects are the exceptional ones and the outputs of rules applied to
-generated objects. A map from generated objects on n nodes to orbits of m_n (possibly partial) says which orbit, if
-any, an object *produces*. The *choice* of the generator is b(n) = log₂ C(n) bits.
-
-Nothing is assumed about the objects: they may be vertices, points of m_n that are not vertices, graphs, or partial
-structures. Restriction-keeping moves, families with boundedly many integer parameters of size polynomial in n, and
-the fiber generator of Section 6 for a fixed denominator are generators with b(n) = O(log n).
-
-**Theorem 1.** Let a generator have b(n) ≤ (1 − δ)n for some δ > 0 and all large n. Then it produces at most
-2^((1−δ)n²/2 + O(n)) orbits of m_n, and the share of the orbits of m_n it produces tends to 0. In particular the
-number of orbits it misses is unbounded, so no finite list of exceptions completes it.
-
-*Proof.* Let N(n) be the number of generated objects on n nodes. A generated object on n nodes is exceptional or
-the output of one of r rules on one of N(n − 1) objects with one of 2^b(n) choices, so
-N(n) ≤ r·2^b(n)·N(n − 1) + |E|, and by induction N(n) ≤ (|E| + 1)·∏_{k ≤ n} (r·2^b(k) + 1) = 2^(Σ_{k≤n} b(k) + O(n)).
-Since b(k) ≤ (1 − δ)k for all large k, Σ_{k≤n} b(k) ≤ (1 − δ)n²/2 + O(n). The number of orbits produced is at most
-N(n). By Corollary 1, v(n) ≥ 2^(n²/2 − O(n log n)), so N(n)/v(n) ≤ 2^(−δn²/2 + O(n log n)) → 0 and
-v(n) − N(n) → ∞. The exceptions are included in N(n). ∎
-
-**Remarks.** (a) The bound is sharp in the choice up to a constant factor: with b(n) = n − 1 a rule can choose the
-neighbourhood of the new node, hence an arbitrary graph, and then the single rule G ↦ x_G produces
-2^(n²/2 − O(n log n)) orbits; and by [CL25] a choice of 4.76·n bits per node is enough to index all cut-adjacent
-orbits. Whether graphic vertices are most of them is Question 1 below. (b) The theorem does not need the m_9 list or any computation.
-(c) It is a statement about growth, and the lists show the growth has begun: v(7), v(8), v(9) = 13, 533,
-≥ 1,056,367, successive factors 41 and 1,982.
-
-**Question 1.** Let r(n) be the number of extreme rays of MET_n. Is log₂ r(n) ~ n²/2, i.e. are almost all extreme
-rays graphic on the logarithmic scale, or is lim log₂ r(n)/n² > 1/2? By [CL25] the limit, if it exists, is at most
-2.38. On the lists the graphic share of the cut-adjacent orbits is 92%, 20%, 0.52% for n = 7, 8, 9 (C7), which
-suggests that non-graphic rays dominate at least in number. (For vertices of m_n not adjacent to a cut we know only
-the trivial bound 2^O(n² log n).)
-
-## 4. Locality of an extreme ray
+## 3. Locality of an extreme ray
 
 Let d be a metric on a node set V, |V| = k ≥ 4, with positive distances. Write a solution x of T(d) as
 x_p = d_p·u_p over the pairs p; then u ≡ 1 is a solution, and d is extreme iff every solution has u constant.
 
-**Definition (level-s closure).** Let π be a partition of the pairs, and W ⊆ V. The system T_W(π) consists of the
-equations d_ab·u_[ab] = d_am·u_[am] + d_mb·u_[mb] for the tight triples with a, m, b ∈ W, in one variable u_C per
-class C of π that contains a pair inside W. W *forces* C = C′ under π if u_C = u_C′ in every solution of T_W(π).
+**Definition (level-s closure, locality).** Let π be a partition of the pairs, and W ⊆ V. The system T_W(π) consists
+of the equations d_ab·u_[ab] = d_am·u_[am] + d_mb·u_[mb] for the tight triples with a, m, b ∈ W, in one variable u_C
+per class C of π that contains a pair inside W. W *forces* C = C′ under π if u_C = u_C′ in every solution of T_W(π).
 The *level-s closure* cl_s(d) is the finest partition π that is closed under merging C and C′ whenever some W with
 |W| = s forces C = C′ under π. The *locality* L(d) is the least s ≥ 4 such that cl_s(d) has a single class; L(d) = ∞
 if there is none.
@@ -175,7 +125,9 @@ is spanned by u ≡ 1. (iv) is clear. ∎
 among at most s nodes, used together with proportionalities derived earlier. By (i), the proportionalities
 derivable by s-local deductions are exactly those of cl_s(d). So a test for extremality that proceeds by s-local
 deductions succeeds on d iff L(d) ≤ s, and a characterisation of extreme rays by forbidden or required
-configurations on at most s nodes, closed under such propagation, cannot be complete unless L ≤ s on all rays.
+configurations on at most s nodes, closed under such propagation, cannot be complete unless L ≤ s on all rays. The
+notion covers deductions of two-term proportionalities; a local rule that carries longer linear relations from one
+subset to another is not covered and would need a wider definition.
 
 **Theorem 3.** Let G be a connected graph on k ≥ 4 nodes.
 (a) If all edges of G fall into one class under the relation generated by "opposite edges of an even isometric
@@ -205,186 +157,14 @@ both, which exists unless some n − 3 nodes span no edge, an event of probabili
 The probability of an isolated node is at most n·2^(−(n−1)) → 0, and a graph without isolated nodes in which all
 edges are linked by chains of 4-cycles is connected. An induced 4-cycle is isometric, so (a) applies. ∎
 
+Part (b) is the case p = 1/2 of Avis's density theorem [A80, Thm 3.3], with the stronger conclusion L = 4; the
+argument follows Avis's and treats explicitly the pairs of edges with a common endpoint.
+
 **Remark (finite n).** The union bound in (b) is effective only for n in the thousands, but the conclusion sets in
-much earlier (C3″ below): of 300 samples of G(n, 1/2) each, the shares with d_G extreme are 0.7%, 6%, 23%, 61%,
+much earlier (C4 below): of 300 samples of G(n, 1/2) each, the shares with d_G extreme are 0.7%, 6%, 23%, 61%,
 81%, 91%, 99.3%, 100% for n = 6, 8, 10, 12, 14, 16, 20, 24, and all but one of these 1,383 rays have L = 4.
 
-So the scope of the rank condition is the smallest possible for a typical graph, and the question is what happens
-on the vertices that actually occur.
-
-## 5. Computations on the complete and the known lists
-
-All computations use exact rational arithmetic. Lists: the vertices of m_n for n ≤ 8 (complete: [DFPS01, DFMV03];
-completeness for n = 8 was re-proved independently in this project) and the list of [DI07] for n = 9 as distributed
-by its authors. The distributed file has 1,056,367 orbits including the cut orbit; [DI07] and the authors' web page
-state 1,056,368. The file has 1,056,369 lines of which two are header lines, so the published number equals the
-number of lines minus one, which suggests a counting slip, but we cannot exclude that one orbit is missing from the
-file. We verified that the 1,056,367 rows are vertices, pairwise inequivalent, and include the 1,221 orbits of
-[DI07].
-
-**C1 (all extreme rays of MET_k, k ≤ 8).** Every extreme ray of MET_k with positive distances is obtained from a
-vertex of m_k by a switching (Lemma 1 and its converse). Running through all 2^(k−1) switchings of every orbit
-representative gives 1, 3, 33, 3,751 rays up to permutation for k = 5, 6, 7, 8. As a check of completeness we counted all extreme
-rays of MET_n from these lists (a ray on k points with automorphism group A gives k!·S(n,k)/|A| rays on n points by
-merging points, [A80, Thm 4.2]; the cuts are the case k = 2): the totals 25, 296, 55,226, 119,269,588 for
-n = 5, 6, 7, 8 agree with the published values [DD-web], and the numbers of orbits under S_n are 3, 8, 46, 3,918.
-
-| k | rays | L = 4 | 5 | 6 | 7 | max L |
-|---|---|---|---|---|---|---|
-| 5 | 1 | 1 | | | | 4 |
-| 6 | 3 | 3 | | | | 4 |
-| 7 | 33 | 32 | 1 | | | 5 |
-| 8 | 3,751 | 2,691 | 992 | 67 | 1 | 7 |
-
-**C2 (the m_9 list).** For each of the 1,055,145 cut-adjacent orbits, one switching to a ray (the one with the
-smallest alphabet); 3,394 of these rays have fewer than 9 distinct points and are counted with their own k.
-
-| k | rays | L = 4 | 5 | 6 | 7 | 8 | 9 |
-|---|---|---|---|---|---|---|---|
-| 5–7 | 81 | 81 | | | | | |
-| 8 | 3,313 | 2,411 | 870 | 27 | 5 | | |
-| 9 | 1,051,751 | 315,636 | 515,637 | 201,727 | 18,323 | 426 | 2 |
-
-For k = 9 the shares are 30.0%, 49.0%, 19.2%, 1.7%, 0.04% and two orbits with L = 9 (rows 1,048,423 and 1,048,435
-of the list, both of denominator 27, weights 5 to 10, with 37 tight triples where 35 are needed). For these two the
-closure stops changing at level 6 with 13 and 12 classes joined by 14 and 13 relations, one more than the number of
-classes: the quotient system is a single circuit, and it has no two-term consequence on fewer than all 9 points.
-
-**C2′ (dependence on the switching).** L is an invariant of the ray, not of the orbit of m_n: different switchings
-of a vertex give different rays. For 4,000 random orbits of the m_9 list and all 256 switchings (27,826 rays, 27,737
-of them on 9 distinct points) the distribution over the latter is L = 4: 30.4%, 5: 48.4%, 6: 19.7%, 7: 1.5%, 8: 0.03%,
-close to the distribution of C2. Per orbit, the smallest L over the switchings is 4 for 49% of the orbits, 5 for
-42%, 6 for 9%, 7 for 0.2%; the largest is 4 for 5%, 5 for 43%, 6 for 46%, 7 for 7%, 8 for 0.2%; the two differ by at
-most 4. No ray has L = k.
-
-**C3 (m_10).** Seven vertices of m_10 found by random walks on the skeleton, all switchings that give rays (49 rays):
-L ranges from 4 to 7; every vertex has a switching with L ≥ 6. This sample is too small for any conclusion about the
-maximum.
-
-**C3′ (circulants).** Every extreme ray found among the weighted circulant graphs on 7 to 13 nodes with weights at
-most 3 has L = 4. High locality is not a feature of symmetric examples.
-
-**C3″ (random graphs).** See the remark after Theorem 3 (`random_graph_locality.py`).
-
-**Validation.** On 14,646 weighted graphs with 5 to 11 nodes (957 rays, 13,689 non-rays by the rank test) the
-closure at s = k ends with one class exactly for the rays.
-
-**C3‴ (beyond the lists).** (a) Metrics invariant under a cyclic group: the extreme rays of the invariant subcone
-were enumerated exactly and tested (`sym_search.py`). Two orbits of 5 points (n = 10): 294 rays of MET_10, with
-L = 4, 6, 8 for 254, 20, 20 of them. Two orbits of 6 points (n = 12): 3,019 rays of MET_12, largest L = 9 (24 rays).
-One fixed point and two orbits of 5 (n = 11): 1,332 rays, largest L = 8. Two orbits of 7 points with an additional
-reflection (dihedral symmetry, n = 14; a partial run over 1,237 rays of MET_14): 13 rays with L > 10, and L = 11
-exactly for the five that were computed in full, for example the ray with d(A_i, A_{i+j}) = 6, 2, 4 for
-j = 1, 2, 3, d(B_i, B_{i+j}) = 4, 4, 8 and d(A_0, B_j) = 3, 3, 5, 5, 7, 5, 5 for j = 0, ..., 6. With the same
-symmetry two orbits of 5 give at most L = 8. These are lower bounds for the maximum of L at n = 10, 11, 12, 14
-from a thin slice of the rays: at least 8, 8, 9, 11. (b) The graph K_1 ∨ C_8² (a centre joined to the square of the
-8-cycle; 9 nodes, diameter 2) is a graphic extreme ray with L = 7; K_1 ∨ C_m² is an extreme ray with L = 7 for
-every m from 8 to 13, so this family does not have growing locality. (c) Adding a point to the rays of MET_8 with
-L ≥ 6 (all fiber vertices, beam search to 11 points, 6,794 rays) never gave L above 7. (d) 54 random extreme rays
-on 7 to 11 points obtained by random face descent (280 descents, the others ended with a zero distance) are far from simple (4 to 69 tight triples beyond the minimum) and
-have L ≤ 5.
-
-**Reading of C1–C3.** The largest locality is 4, 4, 5, 7, 9 for k = 5, ..., 9, and the share of rays with L = 4
-decreases. Fixed-scope deduction characterises the extreme rays for k ≤ 6 (scope 4) and k ≤ 7 (scope 5) only, and
-at k = 9 there are rays whose extremality has no proof from any proper subset of the points. Large locality is
-rare (two orbits in a million at k = 9) and is not produced by the generic procedures (c), (d).
-
-**The mechanism.** In every stalled closure we examined, the remaining classes are joined by a small system of
-relations in which a two-term consequence needs several relations that sit on different points. For the ray of
-MET_8 with L = 7: the pair (2, 6) has two midpoints, giving 4B + 3A = 4C + 3D on the points {1, 2, 6, 7}, the pair
-(3, 4) has two midpoints, giving 3D + 4B = 3A + 4C on {0, 1, 3, 4}, and only their sum gives B = C, on 7 points.
-Unbounded locality would follow from a family in which such a derivation needs t relations on disjoint point
-sets, with t growing.
-
-**C3⁗ (symmetric rays on 14 to 26 points; a closed-form family).** Notation: two orbits A_i, B_i (i mod t) under the
-dihedral group. Values marked * were computed with the symmetry-reduced closure modulo 2^31 − 1
-(`locality_fast.py`) and not yet re-run in exact arithmetic.
-(a) Exhaustive search of the dihedral two-orbit rays (`sym_search.py --mirror 0 1`): t = 5 (62 rays of MET_10):
-largest L = 8; t = 7 (3,497 rays of MET_14): largest L = 12 (exact); t = 9 (55,300 rays of MET_18 tested, of
-132,051 candidates): largest L = 17*. With a fixed centre added, t = 7 (n = 15): largest L = 13 (exact).
-(b) The family K_t: d(A_i, A_{i±1}) = 10, d(A_i, A_{i±2}) = 20, d(A_i, A_j) = 26 otherwise; d(B_i, B_{i±1}) = 24,
-d(B_i, B_j) = 12 otherwise; d(A_i, B_i) = 7, d(A_i, B_{i±1}) = 17, d(A_i, B_{i±2}) = 13, d(A_i, B_j) = 19 otherwise.
-It is the shortest-path metric of the graph with a cycle on the A_i (weight 10), all non-consecutive pairs of B's
-(12), spokes A_iB_i (7) and cross edges A_iB_{i±2} (13); the weights are forced by three coincidences of geodesics.
-K_7 is an extreme ray with L = 12 (exact), K_11 with L = 16*, K_13 with 14 < L ≤ 16*, and K_9 is not a ray.
-(c) Explanation. After the 4-point merges the classes are: one class K for all pairs of B's, and singletons
-s_i = [A_iB_i], e_i = [A_iA_{i+1}], [A_iB_{i±2}]; eliminating the others leaves the recurrence
-s_i + s_{i+1} + 2s_{i+2} + s_{i+3} + s_{i+4} = 6K for all i mod t. Its symbol (1 + ω²)(1 + ω + ω²) vanishes exactly
-at the primitive 3rd and 4th roots of unity, so K_t cannot be an extreme ray when 3 or 4 divides t, and every
-solution along an open stretch of the cycle has period 12, so 13 consecutive positions force s_j = s_{j+12}; this
-caps the locality of the family, in agreement with (b). By computation K_t is an extreme ray for
-t = 7, 11, 13, 17, 19 and for no other t from 7 to 20; the failure for t = 10, 14 (even, not divisible by 3 or 4)
-is not explained by this recurrence alone.
-(d) Consequence for a proof of Conjecture 1: a family of this kind whose recurrence has a root that is not a root of
-unity (or a multiple root) would have no merge forced on any open stretch, and its locality would grow linearly
-with t. A scan of the 1,094 local-pattern families obtained by extending the 3,497 rays of (a) for t = 7 (rays at
-t = 11 and 13; `family_scan.py`, `window_test.py`) found none: in each, an open window of 14 positions already
-forces merges beyond the 4-point ones.
-
-**Largest locality known per n.** 4, 4, 5, 7 for n = 5, ..., 8 (complete lists); 9 for n = 9 (the m_9 list); at least
-8, 8, 9, 12, 13, 17*, 16* for n = 10, 11, 12, 14, 15, 18, 22.
-
-**Theorem (see §5a).** sup { L(d) : d an extreme ray of MET_n } → ∞ as n → ∞; an explicit family has
-L > n/12 for all its members and L = n for the members computed.
-
-**Fact (from C1, C2).** L(d) ≤ n − 1 for every extreme ray of MET_n, n ≤ 8, but max L = n for n = 9.
-
-**Question 2.** Is max { L(d) : d extreme in MET_n } = n for every n ≥ 9?
-
-**Question 3.** Does the share of orbits of m_n with L = 4 tend to 0? By Theorem 3 and Corollary 1 at least
-2^(n²/2 − O(n log n)) orbits have L = 4, so this is Question 1 in another form.
-
-**C4 (primitive vertices; cut adjacency).** Call a vertex of m_n *primitive* if none of its restrictions to k nodes,
-3 ≤ k < n, is a vertex of m_k. A rule that keeps its input as a restriction of its output cannot produce a
-primitive vertex.
-
-| n | orbits | primitive | share |
-|---|---|---|---|
-| 7 | 13 | 4 | 31% |
-| 8 | 533 | 219 | 41% |
-| 9 | 1,056,367 | 673,787 | 63.8% |
-
-On the m_9 list 1,221 orbits are not adjacent to a cut, in agreement with [DI07].
-
-**C5 (normal form).** Say node v can be *peeled* from the node set S of a vertex x if x|S is a vertex of the fiber
-of m_S over x|(S − v), i.e. the coordinates x_va are determined by the tight inequalities inside S that contain v.
-Peel until no node can be peeled; the remaining set is a *seed*. On the m_9 list the seed has 3 nodes for 583,636
-orbits, 4 nodes for 472,722 and 5 nodes for 8. A tight triangle through v gives an equation x_va ± x_vb = c; these
-form a signed graph on S − v, and v can be peeled iff every component has an unbalanced cycle. Describing a step by
-the lengths of the shortest unbalanced cycles of its components, the 1,056,366 non-cut orbits use six kinds of
-steps: one 3-cycle (5,760,177 steps), two components with 3-cycles (88,230), one 5-cycle (11,967), one 2-cycle
-(3,497), one 7-cycle (1,565), a 3-cycle and a 5-cycle (22).
-
-**C6 (the normal form is not a construction).** The generator "start from all points of m_3 and m_4 with
-denominator D, extend by all determined steps with denominator D, test for vertices" finds every orbit of m_8 with
-D = 3, 4, 5, 6 (52, 12, 15, 95 orbits) and nothing else, from 2,958, 67,164, 757,052 and 5,215,846 candidates on 8
-nodes, of which 43%, 0.28%, 0.04%, 0.07% are vertices. The partial points that lie on a path to a vertex number 39,
-92, 200, 287 on 4 to 7 nodes for D = 6 (against 85, 311, 1,871, 22,788 generated). Six local features of an
-extension were tested as filters that never discard a useful extension; the best keeps 86–100% of the extensions
-where 17–56% are useful.
-
-**C7 (graph-indexed families).** Alphabets and underlying graphs of the cut-adjacent orbits:
-
-| n | orbits | alphabets | graphic | underlying graphs | most orbits on one graph |
-|---|---|---|---|---|---|
-| 7 | 12 | 2 | 92% | 11 | 1 |
-| 8 | 532 | 9 | 20% | 256 | 12 |
-| 9 | 1,055,145 | 1,273 | 0.52% | 31,061 | 2,177 |
-
-A graph does not determine its weights, so "graph ↦ vertex" needs the weights as input.
-
-**C8 (the simplest weighted family).** For rays with alphabet ⊆ {1, 2} (1, 3, 28, 925 for k = 5..8; 27,963 from the
-m_9 list) a deduction rule in the spirit of [A80, §2] (opposite sides of geodesic rectangles; odd closed chains of
-exchanges; propagation through triples with one unknown) is sufficient for extremality and is necessary for all 957
-rays with k ≤ 8; it fails for 76 of the 27,963 rays on 9 nodes. The best necessary condition found rejects 92% of
-7,344 near-miss non-rays. This repeats, for weights {1, 2}, the experience of [A80, p. 132–133].
-
-**C9 (elliptope).** For x in an orbit let λ(x) be the smallest eigenvalue of J − 2X, an orbit invariant. On m_7,
-m_8 and 1,000 sampled orbits of m_9, λ does not separate the orbits reached by 8 restriction-keeping rules from the
-others (probability that an unreached orbit has smaller λ than a reached one: 0.43, 0.47; 0.46 at equal
-denominators).
-
-## 5a. Locality is unbounded
+## 4. Locality is unbounded
 
 **The family C_t.** For odd t ≥ 9 let C_t be the following function on the 2t points A_i, B_i (i ∈ Z_t), where
 |i − j| denotes the cyclic distance and offsets o are taken in (−t/2, t/2):
@@ -403,11 +183,12 @@ line (i ∈ Z, ordinary offsets).
 
     sup { L(d) : d an extreme ray of MET_n } > n/12   for every n = 2t, t odd, t ≥ 9;  in particular it is unbounded.
 
-(c) (Computation, exact.) L(C_t) = 2t for every odd t from 9 to 21: no proper subset of the 18, 22, ..., 42 points proves
-extremality. (With arithmetic modulo 2^31 − 1 the same holds for every odd t from 9 to 23, i.e. up to 46 points.)
+(c) (Computation, exact.) L(C_t) = 2t for every odd t from 9 to 21: no proper subset of the 18, 22, ..., 42 points
+proves extremality. (With arithmetic modulo 2^31 − 1 the same holds for every odd t from 9 to 23, i.e. up to 46
+points.)
 
-So Conjecture 1 of earlier drafts is a theorem, and no rule that examines a bounded number of points at a time
-characterises the extreme rays of the metric cone.
+**Corollary.** No test that proceeds by s-local deductions, for any fixed s, characterises the extreme rays of the
+metric cone; by Lemma 1 the same holds for the vertices of m_n adjacent to a cut.
 
 *Proof of (a).* *Patterns.* A distance of C_t depends on the kinds of the two points and on their offset capped at
 ±3. For t ≥ 9 every configuration of three points, described by kinds and capped offsets, occurs already in C_9
@@ -436,8 +217,8 @@ offsets describe the same pair. As t is odd, δ and t − δ have different pari
 w_i = x(A_iB_{i−2}), b_i = x(B_iB_{i+1}), c_i = x(B_iB_{i+2}), e_i = x(A_iA_{i+2}). The tight triples give
 p_i = 2α − s_{i+1}; q_i = e_i + s_{i+2} = α + m_{i+3} = p_i + b_{i+1}; x(A_iB_j) = α + s_j and
 x(B_iB_j) = s_i + s_j + α for |i − j| ≥ 3; c_i = w_{i+2} + s_{i+2} = m_{i+1} + p_{i+1} = b_i + b_{i+1};
-s_i + s_{i+3} + α = w_{i+2} + p_{i+2}. Eliminating m, b, c, w: the two expressions of c_i through m, p and through
-w, s become
+s_i + s_{i+3} + α = w_{i+2} + p_{i+2}. Hence m_{i+3} = q_i − α, b_{i+1} = q_i − 2α + s_{i+1} and
+w_{i+2} = s_i + 2s_{i+3} − α, and the two expressions of c_i = b_i + b_{i+1} through m, p and through w, s become
 
     q_{i−1} + q_i − q_{i−2} = 5α − s_i − s_{i+1} − s_{i+2},      q_{i−1} + q_i = 3α − s_{i+1} + s_{i+2} + 2s_{i+3},
 
@@ -477,32 +258,235 @@ distance 1 or ≥ 3; for each j the set of pairs A_iB_j with |i − j| ≥ 3; an
 total. We show that π is closed under the merges of level s when t ≥ 6s; since cl_s is the finest partition closed
 under these merges (Proposition 2(i)), cl_s refines π and is not total.
 
-Let W be a set of at most s points of C_t. Its points occupy at most s positions of Z_t, so if t ≥ 6s some run of
-5 consecutive positions is free. Cutting the cycle inside this run identifies the positions of W with integers in an
+Let W be a set of at most s points of C_t. Its points occupy at most s positions of Z_t, which cut the cycle into
+at most s runs of free positions with t − s ≥ 5s positions in total, so some run of 5 consecutive positions is
+free. Cutting the cycle inside this run identifies the positions of W with integers in an
 interval of t − 5 consecutive integers, and this identification ψ: W → C_∞ preserves distances: two points at line
 offset o, 1 ≤ o ≤ t − 6, have cyclic offset o if o < t/2, and o − t otherwise; in the second case o ≥ 5 and
 t − o ≥ 6, so the pair is far (offset of absolute value at least 3) both on the line and on the cycle, where the
-distance does not depend on the offset. Hence the tight triples inside W are tight triples of C_∞, and for every real c the function
-u_c(P) = 1 + c·D(ψP) on the pairs inside W is a solution of T_W in the normalised variables (a combination of the
-solutions d and x). It is constant on the classes of π: D = 0 on the first class, and D(ψ(A_iB_j)) = λ^{ψ(j)}/15 on
-the classes of the second kind. So u_c solves T_W(π). If W forced two different classes C ∋ P, C′ ∋ Q of π to be
-equal, we would have u_c(P) = u_c(Q) for all c, i.e. D(ψP) = D(ψQ), and by Lemma S the pairs ψP, ψQ would be equal
-or related, i.e. P and Q would lie in the same class of π. So no merge is forced, π is closed at level s, and
-L(C_t) > s for every s ≤ t/6. ∎
+distance does not depend on the offset. Hence the tight triples inside W are tight triples of C_∞, and for every
+real c the function u_c(P) = 1 + c·D(ψP) on the pairs inside W is a solution of T_W in the normalised variables (a
+combination of the solutions d and x). It is constant on the classes of π: D = 0 on the first class, and
+D(ψ(A_iB_j)) = λ^{ψ(j)}/15 on the classes of the second kind. So u_c solves T_W(π). If W forced two different
+classes C ∋ P, C′ ∋ Q of π to be equal, we would have u_c(P) = u_c(Q) for all c, i.e. D(ψP) = D(ψQ), and by Lemma S
+the pairs ψP, ψQ would be equal or related, i.e. P and Q would lie in the same class of π. So no merge is forced, π
+is closed at level s, and L(C_t) > s for every s ≤ t/6. ∎
 
 **Remarks.** (1) The proof of (b) gives L(C_t) > t/6; the computations (c) show L(C_t) = 2t for t ≤ 21 (t ≤ 23
 modulo a prime), and we expect L(C_t) = 2t for all odd t ≥ 9. (2) The level-(2t − 1) closure of C_t has exactly
-(t² + 13t + 2)/2 classes for every odd t from 9 to 21, the number of classes of π. (3) Replacing d(A_i, A_{i+2}) = 12 by 16
-gives a second family with the same properties (computed for t = 9, ..., 15). (4) How the family was found: the
-families of this shape are the extreme rays of a fixed 12-dimensional cone of "patterns of radius 2"
-(`pattern_hunt.py`); of its 26,319 rays with positive distances, 9,464 give extreme rays of MET_2t for at least two
-t between 9 and 14, and 96 pass two filters (classes left unmerged on the cycle, and no merge forced on an open
-stretch); 8 of the 96 have L = 2t at t = 9, 11, 13, and they are C_t, its variant (3), their mirror images and
-the versions with A and B exchanged. (5) The mirror-symmetric analogue K_t of C3⁗ has the recurrence
-s_i + s_{i+1} + 2s_{i+2} + s_{i+3} + s_{i+4} = 6K, all of whose characteristic roots are roots of unity; this is
-why its locality stays bounded, and why the chiral family does not.
+(t² + 13t + 2)/2 classes for every odd t from 9 to 21, the number of classes of π: in these cases cl_{2t−1} = π.
+(3) Replacing d(A_i, A_{i+2}) = 12 by 16 gives a second family, an extreme ray with L = 2t for every odd t from 9
+to 21 by the same computation. (4) How the family was found: the two-orbit metrics whose distances depend only on
+offsets capped at ±3 are, for all large t, the points of a fixed 12-dimensional cone of "patterns of radius 2"
+(`pattern_hunt.py`); of its 26,319 extreme rays with positive distances, 9,464 give extreme rays of MET_2t for at
+least two t between 9 and 14, and 96 pass two filters (classes left unmerged on the cycle, and no merge forced on an
+open stretch); 8 of the 96 have L = 2t at t = 9, 11, 13, and they are C_t, its variant (3), their mirror images and
+the versions with A and B exchanged. (5) Chirality matters: the mirror-symmetric family K_t of C6 reduces in the
+same way to a recurrence, but all its characteristic roots are roots of unity, every solution on an open stretch is
+periodic, and its locality stays bounded.
 
-## 6. Related work
+## 5. A counting bound for small-choice generators
+
+**Theorem (Avis [A80, Thm 3.3]).** Let 0 < ε < 1/5 and n^(−1/5+ε) ≤ p ≤ 1 − n^(−1/4+ε). Then the shortest-path
+metric of the random graph G_{n,p} spans an extreme ray of MET_n with probability 1 − o(1).
+
+With p = 1/2 all labelled graphs are equally likely, so 2^C(n,2)·(1 − o(1)) labelled graphs G have d_G extreme
+[A80, p. 138]; this lower bound on the number of extreme rays of MET_n is quoted in this form in [CL25, §5.1]. The
+case p = 1/2 is also proved by Theorem 3(b), so what follows does not depend on [A80, Thm 3.3].
+
+**Proposition 5.** The number v(n) of orbits of vertices of m_n satisfies
+v(n) ≥ 2^C(n,2)·(1 − o(1)) / (n!·2^(n−1)) = 2^(n²/2 − O(n log n)).
+
+*Proof.* Distinct labelled graphs have distinct metrics d_G, and G is recovered from x_G = (2/τ)d_G as the set of
+pairs of smallest value, so the vertices x_G of Lemma 1 are distinct. An orbit has at most n!·2^(n−1) elements. ∎
+
+**Upper bound.** Cizma and Linial [CL25, Thm 5.5] prove that MET_n has at most 2^(2.38 n²(1+o(1))) faces. Hence the
+number of extreme rays of MET_n, and the number of orbits of vertices of m_n adjacent to a cut, is 2^Θ(n²), with
+the constant in the exponent between 1/2 and 2.38.
+
+**Definition (generator).** A *generator* consists of sets O_n of *objects on n nodes* (n ≥ n_0), a finite set E of
+exceptional objects, and r *rules*. Each rule maps a pair (object on n − 1 nodes, choice c ∈ {1, ..., C(n)}) to an
+object on n nodes or to nothing. The generated objects are the exceptional ones and the outputs of rules applied to
+generated objects. A map from generated objects on n nodes to orbits of m_n (possibly partial) says which orbit, if
+any, an object *produces*. The *choice* of the generator is b(n) = log₂ C(n) bits.
+
+Nothing is assumed about the objects: they may be vertices, points of m_n that are not vertices, graphs, or partial
+structures. Restriction-keeping moves, families with boundedly many integer parameters of size polynomial in n, and
+the generator of C9 for a fixed denominator are generators with b(n) = O(log n).
+
+**Theorem 6.** Let a generator have b(n) ≤ (1 − δ)n for some δ > 0 and all large n. Then it produces at most
+2^((1−δ)n²/2 + O(n)) orbits of m_n, and the share of the orbits of m_n it produces tends to 0. In particular the
+number of orbits it misses is unbounded, so no finite list of exceptions completes it.
+
+*Proof.* Let N(n) be the number of generated objects on n nodes. A generated object on n nodes is exceptional or
+the output of one of r rules on one of N(n − 1) objects with one of 2^b(n) choices, so
+N(n) ≤ r·2^b(n)·N(n − 1) + |E|, and by induction N(n) ≤ (|E| + 1)·∏_{k ≤ n} (r·2^b(k) + 1) = 2^(Σ_{k≤n} b(k) + O(n)).
+Since b(k) ≤ (1 − δ)k for all large k, Σ_{k≤n} b(k) ≤ (1 − δ)n²/2 + O(n). The number of orbits produced is at most
+N(n). By Proposition 5, v(n) ≥ 2^(n²/2 − O(n log n)), so N(n)/v(n) ≤ 2^(−δn²/2 + O(n log n)) → 0 and
+v(n) − N(n) → ∞. The exceptions are included in N(n). ∎
+
+**Remarks.** (a) The bound is sharp in the choice up to a constant factor: with b(n) = n − 1 a rule can choose the
+neighbourhood of the new node, hence an arbitrary graph, and then the single rule G ↦ x_G produces
+2^(n²/2 − O(n log n)) orbits; and by [CL25] a choice of 4.76·n bits per node is enough to index all cut-adjacent
+orbits. (b) The theorem does not need the m_9 list or any computation. (c) It is a statement about growth, and the
+lists show the growth has begun: v(7), v(8), v(9) = 13, 533, ≥ 1,056,367, successive factors 41 and 1,982.
+
+**Question 1.** Let r(n) be the number of extreme rays of MET_n. Is log₂ r(n) ~ n²/2, i.e. are almost all extreme
+rays graphic on the logarithmic scale, or is lim log₂ r(n)/n² > 1/2? By [CL25] the limit, if it exists, is at most
+2.38. On the lists the graphic share of the cut-adjacent orbits is 92%, 20%, 0.52% for n = 7, 8, 9 (C10), which
+suggests that non-graphic rays dominate at least in number. (For vertices of m_n not adjacent to a cut we know only
+the trivial bound 2^O(n² log n).)
+
+## 6. Computations: locality on the vertex lists and beyond
+
+All computations use exact rational arithmetic unless marked *. Lists: the vertices of m_n for n ≤ 8 (complete:
+[DFPS01, DFMV03]; completeness for n = 8 was re-proved independently in this project) and the list of [DI07] for
+n = 9 as distributed by its authors. The distributed file has 1,056,367 orbits including the cut orbit; [DI07] and
+the authors' web page state 1,056,368. The file has 1,056,369 lines of which two are header lines, so the published
+number equals the number of lines minus one, which suggests a counting slip, but we cannot exclude that one orbit is
+missing from the file. We verified that the 1,056,367 rows are vertices, pairwise inequivalent, and include the
+1,221 orbits of [DI07] that are not adjacent to a cut. The m_9 list is not known to be complete, so C2, C3 and
+C7–C12 are statements about the list.
+
+**C1 (all extreme rays of MET_k, k ≤ 8).** Every extreme ray of MET_k with positive distances is obtained from a
+vertex of m_k by a switching (Lemma 1 and its converse). Running through all 2^(k−1) switchings of every orbit
+representative gives 1, 3, 33, 3,751 rays up to permutation for k = 5, 6, 7, 8. As a check of completeness we
+counted all extreme rays of MET_n from these lists (a ray on k points with automorphism group A gives
+k!·S(n,k)/|A| rays on n points by merging points, [A80, Thm 4.2]; the cuts are the case k = 2): the totals 25, 296,
+55,226, 119,269,588 for n = 5, 6, 7, 8 agree with the published values [DD-web], and the numbers of orbits under S_n
+are 3, 8, 46, 3,918.
+
+| k | rays | L = 4 | 5 | 6 | 7 | max L |
+|---|---|---|---|---|---|---|
+| 5 | 1 | 1 | | | | 4 |
+| 6 | 3 | 3 | | | | 4 |
+| 7 | 33 | 32 | 1 | | | 5 |
+| 8 | 3,751 | 2,691 | 992 | 67 | 1 | 7 |
+
+*Validation of the implementation.* On 14,646 weighted graphs with 5 to 11 nodes (957 rays, 13,689 non-rays by the
+rank test) the closure at s = k ends with one class exactly for the rays, as Proposition 2(iii) requires.
+
+**C2 (the m_9 list).** For each of the 1,055,145 cut-adjacent orbits, one switching to a ray (the one with the
+smallest alphabet); 3,394 of these rays have fewer than 9 distinct points and are counted with their own k.
+
+| k | rays | L = 4 | 5 | 6 | 7 | 8 | 9 |
+|---|---|---|---|---|---|---|---|
+| 5–7 | 81 | 81 | | | | | |
+| 8 | 3,313 | 2,411 | 870 | 27 | 5 | | |
+| 9 | 1,051,751 | 315,636 | 515,637 | 201,727 | 18,323 | 426 | 2 |
+
+For k = 9 the shares are 30.0%, 49.0%, 19.2%, 1.7%, 0.04% and two orbits with L = 9 (rows 1,048,423 and 1,048,435
+of the list, both of denominator 27, weights 5 to 10, with 37 tight triples where 35 are needed). For these two the
+closure stops changing at level 6 with 13 and 12 classes joined by 14 and 13 relations, one more than the number of
+classes: the quotient system is a single circuit, and it has no two-term consequence on fewer than all 9 points.
+
+**C3 (dependence on the switching).** L is an invariant of the ray, not of the orbit of m_n: different switchings
+of a vertex give different rays. For n ≤ 8 all switchings are covered by C1. For 4,000 random orbits of the m_9 list
+and all 256 switchings (27,826 rays, 27,737 of them on 9 distinct points) the distribution over the latter is
+L = 4: 30.4%, 5: 48.4%, 6: 19.7%, 7: 1.5%, 8: 0.03%, close to the distribution of C2. Per orbit, the smallest L over
+the switchings is 4 for 49% of the orbits, 5 for 42%, 6 for 9%, 7 for 0.2%; the largest is 4 for 5%, 5 for 43%,
+6 for 46%, 7 for 7%, 8 for 0.2%; the two differ by at most 4. So 9% of the sampled orbits have no switching with
+L ≤ 5.
+
+**Reading of C1–C3.** The largest locality is 4, 4, 5, 7, 9 for k = 5, ..., 9, and the share of rays with L = 4
+decreases (97%, 72%, 30% for k = 7, 8, 9). Fixed-scope deduction characterises the extreme rays for k ≤ 6
+(scope 4) and k ≤ 7 (scope 5) only, and at k = 9 there are rays whose extremality has no proof from any proper
+subset of the points. Large locality is rare on the lists: two orbits in a million at k = 9.
+
+**C4 (random and circulant graphs).** Random graphs G(n, 1/2), 300 samples for each n: see the remark after
+Theorem 3. Every extreme ray found among the weighted circulant graphs on 7 to 13 nodes with weights at most 3 has
+L = 4. High locality is not typical, and it is not a consequence of symmetry alone.
+
+**C5 (searches for large locality beyond the lists).** Values marked * were computed with a symmetry-reduced
+closure modulo 2^31 − 1 and not re-run in rational arithmetic.
+(a) *Two-orbit metrics.* The metrics on points A_i, B_i (i ∈ Z_t) invariant under the rotation form a cone whose
+extreme rays can be enumerated and tested. Cyclic symmetry: t = 5 (294 rays of MET_10), largest L = 8; t = 6 (3,019
+rays of MET_12), largest L = 9; t = 5 with a fixed centre (1,332 rays of MET_11), largest L = 8. Dihedral symmetry:
+t = 7 (3,497 rays of MET_14), largest L = 12; t = 7 with a fixed centre (n = 15), largest L = 13; t = 9 (55,300
+rays of MET_18 tested, of 132,051 candidates), largest L = 17*.
+(b) *Generic procedures do not find large locality.* Seven vertices of m_10 found by random walks on the skeleton
+(49 rays over all switchings): L from 4 to 7. Adding a point to the rays of MET_8 with L ≥ 6 (beam search to 11
+points, 6,794 rays): L never above 7. Random face descent in MET_n, n = 7, ..., 11 (54 extreme rays from 280
+descents, the others ended with a zero distance): L ≤ 5. The graphs K_1 ∨ C_m² (a centre joined to the square of
+the m-cycle) are graphic extreme rays with L = 7 for every m from 8 to 13.
+
+**C6 (a symmetric family whose locality saturates).** The family K_t on A_i, B_i (i ∈ Z_t): d(A_i, A_{i±1}) = 10,
+d(A_i, A_{i±2}) = 20, d(A_i, A_j) = 26 otherwise; d(B_i, B_{i±1}) = 24, d(B_i, B_j) = 12 otherwise; d(A_i, B_i) = 7,
+d(A_i, B_{i±1}) = 17, d(A_i, B_{i±2}) = 13, d(A_i, B_j) = 19 otherwise. It is invariant under the dihedral group.
+By computation K_t is an extreme ray for t = 7, 11, 13, 17, 19 and for no other t from 7 to 20, with L = 12 for
+t = 7, L = 16* for t = 11 and 14 < L ≤ 16* for t = 13. After the 4-point merges the classes are one class K for
+all pairs of B's and singletons, and eliminating all but s_i = [A_iB_i] leaves the recurrence
+s_i + s_{i+1} + 2s_{i+2} + s_{i+3} + s_{i+4} = 6K for all i mod t. Its symbol (1 + ω²)(1 + ω + ω²) vanishes exactly
+at the primitive 3rd and 4th roots of unity. So K_t cannot be an extreme ray when 3 or 4 divides t, and every
+solution along an open stretch of the cycle has period 12, so 13 consecutive positions force s_j = s_{j+12}; this
+caps the locality of the family. (The failure for t = 10, 14 is not explained by this recurrence alone.) Of 1,094
+mirror-symmetric local-pattern families obtained by extending the dihedral rays of C5(a) for t = 7, every one has a
+window of 14 positions that forces merges beyond the 4-point ones. This is what led to the chiral families of
+Section 4.
+
+**Largest locality known per n.** 4, 4, 5, 7 for n = 5, ..., 8 (complete lists); 9 for n = 9 (the m_9 list); at least
+8, 8, 9, 12, 13 for n = 10, 11, 12, 14, 15 (C5); n for n = 18, 22, ..., 42 (Theorem 4(c)).
+
+**Fact (from C1, C2).** L(d) ≤ n − 1 for every extreme ray of MET_n, n ≤ 8, but max L = n for n = 9.
+
+**Question 2.** Is max { L(d) : d extreme in MET_n } = n for every n ≥ 9? Is L(C_t) = 2t for every odd t ≥ 9?
+
+**Question 3.** Does the share of orbits of m_n with L = 4 tend to 0? By Theorem 3 and Proposition 5 at least
+2^(n²/2 − O(n log n)) orbits have L = 4, so this is Question 1 in another form.
+
+## 7. Other descriptions of the m_9 list
+
+**C7 (primitive vertices; cut adjacency).** Call a vertex of m_n *primitive* if none of its restrictions to k nodes,
+3 ≤ k < n, is a vertex of m_k. A rule that keeps its input as a restriction of its output cannot produce a
+primitive vertex.
+
+| n | orbits | primitive | share |
+|---|---|---|---|
+| 7 | 13 | 4 | 31% |
+| 8 | 533 | 219 | 41% |
+| 9 | 1,056,367 | 673,787 | 63.8% |
+
+On the m_9 list 1,221 orbits are not adjacent to a cut, in agreement with [DI07].
+
+**C8 (a normal form).** Say node v can be *peeled* from the node set S of a vertex x if x|S is a vertex of the fiber
+of m_S over x|(S − v), i.e. the coordinates x_va are determined by the tight inequalities inside S that contain v.
+Peel until no node can be peeled; the remaining set is a *seed*. On the m_9 list the seed has 3 nodes for 583,636
+orbits, 4 nodes for 472,722 and 5 nodes for 8. A tight triangle through v gives an equation x_va ± x_vb = c; these
+form a signed graph on S − v, and v can be peeled iff every component has an unbalanced cycle. Describing a step by
+the lengths of the shortest unbalanced cycles of its components, the 1,056,366 non-cut orbits use six kinds of
+steps: one 3-cycle (5,760,177 steps), two components with 3-cycles (88,230), one 5-cycle (11,967), one 2-cycle
+(3,497), one 7-cycle (1,565), a 3-cycle and a 5-cycle (22).
+
+**C9 (the normal form is not a construction).** The generator "start from all points of m_3 and m_4 with
+denominator D, extend by all determined steps with denominator D, test for vertices" finds every orbit of m_8 with
+D = 3, 4, 5, 6 (52, 12, 15, 95 orbits) and nothing else, from 2,958, 67,164, 757,052 and 5,215,846 candidates on 8
+nodes, of which 43%, 0.28%, 0.04%, 0.07% are vertices. The partial points that lie on a path to a vertex number 39,
+92, 200, 287 on 4 to 7 nodes for D = 6 (against 85, 311, 1,871, 22,788 generated). Six local features of an
+extension were tested as filters that never discard a useful extension; the best keeps 86–100% of the extensions
+where 17–56% are useful.
+
+**C10 (graph-indexed families).** Alphabets and underlying graphs of the cut-adjacent orbits:
+
+| n | orbits | alphabets | graphic | underlying graphs | most orbits on one graph |
+|---|---|---|---|---|---|
+| 7 | 12 | 2 | 92% | 11 | 1 |
+| 8 | 532 | 9 | 20% | 256 | 12 |
+| 9 | 1,055,145 | 1,273 | 0.52% | 31,061 | 2,177 |
+
+A graph does not determine its weights, so "graph ↦ vertex" needs the weights as input.
+
+**C11 (the simplest weighted family).** For rays with alphabet ⊆ {1, 2} (1, 3, 28, 925 for k = 5, ..., 8; 27,963
+from the m_9 list) a deduction rule in the spirit of [A80, §2] (opposite sides of geodesic rectangles; odd closed
+chains of exchanges; propagation through triples with one unknown) is sufficient for extremality and is necessary
+for all 957 rays with k ≤ 8; it fails for 76 of the 27,963 rays on 9 nodes. The best necessary condition found
+rejects 92% of 7,344 near-miss non-rays. This repeats, for weights {1, 2}, the experience of [A80, p. 132–133].
+
+**C12 (elliptope).** For x in an orbit let λ(x) be the smallest eigenvalue of J − 2X, an orbit invariant. On m_7,
+m_8 and 1,000 sampled orbits of m_9, λ does not separate the orbits reached by 8 restriction-keeping rules from the
+others (probability that an unreached orbit has smaller λ than a reached one: 0.43, 0.47; 0.46 at equal
+denominators).
+
+## 8. Related work
 
 Avis [A80] introduced graphic extreme rays, the isometric-cycle criterion, the density theorem used here and the
 embedding theorem (every rational metric is a restriction of an extreme ray, [A80, Thm 3.5]); the last explains why
@@ -511,71 +495,58 @@ study graphic and one-third-integral vertices and the operations that preserve v
 Deza, Fukuda, Pasechnik, Sato, Mizutani, Vo and Indik [DDF96, DFPS01, DFMV03, DI07]. Cizma and Linial [CL25]
 count path systems and faces of MET_n: they quote Avis's lower bound 2^(C(n,2)(1+o(1))) for the extreme rays, prove
 the upper bound 2^(2.38n²(1+o(1))) for all faces, and show that metrizability of a path system is decided by a
-linear program; as far as we could see they do not consider generators or bounded-scope criteria. Corollary 1 is
-thus Avis's bound transferred to orbits of m_n, and Theorem 1 is an elementary consequence of it; what is new here,
-to our knowledge, is the formulation as a limit on generators, the locality invariant with Theorem 3, and the
-computations.
+linear program; as far as we could see they do not consider generators or bounded-scope criteria. Proposition 5 is
+thus Avis's bound transferred to orbits of m_n, and Theorem 6 is an elementary consequence of it. What is new here,
+to our knowledge, is the locality invariant with Theorems 3 and 4, the formulation of the counting bound as a limit
+on generators, and the computations.
 
-Other related work found in a literature pass (searches on extreme and prime metrics, characterisations of extreme
-rays, forbidden configurations, recent work on vertices of m_n). Bandelt and Dress [BD92] decompose a metric into
-split metrics and a split-prime residue; extreme rays other than cuts are split-prime, but split-prime metrics need
-not be extreme, so this gives a necessary condition only (it is condition 05 of C8). Koolen, Moulton and Tönges
-[KMT00] and Sturmfels and Yu [SY04] classify the six-point metrics. Lavrov [La25] generalises Avis's isometric-cycle
-criterion to metrics on simplicial posets and states that the classification of extreme metrics for general n is
-open. Bodwin [Bo18] characterises the path systems that are unique shortest paths of a weighted graph by forbidden
-subsystems coming from two-coloured polyhedra; his examples have 4 to 10 nodes and the family is not bounded in
-size. That result concerns faces of the metric cone of a different kind (strict metrizability), but it is the
-closest analogue we know of the phenomenon measured by L: obstructions that cannot be confined to a bounded number
-of points. In none of these did we find the locality invariant, a bound on generators, or a statement that extreme
-rays admit no bounded-scope characterisation. [La25] and [Bo18] were read in part only.
+Bandelt and Dress [BD92] decompose a metric into split metrics and a split-prime residue; extreme rays other than
+cuts are split-prime, but split-prime metrics need not be extreme, so this gives a necessary condition only.
+Koolen, Moulton and Tönges [KMT00] and Sturmfels and Yu [SY04] classify the six-point metrics. Lavrov [La25]
+generalises Avis's isometric-cycle criterion to metrics on simplicial posets and states that the classification of
+extreme metrics for general n is open. Bodwin [Bo18] characterises the path systems that are unique shortest paths
+of a weighted graph by forbidden subsystems coming from two-coloured polyhedra; his examples have 4 to 10 nodes and
+the family is not bounded in size. That result concerns faces of the metric cone of a different kind (strict
+metrizability), but it is the closest analogue we know of Theorem 4: obstructions that cannot be confined to a
+bounded number of points. In none of these did we find the locality invariant, a bound on generators, or a
+statement that extreme rays admit no bounded-scope characterisation.
 
-## 7. Reproduction
+## 9. Reproduction
 
 Scripts in `scripts/phase9/`, outputs in `results/phase9/`.
 
 | item | script | output |
 |---|---|---|
-| C1, C3, validation | `locality_checks.py`, `ray_count_check.py` | `locality_checks.json`, `ray_count_check.json` |
-| C3″ | `random_graph_locality.py` | `random_graph_locality.json` |
+| Theorem 4 (checks V1–V3, part (c), remark 4) | `family_C_proof.py`, `family_C.py`, `family_C_structure.py`, `pattern_hunt.py`, `cand_pattern.py` | `family_C_proof.json`, `family_C.json`, `pattern_hunt.json`, `cand_pattern.json` |
+| C1, validation | `locality_checks.py`, `ray_count_check.py` | `locality_checks.json`, `ray_count_check.json` |
 | C2 | `locality.py --all9` | `locality_m9all.json` |
-| C2′ | `locality_switch9.py` | `locality_switch9.json` |
-| Theorem 4 | `family_C.py`, `family_C_proof.py`, `family_C_structure.py`, `pattern_hunt.py`, `cand_pattern.py` | `family_C.json`, `family_C_proof.json`, `pattern_hunt.json`, `cand_pattern.json` |
-| C3‴ | `sym_search.py`, `locality_climb.py`, `random_ray_locality.py` | `sym_search.json`, `locality_climb.json`, `random_ray_locality.json` |
-| C3⁗ | `sym_search.py --mirror 0 1 --fast`, `famK.py`, `famK_level.py`, `family_scan.py`, `window_test.py`, `exact_check.py` | `sym_search.json`, `family_scan.json`, `window_test.json`, `exact_check.json` |
-| C4, C5 | `vertex_structure.py`, `step_types.py` | `vertex_structure_deza9all.json`, `step_types_m9all.json` |
-| C6 | `fiber_generator.py`, `useful_share.py`, `choice_features.py` | `fiber_generator_n8.json`, `useful_share_n8.json`, `choice_features_n8.json` |
-| C7 | `graph_families.py --all9` | `graph_families_m9all.json` |
-| C8 | `family12.py`, `judge_family.py` | `round_18_family.json` |
-| C9 | `elliptope.py` | `elliptope.json` |
+| C3 | `locality_switch9.py` | `locality_switch9.json` |
+| C4 | `random_graph_locality.py`, `locality_checks.py` | `random_graph_locality.json`, `locality_checks.json` |
+| C5 | `sym_search.py` (`--mirror 0 1 --fast` for the dihedral runs), `locality_checks.py`, `locality_climb.py`, `random_ray_locality.py` | `sym_search.json`, `locality_checks.json`, `locality_climb.json`, `random_ray_locality.json` |
+| C6 | `famK.py`, `famK_level.py`, `family_scan.py`, `window_test.py`, `exact_check.py` | `family_scan.json`, `window_test.json`, `exact_check.json` |
+| C7, C8 | `vertex_structure.py`, `step_types.py` | `vertex_structure_deza9all.json`, `step_types_m9all.json` |
+| C9 | `fiber_generator.py`, `useful_share.py`, `choice_features.py` | `fiber_generator_n8.json`, `useful_share_n8.json`, `choice_features_n8.json` |
+| C10 | `graph_families.py --all9` | `graph_families_m9all.json` |
+| C11 | `family12.py`, `judge_family.py` | `round_18_family.json` |
+| C12 | `elliptope.py` | `elliptope.json` |
 
 Ranks are computed modulo 2^31 − 1 with an exact fallback whenever the modular rank is deficient, so every "is a
-vertex" and "is a ray" verdict is exact; the locality closure uses rational arithmetic throughout.
+vertex" and "is a ray" verdict is exact; the locality closure uses rational arithmetic throughout, except for the
+values marked * in C5 and C6 and the parenthesis of Theorem 4(c).
 
-## 8. What is not established
+## 10. Before submission (not part of the paper)
 
-1. **Conjecture 1 is now Theorem 4.** Its proof is new and has been checked only by its author and by the script
-   `family_C_proof.py`; it should be read by a second person. The equality L(C_t) = 2t for all odd t is proved only
-   for t ≤ 15. What follows in this item is the history of the attempts.
-   *Earlier status:* **Conjecture 1 was open.** The growth of L (4, 4, 5, 7, 9 for n = 5..9) is a computation. A proof needs an explicit
-   family of rays with a certificate that the level-s closure stalls. Attempts so far: apex over (complements of)
-   odd cycles and over circulant rims (bounded L), one-point extensions (no gain), random descent (L ≤ 5), cyclic
-   and dihedral two-orbit metrics (L = 8, 12, 17 at n = 10, 14, 18; the closed-form family K_t reaches 16 and then
-   saturates for a reason we understand, C3⁗). What a proof needs is identified: a symmetric family whose reduced
-   recurrence has no forced period. None of the 1,094 mirror-symmetric local-pattern families tested has this;
-   families without mirror symmetry have not been scanned.
-2. **The m_9 list is not proved complete**, so C2, C4, C5, C7 are statements about the list. The count in the file
-   is one less than the published one (Section 5); the authors of the list could confirm which is right.
-3. **C2 uses one switching per orbit.** For n ≤ 8 all switchings are covered by C1, and for n = 9 a sample of
-   4,000 orbits with all switchings by C2′. An orbit-level statement should use the smallest L over the switchings
-   (the best case for a local rule): 9% of the sampled m_9 orbits have no switching with L ≤ 5.
-4. **Theorem 1 no longer rests on [A80, Thm 3.3]**: the case p = 1/2 is proved in Theorem 3(b). That proof has not
-   been read by anyone other than its author.
-5. **Novelty.** The lower bound on the number of rays is known ([A80], quoted in [CL25]). A literature pass
-   (Section 6) found no earlier statement of Theorem 1 or of locality. It was done with web searches and partial
-   readings ([CL25] §7, [La25] §4.2 onwards and [Bo18] §2.2 onwards were seen in summary only); MathSciNet/zbMATH
-   forward citations of [A80], [L96] and [DI07] have not been checked and should be before submission.
-6. **"What L bounds"** is a statement about deductions of two-term proportionalities. A local rule that carries
-   longer linear relations between subsets is not covered and would need a wider definition.
+1. **Second reader.** The proofs of Theorem 4 and Theorem 3(b) have been checked only by their author and, for the
+   finite checks V1–V3, by `family_C_proof.py`. Both should be read by a second person.
+2. **L(C_t) = 2t for all odd t** is computed for t ≤ 21 and proved only as L > t/6 (Question 2).
+3. **Citations.** MathSciNet/zbMATH forward citations of [A80], [L96] and [DI07] have not been checked. [CL25] §7,
+   [La25] §4.2 onwards and [Bo18] §2.2 onwards were read in summary only. The page numbers of [KMT00] and [SY04]
+   are from memory.
+4. **The m_9 count.** The file has one orbit fewer than published (Section 6); the authors of the list could
+   confirm which number is right.
+5. **Values marked *** (C5, C6) should be re-run in rational arithmetic or dropped.
+6. **Earlier numbering.** In the project notes (`docs/phase9_status.md`) Theorem 6 is "Theorem 1", Proposition 5 is
+   "Corollary 1", and C3–C12 appear as C2′, C3–C3⁗, C4–C9.
 
 ## References
 
