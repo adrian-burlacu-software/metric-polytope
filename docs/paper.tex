@@ -54,8 +54,8 @@ proper subset of the points proves extremality (the bound $L(C_t) > t/6$ has a s
 computer-assisted, with exact arithmetic). Hence no test that proceeds by such deductions on a bounded number of
 points characterises the extreme rays of the metric cone, or the vertices of the metric polytope $m_n$ adjacent to a
 cut; tests that only forbid restrictions to a bounded number of points are excluded by Avis's embedding theorem.
-The obstruction is specific to two-term deduction: with longer linear relations the extremality of $C_t$ is derived
-inside sets of 20 points, and with counting and recursion a bounded number of variables suffices for all metrics,
+The obstruction is specific to two-term deduction: with longer linear relations, five points suffice for every
+ray tested on the lists up to nine points and 20 points for $C_t$, and with counting and recursion a bounded number of variables suffices for all metrics,
 by a theorem of Dawar, Grohe, Holm and Laubner; whether deduction with longer relations has bounded scope on all
 extreme rays is left open. We
 compute $L$ exactly for all extreme
@@ -123,7 +123,8 @@ result does not cover it (Remark (d) after Theorem~\ref{thm:generator}).
   (Proposition~\ref{prop:hereditary}, a consequence of Avis's embedding theorem).
 \item \emph{Stronger local tests} (Section~\ref{sec:stronger}). Deduction with linear relations of more than two
   terms, confined to sets of $s$ points, is sound and at least as strong as two-term deduction
-  (Proposition~\ref{prop:lin}), and it proves the extremality of $C_t$ with $s = 20$ for every $t$ tried. With
+  (Proposition~\ref{prop:lin}); it proves the extremality of every ray tested on the lists up to nine points with
+  $s \le 5$, and that of $C_t$ with $s = 20$ for every $t$ tried. With
   counting and recursion, a bounded number of variables suffices for all metrics (Proposition~\ref{prop:fpc}).
 \item \emph{Exact computations.} $L$ for all extreme rays of $\MET_n$, $n \le 8$, and for the $m_9$ list (Comp.~1--3);
   searches for large locality beyond the lists (Comp.~4--6); and negative results for four other candidate descriptions
@@ -756,66 +757,92 @@ model theory (a bounded number of variables, with counting and recursion) the st
 \section{Stronger local tests}\label{sec:stronger}
 
 Theorem~\ref{thm:main} concerns deductions of two-term proportionalities. This section places it among stronger
-kinds of test of bounded scope. In short: the family $C_t$ is an obstruction to two-term deduction only; with
-longer linear relations its extremality is derived inside sets of 20 points; and if counting and recursion are
-allowed, a bounded number of variables suffices for every metric, by a known theorem on the definability of rank.
-Whether deduction with longer relations has bounded scope on all extreme rays is open.
+kinds of test of bounded scope. In short: the obstruction is specific to two-term deduction. If the sets of $s$
+points may exchange linear relations with more than two terms, four or five points suffice for every extreme ray
+of the lists up to nine points that we tested, including those of largest locality, and 20 points suffice for
+$C_t$; and if counting and recursion are allowed, a bounded number of variables suffices for every metric, by a
+known theorem on the definability of rank. Whether deduction with longer relations has bounded scope on all extreme
+rays is open.
 
-\begin{definition}[linear locality]
-Let $d$ be a metric with positive distances on $V$, $|V| = n \ge 4$, and $s \ge 4$. For a set $W$ of at most $s$
-points let $S^0_W$ be the space of solutions of the tight equations inside $W$, a subspace of the functions on the
-pairs inside $W$. A family $(S_W)$ of subspaces $S_W \subseteq S^0_W$ is \emph{consistent} if for all $W, W'$ the
-restrictions of $S_W$ and of $S_{W'}$ to the pairs inside $W \cap W'$ are equal. Sums of consistent families are
-consistent, so there is a largest one, $(S^*_W)$; it is reached from $(S^0_W)$ by repeatedly replacing $S_W$ by
-the set of its elements whose restriction to $W \cap W'$ lies in the restriction of $S_{W'}$, in any order. The
-\emph{linear locality} $L_{\mathrm{lin}}(d)$ is the least $s \ge 4$ such that $S^*_W$ is the line through
-$d|_W$ for every set $W$ of four points; $L_{\mathrm{lin}}(d) = \infty$ if there is none.
+\begin{definition}[linear closure, linear locality]
+Let $d$ be a metric with positive distances on $V$, $|V| = n \ge 4$, let $s \ge 4$ and let $\pi$ be a partition of
+the pairs. For a set $W$ of at most $s$ points, $T_W(\pi)$ is the system of Section~\ref{sec:locality}, in the
+variables $u_C$ of the classes $C$ that contain a pair inside $W$. A family $(S_W)$ of subspaces of the solution
+spaces of the systems $T_W(\pi)$ is \emph{consistent} if for all $W, W'$ the projections of $S_W$ and of $S_{W'}$
+to the variables they have in common are equal. Sums of consistent families are consistent, so there is a largest
+one, $(S^*_W(\pi))$; it is reached from the full solution spaces by repeatedly replacing $S_W$ by the set of its
+elements whose projection to the common variables lies in the projection of $S_{W'}$, in any order. $W$
+\emph{linearly forces} $C = C'$ under $\pi$ if $u_C = u_{C'}$ on $S^*_W(\pi)$. The \emph{level-$s$ linear closure}
+is the finest partition that is closed under merging $C$ and $C'$ whenever some $W$ linearly forces $C = C'$, and
+the \emph{linear locality} $L_{\mathrm{lin}}(d)$ is the least $s \ge 4$ for which it has a single class;
+$L_{\mathrm{lin}}(d) = \infty$ if there is none.
 \end{definition}
 
-Dually, the procedure derives linear relations among the $x_p$, each supported on the pairs inside one set of at
-most $s$ points, by combining relations inside one such set; a relation passes from $W$ to $W'$ only if it is
-supported inside $W \cap W'$. The condition on four-point sets says that $x_p/d_p = x_q/d_q$ is derived for all
-pairs $p, q$.
+This is the level-$s$ closure of Section~\ref{sec:locality} with one addition: two sets $W$, $W'$ may exchange any
+linear relation among the variables they share, not only equalities of two variables. Dually, the procedure derives
+linear relations among the $u_C$, each supported on the classes that meet one set of at most $s$ points.
 
 \begin{proposition}\label{prop:lin}
 \begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
-\item (Soundness) The restriction to $W$ of every solution of $T(d)$ lies in $S^*_W$. Hence
-  $L_{\mathrm{lin}}(d) < \infty$ implies that $d$ is extreme.
-\item $d$ is extreme iff $L_{\mathrm{lin}}(d) \le n$.
-\item $L_{\mathrm{lin}}(d) \le \max(L(d), 6)$.
+\item The level-$s$ linear closure is well defined, and it is coarser than $\cl_s(d)$.
+\item (Soundness) If two pairs $p, q$ are in one class of it, then $x_p/d_p = x_q/d_q$ for every solution $x$ of
+  $T(d)$. Hence $L_{\mathrm{lin}}(d) < \infty$ implies that $d$ is extreme.
+\item $d$ is extreme iff $L_{\mathrm{lin}}(d) \le n$, and then $4 \le L_{\mathrm{lin}}(d) \le L(d)$.
 \end{enumerate}
 \end{proposition}
 
 \begin{proof}
-(i) The restrictions of the solution space of $T(d)$ form a consistent family inside $(S^0_W)$. If all four-point
-sets have $S^*_W = \R\cdot d|_W$, a solution $x$ has $x|_W = c_W\, d|_W$ on each of them, and any two pairs lie in
-a common four-point set, so $x_p/d_p$ does not depend on $p$. (ii) For $s = n$ the set $V$ is in the family and
-$S^*_V \subseteq S^0_V$ is the solution space of $T(d)$; if $d$ is extreme, consistency with $V$ makes every
-$S^*_W$ a line. The converse is (i). (iii) Let $s \ge \max(L(d), 6)$. We show, along the sequence of merges that
-produces $\cl_s(d)$, that for any two pairs $p, q$ in one class of the current partition $\pi$ and any $W \supseteq
-p \cup q$ with $|W| \le s$, the relation $x_p/d_p = x_q/d_q$ holds on $S^*_W$. Suppose this for $\pi$, and let
-$W_0$ force $C = C'$. By the hypothesis $S^*_{W_0}$ consists of solutions of $T_{W_0}(\pi)$, so the relation holds
-on $S^*_{W_0}$ for some $p \in C$, $q \in C'$ inside $W_0$. For $p' \in C$, $q' \in C'$ the relation between $p'$
-and $p$ holds on $S^*_{W_1}$ with $W_1 = p' \cup p \cup q$, by hypothesis, and the one between $p$ and $q$ passes
-to $W_1$ because it is supported inside $W_0 \cap W_1$; so $p'$ and $q$ are related on $S^*_{W_1}$, then $p'$ and
-$q'$ on $S^*_{W_2}$ with $W_2 = p' \cup q \cup q'$, and on every $W \supseteq p' \cup q'$. The sets $W_1, W_2$ have
-at most six points. When $\cl_s(d)$ has one class, every four-point set has $S^*_W = \R\cdot d|_W$.
+(i) Let $\pi$ refine $\pi'$. A solution of $T_W(\pi')$ is a solution of $T_W(\pi)$ that is constant on the classes
+of $\pi'$, and a class of $\pi$ that meets both $W$ and $W'$ lies in a class of $\pi'$ that meets both; so a
+consistent family for $\pi'$ is one for $\pi$, and $S^*_W(\pi')$ is contained in $S^*_W(\pi)$ under this
+identification. Hence a merge that is linearly forced under $\pi$ is forced, or already made, under $\pi'$, and
+the argument of Proposition~\ref{prop:closure}(i) applies. Since $S^*_W(\pi)$ is contained in the solution space of
+$T_W(\pi)$, a merge forced in the sense of Section~\ref{sec:locality} is linearly forced, which gives the
+comparison with $\cl_s$. (ii) By induction on the merges: if $u$ is constant on the classes of $\pi$ for every
+solution of $T(d)$, the restrictions of these solutions form a consistent family, so they lie in $S^*_W(\pi)$, and a
+linearly forced merge preserves the property. (iii) For $s = n$ the set $V$ belongs to the family and $T_V(\pi)$ is
+$T(d)$ on the classes of $\pi$, so the closure is total iff $d$ is extreme; the bounds follow from (i) and the
+definition.
 \end{proof}
 
+\comp{Computation (linear locality on the lists).} $L_{\mathrm{lin}}$ was computed in rational arithmetic for
+every extreme ray of $\MET_k$, $k \le 8$ (Comp.~1; $L_{\mathrm{lin}} = 4$ when $L = 4$), and for the 428 rays of
+Comp.~2 on nine points with $L \ge 8$, which include the two with $L = 9$.
+\begin{center}
+\begin{tabular}{llrrr}
+\toprule
+rays & $L$ & number & $L_{\mathrm{lin}} = 4$ & $L_{\mathrm{lin}} = 5$ \\
+\midrule
+$\MET_5$, $\MET_6$, $\MET_7$ (all) & 4, 5 & 37 & 37 & \\
+$\MET_8$ (all) & 4 & 2,691 & 2,691 & \\
+ & 5 & 992 & 968 & 24 \\
+ & 6 & 67 & 67 & \\
+ & 7 & 1 & 1 & \\
+$m_9$ list, 9 points & 8 & 426 & 358 & 68 \\
+ & 9 & 2 & 2 & \\
+\bottomrule
+\end{tabular}
+\end{center}
+So every ray tested has $L_{\mathrm{lin}} \le 5$, and the two rays whose extremality has no two-term proof on fewer
+than all nine points are proved four points at a time once longer relations may be exchanged. Checks of the
+program: without the exchange step it reproduces $L$ for each of the 1,061 rays with $L \ge 5$ on at most 8 points;
+on 400 metrics that are not extreme it ends with more than one class at every level; and on 150 rays it ends with
+one class at level $k$ (\file{linear\_locality.py}).
+
 \comp{Computation (linear locality of $C_t$).} For windows of five consecutive positions, let $W_{a,j}$ be the
-set of the points $A_i, B_i$ with $i \in [a, a + 5)$ or $i \in [j, j + 5)$, at most 20 points. Running the
-procedure on the $t$ sets $W_{0,j}$ alone, with steps between $W_{0,j}$ and $W_{0,j+1}$, ends with every
-$S_{W_{0,j}}$ equal to the line through $d$: in rational arithmetic for $t = 11, 13, 15, 17, 21, 25, 29, 33, 37$, and modulo
-$2^{31} - 1$ for $t = 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 37, 41, 45, 51$. By the rotation the same holds for all $W_{a,j}$, and two pairs
-$p$, $q$ are then related through pairs inside the windows at their positions, using three sets $W_{a,j}$ and two
-sets of at most six points as in the proof of (iii). Hence
+set of the points $A_i, B_i$ with $i \in [a, a + 5)$ or $i \in [j, j + 5)$, at most 20 points. Starting from the
+discrete partition and using only the $t$ sets $W_{0,j}$, with exchanges between $W_{0,j}$ and $W_{0,j+1}$, every
+$S_{W_{0,j}}$ becomes the line through $d$: in rational arithmetic for $t = 11, 13, 15, 17, 21, 25, 29, 33, 37$, and modulo
+$2^{31} - 1$ for $t = 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 37, 41, 45, 51$. Then all pairs inside $W_{0,j}$ are merged; by the rotation the same
+holds for every $W_{a,j}$, every pair lies in one of these sets, and consecutive sets share pairs, so a single
+class remains. Hence
 \[
   L_{\mathrm{lin}}(C_t) \ \le\ 20 \qquad\text{for these } t,
 \]
 while $L(C_t) = 2t$. As a check of the program, for even $t$ (where $C_t$ is a metric but not extreme: the tight
-system has a solution space of dimension 3) the same run ends with spaces of dimension 3 and proves nothing. With
-windows of four positions (16 points) this particular scheme does not succeed; we did not determine
-$L_{\mathrm{lin}}(C_t)$, and we have not written a proof that is uniform in $t$ (\file{linear\_width.py}).
+system has a solution space of dimension 3) the same run ends with spaces of dimension 3 and proves nothing. This
+is an upper bound from one particular scheme; we did not determine $L_{\mathrm{lin}}(C_t)$, and we have not written
+a proof that is uniform in $t$ (\file{linear\_width.py}).
 
 The reason is the one that makes $C_t$ hard for two-term deduction. Its tight system reduces to the recurrence
 (REC) around the cycle. A two-term relation cannot carry the state of a recurrence of order 4 from one position to
@@ -846,7 +873,8 @@ Such a test is not a local deduction in any practical sense: it evaluates traces
 \cite{DGHL09}. The positive results of this kind hold over $\Q$; the rank over a finite field is not definable in
 this logic \cite{DGHL09}, and extremality is a property over $\Q$.
 (2) So there are three levels. Two-term deduction on $s$ points: unbounded scope (Theorem~\ref{thm:main}).
-Linear deduction on $s$ points: bounded on $C_t$ by the computation above, unknown in general. Counting logic
+Linear deduction on $s$ points: at most 5 on every ray of the lists that we tested and at most 20 on $C_t$, by
+the computations above; unknown in general. Counting logic
 with $k$ variables: bounded.
 (3) \emph{Tests that add points.} A test that adds points to $d$ and proves that the larger metric is extreme
 proves nothing about $d$: by Avis's embedding theorem every rational metric with positive distances, extreme or
@@ -858,8 +886,8 @@ another form, and belongs to the middle level.
 \end{remarks}
 
 \begin{question}\label{q:lin}
-Is $L_{\mathrm{lin}}$ bounded on the extreme rays of the metric cones? A family that answers this in the negative
-cannot be organised along a cycle as $C_t$ is, since the state of a recurrence along a cycle passes through a
+Is $L_{\mathrm{lin}}$ bounded on the extreme rays of the metric cones? On the lists it is at most 5. A family that answers
+this in the negative cannot be organised along a cycle as $C_t$ is, since the state of a recurrence along a cycle passes through a
 bounded window; one would look for tight systems with the structure of a grid or of an expander.
 \end{question}
 
@@ -1127,6 +1155,8 @@ Theorem~\ref{thm:main}(c): $t \le 21$; checks W1--W3 for $t \ge 23$ &
 Theorem~\ref{thm:main}(c): second implementation of W1--W3 &
   \file{family\_C\_top\_check.py} & \file{family\_C\_top\_check.json} \\
 Corollary on bipartite graphs & \file{bipartite\_check.py} & \file{bipartite\_check.json} \\
+Linear locality on the lists (Section~\ref{sec:stronger}) & \file{linear\_locality.py} (\file{-{}-m9hard} for the
+  nine-point rays) & \file{linear\_locality.json}, \file{linear\_locality\_m9hard.json} \\
 Linear locality of $C_t$ (Section~\ref{sec:stronger}) & \file{linear\_width.py} (\file{-{}-exact} for rational
   arithmetic) & \file{linear\_width.json}, \file{linear\_width\_exact.json}, \file{linear\_width\_even.json} \\
 Comp.~1, validation & \file{locality\_checks.py}, \file{ray\_count\_check.py} &

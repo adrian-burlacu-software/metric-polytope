@@ -742,3 +742,18 @@ Question from the author: can the cases the paper "does not cover" be attacked? 
 - **Tests that add points**: unsound in general (Avis embedding); the sound version is linear deduction in disguise.
 - **Open (Question 2 of the paper)**: is L_lin bounded on all extreme rays? A counterexample would need a two-dimensional
   (grid / expander) structure; a cycle cannot do it. This is the natural next project, not started.
+
+## 28. Linear locality on the lists (2026-11-27)
+
+- Definition changed to the natural extension of the level-s closure: sets W, W′ exchange linear relations among
+  the class variables they share (the first version used pair variables only and was not comparable with L below
+  s = 6). Now 4 ≤ L_lin ≤ L always (Proposition 8).
+- **Result:** L_lin ≤ 5 on everything tested. All 3,788 rays of MET_5..8: L_lin = 4 except 24 rays on 8 points
+  with L_lin = 5. The 428 rays of the m_9 list with L ≥ 8: 360 have L_lin = 4, 68 have L_lin = 5; the two rays with
+  L = 9 have L_lin = 4. Exact arithmetic; `scripts/phase9/linear_locality.py`, about 1 minute and 3 minutes.
+- Checks: with the exchange switched off the program reproduces L on all 1,061 rays with L ≥ 5; 400 non-rays are
+  never proved at any level; 150 rays are proved at level k.
+- L_lin(C_t) ≤ 20 still holds (same computation); its true value under the new definition is not known and may be
+  smaller. Not computed: the rest of the m_9 list (L ≤ 7), which could only show values ≤ L.
+- Reading: on all known data, multi-term local deduction needs at most 5 points. The open question (is L_lin
+  bounded?) now has evidence on the "bounded" side; a bound would be a local characterisation of extreme rays.

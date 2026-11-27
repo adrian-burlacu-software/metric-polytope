@@ -1,0 +1,27 @@
+{
+ "seconds": 54.3,
+ "rays_computed": 1061,
+ "cpu_seconds_per_ray": {
+  "mean": 0.55,
+  "max": 4.66
+ },
+ "table": {
+  "5": {
+   "L=4,Llin=4": 1
+  },
+  "6": {
+   "L=4,Llin=4": 3
+  },
+  "7": {
+   "L=4,Llin=4": 32,
+   "L=5,Llin=4": 1
+  },
+  "8": {
+   "L=4,Llin=4": 2691,
+   "L=5,Llin=4": 968,
+   "L=5,Llin=5": 24,
+   "L=6,Llin=4": 67,
+   "L=7,Llin=4": 1
+  }
+ }
+}
