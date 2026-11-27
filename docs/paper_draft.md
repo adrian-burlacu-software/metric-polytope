@@ -18,7 +18,7 @@ arithmetic). Hence no test that proceeds by such deductions on a bounded number 
 rays of the metric cone, or the vertices of the metric polytope m_n adjacent to a cut; tests that only forbid
 restrictions to a bounded number of points are excluded by Avis's embedding theorem. The obstruction is specific
 to two-term deduction: with longer linear relations, five points suffice for every ray tested on the lists up to nine
-points and 20 points for C_t, and
+points and for C_9 and C_11, and
 with counting and recursion a bounded number of variables suffices for all metrics, by a theorem of Dawar, Grohe,
 Holm and Laubner; whether deduction with longer relations has bounded scope on all extreme rays is left open. We
 compute L exactly for all extreme rays of MET_n,
@@ -87,7 +87,7 @@ Together, 1 and 2 say that the scope of the rank condition is the smallest possi
 unbounded in the worst case. What is excluded is stated precisely in the paragraph "What L bounds" of Section 3 and
 in Section 5b: tests by local deduction of proportionalities, and tests by forbidden restrictions. We do not claim
 that every conceivable test of bounded scope fails, and Section 5c shows that this would be false: deductions with
-relations of more than two terms prove the extremality of C_t inside sets of 20 points, and with counting and
+relations of more than two terms prove the extremality of C_9 and of C_11 inside sets of five points, and with counting and
 recursion a bounded number of variables suffices for all metrics, by a theorem of Dawar, Grohe, Holm and Laubner on
 the rank of rational matrices. Whether deduction with longer relations has bounded scope on all extreme rays is open
 (Question 2). The computations show that on the actual vertex lists the typical case is already
@@ -156,7 +156,7 @@ deductions succeeds on d iff L(d) ≤ s, and a characterisation of extreme rays 
 configurations on at most s nodes, closed under such propagation, cannot be complete unless L ≤ s on all rays. The
 notion covers deductions of two-term proportionalities; a local rule that carries longer linear relations from one
 subset to another is not covered; such deductions are defined and discussed in Section 5c, where it is shown that
-they prove the extremality of C_t inside sets of 20 points. Tests that do not propagate anything, and only
+they prove the extremality of C_9 and C_11 inside sets of five points. Tests that do not propagate anything, and only
 require every restriction to s points to be of an allowed kind, are treated in Section 5b.
 
 **Theorem 3.** Let G be a connected graph on k ≥ 4 nodes.
@@ -571,7 +571,7 @@ and recursion) the statement is false (Proposition 9).
 Theorem 4 concerns deductions of two-term proportionalities. This section places it among stronger kinds of test of
 bounded scope. In short: the obstruction is specific to two-term deduction. If the sets of s points may exchange
 linear relations with more than two terms, four or five points suffice for every extreme ray of the lists up to nine
-points that we tested, including those of largest locality, and 20 points suffice for C_t; and if counting and
+points that we tested, including those of largest locality, and five points suffice for C_9 and C_11 (at most 20 for the larger C_t that we tested); and if counting and
 recursion are allowed, a bounded number of variables suffices for every metric, by a known theorem on the
 definability of rank. Whether deduction with longer relations has bounded scope on all extreme rays is open.
 
@@ -624,15 +624,34 @@ exchange step it reproduces L for each of the 1,061 rays with L ≥ 5 on at most
 not extreme it ends with more than one class at every level; and on 150 rays it ends with one class at level k
 (`linear_locality.py`).
 
-**Computation (linear locality of C_t).** For windows of five consecutive positions, let W_{a,j} be the set of the
+**Computation (linear locality of C_t).** (a) *Exact values.* The complete level-s linear closure of C_t, over
+all sets of s points, was computed in rational arithmetic in the dual form: a pool of linear relations among the
+u_C is closed under passing to the minimal-support relations of each set, and under the rotation. At level 4 it is
+the partition π of the proof of Theorem 4, with (t² + 13t + 2)/2 classes, for t = 9, 11, 13, 15, 17; so relations
+with more than two terms add nothing on four points. At level 5 a single class remains for t = 9 (128,088
+relations) and t = 11 (395,945 relations). Hence
+
+  L_lin(C_9) = L_lin(C_11) = 5,   L_lin(C_t) ≥ 5 (t = 13, 15, 17),
+
+while L(C_9) = 18 and L(C_11) = 22. Checks of the program: every relation derived was tested against a basis of
+the solutions of the full system T(d); and for t = 10, where C_t is a metric but not extreme (the solution space
+has dimension 3), a run at level 5 stopped after about 190,000 relations, all of them valid on that space, with 128
+classes (`linear_full.py`). The level-5 computation for t ≥ 13 was not done.
+
+(b) *Upper bounds from small families of sets.* With the sets of the proof of Theorem 4 on at most four points, the
+t sets {B_0, …, B_4} ∪ {B_j, …, B_{j+4}} and the t sets of the points at five consecutive positions, a single class
+remains for t = 9, 11, 13, 15, 17; so L_lin(C_t) ≤ 10 for these t (`linear_family.py`).
+
+(c) For larger t we have a cruder scheme. For windows of five consecutive positions, let W_{a,j} be the set of the
 points A_i, B_i with i ∈ [a, a + 5) or i ∈ [j, j + 5), at most 20 points. Starting from the discrete partition and
 using only the t sets W_{0,j}, with exchanges between W_{0,j} and W_{0,j+1}, every S_{W_{0,j}} becomes the line
 through d: in rational arithmetic for t = 11, 13, 15, 17, 21, 25, 29, 33, 37, and modulo 2³¹ − 1 for t = 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 37, 41, 45, 51. Then all pairs inside W_{0,j} are
 merged; by the rotation the same holds for every W_{a,j}, every pair lies in one of these sets, and consecutive sets
-share pairs, so a single class remains. Hence L_lin(C_t) ≤ 20 for these t, while L(C_t) = 2t. As a check of the
-program, for even t (where C_t is a metric but not extreme: the tight system has a solution space of dimension 3)
-the same run ends with spaces of dimension 3 and proves nothing. This is an upper bound from one particular scheme;
-we did not determine L_lin(C_t), and we have not written a proof that is uniform in t (`linear_width.py`).
+share pairs, so a single class remains. Hence L_lin(C_t) ≤ 20 for these t. For even t the same run ends with spaces
+of dimension 3 and proves nothing (`linear_width.py`).
+
+We have not written a proof of a bound on L_lin(C_t) that is uniform in t; the computations suggest that
+L_lin(C_t) = 5 for every odd t ≥ 9.
 
 The reason is the one that makes C_t hard for two-term deduction. Its tight system reduces to the recurrence (REC)
 around the cycle. A two-term relation cannot carry the state of a recurrence of order 4 from one position to the
@@ -656,7 +675,7 @@ is false if bounded scope is understood as a bounded number of variables and the
 test is not a local deduction in any practical sense: it evaluates traces of powers of the matrix [DGHL09]. The
 positive results of this kind hold over Q; the rank over a finite field is not definable in this logic [DGHL09],
 and extremality is a property over Q. (2) So there are three levels. Two-term deduction on s points: unbounded
-scope (Theorem 4). Linear deduction on s points: at most 5 on every ray of the lists that we tested and at most 20 on C_t, by the
+scope (Theorem 4). Linear deduction on s points: at most 5 on every ray of the lists that we tested, exactly 5 on C_9 and C_11, and at most 20 on the larger C_t tested, by the
 computations above; unknown in general.
 Counting logic with k variables: bounded. (3) *Tests that add points.* A test that adds points to d and proves that
 the larger metric is extreme proves nothing about d: by Avis's embedding theorem every rational metric with
@@ -666,7 +685,7 @@ the larger metric; the new distances are then auxiliary variables defined by lin
 gives relations with more than two terms among the old ones. So this is linear deduction in another form, and
 belongs to the middle level.
 
-**Question 2.** Is L_lin bounded on the extreme rays of the metric cones? On the lists it is at most 5. A family that answers
+**Question 2.** Is L_lin bounded on the extreme rays of the metric cones? On the lists it is at most 5, and no ray with L_lin ≥ 6 is known to us. A family that answers
 this in the negative cannot be organised along a cycle as C_t is, since the state of a recurrence along a cycle passes through a bounded
 window; one would look for tight systems with the structure of a grid or of an expander.
 
@@ -884,7 +903,7 @@ version and lists the earlier ones.
 | Theorem 4 (c): second implementation of W1–W3 | `family_C_top_check.py` | `family_C_top_check.json` |
 | Corollary on bipartite graphs | `bipartite_check.py` | `bipartite_check.json` |
 | Linear locality on the lists (Section 5c) | `linear_locality.py` (`--m9hard` for the nine-point rays) | `linear_locality.json`, `linear_locality_m9hard.json` |
-| Linear locality of C_t (Section 5c) | `linear_width.py` (`--exact` for rational arithmetic) | `linear_width.json`, `linear_width_exact.json`, `linear_width_even.json` |
+| Linear locality of C_t (Section 5c) | `linear_full.py` (exact values; `--check`), `linear_family.py` (`--scheme bblocks --par 5 --local 5`), `linear_width.py` (`--exact` for rational arithmetic) | `linear_full.json`, `linear_family.json`, `linear_width.json`, `linear_width_exact.json`, `linear_width_even.json` |
 | Comp. 1, validation | `locality_checks.py`, `ray_count_check.py` | `locality_checks.json`, `ray_count_check.json` |
 | Comp. 2 | `locality.py --all9` | `locality_m9all.json` |
 | Comp. 3 | `locality_switch9.py` | `locality_switch9.json` |
@@ -954,7 +973,7 @@ assistant; neither they nor the proofs have yet been checked by a second person.
    decision; their terms of redistribution were not checked). Release `v0.1-draft` is archived at Zenodo
    (doi:10.5281/zenodo.24564344; all versions: doi:10.5281/zenodo.24564343), 2026-11-26. Before submission: make a new release from the submitted
    version and update the version DOI in Section 9.
-10. **Section 5c (added 2026-11-27).** Proposition 8 and its proof, the computation L_lin(C_t) ≤ 20 and Proposition 9
+10. **Section 5c (added 2026-11-27).** Proposition 8 and its proof, the computations of L_lin(C_t) (exact value 5 for t = 9, 11) and Proposition 9
    are new and unread by anyone else. [DGHL09] was read (Section VI, Corollary VI.6). [O97] is cited from memory for
    the standard fact that fixed-point logic with counting embeds in bounded-variable infinitary counting logic; the
    reference and the statement should be checked. The computation is exact for the listed t only; a proof uniform
