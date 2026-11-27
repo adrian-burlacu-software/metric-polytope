@@ -1,6 +1,6 @@
 # Extremality in the metric cone has unbounded locality
 
-*Draft of 2026-11-26. Every statement is marked **Theorem** / **Proposition** / **Lemma** (proved here),
+*Draft of 2026-11-27. Every statement is marked **Theorem** / **Proposition** / **Lemma** (proved here),
 **Computation** (exact computer result on a stated data set) or **Question** (open). Section 10 lists what still has
 to be done before submission and is not part of the paper.*
 

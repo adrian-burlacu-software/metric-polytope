@@ -3,7 +3,7 @@
 Code, data and notes for a computational study of the metric cone MET_n and the metric polytope m_n, and for the
 paper
 
-> A. Burlacu, *Extremality in the metric cone has unbounded locality* (draft, November 2026):
+> A. Burlacu, *Extremality in the metric cone has unbounded locality* (draft, 27 November 2026):
 > [docs/paper.pdf](docs/paper.pdf), source [docs/paper.tex](docs/paper.tex).
 
 Archived at Zenodo: [doi:10.5281/zenodo.24564343](https://doi.org/10.5281/zenodo.24564343) (resolves to the latest archived release and lists
