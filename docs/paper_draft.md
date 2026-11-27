@@ -18,7 +18,7 @@ arithmetic). Hence no test that proceeds by such deductions on a bounded number 
 rays of the metric cone, or the vertices of the metric polytope m_n adjacent to a cut; tests that only forbid
 restrictions to a bounded number of points are excluded by Avis's embedding theorem. The obstruction is specific
 to two-term deduction: with longer linear relations, five points suffice for every ray tested on the lists up to nine
-points, and ten points for every C_t (five for C_9 and C_11), and
+points, and ten points for every C_t (five for C_9, C_11 and C_13), and
 with counting and recursion a bounded number of variables suffices for all metrics, by a theorem of Dawar, Grohe,
 Holm and Laubner; whether deduction with longer relations has bounded scope on all extreme rays is left open. We
 compute L exactly for all extreme rays of MET_n,
@@ -87,7 +87,7 @@ Together, 1 and 2 say that the scope of the rank condition is the smallest possi
 unbounded in the worst case. What is excluded is stated precisely in the paragraph "What L bounds" of Section 3 and
 in Section 5b: tests by local deduction of proportionalities, and tests by forbidden restrictions. We do not claim
 that every conceivable test of bounded scope fails, and Section 5c shows that this would be false: deductions with
-relations of more than two terms prove the extremality of every C_t inside sets of ten points (Theorem 9; five points for C_9 and C_11), and with counting and
+relations of more than two terms prove the extremality of every C_t inside sets of ten points (Theorem 9; five points for C_9, C_11 and C_13), and with counting and
 recursion a bounded number of variables suffices for all metrics, by a theorem of Dawar, Grohe, Holm and Laubner on
 the rank of rational matrices. Whether deduction with longer relations has bounded scope on all extreme rays is open
 (Question 2). The computations show that on the actual vertex lists the typical case is already
@@ -571,7 +571,7 @@ and recursion) the statement is false (Proposition 10).
 Theorem 4 concerns deductions of two-term proportionalities. This section places it among stronger kinds of test of
 bounded scope. In short: the obstruction is specific to two-term deduction. If the sets of s points may exchange
 linear relations with more than two terms, four or five points suffice for every extreme ray of the lists up to nine
-points that we tested, including those of largest locality, and ten points suffice for every C_t (Theorem 9; five for C_9 and C_11); and if counting and
+points that we tested, including those of largest locality, and ten points suffice for every C_t (Theorem 9; five for C_9, C_11 and C_13); and if counting and
 recursion are allowed, a bounded number of variables suffices for every metric, by a known theorem on the
 definability of rank. Whether deduction with longer relations has bounded scope on all extreme rays is open.
 
@@ -629,14 +629,14 @@ all sets of s points, was computed in rational arithmetic in the dual form: a po
 u_C is closed under passing to the minimal-support relations of each set, and under the rotation. At level 4 it is
 the partition π of the proof of Theorem 4, with (t² + 13t + 2)/2 classes, for t = 9, 11, 13, 15, 17; so relations
 with more than two terms add nothing on four points. At level 5 a single class remains for t = 9 (128,088
-relations) and t = 11 (395,945 relations). Hence
+relations) , t = 11 (395,945 relations) and t = 13 (1,188,876 relations). Hence
 
-  L_lin(C_9) = L_lin(C_11) = 5,   L_lin(C_t) ≥ 5 (t = 13, 15, 17),
+  L_lin(C_9) = L_lin(C_11) = L_lin(C_13) = 5,   L_lin(C_t) ≥ 5 (t = 15, 17),
 
-while L(C_9) = 18 and L(C_11) = 22. Checks of the program: every relation derived was tested against a basis of
+while L(C_t) = 18, 22, 26. Checks of the program: every relation derived was tested against a basis of
 the solutions of the full system T(d); and for t = 10, where C_t is a metric but not extreme (the solution space
 has dimension 3), a run at level 5 stopped after about 190,000 relations, all of them valid on that space, with 128
-classes (`linear_full.py`). The level-5 computation for t ≥ 13 was not done.
+classes (`linear_full.py`). The level-5 computation for t ≥ 15 was not done.
 
 (b) *Upper bounds from small families of sets.* With the sets of the proof of Theorem 4 on at most four points, the
 t sets {B_0, …, B_4} ∪ {B_j, …, B_{j+4}} and the t sets of the points at five consecutive positions, a single class
@@ -739,7 +739,7 @@ is false if bounded scope is understood as a bounded number of variables and the
 test is not a local deduction in any practical sense: it evaluates traces of powers of the matrix [DGHL09]. The
 positive results of this kind hold over Q; the rank over a finite field is not definable in this logic [DGHL09],
 and extremality is a property over Q. (2) So there are three levels. Two-term deduction on s points: unbounded
-scope (Theorem 4). Linear deduction on s points: at most 5 on every ray of the lists that we tested, at most 10 on every C_t (Theorem 9) and exactly 5 on C_9 and C_11, by the
+scope (Theorem 4). Linear deduction on s points: at most 5 on every ray of the lists that we tested, at most 10 on every C_t (Theorem 9) and exactly 5 on C_9, C_11 and C_13, by the
 computations above; unknown in general.
 Counting logic with k variables: bounded. (3) *Tests that add points.* A test that adds points to d and proves that
 the larger metric is extreme proves nothing about d: by Avis's embedding theorem every rational metric with
@@ -1037,7 +1037,7 @@ assistant; neither they nor the proofs have yet been checked by a second person.
    decision; their terms of redistribution were not checked). Release `v0.1-draft` is archived at Zenodo
    (doi:10.5281/zenodo.24564344; all versions: doi:10.5281/zenodo.24564343), 2026-11-26. Before submission: make a new release from the submitted
    version and update the version DOI in Section 9.
-10. **Section 5c (added 2026-11-27).** Proposition 8 and its proof, the computations of L_lin(C_t) (exact value 5 for t = 9, 11), Theorem 9 (L_lin(C_t) ≤ 10 for all odd t ≥ 9; proof new, needs a reader, especially facts (F1), (F2) and Step 2) and Proposition 10
+10. **Section 5c (added 2026-11-27).** Proposition 8 and its proof, the computations of L_lin(C_t) (exact value 5 for t = 9, 11, 13), Theorem 9 (L_lin(C_t) ≤ 10 for all odd t ≥ 9; proof new, needs a reader, especially facts (F1), (F2) and Step 2) and Proposition 10
    are new and unread by anyone else. [DGHL09] was read (Section VI, Corollary VI.6). [O97] is cited from memory for
    the standard fact that fixed-point logic with counting embeds in bounded-variable infinitary counting logic; the
    reference and the statement should be checked. The computation is exact for the listed t only; a proof uniform

@@ -795,3 +795,4 @@ for all t ≥ 11; three windows are not enough); (2) the state (y_0..y_3) is car
 sets {B_0..B_3, B_k, B_k+3, B_k+4, A_y, A_y'}; (3) M^t − I invertible closes the cycle; (4) three-point sets finish.
 Checks: `linear_uniform.py` (U1, U2), `linear_family.py --scheme state --local 5` proves t = 17..27 and fails on
 t = 20 as it must. The proof needs a human reader. Exact value 5 for all t: conjecture only.
+- t = 13, level 5: one class (1,188,876 relations, 1,060 s, all checked sound): L_lin(C_13) = 5. In the paper.

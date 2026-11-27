@@ -78,5 +78,15 @@
   "finished": true,
   "relations_checked_sound": true,
   "seconds": 279.1
+ },
+ {
+  "t": 13,
+  "s": 5,
+  "classes": 1,
+  "total": true,
+  "pool": 1188876,
+  "finished": true,
+  "relations_checked_sound": true,
+  "seconds": 1059.5
  }
 ]
