@@ -1,0 +1,291 @@
+[
+ {
+  "t": 13,
+  "scheme": "windows",
+  "par": 2,
+  "local": 0,
+  "sets": 13,
+  "max_points": 8,
+  "classes_after_stage1": 170,
+  "classes_final": 170,
+  "proved": false,
+  "final_dims": [
+   5,
+   9
+  ],
+  "rounds": 1,
+  "seconds": 0.6
+ },
+ {
+  "t": 15,
+  "scheme": "windows",
+  "par": 2,
+  "local": 0,
+  "sets": 15,
+  "max_points": 8,
+  "classes_after_stage1": 211,
+  "classes_final": 211,
+  "proved": false,
+  "final_dims": [
+   5,
+   9
+  ],
+  "rounds": 1,
+  "seconds": 0.7
+ },
+ {
+  "t": 13,
+  "scheme": "windows",
+  "par": 3,
+  "local": 0,
+  "sets": 13,
+  "max_points": 12,
+  "classes_after_stage1": 170,
+  "classes_final": 170,
+  "proved": false,
+  "final_dims": [
+   5,
+   11
+  ],
+  "rounds": 1,
+  "seconds": 1.5
+ },
+ {
+  "t": 15,
+  "scheme": "windows",
+  "par": 3,
+  "local": 0,
+  "sets": 15,
+  "max_points": 12,
+  "classes_after_stage1": 211,
+  "classes_final": 211,
+  "proved": false,
+  "final_dims": [
+   5,
+   11
+  ],
+  "rounds": 1,
+  "seconds": 2.0
+ },
+ {
+  "t": 13,
+  "scheme": "windows",
+  "par": 4,
+  "local": 0,
+  "sets": 13,
+  "max_points": 16,
+  "classes_after_stage1": 170,
+  "classes_final": 1,
+  "proved": true,
+  "final_dims": [
+   1,
+   1
+  ],
+  "rounds": 2,
+  "seconds": 2.1
+ },
+ {
+  "t": 15,
+  "scheme": "windows",
+  "par": 4,
+  "local": 0,
+  "sets": 15,
+  "max_points": 16,
+  "classes_after_stage1": 211,
+  "classes_final": 1,
+  "proved": true,
+  "final_dims": [
+   1,
+   1
+  ],
+  "rounds": 2,
+  "seconds": 3.2
+ },
+ {
+  "t": 15,
+  "scheme": "bblocks",
+  "par": 3,
+  "local": 4,
+  "sets": 30,
+  "max_points": 8,
+  "classes_after_stage1": 211,
+  "classes_final": 211,
+  "proved": false,
+  "final_dims": [
+   2,
+   13
+  ],
+  "rounds": 1,
+  "seconds": 2.1
+ },
+ {
+  "t": 15,
+  "scheme": "bblocks",
+  "par": 4,
+  "local": 4,
+  "sets": 30,
+  "max_points": 8,
+  "classes_after_stage1": 211,
+  "classes_final": 211,
+  "proved": false,
+  "final_dims": [
+   4,
+   24
+  ],
+  "rounds": 1,
+  "seconds": 7.7
+ },
+ {
+  "t": 15,
+  "scheme": "bblocks",
+  "par": 5,
+  "local": 4,
+  "sets": 30,
+  "max_points": 10,
+  "classes_after_stage1": 211,
+  "classes_final": 211,
+  "proved": false,
+  "final_dims": [
+   5,
+   39
+  ],
+  "rounds": 1,
+  "seconds": 25.7
+ },
+ {
+  "t": 15,
+  "scheme": "bblocks",
+  "par": 3,
+  "local": 5,
+  "sets": 30,
+  "max_points": 10,
+  "classes_after_stage1": 211,
+  "classes_final": 211,
+  "proved": false,
+  "final_dims": [
+   2,
+   13
+  ],
+  "rounds": 1,
+  "seconds": 3.3
+ },
+ {
+  "t": 15,
+  "scheme": "bblocks",
+  "par": 4,
+  "local": 5,
+  "sets": 30,
+  "max_points": 10,
+  "classes_after_stage1": 211,
+  "classes_final": 211,
+  "proved": false,
+  "final_dims": [
+   4,
+   24
+  ],
+  "rounds": 1,
+  "seconds": 16.5
+ },
+ {
+  "t": 15,
+  "scheme": "bblocks",
+  "par": 5,
+  "local": 5,
+  "sets": 30,
+  "max_points": 10,
+  "classes_after_stage1": 211,
+  "classes_final": 46,
+  "proved": false,
+  "final_dims": [
+   1,
+   22
+  ],
+  "rounds": 3,
+  "seconds": 129.7
+ },
+ {
+  "t": 15,
+  "scheme": "bblocks",
+  "par": 5,
+  "local": 5,
+  "sets": 30,
+  "max_points": 10,
+  "classes_after_stage1": 211,
+  "classes_final": 1,
+  "proved": true,
+  "final_dims": [
+   1,
+   22
+  ],
+  "rounds": 3,
+  "seconds": 126.8
+ },
+ {
+  "t": 9,
+  "scheme": "bblocks",
+  "par": 5,
+  "local": 5,
+  "sets": 17,
+  "max_points": 10,
+  "classes_after_stage1": 100,
+  "classes_final": 1,
+  "proved": true,
+  "final_dims": [
+   1,
+   1
+  ],
+  "rounds": 3,
+  "seconds": 7.1
+ },
+ {
+  "t": 11,
+  "scheme": "bblocks",
+  "par": 5,
+  "local": 5,
+  "sets": 22,
+  "max_points": 10,
+  "classes_after_stage1": 133,
+  "classes_final": 1,
+  "proved": true,
+  "final_dims": [
+   1,
+   10
+  ],
+  "rounds": 3,
+  "seconds": 36.8
+ },
+ {
+  "t": 13,
+  "scheme": "bblocks",
+  "par": 5,
+  "local": 5,
+  "sets": 26,
+  "max_points": 10,
+  "classes_after_stage1": 170,
+  "classes_final": 1,
+  "proved": true,
+  "final_dims": [
+   1,
+   17
+  ],
+  "rounds": 3,
+  "seconds": 79.3
+ },
+ {
+  "t": 17,
+  "scheme": "bblocks",
+  "par": 5,
+  "local": 5,
+  "sets": 34,
+  "max_points": 10,
+  "classes_after_stage1": 256,
+  "classes_final": 1,
+  "proved": true,
+  "final_dims": [
+   1,
+   25
+  ],
+  "rounds": 3,
+  "seconds": 188.7
+ }
+]

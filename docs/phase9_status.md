@@ -757,3 +757,18 @@ Question from the author: can the cases the paper "does not cover" be attacked? 
   smaller. Not computed: the rest of the m_9 list (L ≤ 7), which could only show values ≤ L.
 - Reading: on all known data, multi-term local deduction needs at most 5 points. The open question (is L_lin
   bounded?) now has evidence on the "bounded" side; a bound would be a local characterisation of extreme rays.
+
+## 29. True linear locality of C_t: work in progress (2026-11-27)
+
+State when the session was compacted. NOT yet in the paper (the paper still says L_lin(C_t) ≤ 20).
+- `scripts/phase9/linear_full.py` (complete level-s linear closure of C_t, pool of minimal-support relations,
+  rotation symmetry, exact): C_9 at s = 4: 100 classes (= π), not total; at s = 5: ONE class (89 s, pool 128,088).
+  So **L_lin(C_9) = 5** (L(C_9) = 18).
+- `scripts/phase9/linear_family.py` (upper bounds from chosen families, exact): scheme `bblocks 5` + `--local 5`
+  (sets of at most 10 points) ends with one class for t = 9, 11, 13, 15, 17. Two-window sets of 16 points also work
+  with class variables (t = 13, 15); 12 points do not with that scheme.
+- Pending: (1) fault test `linear_full.py --t 10 --s 5` (C_10 is not extreme; must NOT become total) was running;
+  (2) `linear_full.py --t 11 --s 5` (est. 5–10 min) to see whether 5 persists; t = 13 would be longer (> 10 min,
+  needs the author's OK); (3) write these into Section "Stronger local tests" of paper.tex / §5c of the draft,
+  replacing the 20-point statement; (4) step 2: a bound uniform in t — not started; a uniform proof of the exact
+  value 5 looks hard, a transfer-matrix proof of a bound like 10 is more realistic.
