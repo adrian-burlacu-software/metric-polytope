@@ -629,7 +629,7 @@ all sets of s points, was computed in rational arithmetic in the dual form: a po
 u_C is closed under passing to the minimal-support relations of each set, and under the rotation. At level 4 it is
 the partition π of the proof of Theorem 4, with (t² + 13t + 2)/2 classes, for t = 9, 11, 13, 15, 17; so relations
 with more than two terms add nothing on four points. At level 5 a single class remains for t = 9 (128,088
-relations) , t = 11 (395,945 relations) and t = 13 (1,188,876 relations). Hence
+relations), t = 11 (395,945 relations) and t = 13 (1,188,876 relations). Hence
 
   L_lin(C_9) = L_lin(C_11) = L_lin(C_13) = 5,   L_lin(C_t) ≥ 5 (t = 15, 17),
 
