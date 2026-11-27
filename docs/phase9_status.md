@@ -740,5 +740,5 @@ Question from the author: can the cases the paper "does not cover" be attacked? 
   counting (Dawar–Grohe–Holm–Laubner, LICS 2009, Cor. VI.6; read). So a bounded-variable test with counting and
   recursion exists, and "no bounded-scope test of any kind" is false, not merely unproved.
 - **Tests that add points**: unsound in general (Avis embedding); the sound version is linear deduction in disguise.
-- **Open (Question 4)**: is L_lin bounded on all extreme rays? A counterexample would need a two-dimensional
+- **Open (Question 2 of the paper)**: is L_lin bounded on all extreme rays? A counterexample would need a two-dimensional
   (grid / expander) structure; a cycle cannot do it. This is the natural next project, not started.

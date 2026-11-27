@@ -88,7 +88,7 @@ that every conceivable test of bounded scope fails, and Section 5c shows that th
 relations of more than two terms prove the extremality of C_t inside sets of 20 points, and with counting and
 recursion a bounded number of variables suffices for all metrics, by a theorem of Dawar, Grohe, Holm and Laubner on
 the rank of rational matrices. Whether deduction with longer relations has bounded scope on all extreme rays is open
-(Question 4). The computations show that on the actual vertex lists the typical case is already
+(Question 2). The computations show that on the actual vertex lists the typical case is already
 leaving the minimum at n = 9.
 
 ## 2. Preliminaries
@@ -642,7 +642,7 @@ the larger metric; the new distances are then auxiliary variables defined by lin
 gives relations with more than two terms among the old ones. So this is linear deduction in another form, and
 belongs to the middle level.
 
-**Question 4.** Is L_lin bounded on the extreme rays of the metric cones? A family that answers this in the negative
+**Question 2.** Is L_lin bounded on the extreme rays of the metric cones? A family that answers this in the negative
 cannot be organised along a cycle as C_t is, since the state of a recurrence along a cycle passes through a bounded
 window; one would look for tight systems with the structure of a grid or of an expander.
 
@@ -740,10 +740,10 @@ Section 4.
 
 **Fact (from Comp. 1, Comp. 2).** L(d) ≤ n − 1 for every extreme ray of MET_n, n ≤ 8, but max L = n for n = 9.
 
-**Question 2.** Is max { L(d) : d extreme in MET_n } = n for every n ≥ 9? By Theorem 4(c) this holds for
+**Question 3.** Is max { L(d) : d extreme in MET_n } = n for every n ≥ 9? By Theorem 4(c) this holds for
 n ≡ 2 (mod 4), n ≥ 18, and for n = 9 by Comp. 2 (the two rays exist whether or not the m_9 list is complete).
 
-**Question 3.** Does the share of orbits of m_n with L = 4 tend to 0? By Theorem 3 and Proposition 5 at least
+**Question 4.** Does the share of orbits of m_n with L = 4 tend to 0? By Theorem 3 and Proposition 5 at least
 2^(n²/2 − O(n log n)) orbits have L = 4, so this is Question 1 in another form.
 
 ## 7. Other descriptions of the m_9 list
@@ -933,7 +933,7 @@ assistant; neither they nor the proofs have yet been checked by a second person.
    are new and unread by anyone else. [DGHL09] was read (Section VI, Corollary VI.6). [O97] is cited from memory for
    the standard fact that fixed-point logic with counting embeds in bounded-variable infinitary counting logic; the
    reference and the statement should be checked. The computation is exact for the listed t only; a proof uniform
-   in t (transfer matrices of (REC)) is not written. Question 4 is open and is the natural next project: an
+   in t (transfer matrices of (REC)) is not written. Question 2 is open and is the natural next project: an
    extreme ray with unbounded linear locality would need a two-dimensional structure.
 6. **Earlier numbering.** In the project notes (`docs/phase9_status.md`) Theorem 6 is "Theorem 1", Proposition 5 is
    "Corollary 1", and Comp. 3–12 appear as Comp. 2′, Comp. 3–3⁗, Comp. 4–9.
