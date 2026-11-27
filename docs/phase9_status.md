@@ -772,3 +772,16 @@ State when the session was compacted. NOT yet in the paper (the paper still says
   needs the author's OK); (3) write these into Section "Stronger local tests" of paper.tex / §5c of the draft,
   replacing the 20-point statement; (4) step 2: a bound uniform in t — not started; a uniform proof of the exact
   value 5 looks hard, a transfer-matrix proof of a bound like 10 is more realistic.
+
+## 30. Step 1 finished: linear locality of C_t for small t (2026-11-27)
+
+- `linear_full.py` (complete level-s linear closure, now with `--check`: every relation tested against a basis of
+  the solutions of T(d), and `--maxsec`). Results in `results/phase9/linear_full.json`:
+  level 4 = the partition π of Theorem 4 for t = 9, 11, 13, 15, 17 (100, 133, 170, 211, 256 classes);
+  level 5 = one class for t = 9 (89 s) and t = 11 (279 s). So **L_lin(C_9) = L_lin(C_11) = 5**, and ≥ 5 for t ≤ 17.
+- Fault test t = 10 (not extreme, solution space of dimension 3): the first run (no cap) did not finish in 590 s;
+  the capped run stopped at 274 s in round 2 with 128 classes, about 190,000 relations, all sound. Not run to the end.
+- Level 5 for t = 13 not done (estimate 15–25 min; needs OK).
+- Paper Section 7 and draft §5c updated (parts (a) exact values, (b) 10-point scheme, (c) 20-point scheme);
+  commit 0ff1a5a.
+- Step 2 (bound uniform in t): not started.
