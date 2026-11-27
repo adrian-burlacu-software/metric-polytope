@@ -785,3 +785,13 @@ State when the session was compacted. NOT yet in the paper (the paper still says
 - Paper Section 7 and draft §5c updated (parts (a) exact values, (b) 10-point scheme, (c) 20-point scheme);
   commit 0ff1a5a.
 - Step 2 (bound uniform in t): not started.
+
+## 31. Step 2: a bound uniform in t (2026-11-27)
+
+**Theorem 9 (paper: thm:lin): L_lin(C_t) ≤ 10 for every odd t ≥ 9.** t ≤ 17 by the bblocks computation; t ≥ 19 by
+a written proof: (0) level 4 gives π; (1) REC_i, as a relation among the class variables u_(i), u_(i+3), u_(i+4),
+u_α, is derived by exchange among the five 10-point windows [a, a+5), a = i−2..i+2 (finite exact check U1, the same
+for all t ≥ 11; three windows are not enough); (2) the state (y_0..y_3) is carried around the cycle through 9-point
+sets {B_0..B_3, B_k, B_k+3, B_k+4, A_y, A_y'}; (3) M^t − I invertible closes the cycle; (4) three-point sets finish.
+Checks: `linear_uniform.py` (U1, U2), `linear_family.py --scheme state --local 5` proves t = 17..27 and fails on
+t = 20 as it must. The proof needs a human reader. Exact value 5 for all t: conjecture only.

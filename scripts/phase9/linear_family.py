@@ -13,6 +13,7 @@ Stage 2 (exchange): sets given by --scheme:
   windows w      : W_j = all points at positions [0, w) or [j, j + w)                       (4w points)
   bstate m       : W_j = {B_0..B_3} + {B_j..B_j+m-1} + one far A,  plus local sets           (5 + m points)
   bblocks m      : W_j = {B_0..B_m-1} + {B_j..B_j+m-1}                                       (2m points)
+  state          : W_k = {B_0..B_3, B_k, B_k+3, B_k+4} + two far A-points (9 points; --par ignored)
 plus, with --local q, all sets of the points at q consecutive positions (2q points).
 
   python scripts/phase9/linear_family.py --t 13 15 --scheme windows --w 2 3 4
@@ -160,6 +161,14 @@ def scheme_sets(t, scheme, par):
     elif scheme == "bblocks":                           # B-points only: start block and moving block of par positions
         for j in range(t):
             out.add(tuple(sorted({B(i, t) for i in range(par)} | {B(j + k, t) for k in range(par)})))
+    elif scheme == "state":                             # the sets of the uniform proof: {B_0..B_3, B_k, B_k+3, B_k+4}
+        for k in range(t):                              # and two A-points far from them, in the class alpha
+            pos = {0, 1, 2, 3, k % t, (k + 3) % t, (k + 4) % t}
+            far = [x for x in range(t) if all(min((x - p) % t, (p - x) % t) >= 3 for p in pos)]
+            ya = next(((x, y) for x in far for y in far if x < y and min(y - x, t - y + x) != 2), None)
+            if ya is None:
+                continue
+            out.add(tuple(sorted({B(p, t) for p in pos} | {A(ya[0], t), A(ya[1], t)})))
     return sorted(out)
 
 

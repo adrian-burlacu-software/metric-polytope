@@ -55,7 +55,7 @@ computer-assisted, with exact arithmetic). Hence no test that proceeds by such d
 points characterises the extreme rays of the metric cone, or the vertices of the metric polytope $m_n$ adjacent to a
 cut; tests that only forbid restrictions to a bounded number of points are excluded by Avis's embedding theorem.
 The obstruction is specific to two-term deduction: with longer linear relations, five points suffice for every
-ray tested on the lists up to nine points and for $C_9$ and $C_{11}$, and with counting and recursion a bounded number of variables suffices for all metrics,
+ray tested on the lists up to nine points, and ten points for every $C_t$ (five for $C_9$ and $C_{11}$), and with counting and recursion a bounded number of variables suffices for all metrics,
 by a theorem of Dawar, Grohe, Holm and Laubner; whether deduction with longer relations has bounded scope on all
 extreme rays is left open. We
 compute $L$ exactly for all extreme
@@ -135,8 +135,8 @@ Together, 1 and 2 say that the scope of the rank condition is the smallest possi
 unbounded in the worst case. What is excluded is stated precisely in the paragraph ``What $L$ bounds'' of
 Section~\ref{sec:locality} and in Section~\ref{sec:hereditary}: tests by local deduction of proportionalities, and
 tests by forbidden restrictions. We do not claim that every conceivable test of bounded scope fails, and Section~\ref{sec:stronger} shows that
-this would be false: deductions with relations of more than two terms prove the extremality of $C_9$ and of
-$C_{11}$ inside sets of five points, and with counting and recursion a bounded number of variables suffices for all metrics, by a theorem
+this would be false: deductions with relations of more than two terms prove the extremality of every $C_t$
+inside sets of ten points (Theorem~\ref{thm:lin}; five points for $C_9$ and $C_{11}$), and with counting and recursion a bounded number of variables suffices for all metrics, by a theorem
 of Dawar, Grohe, Holm and Laubner on the rank of rational matrices. Whether deduction with longer relations has
 bounded scope on all extreme rays is open (Question~\ref{q:lin}). The
 computations show that on the actual vertex lists the typical case is already
@@ -220,7 +220,7 @@ proceeds by $s$-local deductions succeeds on $d$ iff $L(d) \le s$, and a charact
 forbidden or required configurations on at most $s$ nodes, closed under such propagation, cannot be complete unless
 $L \le s$ on all rays. The notion covers deductions of two-term proportionalities; a local rule that carries longer
 linear relations from one subset to another is not covered; such deductions are defined and discussed in
-Section~\ref{sec:stronger}, where it is shown that they prove the extremality of $C_9$ and $C_{11}$ inside sets of five points. Tests that do not
+Section~\ref{sec:stronger}, where it is shown that they prove the extremality of every $C_t$ inside sets of ten points. Tests that do not
 propagate anything, and only require every restriction to $s$ points to be of an allowed kind, are treated in
 Section~\ref{sec:hereditary}.
 
@@ -759,8 +759,8 @@ model theory (a bounded number of variables, with counting and recursion) the st
 Theorem~\ref{thm:main} concerns deductions of two-term proportionalities. This section places it among stronger
 kinds of test of bounded scope. In short: the obstruction is specific to two-term deduction. If the sets of $s$
 points may exchange linear relations with more than two terms, four or five points suffice for every extreme ray
-of the lists up to nine points that we tested, including those of largest locality, and five points suffice for
-$C_9$ and $C_{11}$ (at most 20 for the larger $C_t$ that we tested); and if counting and recursion are allowed, a bounded number of variables suffices for every metric, by a
+of the lists up to nine points that we tested, including those of largest locality, and ten points suffice for every $C_t$
+(Theorem~\ref{thm:lin}; five for $C_9$ and $C_{11}$); and if counting and recursion are allowed, a bounded number of variables suffices for every metric, by a
 known theorem on the definability of rank. Whether deduction with longer relations has bounded scope on all extreme
 rays is open.
 
@@ -857,8 +857,82 @@ holds for every $W_{a,j}$, every pair lies in one of these sets, and consecutive
 class remains. Hence $L_{\mathrm{lin}}(C_t) \le 20$ for these $t$. For even $t$ the same run ends with spaces of
 dimension 3 and proves nothing (\file{linear\_width.py}).
 
-We have not written a proof of a bound on $L_{\mathrm{lin}}(C_t)$ that is uniform in $t$; the computations suggest
-that $L_{\mathrm{lin}}(C_t) = 5$ for every odd $t \ge 9$.
+\begin{theorem}\label{thm:lin}
+$L_{\mathrm{lin}}(C_t) \le 10$ for every odd $t \ge 9$, while $L(C_t) = 2t$. (Computer-assisted: for $t \le 17$ by
+the computation (b) above; for $t \ge 19$ by the proof below, which uses one exact finite check.)
+\end{theorem}
+
+\begin{proof}
+Let $t \ge 19$ be odd and $s = 10$. We use two facts about the largest consistent families. (F1) If a linear
+relation among class variables holds on $S^*_W(\pi)$ and each of its variables belongs to a class that meets $W'$,
+then it holds on $S^*_{W'}(\pi)$, because the two spaces have the same projection to their common variables.
+(F2) If $\pi'$ is coarser than $\pi$, a relation that holds on $S^*_W(\pi)$ holds on $S^*_W(\pi')$, with the
+variables of merged classes identified (proof of Proposition~\ref{prop:lin}(i)). Consequently, if the level-10 linear closure is coarser than a
+partition $\pi'$ and a merge is linearly forced under $\pi'$, the merge is made in the closure.
+
+\step{Step 0: the partition $\pi$.} The level-4 closure is coarser than the partition $\pi$ of the proof of
+Theorem~\ref{thm:main}, and so is the level-10 linear closure (Proposition~\ref{prop:lin}(i)). Indeed, the step
+``The $A$-pairs'' of the proof of Theorem~\ref{thm:main}(a) uses, for each conclusion, the equations inside one set
+$\{A_i, A_{i+1}, A_k, A_{k+1}\}$, and its conclusions are equalities of two normalised variables; and for $i, i'$
+far from $j$ the two equations $15\,u(A_iB_j) = 8u_\alpha + 7u(A_jB_j)$ and $15\,u(A_{i'}B_j) = 8u_\alpha + 7u(A_jB_j)$
+inside $\{A_i, A_{i'}, A_j, B_j\}$ force $u(A_iB_j) = u(A_{i'}B_j)$. Write $u_\alpha$ for the variable of the class
+of the $A$-pairs at distance 1 or $\ge 3$ and $u_{(j)}$ for that of the class of the pairs $A_iB_j$, $|i - j| \ge 3$.
+Since $x(A_iB_j) = \alpha + s_j$ on these pairs, \eqref{eq:rec} reads, in these variables,
+\[
+  u_{(i)} + 2u_{(i+3)} + u_{(i+4)} = 4u_\alpha . \tag{REC$_i$}
+\]
+
+\step{Step 1: the recurrence is derived locally.} Let $I_a$ be the set of the ten points $A_j, B_j$,
+$j \in [a, a + 5)$. All four variables of (REC$_i$) belong to classes that meet $I_i$. \emph{Claim:} (REC$_i$) holds
+on $S^*_{I_i}(\pi)$. By the rotation let $i = 0$. Start from the solution spaces of $T_{I_a}(\pi)$ for the five sets
+$I_a$, $-2 \le a \le 2$, and make this family of five spaces consistent by mutual restriction; the result contains
+$S^*_{I_a}(\pi)$, since the spaces $S^*_{I_a}(\pi)$ form a consistent family. The five sets lie in 9 consecutive
+positions; for $t \ge 11$ the distances between their points, the tight triples and the classes of $\pi$ shared by
+them are those of the corresponding points of $C_\infty$, so this computation does not depend on $t$. It was done in
+rational arithmetic (for $t = 31$ and $t = 41$): the space of $I_0$ ends with dimension 5 and (REC$_0$) holds on it
+(check U1 in \file{linear\_uniform.py}; with three sets, $-1 \le a \le 1$, it does not).
+
+\step{Step 2: propagation.} Put $y_j = u_{(j)} - u_\alpha$, so that (REC$_i$) is $y_i + 2y_{i+3} + y_{i+4} = 0$.
+Define vectors $c_k \in \Q^4$, $k \ge 0$, by $c_k = e_k$ (unit vectors) for $k \le 3$ and
+$c_{k+4} = -c_k - 2c_{k+3}$. \emph{Claim:} for $0 \le k \le t + 3$ the relation
+\[
+  y_{k \bmod t} = c_{k,0}\,y_0 + c_{k,1}\,y_1 + c_{k,2}\,y_2 + c_{k,3}\,y_3 \tag{R$_k$}
+\]
+holds on $S^*_W(\pi)$ for every set $W$ of at most 10 points that meets the classes $\alpha$, $(0)$, $(1)$, $(2)$,
+$(3)$ and $(k \bmod t)$. For $k \le 3$ it is trivial. Let $0 \le k \le t - 1$ and suppose (R$_k$) and (R$_{k+3}$)
+hold. Let $P$ be the set of the positions $0, 1, 2, 3, k, k + 3, k + 4$ modulo $t$. The positions at cyclic distance
+at most 2 from $P$ lie in the two intervals $[-2, 5]$ and $[k - 2, k + 6]$, of 17 positions together, so at least two
+positions $y, y'$ are at distance $\ge 3$ from $P$; two such positions are not at distance 2 from each other,
+because the position between them would belong to an interval of at least 8 positions that are not free. So $A_yA_{y'}$ is in the class $\alpha$, and the set
+$W' = \{B_p : p \in P\} \cup \{A_y, A_{y'}\}$ of at most 9 points meets $\alpha$ and $(p)$ for every $p \in P$. By the
+induction hypothesis (R$_k$) and (R$_{k+3}$) hold on $S^*_{W'}(\pi)$, and by Step 1 and (F1) so does (REC$_k$).
+Their combination (R$_{k+4}$) holds on $S^*_{W'}(\pi)$, and by (F1) on every $W$ as in the claim.
+
+\step{Step 3: closing the cycle.} Let $M$ be the matrix with rows $c_1, c_2, c_3, c_4$; then the matrix with rows
+$c_k, \dots, c_{k+3}$ is $M^k$, and the characteristic polynomial of $M$ is $z^4 + 2z^3 + 1$. Take
+$W = \{B_0, B_1, B_2, B_3, A_y, A_{y'}\}$ with $y, y'$ as in Step 2. On $S^*_W(\pi)$ the relations
+(R$_t$), \dots, (R$_{t+3}$) say that $(M^t - I)(y_0, y_1, y_2, y_3)^{\mathsf T} = 0$. By the step ``Rigidity'' of the
+proof of Theorem~\ref{thm:main}(a), no eigenvalue of $M$ is a $t$-th root of unity, so $M^t - I$ is invertible and
+$y_0 = \dots = y_3 = 0$ on $S^*_W(\pi)$: the set $W$ linearly forces $(j) = \alpha$ for $j = 0, 1, 2, 3$, and by
+the rotation for every $j$.
+
+\step{Step 4: the end.} After these merges, three-point sets force the remaining merges, one type of pair at a time,
+each by a tight triple in which the two other pairs are already in the class $\alpha$:
+$A_jB_j$ from $\{A_i, A_j, B_j\}$ with $i$ far from $j$ ($15 = 8 + 7$); $A_iB_{i+1}$ from
+$\{A_i, A_{i+1}, B_{i+1}\}$ ($16 = 9 + 7$); $B_iB_j$, $|i - j| \ge 3$, from $\{B_i, A_i, B_j\}$ ($22 = 7 + 15$);
+$A_{i+2}B_i$ from $\{B_i, A_{i+2}, B_{i+3}\}$ ($22 = 13 + 9$); $B_iB_{i+2}$ from $\{B_i, A_{i+2}, B_{i+2}\}$
+($20 = 13 + 7$); $A_{i+1}B_i$ from $\{B_i, A_{i+1}, B_{i+2}\}$ ($20 = 11 + 9$); $A_iB_{i+2}$ from
+$\{A_i, A_{i+3}, B_{i+2}\}$ ($19 = 8 + 11$); $B_{i+1}B_{i+2}$ from $\{A_i, B_{i+1}, B_{i+2}\}$ ($19 = 9 + 10$);
+$A_iA_{i+2}$ from $\{A_i, A_{i+2}, B_{i+2}\}$ ($19 = 12 + 7$). These are all the types of pairs, so a single class
+remains.
+\end{proof}
+
+\comp{Checks of the proof.} The scheme of the proof was also run as a program, with the sets $I_a$, the sets $W'$
+of Step 2 and the sets on at most four points: a single class remains for $t = 17, 19, 21, 23, 25, 27$ (for $t \le 15$ some of the sets $W'$ do not exist), and for $t = 20$, where $C_t$ is
+not extreme, 130 classes remain (\file{linear\_family.py}, scheme \file{state}). Step 4 was checked by computing the
+two-term merges on all three-point sets for $t = 19, 21, 31$ (check U2). The bound 10 comes from the sets $I_a$ of
+Step 1; Steps 2 to 4 use at most 9 points. We did not try to lower it, and the exact values in (a) suggest that
+$L_{\mathrm{lin}}(C_t) = 5$ for every odd $t \ge 9$; we have no proof of this.
 
 The reason is the one that makes $C_t$ hard for two-term deduction. Its tight system reduces to the recurrence
 (REC) around the cycle. A two-term relation cannot carry the state of a recurrence of order 4 from one position to
@@ -889,8 +963,8 @@ Such a test is not a local deduction in any practical sense: it evaluates traces
 \cite{DGHL09}. The positive results of this kind hold over $\Q$; the rank over a finite field is not definable in
 this logic \cite{DGHL09}, and extremality is a property over $\Q$.
 (2) So there are three levels. Two-term deduction on $s$ points: unbounded scope (Theorem~\ref{thm:main}).
-Linear deduction on $s$ points: at most 5 on every ray of the lists that we tested, exactly 5 on $C_9$ and
-$C_{11}$, and at most 20 on the larger $C_t$ tested, by
+Linear deduction on $s$ points: at most 5 on every ray of the lists that we tested, at most 10 on every $C_t$
+(Theorem~\ref{thm:lin}) and exactly 5 on $C_9$ and $C_{11}$, by
 the computations above; unknown in general. Counting logic
 with $k$ variables: bounded.
 (3) \emph{Tests that add points.} A test that adds points to $d$ and proves that the larger metric is extreme
@@ -1175,7 +1249,7 @@ Theorem~\ref{thm:main}(c): second implementation of W1--W3 &
 Corollary on bipartite graphs & \file{bipartite\_check.py} & \file{bipartite\_check.json} \\
 Linear locality on the lists (Section~\ref{sec:stronger}) & \file{linear\_locality.py} (\file{-{}-m9hard} for the
   nine-point rays) & \file{linear\_locality.json}, \file{linear\_locality\_m9hard.json} \\
-Linear locality of $C_t$ (Section~\ref{sec:stronger}) & \file{linear\_full.py} (exact values; \file{-{}-check}), \file{linear\_family.py} (\file{-{}-scheme bblocks -{}-par 5 -{}-local 5}), \file{linear\_width.py} (\file{-{}-exact} for rational arithmetic) & \file{linear\_full.json}, \file{linear\_family.json}, \file{linear\_width.json}, \file{linear\_width\_exact.json}, \file{linear\_width\_even.json} \\
+Linear locality of $C_t$ (Section~\ref{sec:stronger}) & \file{linear\_uniform.py} (checks U1, U2 of Theorem~\ref{thm:lin}), \file{linear\_full.py} (exact values; \file{-{}-check}), \file{linear\_family.py} (\file{-{}-scheme bblocks -{}-par 5 -{}-local 5}; \file{-{}-scheme state -{}-local 5}), \file{linear\_width.py} (\file{-{}-exact} for rational arithmetic) & \file{linear\_uniform.json}, \file{linear\_full.json}, \file{linear\_family.json}, \file{linear\_width.json}, \file{linear\_width\_exact.json}, \file{linear\_width\_even.json} \\
 Comp.~1, validation & \file{locality\_checks.py}, \file{ray\_count\_check.py} &
   \file{locality\_checks.json}, \file{ray\_count\_check.json} \\
 Comp.~2 & \file{locality.py -{}-all9} & \file{locality\_m9all.json} \\

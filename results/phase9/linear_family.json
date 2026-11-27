@@ -287,5 +287,175 @@
   ],
   "rounds": 3,
   "seconds": 188.7
+ },
+ {
+  "t": 19,
+  "scheme": "state",
+  "par": 0,
+  "local": 5,
+  "sets": 38,
+  "max_points": 10,
+  "classes_after_stage1": 305,
+  "classes_final": 1,
+  "proved": true,
+  "final_dims": [
+   1,
+   13
+  ],
+  "rounds": 2,
+  "seconds": 44.4
+ },
+ {
+  "t": 20,
+  "scheme": "state",
+  "par": 0,
+  "local": 5,
+  "sets": 40,
+  "max_points": 10,
+  "classes_after_stage1": 353,
+  "classes_final": 130,
+  "proved": false,
+  "final_dims": [
+   3,
+   15
+  ],
+  "rounds": 2,
+  "seconds": 90.0
+ },
+ {
+  "t": 21,
+  "scheme": "state",
+  "par": 0,
+  "local": 5,
+  "sets": 42,
+  "max_points": 10,
+  "classes_after_stage1": 358,
+  "classes_final": 1,
+  "proved": true,
+  "final_dims": [
+   1,
+   13
+  ],
+  "rounds": 2,
+  "seconds": 54.4
+ },
+ {
+  "t": 11,
+  "scheme": "state",
+  "par": 0,
+  "local": 5,
+  "sets": 13,
+  "max_points": 10,
+  "classes_after_stage1": 133,
+  "classes_final": 133,
+  "proved": false,
+  "final_dims": [
+   5,
+   5
+  ],
+  "rounds": 1,
+  "seconds": 0.6
+ },
+ {
+  "t": 13,
+  "scheme": "state",
+  "par": 0,
+  "local": 5,
+  "sets": 19,
+  "max_points": 10,
+  "classes_after_stage1": 170,
+  "classes_final": 170,
+  "proved": false,
+  "final_dims": [
+   5,
+   9
+  ],
+  "rounds": 1,
+  "seconds": 1.5
+ },
+ {
+  "t": 15,
+  "scheme": "state",
+  "par": 0,
+  "local": 5,
+  "sets": 25,
+  "max_points": 10,
+  "classes_after_stage1": 211,
+  "classes_final": 211,
+  "proved": false,
+  "final_dims": [
+   5,
+   13
+  ],
+  "rounds": 1,
+  "seconds": 4.7
+ },
+ {
+  "t": 17,
+  "scheme": "state",
+  "par": 0,
+  "local": 5,
+  "sets": 31,
+  "max_points": 10,
+  "classes_after_stage1": 256,
+  "classes_final": 1,
+  "proved": true,
+  "final_dims": [
+   1,
+   11
+  ],
+  "rounds": 2,
+  "seconds": 18.3
+ },
+ {
+  "t": 23,
+  "scheme": "state",
+  "par": 0,
+  "local": 5,
+  "sets": 46,
+  "max_points": 10,
+  "classes_after_stage1": 415,
+  "classes_final": 1,
+  "proved": true,
+  "final_dims": [
+   1,
+   13
+  ],
+  "rounds": 2,
+  "seconds": 60.6
+ },
+ {
+  "t": 25,
+  "scheme": "state",
+  "par": 0,
+  "local": 5,
+  "sets": 50,
+  "max_points": 10,
+  "classes_after_stage1": 476,
+  "classes_final": 1,
+  "proved": true,
+  "final_dims": [
+   1,
+   13
+  ],
+  "rounds": 2,
+  "seconds": 81.3
+ },
+ {
+  "t": 27,
+  "scheme": "state",
+  "par": 0,
+  "local": 5,
+  "sets": 54,
+  "max_points": 10,
+  "classes_after_stage1": 541,
+  "classes_final": 1,
+  "proved": true,
+  "final_dims": [
+   1,
+   13
+  ],
+  "rounds": 2,
+  "seconds": 93.1
  }
 ]
