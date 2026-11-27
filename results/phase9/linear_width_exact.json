@@ -1,0 +1,155 @@
+[
+ {
+  "t": 11,
+  "w": 5,
+  "points_per_set": 20,
+  "exact": true,
+  "sweeps": 2,
+  "initial_dims": [
+   8,
+   11
+  ],
+  "final_dims": [
+   1,
+   1
+  ],
+  "proved": true,
+  "seconds": 5.2
+ },
+ {
+  "t": 13,
+  "w": 5,
+  "points_per_set": 20,
+  "exact": true,
+  "sweeps": 2,
+  "initial_dims": [
+   8,
+   16
+  ],
+  "final_dims": [
+   1,
+   1
+  ],
+  "proved": true,
+  "seconds": 7.9
+ },
+ {
+  "t": 15,
+  "w": 5,
+  "points_per_set": 20,
+  "exact": true,
+  "sweeps": 2,
+  "initial_dims": [
+   8,
+   16
+  ],
+  "final_dims": [
+   1,
+   1
+  ],
+  "proved": true,
+  "seconds": 10.2
+ },
+ {
+  "t": 17,
+  "w": 5,
+  "points_per_set": 20,
+  "exact": true,
+  "sweeps": 2,
+  "initial_dims": [
+   8,
+   16
+  ],
+  "final_dims": [
+   1,
+   1
+  ],
+  "proved": true,
+  "seconds": 12.9
+ },
+ {
+  "t": 21,
+  "w": 5,
+  "points_per_set": 20,
+  "exact": true,
+  "sweeps": 2,
+  "initial_dims": [
+   8,
+   16
+  ],
+  "final_dims": [
+   1,
+   1
+  ],
+  "proved": true,
+  "seconds": 17.8
+ },
+ {
+  "t": 25,
+  "w": 5,
+  "points_per_set": 20,
+  "exact": true,
+  "sweeps": 2,
+  "initial_dims": [
+   8,
+   16
+  ],
+  "final_dims": [
+   1,
+   1
+  ],
+  "proved": true,
+  "seconds": 22.6
+ },
+ {
+  "t": 29,
+  "w": 5,
+  "points_per_set": 20,
+  "exact": true,
+  "sweeps": 2,
+  "initial_dims": [
+   8,
+   16
+  ],
+  "final_dims": [
+   1,
+   1
+  ],
+  "proved": true,
+  "seconds": 27.7
+ },
+ {
+  "t": 33,
+  "w": 5,
+  "points_per_set": 20,
+  "exact": true,
+  "sweeps": 2,
+  "initial_dims": [
+   8,
+   16
+  ],
+  "final_dims": [
+   1,
+   1
+  ],
+  "proved": true,
+  "seconds": 44.6
+ },
+ {
+  "t": 37,
+  "w": 5,
+  "points_per_set": 20,
+  "exact": true,
+  "sweeps": 2,
+  "initial_dims": [
+   8,
+   16
+  ],
+  "final_dims": [
+   1,
+   1
+  ],
+  "proved": true,
+  "seconds": 44.5
+ }
+]

@@ -727,3 +727,18 @@ These notes keep the old labels C1–C12.
   which is 1-ic-colorable and so has L = 4. Theorem 4 therefore says nothing about tests that may add points.
 - Bibliography compared with Crossref/arXiv/Zenodo; Bodwin and Casabella–Joswig–Kastner updated to published
   versions. Starred values: kept as they are (author's decision); the record values 12, 13, 17 are exact.
+
+## 27. Beyond two-term deduction (2026-11-27)
+
+Question from the author: can the cases the paper "does not cover" be attacked? Result: they split three ways.
+- **Linear locality** (new definition, Section 5c / "Stronger local tests"): deduction with linear relations of any
+  number of terms, each supported inside a set of at most s points. Sound; L_lin ≤ max(L, 6).
+  **L_lin(C_t) ≤ 20**: two windows of five positions suffice. Exact for t = 11, 13, 15, 17, 21, 25, 29, 33, 37;
+  mod p up to 51; fault test on even t (not extreme) ends at dimension 3, as it should
+  (`scripts/phase9/linear_width.py`). So C_t is an obstruction to two-term deduction only.
+- **Counting logic**: extremality is a rank condition over Q, and rank over Q is definable in fixed-point logic with
+  counting (Dawar–Grohe–Holm–Laubner, LICS 2009, Cor. VI.6; read). So a bounded-variable test with counting and
+  recursion exists, and "no bounded-scope test of any kind" is false, not merely unproved.
+- **Tests that add points**: unsound in general (Avis embedding); the sound version is linear deduction in disguise.
+- **Open (Question 4)**: is L_lin bounded on all extreme rays? A counterexample would need a two-dimensional
+  (grid / expander) structure; a cycle cannot do it. This is the natural next project, not started.

@@ -53,7 +53,11 @@ explicit chiral family $C_t$ of extreme rays on $2t$ points ($t$ odd, $t \ge 9$)
 proper subset of the points proves extremality (the bound $L(C_t) > t/6$ has a short proof; the equality is
 computer-assisted, with exact arithmetic). Hence no test that proceeds by such deductions on a bounded number of
 points characterises the extreme rays of the metric cone, or the vertices of the metric polytope $m_n$ adjacent to a
-cut; tests that only forbid restrictions to a bounded number of points are excluded by Avis's embedding theorem. We
+cut; tests that only forbid restrictions to a bounded number of points are excluded by Avis's embedding theorem.
+The obstruction is specific to two-term deduction: with longer linear relations the extremality of $C_t$ is derived
+inside sets of 20 points, and with counting and recursion a bounded number of variables suffices for all metrics,
+by a theorem of Dawar, Grohe, Holm and Laubner; whether deduction with longer relations has bounded scope on all
+extreme rays is left open. We
 compute $L$ exactly for all extreme
 rays of $\MET_n$, $n \le 8$, and for the 1,055,145 cut-adjacent orbits of the known vertex list of $m_9$: the largest
 values are $4, 4, 5, 7$ for $n = 5, \dots, 8$ and $9$ on the $m_9$ list, and the share of rays with $L = 4$ falls
@@ -117,6 +121,10 @@ result does not cover it (Remark (d) after Theorem~\ref{thm:generator}).
 \item \emph{Hereditary tests.} A test that accepts a metric when all its restrictions to at most $s$ points belong
   to an allowed set, and that accepts every extreme ray, accepts every rational metric with positive distances
   (Proposition~\ref{prop:hereditary}, a consequence of Avis's embedding theorem).
+\item \emph{Stronger local tests} (Section~\ref{sec:stronger}). Deduction with linear relations of more than two
+  terms, confined to sets of $s$ points, is sound and at least as strong as two-term deduction
+  (Proposition~\ref{prop:lin}), and it proves the extremality of $C_t$ with $s = 20$ for every $t$ tried. With
+  counting and recursion, a bounded number of variables suffices for all metrics (Proposition~\ref{prop:fpc}).
 \item \emph{Exact computations.} $L$ for all extreme rays of $\MET_n$, $n \le 8$, and for the $m_9$ list (Comp.~1--3);
   searches for large locality beyond the lists (Comp.~4--6); and negative results for four other candidate descriptions
   of the $m_9$ list (Comp.~7--12).
@@ -125,7 +133,11 @@ result does not cover it (Remark (d) after Theorem~\ref{thm:generator}).
 Together, 1 and 2 say that the scope of the rank condition is the smallest possible for a typical graph and
 unbounded in the worst case. What is excluded is stated precisely in the paragraph ``What $L$ bounds'' of
 Section~\ref{sec:locality} and in Section~\ref{sec:hereditary}: tests by local deduction of proportionalities, and
-tests by forbidden restrictions. We do not claim that every conceivable test of bounded scope fails. The
+tests by forbidden restrictions. We do not claim that every conceivable test of bounded scope fails, and Section~\ref{sec:stronger} shows that
+this would be false: deductions with relations of more than two terms prove the extremality of $C_t$ inside sets
+of 20 points, and with counting and recursion a bounded number of variables suffices for all metrics, by a theorem
+of Dawar, Grohe, Holm and Laubner on the rank of rational matrices. Whether deduction with longer relations has
+bounded scope on all extreme rays is open (Question~\ref{q:lin}). The
 computations show that on the actual vertex lists the typical case is already
 leaving the minimum at $n = 9$.
 
@@ -206,7 +218,8 @@ proportionalities derivable by $s$-local deductions are exactly those of $\cl_s(
 proceeds by $s$-local deductions succeeds on $d$ iff $L(d) \le s$, and a characterisation of extreme rays by
 forbidden or required configurations on at most $s$ nodes, closed under such propagation, cannot be complete unless
 $L \le s$ on all rays. The notion covers deductions of two-term proportionalities; a local rule that carries longer
-linear relations from one subset to another is not covered and would need a wider definition. Tests that do not
+linear relations from one subset to another is not covered; such deductions are defined and discussed in
+Section~\ref{sec:stronger}, where it is shown that they prove the extremality of $C_t$ inside sets of 20 points. Tests that do not
 propagate anything, and only require every restriction to $s$ points to be of an allowed kind, are treated in
 Section~\ref{sec:hereditary}.
 
@@ -562,7 +575,8 @@ the restriction of the metric of a graph $F(G)$ on more points, and the proof of
 $F(G)$ is 1-ic-colorable, so $L(d_{F(G)}) = 4$ by Theorem~\ref{thm:four}(a). Thus a ray whose extremality has no
 proof on fewer than all of its points is a restriction of a ray whose extremality is proved four points at a time.
 The additional points serve as auxiliary variables; $L$ measures deductions among the given points only, and
-Theorem~\ref{thm:main} says nothing about tests that are allowed to add points.
+Theorem~\ref{thm:main} says nothing about tests that are allowed to add points. Such tests are discussed in
+Remark (3) of Section~\ref{sec:stronger}: they are either unsound or a form of deduction with longer relations.
 \end{remarks}
 
 \section{A counting bound for small-choice generators}
@@ -734,8 +748,120 @@ do not need this.
 configuration to be present, Boolean combinations of forbidden and required configurations, or tests that count
 configurations; and Theorem~\ref{thm:main} does not cover deductions of relations with more than two terms. A
 statement that no test of bounded scope of any kind characterises the extreme rays would need a definition of
-``test of bounded scope'' that includes all of these, and we do not have one.
+``test of bounded scope'' that includes all of these, and we do not have one; with the definition of finite
+model theory (a bounded number of variables, with counting and recursion) the statement is false
+(Proposition~\ref{prop:fpc}).
 \end{remarks}
+
+\section{Stronger local tests}\label{sec:stronger}
+
+Theorem~\ref{thm:main} concerns deductions of two-term proportionalities. This section places it among stronger
+kinds of test of bounded scope. In short: the family $C_t$ is an obstruction to two-term deduction only; with
+longer linear relations its extremality is derived inside sets of 20 points; and if counting and recursion are
+allowed, a bounded number of variables suffices for every metric, by a known theorem on the definability of rank.
+Whether deduction with longer relations has bounded scope on all extreme rays is open.
+
+\begin{definition}[linear locality]
+Let $d$ be a metric with positive distances on $V$, $|V| = n \ge 4$, and $s \ge 4$. For a set $W$ of at most $s$
+points let $S^0_W$ be the space of solutions of the tight equations inside $W$, a subspace of the functions on the
+pairs inside $W$. A family $(S_W)$ of subspaces $S_W \subseteq S^0_W$ is \emph{consistent} if for all $W, W'$ the
+restrictions of $S_W$ and of $S_{W'}$ to the pairs inside $W \cap W'$ are equal. Sums of consistent families are
+consistent, so there is a largest one, $(S^*_W)$; it is reached from $(S^0_W)$ by repeatedly replacing $S_W$ by
+the set of its elements whose restriction to $W \cap W'$ lies in the restriction of $S_{W'}$, in any order. The
+\emph{linear locality} $L_{\mathrm{lin}}(d)$ is the least $s \ge 4$ such that $S^*_W$ is the line through
+$d|_W$ for every set $W$ of four points; $L_{\mathrm{lin}}(d) = \infty$ if there is none.
+\end{definition}
+
+Dually, the procedure derives linear relations among the $x_p$, each supported on the pairs inside one set of at
+most $s$ points, by combining relations inside one such set; a relation passes from $W$ to $W'$ only if it is
+supported inside $W \cap W'$. The condition on four-point sets says that $x_p/d_p = x_q/d_q$ is derived for all
+pairs $p, q$.
+
+\begin{proposition}\label{prop:lin}
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
+\item (Soundness) The restriction to $W$ of every solution of $T(d)$ lies in $S^*_W$. Hence
+  $L_{\mathrm{lin}}(d) < \infty$ implies that $d$ is extreme.
+\item $d$ is extreme iff $L_{\mathrm{lin}}(d) \le n$.
+\item $L_{\mathrm{lin}}(d) \le \max(L(d), 6)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) The restrictions of the solution space of $T(d)$ form a consistent family inside $(S^0_W)$. If all four-point
+sets have $S^*_W = \R\cdot d|_W$, a solution $x$ has $x|_W = c_W\, d|_W$ on each of them, and any two pairs lie in
+a common four-point set, so $x_p/d_p$ does not depend on $p$. (ii) For $s = n$ the set $V$ is in the family and
+$S^*_V \subseteq S^0_V$ is the solution space of $T(d)$; if $d$ is extreme, consistency with $V$ makes every
+$S^*_W$ a line. The converse is (i). (iii) Let $s \ge \max(L(d), 6)$. We show, along the sequence of merges that
+produces $\cl_s(d)$, that for any two pairs $p, q$ in one class of the current partition $\pi$ and any $W \supseteq
+p \cup q$ with $|W| \le s$, the relation $x_p/d_p = x_q/d_q$ holds on $S^*_W$. Suppose this for $\pi$, and let
+$W_0$ force $C = C'$. By the hypothesis $S^*_{W_0}$ consists of solutions of $T_{W_0}(\pi)$, so the relation holds
+on $S^*_{W_0}$ for some $p \in C$, $q \in C'$ inside $W_0$. For $p' \in C$, $q' \in C'$ the relation between $p'$
+and $p$ holds on $S^*_{W_1}$ with $W_1 = p' \cup p \cup q$, by hypothesis, and the one between $p$ and $q$ passes
+to $W_1$ because it is supported inside $W_0 \cap W_1$; so $p'$ and $q$ are related on $S^*_{W_1}$, then $p'$ and
+$q'$ on $S^*_{W_2}$ with $W_2 = p' \cup q \cup q'$, and on every $W \supseteq p' \cup q'$. The sets $W_1, W_2$ have
+at most six points. When $\cl_s(d)$ has one class, every four-point set has $S^*_W = \R\cdot d|_W$.
+\end{proof}
+
+\comp{Computation (linear locality of $C_t$).} For windows of five consecutive positions, let $W_{a,j}$ be the
+set of the points $A_i, B_i$ with $i \in [a, a + 5)$ or $i \in [j, j + 5)$, at most 20 points. Running the
+procedure on the $t$ sets $W_{0,j}$ alone, with steps between $W_{0,j}$ and $W_{0,j+1}$, ends with every
+$S_{W_{0,j}}$ equal to the line through $d$: in rational arithmetic for $t = 11, 13, 15, 17, 21, 25, 29, 33, 37$, and modulo
+$2^{31} - 1$ for $t = 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 37, 41, 45, 51$. By the rotation the same holds for all $W_{a,j}$, and two pairs
+$p$, $q$ are then related through pairs inside the windows at their positions, using three sets $W_{a,j}$ and two
+sets of at most six points as in the proof of (iii). Hence
+\[
+  L_{\mathrm{lin}}(C_t) \ \le\ 20 \qquad\text{for these } t,
+\]
+while $L(C_t) = 2t$. As a check of the program, for even $t$ (where $C_t$ is a metric but not extreme: the tight
+system has a solution space of dimension 3) the same run ends with spaces of dimension 3 and proves nothing. With
+windows of four positions (16 points) this particular scheme does not succeed; we did not determine
+$L_{\mathrm{lin}}(C_t)$, and we have not written a proof that is uniform in $t$ (\file{linear\_width.py}).
+
+The reason is the one that makes $C_t$ hard for two-term deduction. Its tight system reduces to the recurrence
+(REC) around the cycle. A two-term relation cannot carry the state of a recurrence of order 4 from one position to
+the next, but a relation with a few more terms can: it expresses the values in the current window through those
+in the starting window, and going once around the cycle closes the system.
+
+\begin{proposition}\label{prop:fpc}
+Extremality is definable in fixed-point logic with counting. Consequently there is an integer $k$ such that, for
+metrics $d$ with positive distances on any number of points, whether $d$ is extreme is determined by the
+equivalence class of the structure $(V, \mathrm{Tight}_d)$ in the $k$-variable logic with counting quantifiers,
+where $\mathrm{Tight}_d$ is the ternary relation of tight triples.
+\end{proposition}
+
+\begin{proof}
+$d$ is extreme iff the matrix of $T(d)$ has rank $\binom n2 - 1$ over $\Q$. Index its rows by the tight triples
+and its columns by the ordered pairs of distinct points (each column of an unordered pair occurs twice, which
+does not change the rank); its entries $0, \pm 1$ are then defined by first-order formulas in
+$\mathrm{Tight}_d$. The rank over $\Q$ of a matrix defined in this way is definable in fixed-point logic with
+counting \cite[Corollary VI.6]{DGHL09}, and so is the number $\binom n2 - 1$. Every formula of this logic is
+equivalent, on finite structures, to a formula of the infinitary logic with counting quantifiers and a bounded
+number of variables \cite{O97}.
+\end{proof}
+
+\begin{remarks}
+(1) Proposition~\ref{prop:fpc} shows that the statement ``no test of bounded scope characterises the extreme
+rays'' is false if bounded scope is understood as a bounded number of variables and the test may count and recurse.
+Such a test is not a local deduction in any practical sense: it evaluates traces of powers of the matrix
+\cite{DGHL09}. The positive results of this kind hold over $\Q$; the rank over a finite field is not definable in
+this logic \cite{DGHL09}, and extremality is a property over $\Q$.
+(2) So there are three levels. Two-term deduction on $s$ points: unbounded scope (Theorem~\ref{thm:main}).
+Linear deduction on $s$ points: bounded on $C_t$ by the computation above, unknown in general. Counting logic
+with $k$ variables: bounded.
+(3) \emph{Tests that add points.} A test that adds points to $d$ and proves that the larger metric is extreme
+proves nothing about $d$: by Avis's embedding theorem every rational metric with positive distances, extreme or
+not, is a restriction of an extreme ray with $L = 4$ (Proposition~\ref{prop:hereditary} and Remark (6) after
+Theorem~\ref{thm:main}). Adding points is sound when every solution of $T(d)$ extends to a solution of the tight
+system of the larger metric; the new distances are then auxiliary variables defined by linear equations, and
+eliminating them gives relations with more than two terms among the old ones. So this is linear deduction in
+another form, and belongs to the middle level.
+\end{remarks}
+
+\begin{question}\label{q:lin}
+Is $L_{\mathrm{lin}}$ bounded on the extreme rays of the metric cones? A family that answers this in the negative
+cannot be organised along a cycle as $C_t$ is, since the state of a recurrence along a cycle passes through a
+bounded window; one would look for tight systems with the structure of a grid or of an expander.
+\end{question}
 
 \section{Computations: locality on the vertex lists and beyond}
 
@@ -1001,6 +1127,8 @@ Theorem~\ref{thm:main}(c): $t \le 21$; checks W1--W3 for $t \ge 23$ &
 Theorem~\ref{thm:main}(c): second implementation of W1--W3 &
   \file{family\_C\_top\_check.py} & \file{family\_C\_top\_check.json} \\
 Corollary on bipartite graphs & \file{bipartite\_check.py} & \file{bipartite\_check.json} \\
+Linear locality of $C_t$ (Section~\ref{sec:stronger}) & \file{linear\_width.py} (\file{-{}-exact} for rational
+  arithmetic) & \file{linear\_width.json}, \file{linear\_width\_exact.json}, \file{linear\_width\_even.json} \\
 Comp.~1, validation & \file{locality\_checks.py}, \file{ray\_count\_check.py} &
   \file{locality\_checks.json}, \file{ray\_count\_check.json} \\
 Comp.~2 & \file{locality.py -{}-all9} & \file{locality\_m9all.json} \\
@@ -1064,6 +1192,9 @@ finite metric spaces, \emph{Exp. Math.} 34 (2025) 808--823 (online 2024), arXiv:
 \bibitem[DFPS01]{DFPS01} A. Deza, K. Fukuda, D. Pasechnik, M. Sato, On the skeleton of the metric polytope,
 \emph{LNCS} 2098 (2001) 125--136.
 
+\bibitem[DGHL09]{DGHL09} A. Dawar, M. Grohe, B. Holm, B. Laubner, Logics with rank operators, in \emph{Proc.
+24th IEEE Symposium on Logic in Computer Science (LICS 2009)}, 113--122.
+
 \bibitem[DI07]{DI07} A. Deza, G. Indik, A counterexample to the dominating set conjecture, \emph{Optim. Lett.} 1
 (2007) 163--169.
 
@@ -1091,6 +1222,9 @@ Louvain-la-Neuve, 1993, 221--234.
 
 \bibitem[MPV08]{MPV08} J. Melleray, F. V. Petrov, A. M. Vershik, Linearly rigid metric spaces and the embedding
 problem, \emph{Fund. Math.} 199 (2008) 177--194, arXiv:math/0611049.
+
+\bibitem[O97]{O97} M. Otto, \emph{Bounded Variable Logics and Counting}, Lecture Notes in Logic 9, Springer,
+1997.
 
 \bibitem[SY04]{SY04} B. Sturmfels, J. Yu, Classification of six-point metrics, \emph{Electron. J. Combin.} 11
 (2004) R44.
